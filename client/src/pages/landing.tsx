@@ -5,6 +5,7 @@ import PriceTrends from "@/components/price-trends";
 import PriceAlertsForm from "@/components/price-alerts-form";
 import SupplierDirectory from "@/components/supplier-directory";
 import SuppliersShowcase from "@/components/suppliers-showcase";
+import OilTankShowcase from "@/components/oil-tank-showcase";
 import TrustSection from "@/components/trust-section";
 import NorthernIrelandIdentity from "@/components/northern-ireland-identity";
 import Footer from "@/components/footer";

@@ -1,11 +1,22 @@
 import PriceSearchForm from "@/components/price-search-form";
 import { Check, Clock, Shield, Truck } from "lucide-react";
 import HeatingOilLogo from "@/components/heating-oil-logo";
+import heroImage from "@assets/v2-vnxed-nzz6i.jpg";
 
 export default function HeroSection() {
   return (
-    <section className="bg-gradient-to-br from-primary to-blue-700 text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-gradient-to-br from-primary to-blue-700 text-white py-16 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-20">
+        <img 
+          src={heroImage} 
+          alt="Northern Ireland home with heating oil tank - price comparison interface" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-blue-700/90"></div>
+      </div>
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Compare Heating Oil Prices Across Northern Ireland
