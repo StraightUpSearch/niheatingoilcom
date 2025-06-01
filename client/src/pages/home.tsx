@@ -2,6 +2,7 @@ import { useAuth } from "@/hooks/useAuth";
 import Navigation from "@/components/navigation";
 import PricingTable from "@/components/pricing-table";
 import PriceTrends from "@/components/price-trends";
+import UserProgress from "@/components/user-progress";
 import Footer from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
@@ -34,42 +35,49 @@ export default function Home() {
       {/* Dashboard Cards */}
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Active Price Alerts</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold text-primary">
-                  {alerts?.length || 0}
-                </div>
-                <p className="text-gray-600 text-sm">Monitoring your area</p>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
+            <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Active Price Alerts</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-primary">
+                    {alerts?.length || 0}
+                  </div>
+                  <p className="text-gray-600 text-sm">Monitoring your area</p>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Best Current Deal</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-secondary">
+                    £237.60
+                  </div>
+                  <p className="text-gray-600 text-sm">300L from Bangor Fuels</p>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Potential Savings</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-3xl font-bold text-accent">
+                    £24.80
+                  </div>
+                  <p className="text-gray-600 text-sm">vs. average price</p>
+                </CardContent>
+              </Card>
+            </div>
             
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Best Current Deal</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold text-secondary">
-                  £237.60
-                </div>
-                <p className="text-gray-600 text-sm">300L from Bangor Fuels</p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Potential Savings</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-3xl font-bold text-accent">
-                  £24.80
-                </div>
-                <p className="text-gray-600 text-sm">vs. average price</p>
-              </CardContent>
-            </Card>
+            {/* Progress Panel */}
+            <div className="lg:col-span-1">
+              <UserProgress />
+            </div>
           </div>
         </div>
       </section>
