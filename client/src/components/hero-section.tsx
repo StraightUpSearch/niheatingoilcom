@@ -1,5 +1,6 @@
 import PriceSearchForm from "@/components/price-search-form";
-import { Check, Clock, Shield } from "lucide-react";
+import { Check, Clock, Shield, Truck } from "lucide-react";
+import HeatingOilLogo from "@/components/heating-oil-logo";
 
 export default function HeroSection() {
   return (
@@ -10,7 +11,7 @@ export default function HeroSection() {
             Northern Ireland's Own Heating Oil Price Platform
           </h1>
           <p className="text-xl mb-8 text-blue-100">
-            Built by locals, for locals. Compare prices from verified Northern Ireland suppliers in all six counties. Created by our Belfast-based team exclusively for NI residents.
+            Built by locals, for locals. Compare official Consumer Council prices across all six counties and save on your heating oil deliveries.
           </p>
           
           <div className="bg-white rounded-xl p-6 shadow-xl max-w-2xl mx-auto mb-8">
@@ -20,7 +21,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 text-blue-100">
             <div className="flex items-center space-x-2">
               <Check className="h-5 w-5" />
-              <span>50+ Verified Suppliers</span>
+              <span>Official Consumer Council Data</span>
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="h-5 w-5" />

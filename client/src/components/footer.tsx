@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Truck } from "lucide-react";
+import HeatingOilLogo from "@/components/heating-oil-logo";
 
 export default function Footer() {
   const serviceLinks = [
@@ -29,7 +30,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Truck className="h-6 w-6 text-primary" />
+              <HeatingOilLogo size="md" className="text-primary" />
               <span className="text-xl font-bold">NI Heating Oil</span>
             </Link>
             <p className="text-gray-400 mb-4">
