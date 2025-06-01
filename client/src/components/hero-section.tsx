@@ -7,10 +7,10 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Compare Heating Oil Prices Across Northern Ireland
+            Northern Ireland's Own Heating Oil Price Platform
           </h1>
           <p className="text-xl mb-8 text-blue-100">
-            Find the cheapest heating oil prices from verified suppliers in your area. Updated in real-time.
+            Built by locals, for locals. Compare prices from verified Northern Ireland suppliers in all six counties. Created by our Belfast-based team exclusively for NI residents.
           </p>
           
           <div className="bg-white rounded-xl p-6 shadow-xl max-w-2xl mx-auto mb-8">

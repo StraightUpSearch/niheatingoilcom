@@ -6,6 +6,7 @@ import PriceAlertsForm from "@/components/price-alerts-form";
 import SupplierDirectory from "@/components/supplier-directory";
 import SuppliersShowcase from "@/components/suppliers-showcase";
 import TrustSection from "@/components/trust-section";
+import NorthernIrelandIdentity from "@/components/northern-ireland-identity";
 import Footer from "@/components/footer";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { Card, CardContent } from "@/components/ui/card";
@@ -82,6 +83,7 @@ export default function Landing() {
         </div>
       </section>
       
+      <NorthernIrelandIdentity />
       <PriceTrends />
       <SuppliersShowcase />
       <PriceAlertsForm />

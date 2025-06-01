@@ -33,7 +33,7 @@ export default function Footer() {
               <span className="text-xl font-bold">NI Heating Oil</span>
             </Link>
             <p className="text-gray-400 mb-4">
-              Northern Ireland's leading heating oil price comparison platform.
+              Created by a Northern Ireland team exclusively for NI residents. Compare heating oil prices across all six counties with official Consumer Council data.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
