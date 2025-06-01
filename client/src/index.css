@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 11% 98%; /* #F5F7FA */
+  --foreground: 215 25% 27%; /* #2D3748 */
+  --muted: 210 11% 96%; /* #F1F5F9 */
+  --muted-foreground: 215 16% 47%; /* #64748B */
+  --popover: 210 11% 98%; /* #F5F7FA */
+  --popover-foreground: 215 25% 27%; /* #2D3748 */
+  --card: 0 0% 100%; /* #FFFFFF */
+  --card-foreground: 215 25% 27%; /* #2D3748 */
+  --border: 210 11% 91%; /* #E2E8F0 */
+  --input: 210 11% 91%; /* #E2E8F0 */
+  --primary: 207 90% 54%; /* #1976D2 */
+  --primary-foreground: 210 40% 98%; /* #F8FAFC */
+  --secondary: 125 65% 39%; /* #388E3C */
+  --secondary-foreground: 125 5% 98%; /* #F7FDF8 */
+  --accent: 16 84% 54%; /* #FF5722 */
+  --accent-foreground: 0 0% 100%; /* #FFFFFF */
+  --destructive: 4 90% 58%; /* #F44336 */
+  --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+  --success: 123 43% 54%; /* #4CAF50 */
+  --warning: 36 100% 50%; /* #FF9800 */
+  --error: 4 90% 58%; /* #F44336 */
+  --ring: 207 90% 54%; /* #1976D2 */
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222 47% 11%; /* #0F172A */
+  --foreground: 213 31% 91%; /* #E2E8F0 */
+  --muted: 217 33% 17%; /* #1E293B */
+  --muted-foreground: 215 20% 65%; /* #94A3B8 */
+  --popover: 222 47% 11%; /* #0F172A */
+  --popover-foreground: 213 31% 91%; /* #E2E8F0 */
+  --card: 222 47% 11%; /* #0F172A */
+  --card-foreground: 213 31% 91%; /* #E2E8F0 */
+  --border: 217 33% 17%; /* #1E293B */
+  --input: 217 33% 17%; /* #1E293B */
+  --primary: 207 90% 54%; /* #1976D2 */
+  --primary-foreground: 210 40% 98%; /* #F8FAFC */
+  --secondary: 217 33% 17%; /* #1E293B */
+  --secondary-foreground: 213 31% 91%; /* #E2E8F0 */
+  --accent: 217 33% 17%; /* #1E293B */
+  --accent-foreground: 213 31% 91%; /* #E2E8F0 */
+  --destructive: 4 90% 58%; /* #F44336 */
+  --destructive-foreground: 213 31% 91%; /* #E2E8F0 */
+  --ring: 224 71% 4%; /* #020617 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+    }
+  }
+}
