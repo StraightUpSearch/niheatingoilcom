@@ -2,9 +2,12 @@ import Navigation from "@/components/navigation";
 import PriceSearchForm from "@/components/price-search-form";
 import PricingTable from "@/components/pricing-table";
 import Footer from "@/components/footer";
+import { usePageTitle } from "@/hooks/usePageTitle";
 import { useState } from "react";
 
 export default function PriceComparison() {
+  usePageTitle("Compare Heating Oil Prices - Northern Ireland | OilPrice NI");
+  
   const [searchParams, setSearchParams] = useState<{
     postcode?: string;
     volume?: number;

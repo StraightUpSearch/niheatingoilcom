@@ -128,12 +128,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Get matching suppliers and prices
       const { postcode, volume } = validatedData;
       
-      let suppliers = [];
+      let suppliers: any[] = [];
       if (postcode) {
         suppliers = await storage.getSuppliersInArea(postcode);
       }
 
-      const prices = await storage.getLatestPrices(volume, postcode);
+      const prices = await storage.getLatestPrices(volume || undefined, postcode);
       
       res.json({
         suppliers,
@@ -220,6 +220,58 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("Error deleting alert:", error);
       res.status(500).json({ message: "Failed to delete alert" });
     }
+  });
+
+  // SEO routes
+  app.get('/sitemap.xml', (req, res) => {
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://oilprice-ni.replit.app/</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://oilprice-ni.replit.app/compare</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://oilprice-ni.replit.app/suppliers</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://oilprice-ni.replit.app/alerts</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>`;
+    
+    res.set('Content-Type', 'application/xml');
+    res.send(sitemap);
+  });
+
+  app.get('/robots.txt', (req, res) => {
+    const robots = `User-agent: *
+Allow: /
+Allow: /compare
+Allow: /suppliers
+Allow: /alerts
+Disallow: /api/
+Disallow: /admin/
+
+Sitemap: https://oilprice-ni.replit.app/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1`;
+    
+    res.set('Content-Type', 'text/plain');
+    res.send(robots);
   });
 
   // Admin routes (scraping trigger)
