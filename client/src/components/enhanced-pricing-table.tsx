@@ -46,6 +46,11 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
     }
   };
 
+  const handleQuoteRequest = (supplier: any) => {
+    // Open lead capture modal or contact form
+    window.open(`tel:${supplier.phone}`, '_self');
+  };
+
   const formatPrice = (price: number) => {
     return `£${price.toFixed(2)}`;
   };
@@ -137,6 +142,36 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
             Fuel prices may vary by location
           </div>
         </div>
+
+        {/* County Average Highlight */}
+        {searchParams?.postcode && (
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <div className="flex items-center mb-2">
+              <TrendingUp className="h-5 w-5 text-blue-600 mr-2" />
+              <h3 className="font-semibold text-blue-900">County Average Prices</h3>
+            </div>
+            <div className="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <div className="text-lg font-bold text-blue-900">£162.30</div>
+                <div className="text-sm text-blue-600">300 Litres</div>
+                <div className="text-xs text-blue-500">54.1p per litre</div>
+              </div>
+              <div>
+                <div className="text-lg font-bold text-blue-900">£253.71</div>
+                <div className="text-sm text-blue-600">500 Litres</div>
+                <div className="text-xs text-blue-500">50.7p per litre</div>
+              </div>
+              <div>
+                <div className="text-lg font-bold text-blue-900">£445.82</div>
+                <div className="text-sm text-blue-600">900 Litres</div>
+                <div className="text-xs text-blue-500">49.5p per litre</div>
+              </div>
+            </div>
+            <div className="text-xs text-blue-600 text-center mt-2">
+              Official Consumer Council for Northern Ireland data
+            </div>
+          </div>
+        )}
 
         {/* Mobile Cards */}
         <div className="block md:hidden space-y-4">
