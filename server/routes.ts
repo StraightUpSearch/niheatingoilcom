@@ -6,6 +6,7 @@ import { z } from "zod";
 import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema } from "@shared/schema";
 import { scrapeAllSuppliers, initializeScraping } from "./scraper";
 import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
+import { initializeSupplierTransformation } from "./supplierDataTransformer";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Auth middleware
@@ -17,6 +18,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("Consumer Council scraping initialization failed:", error);
     });
   }, 1000);
+
+  // Initialize supplier data transformation (creates individual suppliers from regional data)
+  setTimeout(() => {
+    initializeSupplierTransformation().catch(error => {
+      console.error("Supplier transformation initialization failed:", error);
+    });
+  }, 2000);
 
   // Auth routes
   app.get('/api/auth/user', isAuthenticated, async (req: any, res) => {
