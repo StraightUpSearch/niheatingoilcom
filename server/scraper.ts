@@ -225,23 +225,40 @@ export async function scrapeAllSuppliers(): Promise<void> {
 }
 
 export async function initializeScraping(): Promise<void> {
-  console.log("Initializing real-time scraping system...");
+  console.log("Initializing scraping system...");
   
   try {
-    // Run initial scrape
-    await scrapeAllSuppliers();
+    // Initialize suppliers only if they don't exist
+    const existingSuppliers = await storage.getAllSuppliers();
     
-    // Set up periodic scraping (every 2 hours to respect rate limits)
-    setInterval(async () => {
-      try {
-        console.log("Running scheduled scrape...");
-        await scrapeAllSuppliers();
-      } catch (error) {
-        console.error("Error in scheduled scrape:", error);
+    if (existingSuppliers.length === 0) {
+      console.log("Initializing suppliers...");
+      for (const supplierData of NI_SUPPLIERS) {
+        await storage.createSupplier(supplierData);
       }
-    }, 2 * 60 * 60 * 1000); // 2 hours
+      console.log(`Created ${NI_SUPPLIERS.length} suppliers`);
+    }
+
+    // Only run scraping if ScrapingBee API key is available
+    if (process.env.SCRAPINGBEE_API_KEY) {
+      console.log("ScrapingBee API key found, starting price scraping...");
+      await scrapeAllSuppliers();
+      
+      // Set up periodic scraping (every 2 hours to respect rate limits)
+      setInterval(async () => {
+        try {
+          console.log("Running scheduled scrape...");
+          await scrapeAllSuppliers();
+        } catch (error) {
+          console.error("Error in scheduled scrape:", error);
+        }
+      }, 2 * 60 * 60 * 1000); // 2 hours
+    } else {
+      console.log("ScrapingBee API key not provided. Real-time scraping disabled.");
+      console.log("To enable scraping, please provide SCRAPINGBEE_API_KEY environment variable.");
+    }
     
-    console.log("Real-time scraping system initialized successfully");
+    console.log("Scraping system initialized successfully");
   } catch (error) {
     console.error("Error initializing scraping:", error);
   }

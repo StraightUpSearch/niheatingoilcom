@@ -10,8 +10,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Auth middleware
   await setupAuth(app);
 
-  // Initialize scraping on startup
-  await initializeScraping();
+  // Initialize scraping after server starts (non-blocking)
+  setTimeout(() => {
+    initializeScraping().catch(error => {
+      console.error("Scraping initialization failed:", error);
+    });
+  }, 1000);
 
   // Auth routes
   app.get('/api/auth/user', isAuthenticated, async (req: any, res) => {
@@ -122,7 +126,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Log the search query
       await storage.logSearchQuery({
         ...validatedData,
-        ipAddress: req.ip,
+        ipAddress: req.ip || '',
       });
 
       // Get matching suppliers and prices
@@ -133,7 +137,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
         suppliers = await storage.getSuppliersInArea(postcode);
       }
 
-      const prices = await storage.getLatestPrices(volume || undefined, postcode);
+      const prices = await storage.getLatestPrices(
+        volume || undefined, 
+        postcode || undefined
+      );
       
       res.json({
         suppliers,
