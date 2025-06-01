@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { setupAuth, isAuthenticated } from "./replitAuth";
 import { z } from "zod";
-import { insertPriceAlertSchema, insertSearchQuerySchema } from "@shared/schema";
+import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema } from "@shared/schema";
 import { scrapeAllSuppliers, initializeScraping } from "./scraper";
 
 export async function registerRoutes(app: Express): Promise<Server> {

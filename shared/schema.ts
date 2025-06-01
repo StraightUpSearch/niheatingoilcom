@@ -100,6 +100,23 @@ export const searchQueries = pgTable("search_queries", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+// Lead capture for quote requests
+export const leads = pgTable("leads", {
+  id: serial("id").primaryKey(),
+  name: varchar("name", { length: 100 }).notNull(),
+  email: varchar("email", { length: 255 }).notNull(),
+  phone: varchar("phone", { length: 20 }).notNull(),
+  postcode: varchar("postcode", { length: 10 }).notNull(),
+  volume: integer("volume").notNull(),
+  urgency: varchar("urgency", { length: 20 }),
+  notes: text("notes"),
+  supplierName: varchar("supplier_name", { length: 100 }),
+  supplierPrice: varchar("supplier_price", { length: 20 }),
+  status: varchar("status", { length: 20 }).default("new"),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
 export type UpsertUser = typeof users.$inferInsert;
 export type User = typeof users.$inferSelect;
 
@@ -117,6 +134,9 @@ export type InsertPriceHistory = typeof priceHistory.$inferInsert;
 
 export type SearchQuery = typeof searchQueries.$inferSelect;
 export type InsertSearchQuery = typeof searchQueries.$inferInsert;
+
+export type Lead = typeof leads.$inferSelect;
+export type InsertLead = typeof leads.$inferInsert;
 
 // Zod schemas for validation
 export const insertSupplierSchema = createInsertSchema(suppliers).omit({
@@ -138,4 +158,10 @@ export const insertPriceAlertSchema = createInsertSchema(priceAlerts).omit({
 export const insertSearchQuerySchema = createInsertSchema(searchQueries).omit({
   id: true,
   createdAt: true,
+});
+
+export const insertLeadSchema = createInsertSchema(leads).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
 });

@@ -5,6 +5,7 @@ import {
   priceAlerts,
   priceHistory,
   searchQueries,
+  leads,
   type User,
   type UpsertUser,
   type Supplier,
@@ -17,6 +18,8 @@ import {
   type InsertPriceHistory,
   type SearchQuery,
   type InsertSearchQuery,
+  type Lead,
+  type InsertLead,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc, and, gte, lte, sql, like, inArray } from "drizzle-orm";
@@ -54,6 +57,11 @@ export interface IStorage {
   // Search operations
   logSearchQuery(query: InsertSearchQuery): Promise<SearchQuery>;
   getPopularSearches(limit?: number): Promise<{ postcode: string; count: number }[]>;
+
+  // Lead capture operations
+  createLead(lead: InsertLead): Promise<Lead>;
+  getLeads(status?: string): Promise<Lead[]>;
+  updateLeadStatus(id: number, status: string): Promise<Lead>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -266,7 +274,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getPopularSearches(limit = 10): Promise<{ postcode: string; count: number }[]> {
-    return await db
+    const results = await db
       .select({
         postcode: searchQueries.postcode,
         count: sql<number>`COUNT(*)`,
@@ -276,6 +284,43 @@ export class DatabaseStorage implements IStorage {
       .groupBy(searchQueries.postcode)
       .orderBy(sql`COUNT(*) DESC`)
       .limit(limit);
+
+    return results.filter(r => r.postcode !== null).map(r => ({
+      postcode: r.postcode!,
+      count: r.count
+    }));
+  }
+
+  // Lead capture operations
+  async createLead(lead: InsertLead): Promise<Lead> {
+    const [newLead] = await db
+      .insert(leads)
+      .values(lead)
+      .returning();
+    return newLead;
+  }
+
+  async getLeads(status?: string): Promise<Lead[]> {
+    if (status) {
+      return await db
+        .select()
+        .from(leads)
+        .where(eq(leads.status, status))
+        .orderBy(desc(leads.createdAt));
+    }
+    return await db
+      .select()
+      .from(leads)
+      .orderBy(desc(leads.createdAt));
+  }
+
+  async updateLeadStatus(id: number, status: string): Promise<Lead> {
+    const [updatedLead] = await db
+      .update(leads)
+      .set({ status, updatedAt: new Date() })
+      .where(eq(leads.id, id))
+      .returning();
+    return updatedLead;
   }
 }
 
