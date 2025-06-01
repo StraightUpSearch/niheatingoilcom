@@ -4,6 +4,7 @@ import PricingTable from "@/components/pricing-table";
 import PriceTrends from "@/components/price-trends";
 import PriceAlertsForm from "@/components/price-alerts-form";
 import SupplierDirectory from "@/components/supplier-directory";
+import SuppliersShowcase from "@/components/suppliers-showcase";
 import TrustSection from "@/components/trust-section";
 import Footer from "@/components/footer";
 import { usePageTitle } from "@/hooks/usePageTitle";
@@ -82,6 +83,7 @@ export default function Landing() {
       </section>
       
       <PriceTrends />
+      <SuppliersShowcase />
       <PriceAlertsForm />
       <SupplierDirectory />
       <TrustSection />

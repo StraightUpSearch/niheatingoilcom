@@ -244,15 +244,15 @@ export async function initializeScraping(): Promise<void> {
       console.log("ScrapingBee API key found, starting price scraping...");
       await scrapeAllSuppliers();
       
-      // Set up periodic scraping (every 2 hours to respect rate limits)
+      // Set up periodic scraping (weekly to minimize API usage)
       setInterval(async () => {
         try {
-          console.log("Running scheduled scrape...");
+          console.log("Running scheduled weekly scrape...");
           await scrapeAllSuppliers();
         } catch (error) {
           console.error("Error in scheduled scrape:", error);
         }
-      }, 2 * 60 * 60 * 1000); // 2 hours
+      }, 7 * 24 * 60 * 60 * 1000); // 7 days
     } else {
       console.log("ScrapingBee API key not provided. Real-time scraping disabled.");
       console.log("To enable scraping, please provide SCRAPINGBEE_API_KEY environment variable.");
