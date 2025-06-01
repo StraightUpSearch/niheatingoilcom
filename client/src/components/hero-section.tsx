@@ -8,7 +8,7 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Northern Ireland's Own Heating Oil Price Platform
+            Compare Heating Oil Prices Across Northern Ireland
           </h1>
           <p className="text-xl mb-8 text-blue-100">
             Built by locals, for locals. Compare official Consumer Council prices across all six counties and save on your heating oil deliveries.

@@ -138,8 +138,69 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
           </div>
         </div>
 
-        {/* Table */}
-        <div className="overflow-x-auto">
+        {/* Mobile Cards */}
+        <div className="block md:hidden space-y-4">
+          {prices.map((item: any) => {
+            const price300 = calculateVolumePrice(item.price, item.volume, 300);
+            const price500 = calculateVolumePrice(item.price, item.volume, 500);
+            const price900 = calculateVolumePrice(item.price, item.volume, 900);
+            
+            return (
+              <div key={item.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                <div className="flex justify-between items-start mb-3">
+                  <div>
+                    <h3 className="font-medium text-gray-900">{item.supplier.name}</h3>
+                    <div className="text-sm text-gray-500 flex items-center mt-1">
+                      <MapPin className="h-3 w-3 mr-1" />
+                      {getDeliveryArea(item.supplier.location)}
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    {renderStars(Number(item.supplier.rating) || 4)}
+                    <span className="ml-1 text-sm text-gray-500">
+                      {(Number(item.supplier.rating) || 4).toFixed(1)}
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-3 gap-3 mb-3">
+                  <div className="text-center p-2 bg-gray-50 rounded">
+                    <div className="text-xs text-gray-500 mb-1">300L</div>
+                    <div className="font-medium text-gray-900 text-sm">{formatPrice(price300)}</div>
+                    <div className="text-xs text-gray-500">{formatPricePerLitre(price300, 300)}</div>
+                  </div>
+                  <div className="text-center p-2 bg-gray-50 rounded">
+                    <div className="text-xs text-gray-500 mb-1">500L</div>
+                    <div className="font-medium text-gray-900 text-sm">{formatPrice(price500)}</div>
+                    <div className="text-xs text-gray-500">{formatPricePerLitre(price500, 500)}</div>
+                  </div>
+                  <div className="text-center p-2 bg-gray-50 rounded">
+                    <div className="text-xs text-gray-500 mb-1">900L</div>
+                    <div className="font-medium text-gray-900 text-sm">{formatPrice(price900)}</div>
+                    <div className="text-xs text-gray-500">{formatPricePerLitre(price900, 900)}</div>
+                  </div>
+                </div>
+                
+                <div className="flex justify-between items-center">
+                  <div className="text-xs text-gray-500 flex items-center">
+                    <Clock className="h-3 w-3 mr-1" />
+                    {getTimeAgo(new Date(item.createdAt))}
+                  </div>
+                  <Button
+                    size="sm"
+                    className="bg-primary text-white hover:bg-blue-600 text-xs px-3 py-1"
+                    onClick={() => handleQuoteRequest(item.supplier)}
+                  >
+                    Get Quote
+                  </Button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Desktop Table */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="min-w-full">
             <thead className="bg-grey-50 border-b border-grey-200">
               <tr>

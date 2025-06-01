@@ -35,9 +35,9 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full">
-      <div className="flex flex-col md:flex-row gap-4">
-        <div className="flex-1">
+    <form onSubmit={handleSubmit} className="w-full max-w-4xl mx-auto">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+        <div className="flex-1 min-w-0">
           <Label htmlFor="postcode" className="block text-sm font-medium text-gray-700 mb-2">
             Your Postcode
           </Label>
@@ -47,26 +47,26 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
             value={postcode}
             onChange={(e) => setPostcode(e.target.value)}
             placeholder="e.g. BT1 5GS"
-            className="w-full"
+            className="w-full h-11 text-base sm:text-sm"
           />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           <Label htmlFor="volume" className="block text-sm font-medium text-gray-700 mb-2">
             Oil Volume (Litres)
           </Label>
           <Select value={volume} onValueChange={setVolume}>
-            <SelectTrigger>
-              <SelectValue />
+            <SelectTrigger className="bg-white text-gray-900 border-gray-300 h-11 text-base sm:text-sm">
+              <SelectValue className="text-gray-900" />
             </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="300">300L</SelectItem>
-              <SelectItem value="500">500L</SelectItem>
-              <SelectItem value="900">900L</SelectItem>
+            <SelectContent className="bg-white border border-gray-200 shadow-lg">
+              <SelectItem value="300" className="text-gray-900 hover:bg-gray-100 py-3 text-base sm:text-sm">300L</SelectItem>
+              <SelectItem value="500" className="text-gray-900 hover:bg-gray-100 py-3 text-base sm:text-sm">500L</SelectItem>
+              <SelectItem value="900" className="text-gray-900 hover:bg-gray-100 py-3 text-base sm:text-sm">900L</SelectItem>
             </SelectContent>
           </Select>
         </div>
         <div className="flex items-end">
-          <Button type="submit" className="w-full md:w-auto bg-accent text-white hover:bg-orange-600">
+          <Button type="submit" className="w-full sm:w-auto bg-accent text-white hover:bg-orange-600 h-11 px-6 text-base sm:text-sm font-medium">
             <Search className="h-4 w-4 mr-2" />
             Compare Prices
           </Button>
