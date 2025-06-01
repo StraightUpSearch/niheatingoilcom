@@ -1,0 +1,77 @@
+AI Developer Brief: Heating Oil Price Comparison SaaS (Northern Ireland)
+Overview
+Build a SaaS platform that scrapes, compares, and presents heating oil prices from various Northern Irish suppliers, enhancing user experience through intuitive UX/UI and AI-driven insights. The platform should replicate core functionalities of cheapestoil.co.uk but incorporate additional user-engagement features and predictive analytics.
+
+Key Competitors & Models
+CheapestOil.co.uk: Independent price comparator, scraping public data; no ordering.
+
+BoilerJuice, FuelTool, ValueOils: Broker-style, quoting directly from supplier APIs; handling orders/payment.
+
+Our platform will blend both approaches—transparent price listings from scraping, with optional broker-style order facilitation through partnerships.
+
+Data Collection Methods
+Primary: Web-scrape publicly accessible price data from suppliers' websites (e.g., Bangor Fuels, Alfa Oils, Robinson Fuels).
+
+Secondary: Integrate direct data feeds from willing suppliers (API-driven).
+
+Platform Functionalities & UX/UI
+Postcode-based search: Central search box for instant area-specific prices.
+
+Interactive Pricing Tables: Clear display of 300L, 500L, and 900L prices, sortable by supplier, price, or delivery speed.
+
+Instant Quote Forms: Prominent, simple input fields (postcode, volume) generating real-time price comparisons.
+
+Price Alerts and Notifications: Email/SMS/WhatsApp notifications for price drops and ordering reminders.
+
+Account Dashboard: Order history, spend tracking, personalised usage analytics.
+
+Price Trend Visualisation: Interactive graphs of historical and predicted oil prices.
+
+Trust & Transparency Elements: Supplier ratings, VAT-inclusive pricing clearly marked, secure payment badges.
+
+AI-Driven Features
+Adaptive Data Scraping: AI models that adjust to website changes, ensuring data accuracy and consistent availability.
+
+Predictive Analytics: AI-powered price forecasting using historical data, seasonal patterns, and global market trends.
+
+Personalisation: Tailored recommendations and alerts based on historical user data (ordering patterns, seasonal needs).
+
+Conversational AI (Chatbot): Real-time customer support and interactive user guidance.
+
+Group Buying Feature: AI-facilitated group buying coordination within regions to negotiate bulk discounts.
+
+Lead Generation Components
+Price alert subscriptions
+
+Educational content (guides, tips, usage calculators)
+
+Interactive tools (e.g., oil usage calculator, savings estimator)
+
+Account-based loyalty and referral programs
+
+Legal Considerations (UK/Northern Ireland)
+Ensure compliance with scraping regulations and respect suppliers' Terms of Service.
+
+Clearly document data sources, disclaimers on price accuracy, and liability limitations.
+
+GDPR-compliant handling of user data (email, phone numbers, account details).
+
+Technology Stack Recommendations
+Frontend: HTML/CSS/JavaScript (React or Vue.js recommended for dynamic UX)
+
+Backend/Data scraping: Python (Scrapy, BeautifulSoup), Node.js optional
+
+Database: PostgreSQL or MongoDB
+
+AI/ML: Python (TensorFlow/PyTorch for predictive analytics)
+
+Hosting: AWS or DigitalOcean (scalable cloud hosting)
+
+Objectives
+Deliver transparent, reliable, real-time oil price comparison.
+
+Engage users with personalised insights and convenience.
+
+Ensure legal compliance and ethical data use.
+
+Differentiate via intelligent, predictive, and user-centric AI features.
