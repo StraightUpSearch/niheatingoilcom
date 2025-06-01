@@ -6,7 +6,7 @@ import { usePageTitle } from "@/hooks/usePageTitle";
 import { useState } from "react";
 
 export default function PriceComparison() {
-  usePageTitle("Compare Heating Oil Prices - Northern Ireland | OilPrice NI");
+  usePageTitle("Compare Heating Oil Prices - Northern Ireland | NI Heating Oil");
   
   const [searchParams, setSearchParams] = useState<{
     postcode?: string;

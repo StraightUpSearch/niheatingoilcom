@@ -234,25 +234,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://oilprice-ni.replit.app/</loc>
+    <loc>https://niheatingoil.com/</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://oilprice-ni.replit.app/compare</loc>
+    <loc>https://niheatingoil.com/compare</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://oilprice-ni.replit.app/suppliers</loc>
+    <loc>https://niheatingoil.com/suppliers</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://oilprice-ni.replit.app/alerts</loc>
+    <loc>https://niheatingoil.com/alerts</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -272,7 +272,7 @@ Allow: /alerts
 Disallow: /api/
 Disallow: /admin/
 
-Sitemap: https://oilprice-ni.replit.app/sitemap.xml
+Sitemap: https://niheatingoil.com/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1`;

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
+import { usePageTitle } from "@/hooks/usePageTitle";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import PriceAlertsForm from "@/components/price-alerts-form";
@@ -13,6 +14,7 @@ import { isUnauthorizedError } from "@/lib/authUtils";
 import { Trash2, Bell, BellOff } from "lucide-react";
 
 export default function PriceAlerts() {
+  usePageTitle("Heating Oil Price Alerts - Northern Ireland | NI Heating Oil");
   const { toast } = useToast();
   const { isAuthenticated, isLoading } = useAuth();
   const queryClient = useQueryClient();

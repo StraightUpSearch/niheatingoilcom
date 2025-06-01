@@ -11,7 +11,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Calculator, TrendingDown, Bell, MapPin } from "lucide-react";
 
 export default function Landing() {
-  usePageTitle("OilPrice NI - Compare Heating Oil Prices in Northern Ireland");
+  usePageTitle("NI Heating Oil - Compare Heating Oil Prices in Northern Ireland");
 
   return (
     <div className="min-h-screen bg-gray-50">

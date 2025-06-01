@@ -1,8 +1,11 @@
 import Navigation from "@/components/navigation";
 import SupplierDirectory from "@/components/supplier-directory";
 import Footer from "@/components/footer";
+import { usePageTitle } from "@/hooks/usePageTitle";
 
 export default function Suppliers() {
+  usePageTitle("Heating Oil Suppliers Directory - Northern Ireland | NI Heating Oil");
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
