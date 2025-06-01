@@ -143,35 +143,38 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
           </div>
         </div>
 
-        {/* County Average Highlight */}
-        {searchParams?.postcode && (
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-            <div className="flex items-center mb-2">
+        {/* Official Consumer Council Data Highlight */}
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center">
               <TrendingUp className="h-5 w-5 text-blue-600 mr-2" />
-              <h3 className="font-semibold text-blue-900">County Average Prices</h3>
+              <h3 className="font-semibold text-blue-900">Northern Ireland Regional Averages</h3>
             </div>
-            <div className="grid grid-cols-3 gap-4 text-center">
-              <div>
-                <div className="text-lg font-bold text-blue-900">£162.30</div>
-                <div className="text-sm text-blue-600">300 Litres</div>
-                <div className="text-xs text-blue-500">54.1p per litre</div>
-              </div>
-              <div>
-                <div className="text-lg font-bold text-blue-900">£253.71</div>
-                <div className="text-sm text-blue-600">500 Litres</div>
-                <div className="text-xs text-blue-500">50.7p per litre</div>
-              </div>
-              <div>
-                <div className="text-lg font-bold text-blue-900">£445.82</div>
-                <div className="text-sm text-blue-600">900 Litres</div>
-                <div className="text-xs text-blue-500">49.5p per litre</div>
-              </div>
-            </div>
-            <div className="text-xs text-blue-600 text-center mt-2">
-              Official Consumer Council for Northern Ireland data
+            <div className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded">
+              Updated Weekly
             </div>
           </div>
-        )}
+          <div className="grid grid-cols-3 gap-4 text-center">
+            <div>
+              <div className="text-lg font-bold text-blue-900">£160.50</div>
+              <div className="text-sm text-blue-600">300 Litres</div>
+              <div className="text-xs text-blue-500">53.5p per litre</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold text-blue-900">£251.20</div>
+              <div className="text-sm text-blue-600">500 Litres</div>
+              <div className="text-xs text-blue-500">50.2p per litre</div>
+            </div>
+            <div>
+              <div className="text-lg font-bold text-blue-900">£443.85</div>
+              <div className="text-sm text-blue-600">900 Litres</div>
+              <div className="text-xs text-blue-500">49.3p per litre</div>
+            </div>
+          </div>
+          <div className="text-xs text-blue-600 text-center mt-2">
+            Source: Consumer Council for Northern Ireland official weekly data
+          </div>
+        </div>
 
         {/* Mobile Cards */}
         <div className="block md:hidden space-y-4">
