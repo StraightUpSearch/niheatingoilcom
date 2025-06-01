@@ -10,6 +10,8 @@ import Home from "@/pages/home";
 import PriceComparison from "@/pages/price-comparison";
 import PriceAlerts from "@/pages/price-alerts";
 import Suppliers from "@/pages/suppliers";
+import Login from "@/pages/login";
+import Register from "@/pages/register";
 
 function Router() {
   const { isAuthenticated, isLoading } = useAuth();

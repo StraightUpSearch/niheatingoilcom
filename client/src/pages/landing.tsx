@@ -1,6 +1,6 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
-import PricingTable from "@/components/pricing-table";
+import EnhancedPricingTable from "@/components/enhanced-pricing-table";
 import PriceTrends from "@/components/price-trends";
 import PriceAlertsForm from "@/components/price-alerts-form";
 import SupplierDirectory from "@/components/supplier-directory";
@@ -26,7 +26,7 @@ export default function Landing() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Oil Prices in Northern Ireland</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Live pricing data from verified suppliers across all counties. Prices include VAT and delivery within standard areas.</p>
           </div>
-          <PricingTable />
+          <EnhancedPricingTable />
         </div>
       </section>
 
