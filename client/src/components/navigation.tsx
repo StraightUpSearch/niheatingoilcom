@@ -42,7 +42,7 @@ export default function Navigation() {
           <div className="flex items-center space-x-4">
             <Link href="/" className="flex items-center space-x-2">
               <Fuel className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold text-gray-900">OilPrice NI</span>
+              <span className="text-xl font-bold text-gray-900">NI Heating Oil</span>
             </Link>
             <nav className="hidden md:flex space-x-6 ml-8">
               <NavItems />

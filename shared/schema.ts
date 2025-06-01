@@ -57,7 +57,7 @@ export const oilPrices = pgTable("oil_prices", {
   supplierId: integer("supplier_id").references(() => suppliers.id).notNull(),
   volume: integer("volume").notNull(), // 300, 500, 900 litres
   price: decimal("price", { precision: 10, scale: 2 }).notNull(),
-  pricePerLitre: decimal("price_per_litre", { precision: 5, scale: 3 }).notNull(),
+  pricePerLitre: decimal("price_per_litre", { precision: 8, scale: 3 }).notNull(),
   includesVat: boolean("includes_vat").default(true),
   postcode: varchar("postcode", { length: 10 }), // specific postcode if applicable
   createdAt: timestamp("created_at").defaultNow(),

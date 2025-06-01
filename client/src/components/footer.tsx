@@ -30,7 +30,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <Fuel className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">OilPrice NI</span>
+              <span className="text-xl font-bold">NI Heating Oil</span>
             </Link>
             <p className="text-gray-400 mb-4">
               Northern Ireland's leading heating oil price comparison platform.
