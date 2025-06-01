@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowUpDown, Star, Phone, MapPin, Clock } from "lucide-react";
+import { ArrowUpDown, Star, MessageSquare, MapPin, Clock } from "lucide-react";
+import LeadCaptureModal from "./lead-capture-modal";
 
 interface PricingTableProps {
   searchParams?: {
@@ -19,6 +20,8 @@ export default function PricingTable({ searchParams }: PricingTableProps) {
   const [selectedVolume, setSelectedVolume] = useState(searchParams?.volume || 300);
   const [sortField, setSortField] = useState<SortField>('price');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
+  const [selectedSupplier, setSelectedSupplier] = useState<any>(null);
+  const [showLeadModal, setShowLeadModal] = useState(false);
 
   const { data: prices, isLoading, error } = useQuery({
     queryKey: ["/api/prices", { volume: selectedVolume, postcode: searchParams?.postcode }],
@@ -254,15 +257,19 @@ export default function PricingTable({ searchParams }: PricingTableProps) {
                       <div className="flex space-x-2">
                         <Button
                           size="sm"
-                          className="bg-primary text-white hover:bg-blue-700"
+                          className="bg-green-600 text-white hover:bg-green-700"
                           onClick={() => {
-                            if (item.supplier.phone) {
-                              window.open(`tel:${item.supplier.phone}`, '_self');
-                            }
+                            setSelectedSupplier({
+                              name: item.supplier.name,
+                              price: item.pricePerLitre,
+                              volume: selectedVolume,
+                              location: item.supplier.location
+                            });
+                            setShowLeadModal(true);
                           }}
                         >
-                          <Phone className="h-4 w-4 mr-1" />
-                          Call
+                          <MessageSquare className="h-4 w-4 mr-1" />
+                          Get Quote
                         </Button>
                       </div>
                     </td>
@@ -287,6 +294,15 @@ export default function PricingTable({ searchParams }: PricingTableProps) {
           </div>
         )}
       </div>
+
+      <LeadCaptureModal
+        isOpen={showLeadModal}
+        onClose={() => {
+          setShowLeadModal(false);
+          setSelectedSupplier(null);
+        }}
+        supplier={selectedSupplier}
+      />
     </div>
   );
 }
