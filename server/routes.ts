@@ -5,15 +5,16 @@ import { setupAuth, isAuthenticated } from "./replitAuth";
 import { z } from "zod";
 import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema } from "@shared/schema";
 import { scrapeAllSuppliers, initializeScraping } from "./scraper";
+import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Auth middleware
   await setupAuth(app);
 
-  // Initialize scraping after server starts (non-blocking)
+  // Initialize Consumer Council scraping (official government data)
   setTimeout(() => {
-    initializeScraping().catch(error => {
-      console.error("Scraping initialization failed:", error);
+    initializeConsumerCouncilScraping().catch(error => {
+      console.error("Consumer Council scraping initialization failed:", error);
     });
   }, 1000);
 
