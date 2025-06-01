@@ -1,0 +1,1059 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WXJ93RB');</script>
+
+
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="fb:app_id" content="336977329803176" /><meta name="twitter:card" content="summary" /><meta name="twitter:site" content="@cheapestoil" /><meta name="twitter:creator" content="@cheapestoil" /><meta name="twitter:domain" content="cheapestoil.co.uk" /><meta name="twitter:title" content="CheapestOil.co.uk - heating oil price comparison" /><meta name="twitter:description" content="CheapestOil.co.uk is the commission free way to get the best heating oil prices. UK including Northern Ireland. Please RT" /><meta name="twitter:image" content="https://www.cheapestoil.co.uk/content/images/cheapestoillogo.png" /><meta property="og:title" content="CheapestOil.co.uk - the commission free heating oil site from Northern Ireland" /><meta property="og:type" content="website" /><meta property="og:url" content="https://www.cheapestoil.co.uk" /><meta property="og:site_name" content="CheapestOil.co.uk" /><meta property="og:locale" content="en_GB" /><meta property="og:image" content="https://www.cheapestoil.co.uk/content/images/cheapestoillogo.png" /><meta property="og:image:type" content="image/png" /><meta property="og:image:width" content="273" /><meta property="og:image:height" content="125" /><meta property="og:image:user_generated" content="false" /><meta property="og:description" content="CheapestOil.co.uk is the commission free way to get the best heating oil prices for the UK including Northern Ireland." /><link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" /><link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" /><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" /><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /><link rel="manifest" href="/manifest.json" /><meta name="msapplication-TileColor" content="#ffffff" /><meta name="msapplication-TileImage" content="/ms-icon-144x144.png" /><meta name="theme-color" content="#ffffff" /><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    
+    
+    <link href="/Content/site.min.css" rel="stylesheet">
+    
+    <link href="/Styles/Styles.min.css?v=202503" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800%7CRoboto:400,500,700,900" rel="stylesheet" />
+
+    <script src="/Scripts/cookies.min.js"></script>
+  
+    
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        window.googletag = window.googletag || { cmd: [] };
+        googletag.cmd.push(function () {
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().collapseEmptyDivs();
+            googletag.enableServices();
+        });
+    </script>
+
+    
+    <meta name="description" content="Northern Ireland Home Heating Oil Prices. Cheapest quotes from the leading oil comparison website">
+
+    <link rel="canonical" href="https://www.cheapestoil.co.uk/Heating-Oil-NI" />
+    
+    <link href="/Scripts/jquery-ui-1.14.1.custom/jquery-ui.min.css" rel="stylesheet" />
+
+    
+    
+    
+<title>
+	Cheapest Oil prices for Northern Ireland
+</title></head>
+<body>
+
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXJ93RB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+    <form method="post" action="./Heating-Oil-NI" id="ctl01">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['ctl01'];
+if (!theForm) {
+    theForm = document.ctl01;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/4.6/1/WebForms.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+window.WebForm_PostBackOptions||document.write('<script type="text/javascript" src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZMr-1OV6KQxP7LnA1iFSxV_G73KbjTGH1GgKvSdnkxeG-W6gSANnhnyO-gYiIcyNyQ2&amp;t=638786172491773168"><\/script>');//]]>
+</script>
+
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/4.5.1/1/MicrosoftAjax.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+(window.Sys && Sys._Application && Sys.Observer)||document.write('<script type="text/javascript" src="Scripts/WebForms/MsAjax/MicrosoftAjax.js"><\/script>');//]]>
+</script>
+
+<script src="https://ajax.aspnetcdn.com/ajax/4.5.1/1/MicrosoftAjaxWebForms.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+(window.Sys && Sys.WebForms)||document.write('<script type="text/javascript" src="Scripts/WebForms/MsAjax/MicrosoftAjaxWebForms.js"><\/script>');//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2AB335CF" />
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="lFUcWYTohgWyo2+a4XiYl632iJpT2Ml1fAjXApCQnY6JIDgA2WBlScicJW+KZYCZI/mvjz93N22+RVzgZPQS5HEBs9jgiJV1wcv7anqhSMSJHhgDot4wYYP4vEwJQRgJIEtZJf5bWFTXESMlLgVPR61vlxKyu1zJS7DBMGYlwQg7eySetDRc6t2mB7eBx/PnqimHdKyvrlRStghFMzxed9IAq7H7x96A23OE/LiyrmJhyUiB7zNnd1PiuPO+b+N6PHIBTr5ezx5Cds6WOqoltM3efpPfQvGVG8q01mkEfT1XZhZ5kuGZDMyCGRbsPWwFK5roSfFikgxgs9LHk5DWjihwKCOWmO1i9FfIm9KY6U7V2yodu56zf8oUEvoTjSQeMc9DButGNQ6yVHZH+FL6dS4K0YWOHIF9edVbludCRrA=" />
+</div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl45', 'ctl01', ['tctl00$MainContent$updPrices','MainContent_updPrices'], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        
+        
+
+        
+        <div class="row">
+            <div class="banner">
+            <a href="https://www.CheapestOil.co.uk">
+                <img id="_image2" itemprop="image" src="/images/logo.png" alt="Cheapest Oil Home Page" aria-label="Cheapest Oil Home Page" />
+            </a>
+
+            <div class="nav">
+                <a href="/">Home</a>                
+                <a href="/Heating-Oil-NI">Northern Ireland</a>               
+                <a href="/home-heating-england-scotland-wales/prices">Mainland UK</a>           
+                <a href="/articles/trend">Price Charts</a>  
+                <a href="/homeheating/articles">Features</a>
+                <a href="/homeheating/help">Help</a>
+                <div style="float:right;display:inline-block">
+                    
+
+                    <div id="pnlNotLoggedIn">
+	
+                        <a href="/account/Login">Login</a>
+                    
+</div>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+        
+
+    
+    
+
+
+
+
+
+    <div class="col_01">
+        <div class="col_06 padding_right">
+          
+            <div class="col_01 search small_margin_bottom">
+                <div class="filters">
+                    <h1>Search cheapest heating oil prices</h1>
+                    <h3>By town, postcode or distributor. Fuel Prices may vary by location.</h3>
+                    <div class="col_01">
+                        <input name="ctl00$MainContent$txtSearch" type="text" id="txtSearch" class="form-control" placeholder="Postcode, town or distributor" style="width: 50%;" />
+                        <span class="input-group-btn col_02">
+                            <input type="submit" name="ctl00$MainContent$btnSearch" value="Search" id="btnSearch" class="btn btn-primary" />
+                            <a href="Heating-Oil-NI" class="btn btn-secondary">Clear</a>
+                        </span>
+                    </div>
+                    <div class="col_01" style="color:red;">
+                        <b></b>
+                    </div>
+                </div>
+            </div>
+
+            <h3></h3>
+			
+            <div class="col_01 grid">
+
+           
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-4668288051585875"
+                     data-full-width-responsive="true"
+                     data-ad-slot="4671181874"
+                     data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+                <div id="MainContent_updPrices">
+	
+                        
+                        <div class="col_01 grid_filters">
+                            <div class="showing">
+                                <span id="MainContent_lblRecordCountTop" class="recordcounttop">Showing 1 to 20 of 84</span>
+                            </div>
+                            <div class="sort_by d-block d-md-none">
+                                <label for="MainContent_ddlSortBy" id="MainContent_lblSortBy">Sort By:</label>
+                                <select name="ctl00$MainContent$ddlSortBy" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$ddlSortBy\&#39;,\&#39;\&#39;)&#39;, 0)" id="MainContent_ddlSortBy">
+		<option value="0">300 Litres (Low to High)</option>
+		<option selected="selected" value="1">500 Litres (Low to High)</option>
+		<option value="2">900 Litres (Low to High)</option>
+		<option value="3">Supplier (A to Z)</option>
+		<option value="4">300 Litres (High to Low)</option>
+		<option value="5">500 Litres (High to Low)</option>
+		<option value="6">900 Litres (High to Low)</option>
+		<option value="7">Supplier (Z to A)</option>
+
+	</select>
+                            </div>
+                        </div>
+                        <div class="col_01 grid_headings">
+                            <div class="col_30p small_padding_right gridclickheadings"><input type="submit" name="ctl00$MainContent$btnSortCounty" value="Supplier" id="MainContent_btnSortCounty" class="gridclickheadings" /></div>
+                            <div class="col_04 small_padding_right small_padding_left"><h3>Delivers to</h3></div>
+                            <div class="col_15p small_padding_right small_padding_left gridclickheadings"><input type="submit" name="ctl00$MainContent$btnSort300" value="300 Litres" id="MainContent_btnSort300" class="gridclickheadings" /></div>
+                            <div class="col_15p small_padding_right small_padding_left gridclickheadings"><input type="submit" name="ctl00$MainContent$btnSort500" value="500 Litres" id="MainContent_btnSort500" class="gridclickheadings" />&nbsp;<svg width="16" height="16" fill="white" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"></path></svg></div>
+                            <div class="col_15p small_padding_left gridclickheadings"><input type="submit" name="ctl00$MainContent$btnSort900" value="900 Litres" id="MainContent_btnSort900" class="gridclickheadings" /></div>
+                        </div>
+
+                        <div class="col_01" id="grid1">
+                            
+                                    <div class="col_01 pricegrid">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/Bangor-Fuels">Bangor Fuels</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated 3 minutes ago</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptTop_lblDeliveryArea_0" class="delivery_area">BT1 to BT30, BT36 to BT41</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptTop_lblPrice300_0" class="price300">£&#49;&#52;&#55;.&#53;&#48;</span>
+                                            <span id="MainContent_rptTop_lblPrice300PPL_0" class="ppl">49.2 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptTop_lblPrice500_0" class="price500">£&#50;&#51;&#49;.&#50;&#50;</span>
+                                            <span id="MainContent_rptTop_lblPrice500PPL_0" class="ppl">46.2 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptTop_lblPrice900_0" class="price900">£&#52;&#49;&#48;.&#54;&#54;</span>
+                                            <span id="MainContent_rptTop_lblPrice900PPL_0" class="ppl">45.6 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegridalt">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/Alfa-Oils-Belfast">Alfa Oils Belfast</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated 1 hour ago</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptTop_lblDeliveryArea_1" class="delivery_area">BT1 to BT30, BT32</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptTop_lblPrice300_1" class="price300">£&#49;&#52;&#55;.&#53;&#48;</span>
+                                            <span id="MainContent_rptTop_lblPrice300PPL_1" class="ppl">49.2 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptTop_lblPrice500_1" class="price500">£&#50;&#51;&#49;.&#50;&#51;</span>
+                                            <span id="MainContent_rptTop_lblPrice500PPL_1" class="ppl">46.2 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptTop_lblPrice900_1" class="price900">£&#52;&#49;&#48;.&#54;&#56;</span>
+                                            <span id="MainContent_rptTop_lblPrice900PPL_1" class="ppl">45.6 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                
+                        </div>
+                         
+            
+                        
+                        <div class="col_01">
+							 
+							<ins class="adsbygoogle"
+								 style="display:block"
+								 data-ad-client="ca-pub-4668288051585875"
+								 data-full-width-responsive="true"
+								 data-ad-slot="4671181874"
+								 data-ad-format="auto"></ins>
+							<script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                            
+                            
+
+                        </div>
+                        
+
+                        
+                        <div class="col_01" id="grid2">
+                            
+                                
+                                    <div class="col_01 pricegridalt">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplierlong" href="distributors/Alfa-Oils-Carrickfergus">Alfa Oils Carrickfergus</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated 1 hour ago</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_0" class="delivery_area">BT36 to BT40</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_0" class="price300">£&#49;&#52;&#55;.&#53;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_0" class="ppl">49.2 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_0" class="price500">£&#50;&#51;&#49;.&#50;&#51;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_0" class="ppl">46.2 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_0" class="price900">£&#52;&#49;&#48;.&#54;&#56;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_0" class="ppl">45.6 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegrid">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/Wise-Oil">Wise Oil</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated 2 days ago</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_1" class="delivery_area">BT1 to BT30, BT33, BT36 to BT41</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_1" class="price300">£&#49;&#52;&#55;.&#57;&#57;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_1" class="ppl">49.3 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_1" class="price500">£&#50;&#51;&#49;.&#52;&#50;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_1" class="ppl">46.3 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_1" class="price900">£&#52;&#49;&#48;.&#55;&#57;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_1" class="ppl">45.6 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegridalt">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/Click-Oil">Click Oil</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated yesterday</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_2" class="delivery_area">BT1 to BT33</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_2" class="price300">£&#49;&#53;&#48;.&#50;&#54;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_2" class="ppl">50.1 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_2" class="price500">£&#50;&#51;&#51;.&#54;&#51;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_2" class="ppl">46.7 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_2" class="price900">£&#52;&#49;&#50;.&#57;&#55;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_2" class="ppl">45.9 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegrid">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplierlong" href="distributors/Portadown-Oil-Supplies">Portadown Oil Supplies</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated 1 hour ago</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_3" class="delivery_area">BT25, BT32, BT60 to BT67</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_3" class="price300">£&#49;&#53;&#50;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_3" class="ppl">50.7 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_3" class="price500">£&#50;&#51;&#57;.&#51;&#53;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_3" class="ppl">47.9 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_3" class="price900">£&#52;&#50;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_3" class="ppl">46.7 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegridalt">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/Lisburn-City-Oil">Lisburn City Oil</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated 1 hour ago</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_4" class="delivery_area">BT8, BT10, BT11, BT17, BT24 to BT29, BT66,BT67</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_4" class="price300">£&#49;&#53;&#50;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_4" class="ppl">50.7 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_4" class="price500">£&#50;&#51;&#57;.&#52;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_4" class="ppl">47.9 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_4" class="price900">£&#52;&#50;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_4" class="ppl">46.7 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegrid">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/Alfa-Oils-Craigavon">Alfa Oils Craigavon</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated 5 hours ago</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_5" class="delivery_area">BT60 to BT67</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_5" class="price300">£&#49;&#53;&#50;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_5" class="ppl">50.7 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_5" class="price500">£&#50;&#52;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_5" class="ppl">48 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_5" class="price900">£&#52;&#50;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_5" class="ppl">46.7 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegridalt">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplierlong" href="distributors/First-Choice-Fuels-Craigavon">First Choice Fuels-Craigavon</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated 22 hours ago</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_6" class="delivery_area">BT61 to BT67</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_6" class="price300">£&#49;&#53;&#50;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_6" class="ppl">50.7 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_6" class="price500">£&#50;&#52;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_6" class="ppl">48 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_6" class="price900">£&#52;&#50;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_6" class="ppl">46.7 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegrid">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplierlong" href="distributors/First-Choice-Fuels%e2%80%93Dungannon">First Choice Fuels–Dungannon</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated 22 hours ago</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_7" class="delivery_area">BT70,BT71</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_7" class="price300">£&#49;&#53;&#50;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_7" class="ppl">50.7 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_7" class="price500">£&#50;&#52;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_7" class="ppl">48 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_7" class="price900">£&#52;&#50;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_7" class="ppl">46.7 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegridalt">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplierlong" href="distributors/Heat-Direct-Banbridge">Heat Direct Banbridge</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated yesterday</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_8" class="delivery_area">BT25, BT32</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_8" class="price300">£&#49;&#53;&#50;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_8" class="ppl">50.7 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_8" class="price500">£&#50;&#52;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_8" class="ppl">48 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_8" class="price900">£&#52;&#50;&#49;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_8" class="ppl">46.8 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegrid">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/Heat-Direct-Belfast">Heat Direct Belfast</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated yesterday</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_9" class="delivery_area">BT1 to BT17</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_9" class="price300">£&#49;&#53;&#50;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_9" class="ppl">50.7 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_9" class="price500">£&#50;&#52;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_9" class="ppl">48 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_9" class="price900">£&#52;&#50;&#49;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_9" class="ppl">46.8 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegridalt">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplierlong" href="distributors/Heat-Direct-Craigavon">Heat Direct Craigavon</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated yesterday</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_10" class="delivery_area">BT62 to BT67</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_10" class="price300">£&#49;&#53;&#50;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_10" class="ppl">50.7 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_10" class="price500">£&#50;&#52;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_10" class="ppl">48 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_10" class="price900">£&#52;&#50;&#49;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_10" class="ppl">46.8 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegrid">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/Heat-Direct-Lisburn">Heat Direct Lisburn</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated yesterday</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_11" class="delivery_area">BT26 to BT29</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_11" class="price300">£&#49;&#53;&#50;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_11" class="ppl">50.7 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_11" class="price500">£&#50;&#52;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_11" class="ppl">48 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_11" class="price900">£&#52;&#50;&#49;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_11" class="ppl">46.8 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegridalt">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/Robinson-Fuels">Robinson Fuels</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated 5 hours ago</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_12" class="delivery_area">BT60 to BT67</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_12" class="price300">£&#49;&#53;&#50;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_12" class="ppl">50.7 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_12" class="price500">£&#50;&#52;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_12" class="ppl">48 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_12" class="price900">£&#52;&#50;&#49;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_12" class="ppl">46.8 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegrid">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/New-City-Fuels">New City Fuels</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated yesterday</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_13" class="delivery_area">BT32, BT61 to BT67</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_13" class="price300">£&#49;&#53;&#52;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_13" class="ppl">51.3 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_13" class="price500">£&#50;&#52;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_13" class="ppl">48 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_13" class="price900">£&#52;&#50;&#53;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_13" class="ppl">47.2 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegridalt">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/P-and-J-Fuels">P and J Fuels</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated yesterday</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_14" class="delivery_area">BT60, BT61, BT68</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_14" class="price300">£&#49;&#53;&#52;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_14" class="ppl">51.3 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_14" class="price500">£&#50;&#52;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_14" class="ppl">48 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_14" class="price900">£&#52;&#50;&#53;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_14" class="ppl">47.2 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegrid">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/Roy-Kennedy-Fuels">Roy Kennedy Fuels</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated yesterday</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_15" class="delivery_area">BT1 to BT17, BT25 to BT29, BT32, BT62 to BT67</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_15" class="price300">£&#49;&#53;&#53;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_15" class="ppl">51.7 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_15" class="price500">£&#50;&#52;&#49;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_15" class="ppl">48.2 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_15" class="price900">£&#52;&#51;&#48;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_15" class="ppl">47.8 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegridalt">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/Cheaper-Oil-Antrim">Cheaper Oil - Antrim</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated 11 days ago</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_16" class="delivery_area">BT1 to BT28, BT30, BT31, BT33, BT36 to BT40</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_16" class="price300">£&#49;&#53;&#52;.&#49;&#54;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_16" class="ppl">51.4 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_16" class="price500">£&#50;&#52;&#49;.&#49;&#57;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_16" class="ppl">48.2 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_16" class="price900">£&#52;&#50;&#57;.&#52;&#49;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_16" class="ppl">47.7 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col_01 pricegrid">
+                                        <div class="col_30p small_padding_right">
+                                            <div class="col_01"><a class="pricegridsupplier" href="distributors/Cheaper-Oil-Down">Cheaper Oil - Down</a></div>
+                                            
+                                            <div class="col_01 last_updated">Updated 11 days ago</div>
+                                        </div>
+                                        <div class="col_04 small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblDeliveryArea_17" class="delivery_area">BT29, BT41 to BT46, BT53, BT54, BT56,BT57</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice300_17" class="price300">£&#49;&#53;&#52;.&#49;&#54;</span>
+                                            <span id="MainContent_rptBottom_lblPrice300PPL_17" class="ppl">51.4 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_right small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice500_17" class="price500">£&#50;&#52;&#49;.&#49;&#57;</span>
+                                            <span id="MainContent_rptBottom_lblPrice500PPL_17" class="ppl">48.2 ppl *</span>
+                                        </div>
+                                        <div class="col_15p small_padding_left">
+                                            <span id="MainContent_rptBottom_lblPrice900_17" class="price900">£&#52;&#50;&#57;.&#52;&#49;</span>
+                                            <span id="MainContent_rptBottom_lblPrice900PPL_17" class="ppl">47.7 ppl *</span>
+                                        </div>
+                                    </div>
+                                
+                        </div>
+                        
+
+                    
+</div>
+            </div>
+            
+
+            
+            <div class="col_01 small_padding_top">
+                <p>* Pence per litre (PPL) prices are estimated and rounded to within one decimal place</p>
+            </div>
+
+            <div class="col_01 pager small_padding_top">
+                
+                    <div class="col_01">
+                        
+                            <div class="pagination pagination-lg">
+                                <ul>
+                                    <li class="disabled">
+                                        <a href='Heating-Oil-NI?Page=1' aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    
+                            
+                                    <li  class='active'>
+                                        <a href='Heating-Oil-NI?Page=1'>1</a>
+                                    </li>
+                            
+                                    <li >
+                                        <a href='Heating-Oil-NI?Page=2'>2</a>
+                                    </li>
+                            
+                                    <li >
+                                        <a href='Heating-Oil-NI?Page=3'>3</a>
+                                    </li>
+                            
+                                    <li >
+                                        <a href='Heating-Oil-NI?Page=4'>4</a>
+                                    </li>
+                            
+                                    <li >
+                                        <a href='Heating-Oil-NI?Page=5'>5</a>
+                                    </li>
+                            
+                                    <li class="">
+                                        <a href='Heating-Oil-NI?Page=2' aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        <ul class="float_right">
+                            <li  class='active'><a href='Heating-Oil-NI?Page=1' aria-label="Show 20 records">20</a></li>
+                            
+                            <li ><a href='Heating-Oil-NI?Page=1&ps=40' aria-label="Show 40 records">40</a></li>
+                            
+                            <li ><a href='Heating-Oil-NI?Page=1&ps=0' aria-label="Show all records">All</a></li>
+                            
+                        </ul>
+                        
+                    </div>
+                
+            </div>
+           
+
+            
+
+        </div>
+        
+
+        
+        
+
+        <div class="col_03 padding_left side_panel" style="margin-top:30px">
+           
+            <div class="col_01">
+                <div class="paraheading">Good time to buy?</div>
+                <h3>Our price charts can help with historical data from 2008</h3>
+                <div id ="chartContainer" style="clear:both;"></div>
+                <br />
+                <span id="MainContent_lblTrendDiscuss"></span>
+                <br />
+                <a href="https://www.cheapestoil.co.uk/articles/trend">View latest price trends</a>
+            </div>
+            
+            
+            
+            <section title="Cheapest heating oil price by postcode">
+                <div class="col_01 margin_top border_top" style="padding-top:10px">
+                    <ul class="nav nav-tabs" id="tabsMap" style="margin-bottom:20px">
+                        <li class="nav-item">
+                            <a class="nav-link" id="map300" href="#" style="padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);">300 Litres</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="map500" href="#" style="padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);">500 Litres</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" id="map900" href="#" style="padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);">900 Litres</a>
+                        </li>
+                    </ul>
+                    
+                    <h3>Cheapest quotes in Northern Ireland as of 01/06/2025</h3>
+                    <div style="font-size: x-small; text-align:right">
+                      <a class="mapPopup" style="cursor: pointer;">  
+                        <img src='\prices\2025\2025-06-01-900-Litres.svg' alt="Price per postcode" id="imgpricemap"/>
+                      </a><br/>
+                      Rounding may have been used. Map Based on <a href="https://commons.wikimedia.org/wiki/File:BT_postcode_area_map.svg" style="font-size: x-small" target="_blank">Richardguk</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0" style="font-size: x-small" target="_blank">CC BY-SA 3.0</a>, via Wikimedia Commons
+                    </div>
+                </div>
+            </section>
+
+            
+            <div class="col_01 margin_top border_top border_bottom padding_top">
+                <div class="paraheading">Oil Prices NI Quick links</div>
+                <div class="col_01"><a class="button_grey" href="Heating-Oil-NI?prices=Belfast">BT1 (Belfast)</a></div>
+                <div class="col_01"><a class="button_grey" href="Heating-Oil-NI?prices=Bangor">BT20 (Bangor)</a></div>
+                <div class="col_01"><a class="button_grey" href="Heating-Oil-NI?prices=Newtownards">BT22 (Newtownards)</a></div>
+                <div class="col_01"><a class="button_grey" href="Heating-Oil-NI?prices=Lisburn">BT28 (Lisburn)</a></div>
+                <div class="col_01"><a class="button_grey" href="Heating-Oil-NI?prices=Newry">BT34 (Newry)</a></div>
+                <div class="col_01"><a class="button_grey" href="Heating-Oil-NI?prices=Antrim">BT41 (Antrim)</a></div>
+                <div class="col_01"><a class="button_grey" href="Heating-Oil-NI?prices=BT47">BT47 (Londonderry / Derry)</a></div>
+                <div class="col_01"><a class="button_grey" href="Heating-Oil-NI?prices=BT48">BT48 (Londonderry / Derry)</a></div>
+                <div class="col_01"><a class="button_grey" href="Heating-Oil-NI?prices=Craigavon">BT64 (Craigavon)</a></div>
+                
+                
+                
+                
+                <br /><br />
+                We are based in Northern Ireland and have been comparing the price of fuels since 2008, surveying hundreds of heating oil prices every day.
+                <br /><br />
+                
+                <div class="col_01">
+                    <strong>Not ordering 300, 500 or 900 litres?</strong> 
+                    <a role="button" data-bs-toggle="collapse" href="#quantitywarning" aria-expanded="false" aria-controls="quantitywarning">Read this</a>
+                    <div class="alert alert-danger alert-dismissible NItopmessage collapse" id="quantitywarning" role="alert">          
+                        Some suppliers are charging more in pence per litre for quantities that are not 300, 500 or 900 litres as headlined on our site. For example, 1800 litres might cost considerably more than 2 deliveries of 900 litres.
+                        Please be aware of this when ordering quantities that are not 300, 500 or 900 litres.
+                    </div>
+                </div>
+                
+
+                
+                
+            </div>
+            
+
+            
+
+            
+            <div class="col_01 margin_top small_padding_bottom">
+                
+
+                
+            </div>
+            
+			
+			<div class="col_01 small_padding_bottom">
+                <div class="paraheading">Keep track of orders</div>
+                <p>You can now keep a record of every time you order heating oil, regardless of who you order from. This can help you work out how much you spend each year and when you might need to order next.</p>
+                <p><a class="button_grey" href="https://www.cheapestoil.co.uk/account/Login">Login</a></p>
+                <p><a class="button_grey" href="https://www.cheapestoil.co.uk/account/Register">Register</a></p>
+                <p><a class="button_grey" href="https://www.cheapestoil.co.uk/homeheating/TrackOrders">More info</a></p>
+            </div>
+          
+            <div class="col_01">
+                <div class="paraheading">Contact Us</div>
+                <p>Something you want to tell us? Or just give us some feedback?</p>
+                <a class="button_grey" href="https://www.cheapestoil.co.uk/homeheating/ContactUs">Get in touch</a>
+				<p></p>
+				<p><a href="news.htm" rel="nofollow">.</a></p>
+            </div>
+
+			
+        </div>
+        
+
+
+        
+    </div>
+    
+<div class="modal fade" id="imagemodal" tabindex="-1" aria-labelledby="PriceMap" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-xl" style="width:1038px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="\prices\2025\2025-06-01-900-Litres.svg" class="imagepreview" style="width: 1000px;height:800px" >
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+
+
+
+     
+
+    
+    <footer class="footer col_01">
+        <div class="col_01" >
+            <img src="/images/footer_logo.png" alt="" />
+        </div>
+        <div style="margin-top: 20px;" class="col_01" >
+            <div class="col_04" >
+                &copy;<p>2025<br />Cheapest Oil Ltd Reg. No. NI 071311.</p>
+                
+            </div>
+
+            <div class="col_04" >
+                <h4>Follow Us</h4>
+                <a role="button" href="https://www.facebook.com/CheapestOil" target="_blank" style="text-decoration:none;">Facebook</a>
+                <a role="button" href="https://www.twitter.com/CheapestOil" target="_blank" style="text-decoration:none;" >Twitter</a>
+            </div>
+
+            <div class="col_04" >
+                <h4>Useful Links</h4>
+                <a role="button" href="/homeheating/articles">Quick Guide</a>
+                <a role="button" href="/homeheating/ContactUs">Contact Us</a>
+                <a role="button" href="/news/About-Us">About Us</a>
+                <a role="button" href="/articles/FAQ">Faq's</a>
+            </div>
+            <div class="col_04" >
+                
+                <h4>Privacy Policy</h4>
+                <p>By visiting this website, you agree to give your consent to use cookies.</p>
+                <a href="/privacy">View Privacy Policy</a> 
+            </div>
+        </div>
+    </footer>
+    
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+//]]>
+</script>
+</form>
+
+
+
+    
+    <script type="text/javascript" src="/scripts/fusion/js/fusioncharts.js"></script>
+    <script type="text/javascript" src="/scripts/fusion/js/fusioncharts.theme.fint.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-ui-1.14.1.custom/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/Scripts/heatingoilni.min.js"></script>
+    
+    <script type="text/javascript">
+        FusionCharts.ready(function () {
+            var revenueChart = new FusionCharts({
+                type: 'area2d',
+                "renderAt": "chartContainer",
+                "width": "100%",
+                "height": "250px",
+                "dataFormat": "json",
+                "dataSource": {
+                    "chart": {
+                        "caption": "UK Heating Oil Prices",
+                        "subCaption": "900 Litres Price",
+                        "captionFontSize": "14",
+                        "subcaptionFontSize": "14",
+                        "theme": "fint",
+                        "yaxisname": "",
+                        "xaxisname": "",
+                        "yaxisminValue": "430",
+                        "yaxismaxValue": "440",
+                        "logoAlpha": "40",
+                        "logoScale": "100",
+                        "logoPosition": "CC",
+                        "numberPrefix": "£",
+                        "paletteColors": "#0075c2",
+                        "bgColor": "#ffffff",
+                        "showBorder": "0",
+                        "showCanvasBorder": "0",
+                        "plotBorderAlpha": "20",
+                        "usePlotGradientColor": "0",
+                        "plotFillAlpha": "50",
+                        "showXAxisLine": "1",
+                        "axisLineAlpha": "25",
+                        "divlineThickness": "1",
+                        "divLineIsDashed": "1",
+                        "divLineDashLen": "1",
+                        "divLineGapLen": "1",
+                        "showValues": "1",
+                        "showAlternateHGridColor": "1",
+                    },
+                    "data": [{"label": "Monday","value": "436.53",showLabel:"1"},{"label": "Tuesday","value": "436.09",showLabel:"1"},{"label": "Wednesday","value": "434.98",showLabel:"1"},{"label": "Thursday","value": "434.66",showLabel:"1"},{"label": "Friday","value": "434.42",showLabel:"1"},{"label": "Saturday","value": "433.74",showLabel:"1"},{"label": "Sunday","value": "433.81",showLabel:"1"}]
+                }
+
+            });
+            revenueChart.render();
+        })
+    </script>
+    
+
+    <script>
+        function changeMap(changeTo) {
+            var def = '\\prices\\2025\\2025-06-01-900-Litres.svg'.replace("-900-Litres", "-" + changeTo + "-Litres");
+                    $('#imgpricemap').attr('src', def);
+                    $('.imagepreview').attr('src', def);
+        }
+
+        $(function () {
+
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) == false) {
+                $('.mapPopup').on('click', function () {
+                    $('#imagemodal').modal('show');
+                });
+            }
+        });
+
+        function GetSupplierNames() {
+            var availableSuppliers = [
+                'AH Fuel Oils','Alfa Oils Belfast','Alfa Oils Carrickfergus','Alfa Oils Craigavon','Andys Oil','Armagh Oil Direct','Ballynahinch Fuel','Banbridge Fuels','Bangor Fuels','Beckett Fuels','Belfast And Down Oil','Blackhill Energy','Campsie Fuels','Capper Trading','Carlisle Fuels','Casey Oils','CB Fuels','CBS Fuels','Cheaper Oil - Antrim','Cheaper Oil - Armagh','Cheaper Oil - Derry','Cheaper Oil - Down','Cheaper Oil - Fermanagh','Cheaper Oil - Tyrone','Click Oil','Cross County Fuels','Discount Oil','Doherty Firewood And Fuels','Finney Brothers','First Choice Fuels-Craigavon','First Choice Fuels–Dungannon','Freemans Fuels','Fuel Direct','Fuels And Lubricants','Fuels4you','Global Oil','Heat Direct Banbridge','Heat Direct Belfast','Heat Direct Craigavon','Heat Direct Lisburn','Heating Oil Derry','Jennings Fuels','Kelly Oils','Kerr Fuels','Lagan Oils','Lagan Oils Carrick','Lagan Oils Glenavy','LCC Oil Online Ballymena','LCC Oil Online Cookstown','Lisburn City Oil','Lisburn Fuels','Lisburn Fuels Belfast','Lisburn Fuels Mid Ulster','Maguire Fuels','Mcginleys Gas And Oil','Mills Fuels','MK Domestics','Molloy Fuels Belfast','Morgan Fuels Newry','New City Fuels','Newry Oil','Oil Direct','P And J Fuels','P Doherty Fuel Oils Castlederg','Port Fuels','Portadown Oil Supplies','Premier Fuels','R W Sloane Fuels','Riverside Oils','Robinson Fuels','Roy Kennedy Fuels','Scotts Fuels','Scotts Fuels Lderry','Scotts Fuels Northwest','Six Mile Fuels','Solo Direct','Springtown Fuels','Stanley Gordon Fuels','Theoilco','Theoilco Craigavon','Theoilco Lisburn','Theoilco Newtownabbey','Top Oil Newry','Tweed Fuels','Vale Fuels','Wise Oil'
+            ];
+            return availableSuppliers;
+        }
+
+        
+    </script>
+
+
+
+</body>
+</html>
