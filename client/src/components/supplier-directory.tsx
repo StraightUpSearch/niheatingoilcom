@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { MapPin, Phone, Star, Fuel } from "lucide-react";
+import { MapPin, Phone, Star, Truck } from "lucide-react";
 
 interface SupplierDirectoryProps {
   showHeader?: boolean;
@@ -94,7 +94,7 @@ export default function SupplierDirectory({ showHeader = true }: SupplierDirecto
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4 mb-4">
                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                      <Fuel className="h-6 w-6 text-white" />
+                      <Truck className="h-6 w-6 text-white" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">{supplier.name}</h3>

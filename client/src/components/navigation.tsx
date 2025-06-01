@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Fuel } from "lucide-react";
+import { Menu, Truck } from "lucide-react";
 
 export default function Navigation() {
   const { user, isAuthenticated } = useAuth();
@@ -41,7 +41,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-4">
             <Link href="/" className="flex items-center space-x-2">
-              <Fuel className="h-8 w-8 text-primary" />
+              <Truck className="h-8 w-8 text-primary" />
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-gray-900">NI Heating Oil</span>
                 <span className="text-xs text-green-600 font-medium">By locals, for locals</span>
