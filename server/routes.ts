@@ -229,6 +229,43 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Lead capture endpoint (no authentication required)
+  app.post('/api/leads', async (req, res) => {
+    try {
+      const validatedData = insertLeadSchema.parse(req.body);
+      const lead = await storage.createLead(validatedData);
+      
+      // TODO: Send notification email via SendGrid to admin
+      // TODO: Send confirmation email to customer
+      
+      res.status(201).json({ 
+        message: "Lead captured successfully", 
+        id: lead.id 
+      });
+    } catch (error) {
+      console.error("Error creating lead:", error);
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ 
+          message: "Invalid lead data", 
+          errors: error.errors 
+        });
+      }
+      res.status(500).json({ message: "Failed to capture lead" });
+    }
+  });
+
+  // Admin endpoint to view leads (requires authentication)
+  app.get('/api/admin/leads', isAuthenticated, async (req: any, res) => {
+    try {
+      const status = req.query.status as string;
+      const leads = await storage.getLeads(status);
+      res.json(leads);
+    } catch (error) {
+      console.error("Error fetching leads:", error);
+      res.status(500).json({ message: "Failed to fetch leads" });
+    }
+  });
+
   // SEO routes
   app.get('/sitemap.xml', (req, res) => {
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

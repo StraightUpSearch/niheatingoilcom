@@ -36,10 +36,31 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Here you would submit to your backend API
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const leadData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        postcode: formData.postcode,
+        volume: parseInt(formData.volume),
+        urgency: formData.urgency || null,
+        notes: formData.notes || null,
+        supplierName: supplier?.name || null,
+        supplierPrice: supplier?.price || null,
+        status: "new"
+      };
+
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(leadData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit lead');
+      }
       
       setIsSubmitted(true);
       setIsSubmitting(false);
@@ -54,7 +75,9 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
         });
       }, 3000);
     } catch (error) {
+      console.error('Error submitting lead:', error);
       setIsSubmitting(false);
+      // TODO: Show error toast
     }
   };
 
