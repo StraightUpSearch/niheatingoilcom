@@ -172,7 +172,14 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
             </div>
           </div>
           <div className="text-xs text-blue-600 text-center mt-2">
-            Source: Consumer Council for Northern Ireland official weekly data
+            <a 
+              href="https://www.consumercouncil.org.uk/home-heating/price-checker/29-may-2025" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-blue-800 underline"
+            >
+              Source: Consumer Council for Northern Ireland official weekly data (29 May 2025)
+            </a>
           </div>
         </div>
 

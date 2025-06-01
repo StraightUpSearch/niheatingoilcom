@@ -6,18 +6,26 @@ import { z } from "zod";
 import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema } from "@shared/schema";
 import { scrapeAllSuppliers, initializeScraping } from "./scraper";
 import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
+import { initializeWeeklyUrlDetection, consumerCouncilUrlDetector } from "./consumerCouncilUrlDetector";
 
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Auth middleware
   await setupAuth(app);
 
-  // Initialize Consumer Council scraping (official government data)
+  // Initialize Consumer Council scraping and URL detection
   setTimeout(() => {
     initializeConsumerCouncilScraping().catch(error => {
       console.error("Consumer Council scraping initialization failed:", error);
     });
   }, 1000);
+
+  // Initialize weekly URL detection for latest Consumer Council data
+  setTimeout(() => {
+    initializeWeeklyUrlDetection().catch(error => {
+      console.error("Consumer Council URL detection initialization failed:", error);
+    });
+  }, 2000);
 
 
 
