@@ -136,8 +136,12 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
   };
 
   const handlePostcodeChange = (value: string) => {
-    // Remove any "BT" prefix if user tries to type it
-    const cleanInput = value.replace(/^BT/i, '').trim();
+    // Handle both "BT1 5GS" and "1 5GS" formats
+    let cleanInput = value.trim();
+    if (cleanInput.toUpperCase().startsWith('BT')) {
+      cleanInput = cleanInput.substring(2).trim();
+    }
+    
     setPostcodeInput(cleanInput);
     setPostcodeError("");
     
@@ -157,7 +161,7 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
     if (cleanInput.length >= 3) {
       const fullPostcode = `BT${cleanInput}`;
       if (!validatePostcode(cleanInput)) {
-        setPostcodeError("Please enter a valid Northern Ireland postcode (e.g. BT1 5GS)");
+        setPostcodeError("Please enter a valid Northern Ireland postcode");
       }
     }
   };
@@ -227,7 +231,7 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
           <div className="space-y-4 sm:space-y-6">
             <div>
               <label htmlFor="postcode-input" className="block text-lg sm:text-xl font-semibold text-gray-800 mb-3">
-                Enter Your Postcode
+                Enter Your Northern Ireland Postcode
               </label>
               <div className="relative">
                 <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-lg sm:text-xl text-gray-600 font-semibold pointer-events-none z-10">
@@ -237,7 +241,7 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
                   ref={inputRef}
                   id="postcode-input"
                   type="text"
-                  placeholder="1 5GS"
+                  placeholder="Type: 1 5GS or BT1 5GS"
                   value={postcodeInput}
                   onChange={(e) => handlePostcodeChange(e.target.value.toUpperCase())}
                   onFocus={() => postcodeInput && setShowSuggestions(true)}
@@ -283,7 +287,7 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
                 </p>
               )}
               <p id="postcode-help" className="text-sm sm:text-base text-gray-600 mt-2">
-                Enter your Northern Ireland postcode (e.g. 1 5GS for BT1 5GS)
+                <strong>You can type either way:</strong> "1 5GS" or the full "BT1 5GS" - both work perfectly fine!
               </p>
             </div>
             <div>
