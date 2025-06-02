@@ -3,9 +3,8 @@ import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ArrowUpDown, Star, MessageSquare, MapPin, Clock, TrendingUp, Phone, Globe, Award, Fuel, Building2 } from "lucide-react";
+import { ArrowUpDown, Star, MessageSquare, MapPin, Clock, TrendingUp, Phone, Globe, Award, Fuel } from "lucide-react";
 import LeadCaptureModal from "./lead-capture-modal";
-import SupplierClaimModal from "./supplier-claim-modal";
 
 interface EnhancedPricingTableProps {
   searchParams?: {
@@ -21,8 +20,6 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
   const [selectedSupplier, setSelectedSupplier] = useState<any>(null);
   const [showLeadModal, setShowLeadModal] = useState(false);
-  const [showClaimModal, setShowClaimModal] = useState(false);
-  const [claimSupplierName, setClaimSupplierName] = useState("");
 
   // Calculate prices for different volumes based on base price
   const calculateVolumePrice = (basePrice: number, baseVolume: number, targetVolume: number) => {
