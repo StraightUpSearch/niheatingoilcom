@@ -29,9 +29,11 @@ const northernIrishPhrases = [
   "dead on!", "fair play to them!", "chuffed to bits!", "over the moon!",
   "That's some quare deal!", "That's a belter of a bargain!", "Happy days!",
   "Class act!", "Brilliant so it is!", "Pure dead brilliant!", "Sound as a pound!",
-  "That's the bee's knees!", "Absolutely raging... with excitement!", "Top notch!",
-  "Can't believe their luck!", "Right pleased!", "Made up!", "Buzzing!",
-  "That's cracking!", "What a steal!", "Delighted!", "Proper chuffed!"
+  "That's the bee's knees!", "At's a geg!", "Right pleased!", "Made up!", "Buzzing!",
+  "That's cracking!", "What a steal!", "Delighted!", "Proper chuffed!",
+  "Oh mummy, what a deal!", "At's us nai with the savings!", "Pure class!",
+  "Scundered... with how much they saved!", "Bout ye? Just saved a fortune!",
+  "That's some craic!", "Fair dinkum deal!", "Can't bate it!"
 ];
 
 const actionPhrases = [
