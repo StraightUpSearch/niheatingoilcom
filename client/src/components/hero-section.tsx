@@ -62,36 +62,37 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto">
           <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
               Compare Heating Oil Prices 
               <span className="block text-yellow-300 animate-pulse">Across Northern Ireland</span>
             </h1>
-            <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
-              Built by locals, for locals. No messing about - we'll show you the craic with heating oil prices across all six counties. Save your pennies and keep your house toasty!
+            <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-blue-100 max-w-3xl mx-auto px-4 sm:px-0">
+              <span className="block sm:inline">Built by locals, for locals.</span>
+              <span className="block sm:inline"> No messing about - we'll show you the craic with heating oil prices across all six counties. Save your pennies and keep your house toasty!</span>
             </p>
           </div>
           
           {/* Animated Stats Bar */}
-          <div className={`grid grid-cols-3 gap-4 mb-8 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <div className="text-2xl font-bold text-yellow-300">{animatedStats.suppliers}+</div>
-              <div className="text-sm text-blue-100">Oil Suppliers</div>
+          <div className={`grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8 px-4 sm:px-0 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 sm:p-4 border border-white/20">
+              <div className="text-lg sm:text-2xl font-bold text-yellow-300">{animatedStats.suppliers}+</div>
+              <div className="text-xs sm:text-sm text-blue-100">Oil Suppliers</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <div className="text-2xl font-bold text-green-300">£{animatedStats.savings}+</div>
-              <div className="text-sm text-blue-100">Average Savings</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 sm:p-4 border border-white/20">
+              <div className="text-lg sm:text-2xl font-bold text-green-300">£{animatedStats.savings}+</div>
+              <div className="text-xs sm:text-sm text-blue-100">Average Savings</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <div className="text-2xl font-bold text-blue-300">{animatedStats.users}+</div>
-              <div className="text-sm text-blue-100">Happy Users</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 sm:p-4 border border-white/20">
+              <div className="text-lg sm:text-2xl font-bold text-blue-300">{animatedStats.users}+</div>
+              <div className="text-xs sm:text-sm text-blue-100">Happy Users</div>
             </div>
           </div>
           
-          <div className={`bg-white rounded-xl p-6 shadow-2xl max-w-2xl mx-auto mb-8 transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-10 opacity-0 scale-95'} hover:shadow-3xl hover:scale-105 transition-transform`}>
+          <div className={`bg-white rounded-xl p-4 sm:p-6 shadow-2xl max-w-2xl mx-auto mb-6 sm:mb-8 mx-4 sm:mx-auto transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-10 opacity-0 scale-95'} hover:shadow-3xl hover:scale-105 transition-transform`}>
             <PriceSearchForm onSearch={onSearch} />
           </div>
           
-          <div className={`flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-blue-100 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div className={`flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-blue-100 px-4 sm:px-0 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="flex items-center space-x-2 hover:text-white transition-colors group">
               <Check className="h-5 w-5 group-hover:scale-110 transition-transform" />
               <span>Official Consumer Council Data</span>
