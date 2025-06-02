@@ -190,21 +190,16 @@ export default function EnhancedEnquiryForm() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="postcode">Northern Ireland Postcode</Label>
-              <div className="relative">
-                <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                <Input
-                  id="postcode"
-                  {...form.register("postcode")}
-                  placeholder="BT1 1AA"
-                  className="pl-10"
-                  disabled={enquiryMutation.isPending}
-                  style={{ textTransform: 'uppercase' }}
-                />
-              </div>
-              {form.formState.errors.postcode && (
-                <p className="text-sm text-red-600">{form.formState.errors.postcode.message}</p>
-              )}
+              <SmartPostcodeInput
+                id="postcode"
+                value={form.watch("postcode")}
+                onChange={(value) => form.setValue("postcode", value)}
+                onBlur={() => form.trigger("postcode")}
+                disabled={enquiryMutation.isPending}
+                error={form.formState.errors.postcode?.message}
+                label="Northern Ireland Postcode"
+                placeholder="BT1 1AA"
+              />
             </div>
 
             <div className="space-y-2">
