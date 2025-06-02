@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "wouter";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { MapPin, Phone, Globe, Star, MessageSquare } from "lucide-react";
+import { MapPin, Phone, Globe, Star, MessageSquare, ExternalLink } from "lucide-react";
 
 export default function SuppliersPage() {
   const { data: suppliers, isLoading } = useQuery({
@@ -114,11 +115,19 @@ export default function SuppliersPage() {
                       </div>
                     </div>
 
-                    {/* Action Button */}
-                    <Button className="w-full" variant="outline">
-                      <MessageSquare className="h-4 w-4 mr-2" />
-                      Get Quote
-                    </Button>
+                    {/* Action Buttons */}
+                    <div className="space-y-2">
+                      <Link href={`/suppliers/${supplier.id}`}>
+                        <Button className="w-full" variant="default">
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          View Profile
+                        </Button>
+                      </Link>
+                      <Button className="w-full" variant="outline">
+                        <MessageSquare className="h-4 w-4 mr-2" />
+                        Get Quote
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

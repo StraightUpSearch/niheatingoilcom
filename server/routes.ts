@@ -77,11 +77,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get('/api/suppliers/:id', async (req, res) => {
     try {
       const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ message: "Invalid supplier ID" });
+      }
+
       const supplier = await storage.getSupplierById(id);
       if (!supplier) {
         return res.status(404).json({ message: "Supplier not found" });
       }
-      res.json(supplier);
+
+      // Get recent prices for this supplier
+      const prices = await storage.getPricesBySupplier(id);
+      
+      res.json({
+        ...supplier,
+        prices: prices,
+        averageRating: parseFloat(supplier.rating || "0"),
+        totalReviews: supplier.reviewCount || 0,
+        lastUpdated: supplier.lastScraped ? new Date(supplier.lastScraped).toLocaleDateString() : "Recently"
+      });
     } catch (error) {
       console.error("Error fetching supplier:", error);
       res.status(500).json({ message: "Failed to fetch supplier" });
@@ -413,6 +427,26 @@ Crawl-delay: 1`;
     } catch (error) {
       console.error("Error during manual scraping:", error);
       res.status(500).json({ message: "Failed to complete scraping" });
+    }
+  });
+
+  // Supplier claim submissions
+  app.post('/api/supplier-claims', async (req, res) => {
+    try {
+      const validatedData = insertSupplierClaimSchema.parse(req.body);
+      const claim = await storage.createSupplierClaim(validatedData);
+      
+      res.json({
+        message: "Claim submitted successfully",
+        claimId: claim.id,
+        status: "pending"
+      });
+    } catch (error) {
+      console.error("Error creating supplier claim:", error);
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ message: "Invalid claim data", errors: error.errors });
+      }
+      res.status(500).json({ message: "Failed to submit claim" });
     }
   });
 
