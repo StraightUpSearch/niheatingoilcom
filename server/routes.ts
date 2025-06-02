@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { setupAuth, isAuthenticated } from "./replitAuth";
 import { z } from "zod";
-import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema } from "@shared/schema";
+import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema, insertSupplierClaimSchema } from "@shared/schema";
 import { scrapeAllSuppliers, initializeScraping } from "./scraper";
 import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
 import { initializeWeeklyUrlDetection, consumerCouncilUrlDetector } from "./consumerCouncilUrlDetector";
@@ -292,6 +292,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
       res.status(500).json({ message: "Failed to capture lead" });
+    }
+  });
+
+  // Supplier claim submission endpoint
+  app.post('/api/supplier-claims', async (req, res) => {
+    try {
+      const validatedData = insertSupplierClaimSchema.parse(req.body);
+      const claim = await storage.createSupplierClaim(validatedData);
+      
+      // Send email notification to admin about new supplier claim
+      try {
+        const { sendAdminAlert } = await import('./emailService');
+        await sendAdminAlert({
+          id: claim.id,
+          name: claim.contactName,
+          email: claim.email,
+          phone: claim.phone,
+          postcode: 'N/A',
+          volume: 0,
+          urgency: 'medium',
+          notes: `Supplier Claim: ${claim.supplierName} - ${claim.message}`,
+          supplierName: claim.supplierName,
+          supplierPrice: claim.currentPricing || 'N/A',
+          status: 'new',
+          createdAt: claim.createdAt,
+          updatedAt: claim.updatedAt
+        });
+        console.log(`Admin notification sent for supplier claim ${claim.id}`);
+      } catch (emailError) {
+        console.error("Failed to send admin notification:", emailError);
+      }
+      
+      res.status(201).json({ 
+        message: "Supplier claim submitted successfully", 
+        id: claim.id 
+      });
+    } catch (error) {
+      console.error("Error creating supplier claim:", error);
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ 
+          message: "Invalid claim data", 
+          errors: error.errors 
+        });
+      }
+      res.status(500).json({ message: "Failed to submit supplier claim" });
     }
   });
 

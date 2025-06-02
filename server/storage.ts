@@ -66,6 +66,11 @@ export interface IStorage {
   createLead(lead: InsertLead): Promise<Lead>;
   getLeads(status?: string): Promise<Lead[]>;
   updateLeadStatus(id: number, status: string): Promise<Lead>;
+
+  // Supplier claim operations
+  createSupplierClaim(claim: InsertSupplierClaim): Promise<SupplierClaim>;
+  getSupplierClaims(status?: string): Promise<SupplierClaim[]>;
+  updateSupplierClaimStatus(id: number, status: string): Promise<SupplierClaim>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -453,6 +458,38 @@ export class DatabaseStorage implements IStorage {
       .where(eq(leads.id, id))
       .returning();
     return updatedLead;
+  }
+
+  // Supplier claim operations
+  async createSupplierClaim(claim: InsertSupplierClaim): Promise<SupplierClaim> {
+    const [newClaim] = await db
+      .insert(supplierClaims)
+      .values(claim)
+      .returning();
+    return newClaim;
+  }
+
+  async getSupplierClaims(status?: string): Promise<SupplierClaim[]> {
+    if (status) {
+      return await db
+        .select()
+        .from(supplierClaims)
+        .where(eq(supplierClaims.status, status))
+        .orderBy(desc(supplierClaims.createdAt));
+    }
+    return await db
+      .select()
+      .from(supplierClaims)
+      .orderBy(desc(supplierClaims.createdAt));
+  }
+
+  async updateSupplierClaimStatus(id: number, status: string): Promise<SupplierClaim> {
+    const [updatedClaim] = await db
+      .update(supplierClaims)
+      .set({ status, updatedAt: new Date() })
+      .where(eq(supplierClaims.id, id))
+      .returning();
+    return updatedClaim;
   }
 }
 
