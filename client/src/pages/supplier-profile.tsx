@@ -8,7 +8,7 @@ import { Star, MapPin, Phone, Globe, Clock, TrendingUp, Award, Shield } from "lu
 import { Supplier, OilPrice } from "@shared/schema";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { useState } from "react";
-import { ClaimListingDialog } from "@/components/claim-listing-dialog";
+// import { ClaimListingDialog } from "@/components/claim-listing-dialog";
 
 interface SupplierWithPrices extends Supplier {
   prices: OilPrice[];
@@ -73,12 +73,10 @@ export default function SupplierProfile() {
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-2">
                 <h1 className="text-3xl lg:text-4xl font-bold">{supplier.name}</h1>
-                {supplier.verified && (
-                  <Badge className="bg-green-500 hover:bg-green-600 text-white">
-                    <Shield className="h-3 w-3 mr-1" />
-                    Verified
-                  </Badge>
-                )}
+                <Badge className="bg-blue-500 hover:bg-blue-600 text-white">
+                  <Shield className="h-3 w-3 mr-1" />
+                  Listed
+                </Badge>
               </div>
               
               <div className="flex flex-wrap items-center gap-4 text-blue-100">
@@ -276,24 +274,22 @@ export default function SupplierProfile() {
                   <Award className="h-4 w-4 text-blue-600" />
                   <span className="text-gray-600">NI Heating Oil Network</span>
                 </div>
-                {supplier.verified && (
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="h-4 w-4 text-green-600" />
-                    <span className="text-gray-600">Verified Supplier</span>
-                  </div>
-                )}
+                <div className="flex items-center gap-2 text-sm">
+                  <Shield className="h-4 w-4 text-blue-600" />
+                  <span className="text-gray-600">Listed Supplier</span>
+                </div>
               </CardContent>
             </Card>
           </div>
         </div>
       </div>
 
-      {/* Claim Listing Dialog */}
-      <ClaimListingDialog 
+      {/* Claim Listing Dialog - Temporarily disabled */}
+      {/* <ClaimListingDialog 
         supplier={supplier}
         open={showClaimDialog}
         onOpenChange={setShowClaimDialog}
-      />
+      /> */}
     </div>
   );
 }

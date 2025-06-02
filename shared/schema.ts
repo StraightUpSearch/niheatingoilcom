@@ -48,7 +48,6 @@ export const suppliers = pgTable("suppliers", {
   rating: decimal("rating", { precision: 3, scale: 2 }),
   reviewCount: integer("review_count").default(0),
   isActive: boolean("is_active").default(true),
-  verified: boolean("verified").default(false),
   lastScraped: timestamp("last_scraped"),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
@@ -63,7 +62,6 @@ export const oilPrices = pgTable("oil_prices", {
   pricePerLitre: decimal("price_per_litre", { precision: 8, scale: 3 }).notNull(),
   includesVat: boolean("includes_vat").default(true),
   postcode: varchar("postcode", { length: 50 }), // specific postcode or location name if applicable
-  date: timestamp("date").defaultNow(),
   createdAt: timestamp("created_at").defaultNow(),
 });
 

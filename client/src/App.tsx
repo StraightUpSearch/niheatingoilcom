@@ -9,6 +9,7 @@ import Landing from "@/pages/landing";
 import AuthPage from "@/pages/auth-page";
 import Compare from "@/pages/compare";
 import Suppliers from "@/pages/suppliers";
+import SupplierProfile from "@/pages/supplier-profile";
 
 function Router() {
   return (
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/auth" component={AuthPage} />
       <Route path="/compare" component={Compare} />
       <Route path="/suppliers" component={Suppliers} />
+      <Route path="/suppliers/:supplierId" component={SupplierProfile} />
       <Route component={NotFound} />
     </Switch>
   );
