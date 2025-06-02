@@ -57,6 +57,57 @@ export default function SocialProofNotifications() {
   const [currentNotification, setCurrentNotification] = useState<NotificationData | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
+  const [scrollDepth, setScrollDepth] = useState(0);
+  const [sessionEngagement, setSessionEngagement] = useState({
+    timeOnPage: 0,
+    interactions: 0,
+    scrollEvents: 0
+  });
+  const [hasShownInitial, setHasShownInitial] = useState(false);
+
+  // Track scroll depth and user interactions
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const depth = Math.round((scrollTop / docHeight) * 100);
+      
+      setScrollDepth(depth);
+      setSessionEngagement(prev => ({
+        ...prev,
+        scrollEvents: prev.scrollEvents + 1
+      }));
+    };
+
+    const handleInteraction = () => {
+      setSessionEngagement(prev => ({
+        ...prev,
+        interactions: prev.interactions + 1
+      }));
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('click', handleInteraction);
+    window.addEventListener('keydown', handleInteraction);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('click', handleInteraction);
+      window.removeEventListener('keydown', handleInteraction);
+    };
+  }, []);
+
+  // Track time on page
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSessionEngagement(prev => ({
+        ...prev,
+        timeOnPage: prev.timeOnPage + 1
+      }));
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (isDismissed) return;
@@ -73,21 +124,35 @@ export default function SocialProofNotifications() {
       }, 6000);
     };
 
-    // Show first notification after 5 seconds
-    const initialTimer = setTimeout(showNotification, 5000);
+    // Check if user is engaged
+    const isEngaged = sessionEngagement.timeOnPage > 15 || 
+                     sessionEngagement.interactions > 3 || 
+                     sessionEngagement.scrollEvents > 8;
 
-    // Then show every 25 seconds
-    const intervalTimer = setInterval(() => {
-      if (!isVisible) {
+    // Show first notification when user is engaged AND has scrolled 30%+
+    if (!hasShownInitial && isEngaged && scrollDepth > 30) {
+      const timer = setTimeout(() => {
         showNotification();
-      }
-    }, 25000);
+        setHasShownInitial(true);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
 
-    return () => {
-      clearTimeout(initialTimer);
-      clearInterval(intervalTimer);
-    };
-  }, [isVisible, isDismissed]);
+    // Show subsequent notifications for highly engaged users only
+    if (hasShownInitial && isEngaged && sessionEngagement.timeOnPage > 45) {
+      const interval = setInterval(() => {
+        // Only show if user is active, has scrolled significantly, and not currently visible
+        if (!isVisible && scrollDepth > 50) {
+          // 25% probability every 30 seconds for engaged users
+          if (Math.random() < 0.25) {
+            showNotification();
+          }
+        }
+      }, 30000);
+
+      return () => clearInterval(interval);
+    }
+  }, [scrollDepth, sessionEngagement, hasShownInitial, isVisible, isDismissed]);
 
   const handleDismiss = () => {
     setIsVisible(false);
