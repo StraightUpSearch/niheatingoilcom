@@ -3,33 +3,20 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { useAuth } from "@/hooks/useAuth";
+import { AuthProvider } from "@/hooks/use-auth";
 import NotFound from "@/pages/not-found";
 import Landing from "@/pages/landing";
-import Home from "@/pages/home";
+import AuthPage from "@/pages/auth-page";
 import Compare from "@/pages/compare";
-import Alerts from "@/pages/alerts";
 import Suppliers from "@/pages/suppliers";
 
 function Router() {
-  const { isAuthenticated, isLoading } = useAuth();
-
   return (
     <Switch>
-      {isLoading || !isAuthenticated ? (
-        <>
-          <Route path="/" component={Landing} />
-          <Route path="/compare" component={Compare} />
-          <Route path="/suppliers" component={Suppliers} />
-        </>
-      ) : (
-        <>
-          <Route path="/" component={Home} />
-          <Route path="/compare" component={Compare} />
-          <Route path="/alerts" component={Alerts} />
-          <Route path="/suppliers" component={Suppliers} />
-        </>
-      )}
+      <Route path="/" component={Landing} />
+      <Route path="/auth" component={AuthPage} />
+      <Route path="/compare" component={Compare} />
+      <Route path="/suppliers" component={Suppliers} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -38,10 +25,12 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
+      <AuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </AuthProvider>
     </QueryClientProvider>
   );
 }
