@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ArrowUpDown, Star, MessageSquare, MapPin, Clock, TrendingUp } from "lucide-react";
+import { ArrowUpDown, Star, MessageSquare, MapPin, Clock, TrendingUp, Phone, Globe, Award, Fuel } from "lucide-react";
 import LeadCaptureModal from "./lead-capture-modal";
 
 interface EnhancedPricingTableProps {
@@ -144,8 +144,28 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
   if (isLoading) {
     return (
       <div className="space-y-4">
+        <div className="text-center py-8">
+          <div className="inline-flex items-center space-x-2 text-primary">
+            <Fuel className="h-6 w-6 animate-bounce" />
+            <span className="text-lg font-medium">Loading heating oil prices...</span>
+          </div>
+        </div>
         {[...Array(5)].map((_, i) => (
-          <Skeleton key={i} className="h-16 w-full" />
+          <div key={i} className="bg-white rounded-lg border border-gray-200 p-4 animate-pulse">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <div className="h-10 w-10 bg-gray-200 rounded-full"></div>
+                <div>
+                  <div className="h-4 bg-gray-200 rounded w-32 mb-2"></div>
+                  <div className="h-3 bg-gray-200 rounded w-24"></div>
+                </div>
+              </div>
+              <div className="text-right">
+                <div className="h-6 bg-gray-200 rounded w-20 mb-1"></div>
+                <div className="h-3 bg-gray-200 rounded w-16"></div>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     );
