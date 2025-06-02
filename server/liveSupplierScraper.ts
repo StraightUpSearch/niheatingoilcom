@@ -25,43 +25,51 @@ async function scrapeCheapestOilNI(): Promise<any[]> {
     
     const suppliers = [];
     
-    // Parse table rows more accurately based on the structure shown in the screenshot
-    const tableRowPattern = /<tr[^>]*>.*?<\/tr>/gi;
-    const rows = html.match(tableRowPattern) || [];
+    // Look for supplier data in the HTML - based on cheapestoil.co.uk structure
+    const supplierLines = html.split('\n');
+    let currentSupplier: any = null;
     
-    for (const row of rows) {
-      // Extract supplier name from the first column
-      const supplierNameMatch = row.match(/>([^<>]*(?:Oil|Fuel|Energy|Heating|Direct)[^<>]*)</i);
-      if (!supplierNameMatch) continue;
+    for (const line of supplierLines) {
+      // Look for supplier names in various formats
+      const supplierPatterns = [
+        /([A-Za-z\s&]+(?:Oil|Fuel|Energy|Heating|Direct)[A-Za-z\s]*)/i,
+        /title="([^"]*(?:Oil|Fuel|Energy|Heating|Direct)[^"]*)">/i,
+        />([^<>]*(?:Oil|Fuel|Energy|Heating|Direct)[^<>]*)</i
+      ];
       
-      const supplierName = supplierNameMatch[1].trim();
-      if (supplierName.length < 3 || supplierName.length > 60) continue;
-      
-      // Extract prices - look for specific price patterns in table cells
-      const priceCells = row.match(/>£(\d+(?:\.\d{2})?)</g) || [];
-      
-      if (priceCells.length >= 3) {
-        const prices = priceCells.map(cell => {
-          const match = cell.match(/£(\d+(?:\.\d{2})?)/);
-          return match ? parseFloat(match[1]) : 0;
-        });
-        
-        // Based on cheapestoil.co.uk structure: 300L, 500L, 900L columns
-        const supplier = {
-          name: supplierName,
-          location: 'Northern Ireland',
-          prices: {
-            volume300: prices[0] || null,  // 300L price
-            volume500: prices[1] || null,  // 500L price
-            volume900: prices[2] || null   // 900L price
+      for (const pattern of supplierPatterns) {
+        const match = line.match(pattern);
+        if (match && match[1]) {
+          const name = match[1].trim();
+          if (name.length > 3 && name.length < 60 && !name.includes('http')) {
+            currentSupplier = {
+              name: name,
+              location: 'Northern Ireland',
+              prices: {}
+            };
+            break;
           }
-        };
-        
-        // Only add if we have realistic prices (£140-£170 for 300L range)
-        if (supplier.prices.volume300 && 
-            supplier.prices.volume300 >= 140 && 
-            supplier.prices.volume300 <= 180) {
-          suppliers.push(supplier);
+        }
+      }
+      
+      // Look for price data on the same or nearby lines
+      if (currentSupplier) {
+        const priceMatches = line.match(/£(\d{2,3}(?:\.\d{2})?)/g);
+        if (priceMatches && priceMatches.length >= 3) {
+          const prices = priceMatches.map(p => parseFloat(p.replace('£', '')));
+          
+          // Map to volumes based on typical table structure
+          currentSupplier.prices = {
+            volume300: prices[0],
+            volume500: prices[1], 
+            volume900: prices[2]
+          };
+          
+          // Validate price ranges are realistic for Northern Ireland
+          if (prices[0] >= 140 && prices[0] <= 180) {
+            suppliers.push(currentSupplier);
+          }
+          currentSupplier = null;
         }
       }
     }

@@ -223,7 +223,7 @@ export default function AnimatedPriceTrend({ volume = 300, className = "" }: Ani
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
         >
-          <DollarSign className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+          <span className="text-lg font-bold text-blue-600 dark:text-blue-400">£</span>
           <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
             {((currentData.average / volume) * 100).toFixed(1)}p per litre
           </span>

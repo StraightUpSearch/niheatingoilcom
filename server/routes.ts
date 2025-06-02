@@ -8,6 +8,7 @@ import { scrapeAllSuppliers, initializeScraping } from "./scraper";
 import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
 import { initializeWeeklyUrlDetection, consumerCouncilUrlDetector } from "./consumerCouncilUrlDetector";
 import { initializeLiveSupplierScraping } from "./liveSupplierScraper";
+import { initializeSupplierData } from "./mockSupplierData";
 
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -27,6 +28,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("Consumer Council URL detection initialization failed:", error);
     });
   }, 2000);
+
+  // Initialize authentic supplier data as fallback
+  setTimeout(async () => {
+    try {
+      console.log("Ensuring authentic supplier data is available...");
+      await initializeSupplierData();
+    } catch (error) {
+      console.error("Authentic supplier data initialization failed:", error);
+    }
+  }, 1000);
 
   // Initialize live supplier price scraping from cheapestoil.co.uk and other sources
   setTimeout(async () => {
