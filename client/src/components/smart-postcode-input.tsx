@@ -259,9 +259,14 @@ export default function SmartPostcodeInput({
               }, 200);
             }}
             placeholder={placeholder}
-            className="pl-10 pr-12"
+            className="pl-10 pr-12 text-gray-900 bg-white"
             disabled={disabled}
-            style={{ textTransform: 'uppercase' }}
+            style={{ 
+              textTransform: 'uppercase',
+              color: '#111827 !important',
+              backgroundColor: '#ffffff !important',
+              fontSize: '16px' // Prevents zoom on iOS
+            }}
           />
           
           {geoLoading && (
