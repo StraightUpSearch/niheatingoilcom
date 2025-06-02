@@ -102,6 +102,18 @@ export default function Footer() {
           <p>
             &copy; 2024 OilPrice NI. All rights reserved. Independent price comparison service for Northern Ireland heating oil consumers.
           </p>
+          <p className="text-sm mt-2">
+            BT postcode mappings verified through{" "}
+            <a 
+              href="https://en.wikipedia.org/wiki/BT_postcode_area" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline"
+            >
+              Wikipedia research
+            </a>
+            {" "}— because we do our homework for ye! At's us nai with proper County mapping.
+          </p>
         </div>
       </div>
     </footer>

@@ -276,17 +276,16 @@ export class DatabaseStorage implements IStorage {
         const btNumber = parseInt(btAreaMatch[1]);
         relevantRegionalAverages = regionalAverages.filter(result => {
           const supplierName = result.supplier.name.toLowerCase();
-          // Map BT areas to regions based on Northern Ireland council areas
-          if (btNumber >= 51 && btNumber <= 57) return supplierName.includes('causeway coast');
-          if (btNumber >= 1 && btNumber <= 10) return supplierName.includes('belfast');
-          if (btNumber >= 11 && btNumber <= 18) return supplierName.includes('lisburn') || supplierName.includes('castlereagh');
-          if (btNumber >= 19 && btNumber <= 23) return supplierName.includes('ards') || supplierName.includes('north down');
-          if (btNumber >= 24 && btNumber <= 35) return supplierName.includes('newry') || supplierName.includes('mourne') || supplierName.includes('down');
-          if (btNumber >= 36 && btNumber <= 45) return supplierName.includes('antrim') || supplierName.includes('newtownabbey');
-          if (btNumber >= 46 && btNumber <= 49) return supplierName.includes('mid') && supplierName.includes('east antrim');
-          if (btNumber >= 60 && btNumber <= 71) return supplierName.includes('armagh') || supplierName.includes('banbridge') || supplierName.includes('craigavon');
-          if (btNumber >= 74 && btNumber <= 82) return supplierName.includes('mid ulster');
-          if (btNumber >= 92 && btNumber <= 94) return supplierName.includes('fermanagh') || supplierName.includes('omagh');
+          // Map BT postcodes to counties using Wikipedia research (because we do our homework!)
+          // Source: https://en.wikipedia.org/wiki/BT_postcode_area - BT53 8PX = County Antrim (Ballymoney)
+          if (btNumber >= 1 && btNumber <= 17 || btNumber === 29) return supplierName.includes('belfast'); // Belfast, County Antrim
+          if (btNumber >= 18 && btNumber <= 23) return supplierName.includes('ards') || supplierName.includes('north down'); // County Down
+          if (btNumber >= 24 && btNumber <= 35) return supplierName.includes('newry') || supplierName.includes('mourne') || supplierName.includes('down'); // County Down
+          if (btNumber >= 36 && btNumber <= 49 || btNumber === 58) return supplierName.includes('antrim') || supplierName.includes('newtownabbey'); // County Antrim
+          if (btNumber >= 51 && btNumber <= 57) return supplierName.includes('causeway coast'); // County Antrim (includes BT53)
+          if (btNumber >= 60 && btNumber <= 71) return supplierName.includes('armagh') || supplierName.includes('banbridge') || supplierName.includes('craigavon'); // County Armagh
+          if (btNumber >= 74 && btNumber <= 82) return supplierName.includes('mid ulster') || supplierName.includes('tyrone'); // Counties Tyrone/Londonderry
+          if (btNumber >= 92 && btNumber <= 94) return supplierName.includes('fermanagh') || supplierName.includes('omagh'); // County Fermanagh
           return false;
         });
       }

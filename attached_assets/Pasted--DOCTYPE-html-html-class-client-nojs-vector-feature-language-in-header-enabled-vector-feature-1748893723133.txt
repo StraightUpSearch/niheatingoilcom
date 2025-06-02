@@ -1,0 +1,1780 @@
+
+<!DOCTYPE html>
+<html class="client-nojs vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>BT postcode area - Wikipedia</title>
+<script>(function(){var className="client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available";var cookie=document.cookie.match(/(?:^|; )enwikimwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"950aec82-ec7e-47af-9382-e2787eba34cd","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"BT_postcode_area","wgTitle":"BT postcode area","wgCurRevisionId":1293357513,"wgRevisionId":1293357513,"wgArticleId":6675514,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages using gadget WikiMiniAtlas","Articles with short description","Short description matches Wikidata","Use British English from October 2013","Use dmy dates from January 2024","Coordinates on Wikidata","Short description is different from Wikidata","All articles with unsourced statements","Articles with unsourced statements from June 2009","Postcode areas of the United Kingdom","Communications in Northern Ireland"],"wgPageViewLanguage":"en","wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"BT_postcode_area","wgRelevantArticleId":6675514,"wgIsProbablyEditable":true,"wgRelevantPageIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgNoticeProject":"wikipedia","wgCiteReferencePreviewsActive":false,"wgFlaggedRevsParams":{"tags":{"status":{"levels":1}}},"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgPopupsFlags":0,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgMFDisplayWikibaseDescriptions":{"search":true,"watchlist":true,"tagline":false,"nearby":true},"wgWMESchemaEditAttemptStepOversample":false,"wgWMEPageLength":20000,"wgCoordinates":{"lat":54.603,"lon":-5.923},"wgEditSubmitButtonLabelPublish":true,"wgULSPosition":"interlanguage","wgULSisCompactLinksEnabled":false,"wgVector2022LanguageInHeader":true,"wgULSisLanguageSelectorEmpty":false,"wgWikibaseItemId":"Q4836780","wgCheckUserClientHintsHeadersJsApi":["brands","architecture","bitness","fullVersionList","mobile","model","platform","platformVersion"],"GEHomepageSuggestedEditsEnableTopics":true,"wgGETopicsMatchModeEnabled":false,"wgGELevelingUpEnabledForUser":false};
+RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","skins.vector.search.codex.styles":"ready","skins.vector.styles":"ready","skins.vector.icons":"ready","jquery.tablesorter.styles":"ready","jquery.makeCollapsible.styles":"ready","ext.wikimediamessages.styles":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","wikibase.client.init":"ready"};RLPAGEMODULES=["ext.cite.ux-enhancements","mediawiki.page.media","site","mediawiki.page.ready","jquery.tablesorter","jquery.makeCollapsible","mediawiki.toc","skins.vector.js","ext.centralNotice.geoIP","ext.centralNotice.startUp","ext.gadget.ReferenceTooltips","ext.gadget.switcher","ext.gadget.WikiMiniAtlas","ext.urlShortener.toolbar","ext.centralauth.centralautologin","mmv.bootstrap","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.echo.centralauth","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.cx.uls.quick.actions","wikibase.client.vector-2022","ext.checkUser.clientHints","ext.quicksurveys.init","ext.growthExperiments.SuggestedEditSession"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=ext.cite.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediamessages.styles%7Cjquery.makeCollapsible.styles%7Cjquery.tablesorter.styles%7Cskins.vector.icons%2Cstyles%7Cskins.vector.search.codex.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector-2022">
+<script async="" src="/w/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector-2022"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector-2022">
+<meta name="generator" content="MediaWiki 1.45.0-wmf.3">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1120">
+<meta property="og:title" content="BT postcode area - Wikipedia">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="//upload.wikimedia.org">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="//en.m.wikipedia.org/wiki/BT_postcode_area">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=BT_postcode_area&amp;action=edit">
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png">
+<link rel="icon" href="/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/rest.php/v1/search" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/BT_postcode_area">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<link rel="dns-prefetch" href="auth.wikimedia.org">
+</head>
+<body class="skin--responsive skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-BT_postcode_area rootpage-BT_postcode_area skin-vector-2022 action-view"><a class="mw-jump-link" href="#bodyContent">Jump to content</a>
+<div class="vector-header-container">
+	<header class="vector-header mw-header no-font-mode-scale">
+		<div class="vector-header-start">
+			<nav class="vector-main-menu-landmark" aria-label="Site">
+				
+<div id="vector-main-menu-dropdown" class="vector-dropdown vector-main-menu-dropdown vector-button-flush-left vector-button-flush-right"  title="Main menu" >
+	<input type="checkbox" id="vector-main-menu-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-main-menu-dropdown" class="vector-dropdown-checkbox "  aria-label="Main menu"  >
+	<label id="vector-main-menu-dropdown-label" for="vector-main-menu-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-menu mw-ui-icon-wikimedia-menu"></span>
+
+<span class="vector-dropdown-label-text">Main menu</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+				<div id="vector-main-menu-unpinned-container" class="vector-unpinned-container">
+		
+<div id="vector-main-menu" class="vector-main-menu vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-main-menu-pinnable-header vector-pinnable-header-unpinned"
+	data-feature-name="main-menu-pinned"
+	data-pinnable-element-id="vector-main-menu"
+	data-pinned-container-id="vector-main-menu-pinned-container"
+	data-unpinned-container-id="vector-main-menu-unpinned-container"
+>
+	<div class="vector-pinnable-header-label">Main menu</div>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-main-menu.pin">move to sidebar</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-main-menu.unpin">hide</button>
+</div>
+
+	
+<div id="p-navigation" class="vector-menu mw-portlet mw-portlet-navigation"  >
+	<div class="vector-menu-heading">
+		Navigation
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z"><span>Main page</span></a></li><li id="n-contents" class="mw-list-item"><a href="/wiki/Wikipedia:Contents" title="Guides to browsing Wikipedia"><span>Contents</span></a></li><li id="n-currentevents" class="mw-list-item"><a href="/wiki/Portal:Current_events" title="Articles related to current events"><span>Current events</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/wiki/Special:Random" title="Visit a randomly selected article [x]" accesskey="x"><span>Random article</span></a></li><li id="n-aboutsite" class="mw-list-item"><a href="/wiki/Wikipedia:About" title="Learn about Wikipedia and how it works"><span>About Wikipedia</span></a></li><li id="n-contactpage" class="mw-list-item"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia"><span>Contact us</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+	
+	
+<div id="p-interaction" class="vector-menu mw-portlet mw-portlet-interaction"  >
+	<div class="vector-menu-heading">
+		Contribute
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-help" class="mw-list-item"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia"><span>Help</span></a></li><li id="n-introduction" class="mw-list-item"><a href="/wiki/Help:Introduction" title="Learn how to edit Wikipedia"><span>Learn to edit</span></a></li><li id="n-portal" class="mw-list-item"><a href="/wiki/Wikipedia:Community_portal" title="The hub for editors"><span>Community portal</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/wiki/Special:RecentChanges" title="A list of recent changes to Wikipedia [r]" accesskey="r"><span>Recent changes</span></a></li><li id="n-upload" class="mw-list-item"><a href="/wiki/Wikipedia:File_upload_wizard" title="Add images or other media for use on Wikipedia"><span>Upload file</span></a></li><li id="n-specialpages" class="mw-list-item"><a href="/wiki/Special:SpecialPages"><span>Special pages</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+</div>
+
+				</div>
+
+	</div>
+</div>
+
+		</nav>
+			
+<a href="/wiki/Main_Page" class="mw-logo">
+	<img class="mw-logo-icon" src="/static/images/icons/wikipedia.png" alt="" aria-hidden="true" height="50" width="50">
+	<span class="mw-logo-container skin-invert">
+		<img class="mw-logo-wordmark" alt="Wikipedia" src="/static/images/mobile/copyright/wikipedia-wordmark-en.svg" style="width: 7.5em; height: 1.125em;">
+		<img class="mw-logo-tagline" alt="The Free Encyclopedia" src="/static/images/mobile/copyright/wikipedia-tagline-en.svg" width="117" height="13" style="width: 7.3125em; height: 0.8125em;">
+	</span>
+</a>
+
+		</div>
+		<div class="vector-header-end">
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-collapses vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<a href="/wiki/Special:Search" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only search-toggle" title="Search Wikipedia [f]" accesskey="f"><span class="vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search"></span>
+
+<span>Search</span>
+	</a>
+	<div class="vector-typeahead-search-container">
+		<div class="cdx-typeahead-search cdx-typeahead-search--show-thumbnail cdx-typeahead-search--auto-expand-width">
+			<form action="/w/index.php" id="searchform" class="cdx-search-input cdx-search-input--has-end-button">
+				<div id="simpleSearch" class="cdx-search-input__input-wrapper"  data-search-loc="header-moved">
+					<div class="cdx-text-input cdx-text-input--has-start-icon">
+						<input
+							class="cdx-text-input__input mw-searchInput"
+							 type="search" name="search" placeholder="Search Wikipedia" aria-label="Search Wikipedia" autocapitalize="sentences" spellcheck="false" title="Search Wikipedia [f]" accesskey="f" id="searchInput"
+							>
+						<span class="cdx-text-input__icon cdx-text-input__start-icon"></span>
+					</div>
+					<input type="hidden" name="title" value="Special:Search">
+				</div>
+				<button class="cdx-button cdx-search-input__end-button">Search</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+			<nav class="vector-user-links vector-user-links-wide" aria-label="Personal tools">
+	<div class="vector-user-links-main">
+	
+<div id="p-vector-user-menu-preferences" class="vector-menu mw-portlet emptyPortlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+	
+<div id="p-vector-user-menu-userpage" class="vector-menu mw-portlet emptyPortlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+	<nav class="vector-appearance-landmark" aria-label="Appearance">
+		
+<div id="vector-appearance-dropdown" class="vector-dropdown "  title="Change the appearance of the page&#039;s font size, width, and color" >
+	<input type="checkbox" id="vector-appearance-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-appearance-dropdown" class="vector-dropdown-checkbox "  aria-label="Appearance"  >
+	<label id="vector-appearance-dropdown-label" for="vector-appearance-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-appearance mw-ui-icon-wikimedia-appearance"></span>
+
+<span class="vector-dropdown-label-text">Appearance</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+			<div id="vector-appearance-unpinned-container" class="vector-unpinned-container">
+				
+			</div>
+		
+	</div>
+</div>
+
+	</nav>
+	
+<div id="p-vector-user-menu-notifications" class="vector-menu mw-portlet emptyPortlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+	
+<div id="p-vector-user-menu-overflow" class="vector-menu mw-portlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			<li id="pt-sitesupport-2" class="user-links-collapsible-item mw-list-item user-links-collapsible-item"><a data-mw="interface" href="https://donate.wikimedia.org/?wmf_source=donate&amp;wmf_medium=sidebar&amp;wmf_campaign=en.wikipedia.org&amp;uselang=en" class=""><span>Donate</span></a>
+</li>
+<li id="pt-createaccount-2" class="user-links-collapsible-item mw-list-item user-links-collapsible-item"><a data-mw="interface" href="/w/index.php?title=Special:CreateAccount&amp;returnto=BT+postcode+area" title="You are encouraged to create an account and log in; however, it is not mandatory" class=""><span>Create account</span></a>
+</li>
+<li id="pt-login-2" class="user-links-collapsible-item mw-list-item user-links-collapsible-item"><a data-mw="interface" href="/w/index.php?title=Special:UserLogin&amp;returnto=BT+postcode+area" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o" class=""><span>Log in</span></a>
+</li>
+
+			
+		</ul>
+		
+	</div>
+</div>
+
+	</div>
+	
+<div id="vector-user-links-dropdown" class="vector-dropdown vector-user-menu vector-button-flush-right vector-user-menu-logged-out"  title="Log in and more options" >
+	<input type="checkbox" id="vector-user-links-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-user-links-dropdown" class="vector-dropdown-checkbox "  aria-label="Personal tools"  >
+	<label id="vector-user-links-dropdown-label" for="vector-user-links-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-ellipsis mw-ui-icon-wikimedia-ellipsis"></span>
+
+<span class="vector-dropdown-label-text">Personal tools</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+		
+<div id="p-personal" class="vector-menu mw-portlet mw-portlet-personal user-links-collapsible-item"  title="User menu" >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-sitesupport" class="user-links-collapsible-item mw-list-item"><a href="https://donate.wikimedia.org/?wmf_source=donate&amp;wmf_medium=sidebar&amp;wmf_campaign=en.wikipedia.org&amp;uselang=en"><span>Donate</span></a></li><li id="pt-createaccount" class="user-links-collapsible-item mw-list-item"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=BT+postcode+area" title="You are encouraged to create an account and log in; however, it is not mandatory"><span class="vector-icon mw-ui-icon-userAdd mw-ui-icon-wikimedia-userAdd"></span> <span>Create account</span></a></li><li id="pt-login" class="user-links-collapsible-item mw-list-item"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=BT+postcode+area" title="You&#039;re encouraged to log in; however, it&#039;s not mandatory. [o]" accesskey="o"><span class="vector-icon mw-ui-icon-logIn mw-ui-icon-wikimedia-logIn"></span> <span>Log in</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-user-menu-anon-editor" class="vector-menu mw-portlet mw-portlet-user-menu-anon-editor"  >
+	<div class="vector-menu-heading">
+		Pages for logged out editors <a href="/wiki/Help:Introduction" aria-label="Learn more about editing"><span>learn more</span></a>
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-anoncontribs" class="mw-list-item"><a href="/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y"><span>Contributions</span></a></li><li id="pt-anontalk" class="mw-list-item"><a href="/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n"><span>Talk</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+	
+	</div>
+</div>
+
+</nav>
+
+		</div>
+	</header>
+</div>
+<div class="mw-page-container">
+	<div class="mw-page-container-inner">
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"><!-- CentralNotice --></div>
+		</div>
+		<div class="vector-column-start">
+			<div class="vector-main-menu-container">
+		<div id="mw-navigation">
+			<nav id="mw-panel" class="vector-main-menu-landmark" aria-label="Site">
+				<div id="vector-main-menu-pinned-container" class="vector-pinned-container">
+				
+				</div>
+		</nav>
+		</div>
+	</div>
+	<div class="vector-sticky-pinned-container">
+				<nav id="mw-panel-toc" aria-label="Contents" data-event-name="ui.sidebar-toc" class="mw-table-of-contents-container vector-toc-landmark">
+					<div id="vector-toc-pinned-container" class="vector-pinned-container">
+					<div id="vector-toc" class="vector-toc vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-toc-pinnable-header vector-pinnable-header-pinned"
+	data-feature-name="toc-pinned"
+	data-pinnable-element-id="vector-toc"
+	
+	
+>
+	<h2 class="vector-pinnable-header-label">Contents</h2>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-toc.pin">move to sidebar</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-toc.unpin">hide</button>
+</div>
+
+
+	<ul class="vector-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text"
+			class="vector-toc-list-item vector-toc-level-1">
+			<a href="#" class="vector-toc-link">
+				<div class="vector-toc-text">(Top)</div>
+			</a>
+		</li>
+		<li id="toc-Coverage"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Coverage">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">1</span>
+				<span>Coverage</span>
+			</div>
+		</a>
+		
+			<button aria-controls="toc-Coverage-sublist" class="cdx-button cdx-button--weight-quiet cdx-button--icon-only vector-toc-toggle">
+				<span class="vector-icon mw-ui-icon-wikimedia-expand"></span>
+				<span>Toggle Coverage subsection</span>
+			</button>
+		
+		<ul id="toc-Coverage-sublist" class="vector-toc-list">
+			<li id="toc-Belfast"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Belfast">
+				<div class="vector-toc-text">
+					<span class="vector-toc-numb">1.1</span>
+					<span>Belfast</span>
+				</div>
+			</a>
+			
+			<ul id="toc-Belfast-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Rest_of_Northern_Ireland"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Rest_of_Northern_Ireland">
+				<div class="vector-toc-text">
+					<span class="vector-toc-numb">1.2</span>
+					<span>Rest of Northern Ireland</span>
+				</div>
+			</a>
+			
+			<ul id="toc-Rest_of_Northern_Ireland-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+	</ul>
+	</li>
+	<li id="toc-Map"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Map">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">2</span>
+				<span>Map</span>
+			</div>
+		</a>
+		
+		<ul id="toc-Map-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+	<li id="toc-See_also"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#See_also">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">3</span>
+				<span>See also</span>
+			</div>
+		</a>
+		
+		<ul id="toc-See_also-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+	<li id="toc-References"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#References">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">4</span>
+				<span>References</span>
+			</div>
+		</a>
+		
+		<ul id="toc-References-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+	<li id="toc-External_links"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#External_links">
+			<div class="vector-toc-text">
+				<span class="vector-toc-numb">5</span>
+				<span>External links</span>
+			</div>
+		</a>
+		
+		<ul id="toc-External_links-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+</ul>
+</div>
+
+					</div>
+		</nav>
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body">
+				<header class="mw-body-header vector-page-titlebar no-font-mode-scale">
+					<nav aria-label="Contents" class="vector-toc-landmark">
+						
+<div id="vector-page-titlebar-toc" class="vector-dropdown vector-page-titlebar-toc vector-button-flush-left"  title="Table of Contents" >
+	<input type="checkbox" id="vector-page-titlebar-toc-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-page-titlebar-toc" class="vector-dropdown-checkbox "  aria-label="Toggle the table of contents"  >
+	<label id="vector-page-titlebar-toc-label" for="vector-page-titlebar-toc-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-listBullet mw-ui-icon-wikimedia-listBullet"></span>
+
+<span class="vector-dropdown-label-text">Toggle the table of contents</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+							<div id="vector-page-titlebar-toc-unpinned-container" class="vector-unpinned-container">
+			</div>
+		
+	</div>
+</div>
+
+					</nav>
+					<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">BT postcode area</span></h1>
+							
+<div id="p-lang-btn" class="vector-dropdown mw-portlet mw-portlet-lang"  >
+	<input type="checkbox" id="p-lang-btn-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-lang-btn" class="vector-dropdown-checkbox mw-interlanguage-selector" aria-label="Go to an article in another language. Available in 1 language"   >
+	<label id="p-lang-btn-label" for="p-lang-btn-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--action-progressive mw-portlet-lang-heading-1" aria-hidden="true"  ><span class="vector-icon mw-ui-icon-language-progressive mw-ui-icon-wikimedia-language-progressive"></span>
+
+<span class="vector-dropdown-label-text">1 language</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+		<div class="vector-menu-content">
+			
+			<ul class="vector-menu-content-list">
+				
+				<li class="interlanguage-link interwiki-simple mw-list-item"><a href="https://simple.wikipedia.org/wiki/BT_postcode_area" title="BT postcode area – Simple English" lang="en-simple" hreflang="en-simple" data-title="BT postcode area" data-language-autonym="Simple English" data-language-local-name="Simple English" class="interlanguage-link-target"><span>Simple English</span></a></li>
+			</ul>
+			<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q4836780#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>
+		</div>
+
+	</div>
+</div>
+</header>
+				<div class="vector-page-toolbar vector-feature-custom-font-size-clientpref--excluded">
+					<div class="vector-page-toolbar-container">
+						<div id="left-navigation">
+							<nav aria-label="Namespaces">
+								
+<div id="p-associated-pages" class="vector-menu vector-menu-tabs mw-portlet mw-portlet-associated-pages"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-main" class="selected vector-tab-noicon mw-list-item"><a href="/wiki/BT_postcode_area" title="View the content page [c]" accesskey="c"><span>Article</span></a></li><li id="ca-talk" class="vector-tab-noicon mw-list-item"><a href="/wiki/Talk:BT_postcode_area" rel="discussion" title="Discuss improvements to the content page [t]" accesskey="t"><span>Talk</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+								
+<div id="vector-variants-dropdown" class="vector-dropdown emptyPortlet"  >
+	<input type="checkbox" id="vector-variants-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-variants-dropdown" class="vector-dropdown-checkbox " aria-label="Change language variant"   >
+	<label id="vector-variants-dropdown-label" for="vector-variants-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet" aria-hidden="true"  ><span class="vector-dropdown-label-text">English</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+					
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+				
+	</div>
+</div>
+
+							</nav>
+						</div>
+						<div id="right-navigation" class="vector-collapsible">
+							<nav aria-label="Views">
+								
+<div id="p-views" class="vector-menu vector-menu-tabs mw-portlet mw-portlet-views"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected vector-tab-noicon mw-list-item"><a href="/wiki/BT_postcode_area"><span>Read</span></a></li><li id="ca-edit" class="vector-tab-noicon mw-list-item"><a href="/w/index.php?title=BT_postcode_area&amp;action=edit" title="Edit this page [e]" accesskey="e"><span>Edit</span></a></li><li id="ca-history" class="vector-tab-noicon mw-list-item"><a href="/w/index.php?title=BT_postcode_area&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+							</nav>
+				
+							<nav class="vector-page-tools-landmark" aria-label="Page tools">
+								
+<div id="vector-page-tools-dropdown" class="vector-dropdown vector-page-tools-dropdown"  >
+	<input type="checkbox" id="vector-page-tools-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-page-tools-dropdown" class="vector-dropdown-checkbox "  aria-label="Tools"  >
+	<label id="vector-page-tools-dropdown-label" for="vector-page-tools-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet" aria-hidden="true"  ><span class="vector-dropdown-label-text">Tools</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+									<div id="vector-page-tools-unpinned-container" class="vector-unpinned-container">
+						
+<div id="vector-page-tools" class="vector-page-tools vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-page-tools-pinnable-header vector-pinnable-header-unpinned"
+	data-feature-name="page-tools-pinned"
+	data-pinnable-element-id="vector-page-tools"
+	data-pinned-container-id="vector-page-tools-pinned-container"
+	data-unpinned-container-id="vector-page-tools-unpinned-container"
+>
+	<div class="vector-pinnable-header-label">Tools</div>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-page-tools.pin">move to sidebar</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-page-tools.unpin">hide</button>
+</div>
+
+	
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-has-collapsible-items"  title="More options" >
+	<div class="vector-menu-heading">
+		Actions
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="/wiki/BT_postcode_area"><span>Read</span></a></li><li id="ca-more-edit" class="vector-more-collapsible-item mw-list-item"><a href="/w/index.php?title=BT_postcode_area&amp;action=edit" title="Edit this page [e]" accesskey="e"><span>Edit</span></a></li><li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/w/index.php?title=BT_postcode_area&amp;action=history"><span>View history</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-tb" class="vector-menu mw-portlet mw-portlet-tb"  >
+	<div class="vector-menu-heading">
+		General
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/wiki/Special:WhatLinksHere/BT_postcode_area" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/wiki/Special:RecentChangesLinked/BT_postcode_area" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k"><span>Related changes</span></a></li><li id="t-upload" class="mw-list-item"><a href="//en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u"><span>Upload file</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/index.php?title=BT_postcode_area&amp;oldid=1293357513" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/index.php?title=BT_postcode_area&amp;action=info" title="More information about this page"><span>Page information</span></a></li><li id="t-cite" class="mw-list-item"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=BT_postcode_area&amp;id=1293357513&amp;wpFormIdentifier=titleform" title="Information on how to cite this page"><span>Cite this page</span></a></li><li id="t-urlshortener" class="mw-list-item"><a href="/w/index.php?title=Special:UrlShortener&amp;url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FBT_postcode_area"><span>Get shortened URL</span></a></li><li id="t-urlshortener-qrcode" class="mw-list-item"><a href="/w/index.php?title=Special:QrCode&amp;url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FBT_postcode_area"><span>Download QR code</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-coll-print_export" class="vector-menu mw-portlet mw-portlet-coll-print_export"  >
+	<div class="vector-menu-heading">
+		Print/export
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="coll-download-as-rl" class="mw-list-item"><a href="/w/index.php?title=Special:DownloadAsPdf&amp;page=BT_postcode_area&amp;action=show-download-screen" title="Download this page as a PDF file"><span>Download as PDF</span></a></li><li id="t-print" class="mw-list-item"><a href="/w/index.php?title=BT_postcode_area&amp;printable=yes" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-wikibase-otherprojects" class="vector-menu mw-portlet mw-portlet-wikibase-otherprojects"  >
+	<div class="vector-menu-heading">
+		In other projects
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-wikibase" class="wb-otherproject-link wb-otherproject-wikibase-dataitem mw-list-item"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q4836780" title="Structured data on this page hosted by Wikidata [g]" accesskey="g"><span>Wikidata item</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+</div>
+
+									</div>
+				
+	</div>
+</div>
+
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="vector-column-end no-font-mode-scale">
+					<div class="vector-sticky-pinned-container">
+						<nav class="vector-page-tools-landmark" aria-label="Page tools">
+							<div id="vector-page-tools-pinned-container" class="vector-pinned-container">
+				
+							</div>
+		</nav>
+						<nav class="vector-appearance-landmark" aria-label="Appearance">
+							<div id="vector-appearance-pinned-container" class="vector-pinned-container">
+				<div id="vector-appearance" class="vector-appearance vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-appearance-pinnable-header vector-pinnable-header-pinned"
+	data-feature-name="appearance-pinned"
+	data-pinnable-element-id="vector-appearance"
+	data-pinned-container-id="vector-appearance-pinned-container"
+	data-unpinned-container-id="vector-appearance-unpinned-container"
+>
+	<div class="vector-pinnable-header-label">Appearance</div>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-appearance.pin">move to sidebar</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-appearance.unpin">hide</button>
+</div>
+
+
+</div>
+
+							</div>
+		</nav>
+					</div>
+				</div>
+				<div id="bodyContent" class="vector-body" aria-labelledby="firstHeading" data-mw-ve-target-container>
+					<div class="vector-body-before-content">
+							<div class="mw-indicators">
+		<div id="mw-indicator-coordinates" class="mw-indicator"><div class="mw-parser-output"><span id="coordinates"><a href="/wiki/Geographic_coordinate_system" title="Geographic coordinate system">Coordinates</a>: <style data-mw-deduplicate="TemplateStyles:r1156832818">.mw-parser-output .geo-default,.mw-parser-output .geo-dms,.mw-parser-output .geo-dec{display:inline}.mw-parser-output .geo-nondefault,.mw-parser-output .geo-multi-punct,.mw-parser-output .geo-inline-hidden{display:none}.mw-parser-output .longitude,.mw-parser-output .latitude{white-space:nowrap}</style><span class="plainlinks nourlexpansion"><a class="external text" href="https://geohack.toolforge.org/geohack.php?pagename=BT_postcode_area&amp;params=54.603_N_5.923_W_region:GB_scale:500000"><span class="geo-nondefault"><span class="geo-dms" title="Maps, aerial photos, and other data for this location"><span class="latitude">54°36′11″N</span> <span class="longitude">5°55′23″W</span></span></span><span class="geo-multi-punct">&#xfeff; / &#xfeff;</span><span class="geo-default"><span class="geo-dec" title="Maps, aerial photos, and other data for this location">54.603°N 5.923°W</span><span style="display:none">&#xfeff; / <span class="geo">54.603; -5.923</span></span></span></a></span></span></div></div>
+		</div>
+
+						<div id="siteSub" class="noprint">From Wikipedia, the free encyclopedia</div>
+					</div>
+					<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="en" dir="ltr"><div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none">Postcode area in the United Kingdom covering Northern Ireland</div>
+<p class="mw-empty-elt">
+
+</p>
+<p><span class="geo-inline-hidden noexcerpt"><style data-mw-deduplicate="TemplateStyles:r1156832818">.mw-parser-output .geo-default,.mw-parser-output .geo-dms,.mw-parser-output .geo-dec{display:inline}.mw-parser-output .geo-nondefault,.mw-parser-output .geo-multi-punct,.mw-parser-output .geo-inline-hidden{display:none}.mw-parser-output .longitude,.mw-parser-output .latitude{white-space:nowrap}</style><span class="plainlinks nourlexpansion"><a class="external text" href="https://geohack.toolforge.org/geohack.php?pagename=BT_postcode_area&amp;params=54.603_N_5.923_W_region:GB_scale:500000"><span class="geo-nondefault"><span class="geo-dms" title="Maps, aerial photos, and other data for this location"><span class="latitude">54°36′11″N</span> <span class="longitude">5°55′23″W</span></span></span><span class="geo-multi-punct">&#xfeff; / &#xfeff;</span><span class="geo-default"><span class="geo-dec" title="Maps, aerial photos, and other data for this location">54.603°N 5.923°W</span><span style="display:none">&#xfeff; / <span class="geo">54.603; -5.923</span></span></span></a></span></span></p><div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none">Postcode area in United Kingdom</div><style data-mw-deduplicate="TemplateStyles:r1289430074">.mw-parser-output .infobox-subbox{padding:0;border:none;margin:-3px;width:auto;min-width:100%;font-size:100%;clear:none;float:none;background-color:transparent}.mw-parser-output .infobox-3cols-child{margin:auto}.mw-parser-output .infobox .navbar{font-size:100%}@media screen{html.skin-theme-clientpref-night .mw-parser-output .infobox-full-data:not(.notheme)>div:not(.notheme)[style]{background:#1f1f23!important;color:#f8f9fa}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .infobox-full-data:not(.notheme) div:not(.notheme){background:#1f1f23!important;color:#f8f9fa}}@media(min-width:640px){body.skin--responsive .mw-parser-output .infobox-table{display:table!important}body.skin--responsive .mw-parser-output .infobox-table>caption{display:table-caption!important}body.skin--responsive .mw-parser-output .infobox-table>tbody{display:table-row-group}body.skin--responsive .mw-parser-output .infobox-table th,body.skin--responsive .mw-parser-output .infobox-table td{padding-left:inherit;padding-right:inherit}}</style><style data-mw-deduplicate="TemplateStyles:r1286716700">.mw-parser-output .ib-settlement{border-collapse:collapse;line-height:1.2em}@media(min-width:640px){.mw-parser-output .ib-settlement{width:23em}}.mw-parser-output .ib-settlement td,.mw-parser-output .ib-settlement th{border-top:1px solid #a2a9b1;padding:0.4em 0.6em 0.4em 0.6em}.mw-parser-output .ib-settlement .mergedtoprow .infobox-full-data,.mw-parser-output .ib-settlement .mergedtoprow .infobox-header,.mw-parser-output .ib-settlement .mergedtoprow .infobox-data,.mw-parser-output .ib-settlement .mergedtoprow .infobox-label,.mw-parser-output .ib-settlement .mergedtoprow .infobox-below{border-top:1px solid #a2a9b1;padding:0.4em 0.6em 0.2em 0.6em}.mw-parser-output .ib-settlement .mergedrow .infobox-full-data,.mw-parser-output .ib-settlement .mergedrow .infobox-data,.mw-parser-output .ib-settlement .mergedrow .infobox-label{border:0;padding:0 0.6em 0.2em 0.6em}.mw-parser-output .ib-settlement .mergedbottomrow .infobox-full-data,.mw-parser-output .ib-settlement .mergedbottomrow .infobox-data,.mw-parser-output .ib-settlement .mergedbottomrow .infobox-label{border-top:0;border-bottom:1px solid #a2a9b1;padding:0 0.6em 0.4em 0.6em}.mw-parser-output .ib-settlement .maptable{border:0;padding:0}.mw-parser-output .ib-settlement .infobox-header,.mw-parser-output .ib-settlement .infobox-below{text-align:left}.mw-parser-output .ib-settlement .infobox-above{font-size:125%;line-height:1.3em}.mw-parser-output .ib-settlement .infobox-subheader{background-color:#cddeff;font-weight:bold}.mw-parser-output .ib-settlement-native{font-weight:normal;padding-top:0.2em}.mw-parser-output .ib-settlement-other-name{font-size:78%}.mw-parser-output .ib-settlement-official{font-weight:bold}.mw-parser-output .ib-settlement-caption{padding:0.3em 0 0 0}.mw-parser-output .ib-settlement-caption-link{padding:0.2em 0}.mw-parser-output .ib-settlement-nickname{display:inline}.mw-parser-output .ib-settlement-fn{font-weight:normal;display:inline}</style><table class="infobox ib-settlement vcard"><tbody><tr><th colspan="2" class="infobox-above"><div class="fn org">Belfast</div></th></tr><tr><td colspan="2" class="infobox-subheader"><div class="category"><a href="/wiki/List_of_postcode_areas_in_the_United_Kingdom" title="List of postcode areas in the United Kingdom">Postcode area</a></div></td></tr><tr class="mergedtoprow"><td colspan="2" class="infobox-full-data"><style data-mw-deduplicate="TemplateStyles:r1291884410">.mw-parser-output .locmap .od{position:absolute}.mw-parser-output .locmap .id{position:absolute;line-height:0}.mw-parser-output .locmap .l0{font-size:0;position:absolute}.mw-parser-output .locmap .pv{line-height:110%;position:absolute;text-align:center}.mw-parser-output .locmap .pl{line-height:110%;position:absolute;top:-0.75em;text-align:right}.mw-parser-output .locmap .pr{line-height:110%;position:absolute;top:-0.75em;text-align:left}.mw-parser-output .locmap .pv>div{display:inline;padding:1px}.mw-parser-output .locmap .pl>div{display:inline;padding:1px;float:right}.mw-parser-output .locmap .pr>div{display:inline;padding:1px;float:left}@media screen{html.skin-theme-clientpref-night .mw-parser-output .od,html.skin-theme-clientpref-night .mw-parser-output .od .pv>div,html.skin-theme-clientpref-night .mw-parser-output .od .pl>div,html.skin-theme-clientpref-night .mw-parser-output .od .pr>div{background:#fff!important;color:#000!important}html.skin-theme-clientpref-night .mw-parser-output .locmap img{filter:grayscale(0.6)}html.skin-theme-clientpref-night .mw-parser-output .infobox-full-data .locmap div{background:transparent!important}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .locmap img{filter:grayscale(0.6)}html.skin-theme-clientpref-os .mw-parser-output .od,html.skin-theme-clientpref-os .mw-parser-output .od .pv>div,html.skin-theme-clientpref-os .mw-parser-output .od .pl>div,html.skin-theme-clientpref-os .mw-parser-output .od .pr>div{background:white!important;color:#000!important}html.skin-theme-clientpref-os .mw-parser-output .infobox-full-data .locmap div{background:transparent!important}}</style><div class="center"><div class="locmap" style="width:250px;float:none;clear:both;margin-left:auto;margin-right:auto"><div style="width:250px;padding:0"><div style="position:relative;width:250px"><span class="notpageimage" typeof="mw:File"><a href="/wiki/File:United_Kingdom_adm_location_map.svg" class="mw-file-description" title="BT is located in the United Kingdom"><img alt="BT is located in the United Kingdom" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d9/United_Kingdom_adm_location_map.svg/250px-United_Kingdom_adm_location_map.svg.png" decoding="async" width="250" height="386" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d9/United_Kingdom_adm_location_map.svg/500px-United_Kingdom_adm_location_map.svg.png 1.5x" data-file-width="886" data-file-height="1369" /></a></span><div class="od notheme" style="top:53.308%;left:38.462%;font-size:91%"><div class="id" style="left:-3px;top:-3px"><span class="notpageimage" typeof="mw:File"><span title="BT"><img alt="BT" src="//upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Red_pog.svg/20px-Red_pog.svg.png" decoding="async" width="6" height="6" class="mw-file-element" data-file-width="64" data-file-height="64" /></span></span></div><div class="pr" style="width:6em;left:4px"><div>BT</div></div></div></div><div style="padding-top:0.2em"></div></div></div></div></td></tr><tr class="mergedbottomrow"><td colspan="2" class="infobox-full-data">Coordinates: <span class="geo-inline"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1156832818" /><span class="plainlinks nourlexpansion"><a class="external text" href="https://geohack.toolforge.org/geohack.php?pagename=BT_postcode_area&amp;params=54.603_N_5.923_W_type:city_region:GB"><span class="geo-nondefault"><span class="geo-dms" title="Maps, aerial photos, and other data for this location"><span class="latitude">54°36′11″N</span> <span class="longitude">5°55′23″W</span></span></span><span class="geo-multi-punct">&#xfeff; / &#xfeff;</span><span class="geo-default"><span class="geo-dec" title="Maps, aerial photos, and other data for this location">54.603°N 5.923°W</span><span style="display:none">&#xfeff; / <span class="geo">54.603; -5.923</span></span></span></a></span></span></td></tr><tr class="mergedtoprow"><th scope="row" class="infobox-label">Country</th><td class="infobox-data">United Kingdom</td></tr><tr class="mergedtoprow"><th scope="row" class="infobox-label"><a href="/wiki/List_of_postcode_areas_in_the_United_Kingdom" title="List of postcode areas in the United Kingdom">Postcode area</a></th><td class="infobox-data adr"><div class="postal-code">BT</div></td></tr><tr class="mergedbottomrow"><th scope="row" class="infobox-label">Postcode area name</th><td class="infobox-data adr"><div class="postal-code">Belfast</div></td></tr><tr class="mergedtoprow"><th scope="row" class="infobox-label"><a href="/wiki/Post_town" title="Post town">Post towns</a></th><td class="infobox-data">44</td></tr><tr class="mergedrow"><th scope="row" class="infobox-label"><a href="/wiki/List_of_postcode_districts_in_the_United_Kingdom" title="List of postcode districts in the United Kingdom">Postcode districts</a></th><td class="infobox-data">82</td></tr><tr class="mergedrow"><th scope="row" class="infobox-label">Postcode sectors</th><td class="infobox-data">278</td></tr><tr class="mergedrow"><th scope="row" class="infobox-label">Postcodes (live)</th><td class="infobox-data">47,227</td></tr><tr class="mergedrow"><th scope="row" class="infobox-label">Postcodes (total)</th><td class="infobox-data">61,794</td></tr><tr><td colspan="2" class="infobox-below">Statistics as at May 2020<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite-bracket">&#91;</span>1<span class="cite-bracket">&#93;</span></a></sup></td></tr></tbody></table>
+<p>The <b>BT postcode area</b>, also known as the <b>Belfast postcode area</b>,<sup id="cite_ref-Guide_2-0" class="reference"><a href="#cite_note-Guide-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup> covers all of <a href="/wiki/Northern_Ireland" title="Northern Ireland">Northern Ireland</a> and was the last part of the <a href="/wiki/United_Kingdom" title="United Kingdom">United Kingdom</a> to be coded, between 1970 and 1974.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">&#91;<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (June 2009)">citation needed</span></a></i>&#93;</sup> This area is a group of 82 postcode districts in Northern Ireland, within 44 post towns and around 47,227 live postcodes.
+</p><p>With a population of over 1.8 million people, BT is the second most populous <a href="/wiki/List_of_postcode_areas_in_the_United_Kingdom" title="List of postcode areas in the United Kingdom">UK postcode area</a>, after the <a href="/wiki/B_postcode_area" title="B postcode area">B postcode area</a> (Birmingham, 1.9 million). It is the only UK postcode area that has land borders with non-UK postcode areas and is also the only UK postcode area that borders the <a href="/wiki/European_Union" title="European Union">European Union</a>. BT borders nine <a href="/wiki/List_of_Eircode_routing_areas_in_Ireland" title="List of Eircode routing areas in Ireland">Eircode</a> routing areas in the neighbouring <a href="/wiki/Republic_of_Ireland" title="Republic of Ireland">Republic of Ireland</a>: F94, F93, F91, N41, H23, H18, H14, A91, and A75.
+</p><p>Mail for the BT postcode area is processed at the Northern Ireland Mail Centre in <a href="/wiki/Newtownabbey" title="Newtownabbey">Newtownabbey</a>.
+</p>
+<meta property="mw:PageProp/toc" />
+<div style="clear:both;" class=""></div>
+<div class="mw-heading mw-heading2"><h2 id="Coverage">Coverage</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=BT_postcode_area&amp;action=edit&amp;section=1" title="Edit section: Coverage"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Belfast">Belfast</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=BT_postcode_area&amp;action=edit&amp;section=2" title="Edit section: Belfast"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Prior to the introduction of postcodes, Belfast had already been divided into numbered postal districts, for example, Belfast 12.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite-bracket">&#91;</span>3<span class="cite-bracket">&#93;</span></a></sup> Today, the Belfast <a href="/wiki/Post_town" title="Post town">post town</a> covers postcode districts BT1 to BT17 and part of BT29. In common with all addresses in Northern Ireland, Belfast postcodes start with the letters <i>BT</i>, a <a href="/wiki/Mnemonic" title="Mnemonic">mnemonic</a> of the capital city's name. The <a href="/wiki/Belfast_City_Centre" title="Belfast City Centre">commercial centre</a> of the city is designated <i>BT1</i> and the surrounding districts form a roughly sequential clockwise ring around the city. The postcode of the Royal Mail offices at Tomb Street in Belfast is BT1 1AA.
+</p>
+<table class="wikitable sortable" style="font-size:95%">
+
+<tbody><tr style="white-space:nowrap">
+<th>Postcode district
+</th>
+<th><a href="/wiki/Post_town" title="Post town">Post town</a>
+</th>
+<th>Coverage
+</th>
+<th>Local authority area(s)
+</th></tr>
+
+
+<tr>
+<th>BT1
+</th>
+<td>BELFAST
+</td>
+<td><a href="/wiki/Belfast_City_Centre" title="Belfast City Centre">Belfast City Centre</a> (<a href="/wiki/Belfast_City_Hall" title="Belfast City Hall">City Hall</a> and north)
+</td>
+<td><a href="/wiki/Belfast_City_Council" title="Belfast City Council">Belfast</a>
+</td></tr>
+<tr>
+<th>BT2
+</th>
+<td>BELFAST
+</td>
+<td>Belfast City Centre (south of City Hall)
+</td>
+<td>Belfast
+</td></tr>
+<tr>
+<th>BT3
+</th>
+<td>BELFAST
+</td>
+<td><a href="/wiki/Titanic_Quarter" title="Titanic Quarter">Titanic Quarter</a>, <a href="/wiki/Belfast_Harbour" title="Belfast Harbour">Belfast Harbour Estate</a> (including <a href="/wiki/Belfast_City_Airport" class="mw-redirect" title="Belfast City Airport">Belfast City Airport</a>), <a href="/wiki/Holywood_Exchange" title="Holywood Exchange">Holywood Exchange</a>
+</td>
+<td>Belfast
+</td></tr>
+<tr>
+<th>BT4
+</th>
+<td>BELFAST
+</td>
+<td>East Belfast: <a href="/wiki/Sydenham,_Belfast" class="mw-redirect" title="Sydenham, Belfast">Sydenham</a>, Belmont, <a href="/wiki/Stormont,_Belfast" class="mw-redirect" title="Stormont, Belfast">Stormont</a>, Knocknagoney, Upper Newtownards Road, Newtownards Road, <a href="/wiki/Ballyhackamore" title="Ballyhackamore">Ballyhackamore</a> (Part)
+</td>
+<td>Belfast
+</td></tr>
+<tr>
+<th>BT5
+</th>
+<td>BELFAST
+</td>
+<td>East Belfast: <a href="/wiki/Castlereagh_(borough)" title="Castlereagh (borough)">Castlereagh</a>, <a href="/wiki/Clarawood" title="Clarawood">Clarawood</a>, Crossnacreevy, <a href="/wiki/Gilnahirk" class="mw-redirect" title="Gilnahirk">Gilnahirk</a>, Connswater, <a href="/wiki/Braniel" title="Braniel">Braniel</a> (Part), <a href="/wiki/Ballyhackamore" title="Ballyhackamore">Ballyhackamore</a> (Part)
+</td>
+<td>Belfast, <a href="/wiki/Lisburn_and_Castlereagh" title="Lisburn and Castlereagh">Lisburn and Castlereagh</a>
+</td></tr>
+<tr>
+<th>BT6
+</th>
+<td>BELFAST
+</td>
+<td>East Belfast: <a href="/wiki/Castlereagh_(borough)" title="Castlereagh (borough)">Castlereagh</a>, Woodstock, <a href="/wiki/Cregagh" title="Cregagh">Cregagh</a>, Knockbreda, Mount Merrion, Rosetta, Ravenhill Road
+</td>
+<td>Belfast, Lisburn &amp; Castlereagh
+</td></tr>
+<tr>
+<th>BT7
+</th>
+<td>BELFAST
+</td>
+<td>South Belfast: <a href="/wiki/Ormeau_Road" title="Ormeau Road">Ormeau</a>, Annadale, University Avenue, Botanic Avenue, Donegall Pass, Bradbury Place, Ballynafeigh
+</td>
+<td>Belfast
+</td></tr>
+<tr>
+<th>BT8
+</th>
+<td>BELFAST
+</td>
+<td>South Belfast: Forestside, Saintfield Road, Four Winds, Mount Oriel, Laurelgrove, <a href="/wiki/Carryduff" title="Carryduff">Carryduff</a>, Knockbreda, Woodbreda, <a href="/wiki/Newtownbreda" title="Newtownbreda">Newtownbreda</a>
+</td>
+<td>Belfast, Lisburn &amp; Castlereagh City Council
+</td></tr>
+<tr>
+<th>BT9
+</th>
+<td>BELFAST
+</td>
+<td>South Belfast: Queens Quarter, <a href="/wiki/Malone_Road" title="Malone Road">Malone</a>, <a href="/wiki/Lisburn_Road" title="Lisburn Road">Lisburn Road</a>, Windsor, Adelaide, <a href="/wiki/Balmoral_(District_Electoral_Area)" title="Balmoral (District Electoral Area)">Balmoral</a>, Musgrave Park, <a href="/wiki/Taughmonagh" title="Taughmonagh">Taughmonagh</a>, <a href="/wiki/Stranmillis" title="Stranmillis">Stranmillis</a>
+</td>
+<td>Belfast
+</td></tr>
+<tr>
+<th>BT10
+</th>
+<td>BELFAST
+</td>
+<td>South Belfast: <a href="/wiki/Finaghy" title="Finaghy">Finaghy</a>, Erinvale
+</td>
+<td>Belfast
+</td></tr>
+<tr>
+<th>BT11
+</th>
+<td>BELFAST
+</td>
+<td>West Belfast: <a href="/wiki/Andersonstown" title="Andersonstown">Andersonstown</a>, <a href="/wiki/Lenadoon" class="mw-redirect" title="Lenadoon">Lenadoon</a>, <a href="/wiki/Suffolk,_Belfast" class="mw-redirect" title="Suffolk, Belfast">Suffolk</a>, <a href="/wiki/Andersonstown" title="Andersonstown">Ladybrook</a>, <a href="/wiki/Turf_Lodge" class="mw-redirect" title="Turf Lodge">Turf Lodge</a>
+</td>
+<td>Belfast
+</td></tr>
+<tr>
+<th>BT12
+</th>
+<td>BELFAST
+</td>
+<td>South Belfast: <a href="/wiki/Sandy_Row" title="Sandy Row">Sandy Row</a>, The Village, Boucher Road, <a href="/wiki/Donegall_Road" title="Donegall Road">Donegall Road</a>
+<p>West Belfast: <a href="/wiki/Falls_Road,_Belfast" title="Falls Road, Belfast">Falls Road</a>
+</p>
+</td>
+<td>Belfast
+</td></tr>
+<tr>
+<th>BT13
+</th>
+<td>BELFAST
+</td>
+<td>North Belfast: <a href="/wiki/Shankill_Road" title="Shankill Road">Shankill Road</a>, <a href="/wiki/Woodvale,_Belfast" class="mw-redirect" title="Woodvale, Belfast">Woodvale</a>, Ballygomartin, Springmartin, <a href="/wiki/Glencairn_(Belfast)" class="mw-redirect" title="Glencairn (Belfast)">Glencairn</a>, <a href="/wiki/Highfield,_Belfast" class="mw-redirect" title="Highfield, Belfast">Highfield</a>.
+<p>West Belfast: <a href="/wiki/Clonard,_Belfast" class="mw-redirect" title="Clonard, Belfast">Clonard</a>
+</p>
+</td>
+<td>Belfast
+</td></tr>
+<tr>
+<th>BT14
+</th>
+<td>BELFAST
+</td>
+<td>North Belfast: Crumlin Road, <a href="/wiki/Ballysillan" class="mw-redirect" title="Ballysillan">Ballysillan</a>, Upper Ballysillan, <a href="/wiki/Ardoyne" title="Ardoyne">Ardoyne</a>, Carr's Glen
+</td>
+<td>Belfast, <a href="/wiki/Antrim_and_Newtownabbey" title="Antrim and Newtownabbey">Antrim and Newtownabbey</a>
+</td></tr>
+<tr>
+<th>BT15
+</th>
+<td>BELFAST
+</td>
+<td>North Belfast: York Road, Yorkgate, Seaview, Mount Vernon, <a href="/wiki/Antrim_Road" title="Antrim Road">Antrim Road</a>, <a href="/wiki/New_Lodge,_Belfast" title="New Lodge, Belfast">New Lodge</a>, <a href="/wiki/Sailortown,_Belfast" class="mw-redirect" title="Sailortown, Belfast">Sailortown</a>
+</td>
+<td>Belfast
+</td></tr>
+<tr>
+<th>BT16
+</th>
+<td>BELFAST
+</td>
+<td>East Belfast: <a href="/wiki/Dundonald,_County_Down" title="Dundonald, County Down">Dundonald</a>, Millmount Village
+</td>
+<td>Lisburn &amp; Castlereagh
+</td></tr>
+<tr>
+<th>BT17
+</th>
+<td>BELFAST
+</td>
+<td>West Belfast: <a href="/wiki/Dunmurry" title="Dunmurry">Dunmurry</a>, <a href="/wiki/Hannahstown" title="Hannahstown">Hannahstown</a>, Twinbrook, <a href="/wiki/Poleglass" title="Poleglass">Poleglass</a>, Lagmore.
+<p>North Lisburn: <a href="/wiki/Derriaghy" title="Derriaghy">Derriaghy</a>, Seymour Hill
+</p>
+</td>
+<td>Belfast, Lisburn &amp; Castlereagh
+</td></tr>
+<tr>
+<th>BT29
+</th>
+<td>BELFAST
+</td>
+<td><a href="/wiki/Belfast_International_Airport" title="Belfast International Airport">Belfast International Airport</a>
+</td>
+<td>Antrim &amp; Newtownabbey
+</td></tr></tbody></table>
+<p>The only BELFAST addresses in BT29 are at Belfast International Airport.  All other addresses in BT29 are under the post town CRUMLIN.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Rest_of_Northern_Ireland">Rest of Northern Ireland</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=BT_postcode_area&amp;action=edit&amp;section=3" title="Edit section: Rest of Northern Ireland"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The remainder of Northern Ireland is divided into 43 other post towns which are further divided into postcode districts BT18–BT49, BT51–BT57, BT58 (<a href="/wiki/Non-geographic_postcodes" class="mw-redirect" title="Non-geographic postcodes">non-geographic</a> postcode district reassigned from Belfast to Newtownabbey post town), BT60–BT71, BT74–BT82 and BT92–BT94. Certain addresses in BT29 located at Belfast International Airport (a total of 31 delivery points) are in the post town of BELFAST despite being geographically under the post town of CRUMLIN, which has the remaining 7,206 delivery points in that postcode area.<sup id="cite_ref-Guide_2-1" class="reference"><a href="#cite_note-Guide-2"><span class="cite-bracket">&#91;</span>2<span class="cite-bracket">&#93;</span></a></sup>
+</p>
+<table class="wikitable sortable" style="font-size:95%">
+
+<tbody><tr style="white-space:nowrap">
+<th>Postcode district
+</th>
+<th><a href="/wiki/Post_town" title="Post town">Post town</a>
+</th>
+<th>Coverage
+</th>
+<th>Local authority area(s)
+</th></tr>
+
+
+<tr>
+<th>BT18
+</th>
+<td>HOLYWOOD
+</td>
+<td><a href="/wiki/Holywood,_County_Down" title="Holywood, County Down">Holywood</a>, <a href="/wiki/Craigavad" title="Craigavad">Craigavad</a>.
+</td>
+<td><a href="/wiki/Ards_and_North_Down" title="Ards and North Down">Ards and North Down</a>
+</td></tr>
+<tr>
+<th>BT19
+</th>
+<td>BANGOR
+</td>
+<td><a href="/wiki/Bangor,_County_Down" title="Bangor, County Down">Bangor</a> (outside Ring Road), <a href="/wiki/Crawfordsburn" title="Crawfordsburn">Crawfordsburn</a>, <a href="/wiki/Groomsport" title="Groomsport">Groomsport</a>, <a href="/wiki/Helens_Bay" class="mw-redirect" title="Helens Bay">Helens Bay</a>
+</td>
+<td>Ards and North Down
+</td></tr>
+<tr>
+<th>BT20
+</th>
+<td>BANGOR
+</td>
+<td><a href="/wiki/Bangor,_County_Down" title="Bangor, County Down">Bangor</a> (within Ring Road).
+</td>
+<td>Ards and North Down
+</td></tr>
+<tr>
+<th>BT21
+</th>
+<td>DONAGHADEE
+</td>
+<td><a href="/wiki/Donaghadee" title="Donaghadee">Donaghadee</a>
+</td>
+<td>Ards and North Down
+</td></tr>
+<tr>
+<th>BT22
+</th>
+<td>NEWTOWNARDS
+</td>
+<td><a href="/wiki/Newtownards" title="Newtownards">Newtownards</a>, <a href="/wiki/Ardkeen,_Co_Down" class="mw-redirect" title="Ardkeen, Co Down">Ardkeen</a>, <a href="/wiki/Ballyhalbert" title="Ballyhalbert">Ballyhalbert</a>, <a href="/wiki/Ballywalter" title="Ballywalter">Ballywalter</a>, <a href="/wiki/Carrowdore" title="Carrowdore">Carrowdore</a>, <a href="/wiki/Cloughey" class="mw-redirect" title="Cloughey">Cloughey</a>, <a href="/wiki/Greyabbey" title="Greyabbey">Greyabbey</a>, <a href="/wiki/Kircubbin" class="mw-redirect" title="Kircubbin">Kircubbin</a>, <a href="/wiki/Millisle" title="Millisle">Millisle</a>, <a href="/wiki/Portaferry" title="Portaferry">Portaferry</a>, <a href="/wiki/Portavogie" title="Portavogie">Portavogie</a>.
+</td>
+<td>Ards and North Down
+</td></tr>
+<tr>
+<th>BT23
+</th>
+<td>NEWTOWNARDS
+</td>
+<td><a href="/wiki/Newtownards" title="Newtownards">Newtownards</a>, <a href="/wiki/Ballygowan" title="Ballygowan">Ballygowan</a>, <a href="/wiki/Comber" title="Comber">Comber</a>, <a href="/wiki/Conlig" title="Conlig">Conlig</a>, <a href="/wiki/Killinchy" title="Killinchy">Killinchy</a>, <a href="/wiki/Moneyreagh" title="Moneyreagh">Moneyreagh</a>.
+</td>
+<td>Ards and North Down, Lisburn and Castlereagh
+</td></tr>
+<tr>
+<th>BT24
+</th>
+<td>BALLYNAHINCH
+</td>
+<td><a href="/wiki/Ballynahinch,_County_Down" title="Ballynahinch, County Down">Ballynahinch</a>, <a href="/wiki/Drumaness" title="Drumaness">Drumaness</a>, <a href="/wiki/Saintfield" title="Saintfield">Saintfield</a>
+</td>
+<td><a href="/wiki/Newry,_Mourne_and_Down" title="Newry, Mourne and Down">Newry, Mourne and Down</a>, Lisburn and Castlereagh
+</td></tr>
+<tr>
+<th>BT25
+</th>
+<td>DROMORE
+</td>
+<td><a href="/wiki/Dromore,_County_Down" title="Dromore, County Down">Dromore</a>, <a href="/wiki/Dromara" title="Dromara">Dromara</a>, Finnis, Waringsford.
+</td>
+<td><a href="/wiki/Armagh,_Banbridge_and_Craigavon" class="mw-redirect" title="Armagh, Banbridge and Craigavon">Armagh, Banbridge and Craigavon</a>, Lisburn and Castlereagh
+</td></tr>
+<tr>
+<th>BT26
+</th>
+<td>HILLSBOROUGH
+</td>
+<td><a href="/wiki/Hillsborough,_County_Down" class="mw-redirect" title="Hillsborough, County Down">Hillsborough</a>, <a href="/wiki/Annahilt" title="Annahilt">Annahilt</a>, Culcavy.
+</td>
+<td>Lisburn and Castlereagh
+</td></tr>
+<tr>
+<th>BT27
+</th>
+<td>LISBURN
+</td>
+<td><a href="/wiki/Lisburn" title="Lisburn">Lisburn</a>, Cargacreevy, Drumalig, <a href="/wiki/Drumbo" title="Drumbo">Drumbo</a>, Hilden, <a href="/wiki/Hillhall" title="Hillhall">Hillhall</a>, <a href="/wiki/Lambeg,_County_Antrim" title="Lambeg, County Antrim">Lambeg</a>, <a href="/wiki/Temple,_County_Down" title="Temple, County Down">Temple</a>.
+</td>
+<td>Lisburn and Castlereagh
+</td></tr>
+<tr>
+<th>BT28
+</th>
+<td>LISBURN
+</td>
+<td><a href="/wiki/Lisburn" title="Lisburn">Lisburn</a>, <a href="/wiki/Upper_Ballinderry" title="Upper Ballinderry">Ballinderry Lower</a>, <a href="/wiki/Lower_Ballinderry" title="Lower Ballinderry">Ballinderry Upper</a>, <a href="/wiki/Stoneyford,_County_Antrim" title="Stoneyford, County Antrim">Stoneyford</a>
+</td>
+<td>Lisburn and Castlereagh
+</td></tr>
+<tr>
+<th>BT29
+</th>
+<td>CRUMLIN
+</td>
+<td><a href="/wiki/Crumlin,_Belfast" class="mw-redirect" title="Crumlin, Belfast">Crumlin</a>, <a href="/wiki/Aldergrove,_County_Antrim" title="Aldergrove, County Antrim">Aldergrove</a>, <a href="/wiki/Dundrod" title="Dundrod">Dundrod</a>, <a href="/wiki/Glenavy" title="Glenavy">Glenavy</a>, <a href="/wiki/Nutts_Corner" class="mw-redirect" title="Nutts Corner">Nutts Corner</a>
+</td>
+<td>Antrim and Newtownabbey
+</td></tr>
+<tr>
+<th>BT30
+</th>
+<td>DOWNPATRICK
+</td>
+<td><a href="/wiki/Downpatrick" title="Downpatrick">Downpatrick</a>, <a href="/wiki/Ardglass" title="Ardglass">Ardglass</a>, <a href="/wiki/Ballyhornan" title="Ballyhornan">Ballyhornan</a>, <a href="/wiki/Ballykinler" title="Ballykinler">Ballykinler</a>, Castleward, <a href="/wiki/Clough" title="Clough">Clough</a>, <a href="/wiki/Crossgar" title="Crossgar">Crossgar</a>, <a href="/wiki/Kilclief" title="Kilclief">Kilclief</a>, <a href="/w/index.php?title=Killard,_County_Down&amp;action=edit&amp;redlink=1" class="new" title="Killard, County Down (page does not exist)">Killard</a>, <a href="/wiki/Killough" title="Killough">Killough</a>, <a href="/wiki/Killyleagh" title="Killyleagh">Killyleagh</a>, <a href="/wiki/Listooder" title="Listooder">Listooder</a>, <a href="/wiki/Loughinisland" title="Loughinisland">Loughinisland</a>, <a href="/wiki/Seaforde" title="Seaforde">Seaforde</a>, <a href="/wiki/Strangford" title="Strangford">Strangford</a>, Toye
+</td>
+<td>Newry, Mourne and Down
+</td></tr>
+<tr>
+<th>BT31
+</th>
+<td>CASTLEWELLAN
+</td>
+<td><a href="/wiki/Castlewellan" title="Castlewellan">Castlewellan</a>, Ballyward.
+</td>
+<td>Newry, Mourne and Down, Armagh, Banbridge and Craigavon
+</td></tr>
+<tr>
+<th>BT32
+</th>
+<td>BANBRIDGE
+</td>
+<td><a href="/wiki/Banbridge" title="Banbridge">Banbridge</a>, <a href="/wiki/Annaclone" title="Annaclone">Annaclone</a>, Ballinaskeagh, Ballyroney, <a href="/wiki/Corbet" title="Corbet">Corbet</a>, <a href="/wiki/Katesbridge" title="Katesbridge">Katesbridge</a>, <a href="/wiki/Lenaderg" title="Lenaderg">Lenaderg</a>,
+<p><a href="/wiki/Leitrim,_County_Down" title="Leitrim, County Down">Leitrim</a>, <a href="/wiki/Loughbrickland" title="Loughbrickland">Loughbrickland</a>, <a href="/wiki/Seapatrick" title="Seapatrick">Seapatrick</a>.
+</p>
+</td>
+<td>Armagh, Banbridge and Craigavon
+</td></tr>
+<tr>
+<th>BT33
+</th>
+<td>NEWCASTLE
+</td>
+<td><a href="/wiki/Newcastle,_County_Down" title="Newcastle, County Down">Newcastle</a>, <a href="/wiki/Bryansford" title="Bryansford">Bryansford</a>, <a href="/wiki/Dundrum,_County_Down" title="Dundrum, County Down">Dundrum</a>.
+</td>
+<td>Newry, Mourne and Down
+</td></tr>
+<tr>
+<th>BT34
+</th>
+<td>NEWRY (South Down section)
+</td>
+<td><a href="/wiki/Newry" title="Newry">Newry</a>, <a href="/wiki/Annalong" title="Annalong">Annalong</a>, Ballymartin, <a href="/wiki/Cabra,_County_Down" title="Cabra, County Down">Cabra</a>, <a href="/wiki/Hilltown,_County_Down" title="Hilltown, County Down">Hilltown</a>, Kilcoo, <a href="/wiki/Kilkeel" title="Kilkeel">Kilkeel</a>, <a href="/wiki/Mayobridge" title="Mayobridge">Mayobridge</a>, <a href="/wiki/Rathfriland" title="Rathfriland">Rathfriland</a>, <a href="/wiki/Rostrevor" title="Rostrevor">Rostrevor</a>, <a href="/wiki/Warrenpoint" title="Warrenpoint">Warrenpoint</a>
+</td>
+<td>Newry, Mourne and Down
+</td></tr>
+<tr>
+<th>BT35
+</th>
+<td>NEWRY (South Armagh section)
+</td>
+<td><a href="/wiki/Jerrettspass" title="Jerrettspass">Jerrettspass</a>, <a href="/wiki/Bessbrook" title="Bessbrook">Bessbrook</a>, <a href="/wiki/Camlough" title="Camlough">Camlough</a>, <a href="/wiki/Crossmaglen" title="Crossmaglen">Crossmaglen</a>, <a href="/wiki/Belleeks" title="Belleeks">Belleeks</a>, <a href="/wiki/Newtownhamilton" title="Newtownhamilton">Newtownhamilton</a>, <a href="/wiki/Poyntzpass" title="Poyntzpass">Poyntzpass</a>
+</td>
+<td>Newry, Mourne and Down
+</td></tr>
+<tr>
+<th>BT36
+</th>
+<td>NEWTOWNABBEY
+</td>
+<td><a href="/wiki/Newtownabbey" title="Newtownabbey">Newtownabbey</a>, Mossley, Glengormley, Fairview, Blackrock
+</td>
+<td>Antrim and Newtownabbey
+</td></tr>
+<tr>
+<th>BT37
+</th>
+<td>NEWTOWNABBEY
+</td>
+<td><a href="/wiki/Newtownabbey" title="Newtownabbey">Newtownabbey</a>, Whitehouse, Rathcoole, Monkstown, Jordanstown
+</td>
+<td>Antrim and Newtownabbey
+</td></tr>
+<tr>
+<th>BT38
+</th>
+<td>CARRICKFERGUS
+</td>
+<td><a href="/wiki/Carrickfergus" title="Carrickfergus">Carrickfergus</a>, <a href="/wiki/Ballycarry" title="Ballycarry">Ballycarry</a>, <a href="/wiki/Greenisland" title="Greenisland">Greenisland</a>, <a href="/wiki/Kilroot" title="Kilroot">Kilroot</a>, <a href="/wiki/Whitehead,_County_Antrim" title="Whitehead, County Antrim">Whitehead</a>.
+</td>
+<td><a href="/wiki/Mid_and_East_Antrim" title="Mid and East Antrim">Mid and East Antrim</a>
+</td></tr>
+<tr>
+<th>BT39
+</th>
+<td>BALLYCLARE
+</td>
+<td><a href="/wiki/Ballyclare" title="Ballyclare">Ballyclare</a>, <a href="/wiki/Ballynure" title="Ballynure">Ballynure</a>, <a href="/wiki/Doagh" title="Doagh">Doagh</a>, <a href="/wiki/Parkgate,_County_Antrim" title="Parkgate, County Antrim">Parkgate</a>, <a href="/wiki/Straid" title="Straid">Straid</a>, <a href="/wiki/Templepatrick" title="Templepatrick">Templepatrick</a>, Roughfort.
+</td>
+<td>Antrim and Newtownabbey, Mid and East Antrim
+</td></tr>
+<tr>
+<th>BT40
+</th>
+<td>LARNE
+</td>
+<td><a href="/wiki/Larne" title="Larne">Larne</a>, <a href="/wiki/Ballygally" title="Ballygally">Ballygally</a>, <a href="/wiki/Glenoe" title="Glenoe">Glenoe</a>, <a href="/wiki/Glynn,_County_Antrim" title="Glynn, County Antrim">Glynn</a>, <a href="/wiki/Islandmagee" title="Islandmagee">Islandmagee</a>, <a href="/wiki/Kilwaughter" title="Kilwaughter">Kilwaughter</a>, <a href="/wiki/Magheramorne" title="Magheramorne">Magheramorne</a>, Millbrook.
+</td>
+<td>Mid and East Antrim
+</td></tr>
+<tr>
+<th>BT41
+</th>
+<td>ANTRIM
+</td>
+<td><a href="/wiki/Antrim,_County_Antrim" title="Antrim, County Antrim">Antrim</a>, <a href="/wiki/Dunadry" title="Dunadry">Dunadry</a>, Muckamore, <a href="/wiki/Randalstown" title="Randalstown">Randalstown</a>, <a href="/wiki/Toomebridge" class="mw-redirect" title="Toomebridge">Toomebridge</a>.
+</td>
+<td>Antrim and Newtownabbey
+</td></tr>
+<tr>
+<th>BT42
+</th>
+<td>BALLYMENA
+</td>
+<td><a href="/wiki/Broughshane" title="Broughshane">Broughshane</a>, Cullybackey, <a href="/wiki/Galgorm_Parks" title="Galgorm Parks">Galgorm</a>, Kells.
+</td>
+<td>Mid and East Antrim
+</td></tr>
+<tr>
+<th>BT43
+</th>
+<td>BALLYMENA
+</td>
+<td>Cargan, Knockanully
+</td>
+<td>Mid and East Antrim
+</td></tr>
+<tr>
+<th>BT44
+</th>
+<td>BALLYMENA
+</td>
+<td><a href="/wiki/Portglenone" title="Portglenone">Portglenone</a>, <a href="/wiki/Carnlough" title="Carnlough">Carnlough</a>, <a href="/wiki/Glenarm" title="Glenarm">Glenarm</a>, <a href="/wiki/Clogh_Mills" class="mw-redirect" title="Clogh Mills">Clogh Mills</a>, <a href="/wiki/Rasharkin" title="Rasharkin">Rasharkin</a>, Glenariff/Waterfoot, Cushendun, <a href="/wiki/Cushendall" title="Cushendall">Cushendall</a>, <a href="/wiki/Dunloy" title="Dunloy">Dunloy</a>, <a href="/wiki/Loughguile" title="Loughguile">Loughguile</a>, Glarryford.
+</td>
+<td>Mid and East Antrim, <a href="/wiki/Causeway_Coast_and_Glens" title="Causeway Coast and Glens">Causeway Coast and Glens</a>, <a href="/wiki/Mid_Ulster_(district)" title="Mid Ulster (district)">Mid Ulster</a>
+</td></tr>
+<tr>
+<th>BT45
+</th>
+<td>MAGHERAFELT
+</td>
+<td><a href="/wiki/Magherafelt" title="Magherafelt">Magherafelt</a>, <a href="/wiki/Ballyronan" title="Ballyronan">Ballyronan</a>, <a href="/wiki/Bellaghy" title="Bellaghy">Bellaghy</a>, <a href="/wiki/Castledawson" title="Castledawson">Castledawson</a>, <a href="/wiki/Desertmartin" title="Desertmartin">Desertmartin</a>, <a href="/wiki/Draperstown" title="Draperstown">Draperstown</a>, <a href="/wiki/Knockloughrim" title="Knockloughrim">Knockloughrim</a>, <a href="/wiki/Moneymore" title="Moneymore">Moneymore</a>, <a href="/wiki/Tobermore" title="Tobermore">Tobermore</a>, Fallalea, Fallaghloon
+</td>
+<td>Mid Ulster
+</td></tr>
+<tr>
+<th>BT46
+</th>
+<td>MAGHERA
+</td>
+<td><a href="/wiki/Maghera" title="Maghera">Maghera</a>, Lisnamuck, <a href="/wiki/Swatragh" title="Swatragh">Swatragh</a>, <a href="/wiki/Upperlands" title="Upperlands">Upperlands</a>
+</td>
+<td>Mid Ulster
+</td></tr>
+<tr>
+<th>BT47
+</th>
+<td>LONDONDERRY<sup id="cite_ref-lderry_4-0" class="reference"><a href="#cite_note-lderry-4"><span class="cite-bracket">&#91;</span>n 1<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<td><a href="/wiki/Derry" title="Derry">Derry</a>, <a href="/wiki/Waterside,_Derry" title="Waterside, Derry">Waterside</a>, <a href="/wiki/Claudy" title="Claudy">Claudy</a>, <a href="/wiki/Feeny" title="Feeny">Feeny</a>, <a href="/wiki/Dungiven" title="Dungiven">Dungiven</a>, <a href="/wiki/Eglinton,_County_Londonderry" title="Eglinton, County Londonderry">Eglinton</a>, <a href="/wiki/Park,_County_Londonderry" title="Park, County Londonderry">Park</a>, <a href="/wiki/New_Buildings" class="mw-redirect" title="New Buildings">New Buildings</a>.
+</td>
+<td><a href="/wiki/Derry_City_and_Strabane" title="Derry City and Strabane">Derry City and Strabane</a>
+</td></tr>
+<tr>
+<th>BT48
+</th>
+<td>LONDONDERRY<sup id="cite_ref-lderry_4-1" class="reference"><a href="#cite_note-lderry-4"><span class="cite-bracket">&#91;</span>n 1<span class="cite-bracket">&#93;</span></a></sup>
+</td>
+<td>Derry, Cityside, Ballynagard, Coshquin, <a href="/wiki/Rosemount,_Derry" class="mw-redirect" title="Rosemount, Derry">Rosemount</a>, The Collon, <a href="/wiki/Culmore" title="Culmore">Culmore</a>.
+</td>
+<td>Derry City and Strabane
+</td></tr>
+<tr>
+<th>BT49
+</th>
+<td>LIMAVADY
+</td>
+<td><a href="/wiki/Limavady" title="Limavady">Limavady</a>, <a href="/wiki/Ballykelly,_County_Londonderry" title="Ballykelly, County Londonderry">Ballykelly</a>
+</td>
+<td>Causeway Coast and Glens
+</td></tr>
+<tr>
+<th>BT51
+</th>
+<td>COLERAINE
+</td>
+<td><a href="/wiki/Coleraine" title="Coleraine">Coleraine</a>, <a href="/wiki/Aghadowey" title="Aghadowey">Aghadowey</a>, <a href="/wiki/Articlave" title="Articlave">Articlave</a>, <a href="/w/index.php?title=Bellany,_County_Londonderry&amp;action=edit&amp;redlink=1" class="new" title="Bellany, County Londonderry (page does not exist)">Bellany</a>, Blackhill, <a href="/wiki/Castlerock" title="Castlerock">Castlerock</a>, Castleroe, <a href="/wiki/Garvagh" title="Garvagh">Garvagh</a>, <a href="/wiki/Kilrea" title="Kilrea">Kilrea</a>, <a href="/wiki/Macosquin" title="Macosquin">Macosquin</a>, <a href="/wiki/Ringsend,_County_Londonderry" title="Ringsend, County Londonderry">Ringsend</a>
+</td>
+<td>Causeway Coast and Glens
+</td></tr>
+<tr>
+<th>BT52
+</th>
+<td>COLERAINE
+</td>
+<td><a href="/wiki/Coleraine" title="Coleraine">Coleraine</a>, Ballyvelton, Cloyfin
+</td>
+<td>Causeway Coast and Glens
+</td></tr>
+<tr>
+<th>BT53
+</th>
+<td>BALLYMONEY
+</td>
+<td><a href="/wiki/Ballymoney" title="Ballymoney">Ballymoney</a>, <a href="/wiki/Dervock" title="Dervock">Dervock</a>, <a href="/wiki/Armoy" title="Armoy">Armoy</a>, Ballybogy.
+</td>
+<td>Causeway Coast and Glens
+</td></tr>
+<tr>
+<th>BT54
+</th>
+<td>BALLYCASTLE
+</td>
+<td><a href="/wiki/Ballycastle,_County_Antrim" title="Ballycastle, County Antrim">Ballycastle</a>, <a href="/wiki/Ballintoy" title="Ballintoy">Ballintoy</a>, Ballypatrick, <a href="/wiki/Ballyvoy" title="Ballyvoy">Ballyvoy</a>, Cape Castle, <a href="/wiki/Glenshesk" title="Glenshesk">Glenshesk</a>, Maghercashel, Maghernahar, Moyarget, <a href="/w/index.php?title=Torr,_County_Antrim&amp;action=edit&amp;redlink=1" class="new" title="Torr, County Antrim (page does not exist)">Torr</a>, <a href="/wiki/Rathlin_Island" title="Rathlin Island">Rathlin Island</a>.
+</td>
+<td>Causeway Coast and Glens
+</td></tr>
+<tr>
+<th>BT55
+</th>
+<td>PORTSTEWART
+</td>
+<td><a href="/wiki/Portstewart" title="Portstewart">Portstewart</a>
+</td>
+<td>Causeway Coast and Glens
+</td></tr>
+<tr>
+<th>BT56
+</th>
+<td>PORTRUSH
+</td>
+<td><a href="/wiki/Portrush" title="Portrush">Portrush</a>, Craigahullier, Urbalreagh.
+</td>
+<td>Causeway Coast and Glens
+</td></tr>
+<tr>
+<th>BT57
+</th>
+<td>BUSHMILLS
+</td>
+<td><a href="/wiki/Ballintoy" title="Ballintoy">Ballintoy</a>, <a href="/wiki/Bushmills,_County_Antrim" title="Bushmills, County Antrim">Bushmills</a>, Castlecatt, <a href="/wiki/Dunseverick" title="Dunseverick">Dunseverick</a>, <a href="/wiki/Portballintrae" title="Portballintrae">Portballintrae</a>
+</td>
+<td>Causeway Coast and Glens
+</td></tr>
+<tr>
+<th>BT58
+</th>
+<td>NEWTOWNABBEY
+</td>
+<td>No longer in use, formerly <i><a href="/wiki/Child_Support_Agency" title="Child Support Agency">Child Support Agency</a></i><sup id="cite_ref-nongeo1207_5-0" class="reference"><a href="#cite_note-nongeo1207-5"><span class="cite-bracket">&#91;</span>4<span class="cite-bracket">&#93;</span></a></sup> (defunct)
+</td>
+<td><i><a href="/wiki/Non-geographic_postcodes" class="mw-redirect" title="Non-geographic postcodes">non-geographic</a></i>
+</td></tr>
+<tr>
+<th>BT60
+</th>
+<td>ARMAGH
+</td>
+<td>Killylea, Tynan, Belcoo, Middletown, <a href="/wiki/Keady" title="Keady">Keady</a>, Darkley, <a href="/wiki/Markethill" title="Markethill">Markethill</a>, Kingsmills
+</td>
+<td>Armagh, Banbridge and Craigavon, Newry, Mourne and Down
+</td></tr>
+<tr>
+<th>BT61
+</th>
+<td>ARMAGH
+</td>
+<td><a href="/wiki/Armagh" title="Armagh">Armagh</a>, Collone, <a href="/wiki/Hamiltonsbawn" title="Hamiltonsbawn">Hamiltonsbawn</a>, <a href="/wiki/Kilmore,_County_Armagh" title="Kilmore, County Armagh">Kilmore</a>, <a href="/wiki/Loughgall" title="Loughgall">Loughgall</a>, <a href="/wiki/Richhill,_County_Armagh" title="Richhill, County Armagh">Richhill</a>.
+</td>
+<td>Armagh, Banbridge and Craigavon
+</td></tr>
+<tr>
+<th>BT62
+</th>
+<td>CRAIGAVON
+</td>
+<td><a href="/wiki/Craigavon,_County_Armagh" class="mw-redirect" title="Craigavon, County Armagh">Craigavon</a>, <a href="/wiki/Portadown" title="Portadown">Portadown</a>, <a href="/wiki/Tandragee" title="Tandragee">Tandragee</a>, Clare, Scotch Street.
+</td>
+<td>Armagh, Banbridge and Craigavon
+</td></tr>
+<tr>
+<th>BT63
+</th>
+<td>CRAIGAVON
+</td>
+<td><a href="/wiki/Gilford,_County_Down" title="Gilford, County Down">Gilford</a>, Laurencetown, <a href="/wiki/Portadown" title="Portadown">Portadown</a>, <a href="/wiki/Scarva" title="Scarva">Scarva</a>
+</td>
+<td>Armagh, Banbridge and Craigavon
+</td></tr>
+<tr>
+<th>BT64
+</th>
+<td>CRAIGAVON
+</td>
+<td><a href="/wiki/Craigavon,_County_Armagh" class="mw-redirect" title="Craigavon, County Armagh">Craigavon</a> (West): Knockmenagh, Mandeville.
+</td>
+<td>Armagh, Banbridge and Craigavon
+</td></tr>
+<tr>
+<th>BT65
+</th>
+<td>CRAIGAVON
+</td>
+<td>Craigavon (East): Drumgor, Legaghory, Tullygally, Brownlow.
+</td>
+<td>Armagh, Banbridge and Craigavon
+</td></tr>
+<tr>
+<th>BT66
+</th>
+<td>CRAIGAVON
+</td>
+<td><a href="/wiki/Derryadd" title="Derryadd">Derryadd</a>, <a href="/wiki/Derrytrasna" title="Derrytrasna">Derrytrasna</a>, <a href="/wiki/Dollingstown" title="Dollingstown">Dollingstown</a>, <a href="/wiki/Donaghcloney" title="Donaghcloney">Donaghcloney</a>, <a href="/wiki/Lurgan" title="Lurgan">Lurgan</a>, <a href="/wiki/Waringstown" title="Waringstown">Waringstown</a>
+</td>
+<td>Armagh, Banbridge and Craigavon
+</td></tr>
+<tr>
+<th>BT67
+</th>
+<td>CRAIGAVON
+</td>
+<td><a href="/wiki/Aghagallon" title="Aghagallon">Aghagallon</a>, <a href="/wiki/Aghalee" title="Aghalee">Aghalee</a>, <a href="/wiki/Gawley%27s_Gate" title="Gawley&#39;s Gate">Gawley's Gate</a>, <a href="/wiki/Lurgan" title="Lurgan">Lurgan</a>, <a href="/wiki/Magheralin" title="Magheralin">Magheralin</a>, <a href="/wiki/Moira,_County_Down" title="Moira, County Down">Moira</a>
+</td>
+<td>Armagh, Banbridge and Craigavon
+</td></tr>
+<tr>
+<th>BT68
+</th>
+<td>CALEDON
+</td>
+<td><a href="/wiki/Caledon,_County_Tyrone" title="Caledon, County Tyrone">Caledon</a>, Minterburn
+</td>
+<td>Mid Ulster
+</td></tr>
+<tr>
+<th>BT69
+</th>
+<td>AUGHNACLOY
+</td>
+<td><a href="/wiki/Aughnacloy,_County_Tyrone" title="Aughnacloy, County Tyrone">Aughnacloy</a>, <a href="/wiki/Carnteel" title="Carnteel">Carnteel</a>
+</td>
+<td>Mid Ulster
+</td></tr>
+<tr>
+<th>BT70
+</th>
+<td>DUNGANNON
+</td>
+<td><a href="/wiki/Dungannon" title="Dungannon">Dungannon</a>, <a href="/wiki/Ballygawley,_County_Tyrone" title="Ballygawley, County Tyrone">Ballygawley</a>, <a href="/wiki/Cappagh,_County_Tyrone" title="Cappagh, County Tyrone">Cappagh</a>, <a href="/wiki/Castlecaulfield" title="Castlecaulfield">Castlecaulfield</a>, <a href="/wiki/Donaghmore,_County_Tyrone" title="Donaghmore, County Tyrone">Donaghmore</a>, <a href="/wiki/Galbally,_County_Tyrone" title="Galbally, County Tyrone">Galbally</a>, <a href="/wiki/Garvaghey" title="Garvaghey">Garvaghy</a>, <a href="/wiki/Pomeroy,_County_Tyrone" title="Pomeroy, County Tyrone">Pomeroy</a>, <a href="/wiki/Rock,_County_Tyrone" title="Rock, County Tyrone">Rock</a>, Seskilgreen
+</td>
+<td>Mid Ulster
+</td></tr>
+<tr>
+<th>BT71
+</th>
+<td>DUNGANNON
+</td>
+<td><a href="/wiki/Dungannon" title="Dungannon">Dungannon</a>, <a href="/wiki/Benburb" title="Benburb">Benburb</a>, <a href="/wiki/Blackwatertown" title="Blackwatertown">Blackwatertown</a>, Bush, <a href="/wiki/Coalisland" title="Coalisland">Coalisland</a>, Killycolpy, <a href="/wiki/Ardboe" title="Ardboe">Ardboe</a>, <a href="/wiki/Moygashel" title="Moygashel">Moygashel</a>, <a href="/wiki/Stewartstown,_County_Tyrone" title="Stewartstown, County Tyrone">Stewartstown</a>
+</td>
+<td>Mid Ulster
+</td></tr>
+<tr>
+<th>BT74
+</th>
+<td>ENNISKILLEN
+</td>
+<td><a href="/wiki/Enniskillen" title="Enniskillen">Enniskillen</a> town, <a href="/wiki/Boho,_County_Fermanagh" title="Boho, County Fermanagh">Boho</a>
+</td>
+<td><a href="/wiki/Fermanagh_and_Omagh" title="Fermanagh and Omagh">Fermanagh and Omagh</a>
+</td></tr>
+<tr>
+<th>BT75
+</th>
+<td>FIVEMILETOWN
+</td>
+<td><a href="/wiki/Fivemiletown" title="Fivemiletown">Fivemiletown</a>, <a href="/wiki/Clabby" title="Clabby">Clabby</a>
+</td>
+<td>Mid Ulster, Fermanagh and Omagh
+</td></tr>
+<tr>
+<th>BT76
+</th>
+<td>CLOGHER
+</td>
+<td><a href="/wiki/Clogher" title="Clogher">Clogher</a>
+</td>
+<td>Mid Ulster
+</td></tr>
+<tr>
+<th>BT77
+</th>
+<td>AUGHER
+</td>
+<td><a href="/wiki/Augher" title="Augher">Augher</a>
+</td>
+<td>Mid Ulster
+</td></tr>
+<tr>
+<th>BT78
+</th>
+<td>OMAGH
+</td>
+<td><a href="/wiki/Omagh" title="Omagh">Omagh</a>, <a href="/wiki/Dromore,_County_Tyrone" title="Dromore, County Tyrone">Dromore</a>, <a href="/wiki/Drumquin" title="Drumquin">Drumquin</a>, <a href="/wiki/Eskra" title="Eskra">Eskra</a>, <a href="/wiki/Fintona" title="Fintona">Fintona</a>, Killynure, <a href="/wiki/Newtownstewart" title="Newtownstewart">Newtownstewart</a>, <a href="/wiki/Seskanore" class="mw-redirect" title="Seskanore">Seskanore</a>, <a href="/wiki/Trillick" title="Trillick">Trillick</a>
+</td>
+<td>Fermanagh and Omagh
+</td></tr>
+<tr>
+<th>BT79
+</th>
+<td>OMAGH
+</td>
+<td><a href="/wiki/Omagh" title="Omagh">Omagh</a>, Drumlea, Glengawna, <a href="/wiki/Gortin" title="Gortin">Gortin</a>, <a href="/wiki/Mountfield,_County_Tyrone" title="Mountfield, County Tyrone">Mountfield</a>, <a href="/wiki/Plumbridge" title="Plumbridge">Plumbridge</a>, Rosnamuck, Sheskinshule, <a href="/wiki/Sixmilecross" title="Sixmilecross">Sixmilecross</a>
+</td>
+<td>Fermanagh and Omagh
+</td></tr>
+<tr>
+<th>BT80
+</th>
+<td>COOKSTOWN
+</td>
+<td><a href="/wiki/Cookstown" title="Cookstown">Cookstown</a>, <a href="/wiki/Coagh" title="Coagh">Coagh</a>, <a href="/wiki/Tullyhogue" title="Tullyhogue">Tullyhogue</a>
+</td>
+<td>Mid Ulster
+</td></tr>
+<tr>
+<th>BT81
+</th>
+<td>CASTLEDERG
+</td>
+<td><a href="/wiki/Castlederg" title="Castlederg">Castlederg</a>, Aghyaran, Clare, <a href="/wiki/Garvetagh" title="Garvetagh">Garvetagh</a>, <a href="/wiki/Killen,_County_Tyrone" title="Killen, County Tyrone">Killen</a>, <a href="/wiki/Killeter" title="Killeter">Killeter</a>, Mournebeg, Scraghey, <a href="/wiki/Spamount" title="Spamount">Spamount</a>
+</td>
+<td>Derry City and Strabane
+</td></tr>
+<tr>
+<th>BT82
+</th>
+<td>STRABANE
+</td>
+<td><a href="/wiki/Strabane" title="Strabane">Strabane</a>, <a href="/wiki/Artigarvan" title="Artigarvan">Artigarvan</a>, <a href="/wiki/Ballymagorry" title="Ballymagorry">Ballymagorry</a>, <a href="/wiki/Bready" title="Bready">Bready</a>, <a href="/wiki/Clady,_County_Tyrone" title="Clady, County Tyrone">Clady</a>, <a href="/wiki/Douglas_Bridge" title="Douglas Bridge">Douglas Bridge</a>, <a href="/wiki/Dunamanagh" class="mw-redirect" title="Dunamanagh">Dunamanagh</a>, <a href="/wiki/Sion_Mills" title="Sion Mills">Sion Mills</a>, <a href="/wiki/Victoria_Bridge,_County_Tyrone" title="Victoria Bridge, County Tyrone">Victoria Bridge</a>
+</td>
+<td>Derry City and Strabane
+</td></tr>
+<tr>
+<th>BT92
+</th>
+<td>ENNISKILLEN
+</td>
+<td><a href="/wiki/Lisnaskea" title="Lisnaskea">Lisnaskea</a>, <a href="/wiki/Florencecourt" title="Florencecourt">Florencecourt</a>, <a href="/wiki/Derrylin" title="Derrylin">Derrylin</a>, <a href="/wiki/Newtownbutler" title="Newtownbutler">Newtownbutler</a>
+</td>
+<td>Fermanagh and Omagh
+</td></tr>
+<tr>
+<th>BT93
+</th>
+<td>ENNISKILLEN
+</td>
+<td><a href="/wiki/Belleek,_County_Fermanagh" title="Belleek, County Fermanagh">Belleek</a>, <a href="/wiki/Belcoo" title="Belcoo">Belcoo</a>, <a href="/wiki/Kesh,_County_Fermanagh" title="Kesh, County Fermanagh">Kesh</a>, <a href="/wiki/Derrygonnelly" title="Derrygonnelly">Derrygonnelly</a>, <a href="/wiki/Garrison,_County_Fermanagh" title="Garrison, County Fermanagh">Garrison</a>
+</td>
+<td>Fermanagh and Omagh
+</td></tr>
+<tr>
+<th>BT94
+</th>
+<td>ENNISKILLEN
+</td>
+<td><a href="/wiki/Irvinestown" title="Irvinestown">Irvinestown</a>, <a href="/wiki/Ballinamallard" title="Ballinamallard">Ballinamallard</a>, <a href="/wiki/Brookeborough" title="Brookeborough">Brookeborough</a>, <a href="/wiki/Tempo,_County_Fermanagh" title="Tempo, County Fermanagh">Tempo</a>, <a href="/wiki/Maguiresbridge" title="Maguiresbridge">Maguiresbridge</a>, <a href="/wiki/Lisbellaw" title="Lisbellaw">Lisbellaw</a>
+</td>
+<td>Fermanagh and Omagh
+</td></tr></tbody></table>
+<dl><dt>Note</dt>
+<dd></dd></dl>
+<style data-mw-deduplicate="TemplateStyles:r1239543626">.mw-parser-output .reflist{margin-bottom:0.5em;list-style-type:decimal}@media screen{.mw-parser-output .reflist{font-size:90%}}.mw-parser-output .reflist .references{font-size:100%;margin-bottom:0;list-style-type:inherit}.mw-parser-output .reflist-columns-2{column-width:30em}.mw-parser-output .reflist-columns-3{column-width:25em}.mw-parser-output .reflist-columns{margin-top:0.3em}.mw-parser-output .reflist-columns ol{margin-top:0}.mw-parser-output .reflist-columns li{page-break-inside:avoid;break-inside:avoid-column}.mw-parser-output .reflist-upper-alpha{list-style-type:upper-alpha}.mw-parser-output .reflist-upper-roman{list-style-type:upper-roman}.mw-parser-output .reflist-lower-alpha{list-style-type:lower-alpha}.mw-parser-output .reflist-lower-greek{list-style-type:lower-greek}.mw-parser-output .reflist-lower-roman{list-style-type:lower-roman}</style><div class="reflist">
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-lderry-4"><span class="mw-cite-backlink">^ <a href="#cite_ref-lderry_4-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-lderry_4-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text">The Post Office guide uses <i>Londonderry</i>, the legal name for the city also called <i>Derry</i>; the post office accepts either name. The local government district's legal name is <i>Derry</i>. See also <a href="/wiki/Derry/Londonderry_name_dispute" title="Derry/Londonderry name dispute">Derry/Londonderry name dispute</a></span>
+</li>
+</ol></div></div>
+<div class="mw-heading mw-heading2"><h2 id="Map">Map</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=BT_postcode_area&amp;action=edit&amp;section=4" title="Edit section: Map"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-halign-none noresize" typeof="mw:File/Thumb"><a href="/wiki/File:BT_postcode_area_map.svg" title="BT postcode area map"><img alt="BT postcode area map, showing postcode districts, post towns and neighbouring postcode areas." src="//upload.wikimedia.org/wikipedia/commons/thumb/1/12/BT_postcode_area_map.svg/960px-BT_postcode_area_map.svg.png" decoding="async" width="550" height="440" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/12/BT_postcode_area_map.svg/1100px-BT_postcode_area_map.svg.png 2x" data-file-width="1000" data-file-height="800" usemap="#ImageMap_b5c16aa2eb9f1d2e" resource="/wiki/File:BT_postcode_area_map.svg" /></a><map name="ImageMap_b5c16aa2eb9f1d2e"><area href="/wiki/PA_postcode_area" shape="poly" coords="523,0,514,14,519,20,514,28,504,29,498,19,473,25,461,16,461,0" alt="PA postcode area" title="PA postcode area" /></map><figcaption>BT postcode area map, showing postcode districts in red and post towns in grey text, with link to nearby <a href="/wiki/PA_postcode_area" title="PA postcode area">PA</a> postcode area.</figcaption></figure>
+<figure class="mw-halign-none" typeof="mw:File/Thumb"><a href="/wiki/File:BT_postcode_area_inset_map.svg" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/thumb/5/59/BT_postcode_area_inset_map.svg/550px-BT_postcode_area_inset_map.svg.png" decoding="async" width="550" height="550" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/59/BT_postcode_area_inset_map.svg/825px-BT_postcode_area_inset_map.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/59/BT_postcode_area_inset_map.svg/1100px-BT_postcode_area_inset_map.svg.png 2x" data-file-width="500" data-file-height="500" /></a><figcaption>Detailed map of postcode districts and post towns in and around Belfast</figcaption></figure>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=BT_postcode_area&amp;action=edit&amp;section=5" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="/wiki/List_of_postcode_areas_in_the_United_Kingdom" title="List of postcode areas in the United Kingdom">List of postcode areas in the United Kingdom</a></li>
+<li><a href="/wiki/Postcode_Address_File" title="Postcode Address File">Postcode Address File</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="References">References</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=BT_postcode_area&amp;action=edit&amp;section=6" title="Edit section: References"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1239543626" /><div class="reflist">
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><style data-mw-deduplicate="TemplateStyles:r1238218222">.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#d33)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#d33)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite class="citation web cs1"><a rel="nofollow" class="external text" href="http://www.ons.gov.uk/ons/guide-method/geography/products/postcode-directories/-nspp-/onspd-user-guide-and-version-notes.zip">"ONS Postcode Directory Version Notes"</a> <span class="cs1-format">(ZIP)</span>. <i>National Statistics Postcode Products</i>. <a href="/wiki/Office_for_National_Statistics" title="Office for National Statistics">Office for National Statistics</a>. May 2020. Table 2<span class="reference-accessdate">. Retrieved <span class="nowrap">19 June</span> 2020</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=National+Statistics+Postcode+Products&amp;rft.atitle=ONS+Postcode+Directory+Version+Notes&amp;rft.pages=Table+2&amp;rft.date=2020-05&amp;rft_id=http%3A%2F%2Fwww.ons.gov.uk%2Fons%2Fguide-method%2Fgeography%2Fproducts%2Fpostcode-directories%2F-nspp-%2Fonspd-user-guide-and-version-notes.zip&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABT+postcode+area" class="Z3988"></span> </span>
+</li>
+<li id="cite_note-Guide-2"><span class="mw-cite-backlink">^ <a href="#cite_ref-Guide_2-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Guide_2-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text">Royal Mail, <i>Address Management Guide</i>, (2004)</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://books.google.com/books?id=XxAiAAAAMAAJ&amp;dq=%22Belfast+12%22&amp;pg=PA105"><i>Social Services in Britain</i></a>, Reference Division, British Information Services, 1966, page 105</span>
+</li>
+<li id="cite_note-nongeo1207-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-nongeo1207_5-0">^</a></b></span> <span class="reference-text"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1238218222" /><cite class="citation web cs1"><a rel="nofollow" class="external text" href="https://web.archive.org/web/20120916141140/http://www.poweredbypaf.com/wp-content/uploads/2012/07/12July_current_non-geos-original.pdf">"Non Geographic Codes"</a> <span class="cs1-format">(PDF)</span>. Royal Mail Address Management Unit. July 2012. Archived from <a rel="nofollow" class="external text" href="http://www.poweredbypaf.com/wp-content/uploads/2012/07/12July_current_non-geos-original.pdf">the original</a> <span class="cs1-format">(PDF)</span> on 16 September 2012<span class="reference-accessdate">. Retrieved <span class="nowrap">2 January</span> 2013</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Non+Geographic+Codes&amp;rft.pub=Royal+Mail+Address+Management+Unit&amp;rft.date=2012-07&amp;rft_id=http%3A%2F%2Fwww.poweredbypaf.com%2Fwp-content%2Fuploads%2F2012%2F07%2F12July_current_non-geos-original.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABT+postcode+area" class="Z3988"></span></span>
+</li>
+</ol></div></div>
+<div class="mw-heading mw-heading2"><h2 id="External_links">External links</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=BT_postcode_area&amp;action=edit&amp;section=7" title="Edit section: External links"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="navbox-styles"><style data-mw-deduplicate="TemplateStyles:r1129693374">.mw-parser-output .hlist dl,.mw-parser-output .hlist ol,.mw-parser-output .hlist ul{margin:0;padding:0}.mw-parser-output .hlist dd,.mw-parser-output .hlist dt,.mw-parser-output .hlist li{margin:0;display:inline}.mw-parser-output .hlist.inline,.mw-parser-output .hlist.inline dl,.mw-parser-output .hlist.inline ol,.mw-parser-output .hlist.inline ul,.mw-parser-output .hlist dl dl,.mw-parser-output .hlist dl ol,.mw-parser-output .hlist dl ul,.mw-parser-output .hlist ol dl,.mw-parser-output .hlist ol ol,.mw-parser-output .hlist ol ul,.mw-parser-output .hlist ul dl,.mw-parser-output .hlist ul ol,.mw-parser-output .hlist ul ul{display:inline}.mw-parser-output .hlist .mw-empty-li{display:none}.mw-parser-output .hlist dt::after{content:": "}.mw-parser-output .hlist dd::after,.mw-parser-output .hlist li::after{content:" · ";font-weight:bold}.mw-parser-output .hlist dd:last-child::after,.mw-parser-output .hlist dt:last-child::after,.mw-parser-output .hlist li:last-child::after{content:none}.mw-parser-output .hlist dd dd:first-child::before,.mw-parser-output .hlist dd dt:first-child::before,.mw-parser-output .hlist dd li:first-child::before,.mw-parser-output .hlist dt dd:first-child::before,.mw-parser-output .hlist dt dt:first-child::before,.mw-parser-output .hlist dt li:first-child::before,.mw-parser-output .hlist li dd:first-child::before,.mw-parser-output .hlist li dt:first-child::before,.mw-parser-output .hlist li li:first-child::before{content:" (";font-weight:normal}.mw-parser-output .hlist dd dd:last-child::after,.mw-parser-output .hlist dd dt:last-child::after,.mw-parser-output .hlist dd li:last-child::after,.mw-parser-output .hlist dt dd:last-child::after,.mw-parser-output .hlist dt dt:last-child::after,.mw-parser-output .hlist dt li:last-child::after,.mw-parser-output .hlist li dd:last-child::after,.mw-parser-output .hlist li dt:last-child::after,.mw-parser-output .hlist li li:last-child::after{content:")";font-weight:normal}.mw-parser-output .hlist ol{counter-reset:listitem}.mw-parser-output .hlist ol>li{counter-increment:listitem}.mw-parser-output .hlist ol>li::before{content:" "counter(listitem)"\a0 "}.mw-parser-output .hlist dd ol>li:first-child::before,.mw-parser-output .hlist dt ol>li:first-child::before,.mw-parser-output .hlist li ol>li:first-child::before{content:" ("counter(listitem)"\a0 "}</style><style data-mw-deduplicate="TemplateStyles:r1236075235">.mw-parser-output .navbox{box-sizing:border-box;border:1px solid #a2a9b1;width:100%;clear:both;font-size:88%;text-align:center;padding:1px;margin:1em auto 0}.mw-parser-output .navbox .navbox{margin-top:0}.mw-parser-output .navbox+.navbox,.mw-parser-output .navbox+.navbox-styles+.navbox{margin-top:-1px}.mw-parser-output .navbox-inner,.mw-parser-output .navbox-subgroup{width:100%}.mw-parser-output .navbox-group,.mw-parser-output .navbox-title,.mw-parser-output .navbox-abovebelow{padding:0.25em 1em;line-height:1.5em;text-align:center}.mw-parser-output .navbox-group{white-space:nowrap;text-align:right}.mw-parser-output .navbox,.mw-parser-output .navbox-subgroup{background-color:#fdfdfd}.mw-parser-output .navbox-list{line-height:1.5em;border-color:#fdfdfd}.mw-parser-output .navbox-list-with-group{text-align:left;border-left-width:2px;border-left-style:solid}.mw-parser-output tr+tr>.navbox-abovebelow,.mw-parser-output tr+tr>.navbox-group,.mw-parser-output tr+tr>.navbox-image,.mw-parser-output tr+tr>.navbox-list{border-top:2px solid #fdfdfd}.mw-parser-output .navbox-title{background-color:#ccf}.mw-parser-output .navbox-abovebelow,.mw-parser-output .navbox-group,.mw-parser-output .navbox-subgroup .navbox-title{background-color:#ddf}.mw-parser-output .navbox-subgroup .navbox-group,.mw-parser-output .navbox-subgroup .navbox-abovebelow{background-color:#e6e6ff}.mw-parser-output .navbox-even{background-color:#f7f7f7}.mw-parser-output .navbox-odd{background-color:transparent}.mw-parser-output .navbox .hlist td dl,.mw-parser-output .navbox .hlist td ol,.mw-parser-output .navbox .hlist td ul,.mw-parser-output .navbox td.hlist dl,.mw-parser-output .navbox td.hlist ol,.mw-parser-output .navbox td.hlist ul{padding:0.125em 0}.mw-parser-output .navbox .navbar{display:block;font-size:100%}.mw-parser-output .navbox-title .navbar{float:left;text-align:left;margin-right:0.5em}body.skin--responsive .mw-parser-output .navbox-image img{max-width:none!important}@media print{body.ns-0 .mw-parser-output .navbox{display:none!important}}</style></div><div role="navigation" class="navbox" aria-labelledby="Postcode_areas_in_the_United_Kingdom_and_its_dependencies396" style="padding:3px"><table class="nowraplinks hlist mw-collapsible expanded navbox-inner" style="border-spacing:0;background:transparent;color:inherit"><tbody><tr><th scope="col" class="navbox-title" colspan="2"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1129693374" /><style data-mw-deduplicate="TemplateStyles:r1239400231">.mw-parser-output .navbar{display:inline;font-size:88%;font-weight:normal}.mw-parser-output .navbar-collapse{float:left;text-align:left}.mw-parser-output .navbar-boxtext{word-spacing:0}.mw-parser-output .navbar ul{display:inline-block;white-space:nowrap;line-height:inherit}.mw-parser-output .navbar-brackets::before{margin-right:-0.125em;content:"[ "}.mw-parser-output .navbar-brackets::after{margin-left:-0.125em;content:" ]"}.mw-parser-output .navbar li{word-spacing:-0.125em}.mw-parser-output .navbar a>span,.mw-parser-output .navbar a>abbr{text-decoration:inherit}.mw-parser-output .navbar-mini abbr{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit}.mw-parser-output .navbar-ct-full{font-size:114%;margin:0 7em}.mw-parser-output .navbar-ct-mini{font-size:114%;margin:0 4em}html.skin-theme-clientpref-night .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}@media(prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}}@media print{.mw-parser-output .navbar{display:none!important}}</style><div class="navbar plainlinks hlist navbar-mini"><ul><li class="nv-view"><a href="/wiki/Template:Postcode_areas_in_the_United_Kingdom" title="Template:Postcode areas in the United Kingdom"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Postcode_areas_in_the_United_Kingdom" title="Template talk:Postcode areas in the United Kingdom"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a href="/wiki/Special:EditPage/Template:Postcode_areas_in_the_United_Kingdom" title="Special:EditPage/Template:Postcode areas in the United Kingdom"><abbr title="Edit this template">e</abbr></a></li></ul></div><div id="Postcode_areas_in_the_United_Kingdom_and_its_dependencies396" style="font-size:114%;margin:0 4em"><a href="/wiki/List_of_postcode_areas_in_the_United_Kingdom" title="List of postcode areas in the United Kingdom">Postcode areas in the United Kingdom and its dependencies</a></div></th></tr><tr><td colspan="2" class="navbox-list navbox-odd" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/AB_postcode_area" title="AB postcode area">AB</a></li>
+<li><a href="/wiki/AL_postcode_area" title="AL postcode area">AL</a></li>
+<li><a href="/wiki/B_postcode_area" title="B postcode area">B</a></li>
+<li><a href="/wiki/BA_postcode_area" title="BA postcode area">BA</a></li>
+<li><a href="/wiki/BB_postcode_area" title="BB postcode area">BB</a></li>
+<li><a href="/wiki/BD_postcode_area" title="BD postcode area">BD</a></li>
+<li><a href="/wiki/BH_postcode_area" title="BH postcode area">BH</a></li>
+<li><a href="/wiki/BL_postcode_area" title="BL postcode area">BL</a></li>
+<li><a href="/wiki/BN_postcode_area" title="BN postcode area">BN</a></li>
+<li><a href="/wiki/BR_postcode_area" title="BR postcode area">BR</a></li>
+<li><a href="/wiki/BS_postcode_area" title="BS postcode area">BS</a></li>
+<li><a class="mw-selflink selflink">BT</a></li>
+<li><a href="/wiki/CA_postcode_area" title="CA postcode area">CA</a></li>
+<li><a href="/wiki/CB_postcode_area" title="CB postcode area">CB</a></li>
+<li><a href="/wiki/CF_postcode_area" title="CF postcode area">CF</a></li>
+<li><a href="/wiki/CH_postcode_area" title="CH postcode area">CH</a></li>
+<li><a href="/wiki/CM_postcode_area" title="CM postcode area">CM</a></li>
+<li><a href="/wiki/CO_postcode_area" title="CO postcode area">CO</a></li>
+<li><a href="/wiki/CR_postcode_area" title="CR postcode area">CR</a></li>
+<li><a href="/wiki/CT_postcode_area" title="CT postcode area">CT</a></li>
+<li><a href="/wiki/CV_postcode_area" title="CV postcode area">CV</a></li>
+<li><a href="/wiki/CW_postcode_area" title="CW postcode area">CW</a></li>
+<li><a href="/wiki/DA_postcode_area" title="DA postcode area">DA</a></li>
+<li><a href="/wiki/DD_postcode_area" title="DD postcode area">DD</a></li>
+<li><a href="/wiki/DE_postcode_area" title="DE postcode area">DE</a></li>
+<li><a href="/wiki/DG_postcode_area" title="DG postcode area">DG</a></li>
+<li><a href="/wiki/DH_postcode_area" title="DH postcode area">DH</a></li>
+<li><a href="/wiki/DL_postcode_area" title="DL postcode area">DL</a></li>
+<li><a href="/wiki/DN_postcode_area" title="DN postcode area">DN</a></li>
+<li><a href="/wiki/DT_postcode_area" title="DT postcode area">DT</a></li>
+<li><a href="/wiki/DY_postcode_area" title="DY postcode area">DY</a></li>
+<li><a href="/wiki/E_postcode_area" title="E postcode area">E</a></li>
+<li><a href="/wiki/EC_postcode_area" title="EC postcode area">EC</a></li>
+<li><a href="/wiki/EH_postcode_area" title="EH postcode area">EH</a></li>
+<li><a href="/wiki/EN_postcode_area" title="EN postcode area">EN</a></li>
+<li><a href="/wiki/EX_postcode_area" title="EX postcode area">EX</a></li>
+<li><a href="/wiki/FK_postcode_area" title="FK postcode area">FK</a></li>
+<li><a href="/wiki/FY_postcode_area" title="FY postcode area">FY</a></li>
+<li><a href="/wiki/G_postcode_area" title="G postcode area">G</a></li>
+<li><a href="/wiki/GL_postcode_area" title="GL postcode area">GL</a></li>
+<li><a href="/wiki/GU_postcode_area" title="GU postcode area">GU</a></li>
+<li><a href="/wiki/HA_postcode_area" title="HA postcode area">HA</a></li>
+<li><a href="/wiki/HD_postcode_area" title="HD postcode area">HD</a></li>
+<li><a href="/wiki/HG_postcode_area" title="HG postcode area">HG</a></li>
+<li><a href="/wiki/HP_postcode_area" title="HP postcode area">HP</a></li>
+<li><a href="/wiki/HR_postcode_area" title="HR postcode area">HR</a></li>
+<li><a href="/wiki/HS_postcode_area" title="HS postcode area">HS</a></li>
+<li><a href="/wiki/HU_postcode_area" title="HU postcode area">HU</a></li>
+<li><a href="/wiki/HX_postcode_area" title="HX postcode area">HX</a></li>
+<li><a href="/wiki/IG_postcode_area" title="IG postcode area">IG</a></li>
+<li><a href="/wiki/IP_postcode_area" title="IP postcode area">IP</a></li>
+<li><a href="/wiki/IV_postcode_area" title="IV postcode area">IV</a></li>
+<li><a href="/wiki/KA_postcode_area" title="KA postcode area">KA</a></li>
+<li><a href="/wiki/KT_postcode_area" title="KT postcode area">KT</a></li>
+<li><a href="/wiki/KW_postcode_area" title="KW postcode area">KW</a></li>
+<li><a href="/wiki/KY_postcode_area" title="KY postcode area">KY</a></li>
+<li><a href="/wiki/L_postcode_area" title="L postcode area">L</a></li>
+<li><a href="/wiki/LA_postcode_area" title="LA postcode area">LA</a></li>
+<li><a href="/wiki/LD_postcode_area" title="LD postcode area">LD</a></li>
+<li><a href="/wiki/LE_postcode_area" title="LE postcode area">LE</a></li>
+<li><a href="/wiki/LL_postcode_area" title="LL postcode area">LL</a></li>
+<li><a href="/wiki/LN_postcode_area" title="LN postcode area">LN</a></li>
+<li><a href="/wiki/LS_postcode_area" title="LS postcode area">LS</a></li>
+<li><a href="/wiki/LU_postcode_area" title="LU postcode area">LU</a></li>
+<li><a href="/wiki/M_postcode_area" title="M postcode area">M</a></li>
+<li><a href="/wiki/ME_postcode_area" title="ME postcode area">ME</a></li>
+<li><a href="/wiki/MK_postcode_area" title="MK postcode area">MK</a></li>
+<li><a href="/wiki/ML_postcode_area" title="ML postcode area">ML</a></li>
+<li><a href="/wiki/N_postcode_area" title="N postcode area">N</a></li>
+<li><a href="/wiki/NE_postcode_area" title="NE postcode area">NE</a></li>
+<li><a href="/wiki/NG_postcode_area" title="NG postcode area">NG</a></li>
+<li><a href="/wiki/NN_postcode_area" title="NN postcode area">NN</a></li>
+<li><a href="/wiki/NP_postcode_area" title="NP postcode area">NP</a></li>
+<li><a href="/wiki/NR_postcode_area" title="NR postcode area">NR</a></li>
+<li><a href="/wiki/NW_postcode_area" title="NW postcode area">NW</a></li>
+<li><a href="/wiki/OL_postcode_area" title="OL postcode area">OL</a></li>
+<li><a href="/wiki/OX_postcode_area" title="OX postcode area">OX</a></li>
+<li><a href="/wiki/PA_postcode_area" title="PA postcode area">PA</a></li>
+<li><a href="/wiki/PE_postcode_area" title="PE postcode area">PE</a></li>
+<li><a href="/wiki/PH_postcode_area" title="PH postcode area">PH</a></li>
+<li><a href="/wiki/PL_postcode_area" title="PL postcode area">PL</a></li>
+<li><a href="/wiki/PO_postcode_area" title="PO postcode area">PO</a></li>
+<li><a href="/wiki/PR_postcode_area" title="PR postcode area">PR</a></li>
+<li><a href="/wiki/RG_postcode_area" title="RG postcode area">RG</a></li>
+<li><a href="/wiki/RH_postcode_area" title="RH postcode area">RH</a></li>
+<li><a href="/wiki/RM_postcode_area" title="RM postcode area">RM</a></li>
+<li><a href="/wiki/S_postcode_area" title="S postcode area">S</a></li>
+<li><a href="/wiki/SA_postcode_area" title="SA postcode area">SA</a></li>
+<li><a href="/wiki/SE_postcode_area" title="SE postcode area">SE</a></li>
+<li><a href="/wiki/SG_postcode_area" title="SG postcode area">SG</a></li>
+<li><a href="/wiki/SK_postcode_area" title="SK postcode area">SK</a></li>
+<li><a href="/wiki/SL_postcode_area" title="SL postcode area">SL</a></li>
+<li><a href="/wiki/SM_postcode_area" title="SM postcode area">SM</a></li>
+<li><a href="/wiki/SN_postcode_area" title="SN postcode area">SN</a></li>
+<li><a href="/wiki/SO_postcode_area" title="SO postcode area">SO</a></li>
+<li><a href="/wiki/SP_postcode_area" title="SP postcode area">SP</a></li>
+<li><a href="/wiki/SR_postcode_area" title="SR postcode area">SR</a></li>
+<li><a href="/wiki/SS_postcode_area" title="SS postcode area">SS</a></li>
+<li><a href="/wiki/ST_postcode_area" title="ST postcode area">ST</a></li>
+<li><a href="/wiki/SW_postcode_area" title="SW postcode area">SW</a></li>
+<li><a href="/wiki/SY_postcode_area" title="SY postcode area">SY</a></li>
+<li><a href="/wiki/TA_postcode_area" title="TA postcode area">TA</a></li>
+<li><a href="/wiki/TD_postcode_area" title="TD postcode area">TD</a></li>
+<li><a href="/wiki/TF_postcode_area" title="TF postcode area">TF</a></li>
+<li><a href="/wiki/TN_postcode_area" title="TN postcode area">TN</a></li>
+<li><a href="/wiki/TQ_postcode_area" title="TQ postcode area">TQ</a></li>
+<li><a href="/wiki/TR_postcode_area" title="TR postcode area">TR</a></li>
+<li><a href="/wiki/TS_postcode_area" title="TS postcode area">TS</a></li>
+<li><a href="/wiki/TW_postcode_area" title="TW postcode area">TW</a></li>
+<li><a href="/wiki/UB_postcode_area" title="UB postcode area">UB</a></li>
+<li><a href="/wiki/W_postcode_area" title="W postcode area">W</a></li>
+<li><a href="/wiki/WA_postcode_area" title="WA postcode area">WA</a></li>
+<li><a href="/wiki/WC_postcode_area" title="WC postcode area">WC</a></li>
+<li><a href="/wiki/WD_postcode_area" title="WD postcode area">WD</a></li>
+<li><a href="/wiki/WF_postcode_area" title="WF postcode area">WF</a></li>
+<li><a href="/wiki/WN_postcode_area" title="WN postcode area">WN</a></li>
+<li><a href="/wiki/WR_postcode_area" title="WR postcode area">WR</a></li>
+<li><a href="/wiki/WS_postcode_area" title="WS postcode area">WS</a></li>
+<li><a href="/wiki/WV_postcode_area" title="WV postcode area">WV</a></li>
+<li><a href="/wiki/YO_postcode_area" title="YO postcode area">YO</a></li>
+<li><a href="/wiki/ZE_postcode_area" title="ZE postcode area">ZE</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1%">Crown dependencies</th><td class="navbox-list-with-group navbox-list navbox-even" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/GY_postcode_area" title="GY postcode area">GY</a></li>
+<li><a href="/wiki/IM_postcode_area" title="IM postcode area">IM</a></li>
+<li><a href="/wiki/JE_postcode_area" title="JE postcode area">JE</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1%">Overseas territories</th><td class="navbox-list-with-group navbox-list navbox-odd" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Postcodes_in_the_United_Kingdom#British_Overseas_Territories" title="Postcodes in the United Kingdom">AI</a></li>
+<li><a href="/wiki/Postcodes_in_the_United_Kingdom#British_Overseas_Territories" title="Postcodes in the United Kingdom">ASCN</a></li>
+<li><a href="/wiki/Postcodes_in_the_United_Kingdom#British_Overseas_Territories" title="Postcodes in the United Kingdom">BBND</a></li>
+<li><a href="/wiki/Postcodes_in_the_United_Kingdom#British_Overseas_Territories" title="Postcodes in the United Kingdom">BIQQ</a></li>
+<li><a href="/wiki/Postcodes_in_the_United_Kingdom#British_Overseas_Territories" title="Postcodes in the United Kingdom">FIQQ</a></li>
+<li><a href="/wiki/Postal_addresses_in_Gibraltar" title="Postal addresses in Gibraltar">GX</a></li>
+<li><a href="/wiki/Postcodes_in_the_United_Kingdom#British_Overseas_Territories" title="Postcodes in the United Kingdom">KY</a></li>
+<li><a href="/wiki/Postcodes_in_the_United_Kingdom#British_Overseas_Territories" title="Postcodes in the United Kingdom">MSR</a></li>
+<li><a href="/wiki/Postcodes_in_the_United_Kingdom#British_Overseas_Territories" title="Postcodes in the United Kingdom">PCRN</a></li>
+<li><a href="/wiki/Postcodes_in_the_United_Kingdom#British_Overseas_Territories" title="Postcodes in the United Kingdom">SIQQ</a></li>
+<li><a href="/wiki/Postcodes_in_the_United_Kingdom#British_Overseas_Territories" title="Postcodes in the United Kingdom">STHL</a></li>
+<li><a href="/wiki/Postcodes_in_the_United_Kingdom#British_Overseas_Territories" title="Postcodes in the United Kingdom">TDCU</a></li>
+<li><a href="/wiki/Postcodes_in_the_United_Kingdom#British_Overseas_Territories" title="Postcodes in the United Kingdom">TKCA</a></li>
+<li><a href="/wiki/Postcodes_in_the_United_Kingdom#British_Overseas_Territories" title="Postcodes in the United Kingdom">VG</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1%">Non-geographic</th><td class="navbox-list-with-group navbox-list navbox-even" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/British_Forces_Post_Office" title="British Forces Post Office">BF</a></li>
+<li><a href="/wiki/List_of_postcode_areas_in_the_United_Kingdom#BX" title="List of postcode areas in the United Kingdom">BX</a></li>
+<li><a href="/wiki/List_of_postcode_areas_in_the_United_Kingdom#GIR" title="List of postcode areas in the United Kingdom">GIR</a></li>
+<li><a href="/wiki/List_of_postcode_areas_in_the_United_Kingdom#XX" title="List of postcode areas in the United Kingdom">XX</a></li></ul>
+</div></td></tr><tr><td class="navbox-abovebelow" colspan="2"><div>
+<ul><li>Related UK lists: <a href="/wiki/List_of_postcode_districts_in_the_United_Kingdom" title="List of postcode districts in the United Kingdom">Postcode districts</a></li>
+<li><a href="/wiki/List_of_post_towns_in_the_United_Kingdom" title="List of post towns in the United Kingdom">Post towns</a></li>
+<li><a href="/wiki/Postal_counties_of_the_United_Kingdom" title="Postal counties of the United Kingdom">Postal counties</a></li>
+<li><a href="/wiki/London_postal_district" title="London postal district">London postal district</a></li></ul>
+</div></td></tr></tbody></table></div>
+<!-- 
+NewPP limit report
+Parsed by mw‐api‐ext.eqiad.main‐746f865549‐9kqbk
+Cached time: 20250601075446
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, show‐toc]
+CPU time usage: 0.559 seconds
+Real time usage: 0.744 seconds
+Preprocessor visited node count: 4320/1000000
+Revision size: 16860/2097152 bytes
+Post‐expand include size: 55167/2097152 bytes
+Template argument size: 9070/2097152 bytes
+Highest expansion depth: 15/100
+Expensive parser function count: 5/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 26723/5000000 bytes
+Lua time usage: 0.321/10.000 seconds
+Lua memory usage: 6362431/52428800 bytes
+Number of Wikibase entities loaded: 1/500
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  618.042      1 -total
+ 56.65%  350.098      1 Template:Infobox_UK_postcode_area
+ 50.98%  315.096      1 Template:Infobox_settlement
+ 44.38%  274.269      1 Template:Infobox
+ 14.44%   89.246      2 Template:Cite_web
+ 12.33%   76.208      1 Template:Short_description
+ 11.76%   72.654      1 Template:Postcode_areas_in_the_United_Kingdom
+ 11.30%   69.850      1 Template:Navbox
+  8.18%   50.544     14 Template:Main_other
+  7.53%   46.521      4 Template:Pagetype
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:6675514:|#|:idhash:canonical and timestamp 20250601075446 and revision id 1293357513. Rendering was triggered because: api-parse
+ -->
+</div><!--esi <esi:include src="/esitest-fa8a495983347898/content" /> --><noscript><img src="https://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1&amp;usesul3=1" alt="" width="1" height="1" style="border: none; position: absolute;"></noscript>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=BT_postcode_area&amp;oldid=1293357513">https://en.wikipedia.org/w/index.php?title=BT_postcode_area&amp;oldid=1293357513</a>"</div></div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Postcode_areas_of_the_United_Kingdom" title="Category:Postcode areas of the United Kingdom">Postcode areas of the United Kingdom</a></li><li><a href="/wiki/Category:Communications_in_Northern_Ireland" title="Category:Communications in Northern Ireland">Communications in Northern Ireland</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Pages_using_gadget_WikiMiniAtlas" title="Category:Pages using gadget WikiMiniAtlas">Pages using gadget WikiMiniAtlas</a></li><li><a href="/wiki/Category:Articles_with_short_description" title="Category:Articles with short description">Articles with short description</a></li><li><a href="/wiki/Category:Short_description_matches_Wikidata" title="Category:Short description matches Wikidata">Short description matches Wikidata</a></li><li><a href="/wiki/Category:Use_British_English_from_October_2013" title="Category:Use British English from October 2013">Use British English from October 2013</a></li><li><a href="/wiki/Category:Use_dmy_dates_from_January_2024" title="Category:Use dmy dates from January 2024">Use dmy dates from January 2024</a></li><li><a href="/wiki/Category:Coordinates_on_Wikidata" title="Category:Coordinates on Wikidata">Coordinates on Wikidata</a></li><li><a href="/wiki/Category:Short_description_is_different_from_Wikidata" title="Category:Short description is different from Wikidata">Short description is different from Wikidata</a></li><li><a href="/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></li><li><a href="/wiki/Category:Articles_with_unsourced_statements_from_June_2009" title="Category:Articles with unsourced statements from June 2009">Articles with unsourced statements from June 2009</a></li></ul></div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 1 June 2025, at 07:54<span class="anonymous-show">&#160;(UTC)</span>.</li>
+	<li id="footer-info-copyright">Text is available under the <a href="/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License" title="Wikipedia:Text of the Creative Commons Attribution-ShareAlike 4.0 International License">Creative Commons Attribution-ShareAlike 4.0 License</a>;
+additional terms may apply. By using this site, you agree to the <a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Terms_of_Use" class="extiw" title="foundation:Special:MyLanguage/Policy:Terms of Use">Terms of Use</a> and <a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy" class="extiw" title="foundation:Special:MyLanguage/Policy:Privacy policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a rel="nofollow" class="external text" href="https://wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="/wiki/Wikipedia:About">About Wikipedia</a></li>
+	<li id="footer-places-disclaimers"><a href="/wiki/Wikipedia:General_disclaimer">Disclaimers</a></li>
+	<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+	<li id="footer-places-wm-codeofconduct"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Universal_Code_of_Conduct">Code of Conduct</a></li>
+	<li id="footer-places-developers"><a href="https://developer.wikimedia.org">Developers</a></li>
+	<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/en.wikipedia.org">Statistics</a></li>
+	<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement">Cookie statement</a></li>
+	<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=BT_postcode_area&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://www.wikimedia.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><picture><source media="(min-width: 500px)" srcset="/static/images/footer/wikimedia-button.svg" width="84" height="29"><img src="/static/images/footer/wikimedia.svg" width="25" height="25" alt="Wikimedia Foundation" lang="en" loading="lazy"></picture></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><picture><source media="(min-width: 500px)" srcset="/w/resources/assets/poweredby_mediawiki.svg" width="88" height="31"><img src="/w/resources/assets/mediawiki_compact.svg" alt="Powered by MediaWiki" lang="en" width="25" height="25" loading="lazy"></picture></a></li>
+</ul>
+
+</footer>
+
+		</div>
+	</div> 
+</div> 
+<div class="vector-header-container vector-sticky-header-container no-font-mode-scale">
+	<div id="vector-sticky-header" class="vector-sticky-header">
+		<div class="vector-sticky-header-start">
+			<div class="vector-sticky-header-icon-start vector-button-flush-left vector-button-flush-right" aria-hidden="true">
+				<button class="cdx-button cdx-button--weight-quiet cdx-button--icon-only vector-sticky-header-search-toggle" tabindex="-1" data-event-name="ui.vector-sticky-search-form.icon"><span class="vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search"></span>
+
+<span>Search</span>
+			</button>
+		</div>
+			
+		<div role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box">
+			<div class="vector-typeahead-search-container">
+				<div class="cdx-typeahead-search cdx-typeahead-search--show-thumbnail">
+					<form action="/w/index.php" id="vector-sticky-search-form" class="cdx-search-input cdx-search-input--has-end-button">
+						<div  class="cdx-search-input__input-wrapper"  data-search-loc="header-moved">
+							<div class="cdx-text-input cdx-text-input--has-start-icon">
+								<input
+									class="cdx-text-input__input mw-searchInput"
+									
+									type="search" name="search" placeholder="Search Wikipedia">
+								<span class="cdx-text-input__icon cdx-text-input__start-icon"></span>
+							</div>
+							<input type="hidden" name="title" value="Special:Search">
+						</div>
+						<button class="cdx-button cdx-search-input__end-button">Search</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="vector-sticky-header-context-bar">
+				<nav aria-label="Contents" class="vector-toc-landmark">
+						
+					<div id="vector-sticky-header-toc" class="vector-dropdown mw-portlet mw-portlet-sticky-header-toc vector-sticky-header-toc vector-button-flush-left"  >
+						<input type="checkbox" id="vector-sticky-header-toc-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-sticky-header-toc" class="vector-dropdown-checkbox "  aria-label="Toggle the table of contents"  >
+						<label id="vector-sticky-header-toc-label" for="vector-sticky-header-toc-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-listBullet mw-ui-icon-wikimedia-listBullet"></span>
+
+<span class="vector-dropdown-label-text">Toggle the table of contents</span>
+						</label>
+						<div class="vector-dropdown-content">
+					
+						<div id="vector-sticky-header-toc-unpinned-container" class="vector-unpinned-container">
+						</div>
+					
+						</div>
+					</div>
+			</nav>
+				<div class="vector-sticky-header-context-bar-primary" aria-hidden="true" ><span class="mw-page-title-main">BT postcode area</span></div>
+			</div>
+		</div>
+		<div class="vector-sticky-header-end" aria-hidden="true">
+			<div class="vector-sticky-header-icons">
+				<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-talk-sticky-header" tabindex="-1" data-event-name="talk-sticky-header"><span class="vector-icon mw-ui-icon-speechBubbles mw-ui-icon-wikimedia-speechBubbles"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-subject-sticky-header" tabindex="-1" data-event-name="subject-sticky-header"><span class="vector-icon mw-ui-icon-article mw-ui-icon-wikimedia-article"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-history-sticky-header" tabindex="-1" data-event-name="history-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-history mw-ui-icon-wikimedia-wikimedia-history"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only mw-watchlink" id="ca-watchstar-sticky-header" tabindex="-1" data-event-name="watch-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-star mw-ui-icon-wikimedia-wikimedia-star"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-edit-sticky-header" tabindex="-1" data-event-name="wikitext-edit-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-wikiText mw-ui-icon-wikimedia-wikimedia-wikiText"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-ve-edit-sticky-header" tabindex="-1" data-event-name="ve-edit-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-edit mw-ui-icon-wikimedia-wikimedia-edit"></span>
+
+<span></span>
+			</a>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only" id="ca-viewsource-sticky-header" tabindex="-1" data-event-name="ve-edit-protected-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-editLock mw-ui-icon-wikimedia-wikimedia-editLock"></span>
+
+<span></span>
+			</a>
+		</div>
+			<div class="vector-sticky-header-buttons">
+				<button class="cdx-button cdx-button--weight-quiet mw-interlanguage-selector" id="p-lang-btn-sticky-header" tabindex="-1" data-event-name="ui.dropdown-p-lang-btn-sticky-header"><span class="vector-icon mw-ui-icon-wikimedia-language mw-ui-icon-wikimedia-wikimedia-language"></span>
+
+<span>1 language</span>
+			</button>
+			<a href="#" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--action-progressive" id="ca-addsection-sticky-header" tabindex="-1" data-event-name="addsection-sticky-header"><span class="vector-icon mw-ui-icon-speechBubbleAdd-progressive mw-ui-icon-wikimedia-speechBubbleAdd-progressive"></span>
+
+<span>Add topic</span>
+			</a>
+		</div>
+			<div class="vector-sticky-header-icon-end">
+				<div class="vector-user-links">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="mw-portlet mw-portlet-dock-bottom emptyPortlet" id="p-dock-bottom">
+	<ul>
+		
+	</ul>
+</div>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgHostname":"mw-web.eqiad.main-cf8b979d6-99fb4","wgBackendResponseTime":170,"wgPageParseReport":{"limitreport":{"cputime":"0.559","walltime":"0.744","ppvisitednodes":{"value":4320,"limit":1000000},"revisionsize":{"value":16860,"limit":2097152},"postexpandincludesize":{"value":55167,"limit":2097152},"templateargumentsize":{"value":9070,"limit":2097152},"expansiondepth":{"value":15,"limit":100},"expensivefunctioncount":{"value":5,"limit":500},"unstrip-depth":{"value":1,"limit":20},"unstrip-size":{"value":26723,"limit":5000000},"entityaccesscount":{"value":1,"limit":500},"timingprofile":["100.00%  618.042      1 -total"," 56.65%  350.098      1 Template:Infobox_UK_postcode_area"," 50.98%  315.096      1 Template:Infobox_settlement"," 44.38%  274.269      1 Template:Infobox"," 14.44%   89.246      2 Template:Cite_web"," 12.33%   76.208      1 Template:Short_description"," 11.76%   72.654      1 Template:Postcode_areas_in_the_United_Kingdom"," 11.30%   69.850      1 Template:Navbox","  8.18%   50.544     14 Template:Main_other","  7.53%   46.521      4 Template:Pagetype"]},"scribunto":{"limitreport-timeusage":{"value":"0.321","limit":"10.000"},"limitreport-memusage":{"value":6362431,"limit":52428800}},"cachereport":{"origin":"mw-api-ext.eqiad.main-746f865549-9kqbk","timestamp":"20250601075446","ttl":2592000,"transientcontent":false}}});});</script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Article","name":"BT postcode area","url":"https:\/\/en.wikipedia.org\/wiki\/BT_postcode_area","sameAs":"http:\/\/www.wikidata.org\/entity\/Q4836780","mainEntity":"http:\/\/www.wikidata.org\/entity\/Q4836780","author":{"@type":"Organization","name":"Contributors to Wikimedia projects"},"publisher":{"@type":"Organization","name":"Wikimedia Foundation, Inc.","logo":{"@type":"ImageObject","url":"https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"}},"datePublished":"2006-08-25T03:17:20Z","dateModified":"2025-06-01T07:54:43Z","headline":"postcode area in the United Kingdom covering Northern Ireland"}</script>
+</body>
+</html>

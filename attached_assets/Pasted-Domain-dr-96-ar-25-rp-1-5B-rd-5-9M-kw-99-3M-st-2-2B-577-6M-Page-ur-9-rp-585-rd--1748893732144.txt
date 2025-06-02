@@ -1,0 +1,245 @@
+Domain
+dr
+96
+ar
+25
+rp
+1.5B
+rd
+5.9M
+kw
+99.3M
+st
+2.2B
+577.6M$
+Page
+ur
+9
+rp
+585
+rd
+85
+kw
+699
+st
+1.9K
+670$
+
+Web Vitals
+
+
+WikipediaThe Free Encyclopedia
+Search Wikipedia
+Search
+Donate
+Create account
+Log in
+
+Hide
+WLE Austria Logo (no text).svgPhoto contest Wiki Loves Earth:
+An international photography competition where you can showcase England's unique natural environment and potentially win a prize.
+Contents hide
+(Top)
+Coverage
+
+Belfast
+Rest of Northern Ireland
+Map
+See also
+References
+External links
+BT postcode area
+
+Article
+Talk
+Read
+Edit
+View history
+
+Tools
+Appearance hide
+Text
+
+Small
+
+Standard
+
+Large
+Width
+
+Standard
+
+Wide
+Color (beta)
+
+Automatic
+
+Light
+
+Dark
+Coordinates: 54.603°N 5.923°W
+From Wikipedia, the free encyclopedia
+
+Belfast
+Postcode area
+BT is located in the United KingdomBTBT
+Coordinates: 54.603°N 5.923°W
+Country	United Kingdom
+Postcode area	
+BT
+Postcode area name	
+Belfast
+Post towns	44
+Postcode districts	82
+Postcode sectors	278
+Postcodes (live)	47,227
+Postcodes (total)	61,794
+Statistics as at May 2020[1]
+The BT postcode area, also known as the Belfast postcode area,[2] covers all of Northern Ireland and was the last part of the United Kingdom to be coded, between 1970 and 1974.[citation needed] This area is a group of 82 postcode districts in Northern Ireland, within 44 post towns and around 47,227 live postcodes.
+
+With a population of over 1.8 million people, BT is the second most populous UK postcode area, after the B postcode area (Birmingham, 1.9 million). It is the only UK postcode area that has land borders with non-UK postcode areas and is also the only UK postcode area that borders the European Union. BT borders nine Eircode routing areas in the neighbouring Republic of Ireland: F94, F93, F91, N41, H23, H18, H14, A91, and A75.
+
+Mail for the BT postcode area is processed at the Northern Ireland Mail Centre in Newtownabbey.
+
+Coverage
+Belfast
+Prior to the introduction of postcodes, Belfast had already been divided into numbered postal districts, for example, Belfast 12.[3] Today, the Belfast post town covers postcode districts BT1 to BT17 and part of BT29. In common with all addresses in Northern Ireland, Belfast postcodes start with the letters BT, a mnemonic of the capital city's name. The commercial centre of the city is designated BT1 and the surrounding districts form a roughly sequential clockwise ring around the city. The postcode of the Royal Mail offices at Tomb Street in Belfast is BT1 1AA.
+
+Postcode district	Post town	Coverage	Local authority area(s)
+BT1	BELFAST	Belfast City Centre (City Hall and north)	Belfast
+BT2	BELFAST	Belfast City Centre (south of City Hall)	Belfast
+BT3	BELFAST	Titanic Quarter, Belfast Harbour Estate (including Belfast City Airport), Holywood Exchange	Belfast
+BT4	BELFAST	East Belfast: Sydenham, Belmont, Stormont, Knocknagoney, Upper Newtownards Road, Newtownards Road, Ballyhackamore (Part)	Belfast
+BT5	BELFAST	East Belfast: Castlereagh, Clarawood, Crossnacreevy, Gilnahirk, Connswater, Braniel (Part), Ballyhackamore (Part)	Belfast, Lisburn and Castlereagh
+BT6	BELFAST	East Belfast: Castlereagh, Woodstock, Cregagh, Knockbreda, Mount Merrion, Rosetta, Ravenhill Road	Belfast, Lisburn & Castlereagh
+BT7	BELFAST	South Belfast: Ormeau, Annadale, University Avenue, Botanic Avenue, Donegall Pass, Bradbury Place, Ballynafeigh	Belfast
+BT8	BELFAST	South Belfast: Forestside, Saintfield Road, Four Winds, Mount Oriel, Laurelgrove, Carryduff, Knockbreda, Woodbreda, Newtownbreda	Belfast, Lisburn & Castlereagh City Council
+BT9	BELFAST	South Belfast: Queens Quarter, Malone, Lisburn Road, Windsor, Adelaide, Balmoral, Musgrave Park, Taughmonagh, Stranmillis	Belfast
+BT10	BELFAST	South Belfast: Finaghy, Erinvale	Belfast
+BT11	BELFAST	West Belfast: Andersonstown, Lenadoon, Suffolk, Ladybrook, Turf Lodge	Belfast
+BT12	BELFAST	South Belfast: Sandy Row, The Village, Boucher Road, Donegall Road
+West Belfast: Falls Road
+
+Belfast
+BT13	BELFAST	North Belfast: Shankill Road, Woodvale, Ballygomartin, Springmartin, Glencairn, Highfield.
+West Belfast: Clonard
+
+Belfast
+BT14	BELFAST	North Belfast: Crumlin Road, Ballysillan, Upper Ballysillan, Ardoyne, Carr's Glen	Belfast, Antrim and Newtownabbey
+BT15	BELFAST	North Belfast: York Road, Yorkgate, Seaview, Mount Vernon, Antrim Road, New Lodge, Sailortown	Belfast
+BT16	BELFAST	East Belfast: Dundonald, Millmount Village	Lisburn & Castlereagh
+BT17	BELFAST	West Belfast: Dunmurry, Hannahstown, Twinbrook, Poleglass, Lagmore.
+North Lisburn: Derriaghy, Seymour Hill
+
+Belfast, Lisburn & Castlereagh
+BT29	BELFAST	Belfast International Airport	Antrim & Newtownabbey
+The only BELFAST addresses in BT29 are at Belfast International Airport. All other addresses in BT29 are under the post town CRUMLIN.
+
+Rest of Northern Ireland
+The remainder of Northern Ireland is divided into 43 other post towns which are further divided into postcode districts BT18–BT49, BT51–BT57, BT58 (non-geographic postcode district reassigned from Belfast to Newtownabbey post town), BT60–BT71, BT74–BT82 and BT92–BT94. Certain addresses in BT29 located at Belfast International Airport (a total of 31 delivery points) are in the post town of BELFAST despite being geographically under the post town of CRUMLIN, which has the remaining 7,206 delivery points in that postcode area.[2]
+
+Postcode district	Post town	Coverage	Local authority area(s)
+BT18	HOLYWOOD	Holywood, Craigavad.	Ards and North Down
+BT19	BANGOR	Bangor (outside Ring Road), Crawfordsburn, Groomsport, Helens Bay	Ards and North Down
+BT20	BANGOR	Bangor (within Ring Road).	Ards and North Down
+BT21	DONAGHADEE	Donaghadee	Ards and North Down
+BT22	NEWTOWNARDS	Newtownards, Ardkeen, Ballyhalbert, Ballywalter, Carrowdore, Cloughey, Greyabbey, Kircubbin, Millisle, Portaferry, Portavogie.	Ards and North Down
+BT23	NEWTOWNARDS	Newtownards, Ballygowan, Comber, Conlig, Killinchy, Moneyreagh.	Ards and North Down, Lisburn and Castlereagh
+BT24	BALLYNAHINCH	Ballynahinch, Drumaness, Saintfield	Newry, Mourne and Down, Lisburn and Castlereagh
+BT25	DROMORE	Dromore, Dromara, Finnis, Waringsford.	Armagh, Banbridge and Craigavon, Lisburn and Castlereagh
+BT26	HILLSBOROUGH	Hillsborough, Annahilt, Culcavy.	Lisburn and Castlereagh
+BT27	LISBURN	Lisburn, Cargacreevy, Drumalig, Drumbo, Hilden, Hillhall, Lambeg, Temple.	Lisburn and Castlereagh
+BT28	LISBURN	Lisburn, Ballinderry Lower, Ballinderry Upper, Stoneyford	Lisburn and Castlereagh
+BT29	CRUMLIN	Crumlin, Aldergrove, Dundrod, Glenavy, Nutts Corner	Antrim and Newtownabbey
+BT30	DOWNPATRICK	Downpatrick, Ardglass, Ballyhornan, Ballykinler, Castleward, Clough, Crossgar, Kilclief, Killard, Killough, Killyleagh, Listooder, Loughinisland, Seaforde, Strangford, Toye	Newry, Mourne and Down
+BT31	CASTLEWELLAN	Castlewellan, Ballyward.	Newry, Mourne and Down, Armagh, Banbridge and Craigavon
+BT32	BANBRIDGE	Banbridge, Annaclone, Ballinaskeagh, Ballyroney, Corbet, Katesbridge, Lenaderg,
+Leitrim, Loughbrickland, Seapatrick.
+
+Armagh, Banbridge and Craigavon
+BT33	NEWCASTLE	Newcastle, Bryansford, Dundrum.	Newry, Mourne and Down
+BT34	NEWRY (South Down section)	Newry, Annalong, Ballymartin, Cabra, Hilltown, Kilcoo, Kilkeel, Mayobridge, Rathfriland, Rostrevor, Warrenpoint	Newry, Mourne and Down
+BT35	NEWRY (South Armagh section)	Jerrettspass, Bessbrook, Camlough, Crossmaglen, Belleeks, Newtownhamilton, Poyntzpass	Newry, Mourne and Down
+BT36	NEWTOWNABBEY	Newtownabbey, Mossley, Glengormley, Fairview, Blackrock	Antrim and Newtownabbey
+BT37	NEWTOWNABBEY	Newtownabbey, Whitehouse, Rathcoole, Monkstown, Jordanstown	Antrim and Newtownabbey
+BT38	CARRICKFERGUS	Carrickfergus, Ballycarry, Greenisland, Kilroot, Whitehead.	Mid and East Antrim
+BT39	BALLYCLARE	Ballyclare, Ballynure, Doagh, Parkgate, Straid, Templepatrick, Roughfort.	Antrim and Newtownabbey, Mid and East Antrim
+BT40	LARNE	Larne, Ballygally, Glenoe, Glynn, Islandmagee, Kilwaughter, Magheramorne, Millbrook.	Mid and East Antrim
+BT41	ANTRIM	Antrim, Dunadry, Muckamore, Randalstown, Toomebridge.	Antrim and Newtownabbey
+BT42	BALLYMENA	Broughshane, Cullybackey, Galgorm, Kells.	Mid and East Antrim
+BT43	BALLYMENA	Cargan, Knockanully	Mid and East Antrim
+BT44	BALLYMENA	Portglenone, Carnlough, Glenarm, Clogh Mills, Rasharkin, Glenariff/Waterfoot, Cushendun, Cushendall, Dunloy, Loughguile, Glarryford.	Mid and East Antrim, Causeway Coast and Glens, Mid Ulster
+BT45	MAGHERAFELT	Magherafelt, Ballyronan, Bellaghy, Castledawson, Desertmartin, Draperstown, Knockloughrim, Moneymore, Tobermore, Fallalea, Fallaghloon	Mid Ulster
+BT46	MAGHERA	Maghera, Lisnamuck, Swatragh, Upperlands	Mid Ulster
+BT47	LONDONDERRY[n 1]	Derry, Waterside, Claudy, Feeny, Dungiven, Eglinton, Park, New Buildings.	Derry City and Strabane
+BT48	LONDONDERRY[n 1]	Derry, Cityside, Ballynagard, Coshquin, Rosemount, The Collon, Culmore.	Derry City and Strabane
+BT49	LIMAVADY	Limavady, Ballykelly	Causeway Coast and Glens
+BT51	COLERAINE	Coleraine, Aghadowey, Articlave, Bellany, Blackhill, Castlerock, Castleroe, Garvagh, Kilrea, Macosquin, Ringsend	Causeway Coast and Glens
+BT52	COLERAINE	Coleraine, Ballyvelton, Cloyfin	Causeway Coast and Glens
+BT53	BALLYMONEY	Ballymoney, Dervock, Armoy, Ballybogy.	Causeway Coast and Glens
+BT54	BALLYCASTLE	Ballycastle, Ballintoy, Ballypatrick, Ballyvoy, Cape Castle, Glenshesk, Maghercashel, Maghernahar, Moyarget, Torr, Rathlin Island.	Causeway Coast and Glens
+BT55	PORTSTEWART	Portstewart	Causeway Coast and Glens
+BT56	PORTRUSH	Portrush, Craigahullier, Urbalreagh.	Causeway Coast and Glens
+BT57	BUSHMILLS	Ballintoy, Bushmills, Castlecatt, Dunseverick, Portballintrae	Causeway Coast and Glens
+BT58	NEWTOWNABBEY	No longer in use, formerly Child Support Agency[4] (defunct)	non-geographic
+BT60	ARMAGH	Killylea, Tynan, Belcoo, Middletown, Keady, Darkley, Markethill, Kingsmills	Armagh, Banbridge and Craigavon, Newry, Mourne and Down
+BT61	ARMAGH	Armagh, Collone, Hamiltonsbawn, Kilmore, Loughgall, Richhill.	Armagh, Banbridge and Craigavon
+BT62	CRAIGAVON	Craigavon, Portadown, Tandragee, Clare, Scotch Street.	Armagh, Banbridge and Craigavon
+BT63	CRAIGAVON	Gilford, Laurencetown, Portadown, Scarva	Armagh, Banbridge and Craigavon
+BT64	CRAIGAVON	Craigavon (West): Knockmenagh, Mandeville.	Armagh, Banbridge and Craigavon
+BT65	CRAIGAVON	Craigavon (East): Drumgor, Legaghory, Tullygally, Brownlow.	Armagh, Banbridge and Craigavon
+BT66	CRAIGAVON	Derryadd, Derrytrasna, Dollingstown, Donaghcloney, Lurgan, Waringstown	Armagh, Banbridge and Craigavon
+BT67	CRAIGAVON	Aghagallon, Aghalee, Gawley's Gate, Lurgan, Magheralin, Moira	Armagh, Banbridge and Craigavon
+BT68	CALEDON	Caledon, Minterburn	Mid Ulster
+BT69	AUGHNACLOY	Aughnacloy, Carnteel	Mid Ulster
+BT70	DUNGANNON	Dungannon, Ballygawley, Cappagh, Castlecaulfield, Donaghmore, Galbally, Garvaghy, Pomeroy, Rock, Seskilgreen	Mid Ulster
+BT71	DUNGANNON	Dungannon, Benburb, Blackwatertown, Bush, Coalisland, Killycolpy, Ardboe, Moygashel, Stewartstown	Mid Ulster
+BT74	ENNISKILLEN	Enniskillen town, Boho	Fermanagh and Omagh
+BT75	FIVEMILETOWN	Fivemiletown, Clabby	Mid Ulster, Fermanagh and Omagh
+BT76	CLOGHER	Clogher	Mid Ulster
+BT77	AUGHER	Augher	Mid Ulster
+BT78	OMAGH	Omagh, Dromore, Drumquin, Eskra, Fintona, Killynure, Newtownstewart, Seskanore, Trillick	Fermanagh and Omagh
+BT79	OMAGH	Omagh, Drumlea, Glengawna, Gortin, Mountfield, Plumbridge, Rosnamuck, Sheskinshule, Sixmilecross	Fermanagh and Omagh
+BT80	COOKSTOWN	Cookstown, Coagh, Tullyhogue	Mid Ulster
+BT81	CASTLEDERG	Castlederg, Aghyaran, Clare, Garvetagh, Killen, Killeter, Mournebeg, Scraghey, Spamount	Derry City and Strabane
+BT82	STRABANE	Strabane, Artigarvan, Ballymagorry, Bready, Clady, Douglas Bridge, Dunamanagh, Sion Mills, Victoria Bridge	Derry City and Strabane
+BT92	ENNISKILLEN	Lisnaskea, Florencecourt, Derrylin, Newtownbutler	Fermanagh and Omagh
+BT93	ENNISKILLEN	Belleek, Belcoo, Kesh, Derrygonnelly, Garrison	Fermanagh and Omagh
+BT94	ENNISKILLEN	Irvinestown, Ballinamallard, Brookeborough, Tempo, Maguiresbridge, Lisbellaw	Fermanagh and Omagh
+Note
+ The Post Office guide uses Londonderry, the legal name for the city also called Derry; the post office accepts either name. The local government district's legal name is Derry. See also Derry/Londonderry name dispute
+Map
+BT postcode area map, showing postcode districts, post towns and neighbouring postcode areas.
+BT postcode area map, showing postcode districts in red and post towns in grey text, with link to nearby PA postcode area.
+
+Detailed map of postcode districts and post towns in and around Belfast
+See also
+List of postcode areas in the United Kingdom
+Postcode Address File
+References
+ "ONS Postcode Directory Version Notes" (ZIP). National Statistics Postcode Products. Office for National Statistics. May 2020. Table 2. Retrieved 19 June 2020.
+ Royal Mail, Address Management Guide, (2004)
+ Social Services in Britain, Reference Division, British Information Services, 1966, page 105
+ "Non Geographic Codes" (PDF). Royal Mail Address Management Unit. July 2012. Archived from the original (PDF) on 16 September 2012. Retrieved 2 January 2013.
+External links
+vte
+Postcode areas in the United Kingdom and its dependencies
+ABALBBABBBDBHBLBNBRBSBTCACBCFCHCMCOCRCTCVCWDADDDEDGDHDLDNDTDYEECEHENEXFKFYGGLGUHAHDHGHPHRHSHUHXIGIPIVKAKTKWKYLLALDLELLLNLSLUMMEMKMLNNENGNNNPNRNWOLOXPAPEPHPLPOPRRGRHRMSSASESGSKSLSMSNSOSPSRSSSTSWSYTATDTFTNTQTRTSTWUBWWAWCWDWFWNWRWSWVYOZE
+Crown dependencies	
+GYIMJE
+Overseas territories	
+AIASCNBBNDBIQQFIQQGXKYMSRPCRNSIQQSTHLTDCUTKCAVG
+Non-geographic	
+BFBXGIRXX
+Related UK lists: Postcode districtsPost townsPostal countiesLondon postal district
+Categories: Postcode areas of the United KingdomCommunications in Northern Ireland
+This page was last edited on 1 June 2025, at 07:54 (UTC).
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+Privacy policyAbout WikipediaDisclaimersContact WikipediaCode of ConductDevelopersStatisticsCookie statementMobile view
+Wikimedia Foundation
+Powered by MediaWiki
+
+BT postcode area
+
+1 language
+Add topic
