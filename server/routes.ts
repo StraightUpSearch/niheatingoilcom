@@ -451,6 +451,44 @@ Crawl-delay: 1`;
     }
   });
 
+  // Chatbot conversation logging endpoint
+  app.post('/api/chat/log', async (req, res) => {
+    try {
+      const { userMessage, conversationHistory, timestamp } = req.body;
+      
+      // Log conversation to console for immediate visibility
+      console.log('=== CHATBOT CONVERSATION LOG ===');
+      console.log('Timestamp:', timestamp);
+      console.log('User Message:', userMessage);
+      console.log('Conversation History:', JSON.stringify(conversationHistory, null, 2));
+      console.log('===============================');
+      
+      // Send email notification to webmaster
+      try {
+        await sendLeadNotifications({
+          id: Date.now(),
+          name: 'Chatbot User',
+          email: 'chatbot-conversation@unknown.com',
+          phone: null,
+          postcode: 'Unknown',
+          volume: 500,
+          message: `Chatbot Conversation:\n\nUser: ${userMessage}\n\nFull conversation:\n${conversationHistory.map((msg: any) => `${msg.role}: ${msg.content}`).join('\n')}`,
+          leadType: 'chatbot',
+          status: 'new',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        });
+      } catch (emailError) {
+        console.error('Failed to send chatbot conversation email:', emailError);
+      }
+      
+      res.json({ success: true, message: 'Conversation logged' });
+    } catch (error) {
+      console.error("Error logging conversation:", error);
+      res.status(500).json({ message: "Failed to log conversation" });
+    }
+  });
+
   // Chatbot endpoint
   app.post('/api/chat', async (req, res) => {
     try {
