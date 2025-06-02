@@ -7,11 +7,9 @@ import { useAuth } from "@/hooks/useAuth";
 import NotFound from "@/pages/not-found";
 import Landing from "@/pages/landing";
 import Home from "@/pages/home";
-import PriceComparison from "@/pages/price-comparison";
-import PriceAlerts from "@/pages/price-alerts";
+import Compare from "@/pages/compare";
+import Alerts from "@/pages/alerts";
 import Suppliers from "@/pages/suppliers";
-import Login from "@/pages/login";
-import Register from "@/pages/register";
 
 function Router() {
   const { isAuthenticated, isLoading } = useAuth();
@@ -21,14 +19,14 @@ function Router() {
       {isLoading || !isAuthenticated ? (
         <>
           <Route path="/" component={Landing} />
-          <Route path="/compare" component={PriceComparison} />
+          <Route path="/compare" component={Compare} />
           <Route path="/suppliers" component={Suppliers} />
         </>
       ) : (
         <>
           <Route path="/" component={Home} />
-          <Route path="/compare" component={PriceComparison} />
-          <Route path="/alerts" component={PriceAlerts} />
+          <Route path="/compare" component={Compare} />
+          <Route path="/alerts" component={Alerts} />
           <Route path="/suppliers" component={Suppliers} />
         </>
       )}

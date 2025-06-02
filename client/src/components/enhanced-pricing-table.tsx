@@ -21,7 +21,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
   const [selectedSupplier, setSelectedSupplier] = useState<any>(null);
   const [showLeadModal, setShowLeadModal] = useState(false);
 
-  const { data: prices, isLoading, error } = useQuery({
+  const { data: pricesData, isLoading, error } = useQuery({
     queryKey: ["/api/prices", { postcode: searchParams?.postcode }],
     queryFn: async () => {
       const params = new URLSearchParams();
@@ -36,6 +36,46 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
       return response.json();
     },
   });
+
+  // Sort the data based on current sort field and direction
+  const prices = pricesData ? [...pricesData].sort((a: any, b: any) => {
+    let aValue, bValue;
+    
+    switch (sortField) {
+      case 'supplier':
+        aValue = a.supplier.name.toLowerCase();
+        bValue = b.supplier.name.toLowerCase();
+        break;
+      case 'price300':
+        aValue = calculateVolumePrice(a.price, a.volume, 300);
+        bValue = calculateVolumePrice(b.price, b.volume, 300);
+        break;
+      case 'price500':
+        aValue = calculateVolumePrice(a.price, a.volume, 500);
+        bValue = calculateVolumePrice(b.price, b.volume, 500);
+        break;
+      case 'price900':
+        aValue = calculateVolumePrice(a.price, a.volume, 900);
+        bValue = calculateVolumePrice(b.price, b.volume, 900);
+        break;
+      case 'rating':
+        aValue = Number(a.supplier.rating) || 4;
+        bValue = Number(b.supplier.rating) || 4;
+        break;
+      default:
+        return 0;
+    }
+    
+    if (sortField === 'supplier') {
+      return sortDirection === 'asc' 
+        ? aValue.localeCompare(bValue)
+        : bValue.localeCompare(aValue);
+    } else {
+      return sortDirection === 'asc' 
+        ? aValue - bValue
+        : bValue - aValue;
+    }
+  }) : [];
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
