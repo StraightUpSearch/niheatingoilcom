@@ -269,8 +269,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = insertLeadSchema.parse(req.body);
       const lead = await storage.createLead(validatedData);
       
-      // TODO: Send notification email via SendGrid to admin
-      // TODO: Send confirmation email to customer
+      // Send email notifications via SendGrid
+      try {
+        const { sendLeadNotifications } = await import('./emailService');
+        await sendLeadNotifications(lead);
+        console.log(`Email notifications sent for lead ${lead.id}`);
+      } catch (emailError) {
+        console.error("Failed to send email notifications:", emailError);
+        // Don't fail the lead capture if email fails
+      }
       
       res.status(201).json({ 
         message: "Lead captured successfully", 
