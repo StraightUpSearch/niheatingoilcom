@@ -12,6 +12,8 @@ import AuthPage from "@/pages/auth-page";
 import Compare from "@/pages/compare";
 import Suppliers from "@/pages/suppliers";
 import SupplierProfile from "@/pages/supplier-profile";
+import Blog from "@/pages/blog";
+import BlogArticle from "@/pages/blog-article";
 
 function Router() {
   return (
@@ -21,6 +23,8 @@ function Router() {
       <Route path="/compare" component={Compare} />
       <Route path="/suppliers" component={Suppliers} />
       <Route path="/suppliers/:supplierId" component={SupplierProfile} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/blog/:slug" component={BlogArticle} />
       <Route component={NotFound} />
     </Switch>
   );
