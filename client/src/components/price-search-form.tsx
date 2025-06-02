@@ -47,7 +47,8 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
             value={postcode}
             onChange={(e) => setPostcode(e.target.value)}
             placeholder="e.g. BT1 5GS"
-            className="w-full h-11 text-base sm:text-sm"
+            className="w-full h-11 text-base sm:text-sm bg-white text-gray-900 border-gray-300"
+            style={{ color: '#111827', backgroundColor: '#ffffff' }}
           />
         </div>
         <div className="flex-1 min-w-0">
