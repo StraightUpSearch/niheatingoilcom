@@ -11,6 +11,7 @@ import OilTankShowcase from "@/components/oil-tank-showcase";
 import TrustSection from "@/components/trust-section";
 import NorthernIrelandIdentity from "@/components/northern-ireland-identity";
 import Footer from "@/components/footer";
+import SocialProofNotifications from "@/components/social-proof-notifications";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calculator, TrendingDown, Bell, MapPin } from "lucide-react";
@@ -140,6 +141,9 @@ export default function Landing() {
       <SupplierDirectory />
       <TrustSection />
       <Footer />
+      
+      {/* Social Proof Notifications */}
+      <SocialProofNotifications />
     </div>
   );
 }
