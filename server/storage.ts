@@ -22,7 +22,7 @@ import {
   type InsertLead,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, desc, and, gte, lte, sql, like, inArray } from "drizzle-orm";
+import { eq, desc, and, gte, lte, sql, like, inArray, not } from "drizzle-orm";
 
 export interface IStorage {
   // User operations (mandatory for Replit Auth)
@@ -133,7 +133,7 @@ export class DatabaseStorage implements IStorage {
 
   // Oil price operations
   async getLatestPrices(volume?: number, postcode?: string): Promise<(OilPrice & { supplier: Supplier })[]> {
-    let query = db
+    let baseQuery = db
       .select({
         id: oilPrices.id,
         supplierId: oilPrices.supplierId,
@@ -146,12 +146,18 @@ export class DatabaseStorage implements IStorage {
         supplier: suppliers,
       })
       .from(oilPrices)
-      .innerJoin(suppliers, eq(oilPrices.supplierId, suppliers.id))
-      .where(eq(suppliers.isActive, true));
+      .innerJoin(suppliers, eq(oilPrices.supplierId, suppliers.id));
+
+    let whereConditions = [
+      eq(suppliers.isActive, true),
+      sql`${suppliers.name} NOT LIKE '%Average Prices%'`
+    ];
 
     if (volume) {
-      query = query.where(eq(oilPrices.volume, volume));
+      whereConditions.push(eq(oilPrices.volume, volume));
     }
+
+    const query = baseQuery.where(and(...whereConditions));
 
     const results = await query
       .orderBy(desc(oilPrices.createdAt), oilPrices.price)
