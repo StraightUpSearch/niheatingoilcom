@@ -279,9 +279,11 @@ export class DatabaseStorage implements IStorage {
       }
     }
 
-    // Prioritize individual suppliers, but include regional averages if no individual suppliers found
-    const resultsToProcess = relevantIndividualSuppliers.length > 0 
-      ? relevantIndividualSuppliers 
+    // Always prioritize individual suppliers when they have current pricing data
+    // Only fall back to regional averages if absolutely no individual suppliers exist
+    const hasRecentIndividualPrices = individualSuppliers.length > 0;
+    const resultsToProcess = hasRecentIndividualPrices 
+      ? individualSuppliers  // Show all individual suppliers, not just area-specific ones
       : relevantRegionalAverages;
 
     // Get latest price per supplier for the requested volume (or multiple volumes)
