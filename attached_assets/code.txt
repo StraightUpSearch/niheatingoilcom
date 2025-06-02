@@ -1,0 +1,146 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://niheatingoil.com/#organization",
+      "name": "NI Heating Oil",
+      "url": "https://niheatingoil.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://niheatingoil.com/favicon.svg"
+      },
+      "description": "NI Heating Oil provides a free online service to compare heating oil prices from numerous verified suppliers across Northern Ireland.",
+      "sameAs": [], // Add URLs to your social media profiles here if available, e.g., ["https://www.facebook.com/yourpage", "https://twitter.com/yourhandle"]
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "description": "For inquiries about NI Heating Oil's price comparison service. Real-time price updates. Free to use.",
+          "areaServed": "GB-NIR", // ISO 3166-2 code for Northern Ireland
+          "availableLanguage": ["en-GB"]
+          // If you have a contact page or email, you can add:
+          // "url": "https://niheatingoil.com/contact",
+          // "email": "service@example.com"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://niheatingoil.com/#website",
+      "url": "https://niheatingoil.com/",
+      "name": "NI Heating Oil",
+      "alternateName": "Northern Ireland Heating Oil Price Comparison",
+      "description": "Find the cheapest heating oil prices from 50+ verified suppliers across Northern Ireland. Real-time updates, price alerts, and comprehensive supplier directory. Free to use, updated every 2 hours.",
+      "publisher": {
+        "@id": "https://niheatingoil.com/#organization"
+      },
+      "inLanguage": "en-GB",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://niheatingoil.com/compare?postcode={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://niheatingoil.com/#service",
+      "name": "Heating Oil Price Comparison Service NI",
+      "serviceType": "Price Comparison",
+      "category": "Online Price Comparison Service for Heating Oil",
+      "description": "Compare current heating oil prices from over 50 verified suppliers across Northern Ireland. Features real-time price updates, price alerts, and a comprehensive supplier directory to find the cheapest deals. The service is free to use and price data is updated every 2 hours.",
+      "provider": {
+        "@id": "https://niheatingoil.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Northern Ireland",
+        "sameAs": "https://en.wikipedia.org/wiki/Northern_Ireland"
+      },
+      "isRelatedTo": {
+        "@type": "Product",
+        "name": "Heating Oil",
+        "description": "Fuel oil for residential and commercial heating systems in Northern Ireland."
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "Free Access to Price Comparison Service",
+        "price": "0",
+        "priceCurrency": "GBP", // Assuming GBP, adjust if needed
+        "availability": "https://schema.org/OnlineOnly"
+      },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://niheatingoil.com/compare", // URL to access the service directly
+        "description": "Online price comparison tool for heating oil."
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://niheatingoil.com/#localbusiness",
+      "name": "NI Heating Oil",
+      "url": "https://niheatingoil.com",
+      "image": "https://niheatingoil.com/favicon.svg",
+      "description": "Online platform to compare heating oil prices from trusted local suppliers across Northern Ireland. Helping households and businesses find the best deals on their heating oil.",
+      "address": { // General address for an online business serving a region
+        "@type": "PostalAddress",
+        "addressCountry": "GB",
+        "addressRegion": "NIR", // Region code for Northern Ireland
+        "addressLocality": "Northern Ireland", // General locality
+        "postalCode": "" // You can add a central postcode if representative, or leave blank
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "54.7877",  // Approximate center of Northern Ireland
+        "longitude": "-6.4923"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Northern Ireland",
+        "sameAs": "https://en.wikipedia.org/wiki/Northern_Ireland"
+      },
+      "priceRange": "Free", // Indicates the service provided by NIHeatingOil.com is free
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59",
+          "description": "Online price comparison service available 24/7. Data updated every 2 hours."
+        }
+      ],
+      "currenciesAccepted": "GBP" // For transactions made through suppliers, primarily
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://niheatingoil.com/#breadcrumb", // For the homepage
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://niheatingoil.com/"
+        }
+        // If you are placing this schema on a specific page other than home,
+        // you can expand this breadcrumb. For example, on the compare page:
+        // ,{
+        //   "@type": "ListItem",
+        //   "position": 2,
+        //   "name": "Compare Heating Oil Prices",
+        //   "item": "https://niheatingoil.com/compare"
+        // }
+      ]
+    }
+  ]
+}

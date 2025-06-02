@@ -37,30 +37,138 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "NI Heating Oil",
-      "alternateName": "Northern Ireland Heating Oil Price Comparison",
-      "url": "https://niheatingoil.com",
-      "description": "Compare heating oil prices from verified suppliers across Northern Ireland",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://niheatingoil.com/compare?postcode={search_term_string}"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://niheatingoil.com/#organization",
+          "name": "NI Heating Oil",
+          "url": "https://niheatingoil.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://niheatingoil.com/favicon.svg"
+          },
+          "description": "NI Heating Oil provides a free online service to compare heating oil prices from numerous verified suppliers across Northern Ireland.",
+          "sameAs": [],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "contactType": "Customer Service",
+              "description": "For inquiries about NI Heating Oil's price comparison service. Real-time price updates. Free to use.",
+              "areaServed": "GB-NIR",
+              "availableLanguage": ["en-GB"]
+            }
+          ]
         },
-        "query-input": "required name=search_term_string"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Northern Ireland",
-        "sameAs": "https://en.wikipedia.org/wiki/Northern_Ireland"
-      },
-      "serviceType": "Price Comparison Service",
-      "provider": {
-        "@type": "Organization",
-        "name": "NI Heating Oil",
-        "url": "https://niheatingoil.com"
-      }
+        {
+          "@type": "WebSite",
+          "@id": "https://niheatingoil.com/#website",
+          "url": "https://niheatingoil.com/",
+          "name": "NI Heating Oil",
+          "alternateName": "Northern Ireland Heating Oil Price Comparison",
+          "description": "Find the cheapest heating oil prices from 50+ verified suppliers across Northern Ireland. Real-time updates, price alerts, and comprehensive supplier directory. Free to use, updated every 2 hours.",
+          "publisher": {
+            "@id": "https://niheatingoil.com/#organization"
+          },
+          "inLanguage": "en-GB",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://niheatingoil.com/compare?postcode={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://niheatingoil.com/#service",
+          "name": "Heating Oil Price Comparison Service NI",
+          "serviceType": "Price Comparison",
+          "category": "Online Price Comparison Service for Heating Oil",
+          "description": "Compare current heating oil prices from over 50 verified suppliers across Northern Ireland. Features real-time price updates, price alerts, and a comprehensive supplier directory to find the cheapest deals. The service is free to use and price data is updated every 2 hours.",
+          "provider": {
+            "@id": "https://niheatingoil.com/#organization"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Northern Ireland",
+            "sameAs": "https://en.wikipedia.org/wiki/Northern_Ireland"
+          },
+          "isRelatedTo": {
+            "@type": "Product",
+            "name": "Heating Oil",
+            "description": "Fuel oil for residential and commercial heating systems in Northern Ireland."
+          },
+          "offers": {
+            "@type": "Offer",
+            "name": "Free Access to Price Comparison Service",
+            "price": "0",
+            "priceCurrency": "GBP",
+            "availability": "https://schema.org/OnlineOnly"
+          },
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://niheatingoil.com/compare",
+            "description": "Online price comparison tool for heating oil."
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://niheatingoil.com/#localbusiness",
+          "name": "NI Heating Oil",
+          "url": "https://niheatingoil.com",
+          "image": "https://niheatingoil.com/favicon.svg",
+          "description": "Online platform to compare heating oil prices from trusted local suppliers across Northern Ireland. Helping households and businesses find the best deals on their heating oil.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GB",
+            "addressRegion": "NIR",
+            "addressLocality": "Northern Ireland",
+            "postalCode": ""
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "54.7877",
+            "longitude": "-6.4923"
+          },
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Northern Ireland",
+            "sameAs": "https://en.wikipedia.org/wiki/Northern_Ireland"
+          },
+          "priceRange": "Free",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59",
+              "description": "Online price comparison service available 24/7. Data updated every 2 hours."
+            }
+          ],
+          "currenciesAccepted": "GBP"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://niheatingoil.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://niheatingoil.com/"
+            }
+          ]
+        }
+      ]
     }
     </script>
     
