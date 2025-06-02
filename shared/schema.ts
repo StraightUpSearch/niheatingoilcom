@@ -191,3 +191,31 @@ export const insertSupplierClaimSchema = createInsertSchema(supplierClaims).omit
   createdAt: true,
   updatedAt: true,
 });
+
+// Tickets table for lead capture system
+export const tickets = pgTable("tickets", {
+  id: serial("id").primaryKey(),
+  ticketId: varchar("ticket_id", { length: 20 }).unique().notNull(), // e.g., NIHO-0001
+  name: varchar("name", { length: 255 }).notNull(),
+  email: varchar("email", { length: 255 }).notNull(),
+  postcode: varchar("postcode", { length: 10 }).notNull(),
+  litres: integer("litres").notNull(),
+  registered: boolean("registered").default(false),
+  status: varchar("status", { length: 20 }).default("New"), // New, In Progress, Quoted, Closed, Escalated
+  supplierName: varchar("supplier_name", { length: 255 }),
+  quotedPrice: decimal("quoted_price", { precision: 10, scale: 4 }),
+  totalCost: decimal("total_cost", { precision: 10, scale: 2 }),
+  savings: decimal("savings", { precision: 10, scale: 2 }),
+  userId: varchar("user_id").references(() => users.id),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
+export type Ticket = typeof tickets.$inferSelect;
+export type InsertTicket = typeof tickets.$inferInsert;
+
+export const insertTicketSchema = createInsertSchema(tickets).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
