@@ -67,7 +67,7 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
               <span className="block text-yellow-300 animate-pulse">Across Northern Ireland</span>
             </h1>
             <p className="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">
-              Built by locals, for locals. Compare official Consumer Council prices across all six counties and save on your heating oil deliveries.
+              Built by locals, for locals. No messing about - we'll show you the craic with heating oil prices across all six counties. Save your pennies and keep your house toasty!
             </p>
           </div>
           

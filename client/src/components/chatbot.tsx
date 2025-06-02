@@ -19,7 +19,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: 'assistant',
-      content: "Bout ye? I'm here to help with heating oil questions, pricing, and supplier information across Northern Ireland. What can I help you with?",
+      content: "Bout ye? I'm here to help with heating oil questions, pricing, and supplier information right across Northern Ireland. No messing about - what can I help you with?",
       timestamp: new Date()
     }
   ]);

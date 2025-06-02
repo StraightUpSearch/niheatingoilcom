@@ -147,7 +147,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
         <div className="text-center py-8">
           <div className="inline-flex items-center space-x-2 text-primary">
             <Fuel className="h-6 w-6 animate-bounce" />
-            <span className="text-lg font-medium">Loading heating oil prices...</span>
+            <span className="text-lg font-medium">Getting the latest prices for ye...</span>
           </div>
         </div>
         {[...Array(5)].map((_, i) => (
@@ -182,7 +182,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
   if (!prices?.length) {
     return (
       <div className="text-centre py-8">
-        <p className="text-grey-600">No heating oil suppliers found for your area.</p>
+        <p className="text-grey-600">No heating oil suppliers found for your area just yet. Give us a wee while to gather more prices!</p>
       </div>
     );
   }

@@ -75,8 +75,8 @@ export default function Landing() {
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Oil Prices in Northern Ireland</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">Live pricing data from verified suppliers across all counties. Prices include VAT and delivery within standard areas.</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Oil Prices Across Northern Ireland</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">Dead-on pricing data from verified suppliers across all six counties. No messing about - these prices include VAT and delivery to your door.</p>
             </div>
             <EnhancedPricingTable />
           </div>
