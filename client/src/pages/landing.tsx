@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import EnhancedPricingTable from "@/components/enhanced-pricing-table";
@@ -16,11 +17,41 @@ import { Calculator, TrendingDown, Bell, MapPin } from "lucide-react";
 
 export default function Landing() {
   usePageTitle("NI Heating Oil - Compare Heating Oil Prices in Northern Ireland");
+  
+  const [searchParams, setSearchParams] = useState<{ postcode?: string; volume?: number } | null>(null);
+
+  const handleSearch = (params: { postcode?: string; volume?: number }) => {
+    setSearchParams(params);
+    // Scroll to results section
+    setTimeout(() => {
+      const resultsSection = document.getElementById('search-results');
+      if (resultsSection) {
+        resultsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
-      <HeroSection />
+      <HeroSection onSearch={handleSearch} />
+      
+      {/* Search Results Section - Only show after search */}
+      {searchParams && (
+        <section id="search-results" className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Heating Oil Prices for {searchParams.postcode}
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Showing prices for {searchParams.volume}L delivery. Prices include VAT and standard delivery.
+              </p>
+            </div>
+            <EnhancedPricingTable searchParams={searchParams} />
+          </div>
+        </section>
+      )}
       
       {/* Animated Price Trends Section */}
       <section className="py-12 bg-gradient-to-br from-blue-50 to-white">
@@ -37,16 +68,18 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Current Prices Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Oil Prices in Northern Ireland</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Live pricing data from verified suppliers across all counties. Prices include VAT and delivery within standard areas.</p>
+      {/* General Prices Section - Only show when no search has been performed */}
+      {!searchParams && (
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Oil Prices in Northern Ireland</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">Live pricing data from verified suppliers across all counties. Prices include VAT and delivery within standard areas.</p>
+            </div>
+            <EnhancedPricingTable />
           </div>
-          <EnhancedPricingTable />
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* SEO Content Section */}
       <section className="py-16 bg-white">

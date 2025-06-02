@@ -3,7 +3,11 @@ import { Check, Clock, Shield, Truck } from "lucide-react";
 import HeatingOilLogo from "@/components/heating-oil-logo";
 import heroImage from "@assets/v2-vnxed-nzz6i.jpg";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  onSearch?: (params: { postcode?: string; volume?: number }) => void;
+}
+
+export default function HeroSection({ onSearch }: HeroSectionProps) {
   return (
     <section className="relative bg-gradient-to-br from-primary to-blue-700 text-white py-16 overflow-hidden">
       {/* Background Image */}
@@ -26,7 +30,7 @@ export default function HeroSection() {
           </p>
           
           <div className="bg-white rounded-xl p-6 shadow-xl max-w-2xl mx-auto mb-8">
-            <PriceSearchForm />
+            <PriceSearchForm onSearch={onSearch} />
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 text-blue-100">
