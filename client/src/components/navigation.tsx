@@ -45,7 +45,7 @@ export default function Navigation() {
               <HeatingOilLogo size="lg" />
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-gray-900">NI Heating Oil</span>
-                <span className="text-xs text-green-600 font-medium">By locals, for locals</span>
+                <span className="text-xs text-green-600 font-medium hidden sm:block">By locals, for locals</span>
               </div>
             </Link>
             <nav className="hidden md:flex space-x-6 ml-8">
