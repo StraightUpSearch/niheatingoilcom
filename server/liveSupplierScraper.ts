@@ -267,12 +267,44 @@ export async function scrapeAllLiveSuppliers(): Promise<void> {
 export async function initializeLiveSupplierScraping(): Promise<void> {
   try {
     console.log('Initializing live supplier scraping system...');
-    console.log('ScrapingBee API available with 250,000 credits');
     
-    // Run initial scrape
-    await scrapeAllLiveSuppliers();
+    // Check if we have recent data (within last 30 days)
+    const recentSuppliers = await storage.getAllSuppliers();
+    const hasRecentData = recentSuppliers.some(supplier => {
+      const thirtyDaysAgo = new Date();
+      thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+      return supplier.updatedAt && new Date(supplier.updatedAt) > thirtyDaysAgo;
+    });
     
-    console.log('Live supplier scraping system initialized successfully');
+    if (hasRecentData) {
+      console.log('Recent supplier data found, skipping initial scrape to conserve API calls');
+    } else {
+      console.log('No recent data found, running monthly supplier data refresh...');
+      await scrapeAllLiveSuppliers();
+    }
+    
+    // Schedule monthly scraping (first day of each month at 2 AM)
+    const scheduleMonthlyUpdate = () => {
+      const now = new Date();
+      const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1, 2, 0, 0);
+      const timeUntilNextMonth = nextMonth.getTime() - now.getTime();
+      
+      console.log(`Next supplier data refresh scheduled for: ${nextMonth.toLocaleString()}`);
+      
+      setTimeout(async () => {
+        try {
+          console.log('Running monthly supplier data refresh...');
+          await scrapeAllLiveSuppliers();
+          scheduleMonthlyUpdate(); // Schedule next month
+        } catch (error) {
+          console.error('Monthly scraping failed:', error);
+          scheduleMonthlyUpdate(); // Try again next month even if failed
+        }
+      }, timeUntilNextMonth);
+    };
+    
+    scheduleMonthlyUpdate();
+    console.log('Live supplier scraping system initialized with monthly updates');
     
   } catch (error) {
     console.error('Failed to initialize live supplier scraping:', error);

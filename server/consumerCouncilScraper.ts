@@ -196,40 +196,34 @@ export async function initializeConsumerCouncilScraping(): Promise<void> {
     // Run initial scrape
     await scrapeLatestConsumerCouncilData();
     
-    // Set up weekly scraping (every Monday at 10 AM)
-    const scheduleWeeklyScrape = () => {
+    // Set up monthly scraping (first Monday of each month at 10 AM)
+    const scheduleMonthlyConsumerCouncilScrape = () => {
       const now = new Date();
-      const nextMonday = new Date();
+      const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1);
       
-      // Calculate next Monday 10 AM
-      const daysUntilMonday = (1 - now.getDay() + 7) % 7 || 7;
-      nextMonday.setDate(now.getDate() + daysUntilMonday);
-      nextMonday.setHours(10, 0, 0, 0);
+      // Find first Monday of next month
+      const firstMonday = new Date(nextMonth);
+      const daysUntilMonday = (1 - firstMonday.getDay() + 7) % 7 || 7;
+      firstMonday.setDate(firstMonday.getDate() + daysUntilMonday);
+      firstMonday.setHours(10, 0, 0, 0);
       
-      // If it's already past Monday 10 AM this week, schedule for next week
-      if (nextMonday <= now) {
-        nextMonday.setDate(nextMonday.getDate() + 7);
-      }
+      const timeUntilScrape = firstMonday.getTime() - now.getTime();
       
-      const timeUntilNext = nextMonday.getTime() - now.getTime();
+      console.log(`Next Consumer Council scrape scheduled for: ${firstMonday.toLocaleString()}`);
       
       setTimeout(async () => {
         try {
+          console.log('Running monthly Consumer Council data update...');
           await scrapeLatestConsumerCouncilData();
-          // Schedule next week
-          scheduleWeeklyScrape();
+          scheduleMonthlyConsumerCouncilScrape(); // Schedule next month
         } catch (error) {
-          console.error('Scheduled Consumer Council scrape failed:', error);
-          // Still schedule next attempt
-          scheduleWeeklyScrape();
+          console.error('Monthly Consumer Council scraping failed:', error);
+          scheduleMonthlyConsumerCouncilScrape(); // Try again next month
         }
-      }, timeUntilNext);
-      
-      console.log(`Next Consumer Council scrape scheduled for: ${nextMonday.toLocaleString()}`);
+      }, timeUntilScrape);
     };
     
-    scheduleWeeklyScrape();
-    
+    scheduleMonthlyConsumerCouncilScrape();
     console.log('Consumer Council scraping system initialized successfully');
     
   } catch (error) {
