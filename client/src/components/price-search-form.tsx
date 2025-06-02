@@ -64,23 +64,14 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
           {/* Postcode Input with Quick Tips */}
           <div className="lg:col-span-1 space-y-4">
             <div className="group">
-              <Label htmlFor="postcode" className="block text-sm font-medium text-gray-700 mb-2 group-focus-within:text-primary transition-colors">
-                <MapPin className="inline h-4 w-4 mr-1" />
-                Your Postcode
-              </Label>
-              <div className="relative">
-                <Input
-                  id="postcode"
-                  type="text"
-                  value={postcode}
-                  onChange={(e) => setPostcode(e.target.value)}
-                  placeholder="e.g. BT1 5GS"
-                  className="w-full h-11 text-base sm:text-sm bg-white text-gray-900 border-gray-300 pl-10 focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 hover:border-primary/50"
-                  style={{ color: '#111827', backgroundColor: '#ffffff' }}
-                  disabled={isLoading}
-                />
-                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-              </div>
+              <SmartPostcodeInput
+                id="postcode"
+                value={postcode}
+                onChange={setPostcode}
+                placeholder="e.g. BT1 5GS"
+                disabled={isLoading}
+                label="Your Postcode"
+              />
             </div>
 
             {/* Quick Tips */}
