@@ -1,0 +1,146 @@
+Project Brief: Oil Tank Size Visualization Graphics Integration
+
+Project Overview
+
+We need to integrate three vector graphics representing different oil tank sizes (300L, 500L, and 900L) into our existing SaaS tool at niheatingoil.com. These graphics have been created to help users visualize tank capacities in a playful, modern style that matches our website's aesthetic.
+
+Deliverables
+
+•
+Integration of three SVG vector graphics (300L, 500L, and 900L tanks) into the existing web application
+
+•
+Responsive implementation that works across desktop and mobile devices
+
+•
+Interactive elements that enhance user experience when selecting tank sizes
+
+Technical Specifications
+
+Graphics Assets
+
+•
+Three SVG vector graphics in a modern, playful style:
+
+•
+300L tank: tank_300L.svg
+
+•
+500L tank: tank_500L.svg
+
+•
+900L tank: tank_900L.svg
+
+
+
+•
+Each graphic uses the website's color palette (#1976D2 primary blue)
+
+•
+Graphics are proportionally sized to represent the different capacities
+
+•
+All assets are web-optimized SVGs with clean, semantic code
+
+Integration Requirements
+
+1.
+The graphics should replace or enhance the current text-based tank size selection on the website
+
+2.
+When a user selects a tank size, the corresponding graphic should be highlighted or animated
+
+3.
+The implementation should be responsive, maintaining proper proportions on all screen sizes
+
+4.
+Graphics should load efficiently without impacting page performance
+
+User Experience Goals
+
+•
+Make tank size selection more intuitive and visually engaging
+
+•
+Help users better understand the relative differences between tank capacities
+
+•
+Maintain the clean, modern aesthetic of the existing website
+
+•
+Enhance the overall user experience with subtle animations or transitions
+
+Technical Environment
+
+•
+Website built with modern web technologies
+
+•
+Current tank selection UI is text-based with minimal styling
+
+•
+Integration should work within the existing codebase without major refactoring
+
+Implementation Suggestions
+
+1.
+Create a reusable component that can display any of the three tank graphics
+
+2.
+Implement smooth transitions between tank selections
+
+3.
+Consider adding subtle animations (like liquid level changes) when users hover or select a tank
+
+4.
+Ensure accessibility is maintained with proper ARIA attributes and keyboard navigation
+
+Timeline and Milestones
+
+•
+Initial integration: 3 days
+
+•
+Testing and refinement: 2 days
+
+•
+Final deployment: 1 day
+
+Success Criteria
+
+•
+Graphics render correctly across all major browsers and devices
+
+•
+Tank selection process is intuitive and visually appealing
+
+•
+Page performance metrics remain within acceptable thresholds
+
+•
+User feedback indicates improved understanding of tank size differences
+
+Additional Resources
+
+•
+Access to the existing codebase and deployment environment
+
+•
+Design system documentation for color codes and UI patterns
+
+•
+SVG source files and a test HTML page demonstrating the graphics
+
+Communication and Collaboration
+
+•
+Daily check-ins to review progress and address any technical challenges
+
+•
+Collaborative problem-solving approach for any integration issues
+
+•
+Iterative feedback process to refine the implementation
+
+This brief is designed to provide clear direction while allowing for creative problem-solving and technical expertise from the development team.
+
