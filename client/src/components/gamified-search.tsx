@@ -1,14 +1,119 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, TrendingDown, Clock, Star, Zap } from "lucide-react";
+import { Search, TrendingDown, Clock, Star, Zap, MapPin } from "lucide-react";
 
 interface GamifiedSearchProps {
   onSearch?: (params: { postcode?: string; volume?: number }) => void;
 }
+
+// Northern Ireland postcode database
+const btPostcodes = [
+  { code: "1 1AA", area: "Belfast City Centre" },
+  { code: "1 1AB", area: "Belfast City Centre" },
+  { code: "1 1AD", area: "Belfast City Centre" },
+  { code: "1 2AA", area: "Belfast City Centre" },
+  { code: "1 3AA", area: "Belfast City Centre" },
+  { code: "1 4AA", area: "Belfast City Centre" },
+  { code: "1 5AA", area: "Belfast City Centre" },
+  { code: "1 5GS", area: "Belfast City Centre" },
+  { code: "1 6AA", area: "Belfast City Centre" },
+  { code: "2 3AA", area: "Belfast East" },
+  { code: "2 4AA", area: "Belfast East" },
+  { code: "2 5AA", area: "Belfast East" },
+  { code: "2 6AA", area: "Belfast East" },
+  { code: "2 7AA", area: "Belfast East" },
+  { code: "3 1AA", area: "Belfast South" },
+  { code: "3 2AA", area: "Belfast South" },
+  { code: "3 3AA", area: "Belfast South" },
+  { code: "3 4AA", area: "Belfast South" },
+  { code: "3 5AA", area: "Belfast South" },
+  { code: "4 1AA", area: "Belfast West" },
+  { code: "4 2AA", area: "Belfast West" },
+  { code: "4 3AA", area: "Belfast West" },
+  { code: "5 1AA", area: "Belfast North" },
+  { code: "5 2AA", area: "Belfast North" },
+  { code: "5 3AA", area: "Belfast North" },
+  { code: "6 0AA", area: "Newtownabbey" },
+  { code: "6 1AA", area: "Newtownabbey" },
+  { code: "6 2AA", area: "Newtownabbey" },
+  { code: "7 1AA", area: "Lisburn" },
+  { code: "7 2AA", area: "Lisburn" },
+  { code: "7 3AA", area: "Lisburn" },
+  { code: "8 1AA", area: "Carryduff" },
+  { code: "8 2AA", area: "Carryduff" },
+  { code: "8 3AA", area: "Carryduff" },
+  { code: "9 5AA", area: "Belfast South" },
+  { code: "9 6AA", area: "Belfast South" },
+  { code: "9 7AA", area: "Belfast South" },
+  { code: "10 0AA", area: "Finaghy" },
+  { code: "11 9AA", area: "Belfast West" },
+  { code: "12 4AA", area: "Belfast West" },
+  { code: "13 1AA", area: "Belfast North" },
+  { code: "13 2AA", area: "Belfast North" },
+  { code: "14 6AA", area: "Belfast East" },
+  { code: "15 1AA", area: "Belfast East" },
+  { code: "16 1AA", area: "Belfast East" },
+  { code: "17 0AA", area: "Belfast South" },
+  { code: "17 9AA", area: "Belfast South" },
+  { code: "18 9AA", area: "Belfast East" },
+  { code: "19 1AA", area: "Belfast North" },
+  { code: "20 3AA", area: "Belfast" },
+  { code: "21 0AA", area: "Antrim" },
+  { code: "22 1AA", area: "Randalstown" },
+  { code: "23 4AA", area: "Ballyclare" },
+  { code: "24 0AA", area: "Ballycastle" },
+  { code: "25 1AA", area: "Ballymena" },
+  { code: "26 6AA", area: "Ballymoney" },
+  { code: "27 4AA", area: "Bushmills" },
+  { code: "28 1AA", area: "Ballymena" },
+  { code: "29 4AA", area: "Crumlin" },
+  { code: "30 6AA", area: "Bushmills" },
+  { code: "31 9AA", area: "Antrim" },
+  { code: "32 3AA", area: "Cushendall" },
+  { code: "33 0AA", area: "Carnlough" },
+  { code: "34 4AA", area: "Armagh" },
+  { code: "35 6AA", area: "Armagh" },
+  { code: "36 5AA", area: "Armagh" },
+  { code: "37 0AA", area: "Tandragee" },
+  { code: "38 8AA", area: "Lisburn" },
+  { code: "39 0AA", area: "Hillsborough" },
+  { code: "40 1AA", area: "Craigavon" },
+  { code: "41 2AA", area: "Lurgan" },
+  { code: "42 1AA", area: "Banbridge" },
+  { code: "43 5AA", area: "Banbridge" },
+  { code: "44 0AA", area: "Ballynahinch" },
+  { code: "45 8AA", area: "Comber" },
+  { code: "46 5AA", area: "Donaghadee" },
+  { code: "47 1AA", area: "Downpatrick" },
+  { code: "48 0AA", area: "Kilkeel" },
+  { code: "49 0AA", area: "Newry" },
+  { code: "60 1AA", area: "Holywood" },
+  { code: "61 1AA", area: "Newtownards" },
+  { code: "62 1AA", area: "Bangor" },
+  { code: "63 5AA", area: "Bangor" },
+  { code: "66 6AA", area: "Whitehead" },
+  { code: "67 9AA", area: "Ballyclare" },
+  { code: "70 1AA", area: "Derry" },
+  { code: "71 1AA", area: "Derry" },
+  { code: "72 1AA", area: "Coleraine" },
+  { code: "73 1AA", area: "Coleraine" },
+  { code: "74 1AA", area: "Enniskillen" },
+  { code: "75 0AA", area: "Fivemiletown" },
+  { code: "76 5AA", area: "Irvinestown" },
+  { code: "77 0AA", area: "Kesh" },
+  { code: "78 1AA", area: "Omagh" },
+  { code: "79 0AA", area: "Cookstown" },
+  { code: "80 8AA", area: "Dungannon" },
+  { code: "81 7AA", area: "Coalisland" },
+  { code: "82 1AA", area: "Magherafelt" },
+  { code: "92 1AA", area: "Craigavon" },
+  { code: "93 4AA", area: "Craigavon" },
+  { code: "94 2AA", area: "Enniskillen" }
+];
 
 export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
   const [postcodeInput, setPostcodeInput] = useState("");
@@ -17,6 +122,10 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
   const [isSearching, setIsSearching] = useState(false);
   const [lastSavings, setLastSavings] = useState(47.20); // Last search savings
   const [postcodeError, setPostcodeError] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [filteredPostcodes, setFilteredPostcodes] = useState(btPostcodes);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const suggestionBoxRef = useRef<HTMLDivElement>(null);
 
   // Validate Northern Ireland postcode format
   const validatePostcode = (input: string): boolean => {
