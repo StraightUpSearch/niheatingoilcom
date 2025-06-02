@@ -237,7 +237,7 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
                 <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-lg sm:text-xl text-gray-600 font-semibold pointer-events-none z-10">
                   BT
                 </div>
-                <Input
+                <input
                   ref={inputRef}
                   id="postcode-input"
                   type="text"
@@ -245,8 +245,13 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
                   value={postcodeInput}
                   onChange={(e) => handlePostcodeChange(e.target.value.toUpperCase())}
                   onFocus={() => postcodeInput && setShowSuggestions(true)}
-                  className={`w-full text-lg sm:text-xl p-4 sm:p-5 pl-12 sm:pl-14 h-14 sm:h-16 border-2 ${postcodeError ? 'border-red-300 focus:border-red-500' : 'border-blue-300 focus:border-blue-500'} rounded-lg touch-manipulation bg-white text-gray-900 shadow-sm`}
-                  style={{ fontSize: '18px', color: '#111827', backgroundColor: '#ffffff' }}
+                  className="w-full text-lg sm:text-xl p-4 sm:p-5 pl-12 sm:pl-14 h-14 sm:h-16 border-2 border-blue-300 focus:border-blue-500 rounded-lg touch-manipulation bg-white text-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
+                  style={{ 
+                    fontSize: '18px', 
+                    color: '#000000', 
+                    backgroundColor: '#ffffff',
+                    border: '2px solid #3b82f6'
+                  }}
                   autoComplete="postal-code"
                   inputMode="text"
                   aria-describedby="postcode-help postcode-error"
