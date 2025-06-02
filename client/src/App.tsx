@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/hooks/use-auth";
 import Chatbot from "@/components/chatbot";
+import SocialProofPopup from "@/components/social-proof-popup";
 import NotFound from "@/pages/not-found";
 import Landing from "@/pages/landing";
 import AuthPage from "@/pages/auth-page";
@@ -33,6 +34,7 @@ function App() {
           <Toaster />
           <Router />
           <Chatbot />
+          <SocialProofPopup />
         </TooltipProvider>
       </AuthProvider>
     </QueryClientProvider>
