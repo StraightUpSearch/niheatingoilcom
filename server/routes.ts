@@ -39,13 +39,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   }, 1000);
 
-  // Initialize live supplier price scraping from cheapestoil.co.uk and other sources
+  // Initialize curated supplier data (no external API calls needed)
   setTimeout(async () => {
     try {
-      console.log("Starting live supplier data scraping with ScrapingBee...");
-      await initializeLiveSupplierScraping();
+      console.log("Initializing curated Northern Ireland supplier database...");
+      const { initializeCuratedData } = await import('./curatedSupplierData');
+      await initializeCuratedData();
     } catch (error) {
-      console.error("Live supplier scraping initialization failed:", error);
+      console.error("Curated supplier data initialization failed:", error);
     }
   }, 3000);
 
