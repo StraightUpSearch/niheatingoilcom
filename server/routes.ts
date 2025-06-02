@@ -7,6 +7,7 @@ import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema } fro
 import { scrapeAllSuppliers, initializeScraping } from "./scraper";
 import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
 import { initializeWeeklyUrlDetection, consumerCouncilUrlDetector } from "./consumerCouncilUrlDetector";
+import { initializeLivePriceScraping } from "./livePriceScraper";
 
 
 export async function registerRoutes(app: Express): Promise<Server> {
