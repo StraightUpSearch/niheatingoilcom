@@ -1,14 +1,18 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { MapPin, Phone, Star, Truck } from "lucide-react";
+import { MapPin, Phone, Star, Truck, MessageSquare } from "lucide-react";
+import LeadCaptureModal from "./lead-capture-modal";
 
 interface SupplierDirectoryProps {
   showHeader?: boolean;
 }
 
 export default function SupplierDirectory({ showHeader = true }: SupplierDirectoryProps) {
+  const [selectedSupplier, setSelectedSupplier] = useState<any>(null);
+  const [showLeadModal, setShowLeadModal] = useState(false);
   const { data: suppliers, isLoading } = useQuery({
     queryKey: ["/api/suppliers"],
     queryFn: async () => {
@@ -137,24 +141,22 @@ export default function SupplierDirectory({ showHeader = true }: SupplierDirecto
                         }
                       </span>
                       <div className="flex space-x-2">
-                        {supplier.phone && (
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            onClick={() => window.open(`tel:${supplier.phone}`, '_self')}
-                          >
-                            <Phone className="h-4 w-4 mr-1" />
-                            Call
-                          </Button>
-                        )}
-                        {supplier.website && (
-                          <Button
-                            size="sm"
-                            onClick={() => window.open(supplier.website, '_blank')}
-                          >
-                            Visit
-                          </Button>
-                        )}
+                        <Button
+                          size="sm"
+                          className="bg-green-600 hover:bg-green-700 text-white"
+                          onClick={() => {
+                            setSelectedSupplier({
+                              name: supplier.name,
+                              price: "Best Price",
+                              volume: 500,
+                              location: supplier.location
+                            });
+                            setShowLeadModal(true);
+                          }}
+                        >
+                          <MessageSquare className="h-4 w-4 mr-1" />
+                          Get Quote
+                        </Button>
                       </div>
                     </div>
                   </div>
@@ -172,6 +174,15 @@ export default function SupplierDirectory({ showHeader = true }: SupplierDirecto
           </div>
         )}
       </div>
+
+      <LeadCaptureModal
+        isOpen={showLeadModal}
+        onClose={() => {
+          setShowLeadModal(false);
+          setSelectedSupplier(null);
+        }}
+        supplier={selectedSupplier}
+      />
     </section>
   );
 }

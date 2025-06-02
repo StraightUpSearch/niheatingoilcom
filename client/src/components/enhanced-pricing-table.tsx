@@ -92,9 +92,15 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
     }
   };
 
-  const handleQuoteRequest = (supplier: any) => {
-    // Open lead capture modal or contact form
-    window.open(`tel:${supplier.phone}`, '_self');
+  const handleQuoteRequest = (supplier: any, volume: number = 500) => {
+    // Open lead capture modal instead of direct contact
+    setSelectedSupplier({
+      name: supplier.name,
+      price: calculateVolumePrice(parseFloat(supplier.price || '0'), 500, volume).toFixed(2),
+      volume: volume,
+      location: supplier.location
+    });
+    setShowLeadModal(true);
   };
 
   const formatPrice = (price: number) => {
