@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import EnhancedPricingTable from "@/components/enhanced-pricing-table";
 import PriceTrends from "@/components/price-trends";
+import AnimatedPriceTrend from "@/components/animated-price-trend";
 import PriceAlertsForm from "@/components/price-alerts-form";
 import SupplierDirectory from "@/components/supplier-directory";
 import SuppliersShowcase from "@/components/suppliers-showcase";
@@ -21,6 +22,21 @@ export default function Landing() {
       <Navigation />
       <HeroSection />
       
+      {/* Animated Price Trends Section */}
+      <section className="py-12 bg-gradient-to-br from-blue-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Live Market Trends</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Real-time price movements and market insights from across Northern Ireland</p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <AnimatedPriceTrend volume={300} className="lg:col-span-1" />
+            <AnimatedPriceTrend volume={500} className="lg:col-span-1" />
+            <AnimatedPriceTrend volume={900} className="lg:col-span-1" />
+          </div>
+        </div>
+      </section>
+
       {/* Current Prices Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
