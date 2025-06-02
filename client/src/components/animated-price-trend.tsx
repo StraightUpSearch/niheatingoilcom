@@ -5,6 +5,9 @@ import { TrendingUp, TrendingDown, Activity, Calendar, DollarSign } from "lucide
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import tank300L from "@assets/tank_300L.png";
+import tank500L from "@assets/tank_500L.png";
+import tank900L from "@assets/tank_900L.png";
 
 interface PriceTrendData {
   date: string;
@@ -132,10 +135,18 @@ export default function AnimatedPriceTrend({ volume = 300, className = "" }: Ani
   return (
     <Card className={`${className} bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 border-blue-200 dark:border-gray-700`}>
       <CardHeader className="pb-4">
-        <CardTitle className="flex items-center gap-2 text-blue-900 dark:text-blue-100">
-          <Activity className="h-5 w-5" />
-          Live Price Trends - {volume}L Delivery
-          <Badge variant={trend.direction === 'up' ? 'destructive' : trend.direction === 'down' ? 'default' : 'secondary'} className="ml-2">
+        <CardTitle className="flex items-center justify-between text-blue-900 dark:text-blue-100">
+          <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center">
+              {volume === 300 && <img src={tank300L} alt="300L Tank" className="w-12 h-12" />}
+              {volume === 500 && <img src={tank500L} alt="500L Tank" className="w-12 h-12" />}
+              {volume === 900 && <img src={tank900L} alt="900L Tank" className="w-12 h-12" />}
+            </div>
+            <div>
+              <div className="text-lg font-bold">Live Price Trends - {volume}L Delivery</div>
+            </div>
+          </div>
+          <Badge variant={trend.direction === 'up' ? 'destructive' : trend.direction === 'down' ? 'default' : 'secondary'}>
             {trend.direction === 'up' && <TrendingUp className="h-3 w-3 mr-1" />}
             {trend.direction === 'down' && <TrendingDown className="h-3 w-3 mr-1" />}
             {trend.direction === 'stable' && <Activity className="h-3 w-3 mr-1" />}
