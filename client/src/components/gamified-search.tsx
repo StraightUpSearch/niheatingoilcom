@@ -141,6 +141,18 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
     setPostcodeInput(cleanInput);
     setPostcodeError("");
     
+    // Filter postcodes based on input
+    if (cleanInput.length > 0) {
+      const filtered = btPostcodes.filter(postcode => 
+        postcode.code.toLowerCase().includes(cleanInput.toLowerCase()) ||
+        postcode.area.toLowerCase().includes(cleanInput.toLowerCase())
+      ).slice(0, 8); // Limit to 8 suggestions
+      setFilteredPostcodes(filtered);
+      setShowSuggestions(true);
+    } else {
+      setShowSuggestions(false);
+    }
+    
     // Validate if input is complete enough
     if (cleanInput.length >= 3) {
       const fullPostcode = `BT${cleanInput}`;
@@ -149,6 +161,25 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
       }
     }
   };
+
+  const handlePostcodeSelect = (postcode: string) => {
+    setPostcodeInput(postcode);
+    setShowSuggestions(false);
+    setPostcodeError("");
+  };
+
+  // Close suggestions when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (suggestionBoxRef.current && !suggestionBoxRef.current.contains(event.target as Node) &&
+          inputRef.current && !inputRef.current.contains(event.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleSearch = () => {
     const fullPostcode = `BT${postcodeInput}`.replace(/\s+/g, ' ').trim();
@@ -199,22 +230,52 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
                 Enter Your Postcode
               </label>
               <div className="relative">
-                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-lg sm:text-xl text-gray-600 font-semibold pointer-events-none">
+                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-lg sm:text-xl text-gray-600 font-semibold pointer-events-none z-10">
                   BT
                 </div>
                 <Input
+                  ref={inputRef}
                   id="postcode-input"
                   type="text"
                   placeholder="1 5GS"
                   value={postcodeInput}
                   onChange={(e) => handlePostcodeChange(e.target.value.toUpperCase())}
-                  className={`w-full text-lg sm:text-xl p-4 sm:p-5 pl-12 sm:pl-14 h-14 sm:h-16 border-2 ${postcodeError ? 'border-red-300 focus:border-red-500' : 'border-blue-300 focus:border-blue-500'} rounded-lg touch-manipulation`}
-                  style={{ fontSize: '18px' }}
+                  onFocus={() => postcodeInput && setShowSuggestions(true)}
+                  className={`w-full text-lg sm:text-xl p-4 sm:p-5 pl-12 sm:pl-14 h-14 sm:h-16 border-2 ${postcodeError ? 'border-red-300 focus:border-red-500' : 'border-blue-300 focus:border-blue-500'} rounded-lg touch-manipulation bg-white text-gray-900`}
+                  style={{ fontSize: '18px', color: '#111827' }}
                   autoComplete="postal-code"
                   inputMode="text"
                   aria-describedby="postcode-help postcode-error"
                   aria-invalid={!!postcodeError}
                 />
+                
+                {/* Autocomplete dropdown */}
+                {showSuggestions && filteredPostcodes.length > 0 && (
+                  <div 
+                    ref={suggestionBoxRef}
+                    className="absolute top-full left-0 right-0 mt-1 bg-white border-2 border-blue-200 rounded-lg shadow-lg z-20 max-h-64 overflow-y-auto"
+                  >
+                    {filteredPostcodes.map((postcode, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handlePostcodeSelect(postcode.code)}
+                        className="w-full text-left px-4 py-3 hover:bg-blue-50 focus:bg-blue-50 focus:outline-none border-b border-gray-100 last:border-b-0 touch-manipulation"
+                      >
+                        <div className="flex items-center">
+                          <MapPin className="h-4 w-4 text-blue-500 mr-3 flex-shrink-0" />
+                          <div>
+                            <div className="text-lg font-semibold text-gray-900">
+                              BT{postcode.code}
+                            </div>
+                            <div className="text-sm text-gray-600">
+                              {postcode.area}
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
               {postcodeError && (
                 <p id="postcode-error" className="text-sm text-red-600 mt-2" role="alert">
