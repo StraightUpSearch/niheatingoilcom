@@ -156,15 +156,17 @@ export class DatabaseStorage implements IStorage {
       .orderBy(desc(oilPrices.createdAt), oilPrices.price)
       .limit(50);
 
-    // Prioritize individual suppliers over regional averages
-    const individualSuppliers = allResults.filter(result => 
-      !result.supplier.name.includes('Average Prices') &&
-      !result.supplier.name.includes('Regional') &&
-      result.supplier.name.length < 50
-    );
+    // Filter out Consumer Council regional averages completely
+    const filteredResults = allResults.filter(result => {
+      const supplierName = result.supplier.name.toLowerCase();
+      return !supplierName.includes('average prices') &&
+             !supplierName.includes('regional') &&
+             !supplierName.includes('council') &&
+             !supplierName.includes('&') && // Regional names often contain '&' like "Mid & East Antrim"
+             supplierName.length < 50; // Regional names are usually longer
+    });
 
-    // If we have individual suppliers, use them; otherwise fall back to regional data
-    const resultsToProcess = individualSuppliers.length > 0 ? individualSuppliers : allResults;
+    const resultsToProcess = filteredResults;
 
     // Get latest price per supplier for the requested volume (or multiple volumes)
     const latestPrices = new Map();
