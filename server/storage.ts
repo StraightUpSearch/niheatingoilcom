@@ -133,7 +133,7 @@ export class DatabaseStorage implements IStorage {
 
   // Oil price operations
   async getLatestPrices(volume?: number, postcode?: string): Promise<(OilPrice & { supplier: Supplier })[]> {
-    let baseQuery = db
+    const allResults = await db
       .select({
         id: oilPrices.id,
         supplierId: oilPrices.supplierId,
@@ -146,28 +146,28 @@ export class DatabaseStorage implements IStorage {
         supplier: suppliers,
       })
       .from(oilPrices)
-      .innerJoin(suppliers, eq(oilPrices.supplierId, suppliers.id));
-
-    let whereConditions = [
-      eq(suppliers.isActive, true),
-      sql`${suppliers.name} NOT LIKE '%Average Prices%'`
-    ];
-
-    if (volume) {
-      whereConditions.push(eq(oilPrices.volume, volume));
-    }
-
-    const query = baseQuery.where(and(...whereConditions));
-
-    const results = await query
+      .innerJoin(suppliers, eq(oilPrices.supplierId, suppliers.id))
+      .where(
+        and(
+          eq(suppliers.isActive, true),
+          volume ? eq(oilPrices.volume, volume) : sql`1=1`
+        )
+      )
       .orderBy(desc(oilPrices.createdAt), oilPrices.price)
       .limit(50);
 
+    // Filter out regional averages and prioritize individual suppliers
+    const filteredResults = allResults.filter(result => 
+      !result.supplier.name.includes('Average Prices') &&
+      !result.supplier.name.includes('Regional') &&
+      result.supplier.name.length < 40
+    );
+
     // Filter to latest price per supplier for each volume
     const latestPrices = new Map();
-    results.forEach(result => {
+    filteredResults.forEach(result => {
       const key = `${result.supplierId}-${result.volume}`;
-      if (!latestPrices.has(key) || latestPrices.get(key).createdAt < result.createdAt) {
+      if (!latestPrices.has(key) || latestPrices.get(key).createdAt! < result.createdAt!) {
         latestPrices.set(key, result);
       }
     });
