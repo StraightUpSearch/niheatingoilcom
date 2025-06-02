@@ -44,10 +44,10 @@ export default function Landing() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Heating Oil Prices for {searchParams.postcode}
+                At's us nai! Heating Oil Prices for {searchParams.postcode}
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Showing prices for {searchParams.volume}L delivery. Prices include VAT and standard delivery.
+                Here's the craic - showing prices for {searchParams.volume}L delivery. All prices include VAT and standard delivery to your door.
               </p>
             </div>
             <EnhancedPricingTable searchParams={searchParams} />
