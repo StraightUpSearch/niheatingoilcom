@@ -22,7 +22,7 @@ import {
   type InsertLead,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, desc, and, gte, lte, sql, like, inArray, not } from "drizzle-orm";
+import { eq, desc, and, or, gte, lte, sql, like, inArray, not } from "drizzle-orm";
 
 export interface IStorage {
   // User operations (mandatory for Replit Auth)
@@ -117,18 +117,78 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getSuppliersInArea(postcode: string): Promise<Supplier[]> {
-    // Simple implementation - in production would use proper postcode validation
-    const postcodePrefix = postcode.substring(0, 3).toUpperCase();
-    return await db
+    // Extract Northern Ireland postcode area (BT + 1-2 digits)
+    const normalizedPostcode = postcode.replace(/\s+/g, '').toUpperCase();
+    const btAreaMatch = normalizedPostcode.match(/^BT(\d{1,2})/);
+    
+    if (!btAreaMatch) {
+      // If not a valid BT postcode, return all suppliers
+      return await db
+        .select()
+        .from(suppliers)
+        .where(eq(suppliers.isActive, true))
+        .orderBy(suppliers.name);
+    }
+    
+    const btNumber = parseInt(btAreaMatch[1]);
+    const btArea = `BT${btNumber}`;
+    
+    // Get all suppliers and filter based on coverage logic
+    const allSuppliers = await db
       .select()
       .from(suppliers)
-      .where(
-        and(
-          eq(suppliers.isActive, true),
-          like(suppliers.coverageAreas, `%${postcodePrefix}%`)
-        )
-      )
+      .where(eq(suppliers.isActive, true))
       .orderBy(suppliers.name);
+    
+    // Filter suppliers based on coverage areas
+    return allSuppliers.filter(supplier => {
+      const coverage = supplier.coverageAreas;
+      
+      if (!coverage || coverage.trim() === '') {
+        return true; // Include suppliers with no specific coverage restriction
+      }
+      
+      // Handle JSON array format: ["BT19","BT20","BT1"]
+      if (coverage.startsWith('[') && coverage.endsWith(']')) {
+        try {
+          const areas = JSON.parse(coverage);
+          return areas.some((area: string) => {
+            const areaNum = parseInt(area.replace('BT', ''));
+            return areaNum === btNumber;
+          });
+        } catch (e) {
+          return false;
+        }
+      }
+      
+      // Handle range format: "BT53 to BT57" or "BT51 to BT57"
+      const rangeMatch = coverage.match(/BT(\d{1,2})\s+to\s+BT(\d{1,2})/i);
+      if (rangeMatch) {
+        const startNum = parseInt(rangeMatch[1]);
+        const endNum = parseInt(rangeMatch[2]);
+        return btNumber >= startNum && btNumber <= endNum;
+      }
+      
+      // Handle comma-separated format: "BT32, BT60 to BT63"
+      if (coverage.includes(',')) {
+        const parts = coverage.split(',');
+        for (const part of parts) {
+          const trimmedPart = part.trim();
+          // Check individual areas
+          if (trimmedPart === btArea) return true;
+          // Check ranges within comma-separated list
+          const subRangeMatch = trimmedPart.match(/BT(\d{1,2})\s+to\s+BT(\d{1,2})/i);
+          if (subRangeMatch) {
+            const startNum = parseInt(subRangeMatch[1]);
+            const endNum = parseInt(subRangeMatch[2]);
+            if (btNumber >= startNum && btNumber <= endNum) return true;
+          }
+        }
+      }
+      
+      // Simple contains check as fallback
+      return coverage.includes(btArea) || coverage.includes('ALL') || coverage.includes('Northern Ireland');
+    });
   }
 
   // Oil price operations
@@ -186,13 +246,17 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getPricesBySupplier(supplierId: number, volume?: number): Promise<OilPrice[]> {
-    let query = db.select().from(oilPrices).where(eq(oilPrices.supplierId, supplierId));
-    
-    if (volume) {
-      query = query.where(eq(oilPrices.volume, volume));
-    }
-
-    return await query.orderBy(desc(oilPrices.createdAt)).limit(10);
+    return await db
+      .select()
+      .from(oilPrices)
+      .where(
+        and(
+          eq(oilPrices.supplierId, supplierId),
+          volume ? eq(oilPrices.volume, volume) : sql`1=1`
+        )
+      )
+      .orderBy(desc(oilPrices.createdAt))
+      .limit(10);
   }
 
   async getLowestPrices(volume: number, limit = 10): Promise<(OilPrice & { supplier: Supplier })[]> {
