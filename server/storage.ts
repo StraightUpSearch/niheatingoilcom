@@ -216,8 +216,8 @@ export class DatabaseStorage implements IStorage {
       .orderBy(desc(oilPrices.createdAt), oilPrices.price)
       .limit(50);
 
-    // Filter out Consumer Council regional averages completely
-    const filteredResults = allResults.filter(result => {
+    // Separate individual suppliers from regional averages
+    const individualSuppliers = allResults.filter(result => {
       const supplierName = result.supplier.name.toLowerCase();
       return !supplierName.includes('average prices') &&
              !supplierName.includes('regional') &&
@@ -226,7 +226,55 @@ export class DatabaseStorage implements IStorage {
              supplierName.length < 50; // Regional names are usually longer
     });
 
-    const resultsToProcess = filteredResults;
+    const regionalAverages = allResults.filter(result => {
+      const supplierName = result.supplier.name.toLowerCase();
+      return supplierName.includes('average prices') ||
+             supplierName.includes('regional') ||
+             supplierName.includes('council') ||
+             (supplierName.includes('&') && supplierName.length > 30);
+    });
+
+    // If postcode is provided, filter suppliers by coverage area
+    let relevantIndividualSuppliers = individualSuppliers;
+    let relevantRegionalAverages = regionalAverages;
+    
+    if (postcode) {
+      // Get suppliers that cover this postcode area
+      const suppliersInArea = await this.getSuppliersInArea(postcode);
+      const supplierIdsInArea = new Set(suppliersInArea.map(s => s.id));
+      
+      relevantIndividualSuppliers = individualSuppliers.filter(result => 
+        supplierIdsInArea.has(result.supplierId)
+      );
+      
+      // For regional averages, check if postcode falls in the region
+      const normalizedPostcode = postcode.replace(/\s+/g, '').toUpperCase();
+      const btAreaMatch = normalizedPostcode.match(/^BT(\d{1,2})/);
+      
+      if (btAreaMatch) {
+        const btNumber = parseInt(btAreaMatch[1]);
+        relevantRegionalAverages = regionalAverages.filter(result => {
+          const supplierName = result.supplier.name.toLowerCase();
+          // Map BT areas to regions based on Northern Ireland council areas
+          if (btNumber >= 51 && btNumber <= 57) return supplierName.includes('causeway coast');
+          if (btNumber >= 1 && btNumber <= 10) return supplierName.includes('belfast');
+          if (btNumber >= 11 && btNumber <= 18) return supplierName.includes('lisburn') || supplierName.includes('castlereagh');
+          if (btNumber >= 19 && btNumber <= 23) return supplierName.includes('ards') || supplierName.includes('north down');
+          if (btNumber >= 24 && btNumber <= 35) return supplierName.includes('newry') || supplierName.includes('mourne') || supplierName.includes('down');
+          if (btNumber >= 36 && btNumber <= 45) return supplierName.includes('antrim') || supplierName.includes('newtownabbey');
+          if (btNumber >= 46 && btNumber <= 49) return supplierName.includes('mid') && supplierName.includes('east antrim');
+          if (btNumber >= 60 && btNumber <= 71) return supplierName.includes('armagh') || supplierName.includes('banbridge') || supplierName.includes('craigavon');
+          if (btNumber >= 74 && btNumber <= 82) return supplierName.includes('mid ulster');
+          if (btNumber >= 92 && btNumber <= 94) return supplierName.includes('fermanagh') || supplierName.includes('omagh');
+          return false;
+        });
+      }
+    }
+
+    // Prioritize individual suppliers, but include regional averages if no individual suppliers found
+    const resultsToProcess = relevantIndividualSuppliers.length > 0 
+      ? relevantIndividualSuppliers 
+      : relevantRegionalAverages;
 
     // Get latest price per supplier for the requested volume (or multiple volumes)
     const latestPrices = new Map();
