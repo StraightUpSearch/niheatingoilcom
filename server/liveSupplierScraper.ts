@@ -25,39 +25,49 @@ async function scrapeCheapestOilNI(): Promise<any[]> {
     
     const suppliers = [];
     
-    // Parse the HTML to extract supplier information
-    // Look for table rows or supplier listings
-    const lines = html.split('\n');
-    let currentSupplier = null;
+    // Parse table rows more accurately based on the structure shown in the screenshot
+    const tableRowPattern = /<tr[^>]*>.*?<\/tr>/gi;
+    const rows = html.match(tableRowPattern) || [];
     
-    for (const line of lines) {
-      // Look for supplier names (company names that include common oil/fuel terms)
-      const supplierMatch = line.match(/([\w\s&]+(?:Oil|Fuel|Energy|Heating)(?:\s+(?:Ltd|Limited|Co\.?|Company))?)/i);
-      if (supplierMatch && supplierMatch[1].length > 3 && supplierMatch[1].length < 60) {
-        currentSupplier = {
-          name: supplierMatch[1].trim(),
-          location: 'Northern Ireland',
-          prices: {}
-        };
-        suppliers.push(currentSupplier);
-      }
+    for (const row of rows) {
+      // Extract supplier name from the first column
+      const supplierNameMatch = row.match(/>([^<>]*(?:Oil|Fuel|Energy|Heating|Direct)[^<>]*)</i);
+      if (!supplierNameMatch) continue;
       
-      // Look for prices
-      const priceMatches = line.match(/£(\d+\.?\d*)/g);
-      if (priceMatches && currentSupplier) {
-        priceMatches.forEach((price, index) => {
-          const numPrice = parseFloat(price.replace('£', ''));
-          if (numPrice > 100 && numPrice < 600) { // Realistic heating oil price range
-            if (index === 0) currentSupplier.prices.volume300 = numPrice;
-            else if (index === 1) currentSupplier.prices.volume500 = numPrice;
-            else if (index === 2) currentSupplier.prices.volume900 = numPrice;
-          }
+      const supplierName = supplierNameMatch[1].trim();
+      if (supplierName.length < 3 || supplierName.length > 60) continue;
+      
+      // Extract prices - look for specific price patterns in table cells
+      const priceCells = row.match(/>£(\d+(?:\.\d{2})?)</g) || [];
+      
+      if (priceCells.length >= 3) {
+        const prices = priceCells.map(cell => {
+          const match = cell.match(/£(\d+(?:\.\d{2})?)/);
+          return match ? parseFloat(match[1]) : 0;
         });
+        
+        // Based on cheapestoil.co.uk structure: 300L, 500L, 900L columns
+        const supplier = {
+          name: supplierName,
+          location: 'Northern Ireland',
+          prices: {
+            volume300: prices[0] || null,  // 300L price
+            volume500: prices[1] || null,  // 500L price
+            volume900: prices[2] || null   // 900L price
+          }
+        };
+        
+        // Only add if we have realistic prices (£140-£170 for 300L range)
+        if (supplier.prices.volume300 && 
+            supplier.prices.volume300 >= 140 && 
+            supplier.prices.volume300 <= 180) {
+          suppliers.push(supplier);
+        }
       }
     }
     
     console.log(`Found ${suppliers.length} suppliers from cheapestoil.co.uk`);
-    return suppliers.filter(s => Object.keys(s.prices).length > 0);
+    return suppliers;
     
   } catch (error) {
     console.error('Failed to scrape cheapestoil.co.uk:', error);
@@ -211,7 +221,7 @@ export async function scrapeAllLiveSuppliers(): Promise<void> {
           console.log(`Added supplier: ${supplier.name}`);
         }
         
-        // Add price data
+        // Add price data with proper volume mapping
         const volumes = [
           { volume: 300, price: supplierData.prices.volume300 },
           { volume: 500, price: supplierData.prices.volume500 },
@@ -219,7 +229,7 @@ export async function scrapeAllLiveSuppliers(): Promise<void> {
         ];
         
         for (const { volume, price } of volumes) {
-          if (price && price > 0) {
+          if (price && price > 0 && price < 1000) { // Sanity check for realistic prices
             const priceData: InsertOilPrice = {
               supplierId: supplier.id,
               volume: volume,
@@ -229,7 +239,7 @@ export async function scrapeAllLiveSuppliers(): Promise<void> {
             };
             
             await storage.insertOilPrice(priceData);
-            console.log(`Added ${volume}L price for ${supplier.name}: £${price.toFixed(2)}`);
+            console.log(`Added ${volume}L price for ${supplier.name}: £${price.toFixed(2)} (${(price/volume*100).toFixed(1)}p per litre)`);
           }
         }
         
