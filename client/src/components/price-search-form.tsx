@@ -102,7 +102,7 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
             {isLoading ? (
               <>
                 <Loader2 className="h-5 w-5 mr-2 animate-spin" />
-                Searching for Best Prices...
+                Finding the best craic for ye...
               </>
             ) : (
               <>
