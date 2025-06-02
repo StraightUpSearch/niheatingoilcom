@@ -105,80 +105,86 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-lg">
+      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="flex items-center">
+          <DialogTitle className="flex items-center text-lg sm:text-xl">
             <Mail className="h-5 w-5 mr-2 text-blue-600" />
-            Get Personalized Quote
+            Get Your Best Quote
           </DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="text-sm sm:text-base">
             {supplier ? (
               <div className="bg-green-50 border border-green-200 rounded-lg p-3 mt-2">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="font-semibold text-green-800">{supplier.name}</span>
-                    <div className="text-sm text-green-600">{supplier.location}</div>
+                    <span className="font-semibold text-green-800 text-sm sm:text-base">{supplier.name}</span>
+                    <div className="text-xs sm:text-sm text-green-600">{supplier.location}</div>
                   </div>
                   <div className="text-right">
-                    <div className="font-bold text-green-800">£{supplier.price}</div>
+                    <div className="font-bold text-green-800 text-sm sm:text-base">£{supplier.price}</div>
                     <div className="text-xs text-green-600">{supplier.volume}L</div>
                   </div>
                 </div>
               </div>
             ) : null}
-            We'll connect you with verified suppliers and negotiate better prices on your behalf.
+            <div className="mt-2 text-xs sm:text-sm">
+              💡 <strong>Save time & money:</strong> We'll get quotes from multiple suppliers and find you the best deal. Takes just 30 seconds!
+            </div>
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+        <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
-              <Label htmlFor="name">Full Name *</Label>
+              <Label htmlFor="name" className="text-sm">Full Name *</Label>
               <Input
                 id="name"
                 value={formData.name}
                 onChange={(e) => setFormData({...formData, name: e.target.value})}
                 placeholder="John Smith"
+                className="text-sm sm:text-base"
                 required
               />
             </div>
             <div>
-              <Label htmlFor="postcode">Postcode *</Label>
+              <Label htmlFor="postcode" className="text-sm">Postcode *</Label>
               <Input
                 id="postcode"
                 value={formData.postcode}
                 onChange={(e) => setFormData({...formData, postcode: e.target.value.toUpperCase()})}
                 placeholder="BT1 5GS"
+                className="text-sm sm:text-base"
                 required
               />
             </div>
           </div>
 
           <div>
-            <Label htmlFor="email">Email Address *</Label>
+            <Label htmlFor="email" className="text-sm">Email Address *</Label>
             <Input
               id="email"
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
               placeholder="john@example.com"
+              className="text-sm sm:text-base"
               required
             />
           </div>
 
           <div>
-            <Label htmlFor="phone">Phone Number *</Label>
+            <Label htmlFor="phone" className="text-sm">Phone Number *</Label>
             <Input
               id="phone"
               type="tel"
               value={formData.phone}
               onChange={(e) => setFormData({...formData, phone: e.target.value})}
               placeholder="028 9000 0000"
+              className="text-sm sm:text-base"
               required
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <Label htmlFor="volume">Required Volume *</Label>
               <Select value={formData.volume} onValueChange={(value) => setFormData({...formData, volume: value})}>
@@ -220,43 +226,43 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
             />
           </div>
 
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+          <div className="bg-green-50 border border-green-200 rounded-lg p-3">
             <div className="flex items-start">
-              <Clock className="h-4 w-4 text-blue-600 mr-2 mt-0.5" />
-              <div className="text-sm text-blue-800">
-                <strong>What happens next:</strong>
-                <ul className="mt-1 space-y-1 list-disc list-inside">
-                  <li>Our specialist contacts you within 2 hours</li>
-                  <li>We negotiate with suppliers on your behalf</li>
-                  <li>You receive personalized quotes via email/SMS</li>
-                  <li>No obligation - free service</li>
+              <CheckCircle className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+              <div className="text-sm text-green-800">
+                <strong>Why use our service:</strong>
+                <ul className="mt-1 space-y-1 text-xs sm:text-sm">
+                  <li>• We contact multiple suppliers to get you the best price</li>
+                  <li>• Save time - no need to call around yourself</li>
+                  <li>• Often secure discounts not available directly</li>
+                  <li>• 100% free service with no obligation</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Button
               type="button"
               variant="outline"
               onClick={onClose}
-              className="flex-1"
+              className="w-full sm:flex-1 text-sm sm:text-base"
               disabled={isSubmitting}
             >
               Cancel
             </Button>
             <Button
               type="submit"
-              className="flex-1 bg-green-600 hover:bg-green-700"
+              className="w-full sm:flex-1 bg-green-600 hover:bg-green-700 text-sm sm:text-base py-3 sm:py-2"
               disabled={isSubmitting || !formData.name || !formData.email || !formData.phone}
             >
               {isSubmitting ? (
-                <div className="flex items-center">
+                <div className="flex items-center justify-center">
                   <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                  Submitting...
+                  <span className="text-sm sm:text-base">Submitting...</span>
                 </div>
               ) : (
-                "Get My Quote"
+                <span className="font-semibold">Get My Best Quote Now</span>
               )}
             </Button>
           </div>
