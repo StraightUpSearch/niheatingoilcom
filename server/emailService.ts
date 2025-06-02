@@ -22,8 +22,8 @@ interface EmailTemplates {
   };
 }
 
-const ADMIN_EMAIL = 'admin@niheatingoil.com'; // Update with your actual email
-const FROM_EMAIL = 'noreply@niheatingoil.com'; // Update with your verified SendGrid sender
+const ADMIN_EMAIL = 'jamie@straightupsearch.com';
+const FROM_EMAIL = 'jamie@straightupsearch.com';
 
 const emailTemplates: EmailTemplates = {
   adminNotification: (lead: Lead) => ({
