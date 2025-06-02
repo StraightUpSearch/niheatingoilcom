@@ -55,13 +55,13 @@ async function scrapeCheapestOilNI(): Promise<LiveSupplierData[]> {
     // Extract supplier names
     const foundSuppliers = new Set<string>();
     for (const pattern of supplierPatterns) {
-      const matches = [...html.matchAll(pattern)];
-      matches.forEach(match => {
+      let match;
+      while ((match = pattern.exec(html)) !== null) {
         const supplierName = match[1]?.trim();
         if (supplierName && supplierName.length > 2 && supplierName.length < 50) {
           foundSuppliers.add(supplierName);
         }
-      });
+      }
     }
     
     // For each supplier, try to extract their prices

@@ -28,6 +28,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
     });
   }, 2000);
 
+  // Initialize live supplier price scraping from cheapestoil.co.uk and other sources
+  setTimeout(() => {
+    initializeLivePriceScraping().catch(error => {
+      console.error("Live price scraping initialization failed:", error);
+    });
+  }, 3000);
+
 
 
   // Auth routes
