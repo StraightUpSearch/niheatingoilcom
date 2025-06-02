@@ -11,22 +11,54 @@ interface GamifiedSearchProps {
 }
 
 export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
-  const [postcode, setPostcode] = useState("");
+  const [postcodeInput, setPostcodeInput] = useState("");
   const [volume, setVolume] = useState<number | undefined>();
   const [searchCount, setSearchCount] = useState(3); // User's search count today
   const [isSearching, setIsSearching] = useState(false);
   const [lastSavings, setLastSavings] = useState(47.20); // Last search savings
+  const [postcodeError, setPostcodeError] = useState("");
+
+  // Validate Northern Ireland postcode format
+  const validatePostcode = (input: string): boolean => {
+    const fullPostcode = `BT${input}`.replace(/\s+/g, ' ').trim();
+    // Northern Ireland postcode pattern: BT followed by 1-2 digits, space, then 1 digit and 2 letters
+    const postcodeRegex = /^BT\d{1,2}\s?\d[A-Z]{2}$/i;
+    return postcodeRegex.test(fullPostcode);
+  };
+
+  const handlePostcodeChange = (value: string) => {
+    // Remove any "BT" prefix if user tries to type it
+    const cleanInput = value.replace(/^BT/i, '').trim();
+    setPostcodeInput(cleanInput);
+    setPostcodeError("");
+    
+    // Validate if input is complete enough
+    if (cleanInput.length >= 3) {
+      const fullPostcode = `BT${cleanInput}`;
+      if (!validatePostcode(cleanInput)) {
+        setPostcodeError("Please enter a valid Northern Ireland postcode (e.g. BT1 5GS)");
+      }
+    }
+  };
 
   const handleSearch = () => {
-    if (!postcode || !volume) return;
+    const fullPostcode = `BT${postcodeInput}`.replace(/\s+/g, ' ').trim();
+    
+    if (!postcodeInput || !volume) return;
+    
+    if (!validatePostcode(postcodeInput)) {
+      setPostcodeError("Please enter a valid Northern Ireland postcode");
+      return;
+    }
     
     setIsSearching(true);
     setSearchCount(prev => prev + 1);
+    setPostcodeError("");
     
     // Simulate search delay for dramatic effect
     setTimeout(() => {
       setIsSearching(false);
-      onSearch?.({ postcode, volume });
+      onSearch?.({ postcode: fullPostcode, volume });
       
       // Simulate new savings amount
       setLastSavings(Math.random() * 50 + 20);
@@ -54,21 +86,34 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
         <div className="space-y-4 sm:space-y-6">
           <div className="space-y-4 sm:space-y-6">
             <div>
-              <label className="block text-lg sm:text-xl font-semibold text-gray-800 mb-3">
+              <label htmlFor="postcode-input" className="block text-lg sm:text-xl font-semibold text-gray-800 mb-3">
                 Enter Your Postcode
               </label>
-              <Input
-                type="text"
-                placeholder="Type your postcode here (e.g. BT1 5GS)"
-                value={postcode}
-                onChange={(e) => setPostcode(e.target.value.toUpperCase())}
-                className="w-full text-lg sm:text-xl p-4 sm:p-5 h-14 sm:h-16 border-2 border-blue-300 focus:border-blue-500 rounded-lg touch-manipulation"
-                style={{ fontSize: '18px' }}
-                autoComplete="postal-code"
-                inputMode="text"
-              />
-              <p className="text-sm sm:text-base text-gray-600 mt-2">
-                Enter your Northern Ireland postcode to find suppliers in your area
+              <div className="relative">
+                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-lg sm:text-xl text-gray-600 font-semibold pointer-events-none">
+                  BT
+                </div>
+                <Input
+                  id="postcode-input"
+                  type="text"
+                  placeholder="1 5GS"
+                  value={postcodeInput}
+                  onChange={(e) => handlePostcodeChange(e.target.value.toUpperCase())}
+                  className={`w-full text-lg sm:text-xl p-4 sm:p-5 pl-12 sm:pl-14 h-14 sm:h-16 border-2 ${postcodeError ? 'border-red-300 focus:border-red-500' : 'border-blue-300 focus:border-blue-500'} rounded-lg touch-manipulation`}
+                  style={{ fontSize: '18px' }}
+                  autoComplete="postal-code"
+                  inputMode="text"
+                  aria-describedby="postcode-help postcode-error"
+                  aria-invalid={!!postcodeError}
+                />
+              </div>
+              {postcodeError && (
+                <p id="postcode-error" className="text-sm text-red-600 mt-2" role="alert">
+                  {postcodeError}
+                </p>
+              )}
+              <p id="postcode-help" className="text-sm sm:text-base text-gray-600 mt-2">
+                Enter your Northern Ireland postcode (e.g. 1 5GS for BT1 5GS)
               </p>
             </div>
             <div>
@@ -93,8 +138,8 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
 
           <Button 
             onClick={handleSearch}
-            disabled={!postcode || !volume || isSearching}
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 sm:py-6 text-lg sm:text-xl h-14 sm:h-16 rounded-lg border-2 border-blue-700 shadow-lg hover:shadow-xl transition-all touch-manipulation"
+            disabled={!postcodeInput || !volume || isSearching || !!postcodeError}
+            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 sm:py-6 text-lg sm:text-xl h-14 sm:h-16 rounded-lg border-2 border-blue-700 shadow-lg hover:shadow-xl transition-all touch-manipulation disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSearching ? (
               <div className="flex items-center justify-center">
