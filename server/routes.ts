@@ -278,6 +278,80 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Enhanced enquiry endpoint with ticket system
+  app.post('/api/enquiry', async (req, res) => {
+    try {
+      const { name, email, postcode, litres } = req.body;
+      
+      // Validate required fields
+      if (!name || !email || !postcode || !litres) {
+        return res.status(400).json({ error: "All fields are required" });
+      }
+
+      // Validate Northern Ireland postcode format
+      const btPattern = /^BT\d{1,2}\s?\d[A-Z]{2}$/i;
+      if (!btPattern.test(postcode.trim())) {
+        return res.status(400).json({ 
+          error: "Invalid Northern Ireland postcode. Please use BT format (e.g., BT1 1AA)" 
+        });
+      }
+
+      // Validate litres
+      const volume = parseInt(litres);
+      if (isNaN(volume) || volume < 100 || volume > 2000) {
+        return res.status(400).json({ 
+          error: "Volume must be between 100 and 2000 litres" 
+        });
+      }
+
+      // Generate unique ticket ID
+      const timestamp = Date.now();
+      const ticketId = `NIHO-${timestamp.toString().slice(-4)}`;
+
+      // Create lead with ticket information
+      const leadData = {
+        name: name.trim(),
+        email: email.trim().toLowerCase(),
+        phone: "", 
+        postcode: postcode.toUpperCase().trim(),
+        volume: volume,
+        notes: `Ticket ID: ${ticketId} | Generated: ${new Date().toISOString()}`,
+        status: "new",
+        urgency: "normal"
+      };
+
+      const lead = await storage.createLead(leadData);
+
+      // Send confirmation email to customer
+      try {
+        const { sendLeadNotifications } = await import('./emailService');
+        await sendLeadNotifications(lead);
+      } catch (emailError) {
+        console.error("Failed to send confirmation email:", emailError);
+      }
+
+      // Log enquiry for specialist follow-up
+      console.log(`New heating oil enquiry - ${ticketId}:`, {
+        customer: name,
+        email: email,
+        postcode: postcode,
+        litres: volume,
+        leadId: lead.id,
+        timestamp: new Date().toISOString()
+      });
+
+      res.json({
+        ticketId,
+        message: `Thanks, ${name.split(' ')[0]}! We're checking the best rates for ${postcode}. You'll get an email shortly.`,
+        leadId: lead.id
+      });
+
+    } catch (error) {
+      console.error("Error creating enquiry:", error);
+      res.status(500).json({ error: "Failed to process enquiry" });
+    }
+  });
+
   // Lead capture endpoint (no authentication required)
   app.post('/api/leads', async (req, res) => {
     try {
