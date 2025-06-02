@@ -450,6 +450,33 @@ Crawl-delay: 1`;
     }
   });
 
+  // Chatbot endpoint
+  app.post('/api/chat', async (req, res) => {
+    try {
+      const { messages } = req.body;
+      
+      if (!Array.isArray(messages)) {
+        return res.status(400).json({ message: "Messages must be an array" });
+      }
+
+      const { generateChatResponse, validateChatMessage } = await import('./chatbot');
+      
+      // Validate all messages
+      const validMessages = messages.filter(validateChatMessage);
+      if (validMessages.length === 0) {
+        return res.status(400).json({ message: "No valid messages provided" });
+      }
+
+      const response = await generateChatResponse(validMessages);
+      res.json({ response });
+    } catch (error) {
+      console.error("Chat error:", error);
+      res.status(500).json({ 
+        message: "Sorry, I'm having trouble right now. Please try again in a moment." 
+      });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
