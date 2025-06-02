@@ -245,8 +245,8 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
                   value={postcodeInput}
                   onChange={(e) => handlePostcodeChange(e.target.value.toUpperCase())}
                   onFocus={() => postcodeInput && setShowSuggestions(true)}
-                  className={`w-full text-lg sm:text-xl p-4 sm:p-5 pl-12 sm:pl-14 h-14 sm:h-16 border-2 ${postcodeError ? 'border-red-300 focus:border-red-500' : 'border-blue-300 focus:border-blue-500'} rounded-lg touch-manipulation bg-white text-gray-900`}
-                  style={{ fontSize: '18px', color: '#111827' }}
+                  className={`w-full text-lg sm:text-xl p-4 sm:p-5 pl-12 sm:pl-14 h-14 sm:h-16 border-2 ${postcodeError ? 'border-red-300 focus:border-red-500' : 'border-blue-300 focus:border-blue-500'} rounded-lg touch-manipulation bg-white text-gray-900 shadow-sm`}
+                  style={{ fontSize: '18px', color: '#111827', backgroundColor: '#ffffff' }}
                   autoComplete="postal-code"
                   inputMode="text"
                   aria-describedby="postcode-help postcode-error"
