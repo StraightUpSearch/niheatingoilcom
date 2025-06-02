@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { setupAuth, isAuthenticated } from "./replitAuth";
+import { setupAuth, isAuthenticated } from "./auth";
 import { z } from "zod";
 import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema, insertSupplierClaimSchema } from "@shared/schema";
 import { scrapeAllSuppliers, initializeScraping } from "./scraper";
@@ -13,7 +13,7 @@ import { initializeSupplierData } from "./mockSupplierData";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Auth middleware
-  await setupAuth(app);
+  setupAuth(app);
 
   // Initialize Consumer Council scraping and URL detection
   setTimeout(() => {

@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>NI Heating Oil - Compare Heating Oil Prices in Northern Ireland</title>
+    <meta name="description" content="Compare heating oil prices from 50+ verified suppliers across Northern Ireland. Get real-time price updates, set price alerts, and find the cheapest heating oil deals in your area. Free to use, updated every 2 hours." />
+    
+    <!-- Open Graph tags for social media sharing -->
+    <meta property="og:title" content="NI Heating Oil - Compare Heating Oil Prices in Northern Ireland" />
+    <meta property="og:description" content="Find the cheapest heating oil prices from verified suppliers across Northern Ireland. Real-time updates, price alerts, and comprehensive supplier directory." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NI Heating Oil" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://niheatingoil.com" />
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NI Heating Oil - Compare Heating Oil Prices in Northern Ireland" />
+    <meta name="twitter:description" content="Find the cheapest heating oil prices from verified suppliers across Northern Ireland. Real-time updates, price alerts, and comprehensive supplier directory." />
+    
+    <!-- Additional SEO meta tags -->
+    <meta name="keywords" content="heating oil prices Northern Ireland, oil price comparison NI, heating oil suppliers Belfast, cheap heating oil Derry, oil prices Armagh, fuel prices Tyrone, heating oil Down, oil suppliers Fermanagh, Antrim heating oil, BT postcode oil prices" />
+    <meta name="author" content="NI Heating Oil" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow" />
+    
+    <!-- Geo targeting -->
+    <meta name="geo.region" content="GB-NIR" />
+    <meta name="geo.placename" content="Northern Ireland" />
+    <meta name="ICBM" content="54.7877, -6.4923" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://niheatingoil.com" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://niheatingoil.com/#organization",
+          "name": "NI Heating Oil",
+          "url": "https://niheatingoil.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://niheatingoil.com/favicon.svg"
+          },
+          "description": "NI Heating Oil provides a free online service to compare heating oil prices from numerous verified suppliers across Northern Ireland.",
+          "sameAs": [],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "contactType": "Customer Service",
+              "description": "For inquiries about NI Heating Oil's price comparison service. Real-time price updates. Free to use.",
+              "areaServed": "GB-NIR",
+              "availableLanguage": ["en-GB"]
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://niheatingoil.com/#website",
+          "url": "https://niheatingoil.com/",
+          "name": "NI Heating Oil",
+          "alternateName": "Northern Ireland Heating Oil Price Comparison",
+          "description": "Find the cheapest heating oil prices from 50+ verified suppliers across Northern Ireland. Real-time updates, price alerts, and comprehensive supplier directory. Free to use, updated every 2 hours.",
+          "publisher": {
+            "@id": "https://niheatingoil.com/#organization"
+          },
+          "inLanguage": "en-GB",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://niheatingoil.com/compare?postcode={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://niheatingoil.com/#service",
+          "name": "Heating Oil Price Comparison Service NI",
+          "serviceType": "Price Comparison",
+          "category": "Online Price Comparison Service for Heating Oil",
+          "description": "Compare current heating oil prices from over 50 verified suppliers across Northern Ireland. Features real-time price updates, price alerts, and a comprehensive supplier directory to find the cheapest deals. The service is free to use and price data is updated every 2 hours.",
+          "provider": {
+            "@id": "https://niheatingoil.com/#organization"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Northern Ireland",
+            "sameAs": "https://en.wikipedia.org/wiki/Northern_Ireland"
+          },
+          "isRelatedTo": {
+            "@type": "Product",
+            "name": "Heating Oil",
+            "description": "Fuel oil for residential and commercial heating systems in Northern Ireland."
+          },
+          "offers": {
+            "@type": "Offer",
+            "name": "Free Access to Price Comparison Service",
+            "price": "0",
+            "priceCurrency": "GBP",
+            "availability": "https://schema.org/OnlineOnly"
+          },
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://niheatingoil.com/compare",
+            "description": "Online price comparison tool for heating oil."
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://niheatingoil.com/#localbusiness",
+          "name": "NI Heating Oil",
+          "url": "https://niheatingoil.com",
+          "image": "https://niheatingoil.com/favicon.svg",
+          "description": "Online platform to compare heating oil prices from trusted local suppliers across Northern Ireland. Helping households and businesses find the best deals on their heating oil.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GB",
+            "addressRegion": "NIR",
+            "addressLocality": "Northern Ireland",
+            "postalCode": ""
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "54.7877",
+            "longitude": "-6.4923"
+          },
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Northern Ireland",
+            "sameAs": "https://en.wikipedia.org/wiki/Northern_Ireland"
+          },
+          "priceRange": "Free",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59",
+              "description": "Online price comparison service available 24/7. Data updated every 2 hours."
+            }
+          ],
+          "currenciesAccepted": "GBP"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://niheatingoil.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://niheatingoil.com/"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Favicon and theme -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    <meta name="theme-color" content="#1976D2" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="/assets/index-DRjjU-oW.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D5QfIJB7.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
+    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+  </body>
+</html>
