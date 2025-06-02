@@ -66,9 +66,9 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
               Compare Heating Oil Prices 
               <span className="block text-yellow-300 animate-pulse">Across Northern Ireland</span>
             </h1>
-            <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-blue-100 max-w-3xl mx-auto px-4 sm:px-0">
-              <span className="block sm:inline">Built by locals, for locals.</span>
-              <span className="block sm:inline"> No messing about - we'll show you the craic with heating oil prices across all six counties. Save your pennies and keep your house toasty!</span>
+            <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-blue-100 max-w-3xl mx-auto px-6 sm:px-4 md:px-0 leading-relaxed">
+              <span className="block text-center sm:inline">Built by locals, for locals.</span>
+              <span className="block text-center sm:inline"> No messing about - we'll show you the craic with heating oil prices across all six counties. Save your pennies and keep your house toasty!</span>
             </p>
           </div>
           
