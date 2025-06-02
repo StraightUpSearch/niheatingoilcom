@@ -292,16 +292,28 @@ export class DatabaseStorage implements IStorage {
       }
     }
 
-    // Always prioritize individual suppliers when they have current pricing data
-    // Only fall back to regional averages if absolutely no individual suppliers exist
-    const hasRecentIndividualPrices = individualSuppliers.length > 0;
-    const resultsToProcess = hasRecentIndividualPrices 
-      ? individualSuppliers  // Show all individual suppliers, not just area-specific ones
-      : relevantRegionalAverages;
+    // Always prioritize individual suppliers - NEVER show multiple regional averages
+    const hasIndividualSuppliers = individualSuppliers.length > 0;
+    
+    let resultsToReturn;
+    if (hasIndividualSuppliers) {
+      // Show all individual suppliers
+      resultsToReturn = individualSuppliers;
+    } else {
+      // If no individual suppliers, show only ONE regional average (not multiple duplicates)
+      const uniqueRegionalAverages = new Map();
+      relevantRegionalAverages.forEach(result => {
+        const supplierKey = result.supplierId;
+        if (!uniqueRegionalAverages.has(supplierKey)) {
+          uniqueRegionalAverages.set(supplierKey, result);
+        }
+      });
+      resultsToReturn = Array.from(uniqueRegionalAverages.values()).slice(0, 1); // Only one regional average
+    }
 
-    // Get latest price per supplier for the requested volume (or multiple volumes)
+    // Get latest price per supplier and volume combination
     const latestPrices = new Map();
-    resultsToProcess.forEach(result => {
+    resultsToReturn.forEach(result => {
       const key = `${result.supplierId}-${result.volume}`;
       if (!latestPrices.has(key) || latestPrices.get(key).createdAt! < result.createdAt!) {
         latestPrices.set(key, result);
