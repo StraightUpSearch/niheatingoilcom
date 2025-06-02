@@ -46,24 +46,45 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
     <div className="w-full max-w-4xl mx-auto">
       <form onSubmit={handleSubmit} className="relative">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Postcode Input */}
-          <div className="lg:col-span-1 group">
-            <Label htmlFor="postcode" className="block text-sm font-medium text-gray-700 mb-2 group-focus-within:text-primary transition-colors">
-              <MapPin className="inline h-4 w-4 mr-1" />
-              Your Postcode
-            </Label>
-            <div className="relative">
-              <Input
-                id="postcode"
-                type="text"
-                value={postcode}
-                onChange={(e) => setPostcode(e.target.value)}
-                placeholder="e.g. BT1 5GS"
-                className="w-full h-11 text-base sm:text-sm bg-white text-gray-900 border-gray-300 pl-10 focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 hover:border-primary/50"
-                style={{ color: '#111827', backgroundColor: '#ffffff' }}
-                disabled={isLoading}
-              />
-              <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+          {/* Postcode Input with Quick Tips */}
+          <div className="lg:col-span-1 space-y-4">
+            <div className="group">
+              <Label htmlFor="postcode" className="block text-sm font-medium text-gray-700 mb-2 group-focus-within:text-primary transition-colors">
+                <MapPin className="inline h-4 w-4 mr-1" />
+                Your Postcode
+              </Label>
+              <div className="relative">
+                <Input
+                  id="postcode"
+                  type="text"
+                  value={postcode}
+                  onChange={(e) => setPostcode(e.target.value)}
+                  placeholder="e.g. BT1 5GS"
+                  className="w-full h-11 text-base sm:text-sm bg-white text-gray-900 border-gray-300 pl-10 focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 hover:border-primary/50"
+                  style={{ color: '#111827', backgroundColor: '#ffffff' }}
+                  disabled={isLoading}
+                />
+                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+              </div>
+            </div>
+
+            {/* Quick Tips */}
+            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+              <h4 className="text-sm font-semibold text-blue-900 mb-2">Quick Tips</h4>
+              <ul className="text-xs text-blue-800 space-y-1">
+                <li>• Enter any NI postcode (BT1-BT94)</li>
+                <li>• Prices updated from Consumer Council</li>
+                <li>• Compare up to 25+ local suppliers</li>
+                <li>• 100% free comparison service</li>
+              </ul>
+            </div>
+
+            {/* Trust Indicator */}
+            <div className="bg-green-50 p-3 rounded-lg border border-green-200">
+              <div className="flex items-center">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                <span className="text-xs font-medium text-green-800">Official Consumer Council Data</span>
+              </div>
             </div>
           </div>
 

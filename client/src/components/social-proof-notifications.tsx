@@ -124,31 +124,31 @@ export default function SocialProofNotifications() {
       }, 6000);
     };
 
-    // Check if user is engaged
-    const isEngaged = sessionEngagement.timeOnPage > 15 || 
-                     sessionEngagement.interactions > 3 || 
-                     sessionEngagement.scrollEvents > 8;
+    // Check if user is engaged (lower thresholds for better UX)
+    const isEngaged = sessionEngagement.timeOnPage > 8 || 
+                     sessionEngagement.interactions > 1 || 
+                     sessionEngagement.scrollEvents > 3;
 
-    // Show first notification when user is engaged AND has scrolled 30%+
-    if (!hasShownInitial && isEngaged && scrollDepth > 30) {
+    // Show first notification when user is engaged AND has scrolled 20%+
+    if (!hasShownInitial && isEngaged && scrollDepth > 20) {
       const timer = setTimeout(() => {
         showNotification();
         setHasShownInitial(true);
-      }, 3000);
+      }, 2000);
       return () => clearTimeout(timer);
     }
 
-    // Show subsequent notifications for highly engaged users only
-    if (hasShownInitial && isEngaged && sessionEngagement.timeOnPage > 45) {
+    // Show subsequent notifications for engaged users
+    if (hasShownInitial && isEngaged && sessionEngagement.timeOnPage > 25) {
       const interval = setInterval(() => {
-        // Only show if user is active, has scrolled significantly, and not currently visible
-        if (!isVisible && scrollDepth > 50) {
-          // 25% probability every 30 seconds for engaged users
-          if (Math.random() < 0.25) {
+        // Only show if user is active, has scrolled, and not currently visible
+        if (!isVisible && scrollDepth > 30) {
+          // 40% probability every 25 seconds for engaged users
+          if (Math.random() < 0.4) {
             showNotification();
           }
         }
-      }, 30000);
+      }, 25000);
 
       return () => clearInterval(interval);
     }
