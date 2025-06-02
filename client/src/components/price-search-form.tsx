@@ -79,13 +79,7 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
               </ul>
             </div>
 
-            {/* Trust Indicator */}
-            <div className="bg-green-50 p-3 rounded-lg border border-green-200">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                <span className="text-xs font-medium text-green-800">Official Consumer Council Data</span>
-              </div>
-            </div>
+
           </div>
 
           {/* Tank Selector */}
