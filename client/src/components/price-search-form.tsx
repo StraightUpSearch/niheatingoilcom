@@ -17,12 +17,27 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [, setLocation] = useLocation();
 
+  const validateNIPostcode = (postcode: string): boolean => {
+    // Northern Ireland postcodes start with BT followed by 1-2 digits, then space and 3 characters
+    const niPostcodeRegex = /^BT\d{1,2}\s?\d[A-Z]{2}$/i;
+    return niPostcodeRegex.test(postcode.trim());
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
+    const trimmedPostcode = postcode.trim();
+    
+    // Validate Northern Ireland postcode if provided
+    if (trimmedPostcode && !validateNIPostcode(trimmedPostcode)) {
+      alert("Please enter a valid Northern Ireland postcode (e.g., BT1 5GS). This service is only available for Northern Ireland addresses.");
+      setIsLoading(false);
+      return;
+    }
+    
     const params = {
-      postcode: postcode.trim() || undefined,
+      postcode: trimmedPostcode || undefined,
       volume: parseInt(volume),
     };
 
