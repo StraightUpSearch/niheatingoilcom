@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import tank300L from "@assets/tank_300L.png";
+import tank500L from "@assets/tank_500L.png";
+import tank900L from "@assets/tank_900L.png";
 
 interface TankSelectorProps {
   selectedVolume: string;
@@ -35,67 +38,45 @@ const tankOptions: TankOption[] = [
   }
 ];
 
-// Placeholder SVG tank components - will be replaced with actual graphics
+
+
 const TankGraphic = ({ volume, isSelected, size }: { volume: string; isSelected: boolean; size: 'small' | 'medium' | 'large' }) => {
-  const getHeight = () => {
-    switch(size) {
-      case 'small': return 80;
-      case 'medium': return 100;
-      case 'large': return 120;
-      default: return 100;
+  const getTankImage = () => {
+    switch(volume) {
+      case '300': return tank300L;
+      case '500': return tank500L;
+      case '900': return tank900L;
+      default: return tank500L;
     }
   };
 
-  const getWidth = () => {
+  const getSize = () => {
     switch(size) {
-      case 'small': return 60;
-      case 'medium': return 75;
-      case 'large': return 90;
-      default: return 75;
+      case 'small': return { width: 80, height: 80 };
+      case 'medium': return { width: 100, height: 100 };
+      case 'large': return { width: 120, height: 120 };
+      default: return { width: 100, height: 100 };
     }
   };
+
+  const { width, height } = getSize();
 
   return (
-    <svg 
-      width={getWidth()} 
-      height={getHeight()} 
-      viewBox={`0 0 ${getWidth()} ${getHeight()}`}
-      className={cn(
-        "transition-all duration-300",
-        isSelected ? "text-primary scale-110" : "text-gray-400 hover:text-primary"
-      )}
-    >
-      {/* Simple tank representation - will be replaced with actual SVG graphics */}
-      <rect
-        x="10"
-        y="10"
-        width={getWidth() - 20}
-        height={getHeight() - 20}
-        rx="8"
-        fill="currentColor"
-        fillOpacity={isSelected ? "0.8" : "0.4"}
-        stroke="currentColor"
-        strokeWidth="2"
+    <div className={cn(
+      "transition-all duration-300 flex items-center justify-center",
+      isSelected ? "scale-110 opacity-100" : "opacity-70 hover:opacity-100 hover:scale-105"
+    )}>
+      <img
+        src={getTankImage()}
+        alt={`${volume}L oil tank`}
+        width={width}
+        height={height}
+        className={cn(
+          "transition-all duration-300 filter",
+          isSelected ? "brightness-100 drop-shadow-lg" : "brightness-90 hover:brightness-100"
+        )}
       />
-      <rect
-        x="15"
-        y="15"
-        width={getWidth() - 30}
-        height={(getHeight() - 30) * 0.7}
-        rx="4"
-        fill="#1976D2"
-        fillOpacity={isSelected ? "0.9" : "0.3"}
-        className="transition-all duration-500"
-      />
-      <text
-        x={getWidth() / 2}
-        y={getHeight() - 5}
-        textAnchor="middle"
-        className="text-xs font-semibold fill-current"
-      >
-        {volume}L
-      </text>
-    </svg>
+    </div>
   );
 };
 

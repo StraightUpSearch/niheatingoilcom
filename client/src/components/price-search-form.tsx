@@ -5,6 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { Search, MapPin, Droplets, Loader2 } from "lucide-react";
 import { useLocation } from "wouter";
+import TankSelector from "./tank-selector";
 
 interface PriceSearchFormProps {
   onSearch?: (params: { postcode?: string; volume?: number }) => void;
@@ -44,8 +45,9 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <form onSubmit={handleSubmit} className="relative">
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-          <div className="flex-1 min-w-0 group">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Postcode Input */}
+          <div className="lg:col-span-1 group">
             <Label htmlFor="postcode" className="block text-sm font-medium text-gray-700 mb-2 group-focus-within:text-primary transition-colors">
               <MapPin className="inline h-4 w-4 mr-1" />
               Your Postcode
@@ -64,50 +66,36 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
               <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
             </div>
           </div>
-          <div className="flex-1 min-w-0 group">
-            <Label htmlFor="volume" className="block text-sm font-medium text-gray-700 mb-2 group-focus-within:text-primary transition-colors">
-              <Droplets className="inline h-4 w-4 mr-1" />
-              Oil Volume (Litres)
-            </Label>
-            <Select value={volume} onValueChange={setVolume} disabled={isLoading}>
-              <SelectTrigger className="bg-white text-gray-900 border-gray-300 h-11 text-base sm:text-sm focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 hover:border-primary/50">
-                <div className="flex items-center">
-                  <Droplets className="h-4 w-4 mr-2 text-gray-400" />
-                  <SelectValue className="text-gray-900" />
-                </div>
-              </SelectTrigger>
-              <SelectContent className="bg-white border border-gray-200 shadow-lg">
-                <SelectItem value="300" className="text-gray-900 hover:bg-gray-100 py-3 text-base sm:text-sm cursor-pointer">
-                  300L - Small Tank
-                </SelectItem>
-                <SelectItem value="500" className="text-gray-900 hover:bg-gray-100 py-3 text-base sm:text-sm cursor-pointer">
-                  500L - Medium Tank
-                </SelectItem>
-                <SelectItem value="900" className="text-gray-900 hover:bg-gray-100 py-3 text-base sm:text-sm cursor-pointer">
-                  900L - Large Tank
-                </SelectItem>
-              </SelectContent>
-            </Select>
+
+          {/* Tank Selector */}
+          <div className="lg:col-span-2">
+            <TankSelector 
+              selectedVolume={volume}
+              onVolumeChange={setVolume}
+              className="mb-4"
+            />
           </div>
-          <div className="flex items-end">
-            <Button 
-              type="submit" 
-              disabled={isLoading || !postcode.trim()}
-              className="w-full sm:w-auto bg-accent text-white hover:bg-orange-600 h-11 px-6 text-base sm:text-sm font-medium transform transition-all duration-300 hover:scale-105 focus:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-            >
-              {isLoading ? (
-                <>
-                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  Searching...
-                </>
-              ) : (
-                <>
-                  <Search className="h-4 w-4 mr-2" />
-                  Compare Prices
-                </>
-              )}
-            </Button>
-          </div>
+        </div>
+
+        {/* Submit Button */}
+        <div className="mt-6 flex justify-center">
+          <Button 
+            type="submit" 
+            disabled={isLoading || !postcode.trim()}
+            className="w-full sm:w-auto bg-accent text-white hover:bg-orange-600 h-12 px-8 text-base font-medium transform transition-all duration-300 hover:scale-105 focus:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+          >
+            {isLoading ? (
+              <>
+                <Loader2 className="h-5 w-5 mr-2 animate-spin" />
+                Searching for Best Prices...
+              </>
+            ) : (
+              <>
+                <Search className="h-5 w-5 mr-2" />
+                Compare Oil Prices
+              </>
+            )}
+          </Button>
         </div>
       </form>
       
