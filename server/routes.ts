@@ -7,7 +7,7 @@ import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema } fro
 import { scrapeAllSuppliers, initializeScraping } from "./scraper";
 import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
 import { initializeWeeklyUrlDetection, consumerCouncilUrlDetector } from "./consumerCouncilUrlDetector";
-import { initializeLivePriceScraping } from "./livePriceScraper";
+import { initializeLiveSupplierScraping } from "./liveSupplierScraper";
 
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -29,10 +29,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
   }, 2000);
 
   // Initialize live supplier price scraping from cheapestoil.co.uk and other sources
-  setTimeout(() => {
-    initializeLivePriceScraping().catch(error => {
-      console.error("Live price scraping initialization failed:", error);
-    });
+  setTimeout(async () => {
+    try {
+      console.log("Starting live supplier data scraping with ScrapingBee...");
+      await initializeLiveSupplierScraping();
+    } catch (error) {
+      console.error("Live supplier scraping initialization failed:", error);
+    }
   }, 3000);
 
 
