@@ -5,7 +5,7 @@ import EnhancedPricingTable from "@/components/enhanced-pricing-table";
 import PriceTrends from "@/components/price-trends";
 import AnimatedPriceTrend from "@/components/animated-price-trend";
 import PriceAlertsForm from "@/components/price-alerts-form";
-import SupplierDirectory from "@/components/supplier-directory";
+import FeaturedSuppliers from "@/components/featured-suppliers";
 import SuppliersShowcase from "@/components/suppliers-showcase";
 import OilTankShowcase from "@/components/oil-tank-showcase";
 import TrustSection from "@/components/trust-section";
@@ -140,7 +140,7 @@ export default function Landing() {
       <PriceTrends />
       <SuppliersShowcase />
       <PriceAlertsForm />
-      <SupplierDirectory />
+      <FeaturedSuppliers />
       <TrustSection />
       <Footer />
       
