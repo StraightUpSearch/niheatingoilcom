@@ -6,6 +6,7 @@ import {
   priceHistory,
   searchQueries,
   leads,
+  supplierClaims,
   type User,
   type UpsertUser,
   type Supplier,
@@ -20,6 +21,8 @@ import {
   type InsertSearchQuery,
   type Lead,
   type InsertLead,
+  type SupplierClaim,
+  type InsertSupplierClaim,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc, and, or, gte, lte, sql, like, inArray, not } from "drizzle-orm";

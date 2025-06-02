@@ -117,6 +117,21 @@ export const leads = pgTable("leads", {
   updatedAt: timestamp("updated_at").defaultNow(),
 });
 
+export const supplierClaims = pgTable("supplier_claims", {
+  id: serial("id").primaryKey(),
+  supplierName: varchar("supplier_name", { length: 255 }).notNull(),
+  contactName: varchar("contact_name", { length: 255 }).notNull(),
+  email: varchar("email", { length: 255 }).notNull(),
+  phone: varchar("phone", { length: 50 }).notNull(),
+  businessAddress: text("business_address").notNull(),
+  coverageAreas: text("coverage_areas").notNull(),
+  currentPricing: text("current_pricing"),
+  message: text("message"),
+  status: varchar("status", { length: 50 }).default("pending").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
 export type UpsertUser = typeof users.$inferInsert;
 export type User = typeof users.$inferSelect;
 
@@ -137,6 +152,9 @@ export type InsertSearchQuery = typeof searchQueries.$inferInsert;
 
 export type Lead = typeof leads.$inferSelect;
 export type InsertLead = typeof leads.$inferInsert;
+
+export type SupplierClaim = typeof supplierClaims.$inferSelect;
+export type InsertSupplierClaim = typeof supplierClaims.$inferInsert;
 
 // Zod schemas for validation
 export const insertSupplierSchema = createInsertSchema(suppliers).omit({
@@ -161,6 +179,12 @@ export const insertSearchQuerySchema = createInsertSchema(searchQueries).omit({
 });
 
 export const insertLeadSchema = createInsertSchema(leads).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export const insertSupplierClaimSchema = createInsertSchema(supplierClaims).omit({
   id: true,
   createdAt: true,
   updatedAt: true,

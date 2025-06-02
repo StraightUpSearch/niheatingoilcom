@@ -1,0 +1,140 @@
+AI Developer Brief: Social Proof Pop-Up for NI Heating Oil Website
+Objective:
+Develop a lightweight, non-intrusive pop-up notification on our MVP website (niheatingoil.com) to enhance user engagement through social proof, showcasing real-time (or simulated) usage data.
+
+Core Functionality:
+Social proof notifications: A small, animated pop-up appearing at the bottom-left or bottom-right corner of the screen, cycling through statements such as:
+
+"Jane from Belfast just saved £20/year using our heating oil comparison!"
+
+"Mark from Derry saved £18 on his oil bill today!"
+
+"Lisa from Lisburn compared oil prices and reduced her annual bill by £22!"
+
+Localization:
+Notifications must specifically reference familiar Northern Irish locations (e.g., Belfast, Derry, Armagh, Lisburn, Enniskillen, Antrim).
+
+Authenticity and Appeal:
+Messages should be short, believable, friendly, and tailored to resonate with Northern Irish users. Use common Northern Irish names to build credibility.
+
+Technical Requirements:
+Timing and Animation:
+
+Notifications appear approximately every 20-30 seconds and auto-dismiss after 5-8 seconds.
+
+Minimal animation (fade-in, fade-out, subtle slide-up from bottom).
+
+Mobile & Desktop Responsiveness:
+Ensure notifications function smoothly across all devices without impacting site performance or usability.
+
+Accessibility:
+Pop-up notifications should be dismissible with an intuitive "X" button.
+
+Best Practices to Follow:
+UX Best Practices:
+
+Keep notifications concise, clear, and non-disruptive.
+
+Ensure readability with good contrast and minimal animation.
+
+Avoid frequent or overly aggressive pop-ups to prevent annoyance.
+
+Data Privacy:
+
+Clearly indicate that these notifications are representative, especially if initially using simulated data.
+
+Ensure compliance with GDPR by not using actual users' full identifiable details unless explicitly consented.
+
+Performance and SEO:
+
+Maintain low-impact scripts to preserve fast page-loading speeds.
+
+Do not negatively affect SEO or overall site accessibility.
+
+Implementation Notes:
+Given this is an MVP, it's acceptable initially to randomize names, locations, and savings amounts from a predefined list.
+
+Ensure this feature can easily scale or later integrate with real-time usage data as the platform grows.
+
+This brief clearly outlines the feature for the AI developer to implement a simple, engaging social-proof notification to encourage user trust and interaction on the NI Heating Oil comparison site.
+
+
+
+
+
+
+
+
+You have not enough Humanizer words left. Upgrade your Surfer plan.
+You said:
+Ok thank you and to resonate with the customer base, I want you to research common Northern Ireland phrases, slang etc. So we could toungue in cheek add humour to the whole branding.
+
+
+ChatGPT said:
+Certainly! Incorporating Northern Irish slang and humour into your website's branding can create a relatable and engaging experience for your target audience. Here's how you can achieve this:
+
+🗣️ Integrating Northern Irish Slang and Humour into Branding
+Objective:
+Enhance user engagement by embedding authentic Northern Irish expressions and humour into the website's content, particularly in pop-up notifications and other interactive elements.
+
+Approach:
+
+Use of Local Slang in Notifications:
+
+Craft pop-up messages that reflect local speech patterns and colloquialisms.
+
+Examples:
+
+"Sarah from Derry just saved £25 on her heating oil – dead on!"
+
+"Big Tom from Belfast says, 'That's some quare deal!' after comparing prices."
+
+Incorporate Humorous Phrases:
+
+Leverage the region's unique sense of humour to make messages more engaging.
+
+Examples:
+
+"Mary from Armagh is chuffed to bits with her £30 savings – fair play to her!"
+
+"Joe from Lisburn reckons he's 'suckin' diesel' after finding the best deal."
+
+Dynamic Content Generation:
+
+Develop a system that randomly combines names, locations, and savings amounts to create varied and authentic-sounding messages.
+
+Ensure the content remains appropriate and resonates with the local audience.
+
+Cultural Sensitivity:
+
+While humour is encouraged, avoid phrases that might be considered offensive or politically sensitive.
+
+Focus on universally appreciated humour and expressions.
+
+Technical Implementation:
+
+Frontend:
+
+Use JavaScript to create and display pop-up notifications at intervals (e.g., every 30 seconds).
+
+Ensure the pop-ups are responsive and do not obstruct essential content.
+
+Backend:
+
+Maintain a database of names, locations, and phrases to generate dynamic content.
+
+Implement logic to randomly select and combine elements for each notification.
+
+Accessibility:
+
+Ensure that the pop-ups are accessible to all users, including those using screen readers.
+
+Provide options to dismiss or disable notifications if desired.
+
+Examples of Pop-Up Messages:
+
+"Emma from Enniskillen just nabbed a cracking deal – saved £20 on her heating oil!"
+
+"Liam from Newry says, 'That's a belter of a bargain!' after comparing prices."
+
+"Claire from Bangor is 'over the moon' with her £15 savings – happy days!"
