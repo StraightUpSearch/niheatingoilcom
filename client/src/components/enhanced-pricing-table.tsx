@@ -21,6 +21,12 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
   const [selectedSupplier, setSelectedSupplier] = useState<any>(null);
   const [showLeadModal, setShowLeadModal] = useState(false);
 
+  // Calculate prices for different volumes based on base price
+  const calculateVolumePrice = (basePrice: number, baseVolume: number, targetVolume: number) => {
+    const pricePerLitre = basePrice / baseVolume;
+    return pricePerLitre * targetVolume;
+  };
+
   const { data: pricesData, isLoading, error } = useQuery({
     queryKey: ["/api/prices", { postcode: searchParams?.postcode }],
     queryFn: async () => {
@@ -133,12 +139,6 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
     if (diffInMinutes < 60) return `Updated ${diffInMinutes} minutes ago`;
     if (diffInMinutes < 1440) return `Updated ${Math.floor(diffInMinutes / 60)} hours ago`;
     return `Updated ${Math.floor(diffInMinutes / 1440)} days ago`;
-  };
-
-  // Calculate prices for different volumes based on base price
-  const calculateVolumePrice = (basePrice: number, baseVolume: number, targetVolume: number) => {
-    const pricePerLitre = basePrice / baseVolume;
-    return pricePerLitre * targetVolume;
   };
 
   if (isLoading) {
