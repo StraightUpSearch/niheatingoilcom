@@ -13,6 +13,18 @@ const latestBlogArticles = [
     date: "2025-06-03",
     readTime: "12 min read",
     slug: "heating-oil-tank-sizes",
+    featuredImage: "https://koala.sh/api/image/v2-vnxed-nzz6i.jpg?width=400&height=250",
+    featured: true
+  },
+  {
+    id: "how-to-dispose-home-heating-oil",
+    title: "How to Properly Dispose of Home Heating Oil in N. Ireland",
+    description: "Safe and legal methods for households to dispose of old or leftover heating oil. Learn about professional removal services and environmental regulations.",
+    category: "Safety Guide",
+    date: "2025-06-03",
+    readTime: "15 min read",
+    slug: "how-to-dispose-home-heating-oil",
+    featuredImage: "https://koala.sh/api/image/v2-vr1r0-4n63v.jpg?width=400&height=250",
     featured: true
   }
 ];
@@ -37,7 +49,15 @@ export default function BlogCarousel() {
         {/* Blog Articles Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {latestBlogArticles.map((article) => (
-            <Card key={article.id} className="hover:shadow-xl transition-all duration-300 bg-white border-gray-200 group hover:-translate-y-1">
+            <Card key={article.id} className="hover:shadow-xl transition-all duration-300 bg-white border-gray-200 group hover:-translate-y-1 overflow-hidden">
+              {/* Featured Image */}
+              <div className="aspect-video w-full overflow-hidden">
+                <img 
+                  src={article.featuredImage} 
+                  alt={article.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardHeader className="pb-4">
                 <div className="flex items-center justify-between mb-3">
                   <Badge variant="secondary" className="bg-blue-100 text-blue-800 font-medium">
