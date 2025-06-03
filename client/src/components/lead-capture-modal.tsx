@@ -33,9 +33,29 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
     notes: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const [isBotProtectionValid, setIsBotProtectionValid] = useState(false);
   const [submissionStartTime] = useState(Date.now());
+
+  // Calculate dynamic price based on selected volume
+  const calculateDynamicPrice = () => {
+    if (!supplier || !formData.volume) return supplier?.price || "Contact for quote";
+    
+    const selectedVolume = parseInt(formData.volume);
+    const originalVolume = supplier.volume;
+    const originalPrice = parseFloat(supplier.price.replace('£', ''));
+    
+    if (isNaN(originalPrice) || isNaN(selectedVolume)) return supplier.price;
+    
+    // Calculate price per litre and multiply by new volume
+    const pricePerLitre = originalPrice / originalVolume;
+    const newPrice = pricePerLitre * selectedVolume;
+    
+    return `£${newPrice.toFixed(2)}`;
+  };
+
+  const getSelectedVolume = () => {
+    return formData.volume || supplier?.volume?.toString() || "500";
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -77,7 +97,7 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
       // Store quote data in localStorage for the thank you page
       const quoteData = {
         supplierName: supplier?.name || "Heating Oil Supplier",
-        price: supplier?.price || "Contact for quote",
+        price: calculateDynamicPrice(),
         volume: parseInt(formData.volume),
         location: supplier?.location || "Northern Ireland",
         postcode: formData.postcode,
@@ -117,8 +137,8 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
                     <div className="text-xs sm:text-sm text-green-600">{supplier.location}</div>
                   </div>
                   <div className="text-right">
-                    <div className="font-bold text-green-800 text-sm sm:text-base">{supplier.price}</div>
-                    <div className="text-xs text-green-600">{supplier.volume}L</div>
+                    <div className="font-bold text-green-800 text-sm sm:text-base">{calculateDynamicPrice()}</div>
+                    <div className="text-xs text-green-600">{getSelectedVolume()}L</div>
                   </div>
                 </div>
               </div>
