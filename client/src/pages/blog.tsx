@@ -4,7 +4,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 
-// Placeholder for blog articles - you can add your HTML articles here
 const blogArticles = [
   {
     id: "heating-oil-tank-sizes",
@@ -14,6 +13,42 @@ const blogArticles = [
     date: "2025-06-03",
     readTime: "12 min read",
     slug: "heating-oil-tank-sizes"
+  },
+  {
+    id: "best-time-buy-heating-oil-northern-ireland",
+    title: "Best Time to Buy Heating Oil in NI: Key Tips for Saving Money",
+    description: "Most of us in Northern Ireland know the drill - heating oil prices go up and down like a yo-yo. But here's the thing: if you time it right, you can save yourself a fair whack of money.",
+    category: "Money Saving",
+    date: "2025-06-02",
+    readTime: "8 min read",
+    slug: "best-time-buy-heating-oil-northern-ireland"
+  },
+  {
+    id: "how-to-dispose-heating-oil-northern-ireland",
+    title: "How to Properly Dispose of Home Heating Oil in N.Ireland: Safe and Legal Methods",
+    description: "Got some old heating oil that needs disposing of? Here's everything you need to know about getting rid of it safely and legally in Northern Ireland.",
+    category: "Safety Guide",
+    date: "2025-06-01",
+    readTime: "10 min read",
+    slug: "how-to-dispose-heating-oil-northern-ireland"
+  },
+  {
+    id: "heating-oil-tank-maintenance-guide",
+    title: "Heating Oil Tank Maintenance Guide for Northern Ireland Homes",
+    description: "Keep your heating oil tank in top condition with this comprehensive maintenance guide. Learn essential checks, cleaning tips, and when to call professionals.",
+    category: "Maintenance",
+    date: "2025-05-30",
+    readTime: "15 min read",
+    slug: "heating-oil-tank-maintenance-guide"
+  },
+  {
+    id: "how-to-save-money-heating-oil",
+    title: "How to Save Money on Heating Oil: Expert Tips for Northern Ireland Homeowners",
+    description: "Discover proven strategies to reduce your heating oil costs. From timing your purchases to improving efficiency, learn how to keep your bills down.",
+    category: "Money Saving",
+    date: "2025-05-28",
+    readTime: "11 min read",
+    slug: "how-to-save-money-heating-oil"
   }
 ];
 
