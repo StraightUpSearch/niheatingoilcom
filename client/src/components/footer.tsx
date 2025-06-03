@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Truck } from "lucide-react";
 import HeatingOilLogo from "@/components/heating-oil-logo";
+import simonLogo from "@assets/simon-community-ni-2024.png";
 
 export default function Footer() {
   const serviceLinks = [
@@ -147,7 +148,7 @@ export default function Footer() {
                 className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
               >
                 <img
-                  src="@assets/simon-community-ni-2024.png"
+                  src={simonLogo}
                   alt="Simon Community NI"
                   className="h-12 w-auto"
                 />
