@@ -20,11 +20,53 @@ import { CharityBanner } from "@/components/charity-banner";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calculator, TrendingDown, Bell, MapPin } from "lucide-react";
+import SEOHead from "@/components/seo-head";
 
 export default function Landing() {
   usePageTitle("NI Heating Oil - Compare Heating Oil Prices in Northern Ireland");
   
   const [searchParams, setSearchParams] = useState<{ postcode?: string; volume?: number } | null>(null);
+
+  // Structured data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "NI Heating Oil",
+    "description": "Compare heating oil prices across Northern Ireland suppliers. Real-time pricing, local delivery, trusted suppliers.",
+    "url": "https://niheatingoil.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://niheatingoil.com/?postcode={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NI Heating Oil",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "14a Victoria Street",
+        "addressLocality": "Ballymoney",
+        "addressRegion": "Northern Ireland",
+        "postalCode": "BT53 6DW",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "areaServed": "Northern Ireland",
+        "availableLanguage": "English"
+      }
+    },
+    "about": {
+      "@type": "Service",
+      "name": "Heating Oil Price Comparison",
+      "serviceType": "Price Comparison Service",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Northern Ireland"
+      }
+    }
+  };
 
   const handleSearch = (params: { postcode?: string; volume?: number }) => {
     setSearchParams(params);
@@ -39,6 +81,13 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead 
+        title="NI Heating Oil - Compare Heating Oil Prices in Northern Ireland"
+        description="Compare heating oil prices across Northern Ireland. Get instant quotes from trusted local suppliers in Belfast, Derry, Antrim, Down, Armagh, Tyrone & Fermanagh. Save money on your heating oil delivery today."
+        keywords="heating oil prices, Northern Ireland, oil suppliers, Belfast heating oil, Derry heating oil, fuel comparison, home heating, oil delivery, NI heating costs"
+        canonicalUrl="https://niheatingoil.com"
+        structuredData={structuredData}
+      />
       <Navigation />
       <HeroSection onSearch={handleSearch} />
       
