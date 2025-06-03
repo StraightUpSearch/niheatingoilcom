@@ -133,14 +133,14 @@ export default function Blog() {
           <Card className="max-w-2xl mx-auto bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-0">
             <CardContent className="p-8">
               <h2 className="text-2xl font-bold mb-4">
-                Need a Heating Oil Quote?
+                Get Free Price Alerts & Save Money
               </h2>
               <p className="mb-6 opacity-90">
-                Compare prices from 25+ local suppliers and save money on your next oil delivery
+                Create your free account to receive personalized price alerts, save your favorite suppliers, and never miss the best heating oil deals in Northern Ireland
               </p>
-              <Link href="/" className="inline-block">
+              <Link href="/auth" className="inline-block">
                 <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                  Compare Prices Now
+                  Create Free Account
                 </button>
               </Link>
             </CardContent>
