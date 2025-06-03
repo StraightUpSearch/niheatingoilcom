@@ -21,10 +21,12 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
   const [selectedSupplier, setSelectedSupplier] = useState<any>(null);
   const [showLeadModal, setShowLeadModal] = useState(false);
 
-  // Calculate prices for different volumes based on base price
+  // Calculate prices for different volumes based on base price with 20% safety margin
   const calculateVolumePrice = (basePrice: number, baseVolume: number, targetVolume: number) => {
     const pricePerLitre = basePrice / baseVolume;
-    return pricePerLitre * targetVolume;
+    const baseCalculatedPrice = pricePerLitre * targetVolume;
+    // Add 20% safety margin to all supplier prices for profitability buffer
+    return baseCalculatedPrice * 1.20;
   };
 
   const { data: pricesData, isLoading, error } = useQuery({

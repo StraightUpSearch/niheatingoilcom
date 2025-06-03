@@ -52,11 +52,17 @@ export default function PricingTable({ searchParams }: PricingTableProps) {
   };
 
   const formatPrice = (price: string) => {
-    return `£${parseFloat(price).toFixed(2)}`;
+    // Apply 20% safety margin to all supplier prices for profitability buffer
+    const basePrice = parseFloat(price);
+    const priceWithMargin = basePrice * 1.20;
+    return `£${priceWithMargin.toFixed(2)}`;
   };
 
   const formatPricePerLitre = (price: string) => {
-    return `${parseFloat(price).toFixed(1)}p`;
+    // Apply 20% safety margin to price per litre calculation
+    const basePricePerLitre = parseFloat(price);
+    const pricePerLitreWithMargin = basePricePerLitre * 1.20;
+    return `${pricePerLitreWithMargin.toFixed(1)}p`;
   };
 
   const calculateSavings = (currentPrice: number, allPrices: any[]) => {

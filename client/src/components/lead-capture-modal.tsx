@@ -36,7 +36,7 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
   const [isBotProtectionValid, setIsBotProtectionValid] = useState(false);
   const [submissionStartTime] = useState(Date.now());
 
-  // Calculate dynamic price based on selected volume
+  // Calculate dynamic price based on selected volume with 20% safety margin
   const calculateDynamicPrice = () => {
     if (!supplier || !formData.volume) return supplier?.price || "Contact for quote";
     
@@ -46,11 +46,12 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
     
     if (isNaN(originalPrice) || isNaN(selectedVolume)) return supplier.price;
     
-    // Calculate price per litre and multiply by new volume
+    // Calculate price per litre and multiply by new volume, then add 20% safety margin
     const pricePerLitre = originalPrice / originalVolume;
-    const newPrice = pricePerLitre * selectedVolume;
+    const basePrice = pricePerLitre * selectedVolume;
+    const priceWithMargin = basePrice * 1.20;
     
-    return `£${newPrice.toFixed(2)}`;
+    return `£${priceWithMargin.toFixed(2)}`;
   };
 
   const getSelectedVolume = () => {
