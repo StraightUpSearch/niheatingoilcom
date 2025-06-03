@@ -26,6 +26,17 @@ const latestBlogArticles = [
     slug: "how-to-dispose-home-heating-oil",
     featuredImage: "https://koala.sh/api/image/v2-vr1r0-4n63v.jpg?width=400&height=250",
     featured: true
+  },
+  {
+    id: "best-time-to-buy-heating-oil-ni",
+    title: "Best Time to Buy Heating Oil NI: Key Tips for Saving Money",
+    description: "Most of us in Northern Ireland depend on heating oil to stay warm, but timing our orders can make a real difference to our wallets.",
+    category: "Money Saving",
+    date: "2025-06-03",
+    readTime: "14 min read",
+    slug: "best-time-to-buy-heating-oil-ni",
+    featuredImage: "https://koala.sh/api/image/v2-vr2jh-wnqxi.jpg?width=400&height=250",
+    featured: true
   }
 ];
 
