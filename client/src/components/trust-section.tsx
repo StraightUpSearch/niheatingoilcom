@@ -68,22 +68,6 @@ export default function TrustSection() {
             );
           })}
         </div>
-
-        <Card className="border border-gray-200">
-          <CardContent className="p-8">
-            <div className="text-center mb-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Legal Compliance & Transparency</h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-600">
-              {legalPoints.map((point, index) => (
-                <div key={index} className="text-center">
-                  <h4 className="font-medium text-gray-900 mb-2">{point.title}</h4>
-                  <p>{point.description}</p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );
