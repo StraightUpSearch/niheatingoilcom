@@ -128,6 +128,18 @@ export default function Landing() {
                     <strong>County Fermanagh:</strong> BT74, BT92-BT94<br/>
                     <strong>County Derry:</strong> BT45-BT56
                   </p>
+                  <p className="text-xs text-gray-500 mt-3">
+                    BT postcode mappings verified through{" "}
+                    <a 
+                      href="https://en.wikipedia.org/wiki/BT_postcode_area" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 underline"
+                    >
+                      Wikipedia research
+                    </a>
+                    {" "}— because we do our homework for ye! At's us nai with proper County mapping.
+                  </p>
                 </CardContent>
               </Card>
             </div>
