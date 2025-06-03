@@ -24,30 +24,7 @@ export default function Footer() {
     { name: "Disclaimers", href: "#" },
   ];
 
-  // HTML Sitemap for SEO and crawlability
-  const sitemapLinks = {
-    "Main Pages": [
-      { name: "Home", href: "/" },
-      { name: "Compare Prices", href: "/compare" },
-      { name: "All Suppliers", href: "/suppliers" },
-      { name: "Blog", href: "/blog" },
-      { name: "Sign In", href: "/auth" }
-    ],
-    "Blog Articles": [
-      { name: "Heating Oil Tips for Winter 2024", href: "/blog/heating-oil-tips-winter-2024" },
-      { name: "Understanding Oil Prices in NI", href: "/blog/understanding-oil-prices-ni" },
-      { name: "Tank Maintenance Guide", href: "/blog/tank-maintenance-guide" }
-    ],
-    "Regional Coverage": [
-      { name: "Belfast Heating Oil", href: "/compare?area=belfast" },
-      { name: "Derry Heating Oil", href: "/compare?area=derry" },
-      { name: "Armagh Heating Oil", href: "/compare?area=armagh" },
-      { name: "Down Heating Oil", href: "/compare?area=down" },
-      { name: "Antrim Heating Oil", href: "/compare?area=antrim" },
-      { name: "Tyrone Heating Oil", href: "/compare?area=tyrone" },
-      { name: "Fermanagh Heating Oil", href: "/compare?area=fermanagh" }
-    ]
-  };
+
 
   return (
     <footer className="bg-gray-900 text-white py-12">
@@ -123,26 +100,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* HTML Sitemap Section for SEO */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <h2 className="text-xl font-bold mb-6 text-center">Complete Site Map</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {Object.entries(sitemapLinks).map(([category, links]) => (
-              <div key={category}>
-                <h3 className="text-lg font-semibold mb-4 text-blue-400">{category}</h3>
-                <ul className="space-y-2 text-gray-400">
-                  {links.map((link) => (
-                    <li key={link.name}>
-                      <Link href={link.href} className="hover:text-white transition-colors text-sm">
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
+
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>
