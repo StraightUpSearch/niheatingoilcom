@@ -33,12 +33,14 @@ function QuoteShareButton({
 
   const handleShareClick = () => {
     console.log('WhatsApp share clicked for:', supplier);
-    // Track the share event for analytics
-    if ((window as any).gtag) {
-      (window as any).gtag('event', 'share_whatsapp', {
-        method: 'WhatsApp',
-        content_type: 'quote',
-        item_id: postcode
+    // Track the share event via GTM
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'whatsapp_share',
+        supplier_name: supplier,
+        postcode: postcode,
+        share_method: 'whatsapp',
+        timestamp: new Date().toISOString()
       });
     }
   };

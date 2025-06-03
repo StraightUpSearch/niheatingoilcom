@@ -16,8 +16,14 @@ import Blog from "@/pages/blog";
 import BlogArticle from "@/pages/blog-article";
 import HtmlSitemap from "@/pages/html-sitemap";
 import Contact from "@/pages/contact";
+import { useEffect } from "react";
+import { initGTM } from "@/lib/gtm";
+import { useGTMPageTracking } from "@/hooks/use-gtm";
 
 function Router() {
+  // Track page views when routes change
+  useGTMPageTracking();
+  
   return (
     <Switch>
       <Route path="/" component={Landing} />
@@ -35,6 +41,15 @@ function Router() {
 }
 
 function App() {
+  // Initialize Google Tag Manager when app loads
+  useEffect(() => {
+    if (!import.meta.env.VITE_GTM_ID) {
+      console.warn('Missing required Google Tag Manager ID: VITE_GTM_ID');
+    } else {
+      initGTM();
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
