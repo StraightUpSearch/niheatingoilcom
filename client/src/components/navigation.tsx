@@ -41,44 +41,48 @@ export default function Navigation() {
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-4">
-            <Link href="/" className="flex items-center space-x-2">
+          <div className="flex items-center min-w-0 flex-1">
+            <Link href="/" className="flex items-center space-x-2 min-w-0">
               <HeatingOilLogo size="lg" />
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-gray-900">NI Heating Oil</span>
-                <span className="text-xs text-green-600 font-medium hidden sm:block">By locals, for locals</span>
+              <div className="flex flex-col min-w-0">
+                <span className="text-lg sm:text-xl font-bold text-gray-900 truncate">NI Heating Oil</span>
+                <span className="text-xs text-green-600 font-medium hidden lg:block">By locals, for locals</span>
               </div>
             </Link>
-            <nav className="hidden md:flex space-x-6 ml-8">
+            <nav className="hidden lg:flex space-x-4 xl:space-x-6 ml-4 xl:ml-8">
               <NavItems />
             </nav>
           </div>
           
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             {isAuthenticated ? (
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2 sm:space-x-4">
                 {user?.firstName && (
-                  <span className="text-gray-700">Hi, {user.firstName}</span>
+                  <span className="text-gray-700 hidden sm:block truncate max-w-24">Hi, {user.firstName}</span>
                 )}
                 <Button
                   variant="outline"
+                  size="sm"
                   onClick={() => window.location.href = "/api/logout"}
+                  className="hidden sm:flex"
                 >
                   Sign Out
                 </Button>
               </div>
             ) : (
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
                 <Button
                   variant="ghost"
+                  size="sm"
                   onClick={() => window.location.href = "/api/login"}
-                  className="text-primary hover:text-blue-700"
+                  className="text-primary hover:text-blue-700 hidden sm:flex"
                 >
                   Sign In
                 </Button>
                 <Button
+                  size="sm"
                   onClick={() => window.location.href = "/api/login"}
-                  className="bg-primary text-white hover:bg-blue-700"
+                  className="bg-primary text-white hover:bg-blue-700 hidden sm:flex"
                 >
                   Get Started
                 </Button>
@@ -87,30 +91,45 @@ export default function Navigation() {
             
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="sm" className="md:hidden">
+                <Button variant="ghost" size="sm" className="lg:hidden">
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetContent side="right" className="w-[280px] sm:w-[350px]">
                 <nav className="flex flex-col space-y-4 mt-6">
                   <NavItems />
-                  {!isAuthenticated && (
-                    <div className="flex flex-col space-y-2 pt-4 border-t">
-                      <Button
-                        variant="ghost"
-                        onClick={() => window.location.href = "/api/login"}
-                        className="justify-start"
-                      >
-                        Sign In
-                      </Button>
-                      <Button
-                        onClick={() => window.location.href = "/api/login"}
-                        className="justify-start"
-                      >
-                        Get Started
-                      </Button>
-                    </div>
-                  )}
+                  <div className="flex flex-col space-y-3 pt-4 border-t">
+                    {isAuthenticated ? (
+                      <>
+                        {user?.firstName && (
+                          <span className="text-gray-700 text-sm">Hi, {user.firstName}</span>
+                        )}
+                        <Button
+                          variant="outline"
+                          onClick={() => window.location.href = "/api/logout"}
+                          className="justify-start"
+                        >
+                          Sign Out
+                        </Button>
+                      </>
+                    ) : (
+                      <>
+                        <Button
+                          variant="ghost"
+                          onClick={() => window.location.href = "/api/login"}
+                          className="justify-start"
+                        >
+                          Sign In
+                        </Button>
+                        <Button
+                          onClick={() => window.location.href = "/api/login"}
+                          className="justify-start"
+                        >
+                          Get Started
+                        </Button>
+                      </>
+                    )}
+                  </div>
                 </nav>
               </SheetContent>
             </Sheet>
