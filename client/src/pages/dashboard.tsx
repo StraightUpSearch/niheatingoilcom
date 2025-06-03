@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { apiRequest, queryClient } from "@/lib/queryClient";
+import WhatsAppQuoteReminder from "@/components/whatsapp-quote-reminder";
 
 interface DashboardData {
   tickets: Array<{
@@ -203,6 +204,9 @@ export default function Dashboard() {
         <Card>
           <CardHeader>
             <CardTitle>Your Enquiries</CardTitle>
+            <p className="text-sm text-gray-600">
+              Track your heating oil quote requests and send reminders to your WhatsApp
+            </p>
           </CardHeader>
           <CardContent>
             {dashboardData?.tickets?.length ? (
@@ -210,32 +214,37 @@ export default function Dashboard() {
                 {dashboardData.tickets.map((ticket) => (
                   <div 
                     key={ticket.ticket_id}
-                    className="flex items-center justify-between p-4 border rounded-lg"
+                    className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 border rounded-lg space-y-3 sm:space-y-0"
                   >
-                    <div className="flex items-center space-x-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
                       <div className="flex items-center space-x-2">
                         <CheckCircle className="h-4 w-4 text-blue-600" />
                         <span className="font-medium">{ticket.ticket_id}</span>
                       </div>
                       
-                      <div className="flex items-center space-x-1 text-sm text-gray-600">
-                        <MapPin className="h-3 w-3" />
-                        <span>{ticket.postcode}</span>
-                      </div>
-                      
-                      <div className="flex items-center space-x-1 text-sm text-gray-600">
-                        <Droplet className="h-3 w-3" />
-                        <span>{ticket.volume}L</span>
+                      <div className="flex items-center space-x-4">
+                        <div className="flex items-center space-x-1 text-sm text-gray-600">
+                          <MapPin className="h-3 w-3" />
+                          <span>{ticket.postcode}</span>
+                        </div>
+                        
+                        <div className="flex items-center space-x-1 text-sm text-gray-600">
+                          <Droplet className="h-3 w-3" />
+                          <span>{ticket.volume}L</span>
+                        </div>
                       </div>
                     </div>
 
-                    <div className="flex items-center space-x-3">
-                      <Badge className={getStatusColor(ticket.status)}>
-                        {ticket.status}
-                      </Badge>
-                      <span className="text-sm text-gray-500">
-                        {new Date(ticket.created_at).toLocaleDateString()}
-                      </span>
+                    <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">
+                      <div className="flex items-center space-x-3">
+                        <Badge className={getStatusColor(ticket.status)}>
+                          {ticket.status}
+                        </Badge>
+                        <span className="text-sm text-gray-500">
+                          {new Date(ticket.created_at).toLocaleDateString()}
+                        </span>
+                      </div>
+                      <WhatsAppQuoteReminder ticket={ticket} />
                     </div>
                   </div>
                 ))}
