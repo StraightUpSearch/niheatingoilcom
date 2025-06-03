@@ -1,0 +1,1581 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+      <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+    <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+    <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+    <!--[if gt IE 8]> <html class="no-js" lang="en"> <![endif]-->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+    
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'ojp4orm',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+    
+        
+    <meta name="Googlebot" content="index, follow, snippet" />
+    <meta name="apple-mobile-web-app-title" content="Green17">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://simoncommunity.org/assets/meta/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://simoncommunity.org/assets/meta/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://simoncommunity.org/assets/meta/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://simoncommunity.org/assets/meta/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://simoncommunity.org/assets/meta/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://simoncommunity.org/assets/meta/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://simoncommunity.org/assets/meta/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://simoncommunity.org/assets/meta/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://simoncommunity.org/assets/meta/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" href="https://simoncommunity.org/assets/meta/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://simoncommunity.org/assets/meta/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://simoncommunity.org/assets/meta/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://simoncommunity.org/assets/meta/android-icon-192x192.png" sizes="192x192">
+    <link rel="manifest" href="https://simoncommunity.org/assets/meta/manifest.json">
+    <link rel="mask-icon" href="https://simoncommunity.org/assets/meta/safari-pinned-tab.svg" color="#993333">
+    <link rel="shortcut icon" href="https://simoncommunity.org/assets/meta/favicon.ico">
+    <meta name="msapplication-TileColor" content="#993333">
+    <meta name="msapplication-TileImage" content="https://simoncommunity.org/assets/meta/ms-icon-144x144.png">
+    <meta name="msapplication-config" content="https://simoncommunity.org/assets/meta/browserconfig.xml">
+    <meta name="theme-color" content="#993333">
+    <meta name="application-name" content="Green17 Creative">
+    
+    <meta name="facebook-domain-verification" content="90kdxb19gh9tvrh273hkvmcm9k17ib" />
+    
+                
+    <link rel="stylesheet" href="https://use.typekit.net/jrz3fyg.css">
+
+     
+    <script src="https://kit.fontawesome.com/e59704fa62.js" crossorigin="anonymous"></script>
+
+    <!-- Facebook Pixel Code -->
+                <!-- End Facebook Pixel Code -->
+
+
+
+
+        
+  <title>Simon Community | Northern Ireland&#039;s Leading Homeless Charity</title>
+<script>dataLayer = [];
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TDMN9LB');
+</script>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-101739353-1', 'auto');
+ga('send', 'pageview');
+</script><meta name="generator" content="SEOmatic">
+<meta name="keywords" content="Charity,Northern Ireland,homeless charity,homelessness,NI,Simon Community">
+<meta name="description" content="Simon Community NI is Northern Ireland&#039;s leading homeless charity. We work without prejudice to support people experiencing or at risk of homelessness.">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="robots" content="all">
+<meta content="en_GB" property="og:locale">
+<meta content="Simon Community" property="og:site_name">
+<meta content="website" property="og:type">
+<meta content="https://simoncommunity.org/" property="og:url">
+<meta content="Simon Community | Northern Ireland&#039;s Leading Homeless Charity" property="og:title">
+<meta content="Simon Community NI is Northern Ireland&#039;s leading homeless charity. We work without prejudice to support people experiencing or at risk of homelessness." property="og:description">
+<meta content="https://simoncommunity.org/assets/img/hero/_1200x630_crop_center-center_82_none/2025-New-Year_1920x1080.png?mtime=1736180174" property="og:image">
+<meta content="1200" property="og:image:width">
+<meta content="536" property="og:image:height">
+<meta content="Simon Community NI is Northern Ireland&#039;s leading homeless charity. We work without prejudice to support people experiencing or at risk of homelessness." property="og:image:alt">
+<meta content="https://www.instagram.com/simoncommunityni/" property="og:see_also">
+<meta content="https://www.youtube.com/channel/UCyVxiacF__Wfz7ivzGkEVjw" property="og:see_also">
+<meta content="https://www.linkedin.com/company/simon-community-ni" property="og:see_also">
+<meta content="https://www.facebook.com/SimonCommunity" property="og:see_also">
+<meta content="https://twitter.com/SimonCommNI" property="og:see_also">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@SimonCommNI">
+<meta name="twitter:creator" content="@SimonCommNI">
+<meta name="twitter:title" content="Simon Community | Northern Ireland&#039;s Leading Homeless Charity">
+<meta name="twitter:description" content="Simon Community NI is Northern Ireland&#039;s leading homeless charity. We work without prejudice to support people experiencing or at risk of homelessness.">
+<meta name="twitter:image" content="https://simoncommunity.org/assets/img/hero/_800x418_crop_center-center_82_none/2025-New-Year_1920x1080.png?mtime=1736180174">
+<meta name="twitter:image:width" content="800">
+<meta name="twitter:image:height" content="357">
+<meta name="twitter:image:alt" content="Simon Community NI is Northern Ireland&#039;s leading homeless charity. We work without prejudice to support people experiencing or at risk of homelessness.">
+<link href="https://simoncommunity.org" rel="canonical">
+<link href="https://simoncommunity.org" rel="home">
+<link type="text/plain" href="https://simoncommunity.org/humans.txt" rel="author">
+<link href="/build/css/styles.css?v=002" rel="stylesheet" media="screen"></head>
+<body class="home x-masX"><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDMN9LB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<div id="skiptocontent">
+  <a href="#main">skip to main content</a>
+</div>
+
+
+
+
+
+
+
+
+
+<header id="top-header">
+
+    
+    <nav class="navbar">
+        <div class="navbar-top">
+            <div class="container">
+                <ul>
+                                                            <li class="tel"><a class="free hidden-xs">Homeless Support Line</a> <a href="tel:08001712222"><i class="fa fa-phone" aria-hidden="true"></i> 0800-171-2222</a></li>
+                                        <li class="search">
+                        <a class="search-toggle"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        <div id="site-search-new">
+                            <a class="search-toggle"><i class='fa fa-times'></i></a>
+                            <form action="https://simoncommunity.org/search/results">
+                                <div class="col-xs-12 p-0">
+                                    <input type="text" name="q" placeholder="Search..." />
+                                    <button type="submit"><span>Search</span><i class="fa fa-search" aria-hidden="true"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+                <div class="navbar-container container">
+
+                        <div class="navbar-brand navbar-brand-xmasX">
+                <a href="https://simoncommunity.org/">
+                    <img src="https://simoncommunity.org/assets/img/simon-community-ni-2024.png" alt="Simon Community Northern Ireland logo" />
+                </a>
+                                                                                                                                    </div>
+            <div class="pull-right">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <ul class="navbar-buttons">
+                        <li>
+                                                        <a href="https://simoncommunity.org/get-involved/donate" class="btn btn-secondary btn-nav btn-donate">Donate</a>
+                        </li>
+                        <li>
+                            <a href="https://simoncommunity.org/get-help" class="btn btn-secondary btn-nav">Get Help</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <div class="navbar-container navbar-container-2">
+                        <div class="nav-overflow">
+                                                        <ul class="nav navbar-nav">
+                                                                                                        <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/"><span>Homepage</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/"><span>Homepage</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                                            <li class="dropdown">
+                                                                                                                                                                    <a href="https://simoncommunity.org/about" class="dropdown-toggle" data-toggle="dropdown" role="button"><span>About Us</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-6">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                        <div class="hidden-xs hidden-sm col-md-5">
+                                                            <div class="nav-img-box image-box">
+                                                                <img src="https://simoncommunity.org/assets/img/hero/_slider/Hannah-OHagan-National-Sleep-Out-2.jpg" alt="About Us" class="img-responsive" />
+                                                                                                                            </div>
+                                                        </div>
+                                                                                                                <div class="col-md-7">
+                                                                                                                                                                                    <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/about"><span>About Us</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/about/work-with-us"><span>Careers</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/about/news"><span>Latest News</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/about/our-strategy"><span>Our Strategy</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/about/history"><span>History</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/about/our-people"><span>Our People</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/about/contact"><span>Contact Us</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                                            <li class="dropdown">
+                                                                                                                                                                    <a href="https://simoncommunity.org/get-involved" class="dropdown-toggle" data-toggle="dropdown" role="button"><span>Get Involved</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-8">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                        <div class="hidden-xs hidden-sm col-md-5">
+                                                            <div class="nav-img-box image-box">
+                                                                <img src="https://simoncommunity.org/assets/img/hero/_slider/Hannah-OHagan-Pay-in-the-Money-Youve-raised.jpg" alt="Get Involved" class="img-responsive" />
+                                                                                                                            </div>
+                                                        </div>
+                                                                                                                <div class="col-md-7">
+                                                                                                                                                                                    <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/get-involved"><span>Get Involved</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/get-involved/donate"><span>Donate</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/get-involved/creating-homes"><span>Creating Homes</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/get-involved/volunteer"><span>Volunteer</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/get-involved/events"><span>Events</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/get-involved/fundraise"><span>Fundraise</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/get-involved/at-school-or-college"><span>Schools</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/get-involved/corporate-partnerships"><span>Corporates</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/get-involved/appeals"><span>Appeals</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                                            <li class="dropdown">
+                                                                                                                                                                    <a href="https://simoncommunity.org/services" class="dropdown-toggle" data-toggle="dropdown" role="button"><span>Our Services</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-4">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                        <div class="hidden-xs hidden-sm col-md-5">
+                                                            <div class="nav-img-box image-box">
+                                                                <img src="https://simoncommunity.org/assets/img/hero/_slider/services-1.jpg" alt="Simon Community NI Services" class="img-responsive" />
+                                                                                                                            </div>
+                                                        </div>
+                                                                                                                <div class="col-md-7">
+                                                                                                                                                                                    <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/services"><span>Simon Community NI Services</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/services/get-help"><span>Get Help</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/services/find-a-service"><span>Find a Service</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/services/our-impact"><span>Our Impact</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/services/our-funders"><span>Our Funders</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                                            <li class="dropdown">
+                                                                                                                                                                    <a href="https://simoncommunity.org/homelessness" class="dropdown-toggle" data-toggle="dropdown" role="button"><span>Homelessness</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-5">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                        <div class="hidden-xs hidden-sm col-md-5">
+                                                            <div class="nav-img-box image-box">
+                                                                <img src="https://simoncommunity.org/assets/img/hero/_slider/Hannah-OHagan-Northern-Ireland-Homelessness-Monitor.jpg" alt="Homelessness" class="img-responsive" />
+                                                                                                                            </div>
+                                                        </div>
+                                                                                                                <div class="col-md-7">
+                                                                                                                                                                                    <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/homelessness"><span>Homelessness</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/homelessness/stories"><span>Client Stories</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/homelessness/blog"><span>Blog</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/homelessness/knowledge-hub"><span>Knowledge Hub</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/homelessness/publications-reports"><span>Publications &amp; Reports</span></a>
+                                                                    </li>
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/homelessness/our-campaigns"><span>Our Campaigns</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/sitemap"><span>Sitemap</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/sitemap"><span>Sitemap</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/policy"><span>Legal - Policy</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/policy"><span>Legal - Policy</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/privacy-policy"><span>Privacy Policy</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/privacy-policy"><span>Privacy Policy</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/thank-you"><span>Thank You</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/thank-you"><span>Thank You</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/petition-thank-you"><span>Petition Thank You</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/petition-thank-you"><span>Petition Thank You</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/cookie-policy"><span>Cookie Policy</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/cookie-policy"><span>Cookie Policy</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/christmas-tree-competition-winners-2021"><span>Christmas Tree Competition Winners 2021</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/christmas-tree-competition-winners-2021"><span>Christmas Tree Competition Winners 2021</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/simon-bear-competition-t-cs"><span>Simon Bear Competition T&amp;C&#039;s</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/simon-bear-competition-t-cs"><span>Simon Bear Competition T&amp;C&#039;s</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/a-christmas-thank-you-from-simon-community-ni"><span>A Christmas Thank You from Simon Community NI</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/a-christmas-thank-you-from-simon-community-ni"><span>A Christmas Thank You from Simon Community NI</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/the-stories-behind-our-christmas-trees"><span>The stories behind our Christmas trees</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/the-stories-behind-our-christmas-trees"><span>The stories behind our Christmas trees</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/client-survey-2019"><span>Client Survey 2019</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/client-survey-2019"><span>Client Survey 2019</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/simon-community-ni-our-year-in-numbers"><span>​Simon Community NI: Our Year in Numbers</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/simon-community-ni-our-year-in-numbers"><span>​Simon Community NI: Our Year in Numbers</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/get-help"><span>Get Help</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/get-help"><span>Get Help</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/social"><span>Social Hub</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/social"><span>Social Hub</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/poll-test"><span>Poll Test</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/poll-test"><span>Poll Test</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                                                                                                    <li class="hidden">
+                                                                                                                                    <a href="https://simoncommunity.org/reference-request-in-confidence"><span>Reference Request in Confidence</span></a>
+                                            
+                                                                                                                                    <ul class="dropdown-menu dm-0">
+                                                <li class="dropdown-container">
+                                                    <div class="row">
+                                                                                                                                                                                                                                                                                            <div class="col-md-12">
+                                                                                                                                <ul class="dropdown-nav">
+                                                                                                                                        <li>
+                                                                        <a href="https://simoncommunity.org/reference-request-in-confidence"><span>Reference Request in Confidence</span></a>
+                                                                    </li>
+                                                                                                                                    </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="stroke hidden-xs hidden-sm">
+                                                                                                            </li>
+                                                </ul>
+                                            </li>
+                                            
+
+                                            <li class="hidden-md hidden-lg">
+                                                                                                <a href="https://simoncommunity.org/get-involved/donate" class="btn btn-secondary"><span>Donate</span></a>
+                                            </li>
+                                            <li class="hidden-md hidden-lg">
+                                                <a href="https://simoncommunity.org/get-help" class="btn btn-secondary"><span>Get Help</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <span class="nav-test hidden-md hidden-lg"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+    </header>
+
+<main id="main">
+	
+
+<section class="hero">
+	<style>
+		/* Default: Mobile Image */
+					.hero-image-css {
+				background-image: url('https://simoncommunity.org/assets/img/hero/_mobileHero/Charmaine-470x700.jpg');
+			}
+		
+		/* Tablet Image */
+					@media only screen and (min-width: 600px) {
+				.hero-image-css {
+					background-image: url('https://simoncommunity.org/assets/img/hero/_newhomepagesliderTablet/Charmaine-470x700_2025-04-10-144809_mfva.jpg');
+				}
+			}
+		
+		/* Desktop Image */
+		@media only screen and (min-width: 1200px) {
+			.hero-image-css {
+				background-image: url('https://simoncommunity.org/assets/img/hero/_newHomepageSlider/Charmaine-2000-×-1400px-4.png');
+			}
+		}
+
+		/* Fallback: If no mobileImage or tabletImage is available */
+			</style>
+
+	<div class="hero-image hero-image-1 hi-hm">
+
+			<div class="hero-image-css hero-image-mobile hero-image-tablet"></div>
+	
+		<div class="container">
+			<div class="row donate-row donate-row-pad">
+
+				
+				<div class="col-xs-12 col-md-6 col-md-offset-6 donate-col">
+					<div class="dc-box">
+												<div class="donate-container donate-container-hero donate-xmasX">
+																																<ul class="tabs" role="tablist">
+								<li role="presentation" class="active donate-tab"><a href="#single" aria-controls="single" role="tab" data-toggle="tab">Single Donation</a></li>
+								<li role="presentation" class="donate-tab"><a href="#monthly" aria-controls="monthly" role="tab" data-toggle="tab">Monthly Donation</a></li>
+								<li role="presentation" class="donate-tab"><a href="#corporate" aria-controls="corporate" role="tab" data-toggle="tab">Corporate Donation</a></li>
+							</ul>
+														<div class="donate-box">
+								<div class="tab-content">
+
+																																																						
+																																																																																																																																	
+																		<div class="row">
+										<div class="col-sm-12 text-center donate-intro">
+											<p>A gift of £30 could provide a warm bed</p>
+										</div>
+									</div>
+									
+									<div role="tabpanel" class="tab-pane active" id="single">
+										<form method="POST" id="single-donation" class="donateform" action="/get-involved/donate/single/30">
+											<input type="hidden" name="CRAFT_CSRF_TOKEN" value="ivT-urPXIetqbe4_85S3pLcahl8SQVC5TwvftId4rnRmWYZZMfEfcsenzPjKplvdDSmWVaL4msPGf_AodgAk830zvMf3GswHOSPVEQbEexQ=">
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="row">
+														<div class="col-sm-12">
+															<div class="radio-group">
+																
+																																
+																																																				
+																<div class="radio">
+																	<input type="radio" name="amount" id="rad1" value="30"  checked=""/>
+																	<label for="rad1">£30</label>
+																	<span class="block-text hidden">could help us to continue to provide shelter and support each night for those with no home</span>
+																	<span class="block-image hidden"><img src="https://simoncommunity.org/assets/img/general/Easton-House-Coral.jpg" alt="£30 how you can help image" class="img-responsive" /></span>
+																</div>
+											
+
+																																																																
+																	
+																<div class="radio">
+																	<input type="radio" name="amount" id="rad2" value="45" />
+																	<label for="rad2">£45</label>
+																	<span class="block-text hidden">could help provide emergency food or clothes to those who arrive at our doors with little or nothing</span>
+																	<span class="block-image hidden"><img src="https://simoncommunity.org/assets/img/general/Easton-House-Coral.jpg" alt="£45 how you can help image" class="img-responsive" /></span>
+																</div>
+											
+
+																															
+																	
+																<div class="radio">
+																	<input type="radio" name="amount" id="rad3" value="60" />
+																	<label for="rad3">£60</label>
+																	<span class="block-text hidden">could help fund specialized support for those who need help with addiction or poor mental health</span>
+																	<span class="block-image hidden"><img src="https://simoncommunity.org/assets/img/general/Easton-House-Coral.jpg" alt="£60 how you can help image" class="img-responsive" /></span>
+																</div>
+											
+
+																															
+															</div>
+														</div>
+													</div>
+													<div class="row flex-row db-fr">
+														<div class="col-xs-12 col-sm-6 text-center">
+															<span class="selected-amount">£30</span>
+														</div>
+														<div class="col-xs-12 col-sm-6">
+															<p class="selected-text">could help us to continue to provide shelter and support each night for those with no home</p>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-12 col-sm-6 text-center">
+															<button class="donate-submit btn btn-secondary" type="submit">Donate <span>£30</span></button>
+														</div>
+														<div class="col-xs-12 col-sm-6 own-amount">
+															<a class="single-amount">Choose your own amount</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+									
+																																																																																								
+									<div role="tabpanel" class="tab-pane" id="monthly">
+										<form method="POST" id="monthly-donation" class="donateform" action="/get-involved/donate/monthly/18">
+											<input type="hidden" name="CRAFT_CSRF_TOKEN" value="ivT-urPXIetqbe4_85S3pLcahl8SQVC5TwvftId4rnRmWYZZMfEfcsenzPjKplvdDSmWVaL4msPGf_AodgAk830zvMf3GswHOSPVEQbEexQ=">
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="row">
+														<div class="col-sm-12">
+															<div class="radio-group">
+									
+																<div class="radio">
+																	<input type="radio" name="amount" id="rad-mon-1" value="18" checked="" />
+																	<label for="rad-mon-1">£18</label>
+																	<span class="block-text hidden">Please donate £18, each month, to help ensure those with no home are cared for safely during this time.</span>
+																	<span class="block-image hidden"><img src="https://simoncommunity.org/assets/img/general/Chloe_Coral_2024-03-21-094311_ucju.jpg" alt="£18 how you can help image" class="img-responsive" /></span>
+																</div>
+																
+											
+																																																	<div class="radio">
+																	<input type="radio" name="amount" id="rad-mon-2" value="25" />
+																	<label for="rad-mon-2">£25</label>
+																	<span class="block-text hidden">Please donate £25, each month, to help ensure those with no home are cared for safely during this time.</span>
+																	<span class="block-image hidden"><img src="https://simoncommunity.org/assets/img/general/Levi.jpg" alt="£25 how you can help image" class="img-responsive" /></span>
+																</div>
+											
+																																																	<div class="radio">
+																	<input type="radio" name="amount" id="rad-mon-3" value="30" />
+																	<label for="rad-mon-3">£30</label>
+																	<span class="block-text hidden">Please donate £30, each month, to help ensure those with no home are cared for safely during this time.</span>
+																	<span class="block-image hidden"><img src="https://simoncommunity.org/assets/img/general/Joanne.jpg" alt="£30 how you can help image" class="img-responsive" /></span>
+																</div>
+											
+																									</div>
+														</div>
+													</div>
+													<div class="row flex-row db-fr">
+														<div class="col-xs-12 col-sm-6 text-center">
+															<span class="selected-amount">£18</span>
+														</div>
+														<div class="col-xs-12 col-sm-6">
+															<p class="selected-text">Please donate £18, each month, to help ensure those with no home are cared for safely during this time.</p>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-12 col-sm-6 text-center">
+															<button class="donate-submit btn btn-secondary" type="submit">Donate <span>£18</span></button>
+														</div>
+														<div class="col-xs-12 col-sm-6 own-amount">
+															<a class="monthly-amount">Choose your own amount</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+									
+
+																																																																																																																																																																					
+									<div role="tabpanel" class="tab-pane" id="corporate">
+										<form method="POST" id="corporate-donation" class="donateform" action="/get-involved/donate/corporate/750">
+											<input type="hidden" name="CRAFT_CSRF_TOKEN" value="ivT-urPXIetqbe4_85S3pLcahl8SQVC5TwvftId4rnRmWYZZMfEfcsenzPjKplvdDSmWVaL4msPGf_AodgAk830zvMf3GswHOSPVEQbEexQ=">
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="row">
+														<div class="col-sm-12">
+															<div class="radio-group">
+																
+																																
+																
+																<div class="radio">
+																	<input type="radio" name="amount" id="rad-corp-1" value="500"/>
+																	<label for="rad-corp-1">£500</label>
+																	<span class="block-text hidden">Could pay for 35 of the 100 Welcome Packs we give away each month for people arriving with us with little to nothing.</span>
+																	<span class="block-image hidden"><img src="https://simoncommunity.org/assets/img/general/Eoin-2-Coral-Voice-House-Box.jpg" alt="£500 how you can help image" class="img-responsive" /></span>
+																</div>
+																
+
+																															
+																																																	
+																<div class="radio">
+																	<input type="radio" name="amount" id="rad-corp-2" value="750" checked=""/>
+																	<label for="rad-corp-2">£750</label>
+																	<span class="block-text hidden">Could pay for 1 security deposit and New Home Pack for a person with no family support.</span>
+																	<span class="block-image hidden"><img src="https://simoncommunity.org/assets/img/general/Eoin-2-Coral-Voice-House-Box.jpg" alt="£750 how you can help image" class="img-responsive" /></span>
+																</div>
+																
+
+																																																																
+																
+																<div class="radio">
+																	<input type="radio" name="amount" id="rad-corp-3" value="1000"/>
+																	<label for="rad-corp-3">£1000</label>
+																	<span class="block-text hidden">Could pay for 30 days Shelter &amp; Support for someone at one of our accommodation projects.</span>
+																	<span class="block-image hidden"><img src="https://simoncommunity.org/assets/img/general/Eoin-2-Coral-Voice-House-Box.jpg" alt="£1000 how you can help image" class="img-responsive" /></span>
+																</div>
+																
+
+																															
+															</div>
+														</div>
+													</div>
+													<div class="row flex-row db-fr">
+														<div class="col-xs-12 col-sm-6 text-center">
+															<span class="selected-amount">£750</span>
+														</div>
+														<div class="col-xs-12 col-sm-6">
+															<p class="selected-text">Could pay for 1 security deposit and New Home Pack for a person with no family support.</p>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-12 col-sm-6 text-center">
+															<button class="donate-submit btn btn-secondary" type="submit">Donate <span>£750</span></button>
+														</div>
+														<div class="col-xs-12 col-sm-6 own-amount">
+															<a class="corporate-amount">Choose your own amount</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+									
+								</div>
+							</div>
+
+							<div id="single-amount" class="choose-amount">
+								<form method="POST" id="single-donation-custom" action="/donate/">
+									<input type="hidden" name="CRAFT_CSRF_TOKEN" value="ivT-urPXIetqbe4_85S3pLcahl8SQVC5TwvftId4rnRmWYZZMfEfcsenzPjKplvdDSmWVaL4msPGf_AodgAk830zvMf3GswHOSPVEQbEexQ=">
+									
+									<div class="row">
+										<div class="col-xs-12 col-sm-8 col-sm-offset-2 text-center">
+											<div class="appeal-choose">Choose your own donation amount</div>
+											<div class="price-input mt-16">
+												<input type="number" step="0.01" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46"  name="qty-text" id="qty-text-single" value="">
+											</div>
+											<br />
+											<button id="donate-submit-single" class="btn btn-primary" type="submit">Donate Now</button>
+										</div>
+									</div>
+									
+								</form>
+															</div>
+
+							<div id="monthly-amount" class="choose-amount hidden">
+								<form method="POST" id="monthly-donation-custom" action="/donate/">
+									<input type="hidden" name="CRAFT_CSRF_TOKEN" value="ivT-urPXIetqbe4_85S3pLcahl8SQVC5TwvftId4rnRmWYZZMfEfcsenzPjKplvdDSmWVaL4msPGf_AodgAk830zvMf3GswHOSPVEQbEexQ=">
+									
+									<div class="row">
+										<div class="col-xs-12 col-sm-8 col-sm-offset-2 text-center">
+											<div class="appeal-choose">Choose your own monthly donation</div>
+											<div class="price-input mt-16">
+												<input type="number" step="0.01" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46"  name="qty-text" id="qty-text-monthly" value="">
+											</div>
+											<br />
+											<button id="donate-submit-monthly" class="btn btn-primary" type="submit">Donate Now</button>
+										</div>
+									</div>
+									
+								</form>
+															</div>
+
+							<div id="corporate-amount" class="choose-amount hidden">
+								<form method="POST" id="corporate-donation-custom" action="/donate/">
+									<input type="hidden" name="CRAFT_CSRF_TOKEN" value="ivT-urPXIetqbe4_85S3pLcahl8SQVC5TwvftId4rnRmWYZZMfEfcsenzPjKplvdDSmWVaL4msPGf_AodgAk830zvMf3GswHOSPVEQbEexQ=">
+									
+									<div class="row">
+										<div class="col-xs-12 col-sm-8 col-sm-offset-2 text-center">
+											<div class="appeal-choose">Choose your own corporate donation</div>
+											<div class="price-input mt-16">
+												<input type="number" step="0.01" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46"  name="qty-text" id="qty-text-corporate" value="">
+											</div>
+											<br />
+											<button id="donate-submit-corporate" class="btn btn-primary" type="submit">Donate Now</button>
+										</div>
+									</div>
+									
+								</form>
+															</div>
+
+						</div>
+					</div>
+				</div>
+
+				
+			</div>
+		</div>
+	</div>
+		</section>
+
+
+ 
+
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-lg-10 col-lg-offset-1 donate-container">
+				<div class="donate-box donate-box-home">
+					<div class="row">
+																								
+																		<div class="col-xs-12 col-md-4 diff-bg text-center d-container">
+							<div class="d-box has-3">
+								<div class="d-box-info">
+									<div class="icon">
+										<img src="https://simoncommunity.org/assets/img/icons/House-with-heart-icon.png" alt="House with heart icon" class="img-responsive" />
+									</div>
+									<div class="title">
+										Stories
+									</div>
+									<div class="text">
+										Thousands of families and individuals are currently living in temporary accommodation across NI
+									</div>
+								</div>
+								<div class="button">
+									<a href="https://simoncommunity.org/homelessness/stories" class="btn btn-primary">Read More</a>
+								</div>
+							</div>
+						</div>
+																		<div class="col-xs-12 col-md-4 diff-bg text-center d-container">
+							<div class="d-box has-3">
+								<div class="d-box-info">
+									<div class="icon">
+										<img src="https://simoncommunity.org/assets/img/icons/Abseil-Icon-5000-x-5000-px.png" alt="Abseil Icon 5000 x 5000 px" class="img-responsive" />
+									</div>
+									<div class="title">
+										Europa Abseil
+									</div>
+									<div class="text">
+										Make an impact, one descent at a time. Join us at Europa Belfast on the 22nd of June, 2025.
+									</div>
+								</div>
+								<div class="button">
+									<a href="https://simoncommunity.org/get-involved/events/europa-abseil" class="btn btn-primary">Sign Up</a>
+								</div>
+							</div>
+						</div>
+																		<div class="col-xs-12 col-md-4 diff-bg text-center d-container">
+							<div class="d-box has-3">
+								<div class="d-box-info">
+									<div class="icon">
+										<img src="https://simoncommunity.org/assets/img/icons/icon-volunteer-white.png" alt="Icon Volunteer White" class="img-responsive" />
+									</div>
+									<div class="title">
+										Get Help
+									</div>
+									<div class="text">
+										As NI’s leading homelessness organisation, we support people who are homeless 365 days of the year
+									</div>
+								</div>
+								<div class="button">
+									<a href="https://simoncommunity.org/services/get-help" class="btn btn-primary">Learn More</a>
+								</div>
+							</div>
+						</div>
+											</div>
+									</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="intro" id="intro-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-8 col-lg-offset-2 text-center">
+				<h1>Together we can <span style="color: rgb(234,81,115)">end homelessness</span> in Northern Ireland</h1>
+<p>Simon Community NI is Northern Ireland’s leading homeless charity. We work without judgement to support people who are experiencing, or are at risk of homelessness.
+</p>
+				<a href="https://simoncommunity.org/about" class="btn btn-primary mt-16">Find out more about us</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="services">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<h2 class="h1">Find a Service</h2>
+			</div>
+		</div>
+		<div class="row mt-24">
+			<form action="https://simoncommunity.org/services/find-a-service">
+								<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 col-md-offset-1 col-lg-offset-2 bh-sl-filters-container">
+					<div id="type-filter" class="bh-sl-filters select-input">
+						<select name="type">
+							<option value="">All</option>
+														<option value="adult-accommodation">Adult Accommodation</option>
+														<option value="youth-accommodation">Youth Accommodation</option>
+														<option value="family-accommodation">Family Accommodation</option>
+														<option value="floating-support">Floating Support</option>
+														<option value="low-threshold-support">Low Threshold Support</option>
+													</select>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+					<div class="address-input address-input-home">
+						<div class="address-input-box">
+							<label class="sr-only" for="address">Address/Postcode</label>
+				    		<input id="address" name="address" placeholder="Enter Your Address/Postcode" />
+					    </div>
+					    <div>
+					    	<button type="submit" id="submit">Go</button>
+				    	</div>
+				    </div>
+			    </div>
+			    <div class="col-xs-12 text-center">
+			    	<div id="map-error"></div>
+			    </div>
+			</form>
+		</div>
+	</div>
+	</section>
+
+<section class="help stroke-section mb-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<span>Our <span>FREE</span> helpline is open 24/7</span>
+				<a href="https://simoncommunity.org/get-help" class="btn btn-primary">Get help now</a>
+			</div>
+		</div>
+	</div>
+	</section>
+
+
+
+																
+
+
+
+
+
+
+
+
+	<section id="our-impact">
+	<div class="container mt-40">
+		<div class="row">
+			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0 text-center">
+				<h2 class="h1">Our Impact</h2>
+				<ul class="impact-list list-unstyled row mt-40">
+										<li class="col-xs-12 col-md-6 col-lg-4 order-1">
+						<div class="box box-img box-img-1">
+														<a href="https://simoncommunity.org/services/our-impact">
+														<span></span>
+							<img src="https://simoncommunity.org/assets/img/general/_imageContent/Levi.jpg" alt="Levi" class="img-responsive" />
+														</a>
+													</div>
+					</li>
+										<li class="col-xs-12 col-md-6 col-lg-4 order-3 order-md-4 order-lg-3">
+						<div class="box box-img box-img-2">
+														<a href="https://simoncommunity.org/services/our-impact">
+														<span></span>
+							<img src="https://simoncommunity.org/assets/img/general/_imageContent/Joanne.jpg" alt="Joanne" class="img-responsive" />
+														</a>
+													</div>
+					</li>
+										<li class="col-xs-12 col-md-6 col-lg-4 order-5">
+						<div class="box box-img box-img-3">
+														<a href="https://simoncommunity.org/services/our-impact">
+														<span></span>
+							<img src="https://simoncommunity.org/assets/img/general/_imageContent/John.jpg" alt="John" class="img-responsive" />
+														</a>
+													</div>
+					</li>
+																					<li class="col-xs-12 col-md-6 col-lg-4 order-2">
+												<a href="https://simoncommunity.org/services/our-impact">
+												<div class="box box-info navy">
+														<div class="icon">
+        						<img src="https://simoncommunity.org/assets/img/icons/impact-phone-white.png" alt="Impact phone white" class="img-responsive" />
+        					</div>
+    																				<div class="figure">17,915</div>
+														<div class="text">calls for help were made to our freephone support line</div>
+						</div>
+												</a>
+											</li>
+																<li class="col-xs-12 col-md-6 col-lg-4 order-3 order-lg-4">
+												<a href="https://simoncommunity.org/services/our-impact">
+												<div class="box box-info red">
+														<div class="icon">
+        						<img src="https://simoncommunity.org/assets/img/icons/impact-family-white.png" alt="Impact family white" class="img-responsive" />
+        					</div>
+    																				<div class="figure">99</div>
+														<div class="text">people supported through our Family Accommodation Service including 58 children</div>
+						</div>
+												</a>
+											</li>
+																<li class="col-xs-12 col-md-6 col-lg-4 order-6">
+												<a href="https://simoncommunity.org/services/our-impact">
+												<div class="box box-info red">
+														<div class="icon">
+        						<img src="https://simoncommunity.org/assets/img/icons/impact-bed-white.png" alt="Impact bed white" class="img-responsive" />
+        					</div>
+    																				<div class="figure">464</div>
+														<div class="text">warm bed spaces provided each night across our 21 accommodation services</div>
+						</div>
+												</a>
+											</li>
+														</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section id="latest-from-scni">
+	<div class="container mt-120">
+		<div class="row">
+			<div class="col-xs-12 col-lg-10 col-lg-offset-1 text-center">
+				<h2 class="h1">Latest from Simon</h2>
+				<ul class="latest-list red-boxes red-boxes-news row list-unstyled text-left owl-carousel mt-32">
+																<li class="col-xs-12">
+						<a href="https://simoncommunity.org/about/work-with-us/staff-profiles/ciara-mck">
+							<div class="image">
+                                <div class="image-box">
+                                                                        <img src="https://simoncommunity.org/assets/img/staff/_imageContent/Ciara-McK-1.png" alt="Ciara Mc K 1" />
+                                                                    </div>
+                            </div>
+                            <div class="info">
+                                <div class="info-top">
+	                                <span class="title">Staff Profile: Ciara McK</span>
+	                                	                            </div>
+	                            <div class="info-btm">
+                                	<span class="btn btn-arw">More Info <span class="arw no-bg"></span></span>
+                                </div>
+                                                            </div>
+						</a>
+					</li>
+																<li class="col-xs-12">
+						<a href="https://simoncommunity.org/get-involved/events/one-big-sleep-out-2025">
+							<div class="image">
+                                <div class="image-box">
+                                                                        <img src="https://simoncommunity.org/assets/img/events/_imageContent/Simon-Community-OBSO24-11-1.png" alt="Simon Community OBSO24 11 1" />
+                                                                    </div>
+                            </div>
+                            <div class="info">
+                                <div class="info-top">
+	                                <span class="title">One Big Sleep Out 2025</span>
+	                                	                            </div>
+	                            <div class="info-btm">
+                                	<span class="btn btn-arw">More Info <span class="arw no-bg"></span></span>
+                                </div>
+                                                            </div>
+						</a>
+					</li>
+																<li class="col-xs-12">
+						<a href="https://simoncommunity.org/about/work-with-us/staff-profiles/lauren-m">
+							<div class="image">
+                                <div class="image-box">
+                                                                        <img src="https://simoncommunity.org/assets/img/staff/_imageContent/lauren-1.jpg" alt="Lauren 1" />
+                                                                    </div>
+                            </div>
+                            <div class="info">
+                                <div class="info-top">
+	                                <span class="title">Staff Profile: Lauren M</span>
+	                                	                            </div>
+	                            <div class="info-btm">
+                                	<span class="btn btn-arw">More Info <span class="arw no-bg"></span></span>
+                                </div>
+                                                            </div>
+						</a>
+					</li>
+																<li class="col-xs-12">
+						<a href="https://simoncommunity.org/homelessness/publications-reports/simon-community-submission-to-draft-budget-2025-26-consultation">
+							<div class="image">
+                                <div class="image-box">
+                                                                        <img src="https://simoncommunity.org/assets/img/hero/_imageContent/Copy-of-SC-response-to-draft-2526-budget.png" alt="Copy of SC response to draft 2526 budget" />
+                                                                    </div>
+                            </div>
+                            <div class="info">
+                                <div class="info-top">
+	                                <span class="title">Simon Community submission to Draft Budget 2025/26 consultation</span>
+	                                	                            </div>
+	                            <div class="info-btm">
+                                	<span class="btn btn-arw">More Info <span class="arw no-bg"></span></span>
+                                </div>
+                                                            </div>
+						</a>
+					</li>
+																<li class="col-xs-12">
+						<a href="https://simoncommunity.org/get-involved/appeals/spring-appeal">
+							<div class="image">
+                                <div class="image-box">
+                                                                        <img src="https://simoncommunity.org/assets/img/stories/_imageContent/Ciarans-Story_Simon-Community.png" alt="Ciarans Story Simon Community" />
+                                                                    </div>
+                            </div>
+                            <div class="info">
+                                <div class="info-top">
+	                                <span class="title">Simon Community | Spring Appeal</span>
+	                                	                            </div>
+	                            <div class="info-btm">
+                                	<span class="btn btn-arw">More Info <span class="arw no-bg"></span></span>
+                                </div>
+                                                            </div>
+						</a>
+					</li>
+																<li class="col-xs-12">
+						<a href="https://simoncommunity.org/about/work-with-us">
+							<div class="image">
+                                <div class="image-box">
+                                                                        <img src="https://simoncommunity.org/assets/img/news/_imageContent/2.jpg" alt="Why Work With Us" />
+                                                                    </div>
+                            </div>
+                            <div class="info">
+                                <div class="info-top">
+	                                <span class="title">Work With Us</span>
+	                                	                            </div>
+	                            <div class="info-btm">
+                                	<span class="btn btn-arw">More Info <span class="arw no-bg"></span></span>
+                                </div>
+                                                            </div>
+						</a>
+					</li>
+																<li class="col-xs-12">
+						<a href="https://simoncommunity.org/about/work-with-us/staff-profiles/melissa-m">
+							<div class="image">
+                                <div class="image-box">
+                                                                        <img src="https://simoncommunity.org/assets/img/staff/_imageContent/Melissa.PNG" alt="Melissa" />
+                                                                    </div>
+                            </div>
+                            <div class="info">
+                                <div class="info-top">
+	                                <span class="title">Staff Profile: Melissa M</span>
+	                                	                            </div>
+	                            <div class="info-btm">
+                                	<span class="btn btn-arw">More Info <span class="arw no-bg"></span></span>
+                                </div>
+                                                            </div>
+						</a>
+					</li>
+																<li class="col-xs-12">
+						<a href="https://simoncommunity.org/about/news/1-in-32-now-homeless-in-northern-ireland">
+							<div class="image">
+                                <div class="image-box">
+                                                                        <img src="https://simoncommunity.org/assets/img/news/_imageContent/AdobeStock_639006965.jpeg" alt="1 in 32 now homeless" />
+                                                                    </div>
+                            </div>
+                            <div class="info">
+                                <div class="info-top">
+	                                <span class="title">﻿1 in 32 Now Homeless in Northern Ireland</span>
+	                                	                            </div>
+	                            <div class="info-btm">
+                                	<span class="btn btn-arw">Read More <span class="arw no-bg"></span></span>
+                                </div>
+                                                            </div>
+						</a>
+					</li>
+																<li class="col-xs-12">
+						<a href="https://simoncommunity.org/services/tenancy-deposit-service">
+							<div class="image">
+                                <div class="image-box">
+                                                                        <img src="https://simoncommunity.org/assets/img/general/_imageContent/Housing-Solutions-Team-3.jpg" alt="Housing Solutions Team 3" />
+                                                                    </div>
+                            </div>
+                            <div class="info">
+                                <div class="info-top">
+	                                <span class="title">Tenancy Deposit Service</span>
+	                                	                            </div>
+	                            <div class="info-btm">
+                                	<span class="btn btn-arw">More Info <span class="arw no-bg"></span></span>
+                                </div>
+                                                            </div>
+						</a>
+					</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+</main>
+
+
+
+
+
+
+
+
+<footer id="footer" class="">
+
+
+        
+        <div id="footer-donate">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <span><span>Together</span> we can end homelessness</span>
+                                        <a href="https://simoncommunity.org/get-involved/donate" class="btn btn-primary">Donate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container footer-bottom">
+        <div class="row">
+            <div class="col-sm-4 col-md-3">
+                <ul class="footer-nav">
+                    <li>Simon Community NI</li>
+                    <li><a href="https://simoncommunity.org/about/our-strategy">Ending Homelessness</a></li>
+                    <li><a href="https://simoncommunity.org/services">Our Services</a></li>
+                    <li><a href="https://simoncommunity.org/about">How Your Money Helps</a></li>
+                    <li><a href="https://simoncommunity.org/homelessness/publications-reports">Publications &amp; Reports</a></li>
+                    <li><a href="https://simoncommunity.org/legal">Legal</a></li>
+                    <li><a href="https://simoncommunity.org/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="https://simoncommunity.org/cookie-policy">Cookie Policy</a></li>
+                    <li><a href="https://simoncommunity.org/sitemap">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <ul class="footer-nav">
+                    <li>Get Involved</li>
+                    <li><a href="https://simoncommunity.org/get-involved/donate">Donate</a></li>
+                    <li><a href="https://simoncommunity.org/get-involved/fundraise">Fundraise</a></li>
+                    <li><a href="https://simoncommunity.org/get-involved/volunteer">Volunteer</a></li>
+                    <li><a href="https://simoncommunity.org/about/work-with-us">Careers</a></li>
+                    <li><a href="https://simoncommunity.org/about/contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4 col-md-3">
+                <ul class="footer-help">
+                    <li>Are you at risk?</li>
+                    <li><span>Call our Homeless Support Line</span></li>
+                                        <li><a href="tel:08001712222" class="btn btn-primary">0800 171 2222</a></li>
+                    <li class="email"><a href="mailto:help@simoncommunity.org">help@simoncommunity.org</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-3 col-md-offset-1">
+
+
+
+
+
+
+<!-- Begin Mailchimp Signup Form -->
+
+<!--End mc_embed_signup-->
+
+
+
+
+
+
+                <div id="mc_embed_signup">
+                    <form action="https://simoncommunity.us14.list-manage.com/subscribe/post?u=36677cbeb519c8ae947cb9f98&amp;id=feb189b6a3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <ul class="footer-signup">
+                            <li>Sign up to our Mailing List</li>
+                            <li>
+                                <div class="mc-field-group">
+                                    <label for="mce-MMERGE3" class="sr-only">Name </label>
+                                    <input placeholder="Name" type="text" value="" name="MMERGE3" class="" id="mce-MMERGE3">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="mc-field-group">
+                                    <label for="mce-EMAIL" class="sr-only">Email Address <span class="asterisk">*</span></label>
+                                    <input placeholder="Email" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                                </div>
+                            </li>
+                            <li>
+                                <div id="mce-responses" class="clear">
+                                    <div class="response" id="mce-error-response" style="display:none"></div>
+                                    <div class="response" id="mce-success-response" style="display:none"></div>
+                                </div>
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                    <input type="text" name="b_36677cbeb519c8ae947cb9f98_feb189b6a3" tabindex="-1" value="">
+                                </div>
+                                <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">Sign Up</button>
+                            </li>
+                            <li class="social">
+                                <a href="https://www.facebook.com/SimonCommunity/" target="_blank" class="btn"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/SimonCommNI" target="_blank" class="btn"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.instagram.com/simoncommunityni/" target="_blank" class="btn"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/channel/UCyVxiacF__Wfz7ivzGkEVjw" target="_blank" class="btn"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/company/simon-community-ni" target="_blank" class="btn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                
+
+            </div>
+        </div>
+        <div class="row copy">
+            <div class="col-sm-8 col-md-7">
+                <div>Copyright &copy; 2025 Simon Community NI</div>
+                                <div>Registered Office: Unit 15 North City Business Park, 2 Duncairn Gardens, Belfast, BT15 2GG.</div>
+                <div>Inland Revenue Charity No: NIC102724.</div>
+                <div>Company Limited by Guarantee Reg No: NI 017466.</div><!--  | Charity No. NIC102724 -->
+            </div>
+            <div class="col-sm-4 col-md-5 logo">
+                <a href="https://simoncommunity.org/">
+                    <img src="https://simoncommunity.org/assets/img/simon-community-ni-white-2024.png" alt="Simon Community Northern Ireland logo" />
+                </a>
+
+                <a href="https://www.fundraisingregulator.org.uk/" target="_blank">
+                    <img src="https://simoncommunity.org/assets/img/FR_RegLogo_WO.png" alt="Fundraising Regulator logo" />
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script type="text/javascript" src="https://simoncommunity.org/build/js/base-min.js?v=012"></script>
+<script type="text/javascript" src="https://simoncommunity.org/build/js/scripts.js?v=012"></script>
+
+
+<!-- This site uses the Google Analytics by MonsterInsights plugin v6.2.4 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+            <!-- / Google Analytics by MonsterInsights -->
+        
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+
+<script type="application/ld+json">{"@context":"http://schema.org","@graph":[{"@type":"WebPage","author":{"@id":"https://simoncommunity.org/#identity"},"copyrightHolder":{"@id":"https://simoncommunity.org/#identity"},"copyrightYear":"2016","creator":{"@id":"https://simoncommunity.org/#creator"},"dateModified":"2025-04-10T16:05:36+01:00","datePublished":"2016-09-15T15:16:00+01:00","description":"Simon Community NI is Northern Ireland's leading homeless charity. We work without prejudice to support people experiencing or at risk of homelessness.","headline":"Northern Ireland's Leading Homeless Charity","image":{"@type":"ImageObject","url":"https://simoncommunity.org/assets/img/hero/_1200x630_crop_center-center_82_none/2025-New-Year_1920x1080.png?mtime=1736180174"},"inLanguage":"en-gb","mainEntityOfPage":"https://simoncommunity.org/","name":"Northern Ireland's Leading Homeless Charity","publisher":{"@id":"https://simoncommunity.org/#creator"},"url":"https://simoncommunity.org"},{"@id":"https://simoncommunity.org/#identity","@type":"LocalBusiness","description":"Simon Community NI is Northern Ireland's leading homeless charity. We work without prejudice to support people experiencing or at risk of homelessness.","image":{"@type":"ImageObject","height":"4417","url":"https://simoncommunity.org/assets/img/news/SCNI-Logo-no-Background-01.png","width":"8334"},"logo":{"@type":"ImageObject","height":"60","url":"https://simoncommunity.org/assets/img/news/_600x60_fit_center-center_82_none/SCNI-Logo-no-Background-01.png?mtime=1707486187","width":"113"},"name":"Simon Community","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","closes":"05:00:00","dayOfWeek":["Monday"],"opens":"09:00:00"},{"@type":"OpeningHoursSpecification","closes":"05:00:00","dayOfWeek":["Tuesday"],"opens":"09:00:00"},{"@type":"OpeningHoursSpecification","closes":"05:00:00","dayOfWeek":["Wednesday"],"opens":"09:00:00"},{"@type":"OpeningHoursSpecification","closes":"05:00:00","dayOfWeek":["Thursday"],"opens":"09:00:00"},{"@type":"OpeningHoursSpecification","closes":"05:00:00","dayOfWeek":["Friday"],"opens":"09:00:00"}],"priceRange":"$","sameAs":["https://twitter.com/SimonCommNI","https://www.facebook.com/SimonCommunity","https://www.linkedin.com/company/simon-community-ni","https://www.youtube.com/channel/UCyVxiacF__Wfz7ivzGkEVjw","https://www.instagram.com/simoncommunityni/"],"url":"https://simoncommunity.org"},{"@id":"#creator","@type":"Organization"},{"@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":"https://simoncommunity.org","name":"Homepage","position":1}],"name":"Breadcrumbs"}]}</script><script>$(document).ready(function () {
+	$(".owl-carousel").owlCarousel({
+		responsive : {
+		    // breakpoint from 0 up
+		    0 : {
+		        items: 1,
+		        slideBy: 1,
+		        nav: true,
+		        loop: true
+		    },
+		    // breakpoint from 480 up
+		    698 : {
+		        items: 2,
+		        slideBy: 2,
+		        nav: true,
+		        loop: true
+		    },
+		    // breakpoint from 768 up
+		    992 : {
+		        items: 3,
+		        slideBy: 3,
+		        nav: true,
+		        loop: true
+		    }
+		}
+	});
+	// Match footer boxes height
+	$(function() {
+		$('.box-list li').matchHeight();
+	});
+	jarallax(document.querySelectorAll('.jarallax'), {
+		disableParallax: function () {
+	        // return /iPad|iPhone|iPod|Android/|/MSIE|Trident|Edge/.test(navigator.userAgent);
+	        return /iPad|iPhone|iPod|Android/|/rv:/.test(navigator.userAgent);
+	    },
+	    disableVideo: function () {
+	    	return /iPad|iPhone|iPod|Android/|/rv:/.test(navigator.userAgent);
+	    }
+	});
+	});</script></body>
+</html>
