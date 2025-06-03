@@ -11,10 +11,10 @@ export default function TrustBadges() {
       description: "Verified weekly price data"
     },
     {
-      icon: Clock,
-      title: "Updated Hourly",
-      subtitle: "Real-time pricing",
-      description: "Always current information"
+      icon: Award,
+      title: "Media Featured",
+      subtitle: "BBC News NI",
+      description: "Recognized news coverage"
     },
     {
       icon: CheckCircle,

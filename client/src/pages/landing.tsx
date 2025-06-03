@@ -145,6 +145,18 @@ export default function Landing() {
                     </a>
                     {" "}— because we do our homework for ye! At's us nai with proper County mapping.
                   </p>
+                  <p className="text-xs text-gray-500 mt-2">
+                    As featured in{" "}
+                    <a 
+                      href="https://www.bbc.co.uk/news/articles/cdxn5zn26xeo" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 underline font-medium"
+                    >
+                      BBC News NI coverage
+                    </a>
+                    {" "}about heating oil price trends in Northern Ireland.
+                  </p>
                 </CardContent>
               </Card>
             </div>
