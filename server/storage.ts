@@ -7,6 +7,7 @@ import {
   searchQueries,
   leads,
   supplierClaims,
+  savedQuotes,
   type User,
   type UpsertUser,
   type Supplier,
@@ -23,6 +24,8 @@ import {
   type InsertLead,
   type SupplierClaim,
   type InsertSupplierClaim,
+  type SavedQuote,
+  type InsertSavedQuote,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc, and, or, gte, lte, sql, like, inArray, not } from "drizzle-orm";
@@ -31,6 +34,21 @@ export interface IStorage {
   // User operations (mandatory for Replit Auth)
   getUser(id: string): Promise<User | undefined>;
   upsertUser(user: UpsertUser): Promise<User>;
+  getUserByUsername(username: string): Promise<User | undefined>;
+  createUser(user: {
+    id: string;
+    username: string;
+    email?: string | null;
+    password: string;
+    fullName?: string | null;
+    phone?: string | null;
+    firstName?: string | null;
+    lastName?: string | null;
+  }): Promise<User>;
+
+  // Saved quotes operations
+  createSavedQuote(quote: InsertSavedQuote): Promise<SavedQuote>;
+  getUserSavedQuotes(userId: string): Promise<SavedQuote[]>;
 
   // Supplier operations
   getAllSuppliers(): Promise<Supplier[]>;
@@ -85,7 +103,16 @@ export class DatabaseStorage implements IStorage {
     return user;
   }
 
-  async createUser(userData: UpsertUser): Promise<User> {
+  async createUser(userData: {
+    id: string;
+    username: string;
+    email?: string | null;
+    password: string;
+    fullName?: string | null;
+    phone?: string | null;
+    firstName?: string | null;
+    lastName?: string | null;
+  }): Promise<User> {
     const [user] = await db
       .insert(users)
       .values(userData)
@@ -106,6 +133,23 @@ export class DatabaseStorage implements IStorage {
       })
       .returning();
     return user;
+  }
+
+  // Saved quotes operations
+  async createSavedQuote(quoteData: InsertSavedQuote): Promise<SavedQuote> {
+    const [quote] = await db
+      .insert(savedQuotes)
+      .values(quoteData)
+      .returning();
+    return quote;
+  }
+
+  async getUserSavedQuotes(userId: string): Promise<SavedQuote[]> {
+    return await db
+      .select()
+      .from(savedQuotes)
+      .where(eq(savedQuotes.userId, userId))
+      .orderBy(desc(savedQuotes.createdAt));
   }
 
   // Supplier operations
