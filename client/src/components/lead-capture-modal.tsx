@@ -6,7 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Phone, Mail, Clock, CheckCircle } from "lucide-react";
+import { Calendar, Phone, Mail, Clock, CheckCircle, UserPlus, User } from "lucide-react";
+import { Link } from "wouter";
 
 interface LeadCaptureModalProps {
   isOpen: boolean;
@@ -31,6 +32,7 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showAccountOptions, setShowAccountOptions] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,20 +67,25 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
       setIsSubmitted(true);
       setIsSubmitting(false);
       
-      // Auto-close after showing success
+      // Show account options after 2 seconds
       setTimeout(() => {
-        onClose();
-        setIsSubmitted(false);
-        setFormData({
-          name: "", email: "", phone: "", postcode: "", 
-          volume: "", urgency: "", notes: ""
-        });
-      }, 3000);
+        setShowAccountOptions(true);
+      }, 2000);
     } catch (error) {
       console.error('Error submitting lead:', error);
       setIsSubmitting(false);
       // TODO: Show error toast
     }
+  };
+
+  const handleContinueAsGuest = () => {
+    onClose();
+    setIsSubmitted(false);
+    setShowAccountOptions(false);
+    setFormData({
+      name: "", email: "", phone: "", postcode: "", 
+      volume: "", urgency: "", notes: ""
+    });
   };
 
   if (isSubmitted) {
@@ -91,12 +98,43 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
             <p className="text-gray-600 mb-4">
               Our heating oil specialist will contact you within 2 hours with personalized quotes and pricing.
             </p>
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
-              <p className="text-sm text-blue-800">
-                We're working to secure the best deals for your order. 
-                You'll receive quotes via email and SMS.
-              </p>
-            </div>
+            
+            {!showAccountOptions ? (
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                <p className="text-sm text-blue-800">
+                  We're working to secure the best deals for your order. 
+                  You'll receive quotes via email and SMS.
+                </p>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">Want to save even more?</h4>
+                  <p className="text-sm text-gray-700 mb-3">
+                    Create a free account to get personalized price alerts, save favorite suppliers, and never miss the best deals in Northern Ireland.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <Link href="/auth" className="flex-1">
+                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                        <UserPlus className="h-4 w-4 mr-2" />
+                        Create Free Account
+                      </Button>
+                    </Link>
+                    <Button 
+                      variant="outline" 
+                      onClick={handleContinueAsGuest}
+                      className="flex-1"
+                    >
+                      <User className="h-4 w-4 mr-2" />
+                      Continue as Guest
+                    </Button>
+                  </div>
+                </div>
+                <div className="text-xs text-gray-500">
+                  Account benefits: Price alerts • Favorite suppliers • Order history • Exclusive deals
+                </div>
+              </div>
+            )}
           </div>
         </DialogContent>
       </Dialog>
