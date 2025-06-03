@@ -244,7 +244,7 @@ export default function PriceTrends() {
                     <div className="flex justify-between">
                       <span className="text-gray-600">Active Suppliers:</span>
                       <span className="font-semibold text-blue-600">
-                        {prices ? `${new Set(prices.map((p: any) => p.supplier.name)).size}` : '0'}
+                        {getUniqueSupplierCount(prices)}
                       </span>
                     </div>
                     <div className="flex justify-between">
@@ -279,7 +279,7 @@ export default function PriceTrends() {
                     Best value: 900L orders (lowest per-litre cost)
                   </p>
                   <p className="text-xs text-gray-600">
-                    {prices ? `${new Set(prices.map((p: any) => p.supplier.name)).size} suppliers actively competing` : 'Multiple suppliers available'}
+                    {prices ? `${getUniqueSupplierCount(prices)} suppliers actively competing` : 'Multiple suppliers available'}
                   </p>
                 </div>
               </CardContent>
