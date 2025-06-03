@@ -188,6 +188,14 @@ export default function EnhancedAddressInput({
 
   return (
     <div className={`space-y-4 ${className}`}>
+      {/* Honeypot traps to confuse autofill */}
+      <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none', height: 0, overflow: 'hidden' }}>
+        <input type="text" name="username" autoComplete="username" tabIndex={-1} />
+        <input type="password" name="password" autoComplete="current-password" tabIndex={-1} />
+        <input type="email" name="email" autoComplete="email" tabIndex={-1} />
+        <input type="text" name="address" autoComplete="street-address" tabIndex={-1} />
+      </div>
+
       <div className="flex items-center justify-between">
         <Label htmlFor="address-input" className="text-sm font-medium text-gray-700">
           {label}
@@ -212,7 +220,7 @@ export default function EnhancedAddressInput({
               <Input
                 ref={inputRef}
                 id="address-input"
-                name="address-search"
+                name="niheatingoil-address-search"
                 value={searchValue}
                 onChange={handleInputChange}
                 onFocus={() => addressSuggestions.length > 0 && setShowSuggestions(true)}
@@ -222,13 +230,21 @@ export default function EnhancedAddressInput({
                 placeholder={placeholder}
                 className="pl-10 pr-12"
                 disabled={disabled}
-                autoComplete="off"
+                autoComplete="new-password"
                 autoCorrect="off"
                 autoCapitalize="off"
                 spellCheck="false"
                 data-lpignore="true"
+                data-1p-ignore="true"
+                data-bwignore="true"
                 data-form-type="other"
-                style={{ fontSize: '16px' }} // Prevents zoom on iOS
+                data-no-autofill="true"
+                role="combobox"
+                aria-autocomplete="list"
+                aria-expanded={showSuggestions}
+                style={{ 
+                  fontSize: '16px' // Prevents zoom on iOS
+                }}
               />
               
               {loading && (

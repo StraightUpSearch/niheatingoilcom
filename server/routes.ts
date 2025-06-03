@@ -200,7 +200,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           // Extract locality and administrative area
           if (fullAddress.includes('County Antrim')) {
             administrative_area = 'County Antrim';
-            locality = parts.find(p => p.includes('Belfast')) || parts[parts.length - 2] || '';
+            locality = parts.find((p: string) => p.includes('Belfast')) || parts[parts.length - 2] || '';
           } else if (fullAddress.includes('County Down')) {
             administrative_area = 'County Down';
             locality = parts[parts.length - 2] || '';
