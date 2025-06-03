@@ -1,0 +1,159 @@
+Developer Brief: Integrate Simon Community NI Charity Pledge
+
+Overview
+We need to embed our 5 %-of-profits pledge to Simon Community NI throughout the platform without disrupting core functionality. Keep the user journey clean and ensure the charity message feels natural, not intrusive.
+
+1. Essential Features
+Homepage Banner
+
+Add a short line beneath the main hero:
+
+“5 % of our profits fund Simon Community NI’s heating grants.”
+
+Make the text clickable, leading to a concise “Giving Back” page.
+
+“Giving Back” Page
+
+Header: “Our 5 % Pledge to Simon Community NI”
+
+Why It Matters: One paragraph on fuel poverty → emergency heating grants.
+
+How It Works (Visual): Simple three-step graphic (Order → 5 % → Grants).
+
+Impact Snapshot: Display a rolling figure like “X grants funded since January 2025.”
+
+Seasonal Call-Out: Between October and February, highlight “Support the Winter Wish List” with a brief note linking to Simon Community’s own campaign page.
+
+Order Confirmation Notice
+
+After a sale is completed, show one line:
+
+“Thank you! You’ve helped fund a heating grant with Simon Community NI.”
+
+Link “Simon Community NI” back to the “Giving Back” page.
+
+User Account Widget (Logged-In Users)
+
+In the dashboard, add a small panel titled “Your Impact.”
+
+“You’ve contributed to X grants since January 2025.”
+
+Fetch the same data as the public impact snapshot to maintain consistency.
+
+Footer Integration
+
+Add a Simon Community NI logo (or a text link if logo not available) with:
+
+“Proudly supporting Simon Community NI”
+
+Link this to the “Giving Back” page.
+
+2. Data Requirements
+Impact Data Source:
+
+Store a simple JSON or database table for quarter-by-quarter impact numbers, for example:
+
+json
+Copy
+Edit
+{
+  "Q1_2025": { "grants": 12, "amount": 600 },
+  "Q2_2025": { "grants": 8,  "amount": 400 }
+}
+Expose an endpoint like /api/impact so both the public page and the dashboard can read the same figures.
+
+Seasonal Logic:
+
+Server-side check: if current month is October–February, show the “Winter Wish List” call-out on the Giving Back page and optionally in a small banner on the homepage.
+
+3. Design Strategy
+Brand Assets
+
+Simon Community NI Logo:
+
+Either pull directly from their homepage (https://www.simoncommunity.org NI) or use the asset you’ll supply.
+
+Ensure any logo usage follows Simon Community NI’s brand guidelines (colours, spacing).
+
+Colour Palette & Typography:
+
+Keep your existing site styles.
+
+For charity elements, use a neutral accent (e.g. grey or a lighter version of your primary brand colour) so the new sections feel cohesive.
+
+Visual Style
+
+Icons/Graphics:
+
+Use simple, flat icons for the three-step “How It Works” graphic (e.g. a shopping cart → a coin → a house with a heart).
+
+Avoid heavy illustrations; maintain a minimal, clean look.
+
+Layout & Spacing:
+
+Preserve the current grid and spacing conventions.
+
+On the Giving Back page, break content into three short sections with generous white space rather than dense paragraphs.
+
+Responsive Considerations
+
+All new elements (banner, widget, page sections) must adapt gracefully on mobile:
+
+Collapse the three-step graphic into a stacked vertical layout.
+
+Ensure text remains legible at small breakpoints (min width 320 px).
+
+4. Content Guidelines
+Tone & Copy
+
+Use active, factual language.
+
+E.g. “We give 5 % of every order to Simon Community NI’s heating grants.”
+
+Keep paragraphs short (no more than 35 words each).
+
+Do not mention individual beneficiaries—only aggregate figures.
+
+Links & Calls-to-Action
+
+Charity links must open in a new tab.
+
+Use clear labels like “Learn more about our pledge” or “See how we’ve helped.”
+
+5. Next Steps
+Design Assets
+
+Obtain Simon Community NI’s logo (preferably in SVG or PNG with a transparent background).
+
+Verify any brand guidelines they require for third-party use.
+
+Wireframe Approval
+
+Draft a quick mock-up of:
+
+Homepage banner placement
+
+Giving Back page layout
+
+Order confirmation note
+
+Dashboard widget
+
+Footer insertion
+
+Share for sign-off before implementing.
+
+Development
+
+Build the /api/impact endpoint or JSON file.
+
+Integrate the charity elements as described—ensure each feature can be toggled off if needed (e.g. seasonal call-out).
+
+Testing
+
+Check on desktop and mobile that none of the new elements break the existing flow.
+
+Confirm that impact data updates correctly when JSON/DB is updated.
+
+Summary
+Embed the Simon Community NI pledge in five simple UI touchpoints: a homepage banner, a dedicated Giving Back page, an order confirmation message, a dashboard widget, and a footer link. Use minimal, consistent styling, and pull logos from either Simon NI’s website or the files you provide. Keep the copy brief and factual, and ensure no new steps interfere with price lookup or checkout.

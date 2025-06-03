@@ -11,6 +11,7 @@ import { initializeLiveSupplierScraping } from "./liveSupplierScraper";
 import { initializeSupplierData } from "./mockSupplierData";
 import { sendAdminAlert } from "./emailService";
 import { strictRateLimit, moderateRateLimit, lenientRateLimit, botDetection, validateFormSubmission } from "./rateLimit";
+import { getCurrentImpact, getAllImpactData, isWinterSeason, calculateUserImpact } from "./charityImpact";
 
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -886,6 +887,52 @@ Crawl-delay: 1`;
       res.status(500).json({ 
         message: "Sorry, I'm having trouble right now. Please try again in a moment." 
       });
+    }
+  });
+
+  // Charity impact data endpoint
+  app.get('/api/impact', async (req, res) => {
+    try {
+      const impact = getCurrentImpact();
+      const isWinter = isWinterSeason();
+      
+      res.json({
+        totalGrants: impact.totalGrants,
+        totalAmount: impact.totalAmount,
+        currentYear: impact.currentYear,
+        isWinterSeason: isWinter,
+        message: `${impact.totalGrants} heating grants funded since January ${impact.currentYear}`
+      });
+    } catch (error) {
+      console.error("Error fetching charity impact:", error);
+      res.status(500).json({ message: "Failed to fetch impact data" });
+    }
+  });
+
+  // User impact calculation (for logged-in users)
+  app.get('/api/user-impact', isAuthenticated, async (req: any, res) => {
+    try {
+      const userId = req.user.claims.sub;
+      
+      // Calculate user's total contribution based on saved quotes
+      const savedQuotes = await storage.getUserSavedQuotes(userId);
+      const totalOrderValue = savedQuotes.reduce((sum, quote) => {
+        const price = parseFloat(quote.price.replace(/[£,]/g, '')) || 0;
+        return sum + price;
+      }, 0);
+      
+      const userGrants = calculateUserImpact(totalOrderValue);
+      
+      res.json({
+        grantsContributed: userGrants,
+        totalContribution: totalOrderValue * 0.05,
+        message: userGrants > 0 
+          ? `You've contributed to ${userGrants} heating grants since joining`
+          : "Start ordering to contribute to heating grants"
+      });
+    } catch (error) {
+      console.error("Error calculating user impact:", error);
+      res.status(500).json({ message: "Failed to calculate user impact" });
     }
   });
 
