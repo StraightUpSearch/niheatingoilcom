@@ -96,6 +96,11 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <Link href="/pages/html-sitemap" className="hover:text-white transition-colors">
+                  HTML Sitemap
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
