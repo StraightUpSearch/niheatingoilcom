@@ -274,8 +274,8 @@ export default function EnhancedAddressInput({
             )}
           </div>
 
-          {/* House Number Selection */}
-          {selectedAddress && houseNumbers.length > 0 && (
+          {/* House Number Selection - Currently disabled for simplicity */}
+          {false && selectedAddress && houseNumbers.length > 0 && (
             <div className="space-y-2">
               <Label className="text-sm font-medium text-gray-700">
                 Select House Number for {selectedAddress.thoroughfare}
