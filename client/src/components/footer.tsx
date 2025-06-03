@@ -28,15 +28,15 @@ export default function Footer() {
 
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 text-white py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div>
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <HeatingOilLogo size="md" className="text-primary" />
               <span className="text-xl font-bold">NI Heating Oil</span>
             </Link>
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-400 mb-3 text-sm">
               Created by a Northern Ireland team exclusively for NI residents. Compare heating oil prices across all six counties with official Consumer Council data.
             </p>
             <div className="flex space-x-4">
@@ -77,8 +77,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
-            <ul className="space-y-2 text-gray-400">
+            <h3 className="text-md font-semibold mb-3">Services</h3>
+            <ul className="space-y-1 text-gray-400 text-sm">
               {serviceLinks.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="hover:text-white transition-colors">
@@ -90,8 +90,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Support</h3>
-            <ul className="space-y-2 text-gray-400">
+            <h3 className="text-md font-semibold mb-3">Support</h3>
+            <ul className="space-y-1 text-gray-400 text-sm">
               {supportLinks.map((link) => (
                 <li key={link.name}>
                   <a href={link.href} className="hover:text-white transition-colors">
@@ -103,24 +103,24 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Our Office</h3>
-            <div className="text-gray-400 space-y-2">
+            <h3 className="text-md font-semibold mb-3">Our Office</h3>
+            <div className="text-gray-400 space-y-1">
               <div className="flex items-start space-x-2">
                 <svg className="h-4 w-4 mt-1 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <div>
-                  <p className="text-sm font-medium text-gray-300">NI Heating Oil</p>
-                  <p className="text-sm">14a Victoria Street</p>
-                  <p className="text-sm">Ballymoney, BT53 6DW</p>
-                  <p className="text-sm">Northern Ireland</p>
+                  <p className="text-xs font-medium text-gray-300">NI Heating Oil</p>
+                  <p className="text-xs">14a Victoria Street</p>
+                  <p className="text-xs">Ballymoney, BT53 6DW</p>
+                  <p className="text-xs">Northern Ireland</p>
                 </div>
               </div>
             </div>
             
-            <h4 className="text-md font-semibold mt-6 mb-3">Legal</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-md font-semibold mt-4 mb-2">Legal</h4>
+            <ul className="space-y-1 text-gray-400">
               {legalLinks.map((link) => (
                 <li key={link.name}>
                   <a href={link.href} className="hover:text-white transition-colors text-sm">
@@ -136,12 +136,12 @@ export default function Footer() {
             </ul>
 
             {/* Simon Community NI Support */}
-            <div className="mt-6 p-4 bg-gray-800 rounded-lg border border-gray-700">
-              <div className="flex items-center space-x-2 mb-3">
-                <svg className="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 24 24">
+            <div className="mt-4 p-3 bg-gray-800 rounded-lg border border-gray-700">
+              <div className="flex items-center space-x-2 mb-2">
+                <svg className="h-4 w-4 text-red-400" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                 </svg>
-                <span className="text-sm font-medium text-gray-300">Proudly supporting</span>
+                <span className="text-xs font-medium text-gray-300">Proudly supporting</span>
               </div>
               <Link 
                 to="/giving-back"
@@ -150,19 +150,17 @@ export default function Footer() {
                 <img
                   src={simonLogo}
                   alt="Simon Community NI"
-                  className="h-12 w-auto"
+                  className="h-10 w-auto"
                 />
               </Link>
-              <p className="text-xs text-gray-400 mt-2">
+              <p className="text-xs text-gray-400 mt-1">
                 5% of our profits fund emergency heating grants
               </p>
             </div>
           </div>
         </div>
 
-
-
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <div className="border-t border-gray-800 mt-6 pt-4 text-center text-gray-400">
           <p>
             &copy; 2025 OilPrice NI. All rights reserved. Independent price comparison service for Northern Ireland heating oil consumers.
           </p>

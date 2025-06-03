@@ -1,9 +1,44 @@
 import express, { type Request, Response, NextFunction } from "express";
+import compression from "compression";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
-app.use(express.json());
+
+// Enable compression for better Core Web Vitals
+app.use(compression({
+  level: 6, // Good compression level
+  threshold: 1024, // Only compress files over 1KB
+  filter: (req, res) => {
+    // Don't compress responses if the client doesn't support it
+    if (req.headers['x-no-compression']) {
+      return false;
+    }
+    // Default filter function
+    return compression.filter(req, res);
+  }
+}));
+
+// Security and performance headers
+app.use((req, res, next) => {
+  // Security headers
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  
+  // Performance headers
+  res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+  
+  // Override cache for API routes
+  if (req.path.startsWith('/api')) {
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  }
+  
+  next();
+});
+
+app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
