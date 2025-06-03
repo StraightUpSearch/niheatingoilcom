@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -86,16 +86,28 @@ const TankGraphic = ({ volume, isSelected, size }: { volume: string; isSelected:
 export default function TankSelector({ selectedVolume, onVolumeChange, className }: TankSelectorProps) {
   const [isCustomMode, setIsCustomMode] = useState(false);
   const [customValue, setCustomValue] = useState("");
+  
+  // Initialize custom mode if selectedVolume is not a standard size
+  useEffect(() => {
+    const isStandard = tankOptions.some(option => option.volume === selectedVolume);
+    if (!isStandard && selectedVolume !== "300" && selectedVolume !== "500" && selectedVolume !== "900") {
+      setIsCustomMode(true);
+      setCustomValue(selectedVolume);
+    }
+  }, [selectedVolume]);
 
   const handleCustomToggle = () => {
     if (isCustomMode) {
       // Switch back to standard mode
       setIsCustomMode(false);
+      setCustomValue("");
       onVolumeChange("300"); // Default to 300L
     } else {
       // Switch to custom mode
       setIsCustomMode(true);
-      setCustomValue(selectedVolume);
+      const currentValue = isStandardSize ? selectedVolume : "750";
+      setCustomValue(currentValue);
+      onVolumeChange(currentValue);
     }
   };
 
@@ -176,9 +188,17 @@ export default function TankSelector({ selectedVolume, onVolumeChange, className
             </p>
           )}
           {(!customValue || (parseInt(customValue) >= 100 && parseInt(customValue) <= 10000)) && (
-            <p className="text-xs text-gray-500">
-              Enter any amount between 100L and 10,000L for a personalized quote
-            </p>
+            <div className="space-y-1">
+              <p className="text-xs text-gray-500">
+                Enter any amount between 100L and 10,000L for a personalized quote
+              </p>
+              {customValue && parseInt(customValue) >= 100 && parseInt(customValue) <= 10000 && (
+                <p className="text-xs text-green-600 flex items-center space-x-1">
+                  <span>✓</span>
+                  <span>Calculating prices for {customValue}L...</span>
+                </p>
+              )}
+            </div>
           )}
         </div>
       ) : (
