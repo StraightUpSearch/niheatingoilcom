@@ -6,6 +6,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowUpDown, Star, MessageSquare, MapPin, Clock } from "lucide-react";
 import LeadCaptureModal from "./lead-capture-modal";
+import QuoteShareButton from "./whatsapp-share-button";
 
 interface PricingTableProps {
   searchParams?: {
@@ -56,6 +57,12 @@ export default function PricingTable({ searchParams }: PricingTableProps) {
 
   const formatPricePerLitre = (price: string) => {
     return `${parseFloat(price).toFixed(1)}p`;
+  };
+
+  const calculateSavings = (currentPrice: number, allPrices: any[]) => {
+    if (!allPrices || allPrices.length === 0) return 0;
+    const maxPrice = Math.max(...allPrices.map(p => parseFloat(p.price)));
+    return maxPrice - currentPrice;
   };
 
   const getTimeAgo = (dateString: string) => {
@@ -254,7 +261,7 @@ export default function PricingTable({ searchParams }: PricingTableProps) {
                       {renderStars(item.supplier.rating)}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm">
-                      <div className="flex space-x-2">
+                      <div className="flex flex-col space-y-2">
                         <Button
                           size="sm"
                           className="bg-green-600 text-white hover:bg-green-700"
@@ -271,6 +278,14 @@ export default function PricingTable({ searchParams }: PricingTableProps) {
                           <MessageSquare className="h-4 w-4 mr-1" />
                           Get Quote
                         </Button>
+                        <QuoteShareButton
+                          postcode={searchParams?.postcode || "Northern Ireland"}
+                          supplier={item.supplier.name}
+                          pricePerLitre={parseFloat(item.pricePerLitre)}
+                          totalCost={parseFloat(item.price)}
+                          saving={calculateSavings(parseFloat(item.price), prices || [])}
+                          volume={selectedVolume}
+                        />
                       </div>
                     </td>
                   </tr>

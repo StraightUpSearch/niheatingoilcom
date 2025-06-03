@@ -1,0 +1,291 @@
+WhatsApp Share Feature Brief
+
+1. Objective
+Enable users to share their quoted heating-oil prices directly to WhatsApp, increasing social reach and trust. When someone receives a quote, they should be able to click a “Share on WhatsApp” button that opens WhatsApp (mobile or Web) with a pre-populated message containing their quote details and a link back to NI Heating Oil.
+
+2. User Flow & UX Considerations
+After Quote Generation
+
+Once the specialist submits a quote (or, for MVP, when the system displays the automated price), show a “Share on WhatsApp” button next to the quote summary.
+
+Button text:
+
+“Share this quote on WhatsApp”
+
+Message Contents
+
+Pre-fill the WhatsApp message with:
+
+A friendly headline (e.g. “Just got my NI heating-oil quote!”)
+
+Quote details: postcode, volume (e.g. “500 L”), supplier name, price per litre, total cost, and estimated saving.
+
+A call-to-action link back to the comparison page or campaign page (e.g. “Check your own quote at https://niheatingoil.com”).
+
+Example message:
+
+“Hi! I just compared heating oil prices for BT7 1AA and got a quote from Belfast Oils: £0.52 / L (£260 total), saving me £20. Check your own quote here: https://niheatingoil.com#BT71AA”
+
+Mobile vs Desktop Handling
+
+On Mobile Devices:
+
+Clicking the button should open the native WhatsApp app with the message ready to send to any contact or group.
+
+On Desktop:
+
+If WhatsApp Desktop or WhatsApp Web is installed, open https://web.whatsapp.com/send?text=… with the encoded text.
+
+If not, prompt the user to install or use the WhatsApp Web fallback.
+
+Detection Logic:
+
+Use a simple JavaScript check for navigator.userAgent to detect Android/iOS vs desktop.
+
+For mobile: link to whatsapp://send?text=…
+
+For desktop: link to https://web.whatsapp.com/send?text=…
+
+Placement & Styling
+
+Place the “Share on WhatsApp” button immediately after the quote summary (e.g., below “Your savings: £20”).
+
+Use the WhatsApp brand green (#25D366) for the button background, with white text and the WhatsApp icon on the left.
+
+Make it responsive: on narrow screens, centre the button; on wider screens, position it to the right of the quote block.
+
+Include alt text for accessibility:
+
+<button aria-label="Share this quote on WhatsApp">
+
+3. Technical Implementation
+Constructing the Share URL
+
+Basic Template:
+
+php-template
+Copy
+Edit
+<a
+  href="YOUR_WHATSAPP_URL"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="whatsapp-share-btn"
+>
+  <img src="/assets/whatsapp-icon.svg" alt="" aria-hidden="true" />
+  Share on WhatsApp
+</a>
+URL Patterns:
+
+Mobile (iOS/Android):
+
+arduino
+Copy
+Edit
+whatsapp://send?text=ENCODED_MESSAGE
+Desktop (Web):
+
+perl
+Copy
+Edit
+https://web.whatsapp.com/send?text=ENCODED_MESSAGE
+Encoding the Message:
+
+Use encodeURIComponent(...) in JavaScript to handle spaces and symbols.
+
+Example in JS:
+
+js
+Copy
+Edit
+const message = `Hi! I just compared heating oil prices for ${postcode} and got a quote from ${supplier}: £${pricePerLitre} /L (£${totalCost} total), saving me £${saving}. Check your own quote here: https://niheatingoil.com#${postcode.replace(/\s+/g, '')}`;
+const encoded = encodeURIComponent(message);
+// For mobile:
+const mobileUrl = `whatsapp://send?text=${encoded}`;
+// For desktop:
+const desktopUrl = `https://web.whatsapp.com/send?text=${encoded}`;
+Detecting Environment (simplest approach):
+
+js
+Copy
+Edit
+function getWhatsAppLink(encodedMessage) {
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (isMobile) {
+    return `whatsapp://send?text=${encodedMessage}`;
+  } else {
+    return `https://web.whatsapp.com/send?text=${encodedMessage}`;
+  }
+}
+
+// Usage when rendering button:
+const quoteDetails = {
+  postcode: 'BT7 1AA',
+  supplier: 'Belfast Oils',
+  pricePerLitre: '0.52',
+  totalCost: '260',
+  saving: '20'
+};
+const rawMessage = `Hi! I just compared heating oil prices for ${quoteDetails.postcode} and got a quote from ${quoteDetails.supplier}: £${quoteDetails.pricePerLitre} /L (£${quoteDetails.totalCost} total), saving me £${quoteDetails.saving}. Check your own quote here: https://niheatingoil.com#${quoteDetails.postcode.replace(/\s+/g, '')}`;
+const encodedMessage = encodeURIComponent(rawMessage);
+const shareUrl = getWhatsAppLink(encodedMessage);
+// Insert shareUrl into <a href="..."> dynamically
+Integration in React (MVP Code Snippet)
+
+jsx
+Copy
+Edit
+// QuoteShareButton.jsx
+import React from 'react';
+import whatsappIcon from '/assets/whatsapp-icon.svg';
+
+function QuoteShareButton({ postcode, supplier, pricePerLitre, totalCost, saving }) {
+  // Build the dynamic message
+  const rawMessage = `Hi! I just compared heating oil prices for ${postcode} and got a quote from ${supplier}: £${pricePerLitre} /L (£${totalCost} total), saving me £${saving}. Check your own quote here: https://niheatingoil.com#${postcode.replace(/\s+/g, '')}`;
+  const encodedMessage = encodeURIComponent(rawMessage);
+
+  // Determine WhatsApp URL based on device
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const shareLink = isMobile
+    ? `whatsapp://send?text=${encodedMessage}`
+    : `https://web.whatsapp.com/send?text=${encodedMessage}`;
+
+  return (
+    <a
+      href={shareLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="whatsapp-share-btn"
+      aria-label="Share this quote on WhatsApp"
+    >
+      <img src={whatsappIcon} alt="" aria-hidden="true" className="whatsapp-icon" />
+      Share on WhatsApp
+    </a>
+  );
+}
+
+export default QuoteShareButton;
+Styling (CSS):
+
+css
+Copy
+Edit
+.whatsapp-share-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #25D366;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.2s ease;
+}
+.whatsapp-share-btn:hover {
+  background-color: #1ebe57;
+}
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+@media (max-width: 600px) {
+  .whatsapp-share-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+Adding to Your Existing Page
+
+After the quote component renders (e.g. in QuoteResult.jsx), insert:
+
+jsx
+Copy
+Edit
+{quoteReady && (
+  <QuoteShareButton
+    postcode={quote.postcode}
+    supplier={quote.supplierName}
+    pricePerLitre={quote.pricePerLitre}
+    totalCost={quote.totalCost}
+    saving={quote.saving}
+  />
+)}
+Ensure quoteReady is true only after the specialist or system sets the quote values.
+
+Testing & Validation
+
+On Mobile Devices:
+
+Click the button—WhatsApp app should open with the message prefilled.
+
+On Desktop:
+
+Click opens WhatsApp Web in a new tab. If not logged in, prompt user to scan QR code.
+
+Validate that the message text is fully encoded (no broken line breaks or missing symbols).
+
+Confirm responsive styling: on narrow viewports, the button spans full width if needed.
+
+Analytics & Tracking
+
+Attach a simple click event to record shares for future insights. For example, using Google Analytics (GA4) or a lightweight custom tracker:
+
+js
+Copy
+Edit
+function onWhatsAppShareClick() {
+  // Example with GA4 gtag()
+  if (window.gtag) {
+    gtag('event', 'share_whatsapp', {
+      method: 'WhatsApp',
+      content_type: 'quote',
+      item_id: postcode
+    });
+  }
+}
+// In JSX:
+<a
+  href={shareLink}
+  onClick={onWhatsAppShareClick}
+  ...
+>
+  ...
+</a>
+Tracking helps measure how often users share quotes and which regions generate more shares.
+
+4. Summary of Best Practices
+Use Official WhatsApp URL Schemes:
+‐ whatsapp://send?text=… for mobile, https://web.whatsapp.com/send?text=… for desktop.
+
+Pre-fill Clear, Concise Text:
+‐ Include postcode, litre amount, supplier, price, total cost, estimated saving, and link to your site.
+
+Device Detection:
+‐ Use a simple regex on navigator.userAgent to distinguish mobile vs desktop.
+
+UX & Styling:
+‐ Button uses official WhatsApp green (#25D366), the WhatsApp icon, and clear ARIA labels.
+‐ Responsive design: button spans full width on small screens, positions neatly beneath the quote.
+
+Privacy & Transparency:
+‐ Only share the user’s quote data (no personal name or email in the message).
+‐ Encourage them to copy/paste the message to avoid unintended personal data exposure.
+
+Analytics:
+‐ Instrument share clicks to monitor engagement.
+
+Outcome:
+By integrating a simple “Share on WhatsApp” button that dynamically generates a properly encoded share URL, you enable users to broadcast their savings to friends and family, driving more traffic and building trust. This leverages WhatsApp’s ubiquity in Northern Ireland, making the platform more socially shareable without over-engineering.
+
+
+
+
+
+
+
+
+
+
+You have not enough Humanizer words left. Upgrade your Surfer plan.
