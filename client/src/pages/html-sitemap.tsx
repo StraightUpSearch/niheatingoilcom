@@ -53,6 +53,12 @@ export default function HtmlSitemap() {
                 </Link>
                 <p className="text-sm text-gray-500">Money-saving advice and guides</p>
               </li>
+              <li>
+                <Link href="/contact" className="text-blue-600 hover:text-blue-800 transition-colors">
+                  Contact Us
+                </Link>
+                <p className="text-sm text-gray-500">Get in touch with our team</p>
+              </li>
             </ul>
           </div>
 
@@ -98,6 +104,46 @@ export default function HtmlSitemap() {
                   County Derry
                 </Link>
                 <p className="text-sm text-gray-500">Derry/Londonderry, Coleraine</p>
+              </li>
+            </ul>
+          </div>
+
+          {/* Blog Articles */}
+          <div className="bg-white rounded-lg shadow-sm p-6">
+            <div className="flex items-center space-x-2 mb-4">
+              <FileText className="h-5 w-5 text-orange-600" />
+              <h2 className="text-xl font-semibold text-gray-900">Blog Articles</h2>
+            </div>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/blog/heating-oil-tank-sizes" className="text-blue-600 hover:text-blue-800 transition-colors">
+                  Heating Oil Tank Sizes in Northern Ireland
+                </Link>
+                <p className="text-sm text-gray-500">Comparing 300L, 500L, and 900L options for your home</p>
+              </li>
+              <li>
+                <Link href="/blog/best-time-buy-heating-oil-northern-ireland" className="text-blue-600 hover:text-blue-800 transition-colors">
+                  Best Time to Buy Heating Oil in NI
+                </Link>
+                <p className="text-sm text-gray-500">Key tips for saving money on heating oil purchases</p>
+              </li>
+              <li>
+                <Link href="/blog/how-to-dispose-heating-oil-northern-ireland" className="text-blue-600 hover:text-blue-800 transition-colors">
+                  How to Properly Dispose of Home Heating Oil
+                </Link>
+                <p className="text-sm text-gray-500">Safe and legal methods for households in NI</p>
+              </li>
+              <li>
+                <Link href="/blog/heating-oil-tank-maintenance-guide" className="text-blue-600 hover:text-blue-800 transition-colors">
+                  Heating Oil Tank Maintenance Guide
+                </Link>
+                <p className="text-sm text-gray-500">Keep your tank in perfect condition year-round</p>
+              </li>
+              <li>
+                <Link href="/blog/how-to-save-money-heating-oil" className="text-blue-600 hover:text-blue-800 transition-colors">
+                  How to Save Money on Heating Oil
+                </Link>
+                <p className="text-sm text-gray-500">Expert tips for reducing your heating bills</p>
               </li>
             </ul>
           </div>
