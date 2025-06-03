@@ -12,7 +12,8 @@ const blogArticles = [
     category: "Equipment Guide",
     date: "2025-06-03",
     readTime: "12 min read",
-    slug: "heating-oil-tank-sizes"
+    slug: "heating-oil-tank-sizes",
+    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=600&fit=crop&crop=center"
   },
   {
     id: "best-time-buy-heating-oil-northern-ireland",
@@ -21,7 +22,8 @@ const blogArticles = [
     category: "Money Saving",
     date: "2025-06-02",
     readTime: "8 min read",
-    slug: "best-time-buy-heating-oil-northern-ireland"
+    slug: "best-time-buy-heating-oil-northern-ireland",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=center"
   },
   {
     id: "how-to-dispose-heating-oil-northern-ireland",
@@ -30,7 +32,8 @@ const blogArticles = [
     category: "Safety Guide",
     date: "2025-06-01",
     readTime: "10 min read",
-    slug: "how-to-dispose-heating-oil-northern-ireland"
+    slug: "how-to-dispose-heating-oil-northern-ireland",
+    image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&h=600&fit=crop&crop=center"
   },
   {
     id: "heating-oil-tank-maintenance-guide",
@@ -39,7 +42,8 @@ const blogArticles = [
     category: "Maintenance",
     date: "2025-05-30",
     readTime: "15 min read",
-    slug: "heating-oil-tank-maintenance-guide"
+    slug: "heating-oil-tank-maintenance-guide",
+    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop&crop=center"
   },
   {
     id: "how-to-save-money-heating-oil",
@@ -48,7 +52,8 @@ const blogArticles = [
     category: "Money Saving",
     date: "2025-05-28",
     readTime: "11 min read",
-    slug: "how-to-save-money-heating-oil"
+    slug: "how-to-save-money-heating-oil",
+    image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=800&h=600&fit=crop&crop=center"
   }
 ];
 
@@ -71,7 +76,16 @@ export default function Blog() {
         {/* Blog Articles Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {blogArticles.map((article) => (
-            <Card key={article.id} className="hover:shadow-lg transition-shadow duration-300 bg-white border-gray-200">
+            <Card key={article.id} className="hover:shadow-lg transition-shadow duration-300 bg-white border-gray-200 overflow-hidden">
+              {/* Featured Image */}
+              <div className="aspect-video overflow-hidden">
+                <img 
+                  src={article.image} 
+                  alt={article.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <Badge variant="secondary" className="bg-blue-100 text-blue-800">
