@@ -102,6 +102,18 @@ export default function HtmlSitemap() {
               <div>
                 <h3 className="font-semibold text-gray-700 mb-2">Coverage Areas</h3>
                 <p>All BT postcodes (BT1-BT94) across Belfast, Derry, Armagh, Down, Antrim, Tyrone, and Fermanagh</p>
+                <p className="mt-2 text-xs">
+                  BT postcode mappings verified through{" "}
+                  <a 
+                    href="https://en.wikipedia.org/wiki/BT_postcode_area" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-700 underline"
+                  >
+                    Wikipedia research
+                  </a>
+                  {" "}— because we do our homework for ye! At's us nai with proper County mapping.
+                </p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-700 mb-2">Last Updated</h3>
