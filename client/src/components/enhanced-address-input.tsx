@@ -8,11 +8,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 interface AddressSuggestion {
   formatted_address: string;
-  postcode: string;
-  thoroughfare: string; // Road name
-  premise: string; // House number/name
-  locality: string; // Town/City
-  administrative_area: string; // County
+  postcode?: string;
+  thoroughfare?: string; // Road name
+  premise?: string; // House number/name
+  locality?: string; // Town/City
+  administrative_area?: string; // County
 }
 
 interface Props {

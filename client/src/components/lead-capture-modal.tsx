@@ -189,14 +189,11 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
               />
             </div>
             <div>
-              <Label htmlFor="postcode" className="text-sm">Postcode *</Label>
-              <Input
-                id="postcode"
-                value={formData.postcode}
-                onChange={(e) => setFormData({...formData, postcode: e.target.value.toUpperCase()})}
-                placeholder="BT1 5GS"
+              <EnhancedAddressInput
+                onAddressSelect={handleAddressSelect}
+                placeholder="Start typing your address..."
+                label="Delivery Address *"
                 className="text-sm sm:text-base"
-                required
               />
             </div>
           </div>
@@ -299,7 +296,7 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
             <Button
               type="submit"
               className="w-full sm:flex-1 bg-green-600 hover:bg-green-700 text-sm sm:text-base py-3 sm:py-2"
-              disabled={isSubmitting || !formData.name || !formData.email || !formData.phone || !isBotProtectionValid}
+              disabled={isSubmitting || !formData.name || !formData.email || !formData.phone || !formData.postcode || !isBotProtectionValid}
             >
               {isSubmitting ? (
                 <div className="flex items-center justify-center">
