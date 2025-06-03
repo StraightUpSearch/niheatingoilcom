@@ -30,6 +30,8 @@ export const users = pgTable("users", {
   username: varchar("username").unique().notNull(),
   email: varchar("email").unique(),
   password: varchar("password").notNull(),
+  fullName: varchar("full_name"),
+  phone: varchar("phone", { length: 50 }),
   firstName: varchar("first_name"),
   lastName: varchar("last_name"),
   profileImageUrl: varchar("profile_image_url"),
@@ -218,4 +220,27 @@ export const insertTicketSchema = createInsertSchema(tickets).omit({
   id: true,
   createdAt: true,
   updatedAt: true,
+});
+
+// Saved quotes table for user quote history
+export const savedQuotes = pgTable("saved_quotes", {
+  id: serial("id").primaryKey(),
+  userId: varchar("user_id").references(() => users.id),
+  supplierName: varchar("supplier_name", { length: 255 }).notNull(),
+  price: varchar("price", { length: 50 }).notNull(),
+  volume: integer("volume").notNull(),
+  location: varchar("location", { length: 255 }).notNull(),
+  postcode: varchar("postcode", { length: 10 }).notNull(),
+  customerName: varchar("customer_name", { length: 255 }),
+  customerEmail: varchar("customer_email", { length: 255 }),
+  customerPhone: varchar("customer_phone", { length: 50 }),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export type SavedQuote = typeof savedQuotes.$inferSelect;
+export type InsertSavedQuote = typeof savedQuotes.$inferInsert;
+
+export const insertSavedQuoteSchema = createInsertSchema(savedQuotes).omit({
+  id: true,
+  createdAt: true,
 });

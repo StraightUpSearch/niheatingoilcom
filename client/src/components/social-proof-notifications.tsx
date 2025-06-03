@@ -138,17 +138,17 @@ export default function SocialProofNotifications() {
       return () => clearTimeout(timer);
     }
 
-    // Show subsequent notifications for engaged users
-    if (hasShownInitial && isEngaged && sessionEngagement.timeOnPage > 25) {
+    // Show subsequent notifications for engaged users (much less frequent)
+    if (hasShownInitial && isEngaged && sessionEngagement.timeOnPage > 60) {
       const interval = setInterval(() => {
         // Only show if user is active, has scrolled, and not currently visible
         if (!isVisible && scrollDepth > 30) {
-          // 40% probability every 25 seconds for engaged users
-          if (Math.random() < 0.4) {
+          // 15% probability every 2 minutes for engaged users
+          if (Math.random() < 0.15) {
             showNotification();
           }
         }
-      }, 25000);
+      }, 120000);
 
       return () => clearInterval(interval);
     }

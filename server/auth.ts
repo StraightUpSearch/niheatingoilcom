@@ -82,7 +82,7 @@ export function setupAuth(app: Express) {
 
   app.post("/api/register", async (req, res, next) => {
     try {
-      const { username, password, email } = req.body;
+      const { username, password, email, fullName, phone, savedQuote } = req.body;
       
       if (!username || !password) {
         return res.status(400).json({ message: "Username and password are required" });
@@ -93,16 +93,45 @@ export function setupAuth(app: Express) {
         return res.status(400).json({ message: "Username already exists" });
       }
 
+      // Create user with all provided fields
       const user = await storage.createUser({
         id: `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
         username,
         email,
+        fullName,
+        phone,
         password: await hashPassword(password),
       });
 
+      // Save the quote if provided
+      if (savedQuote && typeof savedQuote === 'object') {
+        try {
+          await storage.createSavedQuote({
+            userId: user.id,
+            supplierName: savedQuote.supplierName || '',
+            price: savedQuote.price || '',
+            volume: savedQuote.volume || 0,
+            location: savedQuote.location || '',
+            postcode: savedQuote.postcode || '',
+            customerName: savedQuote.customerName || fullName || '',
+            customerEmail: savedQuote.customerEmail || email || '',
+            customerPhone: savedQuote.customerPhone || phone || '',
+          });
+        } catch (quoteError) {
+          console.error("Error saving quote during registration:", quoteError);
+          // Continue with registration even if quote saving fails
+        }
+      }
+
       req.login(user, (err) => {
         if (err) return next(err);
-        res.status(201).json({ id: user.id, username: user.username, email: user.email });
+        res.status(201).json({ 
+          id: user.id, 
+          username: user.username, 
+          email: user.email,
+          fullName: user.fullName,
+          phone: user.phone
+        });
       });
     } catch (error) {
       console.error("Registration error:", error);
