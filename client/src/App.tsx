@@ -15,6 +15,7 @@ import SupplierProfile from "@/pages/supplier-profile";
 import Blog from "@/pages/blog";
 import BlogArticle from "@/pages/blog-article";
 import HtmlSitemap from "@/pages/html-sitemap";
+import Contact from "@/pages/contact";
 
 function Router() {
   return (
@@ -26,6 +27,7 @@ function Router() {
       <Route path="/suppliers/:supplierId" component={SupplierProfile} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogArticle} />
+      <Route path="/contact" component={Contact} />
       <Route path="/pages/html-sitemap" component={HtmlSitemap} />
       <Route component={NotFound} />
     </Switch>

@@ -710,6 +710,49 @@ Crawl-delay: 1`;
     }
   });
 
+  // Contact form endpoint
+  app.post('/api/contact', async (req, res) => {
+    try {
+      const { name, email, phone, subject, message, enquiryType } = req.body;
+      
+      // Validate required fields
+      if (!name || !email || !subject || !message || !enquiryType) {
+        return res.status(400).json({ message: "Missing required fields" });
+      }
+      
+      // Create contact lead in database
+      const contactLead = await storage.createLead({
+        name,
+        email,
+        phone: phone || null,
+        postcode: 'N/A - Contact Form',
+        volume: 0,
+        message: `Subject: ${subject}\n\nEnquiry Type: ${enquiryType}\n\nMessage:\n${message}`,
+        leadType: 'contact',
+        status: 'new'
+      });
+      
+      // Send email notification
+      try {
+        await sendAdminAlert({
+          ...contactLead,
+          message: `NEW CONTACT FORM SUBMISSION\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nSubject: ${subject}\nEnquiry Type: ${enquiryType}\n\nMessage:\n${message}`
+        });
+      } catch (emailError) {
+        console.error('Failed to send contact email notification:', emailError);
+      }
+      
+      res.json({ 
+        success: true, 
+        message: 'Contact form submitted successfully',
+        leadId: contactLead.id
+      });
+    } catch (error) {
+      console.error("Error processing contact form:", error);
+      res.status(500).json({ message: "Failed to process contact form submission" });
+    }
+  });
+
   // Chatbot endpoint
   app.post('/api/chat', async (req, res) => {
     try {

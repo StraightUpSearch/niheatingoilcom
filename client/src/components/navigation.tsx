@@ -16,6 +16,7 @@ export default function Navigation() {
     ...(isAuthenticated ? [{ name: "Price Alerts", href: "/alerts" }] : []),
     { name: "Suppliers", href: "/suppliers" },
     { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const NavItems = () => (
