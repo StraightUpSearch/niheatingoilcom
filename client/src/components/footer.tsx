@@ -108,8 +108,31 @@ export default function Footer() {
 
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4">
+            <Link href="/pages/html-sitemap" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">
+              Site Map
+            </Link>
+            <span className="hidden sm:inline">•</span>
+            <a 
+              href="/sitemap.xml" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-blue-400 hover:text-blue-300 transition-colors text-sm"
+            >
+              XML Sitemap
+            </a>
+            <span className="hidden sm:inline">•</span>
+            <a 
+              href="/robots.txt" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-blue-400 hover:text-blue-300 transition-colors text-sm"
+            >
+              Robots.txt
+            </a>
+          </div>
           <p>
-            &copy; 2024 OilPrice NI. All rights reserved. Independent price comparison service for Northern Ireland heating oil consumers.
+            &copy; 2025 OilPrice NI. All rights reserved. Independent price comparison service for Northern Ireland heating oil consumers.
           </p>
         </div>
       </div>
