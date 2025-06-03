@@ -14,33 +14,6 @@ const blogArticles = [
     date: "2025-06-03",
     readTime: "12 min read",
     slug: "heating-oil-tank-sizes"
-  },
-  {
-    id: "heating-oil-tips-winter-2024",
-    title: "Essential Heating Oil Tips for Winter 2024",
-    description: "Stay warm and save money with these expert heating oil tips for the colder months.",
-    category: "Heating Tips",
-    date: "2024-12-15",
-    readTime: "5 min read",
-    slug: "heating-oil-tips-winter-2024"
-  },
-  {
-    id: "understanding-oil-prices-ni",
-    title: "Understanding Heating Oil Prices in Northern Ireland",
-    description: "A comprehensive guide to factors affecting heating oil prices across NI regions.",
-    category: "Price Updates",
-    date: "2024-12-10", 
-    readTime: "7 min read",
-    slug: "understanding-oil-prices-ni"
-  },
-  {
-    id: "tank-maintenance-guide",
-    title: "Complete Tank Maintenance Guide",
-    description: "Keep your heating oil tank in perfect condition with this detailed maintenance guide.",
-    category: "Maintenance",
-    date: "2024-12-05",
-    readTime: "6 min read", 
-    slug: "tank-maintenance-guide"
   }
 ];
 

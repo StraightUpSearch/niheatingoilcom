@@ -109,39 +109,6 @@ const articles = {
 <p>We can browse online directories to find suppliers across Northern Ireland, compare prices, and check out reviews. Some sites even send price alerts, which is handy for catching a deal when oil prices drop. Using comparison tools helps us see supplier qualifications and real customer feedback before we commit. Honestly, it's worth using a list of trusted heating oil suppliers so we're not just guessing about who to trust with the oil or installation.</p>
 <p>When we get in touch with a supplier, let's remember to ask about installation, what tank types they actually have, and whether they offer aftercare or emergency help. It's not just about delivery—having someone to call if things go wrong in winter can make all the difference.</p>
     `
-  },
-  "heating-oil-tips-winter-2024": {
-    title: "Essential Heating Oil Tips for Winter 2024",
-    category: "Heating Tips",
-    date: "2024-12-15",
-    readTime: "5 min read",
-    content: `
-      <p>Your HTML content will go here...</p>
-      <h2>Winter Heating Tips</h2>
-      <p>More content...</p>
-    `
-  },
-  "understanding-oil-prices-ni": {
-    title: "Understanding Heating Oil Prices in Northern Ireland",
-    category: "Price Updates", 
-    date: "2024-12-10",
-    readTime: "7 min read",
-    content: `
-      <p>Your HTML content will go here...</p>
-      <h2>Price Factors</h2>
-      <p>More content...</p>
-    `
-  },
-  "tank-maintenance-guide": {
-    title: "Complete Tank Maintenance Guide",
-    category: "Maintenance",
-    date: "2024-12-05", 
-    readTime: "6 min read",
-    content: `
-      <p>Your HTML content will go here...</p>
-      <h2>Maintenance Schedule</h2>
-      <p>More content...</p>
-    `
   }
 };
 

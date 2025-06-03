@@ -4,6 +4,7 @@ import PricingTable from "@/components/pricing-table";
 import PriceTrends from "@/components/price-trends";
 import UserProgress from "@/components/user-progress";
 import Footer from "@/components/footer";
+import BlogCarousel from "@/components/blog-carousel";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 
@@ -90,6 +91,7 @@ export default function Home() {
         </div>
       </section>
 
+      <BlogCarousel />
       <PriceTrends />
       <Footer />
     </div>
