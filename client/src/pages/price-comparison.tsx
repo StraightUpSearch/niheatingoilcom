@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation";
 import PriceSearchForm from "@/components/price-search-form";
 import PricingTable from "@/components/pricing-table";
+import MobilePriceTrends from "@/components/mobile-price-trends";
 import Footer from "@/components/footer";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { useState } from "react";
@@ -30,6 +31,9 @@ export default function PriceComparison() {
           <PriceSearchForm onSearch={setSearchParams} />
         </div>
       </section>
+
+      {/* Mobile Price Trends */}
+      <MobilePriceTrends />
 
       {/* Results */}
       <section className="py-12">

@@ -3,6 +3,7 @@ import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import EnhancedPricingTable from "@/components/enhanced-pricing-table";
 import PriceTrends from "@/components/price-trends";
+import MobilePriceTrends from "@/components/mobile-price-trends";
 import AnimatedPriceTrend from "@/components/animated-price-trend";
 import PriceAlertsForm from "@/components/price-alerts-form";
 import FeaturedSuppliers from "@/components/featured-suppliers";
@@ -38,6 +39,9 @@ export default function Landing() {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
       <HeroSection onSearch={handleSearch} />
+      
+      {/* Mobile Price Trends - Show on mobile devices */}
+      <MobilePriceTrends />
       
       {/* Search Results Section - Only show after search */}
       {searchParams && (
