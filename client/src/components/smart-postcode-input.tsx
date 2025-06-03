@@ -161,6 +161,13 @@ export default function SmartPostcodeInput({
       return;
     }
 
+    // Don't show suggestions if user has a complete postcode
+    const hasFullPostcode = /^BT\d{1,2}\s?\d[A-Z]{2}$/i.test(input.trim());
+    if (hasFullPostcode) {
+      setSuggestions([]);
+      return;
+    }
+
     const searchTerm = input.toUpperCase().replace(/\s/g, '');
     const matches: Array<{area: string, towns: string[]}> = [];
 
@@ -186,9 +193,27 @@ export default function SmartPostcodeInput({
     setSuggestions(matches.slice(0, 6)); // Limit to 6 suggestions
   };
 
+  // Sanitize postcode input to prevent duplication
+  const sanitizePostcodeInput = (input: string): string => {
+    let cleaned = input.toUpperCase();
+    
+    // Remove obvious duplication patterns like "BT53 8PXBT53"
+    const fullPostcodePattern = /^(BT\d{1,2}\s?\d[A-Z]{2})/i;
+    const match = cleaned.match(fullPostcodePattern);
+    if (match) {
+      // If we found a complete postcode at the start, use only that
+      cleaned = match[1];
+      // Ensure proper spacing
+      cleaned = cleaned.replace(/^(BT\d{1,2})(\d[A-Z]{2})$/, '$1 $2');
+    }
+    
+    return cleaned;
+  };
+
   // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = e.target.value.toUpperCase();
+    const inputValue = sanitizePostcodeInput(e.target.value);
+    
     onChange(inputValue);
     generateSuggestions(inputValue);
     setShowSuggestions(true);
@@ -196,7 +221,22 @@ export default function SmartPostcodeInput({
 
   // Handle suggestion selection
   const handleSuggestionClick = (area: string) => {
-    onChange(area + " ");
+    // If user already has a complete postcode, don't replace it
+    const currentInput = value.trim();
+    const hasFullPostcode = /^BT\d{1,2}\s?\d[A-Z]{2}$/i.test(currentInput);
+    
+    if (hasFullPostcode) {
+      // Keep the existing full postcode
+      setShowSuggestions(false);
+      return;
+    }
+    
+    // Only replace if the current input is incomplete
+    const inputWithoutBT = currentInput.replace(/^BT/i, '').trim();
+    if (inputWithoutBT.length === 0 || area.startsWith(inputWithoutBT.split(' ')[0])) {
+      onChange(area + " ");
+    }
+    
     setShowSuggestions(false);
     inputRef.current?.focus();
   };

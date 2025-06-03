@@ -147,6 +147,13 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
     
     // Filter postcodes based on input
     if (cleanInput.length > 0) {
+      // Don't show suggestions if user has a complete postcode
+      const hasFullPostcode = /^\d{1,2}\s?\d[A-Z]{2}$/i.test(cleanInput);
+      if (hasFullPostcode) {
+        setShowSuggestions(false);
+        return;
+      }
+      
       const filtered = btPostcodes.filter(postcode => 
         postcode.code.toLowerCase().includes(cleanInput.toLowerCase()) ||
         postcode.area.toLowerCase().includes(cleanInput.toLowerCase())
@@ -167,7 +174,21 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
   };
 
   const handlePostcodeSelect = (postcode: string) => {
-    setPostcodeInput(postcode);
+    // If user already has a complete postcode, don't replace it
+    const currentInput = postcodeInput.trim();
+    const hasFullPostcode = /^\d{1,2}\s?\d[A-Z]{2}$/i.test(currentInput);
+    
+    if (hasFullPostcode) {
+      // Keep the existing full postcode
+      setShowSuggestions(false);
+      return;
+    }
+    
+    // Only replace if the current input is incomplete or matches the start
+    if (currentInput.length === 0 || postcode.startsWith(currentInput.split(' ')[0])) {
+      setPostcodeInput(postcode);
+    }
+    
     setShowSuggestions(false);
     setPostcodeError("");
   };
