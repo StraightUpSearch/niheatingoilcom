@@ -15,6 +15,7 @@ export default function Navigation() {
     { name: "Compare Prices", href: "/compare" },
     ...(isAuthenticated ? [{ name: "Price Alerts", href: "/alerts" }] : []),
     { name: "Suppliers", href: "/suppliers" },
+    { name: "Giving Back", href: "/giving-back" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ];
@@ -47,7 +48,6 @@ export default function Navigation() {
               <HeatingOilLogo size="lg" />
               <div className="flex flex-col min-w-0">
                 <span className="text-lg sm:text-xl font-bold text-gray-900 truncate">NI Heating Oil</span>
-                <span className="text-xs text-green-600 font-medium hidden lg:block">By locals, for locals</span>
               </div>
             </Link>
             <nav className="hidden lg:flex space-x-4 xl:space-x-6 ml-4 xl:ml-8">

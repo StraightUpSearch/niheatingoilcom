@@ -16,6 +16,7 @@ import SocialProofNotifications from "@/components/social-proof-notifications";
 import TrustBadges from "@/components/trust-badges";
 import BlogCarousel from "@/components/blog-carousel";
 import { MediaNewsTile } from "@/components/media-news-tile";
+import { CharityBanner } from "@/components/charity-banner";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calculator, TrendingDown, Bell, MapPin } from "lucide-react";
@@ -40,6 +41,9 @@ export default function Landing() {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
       <HeroSection onSearch={handleSearch} />
+      
+      {/* Charity Banner - Simon Community NI Pledge */}
+      <CharityBanner />
       
       {/* Mobile Price Trends - Show on mobile devices */}
       <MobilePriceTrends />

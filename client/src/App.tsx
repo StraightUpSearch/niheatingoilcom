@@ -16,6 +16,7 @@ import Blog from "@/pages/blog";
 import BlogArticle from "@/pages/blog-article";
 import HtmlSitemap from "@/pages/html-sitemap";
 import Contact from "@/pages/contact";
+import GivingBack from "@/pages/giving-back";
 import ThankYouPage from "@/pages/thank-you-page";
 import { useEffect } from "react";
 import { initGTM } from "@/lib/gtm";
@@ -35,6 +36,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogArticle} />
       <Route path="/contact" component={Contact} />
+      <Route path="/giving-back" component={GivingBack} />
       <Route path="/thank-you" component={ThankYouPage} />
       <Route path="/pages/html-sitemap" component={HtmlSitemap} />
       <Route component={NotFound} />
