@@ -1,6 +1,13 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="6" fill="#1976D2"/>
-  <path d="M16 6C18.5 8.5 22 12 22 17C22 20.866 19.866 23 16 23C12.134 23 10 20.866 10 17C10 12 13.5 8.5 16 6Z" fill="white"/>
-  <circle cx="18" cy="15" r="1.5" fill="#1976D2" opacity="0.3"/>
-  <text x="16" y="29" text-anchor="middle" font-family="Arial, sans-serif" font-size="4" font-weight="bold" fill="white">NI</text>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="24" fill="#1976D2"/>
+  
+  <!-- Oil drop icon -->
+  <path d="M24 8C19.5 8 16 11.5 16 16C16 20.5 19.5 24 24 24C28.5 24 32 20.5 32 16C32 11.5 28.5 8 24 8Z" fill="#FFFFFF"/>
+  
+  <!-- Heating element/flame -->
+  <path d="M24 26C21 26 18.5 28.5 18.5 31.5C18.5 34.5 21 37 24 37C27 37 29.5 34.5 29.5 31.5C29.5 28.5 27 26 24 26Z" fill="#FF6B35"/>
+  
+  <!-- Text "NI" -->
+  <text x="24" y="20" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="#1976D2" text-anchor="middle">NI</text>
 </svg>

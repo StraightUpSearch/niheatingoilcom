@@ -13,6 +13,7 @@ import NorthernIrelandIdentity from "@/components/northern-ireland-identity";
 import Footer from "@/components/footer";
 import SocialProofNotifications from "@/components/social-proof-notifications";
 import TrustBadges from "@/components/trust-badges";
+import BlogCarousel from "@/components/blog-carousel";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calculator, TrendingDown, Bell, MapPin } from "lucide-react";
@@ -149,6 +150,7 @@ export default function Landing() {
       
       <NorthernIrelandIdentity />
       <TrustBadges />
+      <BlogCarousel />
       <PriceTrends />
       <SuppliersShowcase />
       <PriceAlertsForm />
