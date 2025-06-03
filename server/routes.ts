@@ -146,6 +146,59 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Address search API endpoint
+  app.get('/api/address/search', async (req, res) => {
+    try {
+      const { q: query } = req.query;
+      
+      if (!query || typeof query !== 'string' || query.length < 3) {
+        return res.status(400).json({ error: 'Query must be at least 3 characters' });
+      }
+
+      // GetAddress.io API call
+      const apiKey = process.env.GETADDRESS_API_KEY;
+      if (!apiKey) {
+        return res.status(500).json({ error: 'Address API not configured' });
+      }
+
+      const response = await fetch(`https://api.getaddress.io/autocomplete/${encodeURIComponent(query)}?api-key=${apiKey}&all=true`);
+      
+      if (!response.ok) {
+        console.error('GetAddress API error:', response.statusText);
+        return res.status(500).json({ error: 'Address lookup failed' });
+      }
+
+      const data = await response.json();
+      
+      // Transform GetAddress.io response to our format
+      const addresses = (data.suggestions || [])
+        .filter((suggestion: any) => suggestion.address?.includes('BT')) // Northern Ireland postcodes only
+        .map((suggestion: any) => {
+          const parts = suggestion.address?.split(', ') || [];
+          const postcode = parts[parts.length - 1] || '';
+          const locality = parts[parts.length - 2] || '';
+          const thoroughfare = parts.length > 2 ? parts[1] : parts[0] || '';
+          const premise = parts.length > 2 ? parts[0] : '';
+
+          return {
+            formatted_address: suggestion.address,
+            postcode: postcode,
+            thoroughfare: thoroughfare,
+            premise: premise,
+            locality: locality,
+            administrative_area: locality.includes('Belfast') ? 'Belfast' : 
+                                locality.includes('Derry') ? 'Derry' : 'Northern Ireland'
+          };
+        })
+        .slice(0, 10); // Limit to 10 results
+
+      res.json({ addresses });
+    } catch (error) {
+      console.error('Address search error:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+
   app.get('/api/prices/history', async (req, res) => {
     try {
       const { days = 30, volume } = req.query;

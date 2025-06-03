@@ -62,50 +62,28 @@ export default function EnhancedAddressInput({
     return niPattern.test(postcode.replace(/\s/g, ''));
   };
 
-  // Fetch address suggestions (you would integrate with a real address API here)
+  // Fetch address suggestions using GetAddress.io API
   const fetchAddressSuggestions = async (query: string) => {
     if (query.length < 3) return;
     
     setLoading(true);
     try {
-      // This would typically call a real address API like Ideal Postcodes, PostcodeLookup.uk, etc.
-      // For now, we'll simulate with Northern Ireland addresses
-      await new Promise(resolve => setTimeout(resolve, 300)); // Simulate API delay
+      const response = await fetch(`/api/address/search?q=${encodeURIComponent(query)}`);
       
-      const mockSuggestions: AddressSuggestion[] = [
-        {
-          formatted_address: "1 Main Street, Belfast, BT1 1AA",
-          postcode: "BT1 1AA",
-          thoroughfare: "Main Street",
-          premise: "1",
-          locality: "Belfast",
-          administrative_area: "County Antrim"
-        },
-        {
-          formatted_address: "15 High Street, Ballymena, BT42 2BB",
-          postcode: "BT42 2BB", 
-          thoroughfare: "High Street",
-          premise: "15",
-          locality: "Ballymena",
-          administrative_area: "County Antrim"
-        },
-        {
-          formatted_address: "8 Castle Street, Derry, BT48 6AA",
-          postcode: "BT48 6AA",
-          thoroughfare: "Castle Street", 
-          premise: "8",
-          locality: "Derry",
-          administrative_area: "County Londonderry"
-        }
-      ].filter(addr => 
-        addr.formatted_address.toLowerCase().includes(query.toLowerCase()) ||
-        addr.postcode.toLowerCase().includes(query.toLowerCase())
-      );
-      
-      setAddressSuggestions(mockSuggestions);
-      setShowSuggestions(mockSuggestions.length > 0);
+      if (response.ok) {
+        const data = await response.json();
+        const suggestions: AddressSuggestion[] = data.addresses || [];
+        setAddressSuggestions(suggestions);
+        setShowSuggestions(suggestions.length > 0);
+      } else {
+        console.error("Address search failed:", response.statusText);
+        setAddressSuggestions([]);
+        setShowSuggestions(false);
+      }
     } catch (error) {
       console.error("Error fetching address suggestions:", error);
+      setAddressSuggestions([]);
+      setShowSuggestions(false);
     } finally {
       setLoading(false);
     }
