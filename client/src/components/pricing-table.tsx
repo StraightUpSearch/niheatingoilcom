@@ -268,7 +268,7 @@ export default function PricingTable({ searchParams }: PricingTableProps) {
                           onClick={() => {
                             setSelectedSupplier({
                               name: item.supplier.name,
-                              price: item.pricePerLitre,
+                              price: formatPrice(item.price),
                               volume: selectedVolume,
                               location: item.supplier.location
                             });

@@ -93,10 +93,30 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
   };
 
   const handleQuoteRequest = (supplier: any, volume: number = 500) => {
-    // Open lead capture modal instead of direct contact
+    // Find the appropriate price based on volume
+    let basePrice = 0;
+    let baseVolume = 500;
+    
+    if (volume === 300 && supplier.price300) {
+      basePrice = parseFloat(supplier.price300);
+      baseVolume = 300;
+    } else if (volume === 500 && supplier.price500) {
+      basePrice = parseFloat(supplier.price500);
+      baseVolume = 500;
+    } else if (volume === 900 && supplier.price900) {
+      basePrice = parseFloat(supplier.price900);
+      baseVolume = 900;
+    } else {
+      // Default to 500L price and calculate proportionally
+      basePrice = parseFloat(supplier.price500 || supplier.price300 || supplier.price900 || '0');
+      baseVolume = supplier.price500 ? 500 : (supplier.price300 ? 300 : 900);
+    }
+    
+    const calculatedPrice = calculateVolumePrice(basePrice, baseVolume, volume);
+    
     setSelectedSupplier({
       name: supplier.name,
-      price: calculateVolumePrice(parseFloat(supplier.price || '0'), 500, volume).toFixed(2),
+      price: `£${calculatedPrice.toFixed(2)}`,
       volume: volume,
       location: supplier.location
     });
