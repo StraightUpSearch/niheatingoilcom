@@ -161,7 +161,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(500).json({ error: 'Address API not configured' });
       }
 
-      const response = await fetch(`https://api.getaddress.io/autocomplete/${encodeURIComponent(query)}?api-key=${apiKey}&all=true`);
+      const response = await fetch(`https://api.getaddress.io/autocomplete/${encodeURIComponent(query)}?api-key=qi9aovP-DEeb1rt4NqF1uw46379&all=true`);
       
       if (!response.ok) {
         console.error('GetAddress API error:', response.statusText);
@@ -172,25 +172,68 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Transform GetAddress.io response to our format
       const addresses = (data.suggestions || [])
-        .filter((suggestion: any) => suggestion.address?.includes('BT')) // Northern Ireland postcodes only
+        .filter((suggestion: any) => {
+          const addr = suggestion.address || '';
+          // Only include Northern Ireland addresses (contains County Antrim, County Down, etc. or BT postcode)
+          return addr.includes('County Antrim') || addr.includes('County Down') || 
+                 addr.includes('County Armagh') || addr.includes('County Fermanagh') ||
+                 addr.includes('County Londonderry') || addr.includes('County Tyrone') ||
+                 addr.includes('Belfast') || addr.includes('BT');
+        })
         .map((suggestion: any) => {
-          const parts = suggestion.address?.split(', ') || [];
-          const postcode = parts[parts.length - 1] || '';
-          const locality = parts[parts.length - 2] || '';
-          const thoroughfare = parts.length > 2 ? parts[1] : parts[0] || '';
-          const premise = parts.length > 2 ? parts[0] : '';
+          const fullAddress = suggestion.address || '';
+          const parts = fullAddress.split(', ');
+          
+          // Extract components more intelligently
+          let premise = '';
+          let thoroughfare = '';
+          let locality = '';
+          let postcode = '';
+          let administrative_area = 'Northern Ireland';
+          
+          // Find postcode (BT format)
+          const postcodeMatch = fullAddress.match(/BT\d{1,2}\s?\d[A-Z]{2}/i);
+          if (postcodeMatch) {
+            postcode = postcodeMatch[0];
+          }
+          
+          // Extract locality and administrative area
+          if (fullAddress.includes('County Antrim')) {
+            administrative_area = 'County Antrim';
+            locality = parts.find(p => p.includes('Belfast')) || parts[parts.length - 2] || '';
+          } else if (fullAddress.includes('County Down')) {
+            administrative_area = 'County Down';
+            locality = parts[parts.length - 2] || '';
+          } else if (fullAddress.includes('Belfast')) {
+            administrative_area = 'Belfast';
+            locality = 'Belfast';
+          } else {
+            // Extract county from address
+            const countyMatch = fullAddress.match(/County \w+/);
+            if (countyMatch) {
+              administrative_area = countyMatch[0];
+            }
+            locality = parts[parts.length - 2] || '';
+          }
+          
+          // Extract premise and thoroughfare
+          if (parts.length >= 3) {
+            premise = parts[0];
+            thoroughfare = parts[1];
+          } else if (parts.length === 2) {
+            thoroughfare = parts[0];
+          }
 
           return {
-            formatted_address: suggestion.address,
+            formatted_address: fullAddress,
             postcode: postcode,
-            thoroughfare: thoroughfare,
-            premise: premise,
-            locality: locality,
-            administrative_area: locality.includes('Belfast') ? 'Belfast' : 
-                                locality.includes('Derry') ? 'Derry' : 'Northern Ireland'
+            thoroughfare: thoroughfare.replace(/^\d+\s*/, ''), // Remove house number from street name
+            premise: premise.match(/^\d+/) ? premise : '', // Only keep if starts with number
+            locality: locality.replace(/County \w+/, '').trim(),
+            administrative_area: administrative_area
           };
         })
-        .slice(0, 10); // Limit to 10 results
+        .slice(0, 8); // Limit to 8 results for better UX
 
       res.json({ addresses });
     } catch (error) {
