@@ -9,6 +9,7 @@ import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
 import { initializeWeeklyUrlDetection, consumerCouncilUrlDetector } from "./consumerCouncilUrlDetector";
 import { initializeLiveSupplierScraping } from "./liveSupplierScraper";
 import { initializeSupplierData } from "./mockSupplierData";
+import { sendAdminAlert } from "./emailService";
 
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -686,18 +687,20 @@ Crawl-delay: 1`;
       
       // Send email notification to webmaster
       try {
-        await sendLeadNotifications({
+        await sendAdminAlert({
           id: Date.now(),
           name: 'Chatbot User',
           email: 'chatbot-conversation@unknown.com',
-          phone: null,
-          postcode: 'Unknown',
+          phone: '',
+          postcode: 'CHATBOT',
           volume: 500,
-          message: `Chatbot Conversation:\n\nUser: ${userMessage}\n\nFull conversation:\n${conversationHistory.map((msg: any) => `${msg.role}: ${msg.content}`).join('\n')}`,
-          leadType: 'chatbot',
+          notes: `Chatbot Conversation:\n\nUser: ${userMessage}\n\nFull conversation:\n${conversationHistory.map((msg: any) => `${msg.role}: ${msg.content}`).join('\n')}`,
           status: 'new',
           createdAt: new Date(),
-          updatedAt: new Date()
+          updatedAt: new Date(),
+          urgency: null,
+          supplierName: null,
+          supplierPrice: null
         });
       } catch (emailError) {
         console.error('Failed to send chatbot conversation email:', emailError);
@@ -724,11 +727,10 @@ Crawl-delay: 1`;
       const contactLead = await storage.createLead({
         name,
         email,
-        phone: phone || null,
-        postcode: 'N/A - Contact Form',
+        phone: phone || '',
+        postcode: 'CONTACT',
         volume: 0,
-        message: `Subject: ${subject}\n\nEnquiry Type: ${enquiryType}\n\nMessage:\n${message}`,
-        leadType: 'contact',
+        notes: `Subject: ${subject}\n\nEnquiry Type: ${enquiryType}\n\nMessage:\n${message}`,
         status: 'new'
       });
       
@@ -736,7 +738,7 @@ Crawl-delay: 1`;
       try {
         await sendAdminAlert({
           ...contactLead,
-          message: `NEW CONTACT FORM SUBMISSION\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nSubject: ${subject}\nEnquiry Type: ${enquiryType}\n\nMessage:\n${message}`
+          notes: `NEW CONTACT FORM SUBMISSION\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nSubject: ${subject}\nEnquiry Type: ${enquiryType}\n\nMessage:\n${message}`
         });
       } catch (emailError) {
         console.error('Failed to send contact email notification:', emailError);

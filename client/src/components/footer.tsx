@@ -11,10 +11,10 @@ export default function Footer() {
   ];
 
   const supportLinks = [
-    { name: "Help Center", href: "#" },
-    { name: "Contact Us", href: "#" },
-    { name: "Report an Issue", href: "#" },
-    { name: "Supplier Listing", href: "#" },
+    { name: "Help Center", href: "/contact" },
+    { name: "Contact Us", href: "/contact" },
+    { name: "Report an Issue", href: "/contact" },
+    { name: "Supplier Listing", href: "/suppliers" },
   ];
 
   const legalLinks = [
