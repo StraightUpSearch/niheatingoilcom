@@ -261,10 +261,10 @@ export default function PricingTable({ searchParams }: PricingTableProps) {
                       {renderStars(item.supplier.rating)}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm">
-                      <div className="flex flex-col space-y-2">
+                      <div className="flex flex-col space-y-2 min-w-[140px]">
                         <Button
                           size="sm"
-                          className="bg-green-600 text-white hover:bg-green-700"
+                          className="bg-green-600 text-white hover:bg-green-700 w-full"
                           onClick={() => {
                             setSelectedSupplier({
                               name: item.supplier.name,
@@ -278,14 +278,16 @@ export default function PricingTable({ searchParams }: PricingTableProps) {
                           <MessageSquare className="h-4 w-4 mr-1" />
                           Get Quote
                         </Button>
-                        <QuoteShareButton
-                          postcode={searchParams?.postcode || "Northern Ireland"}
-                          supplier={item.supplier.name}
-                          pricePerLitre={parseFloat(item.pricePerLitre)}
-                          totalCost={parseFloat(item.price)}
-                          saving={calculateSavings(parseFloat(item.price), prices || [])}
-                          volume={selectedVolume}
-                        />
+                        <div className="w-full">
+                          <QuoteShareButton
+                            postcode={searchParams?.postcode || "Northern Ireland"}
+                            supplier={item.supplier.name}
+                            pricePerLitre={parseFloat(item.pricePerLitre)}
+                            totalCost={parseFloat(item.price)}
+                            saving={calculateSavings(parseFloat(item.price), prices || [])}
+                            volume={selectedVolume}
+                          />
+                        </div>
                       </div>
                     </td>
                   </tr>
