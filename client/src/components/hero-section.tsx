@@ -26,7 +26,7 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
       const progress = step / steps;
       
       setAnimatedStats({
-        suppliers: Math.floor(progress * 25),
+        suppliers: Math.floor(progress * 60),
         savings: Math.floor(progress * 150),
         users: Math.floor(progress * 1200)
       });
