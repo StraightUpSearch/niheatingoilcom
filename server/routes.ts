@@ -14,6 +14,9 @@ import { strictRateLimit, moderateRateLimit, lenientRateLimit, botDetection, val
 
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Trust proxy for accurate IP detection
+  app.set('trust proxy', 1);
+
   // Auth middleware
   setupAuth(app);
 
@@ -682,7 +685,7 @@ Crawl-delay: 1`;
   });
 
   // Chatbot conversation logging endpoint
-  app.post('/api/chat/log', async (req, res) => {
+  app.post('/api/chat/log', lenientRateLimit, async (req, res) => {
     try {
       const { userMessage, conversationHistory, timestamp } = req.body;
       
@@ -722,7 +725,7 @@ Crawl-delay: 1`;
   });
 
   // Contact form endpoint
-  app.post('/api/contact', async (req, res) => {
+  app.post('/api/contact', strictRateLimit, botDetection, validateFormSubmission, async (req, res) => {
     try {
       const { name, email, phone, subject, message, enquiryType } = req.body;
       
@@ -764,7 +767,7 @@ Crawl-delay: 1`;
   });
 
   // Chatbot endpoint
-  app.post('/api/chat', async (req, res) => {
+  app.post('/api/chat', moderateRateLimit, botDetection, async (req, res) => {
     try {
       const { messages } = req.body;
       
