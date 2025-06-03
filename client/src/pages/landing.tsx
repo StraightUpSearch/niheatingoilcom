@@ -15,6 +15,7 @@ import Footer from "@/components/footer";
 import SocialProofNotifications from "@/components/social-proof-notifications";
 import TrustBadges from "@/components/trust-badges";
 import BlogCarousel from "@/components/blog-carousel";
+import { MediaNewsTile } from "@/components/media-news-tile";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calculator, TrendingDown, Bell, MapPin } from "lucide-react";
@@ -87,6 +88,9 @@ export default function Landing() {
           </div>
         </section>
       )}
+
+      {/* Media News Tile - Prominent BBC Coverage */}
+      <MediaNewsTile />
 
       {/* SEO Content Section */}
       <section className="py-16 bg-white">
