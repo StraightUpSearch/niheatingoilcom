@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Phone, Mail, Clock, CheckCircle, UserPlus, User } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import BotProtection from "@/components/bot-protection";
 
 interface LeadCaptureModalProps {
@@ -22,6 +22,7 @@ interface LeadCaptureModalProps {
 }
 
 export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCaptureModalProps) {
+  const [, setLocation] = useLocation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -32,8 +33,7 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
     notes: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [showAccountOptions, setShowAccountOptions] = useState(false);
+
   const [isBotProtectionValid, setIsBotProtectionValid] = useState(false);
   const [submissionStartTime] = useState(Date.now());
 
@@ -74,13 +74,23 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
         throw new Error('Failed to submit lead');
       }
       
-      setIsSubmitted(true);
-      setIsSubmitting(false);
+      // Store quote data in localStorage for the thank you page
+      const quoteData = {
+        supplierName: supplier?.name || "Heating Oil Supplier",
+        price: supplier?.price || "Contact for quote",
+        volume: parseInt(formData.volume),
+        location: supplier?.location || "Northern Ireland",
+        postcode: formData.postcode,
+        customerName: formData.name,
+        customerEmail: formData.email,
+        customerPhone: formData.phone
+      };
       
-      // Show account options after 2 seconds
-      setTimeout(() => {
-        setShowAccountOptions(true);
-      }, 2000);
+      localStorage.setItem('lastQuote', JSON.stringify(quoteData));
+      
+      // Close modal and redirect to thank you page
+      onClose();
+      setLocation('/thank-you');
     } catch (error) {
       console.error('Error submitting lead:', error);
       setIsSubmitting(false);
@@ -88,68 +98,7 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
     }
   };
 
-  const handleContinueAsGuest = () => {
-    onClose();
-    setIsSubmitted(false);
-    setShowAccountOptions(false);
-    setFormData({
-      name: "", email: "", phone: "", postcode: "", 
-      volume: "", urgency: "", notes: ""
-    });
-  };
 
-  if (isSubmitted) {
-    return (
-      <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="sm:max-w-md">
-          <div className="text-center py-6">
-            <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Request Submitted!</h3>
-            <p className="text-gray-600 mb-4">
-              Our heating oil specialist will contact you within 2 hours with personalized quotes and pricing.
-            </p>
-            
-            {!showAccountOptions ? (
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
-                <p className="text-sm text-blue-800">
-                  We're working to secure the best deals for your order. 
-                  You'll receive quotes via email and SMS.
-                </p>
-              </div>
-            ) : (
-              <div className="space-y-4">
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Want to save even more?</h4>
-                  <p className="text-sm text-gray-700 mb-3">
-                    Create a free account to get personalized price alerts, save favorite suppliers, and never miss the best deals in Northern Ireland.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-2">
-                    <Link href="/auth" className="flex-1">
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                        <UserPlus className="h-4 w-4 mr-2" />
-                        Create Free Account
-                      </Button>
-                    </Link>
-                    <Button 
-                      variant="outline" 
-                      onClick={handleContinueAsGuest}
-                      className="flex-1"
-                    >
-                      <User className="h-4 w-4 mr-2" />
-                      Continue as Guest
-                    </Button>
-                  </div>
-                </div>
-                <div className="text-xs text-gray-500">
-                  Account benefits: Price alerts • Favorite suppliers • Order history • Exclusive deals
-                </div>
-              </div>
-            )}
-          </div>
-        </DialogContent>
-      </Dialog>
-    );
-  }
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
