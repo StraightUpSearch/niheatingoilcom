@@ -15,9 +15,6 @@ export default function Navigation() {
     { name: "Compare Prices", href: "/compare" },
     ...(isAuthenticated ? [{ name: "Price Alerts", href: "/alerts" }] : []),
     { name: "Suppliers", href: "/suppliers" },
-    { name: "Giving Back", href: "/giving-back" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
   ];
 
   const NavItems = () => (
