@@ -92,18 +92,18 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
             <PriceSearchForm onSearch={onSearch} />
           </div>
           
-          <div className={`flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-blue-100 px-4 sm:px-0 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="flex items-center space-x-2 hover:text-white transition-colors group">
-              <Check className="h-5 w-5 group-hover:scale-110 transition-transform" />
-              <span>Official Consumer Council Data</span>
+          <div className={`flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 px-4 sm:px-0 transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <div className="flex items-center space-x-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300 group shadow-lg hover:shadow-xl">
+              <Check className="h-5 w-5 text-green-300 group-hover:scale-110 transition-transform" />
+              <span className="text-white font-medium">Official Consumer Council Data</span>
             </div>
-            <div className="flex items-center space-x-2 hover:text-white transition-colors group">
-              <Clock className="h-5 w-5 group-hover:scale-110 transition-transform" />
-              <span>Updated Every Hour</span>
+            <div className="flex items-center space-x-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300 group shadow-lg hover:shadow-xl">
+              <Clock className="h-5 w-5 text-blue-300 group-hover:scale-110 transition-transform" />
+              <span className="text-white font-medium">Updated Every Hour</span>
             </div>
-            <div className="flex items-center space-x-2 hover:text-white transition-colors group">
-              <Shield className="h-5 w-5 group-hover:scale-110 transition-transform" />
-              <span>100% Free to Use</span>
+            <div className="flex items-center space-x-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300 group shadow-lg hover:shadow-xl">
+              <Shield className="h-5 w-5 text-yellow-300 group-hover:scale-110 transition-transform" />
+              <span className="text-white font-medium">100% Free to Use</span>
             </div>
           </div>
         </div>
