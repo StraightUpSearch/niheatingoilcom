@@ -10,6 +10,7 @@ import { initializeWeeklyUrlDetection, consumerCouncilUrlDetector } from "./cons
 import { initializeLiveSupplierScraping } from "./liveSupplierScraper";
 import { initializeSupplierData } from "./mockSupplierData";
 import { sendAdminAlert } from "./emailService";
+import { strictRateLimit, moderateRateLimit, lenientRateLimit, botDetection, validateFormSubmission } from "./rateLimit";
 
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -354,7 +355,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Lead capture endpoint (no authentication required)
-  app.post('/api/leads', async (req, res) => {
+  app.post('/api/leads', strictRateLimit, botDetection, validateFormSubmission, async (req, res) => {
     try {
       const validatedData = insertLeadSchema.parse(req.body);
       const lead = await storage.createLead(validatedData);

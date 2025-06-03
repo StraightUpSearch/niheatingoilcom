@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Phone, Mail, Clock, CheckCircle, UserPlus, User } from "lucide-react";
 import { Link } from "wouter";
+import BotProtection from "@/components/bot-protection";
 
 interface LeadCaptureModalProps {
   isOpen: boolean;
@@ -33,12 +34,20 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showAccountOptions, setShowAccountOptions] = useState(false);
+  const [isBotProtectionValid, setIsBotProtectionValid] = useState(false);
+  const [submissionStartTime] = useState(Date.now());
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
+      // Check bot protection before submission
+      if (!isBotProtectionValid) {
+        setIsSubmitting(false);
+        return;
+      }
+
       const leadData = {
         name: formData.name,
         email: formData.email,
@@ -49,7 +58,8 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
         notes: formData.notes || null,
         supplierName: supplier?.name || null,
         supplierPrice: supplier?.price || null,
-        status: "new"
+        status: "new",
+        submissionTime: submissionStartTime
       };
 
       const response = await fetch('/api/leads', {
@@ -264,6 +274,8 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
             />
           </div>
 
+          <BotProtection onValidation={setIsBotProtectionValid} />
+
           <div className="bg-green-50 border border-green-200 rounded-lg p-3">
             <div className="flex items-start">
               <CheckCircle className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -292,7 +304,7 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
             <Button
               type="submit"
               className="w-full sm:flex-1 bg-green-600 hover:bg-green-700 text-sm sm:text-base py-3 sm:py-2"
-              disabled={isSubmitting || !formData.name || !formData.email || !formData.phone}
+              disabled={isSubmitting || !formData.name || !formData.email || !formData.phone || !isBotProtectionValid}
             >
               {isSubmitting ? (
                 <div className="flex items-center justify-center">
