@@ -120,7 +120,7 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
                     <div className="text-xs sm:text-sm text-green-600">{supplier.location}</div>
                   </div>
                   <div className="text-right">
-                    <div className="font-bold text-green-800 text-sm sm:text-base">£{supplier.price}</div>
+                    <div className="font-bold text-green-800 text-sm sm:text-base">{supplier.price}</div>
                     <div className="text-xs text-green-600">{supplier.volume}L</div>
                   </div>
                 </div>
