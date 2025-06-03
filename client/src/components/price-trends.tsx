@@ -14,6 +14,33 @@ export default function PriceTrends() {
     },
   });
 
+  const { data: stats500 } = useQuery({
+    queryKey: ["/api/prices/stats/500"],
+    queryFn: async () => {
+      const response = await fetch("/api/prices/stats/500");
+      if (!response.ok) throw new Error("Failed to fetch stats");
+      return response.json();
+    },
+  });
+
+  const { data: stats900 } = useQuery({
+    queryKey: ["/api/prices/stats/900"],
+    queryFn: async () => {
+      const response = await fetch("/api/prices/stats/900");
+      if (!response.ok) throw new Error("Failed to fetch stats");
+      return response.json();
+    },
+  });
+
+  const { data: prices } = useQuery({
+    queryKey: ["/api/prices"],
+    queryFn: async () => {
+      const response = await fetch("/api/prices");
+      if (!response.ok) throw new Error("Failed to fetch prices");
+      return response.json();
+    },
+  });
+
   const { data: history } = useQuery({
     queryKey: ["/api/prices/history", { days: 30, volume: 300 }],
     queryFn: async () => {
@@ -27,6 +54,15 @@ export default function PriceTrends() {
     if (price === null || price === undefined) return '£0.00';
     const numPrice = typeof price === 'string' ? parseFloat(price) : price;
     return `£${numPrice.toFixed(2)}`;
+  };
+
+  const getUniqueSupplierCount = (priceData: any[] | undefined) => {
+    if (!priceData) return 0;
+    const supplierNames = priceData.map((p: any) => p.supplier.name);
+    const uniqueNames = supplierNames.filter((name: string, index: number) => 
+      supplierNames.indexOf(name) === index
+    );
+    return uniqueNames.length;
   };
 
   const calculateTrend = () => {
@@ -74,16 +110,55 @@ export default function PriceTrends() {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="h-64 bg-gray-50 rounded-lg border border-gray-200 flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <Activity className="h-12 w-12 mx-auto mb-4 text-gray-400" />
-                    <p className="font-medium">Interactive Price Chart</p>
-                    <p className="text-sm">Showing 300L price trends for Northern Ireland</p>
-                    {history && (
-                      <p className="text-xs mt-2">
-                        {history.length} data points over 30 days
-                      </p>
-                    )}
+                <div className="h-64 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border border-blue-200 p-6">
+                  <div className="grid grid-cols-3 gap-4 h-full">
+                    {/* 300L Column */}
+                    <div className="bg-white rounded-lg p-4 shadow-sm">
+                      <div className="text-center">
+                        <div className="text-xs text-gray-500 mb-2">300 Litres</div>
+                        <div className="text-2xl font-bold text-blue-600 mb-1">
+                          {statsLoading ? '...' : formatPrice(stats?.weeklyAverage || 0)}
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          {statsLoading ? '...' : `${((stats?.weeklyAverage || 0) / 300).toFixed(1)}p/L`}
+                        </div>
+                        <div className="mt-3 h-16 bg-blue-100 rounded flex items-end justify-center">
+                          <div className="w-4 bg-blue-500 rounded-t" style={{height: '60%'}}></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 500L Column */}
+                    <div className="bg-white rounded-lg p-4 shadow-sm">
+                      <div className="text-center">
+                        <div className="text-xs text-gray-500 mb-2">500 Litres</div>
+                        <div className="text-2xl font-bold text-green-600 mb-1">
+                          {formatPrice(stats500?.weeklyAverage || 0)}
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          {`${((stats500?.weeklyAverage || 0) / 500).toFixed(1)}p/L`}
+                        </div>
+                        <div className="mt-3 h-16 bg-green-100 rounded flex items-end justify-center">
+                          <div className="w-4 bg-green-500 rounded-t" style={{height: '80%'}}></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 900L Column */}
+                    <div className="bg-white rounded-lg p-4 shadow-sm">
+                      <div className="text-center">
+                        <div className="text-xs text-gray-500 mb-2">900 Litres</div>
+                        <div className="text-2xl font-bold text-purple-600 mb-1">
+                          {formatPrice(stats900?.weeklyAverage || 0)}
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          {`${((stats900?.weeklyAverage || 0) / 900).toFixed(1)}p/L`}
+                        </div>
+                        <div className="mt-3 h-16 bg-purple-100 rounded flex items-end justify-center">
+                          <div className="w-4 bg-purple-500 rounded-t" style={{height: '100%'}}></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -149,14 +224,14 @@ export default function PriceTrends() {
                 ) : (
                   <>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Lowest Price:</span>
-                      <span className="font-semibold text-gray-900">
+                      <span className="text-gray-600">Lowest Price (300L):</span>
+                      <span className="font-semibold text-green-600">
                         {formatPrice(stats?.lowestPrice || 0)}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Highest Price:</span>
-                      <span className="font-semibold text-gray-900">
+                      <span className="text-gray-600">Highest Price (300L):</span>
+                      <span className="font-semibold text-red-600">
                         {formatPrice(stats?.highestPrice || 0)}
                       </span>
                     </div>
@@ -167,8 +242,16 @@ export default function PriceTrends() {
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Suppliers:</span>
-                      <span className="font-semibold text-secondary">50+ active</span>
+                      <span className="text-gray-600">Active Suppliers:</span>
+                      <span className="font-semibold text-blue-600">
+                        {prices ? `${new Set(prices.map((p: any) => p.supplier.name)).size}` : '0'}
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Price Updates:</span>
+                      <span className="font-semibold text-gray-900">
+                        {prices ? `${prices.length} today` : '0 today'}
+                      </span>
                     </div>
                   </>
                 )}
@@ -183,14 +266,22 @@ export default function PriceTrends() {
                   <h4 className="font-semibold text-gray-900">Market Insight</h4>
                 </div>
                 <p className="text-sm text-gray-600 mb-3">
-                  Based on current market trends and seasonal patterns:
+                  Based on current Northern Ireland market data and supplier analysis:
                 </p>
-                <p className="text-sm font-semibold text-gray-900">
-                  {trend?.isPositive 
-                    ? "Prices showing upward trend - consider ordering soon"
-                    : "Prices dropping - good time to secure your next delivery"
-                  }
-                </p>
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold text-gray-900">
+                    {trend?.isPositive 
+                      ? "Prices showing upward trend - consider ordering soon"
+                      : "Stable pricing with competitive suppliers available"
+                    }
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    Best value: 900L orders (lowest per-litre cost)
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    {prices ? `${new Set(prices.map((p: any) => p.supplier.name)).size} suppliers actively competing` : 'Multiple suppliers available'}
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
