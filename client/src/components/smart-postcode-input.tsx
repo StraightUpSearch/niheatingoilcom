@@ -311,25 +311,7 @@ export default function SmartPostcodeInput({
           </Card>
         )}
 
-        {/* Common areas hint */}
-        {!showSuggestions && !value && (
-          <div className="mt-2 text-xs text-gray-500">
-            <div className="grid grid-cols-2 gap-2">
-              <div>
-                <strong>Belfast:</strong> BT1-BT17
-              </div>
-              <div>
-                <strong>Bangor:</strong> BT19-BT20
-              </div>
-              <div>
-                <strong>Lisburn:</strong> BT27-BT28
-              </div>
-              <div>
-                <strong>Derry:</strong> BT47-BT48
-              </div>
-            </div>
-          </div>
-        )}
+
       </div>
 
       {error && (
