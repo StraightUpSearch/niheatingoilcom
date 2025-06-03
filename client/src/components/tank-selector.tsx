@@ -101,11 +101,23 @@ export default function TankSelector({ selectedVolume, onVolumeChange, className
 
   const handleCustomChange = (value: string) => {
     const numericValue = value.replace(/[^0-9]/g, '');
-    if (numericValue && parseInt(numericValue) > 0 && parseInt(numericValue) <= 10000) {
+    
+    if (numericValue === '') {
+      setCustomValue('');
+      return;
+    }
+    
+    const parsed = parseInt(numericValue);
+    if (parsed >= 100 && parsed <= 10000) {
       setCustomValue(numericValue);
       onVolumeChange(numericValue);
-    } else if (numericValue === '') {
-      setCustomValue('');
+    } else if (parsed > 0 && parsed < 100) {
+      // Allow typing but don't update parent until valid
+      setCustomValue(numericValue);
+    } else if (parsed > 10000) {
+      // Cap at maximum
+      setCustomValue('10000');
+      onVolumeChange('10000');
     }
   };
 
@@ -140,16 +152,34 @@ export default function TankSelector({ selectedVolume, onVolumeChange, className
               value={customValue}
               onChange={(e) => handleCustomChange(e.target.value)}
               placeholder="Enter tank size (e.g. 750)"
-              className="pr-8"
+              className={cn(
+                "pr-8",
+                customValue && parseInt(customValue) < 100 ? "border-amber-400 focus:ring-amber-400" : "",
+                customValue && parseInt(customValue) > 10000 ? "border-red-400 focus:ring-red-400" : ""
+              )}
               maxLength={5}
             />
             <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm">
               L
             </span>
           </div>
-          <p className="text-xs text-gray-500">
-            Enter any amount between 100L and 10,000L for a personalized quote
-          </p>
+          {customValue && parseInt(customValue) < 100 && (
+            <p className="text-xs text-amber-600 flex items-center space-x-1">
+              <span>⚠️</span>
+              <span>Minimum order is 100L - most suppliers don't deliver smaller amounts</span>
+            </p>
+          )}
+          {customValue && parseInt(customValue) > 10000 && (
+            <p className="text-xs text-red-600 flex items-center space-x-1">
+              <span>❌</span>
+              <span>Maximum order is 10,000L - larger orders require special arrangements</span>
+            </p>
+          )}
+          {(!customValue || (parseInt(customValue) >= 100 && parseInt(customValue) <= 10000)) && (
+            <p className="text-xs text-gray-500">
+              Enter any amount between 100L and 10,000L for a personalized quote
+            </p>
+          )}
         </div>
       ) : (
         <div className="grid grid-cols-3 gap-4">
