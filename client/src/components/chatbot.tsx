@@ -150,7 +150,7 @@ export default function Chatbot() {
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <Fuel className="h-5 w-5" />
-                <CardTitle className="text-lg font-medium">NI Heating Oil Helper</CardTitle>
+                <CardTitle className="text-lg font-medium">Seamus from NIHO</CardTitle>
               </div>
               <Button
                 variant="ghost"

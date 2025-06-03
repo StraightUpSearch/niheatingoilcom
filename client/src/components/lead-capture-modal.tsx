@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Phone, Mail, Clock, CheckCircle, UserPlus, User } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import BotProtection from "@/components/bot-protection";
+import EnhancedAddressInput from "@/components/enhanced-address-input";
 
 interface LeadCaptureModalProps {
   isOpen: boolean;
@@ -27,7 +28,12 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
     name: "",
     email: "",
     phone: "",
+    fullAddress: "",
     postcode: "",
+    roadName: "",
+    houseNumber: "",
+    town: "",
+    county: "",
     volume: supplier?.volume?.toString() || "",
     urgency: "",
     notes: ""
@@ -35,6 +41,25 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isBotProtectionValid, setIsBotProtectionValid] = useState(false);
   const [submissionStartTime] = useState(Date.now());
+
+  const handleAddressSelect = (address: {
+    fullAddress: string;
+    postcode: string;
+    roadName: string;
+    houseNumber: string;
+    town: string;
+    county: string;
+  }) => {
+    setFormData(prev => ({
+      ...prev,
+      fullAddress: address.fullAddress,
+      postcode: address.postcode,
+      roadName: address.roadName,
+      houseNumber: address.houseNumber,
+      town: address.town,
+      county: address.county,
+    }));
+  };
 
   // Calculate dynamic price based on selected volume with 20% safety margin
   const calculateDynamicPrice = () => {
