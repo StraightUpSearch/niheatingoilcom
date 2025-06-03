@@ -288,6 +288,7 @@ export default function SmartPostcodeInput({
           <Input
             ref={inputRef}
             id={id}
+            name="address-search-postcode"
             value={value}
             onChange={handleInputChange}
             onFocus={handleFocus}
@@ -301,6 +302,12 @@ export default function SmartPostcodeInput({
             placeholder={placeholder}
             className="pl-10 pr-12 text-gray-900 bg-white"
             disabled={disabled}
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck="false"
+            data-lpignore="true"
+            data-form-type="other"
             style={{ 
               textTransform: 'uppercase',
               color: '#111827 !important',
