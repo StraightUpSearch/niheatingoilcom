@@ -145,16 +145,16 @@ export default function EnhancedAddressInput({
     setShowSuggestions(false);
     
     // Fetch available house numbers for this road
-    await fetchHouseNumbers(suggestion.thoroughfare, suggestion.postcode);
+    await fetchHouseNumbers(suggestion.thoroughfare || "", suggestion.postcode || "");
     
     // Call the callback with the selected address
     onAddressSelect?.({
       fullAddress: suggestion.formatted_address,
-      postcode: suggestion.postcode,
-      roadName: suggestion.thoroughfare,
-      houseNumber: suggestion.premise,
-      town: suggestion.locality,
-      county: suggestion.administrative_area,
+      postcode: suggestion.postcode || "",
+      roadName: suggestion.thoroughfare || "",
+      houseNumber: suggestion.premise || "",
+      town: suggestion.locality || "",
+      county: suggestion.administrative_area || "",
     });
   };
 
@@ -234,6 +234,7 @@ export default function EnhancedAddressInput({
               <Input
                 ref={inputRef}
                 id="address-input"
+                name="address-search"
                 value={searchValue}
                 onChange={handleInputChange}
                 onFocus={() => addressSuggestions.length > 0 && setShowSuggestions(true)}
@@ -243,6 +244,12 @@ export default function EnhancedAddressInput({
                 placeholder={placeholder}
                 className="pl-10 pr-12"
                 disabled={disabled}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck="false"
+                data-lpignore="true"
+                data-form-type="other"
                 style={{ fontSize: '16px' }} // Prevents zoom on iOS
               />
               
