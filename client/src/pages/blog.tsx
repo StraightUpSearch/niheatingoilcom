@@ -7,6 +7,15 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 // Placeholder for blog articles - you can add your HTML articles here
 const blogArticles = [
   {
+    id: "heating-oil-tank-sizes",
+    title: "Heating Oil Tank Sizes in Northern Ireland: Comparing 300L, 500L, and 900L Options",
+    description: "Choosing between a 300L, 500L, or 900L tank comes down to what your household actually needs, how much space you've got, and how often you want to deal with refills.",
+    category: "Equipment Guide",
+    date: "2025-06-03",
+    readTime: "12 min read",
+    slug: "heating-oil-tank-sizes"
+  },
+  {
     id: "heating-oil-tips-winter-2024",
     title: "Essential Heating Oil Tips for Winter 2024",
     description: "Stay warm and save money with these expert heating oil tips for the colder months.",

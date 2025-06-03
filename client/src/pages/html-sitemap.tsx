@@ -156,6 +156,12 @@ export default function HtmlSitemap() {
             </div>
             <ul className="space-y-3">
               <li>
+                <Link href="/blog/heating-oil-tank-sizes" className="text-blue-600 hover:text-blue-800 transition-colors">
+                  Heating Oil Tank Sizes in Northern Ireland
+                </Link>
+                <p className="text-sm text-gray-500">Comparing 300L, 500L, and 900L tank options</p>
+              </li>
+              <li>
                 <Link href="/blog/how-to-save-money-heating-oil" className="text-blue-600 hover:text-blue-800 transition-colors">
                   How to Save Money on Heating Oil
                 </Link>

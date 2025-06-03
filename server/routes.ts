@@ -566,6 +566,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://niheatingoil.com/blog/heating-oil-tank-sizes</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://niheatingoil.com/blog/how-to-save-money-heating-oil</loc>
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
