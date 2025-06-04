@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Checkbox } from "../components/ui/checkbox";
 import { Shield } from "lucide-react";
 
 interface BotProtectionProps {

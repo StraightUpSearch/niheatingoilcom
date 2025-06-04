@@ -1,16 +1,16 @@
 import { useParams } from "wouter";
 import { useQuery } from "@tanstack/react-query";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { Button } from "../components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
+import { Separator } from "../components/ui/separator";
 import { Star, MapPin, Phone, Globe, Clock, TrendingUp, Award, Shield } from "lucide-react";
 import { Supplier, OilPrice } from "@shared/schema";
-import { usePageTitle } from "@/hooks/usePageTitle";
+import { usePageTitle } from "../hooks/usePageTitle";
 import { useState } from "react";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
-// import { ClaimListingDialog } from "@/components/claim-listing-dialog";
+import Navigation from "../components/navigation";
+import Footer from "../components/footer";
+// import { ClaimListingDialog } from "../components/claim-listing-dialog";
 
 interface SupplierWithPrices extends Supplier {
   prices: OilPrice[];

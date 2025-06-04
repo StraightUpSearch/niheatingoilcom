@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Truck } from "lucide-react";
-import HeatingOilLogo from "@/components/heating-oil-logo";
+import HeatingOilLogo from "../components/heating-oil-logo";
 import simonLogo from "@assets/simon-community-ni-2024.png";
 
 export default function Footer() {

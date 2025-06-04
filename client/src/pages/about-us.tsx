@@ -1,10 +1,10 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
 import { Users, Heart, MapPin, TrendingUp, Shield, Zap } from "lucide-react";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
-import SEOHead from "@/components/seo-head";
+import Navigation from "../components/navigation";
+import Footer from "../components/footer";
+import SEOHead from "../components/seo-head";
 
 export default function AboutUs() {
   return (

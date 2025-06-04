@@ -1,6 +1,6 @@
-import PriceSearchForm from "@/components/price-search-form";
+import PriceSearchForm from "../components/price-search-form";
 import { Check, Clock, Shield, Truck, TrendingDown, Users, MapPin } from "lucide-react";
-import HeatingOilLogo from "@/components/heating-oil-logo";
+import HeatingOilLogo from "../components/heating-oil-logo";
 import heroImage from "@assets/v2-vnxed-nzz6i.jpg";
 import { useState, useEffect } from "react";
 
