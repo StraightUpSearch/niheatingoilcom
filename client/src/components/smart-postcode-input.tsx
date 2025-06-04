@@ -115,7 +115,7 @@ export default function SmartPostcodeInput({
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
 
-  // Get user's approximate location for geo hints
+  // Get user's specific location and auto-fill postcode
   const getGeolocationHint = async () => {
     if (!navigator.geolocation) return;
     
@@ -124,33 +124,67 @@ export default function SmartPostcodeInput({
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         try {
-          // Use a simple reverse geocoding approach
-          // In a real app, you'd use a proper geocoding service
           const { latitude, longitude } = position.coords;
           
-          // Rough mapping of coordinates to NI regions
+          // Detailed coordinate mapping to specific NI postcodes
           if (latitude >= 54.4 && latitude <= 55.3 && longitude >= -8.2 && longitude <= -5.4) {
-            // User is likely in Northern Ireland
-            if (latitude > 54.8) {
-              setGeoLocation("North Coast area (BT40-BT57)");
-            } else if (longitude < -7.0) {
-              setGeoLocation("West region (BT70-BT94)");
-            } else if (latitude > 54.6) {
-              setGeoLocation("Belfast area (BT1-BT17)");
-            } else {
-              setGeoLocation("South region (BT24-BT35)");
+            let suggestedPostcode = "";
+            
+            // Belfast area (detailed mapping)
+            if (latitude >= 54.55 && latitude <= 54.65 && longitude >= -6.0 && longitude <= -5.85) {
+              if (latitude > 54.605 && longitude > -5.95) suggestedPostcode = "BT4";
+              else if (latitude > 54.595 && longitude < -5.93) suggestedPostcode = "BT9";
+              else if (latitude > 54.58 && longitude > -5.92) suggestedPostcode = "BT7";
+              else if (longitude < -5.93) suggestedPostcode = "BT12";
+              else suggestedPostcode = "BT1";
+            }
+            // North Coast
+            else if (latitude > 55.15) {
+              if (longitude < -6.5) suggestedPostcode = "BT53";
+              else if (longitude < -6.2) suggestedPostcode = "BT52";
+              else suggestedPostcode = "BT40";
+            }
+            // West NI
+            else if (longitude < -7.0) {
+              if (latitude > 54.7) suggestedPostcode = "BT78";
+              else if (latitude > 54.5) suggestedPostcode = "BT74";
+              else suggestedPostcode = "BT70";
+            }
+            // East Coast
+            else if (longitude > -5.6) {
+              if (latitude > 54.7) suggestedPostcode = "BT19";
+              else if (latitude > 54.45) suggestedPostcode = "BT22";
+              else suggestedPostcode = "BT30";
+            }
+            // Central/South areas
+            else if (latitude < 54.5) {
+              if (longitude < -6.2) suggestedPostcode = "BT34";
+              else suggestedPostcode = "BT32";
+            }
+            // Default fallback for other NI areas
+            else {
+              suggestedPostcode = "BT41";
+            }
+            
+            if (suggestedPostcode) {
+              setGeoLocation(`Detected: ${suggestedPostcode} area`);
+              // Auto-fill if input is empty
+              if (!value.trim()) {
+                onChange(suggestedPostcode + " ");
+              }
             }
           }
         } catch (error) {
-          console.log("Could not determine location hints");
+          console.log("Could not determine location");
         } finally {
           setGeoLoading(false);
         }
       },
-      () => {
+      (error) => {
         setGeoLoading(false);
+        console.log("Location access denied or unavailable");
       },
-      { timeout: 5000, enableHighAccuracy: false }
+      { timeout: 10000, enableHighAccuracy: true, maximumAge: 300000 }
     );
   };
 
@@ -265,21 +299,42 @@ export default function SmartPostcodeInput({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Initialize geolocation hint on mount
-  useEffect(() => {
-    getGeolocationHint();
-  }, []);
+  // Don't auto-request location on mount - let users choose
 
   return (
     <div className="space-y-2 relative">
       <div className="flex items-center justify-between">
         <Label htmlFor={id}>{label}</Label>
-        {geoLocation && (
-          <span className="text-xs text-blue-600 flex items-center gap-1">
-            <Navigation className="w-3 h-3" />
-            {geoLocation}
-          </span>
-        )}
+        <div className="flex items-center gap-2">
+          {geoLocation && (
+            <span className="text-xs text-green-600 flex items-center gap-1">
+              <Navigation className="w-3 h-3" />
+              {geoLocation}
+            </span>
+          )}
+          {!geoLocation && (
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={getGeolocationHint}
+              disabled={geoLoading}
+              className="text-xs h-6 px-2"
+            >
+              {geoLoading ? (
+                <>
+                  <Loader2 className="w-3 h-3 mr-1 animate-spin" />
+                  Finding...
+                </>
+              ) : (
+                <>
+                  <Navigation className="w-3 h-3 mr-1" />
+                  Use My Location
+                </>
+              )}
+            </Button>
+          )}
+        </div>
       </div>
       
       <div className="relative">
