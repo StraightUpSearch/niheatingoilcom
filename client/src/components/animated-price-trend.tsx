@@ -136,11 +136,12 @@ export default function AnimatedPriceTrend({ volume = 300, className = "" }: Ani
         <CardTitle className="flex items-center justify-between text-blue-900 dark:text-blue-100">
           <div className="flex items-center gap-3">
             <div className="flex items-center justify-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-8 h-8 text-blue-600" fill="currentColor">
-                  <rect x="4" y="8" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  <circle cx="12" cy="14" r="2" fill="currentColor"/>
-                  <text x="12" y="6" textAnchor="middle" fontSize="6" fill="currentColor">{volume}L</text>
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center p-1">
+                <svg viewBox="0 0 60 50" className="w-10 h-8">
+                  <rect x="10" y="15" width="40" height="25" rx="4" fill="#e2e8f0" stroke="#2563eb" strokeWidth="2"/>
+                  <rect x="12" y={15 + (25 - 25 * (volume === '300' ? 0.4 : volume === '500' ? 0.6 : 0.8))} width="36" height={25 * (volume === '300' ? 0.4 : volume === '500' ? 0.6 : 0.8)} rx="2" fill="#2563eb" opacity="0.7"/>
+                  <rect x="22" y="8" width="16" height="10" rx="2" fill="#2563eb"/>
+                  <text x="30" y="26" textAnchor="middle" fontSize="8" fill="white" fontWeight="bold">{volume}L</text>
                 </svg>
               </div>
             </div>

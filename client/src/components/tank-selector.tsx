@@ -43,11 +43,30 @@ const tankOptions: TankOption[] = [
 
 const TankGraphic = ({ volume, isSelected, size }: { volume: string; isSelected: boolean; size: 'small' | 'medium' | 'large' }) => {
   const getTankSvg = () => {
+    const sizeScale = size === 'small' ? 0.8 : size === 'medium' ? 1 : 1.2;
+    const tankColor = isSelected ? '#2563eb' : '#64748b';
+    const fillLevel = volume === '300' ? 0.4 : volume === '500' ? 0.6 : 0.8;
+    
     return (
-      <svg viewBox="0 0 24 24" className="w-full h-full text-blue-600" fill="currentColor">
-        <rect x="4" y="8" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="2" fill="none"/>
-        <circle cx="12" cy="14" r="2" fill="currentColor"/>
-        <text x="12" y="6" textAnchor="middle" fontSize="6" fill="currentColor">{volume}L</text>
+      <svg viewBox="0 0 120 100" className="w-full h-full" style={{ transform: `scale(${sizeScale})` }}>
+        {/* Tank body */}
+        <rect x="20" y="25" width="80" height="50" rx="8" fill="#e2e8f0" stroke={tankColor} strokeWidth="3"/>
+        
+        {/* Oil level indicator */}
+        <rect x="25" y={25 + (50 - 50 * fillLevel)} width="70" height={50 * fillLevel} rx="5" fill={tankColor} opacity="0.7"/>
+        
+        {/* Tank cap */}
+        <rect x="45" y="15" width="30" height="15" rx="4" fill={tankColor}/>
+        
+        {/* Volume label */}
+        <text x="60" y="45" textAnchor="middle" fontSize="14" fill="white" fontWeight="bold">{volume}L</text>
+        
+        {/* Capacity indicator lines */}
+        <line x1="105" y1="30" x2="110" y2="30" stroke="#94a3b8" strokeWidth="2"/>
+        <line x1="105" y1="40" x2="110" y2="40" stroke="#94a3b8" strokeWidth="2"/>
+        <line x1="105" y1="50" x2="110" y2="50" stroke="#94a3b8" strokeWidth="2"/>
+        <line x1="105" y1="60" x2="110" y2="60" stroke="#94a3b8" strokeWidth="2"/>
+        <line x1="105" y1="70" x2="110" y2="70" stroke="#94a3b8" strokeWidth="2"/>
       </svg>
     );
   };
