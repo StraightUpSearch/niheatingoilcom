@@ -1,0 +1,106 @@
+Below is a suggested Progress.md file with a detailed task list and checkboxes to track what’s done and what still needs creating. I’ve included anything I noticed might be missing.
+
+markdown
+Copy
+Edit
+# Progress
+
+This file tracks the key tasks and features for the NI Heating Oil Price Comparison Tool. Completed items are marked with ✔️; pending ones have an empty checkbox.
+
+## 1. Data Collection & Integration
+- [✔️] Identify local heating oil suppliers (list compiled)
+- [✔️] Confirm contact points or APIs for price data
+- [✔️] Fetch live pricing from Supplier A
+- [✔️] Fetch live pricing from Supplier B
+- [ ] Fetch live pricing from Supplier C
+- [ ] Normalise price formats (e.g. pence per litre)
+- [ ] Implement fallback logic if a supplier’s API is down
+
+## 2. Backend Development
+- [✔️] Set up repository and basic folder structure
+- [✔️] Initialise Node.js backend (Express)
+- [ ] Create database schema for suppliers, prices, user data
+- [ ] Develop API endpoint: GET /prices/latest
+- [ ] Develop API endpoint: GET /suppliers
+- [ ] Implement scheduled job to refresh prices every hour
+- [ ] Add caching layer (Redis or in-memory) to reduce API calls
+- [ ] Add error handling and logging for data fetch failures
+
+## 3. Frontend Development
+- [✔️] Initialise React frontend
+- [ ] Design homepage layout (header, price comparison table)
+- [ ] Implement price comparison table component
+- [ ] Create supplier filter (e.g. checkboxes to show/hide suppliers)
+- [ ] Add search bar to filter suppliers by name
+- [ ] Show timestamp of last data update
+- [ ] Ensure responsive layout for mobile screens
+- [ ] Add loading spinners while fetching data
+- [ ] Handle “no data available” state gracefully
+
+## 4. User Authentication & Profiles
+- [ ] Design user flow: sign up, log in, password reset
+- [ ] Implement registration endpoint: POST /auth/register
+- [ ] Implement login endpoint: POST /auth/login (JWT-based)
+- [ ] Protect “favourites” endpoint for authenticated users
+- [ ] Frontend: Create sign-in and sign-up forms
+- [ ] Allow users to save preferred suppliers or price alerts
+- [ ] Add email verification on registration
+
+## 5. Price Alert System
+- [ ] Design data model for price alert rules (e.g. max price threshold)
+- [ ] Implement API endpoint: POST /alerts/create
+- [ ] Implement API endpoint: GET /alerts/user/:id
+- [ ] Create background worker to check alerts every 30 minutes
+- [ ] Send email notification when an alert condition is met
+- [ ] Frontend: Build “Create Alert” form and list user’s alerts
+
+## 6. Admin & Supplier Dashboard
+- [ ] Create admin login and role-based access control
+- [ ] Admin: View supplier list, add/edit/remove suppliers
+- [ ] Admin: Manual override for a supplier’s price if API is down
+- [ ] Supplier: Secure login for supplier to update own prices manually
+- [ ] Frontend: Build admin dashboard UI (supplier management page)
+- [ ] Frontend: Build supplier portal (update price form)
+
+## 7. Quality Assurance & Testing
+- [✔️] Write unit tests for data-fetch modules
+- [ ] Write integration tests for backend endpoints
+- [ ] Set up end-to-end tests (e.g. Cypress) for critical user flows
+- [ ] Peer review of codebase for security vulnerabilities
+- [ ] Cross-browser testing (Chrome, Firefox, Safari, Edge)
+- [ ] Accessibility audit (WCAG compliance)
+
+## 8. Deployment & Hosting
+- [✔️] Choose hosting platform (e.g. Heroku or DigitalOcean)
+- [ ] Configure CI/CD pipeline (GitHub Actions) to run tests and deploy
+- [ ] Set up environment variables for API keys, database URL
+- [ ] Provision production database (PostgreSQL)
+- [ ] Configure domain and SSL certificate
+- [ ] Create monitoring alerts (CPU usage, error rates)
+
+## 9. Documentation
+- [✔️] Create ReadMe.md with project overview and setup instructions
+- [ ] Document backend API (Swagger/OpenAPI spec)
+- [ ] Document frontend component library (if any)
+- [ ] Write developer guide: how to run, test and deploy locally
+- [ ] Prepare user guide for non-technical users (how to compare prices, set alerts)
+
+## 10. Additional Enhancements (Missing Items)
+- [ ] Implement unit conversion (litres ↔ gallons) for users who prefer different units
+- [ ] Add dark mode toggle in frontend
+- [ ] Integrate map view to show supplier locations
+- [ ] Add “average price trend” graph on homepage
+- [ ] Implement rate-limiting to prevent abuse of APIs
+- [ ] Add GDPR cookie consent banner and privacy policy link
+- [ ] Gather user feedback via a simple form (to prioritise next features)
+Notes:
+
+I’ve grouped tasks by area (data, backend, frontend, etc.).
+
+All implemented items carry a ✔️. Pending or newly identified tasks remain unchecked.
+
+This list should be reviewed regularly. Whenever a developer or AI agent completes a task, simply replace [ ] with [✔️].
+
+If you think of any other missing piece—such as security audits, performance profiling or localisation—add it under “Additional Enhancements.”
+
+Feel free to adjust or expand any section as needed.
