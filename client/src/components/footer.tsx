@@ -115,7 +115,9 @@ export default function Footer() {
                   <p className="text-xs">14a Victoria Street</p>
                   <p className="text-xs">Ballymoney, BT53 6DW</p>
                   <p className="text-xs">Northern Ireland</p>
-                  <p className="text-xs text-blue-400 mt-1">028 96005259</p>
+                  <a href="tel:02896005259" className="text-sm text-blue-400 mt-1 font-medium hover:text-blue-300 transition-colors">
+                    📞 028 96005259
+                  </a>
                 </div>
               </div>
             </div>
