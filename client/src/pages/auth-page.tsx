@@ -17,7 +17,13 @@ export default function AuthPage() {
   const [, setLocation] = useLocation();
   
   const [loginData, setLoginData] = useState({ username: "", password: "" });
-  const [registerData, setRegisterData] = useState({ username: "", email: "", password: "" });
+  const [registerData, setRegisterData] = useState({ 
+    username: "", 
+    email: "", 
+    password: "", 
+    fullName: "", 
+    phone: "" 
+  });
 
   // Redirect if already logged in
   if (user) {

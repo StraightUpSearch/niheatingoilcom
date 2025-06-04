@@ -1,0 +1,163 @@
+Uncaught (in promise) Error: No tab with id: 660568279.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568273.Understand this error
+60Unchecked runtime.lastError: The page keeping the extension port is moved into back/forward cache, so the message channel is closed.Understand this error
+background-redux-new.js:2 Error: Invalid frameId for foreground frameId: 0
+    at $ (background-redux-new.js:2:3643411)
+    at m (background-redux-new.js:2:3650374)
+    at background-redux-new.js:2:3651373
+$ @ background-redux-new.js:2Understand this error
+98Unchecked runtime.lastError: Cannot create item with duplicate id LastPass <URL>Understand this error
+18Unchecked runtime.lastError: Cannot find menu item with id LastPass <URL>Understand this error
+30Unchecked runtime.lastError: Cannot find menu item with id Add Item <URL>Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568333.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568340.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568327.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568337.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568352.Understand this error
+3background-redux-new.js:2 Error: Invalid frameId for foreground frameId: 0
+    at $ (background-redux-new.js:2:3643411)
+    at m (background-redux-new.js:2:3650374)
+    at background-redux-new.js:2:3651373
+$ @ background-redux-new.js:2
+m @ background-redux-new.js:2
+(anonymous) @ background-redux-new.js:2Understand this error
+93Unchecked runtime.lastError: Cannot create item with duplicate id separator <URL>Understand this error
+93Unchecked runtime.lastError: Cannot create item with duplicate id Add Item <URL>Understand this error
+93Unchecked runtime.lastError: Cannot create item with duplicate id Add Password <URL>Understand this error
+93Unchecked runtime.lastError: Cannot create item with duplicate id Add Address <URL>Understand this error
+93Unchecked runtime.lastError: Cannot create item with duplicate id Add Payment Card <URL>Understand this error
+93Unchecked runtime.lastError: Cannot create item with duplicate id Add other item <URL>Understand this error
+93Unchecked runtime.lastError: Cannot create item with duplicate id Save all entered data <URL>Understand this error
+94Unchecked runtime.lastError: Cannot create item with duplicate id Generate Secure Password <URL>Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568369.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568360.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568386.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568402.Understand this error
+5background-redux-new.js:2 Error: Invalid frameId for foreground frameId: 0
+    at $ (background-redux-new.js:2:3643411)
+    at m (background-redux-new.js:2:3650374)
+    at background-redux-new.js:2:3651373
+$ @ background-redux-new.js:2Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568432.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568472.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568482.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568554.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568558.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568562.Understand this error
+background-redux-new.js:2 Error: Invalid frameId for foreground frameId: 0
+    at $ (background-redux-new.js:2:3643411)
+    at m (background-redux-new.js:2:3650374)
+    at background-redux-new.js:2:3651373
+$ @ background-redux-new.js:2Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568548.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568567.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568580.Understand this error
+2background-redux-new.js:2 Error: Invalid frameId for foreground frameId: 0
+    at $ (background-redux-new.js:2:3643411)
+    at m (background-redux-new.js:2:3650374)
+    at background-redux-new.js:2:3651373
+$ @ background-redux-new.js:2Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568594.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568609.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568606.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568629.Understand this error
+background-redux-new.js:2 Error: Invalid frameId for foreground frameId: 0
+    at $ (background-redux-new.js:2:3643411)
+    at m (background-redux-new.js:2:3650374)
+    at background-redux-new.js:2:3651373
+$ @ background-redux-new.js:2Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568416.Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Fill - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Edit - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy first name - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy last name - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy address line 1 - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy city/town - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy ZIP/postal code - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy email address - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy phone number - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568763.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568682.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568774.Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Fill - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Edit - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy first name - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy last name - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy address line 1 - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy city/town - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy ZIP/postal code - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy email address - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy phone number - 120142485063742933 https://mail.google.com/mail/u/0/Understand this error
+9Unchecked runtime.lastError: Cannot find menu item with id 120142485063742933 <URL>Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568574.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568905.Understand this error
+background-redux-new.js:2 Error: Invalid frameId for foreground frameId: 0
+    at $ (background-redux-new.js:2:3643411)
+    at m (background-redux-new.js:2:3650374)
+    at background-redux-new.js:2:3651373
+$ @ background-redux-new.js:2Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id 120142485063742933 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id 8065992346460303368 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Fill - 120142485063742933 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Edit - 120142485063742933 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Fill - 8065992346460303368 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Edit - 8065992346460303368 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy first name - 120142485063742933 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy first name - 8065992346460303368 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy last name - 120142485063742933 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy last name - 8065992346460303368 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy address line 1 - 120142485063742933 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy address line 1 - 8065992346460303368 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy city/town - 120142485063742933 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy city/town - 8065992346460303368 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy ZIP/postal code - 120142485063742933 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy ZIP/postal code - 8065992346460303368 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy email address - 120142485063742933 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy email address - 8065992346460303368 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy phone number - 120142485063742933 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Copy phone number - 8065992346460303368 https://6c8d8e49-1893-4777-87e2-7ad05a6fccea-00-2twmajymat4zt.riker.replit.dev/Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568571.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568921.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568792.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568970.Understand this error
+3background-redux-new.js:2 Error: Invalid frameId for foreground frameId: 0
+    at $ (background-redux-new.js:2:3643411)
+    at m (background-redux-new.js:2:3650374)
+    at background-redux-new.js:2:3651373
+$ @ background-redux-new.js:2Understand this error
+api/user:1 
+            
+            
+           Failed to load resource: the server responded with a status of 401 ()Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660569001.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660569041.Understand this error
+niheatingoil.com/:1 Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was receivedUnderstand this error
+contentScript.bundle.js:4785 Event target tag: INPUT
+contentScript.bundle.js:4785 Current value: jayjayspud
+contentScript.bundle.js:4785 Current shortcuts: Array(0)
+contentScript.bundle.js:4785 Data received in content script: Array(0)
+contentScript.bundle.js:4785 Event target tag: INPUT
+contentScript.bundle.js:4785 Current value: Maddie Sure
+contentScript.bundle.js:4785 Current shortcuts: Array(0)
+contentScript.bundle.js:4785 Data received in content script: Array(0)
+contentScript.bundle.js:4785 Event target tag: INPUT
+contentScript.bundle.js:4785 Current value: jamie@straightupsearch.com
+contentScript.bundle.js:4785 Current shortcuts: Array(0)
+contentScript.bundle.js:4785 Data received in content script: Array(0)
+contentScript.bundle.js:4785 Event target tag: INPUT
+contentScript.bundle.js:4785 Current value: #coAm3wt0d1i92UM
+contentScript.bundle.js:4785 Current shortcuts: Array(0)
+contentScript.bundle.js:4785 Data received in content script: Array(0)
+api/register:1 
+            
+            
+           Failed to load resource: the server responded with a status of 500 ()Understand this error
+
+                
+          
+          
+          
+         Chrome is moving towards a new experience that allows users to choose to browse without third-party cookies.Understand this warning
+34 log entries are not shown.Understand this warning
