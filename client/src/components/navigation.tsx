@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Truck } from "lucide-react";
 import HeatingOilLogo from "@/components/heating-oil-logo";
-import logoUrl from "@assets/Untitled design (1).png";
 
 export default function Navigation() {
   const { user, isAuthenticated } = useAuth();
@@ -43,11 +42,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center min-w-0 flex-1">
             <Link href="/" className="flex items-center space-x-2 min-w-0 hover:opacity-80 transition-opacity">
-              <img 
-                src={logoUrl} 
-                alt="NI Heating Oil Logo" 
-                className="h-10 w-10 sm:h-12 sm:w-12"
-              />
+              <HeatingOilLogo size="lg" />
               <div className="flex flex-col min-w-0">
                 <span className="text-lg sm:text-xl font-bold text-gray-900 truncate cursor-pointer">NI Heating Oil</span>
               </div>

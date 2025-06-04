@@ -33,11 +33,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div>
             <Link href="/" className="flex items-center space-x-2 mb-3">
-              <img 
-                src="/attached_assets/Untitled design (1).png" 
-                alt="NI Heating Oil Logo" 
-                className="h-8 w-8"
-              />
+              <HeatingOilLogo size="sm" className="text-primary" />
               <span className="text-lg font-bold">NI Heating Oil</span>
             </Link>
             <p className="text-gray-400 mb-3 text-xs leading-relaxed">
