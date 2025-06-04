@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
-import EnhancedPricingTable from "@/components/enhanced-pricing-table";
+import TeaserPricingTable from "@/components/teaser-pricing-table";
 import PriceTrends from "@/components/price-trends";
 import MobilePriceTrends from "@/components/mobile-price-trends";
 import AnimatedPriceTrend from "@/components/animated-price-trend";
@@ -110,7 +110,7 @@ export default function Landing() {
                 Here's the craic - showing prices for {searchParams.volume}L delivery. All prices include VAT and standard delivery to your door.
               </p>
             </div>
-            <EnhancedPricingTable searchParams={searchParams} />
+            <TeaserPricingTable searchParams={searchParams} />
           </div>
         </section>
       )}
@@ -138,7 +138,7 @@ export default function Landing() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Oil Prices Across Northern Ireland</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">Dead-on pricing data from verified suppliers across all six counties. No messing about - these prices include VAT and delivery to your door.</p>
             </div>
-            <EnhancedPricingTable />
+            <TeaserPricingTable />
           </div>
         </section>
       )}
