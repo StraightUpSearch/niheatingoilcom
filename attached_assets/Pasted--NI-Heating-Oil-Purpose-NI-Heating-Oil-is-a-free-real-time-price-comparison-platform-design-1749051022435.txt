@@ -1,0 +1,132 @@
+# NI Heating Oil
+
+## Purpose
+NI Heating Oil is a free, real-time price‐comparison platform designed to help Northern Ireland residents find the best deals on home heating oil. By aggregating live pricing from 50+ verified local suppliers and refreshing data every two hours, the platform ensures users see the most up-to-date, postcode‐specific rates.  
+
+## Goals
+- **Transparency:** Provide a completely free service that surfaces current heating oil prices from multiple trusted suppliers.
+- **Savings:** Enable homeowners and businesses to compare 300 L, 500 L, and 900 L quotes by BT postcode, eliminating guesswork and manual price-checking calls.
+- **Convenience:** Offer instant postcode‐based quotes, price‐drop alerts, and historical trend charts so users can make informed purchasing decisions.
+- **Community Impact:** Pledge 5 % of profits to Simon Community NI’s emergency heating‐grant program, reinforcing our commitment to helping families in fuel hardship.
+
+## Mission
+To keep Northern Ireland’s homes warm, budgets intact, and communities connected by delivering a simple, reliable, and transparent tool for comparing heating oil prices—while using our platform to support those most vulnerable to fuel poverty.
+
+## Monetization Strategy
+1. **Affiliate Partnerships & Referral Fees**  
+   - Earn a small commission on each completed order forwarded to partner suppliers.  
+   - Maintain full transparency: users always see the same “list price,” with any referral fee built into supplier arrangements (no hidden markups).
+
+2. **Premium “Pro” Features (Freemium Upgrade)**  
+   - **Advanced Analytics & Forecasting:** AI-powered price forecasts and personalised “best‐time‐to‐buy” notifications.  
+   - **Ad‐Free Experience:** Remove all on-page ads or sponsored listings for power users.  
+   - **Group‐Buy Coordination:** Facilitate collective buying (“Oil Club” style) with volume discounts for neighbourhood clusters.  
+   - Subscriptions priced at a modest monthly or annual rate to justify ongoing data-science enhancements.
+
+3. **Sponsored Placement (Limited & Clearly Labeled)**  
+   - Allow suppliers to appear as “Recommended Partners” (marked clearly) for users who prefer direct ordering through our system.  
+   - Maintain a strict “no pay‐for‐position” policy in the core comparison table to protect user trust.  
+
+4. **Display & Content Ads (Optional & Non-Intrusive)**  
+   - Run Google-AdSense banners or relevant sponsored content in dedicated sections (e.g., blog posts, resource pages), rather than within the main price grid.  
+
+## Key Features
+- **Real‐Time Price Aggregation**  
+  - Scrape and ingest pricing data from all suppliers that publish BT‐postcode quotes online.  
+  - Refresh data every two hours to ensure accuracy.
+
+- **Postcode-Based Search & Quotes**  
+  - Simple input field prefilled with “BT” to restrict queries to Northern Ireland.  
+  - Display standard 300 L, 500 L, and 900 L prices, with pence-per-litre breakdown.
+
+- **Sortable Comparison Table**  
+  - Sort by price, supplier name, delivery area, or “last updated” timestamp.  
+  - Click‐through links to supplier websites or “Get Quote” buttons for direct ordering.
+
+- **Price Alerts & Notifications**  
+  - Email (and optional SMS/WhatsApp) alerts whenever a chosen postcode’s price drops below a user-specified threshold.  
+  - One-click “Subscribe” call‐to‐action from the comparison results page.
+
+- **Historical Trend Charts**  
+  - Interactive graphs displaying weekly, monthly, and yearly average price data.  
+  - Simple “Is now a good time to buy?” indicators based on AI-powered trend analysis.
+
+- **User Accounts & Dashboard**  
+  - Users can register (name, email, password or magic link) to save preferences.  
+  - Dashboard shows:  
+    - Pending enquiries (Ticket IDs) and their status.  
+    - Past quotes and orders (with estimated savings).  
+    - Active price alerts and tracking history.  
+    - “Your Impact” widget showing how many heating grants they’ve funded.
+
+- **“Your Impact” & Charity Integration**  
+  - Public “Giving Back” page explaining the 5 % pledge to Simon Community NI, with a simple three-step “Order → 5 % pledge → Heating grants” graphic.  
+  - Rolling “Grants Funded” counter (e.g., “Q2 2025: 20 grants funded, £1,000 donated”).  
+  - Seasonal “Winter Wish List” call-outs (October–February) linking directly to Simon Community NI’s campaign page.
+
+- **Order Confirmation Messaging**  
+  - After each completed purchase, display a confirmation banner:  
+    “Thank you! You’ve helped fund a heating grant with Simon Community NI.”  
+  - Include an optional “Learn more” link back to the Giving Back page.
+
+- **Social Sharing & Referral Tools**  
+  - One-click “Share on WhatsApp” for users to broadcast their quote details (postcode, supplier, price, savings) plus a link back to NIHeatingOil.com.  
+  - Track share events in Google Analytics (GA4) for ongoing optimization.
+
+## Technical Stack & Architecture
+- **Frontend**  
+  - React (component-based UI) with Tailwind CSS for responsive styling.  
+  - Lightweight JavaScript modules for pop-ups, notifications, and social sharing.  
+  - React Router for client-side routing (homepage, compare page, dashboard, Giving Back page).
+
+- **Backend & Data Scraping**  
+  - Python (Scrapy, BeautifulSoup) or Node.js scripts to scrape supplier websites.  
+  - Cron or serverless functions to run scrapes every two hours.  
+  - API layer (Node.js/Express or Python Flask/Django) exposing:  
+    - `/api/prices?postcode=BT7` → returns latest price table for that postcode.  
+    - `/api/impact` → returns JSON of aggregate charity impact (quarterly grants funded, total donation).  
+    - `/api/enquiry` → accepts new ticket submissions (name, email, postcode, litres).  
+    - `/api/alerts` → CRUD for user’s price-alert subscriptions.
+
+- **Database & Storage**  
+  - PostgreSQL (relational data for users, tickets, alerts, impact metrics).  
+  - Redis or in-memory caching layer for fast postcode lookups and temporary storage of scraped price feeds.  
+  - S3 (or equivalent) for storing historical price-trend CSVs or chart images (if needed).
+
+- **AI/ML Components (Future-Pro)**  
+  - Python (TensorFlow or PyTorch) for predictive price-forecasting models (trained on historical price data, weather trends, global oil indices).  
+  - Recommendation engine for “Best time to buy” signals.  
+  - NLP-driven intelligence for adaptive scraping (auto-detect HTML changes on supplier sites).
+
+- **Notifications & Emailing**  
+  - SendGrid or Mailgun for transactional emails (enquiry confirmations, quote ready alerts, price alerts).  
+  - Twilio for optional SMS or WhatsApp notifications (especially if users opt in for critical price-drop messages).
+
+- **Analytics & Tag Management**  
+  - Google Analytics 4 configured via Google Tag Manager for:  
+    - Pageviews, form-submission events, share events, account registrations, and checkout conversions.  
+  - Custom GTM tags for tracking “Compare Form Submit,” “WhatsApp Share Click,” and “Sign Up” conversions.
+
+## Roadmap & Future Enhancements
+1. **MVP Launch (Q3 2025)**  
+   - Core price comparison, user accounts, price alerts, and charity integration.  
+   - Basic social sharing and GA4 event tracking.
+
+2. **Enhanced AI Features (Q1 2026)**  
+   - Deploy predictive “Price Forecast” widget on the comparison page.  
+   - Offer personalised “Best Time to Buy” advice.
+
+3. **Group-Buy Coordination Module (Q2 2026)**  
+   - Allow users in proximate BT postcode clusters to opt into a weekly group-buy, aggregating orders for volume discounts.  
+   - Automated negotiation engine to match aggregated demand with supplier quotes.
+
+4. **Mobile App (Q4 2026)**  
+   - Native iOS/Android applications for on-the-go price comparisons, push notifications, and voice-activated quote requests via Siri/Google Assistant.
+
+5. **Expanded Charity Partnerships (Beyond 2026)**  
+   - Introduce additional local charities (e.g. Age NI for older residents, PIPS Suicide Prevention for mental-health outreach) with separate pledge tracks.  
+   - Provide users the option to direct their 5 % pledge to a charity of their choice via dropdown in profile settings.
+
+---
+
+_Note: All copy conventions, iconography, and colour palettes should align with NI Heating Oil’s existing brand guidelines. Any use of the Simon Community NI logo or materials must follow their third-party usage policy. Updates to impact data should be managed via the `/api/impact` endpoint or by editing a simple JSON file stored in the repository._
