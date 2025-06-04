@@ -3,9 +3,7 @@ import { cn } from "../lib/utils";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Settings } from "lucide-react";
-import tank300L from "../assets/tank_300L.png";
-import tank500L from "../assets/tank_500L.png";
-import tank900L from "../assets/tank_900L.png";
+// Tank images replaced with SVG icons for build compatibility
 
 interface TankSelectorProps {
   selectedVolume: string;
@@ -44,13 +42,14 @@ const tankOptions: TankOption[] = [
 
 
 const TankGraphic = ({ volume, isSelected, size }: { volume: string; isSelected: boolean; size: 'small' | 'medium' | 'large' }) => {
-  const getTankImage = () => {
-    switch(volume) {
-      case '300': return tank300L;
-      case '500': return tank500L;
-      case '900': return tank900L;
-      default: return tank500L;
-    }
+  const getTankSvg = () => {
+    return (
+      <svg viewBox="0 0 24 24" className="w-full h-full text-blue-600" fill="currentColor">
+        <rect x="4" y="8" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="2" fill="none"/>
+        <circle cx="12" cy="14" r="2" fill="currentColor"/>
+        <text x="12" y="6" textAnchor="middle" fontSize="6" fill="currentColor">{volume}L</text>
+      </svg>
+    );
   };
 
   const getSize = () => {

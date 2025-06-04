@@ -1,4 +1,4 @@
-import newLogo from "../assets/ChatGPT Image Jun 1, 2025, 09_16_52 PM.png";
+// Logo image replaced with SVG for build compatibility
 
 interface HeatingOilLogoProps {
   className?: string;
@@ -15,11 +15,12 @@ export default function HeatingOilLogo({ className = "", size = 'md' }: HeatingO
 
   return (
     <div className={`${sizeClasses[size]} ${className}`}>
-      <img 
-        src={newLogo} 
-        alt="NI Heating Oil - Northern Ireland heating oil price comparison with delivery truck"
-        className="w-full h-full object-contain"
-      />
+      <svg viewBox="0 0 100 100" className="w-full h-full" fill="currentColor">
+        <circle cx="50" cy="50" r="45" fill="#1e40af" />
+        <text x="50" y="35" textAnchor="middle" fontSize="12" fill="white" fontWeight="bold">NI</text>
+        <text x="50" y="50" textAnchor="middle" fontSize="8" fill="white">HEATING</text>
+        <text x="50" y="65" textAnchor="middle" fontSize="8" fill="white">OIL</text>
+      </svg>
     </div>
   );
 }

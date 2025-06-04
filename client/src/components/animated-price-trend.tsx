@@ -136,9 +136,13 @@ export default function AnimatedPriceTrend({ volume = 300, className = "" }: Ani
         <CardTitle className="flex items-center justify-between text-blue-900 dark:text-blue-100">
           <div className="flex items-center gap-3">
             <div className="flex items-center justify-center">
-              {volume === 300 && <img src={tank300L} alt="300L Tank" className="w-12 h-12" />}
-              {volume === 500 && <img src={tank500L} alt="500L Tank" className="w-12 h-12" />}
-              {volume === 900 && <img src={tank900L} alt="900L Tank" className="w-12 h-12" />}
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <svg viewBox="0 0 24 24" className="w-8 h-8 text-blue-600" fill="currentColor">
+                  <rect x="4" y="8" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <circle cx="12" cy="14" r="2" fill="currentColor"/>
+                  <text x="12" y="6" textAnchor="middle" fontSize="6" fill="currentColor">{volume}L</text>
+                </svg>
+              </div>
             </div>
             <div>
               <div className="text-lg font-bold">Live Price Trends - {volume}L Delivery</div>
