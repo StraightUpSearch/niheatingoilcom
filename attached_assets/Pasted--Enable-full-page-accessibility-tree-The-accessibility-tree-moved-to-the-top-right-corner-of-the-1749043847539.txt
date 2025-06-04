@@ -1,0 +1,57 @@
+
+
+Enable full-page accessibility tree
+The accessibility tree moved to the top right corner of the DOM tree. Send us your feedback.
+
+Name: ""
+aria-labelledby: Not specified
+aria-label: Not specified
+Role: generic
+﻿
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568279.
+
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568273.
+background-redux-new.js:2 Error: Invalid frameId for foreground frameId: 0
+    at $ (background-redux-new.js:2:3643411)
+    at m (background-redux-new.js:2:3650374)
+    at background-redux-new.js:2:3651373
+16
+Unchecked runtime.lastError: Cannot find menu item with id LastPass <URL>
+59
+Unchecked runtime.lastError: The page keeping the extension port is moved into back/forward cache, so the message channel is closed.
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568333.
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568340.
+25
+Unchecked runtime.lastError: Cannot find menu item with id Add Item <URL>
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568327.
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568337.
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568352.
+3
+background-redux-new.js:2 Error: Invalid frameId for foreground frameId: 0
+    at $ (background-redux-new.js:2:3643411)
+    at m (background-redux-new.js:2:3650374)
+    at background-redux-new.js:2:3651373
+98
+Unchecked runtime.lastError: Cannot create item with duplicate id LastPass <URL>
+94
+Unchecked runtime.lastError: Cannot create item with duplicate id separator <URL>
+94
+Unchecked runtime.lastError: Cannot create item with duplicate id Add Item <URL>
+94
+Unchecked runtime.lastError: Cannot create item with duplicate id Add Password <URL>
+94
+Unchecked runtime.lastError: Cannot create item with duplicate id Add Address <URL>
+94
+Unchecked runtime.lastError: Cannot create item with duplicate id Add Payment Card <URL>
+94
+Unchecked runtime.lastError: Cannot create item with duplicate id Add other item <URL>
+94
+Unchecked runtime.lastError: Cannot create item with duplicate id Save all entered data <URL>
+95
+Unchecked runtime.lastError: Cannot create item with duplicate id Generate Secure Password <URL>
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568369.
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568360.
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568386.
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568402.
+﻿
+
