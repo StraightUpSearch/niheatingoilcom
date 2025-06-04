@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/hooks/use-auth";
 import { useToast } from "@/hooks/use-toast";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import Navigation from "@/components/navigation";
@@ -16,7 +16,8 @@ import { Trash2, Bell, BellOff } from "lucide-react";
 export default function PriceAlerts() {
   usePageTitle("Heating Oil Price Alerts - Northern Ireland | NI Heating Oil");
   const { toast } = useToast();
-  const { isAuthenticated, isLoading } = useAuth();
+  const { user, isLoading } = useAuth();
+  const isAuthenticated = !!user;
   const queryClient = useQueryClient();
 
   // Redirect to login if not authenticated
