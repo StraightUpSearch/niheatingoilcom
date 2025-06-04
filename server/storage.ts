@@ -103,6 +103,11 @@ export class DatabaseStorage implements IStorage {
     return user;
   }
 
+  async getUserByEmail(email: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.email, email));
+    return user;
+  }
+
   async createUser(userData: {
     id: string;
     username: string;
@@ -185,7 +190,7 @@ export class DatabaseStorage implements IStorage {
     // Extract Northern Ireland postcode area (BT + 1-2 digits)
     const normalizedPostcode = postcode.replace(/\s+/g, '').toUpperCase();
     const btAreaMatch = normalizedPostcode.match(/^BT(\d{1,2})/);
-    
+
     if (!btAreaMatch) {
       // If not a valid BT postcode, return all suppliers
       return await db
@@ -194,25 +199,25 @@ export class DatabaseStorage implements IStorage {
         .where(eq(suppliers.isActive, true))
         .orderBy(suppliers.name);
     }
-    
+
     const btNumber = parseInt(btAreaMatch[1]);
     const btArea = `BT${btNumber}`;
-    
+
     // Get all suppliers and filter based on coverage logic
     const allSuppliers = await db
       .select()
       .from(suppliers)
       .where(eq(suppliers.isActive, true))
       .orderBy(suppliers.name);
-    
+
     // Filter suppliers based on coverage areas
     return allSuppliers.filter(supplier => {
       const coverage = supplier.coverageAreas;
-      
+
       if (!coverage || coverage.trim() === '') {
         return true; // Include suppliers with no specific coverage restriction
       }
-      
+
       // Handle JSON array format: ["BT19","BT20","BT1"]
       if (coverage.startsWith('[') && coverage.endsWith(']')) {
         try {
@@ -225,7 +230,7 @@ export class DatabaseStorage implements IStorage {
           return false;
         }
       }
-      
+
       // Handle range format: "BT53 to BT57" or "BT51 to BT57"
       const rangeMatch = coverage.match(/BT(\d{1,2})\s+to\s+BT(\d{1,2})/i);
       if (rangeMatch) {
@@ -233,7 +238,7 @@ export class DatabaseStorage implements IStorage {
         const endNum = parseInt(rangeMatch[2]);
         return btNumber >= startNum && btNumber <= endNum;
       }
-      
+
       // Handle comma-separated format: "BT32, BT60 to BT63"
       if (coverage.includes(',')) {
         const parts = coverage.split(',');
@@ -250,7 +255,7 @@ export class DatabaseStorage implements IStorage {
           }
         }
       }
-      
+
       // Simple contains check as fallback
       return coverage.includes(btArea) || coverage.includes('ALL') || coverage.includes('Northern Ireland');
     });
@@ -302,20 +307,20 @@ export class DatabaseStorage implements IStorage {
     // If postcode is provided, filter suppliers by coverage area
     let relevantIndividualSuppliers = individualSuppliers;
     let relevantRegionalAverages = regionalAverages;
-    
+
     if (postcode) {
       // Get suppliers that cover this postcode area
       const suppliersInArea = await this.getSuppliersInArea(postcode);
       const supplierIdsInArea = new Set(suppliersInArea.map(s => s.id));
-      
+
       relevantIndividualSuppliers = individualSuppliers.filter(result => 
         supplierIdsInArea.has(result.supplierId)
       );
-      
+
       // For regional averages, check if postcode falls in the region
       const normalizedPostcode = postcode.replace(/\s+/g, '').toUpperCase();
       const btAreaMatch = normalizedPostcode.match(/^BT(\d{1,2})/);
-      
+
       if (btAreaMatch) {
         const btNumber = parseInt(btAreaMatch[1]);
         relevantRegionalAverages = regionalAverages.filter(result => {
@@ -337,7 +342,7 @@ export class DatabaseStorage implements IStorage {
 
     // Always prioritize individual suppliers - NEVER show multiple regional averages
     const hasIndividualSuppliers = individualSuppliers.length > 0;
-    
+
     let resultsToReturn;
     if (hasIndividualSuppliers) {
       // Show all individual suppliers

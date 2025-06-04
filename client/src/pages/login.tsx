@@ -27,25 +27,43 @@ export default function Login() {
     setIsLoading(true);
     setError("");
 
+    // Client-side validation
+    if (!formData.email || !formData.password) {
+      setError("Please fill in all fields");
+      setIsLoading(false);
+      return;
+    }
+
     try {
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch('/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          username: formData.email, // Using email as username
+          password: formData.password
+        }),
+        credentials: 'include'
       });
 
       if (response.ok) {
-        // Redirect to home or previous page
-        setLocation('/');
-        window.location.reload(); // Refresh to update auth state
+        const data = await response.json();
+        // Show success message briefly before redirect
+        setError("");
+        setTimeout(() => {
+          setLocation('/dashboard');
+        }, 500);
       } else {
         const data = await response.json();
-        setError(data.message || 'Login failed');
+        if (response.status === 429) {
+          setError('Too many login attempts. Please try again later.');
+        } else {
+          setError(data.message || 'Invalid email or password');
+        }
       }
     } catch (error) {
-      setError('Network error. Please try again.');
+      setError('Unable to connect. Please check your internet connection.');
     } finally {
       setIsLoading(false);
     }

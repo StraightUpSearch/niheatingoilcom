@@ -16,8 +16,30 @@ declare global {
 
 const scryptAsync = promisify(scrypt);
 
+function validatePassword(password: string): { isValid: boolean; errors: string[] } {
+  const errors: string[] = [];
+  
+  if (password.length < 8) {
+    errors.push("Password must be at least 8 characters long");
+  }
+  if (!/[A-Z]/.test(password)) {
+    errors.push("Password must contain at least one uppercase letter");
+  }
+  if (!/[a-z]/.test(password)) {
+    errors.push("Password must contain at least one lowercase letter");
+  }
+  if (!/\d/.test(password)) {
+    errors.push("Password must contain at least one number");
+  }
+  if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+    errors.push("Password must contain at least one special character");
+  }
+  
+  return { isValid: errors.length === 0, errors };
+}
+
 async function hashPassword(password: string) {
-  const salt = randomBytes(16).toString("hex");
+  const salt = randomBytes(32).toString("hex"); // Increased salt size
   const buf = (await scryptAsync(password, salt, 64)) as Buffer;
   return `${buf.toString("hex")}.${salt}`;
 }
@@ -46,9 +68,11 @@ export function setupAuth(app: Express) {
     store: sessionStore,
     cookie: {
       httpOnly: true,
-      secure: false, // Set to true in production with HTTPS
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
       maxAge: sessionTtl,
     },
+    name: 'niho_session', // Custom session name for security
   };
 
   app.set("trust proxy", 1);
@@ -84,13 +108,48 @@ export function setupAuth(app: Express) {
     try {
       const { username, password, email, fullName, phone, savedQuote } = req.body;
       
-      if (!username || !password) {
-        return res.status(400).json({ message: "Username and password are required" });
+      // Enhanced validation
+      if (!username || !password || !email) {
+        return res.status(400).json({ 
+          message: "Username, password, and email are required",
+          field: "missing_required"
+        });
       }
 
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return res.status(400).json({ 
+          message: "Please enter a valid email address",
+          field: "email"
+        });
+      }
+
+      // Password strength validation
+      const passwordValidation = validatePassword(password);
+      if (!passwordValidation.isValid) {
+        return res.status(400).json({ 
+          message: "Password does not meet security requirements",
+          errors: passwordValidation.errors,
+          field: "password"
+        });
+      }
+
+      // Check for existing user by username or email
       const existingUser = await storage.getUserByUsername(username);
       if (existingUser) {
-        return res.status(400).json({ message: "Username already exists" });
+        return res.status(400).json({ 
+          message: "An account with this username already exists",
+          field: "username"
+        });
+      }
+
+      const existingEmail = await storage.getUserByEmail?.(email);
+      if (existingEmail) {
+        return res.status(400).json({ 
+          message: "An account with this email already exists",
+          field: "email"
+        });
       }
 
       // Create user with all provided fields
@@ -139,9 +198,17 @@ export function setupAuth(app: Express) {
     }
   });
 
-  app.post("/api/login", passport.authenticate("local"), (req, res) => {
+  // Import rate limiting
+  const { authRateLimit } = require('./rateLimit');
+  
+  app.post("/api/login", authRateLimit, passport.authenticate("local"), (req, res) => {
     const user = req.user as SelectUser;
-    res.status(200).json({ id: user.id, username: user.username, email: user.email });
+    res.status(200).json({ 
+      id: user.id, 
+      username: user.username, 
+      email: user.email,
+      message: 'Login successful'
+    });
   });
 
   app.post("/api/logout", (req, res, next) => {

@@ -10,6 +10,7 @@ import { Link, useLocation } from "wouter";
 import { Mail, Lock, Eye, EyeOff, User } from "lucide-react";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import CustomerAvatars from "@/components/customer-avatars";
+import PasswordStrengthIndicator from "@/components/password-strength-indicator";
 
 export default function Register() {
   usePageTitle("Create Account - NI Heating Oil");
@@ -34,8 +35,22 @@ export default function Register() {
     
     if (!formData.firstName.trim()) newErrors.push("First name is required");
     if (!formData.lastName.trim()) newErrors.push("Surname is required");
-    if (!formData.email.trim()) newErrors.push("Email address is required");
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      newErrors.push("Email address is required");
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.push("Please enter a valid email address");
+    }
+    
+    // Enhanced password validation
     if (formData.password.length < 8) newErrors.push("Password must be at least 8 characters");
+    if (!/[A-Z]/.test(formData.password)) newErrors.push("Password must contain an uppercase letter");
+    if (!/[a-z]/.test(formData.password)) newErrors.push("Password must contain a lowercase letter");
+    if (!/\d/.test(formData.password)) newErrors.push("Password must contain a number");
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(formData.password)) newErrors.push("Password must contain a special character");
+    
     if (formData.password !== formData.confirmPassword) newErrors.push("Passwords don't match");
     if (!formData.acceptTerms) newErrors.push("You must accept the terms and conditions");
     
@@ -55,29 +70,38 @@ export default function Register() {
     setErrors([]);
 
     try {
-      const response = await fetch('/api/auth/register', {
+      const response = await fetch('/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          firstName: formData.firstName,
-          lastName: formData.lastName,
+          username: formData.email, // Using email as username
           email: formData.email,
           password: formData.password,
+          fullName: `${formData.firstName} ${formData.lastName}`,
           emailUpdates: formData.emailUpdates
         }),
+        credentials: 'include'
       });
 
       if (response.ok) {
-        // Redirect to login or home
-        setLocation('/login');
+        // Auto-login after successful registration
+        setLocation('/dashboard');
       } else {
         const data = await response.json();
-        setErrors([data.message || 'Registration failed']);
+        if (data.field) {
+          // Field-specific error
+          setErrors([data.message]);
+        } else if (data.errors) {
+          // Multiple validation errors
+          setErrors(data.errors);
+        } else {
+          setErrors([data.message || 'Registration failed']);
+        }
       }
     } catch (error) {
-      setErrors(['Network error. Please try again.']);
+      setErrors(['Unable to connect. Please check your internet connection.']);
     } finally {
       setIsLoading(false);
     }
@@ -210,6 +234,9 @@ export default function Register() {
                     {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
                 </div>
+                {formData.password && (
+                  <PasswordStrengthIndicator password={formData.password} className="mt-2" />
+                )}
               </div>
 
               <div className="space-y-2">

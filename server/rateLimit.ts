@@ -31,7 +31,7 @@ export function createRateLimit(options: RateLimitOptions) {
     const clientIP = req.ip || req.connection.remoteAddress || 'unknown';
     const key = `${clientIP}:${req.route?.path || req.path}`;
     const now = Date.now();
-    
+
     // Initialize or get existing rate limit data
     if (!rateLimitStore[key] || rateLimitStore[key].resetTime < now) {
       rateLimitStore[key] = {
@@ -39,7 +39,7 @@ export function createRateLimit(options: RateLimitOptions) {
         resetTime: now + options.windowMs
       };
     }
-    
+
     // Check if limit exceeded
     if (rateLimitStore[key].count >= options.maxRequests) {
       return res.status(429).json({
@@ -47,17 +47,17 @@ export function createRateLimit(options: RateLimitOptions) {
         retryAfter: Math.ceil((rateLimitStore[key].resetTime - now) / 1000)
       });
     }
-    
+
     // Increment counter
     rateLimitStore[key].count++;
-    
+
     // Add headers
     res.set({
       'X-RateLimit-Limit': options.maxRequests.toString(),
       'X-RateLimit-Remaining': Math.max(0, options.maxRequests - rateLimitStore[key].count).toString(),
       'X-RateLimit-Reset': new Date(rateLimitStore[key].resetTime).toISOString()
     });
-    
+
     next();
   };
 }
@@ -65,8 +65,16 @@ export function createRateLimit(options: RateLimitOptions) {
 // Predefined rate limiters for different use cases
 export const strictRateLimit = createRateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  maxRequests: 5, // 5 requests per 15 minutes
-  message: 'Too many form submissions. Please wait before trying again.'
+  maxRequests: 5, // Limit each IP to 5 requests per windowMs
+  message: "Too many requests from this IP, please try again later.",
+  skipSuccessfulRequests: false,
+});
+
+export const authRateLimit = createRateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  maxRequests: 3, // 3 login attempts per 15 minutes
+  message: "Too many login attempts. Please try again in 15 minutes.",
+  skipSuccessfulRequests: true, // Don't count successful logins
 });
 
 export const moderateRateLimit = createRateLimit({
@@ -94,35 +102,35 @@ export function botDetection(req: Request, res: Response, next: NextFunction) {
     /python/i,
     /requests/i
   ];
-  
+
   // Check for suspicious user agents
   if (suspiciousPatterns.some(pattern => pattern.test(userAgent))) {
     return res.status(403).json({
       error: 'Access denied. Automated requests not allowed.'
     });
   }
-  
+
   // Check for missing common headers
   if (!req.get('Accept') || !req.get('Accept-Language')) {
     return res.status(403).json({
       error: 'Invalid request headers.'
     });
   }
-  
+
   next();
 }
 
 // Validate form submission timing and honeypot
 export function validateFormSubmission(req: Request, res: Response, next: NextFunction) {
   const { honeypot, submissionTime, mathAnswer, mathQuestion } = req.body;
-  
+
   // Check honeypot field (should be empty)
   if (honeypot && honeypot.trim() !== '') {
     return res.status(400).json({
       error: 'Invalid form submission.'
     });
   }
-  
+
   // Check submission timing (should take at least 3 seconds)
   if (submissionTime) {
     const timeTaken = Date.now() - parseInt(submissionTime);
@@ -132,7 +140,7 @@ export function validateFormSubmission(req: Request, res: Response, next: NextFu
       });
     }
   }
-  
+
   // Validate math CAPTCHA
   if (mathAnswer && mathQuestion) {
     const expectedAnswer = mathQuestion.a + mathQuestion.b;
@@ -142,6 +150,6 @@ export function validateFormSubmission(req: Request, res: Response, next: NextFu
       });
     }
   }
-  
+
   next();
 }
