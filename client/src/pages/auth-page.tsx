@@ -15,7 +15,7 @@ export default function AuthPage() {
   usePageTitle("Sign In | NI Heating Oil");
   const { user, loginMutation, registerMutation } = useAuth();
   const [, setLocation] = useLocation();
-  
+
   const [loginData, setLoginData] = useState({ username: "", password: "" });
   const [registerData, setRegisterData] = useState({ 
     username: "", 
@@ -46,7 +46,7 @@ export default function AuthPage() {
       <Navigation />
       <div className="flex items-center justify-center p-4 pt-20">
         <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-        
+
           {/* Hero Section */}
           <div className="text-white space-y-6 order-2 lg:order-1">
             <div className="space-y-4">
@@ -61,7 +61,7 @@ export default function AuthPage() {
                 Join thousands of households saving money on heating oil. Get instant access to live prices from 50+ verified suppliers.
               </p>
             </div>
-            
+
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
@@ -99,7 +99,7 @@ export default function AuthPage() {
                     <TabsTrigger value="login">Sign In</TabsTrigger>
                     <TabsTrigger value="register">Create Account</TabsTrigger>
                   </TabsList>
-                  
+
                   <TabsContent value="login" className="space-y-4">
                     <form onSubmit={handleLogin} className="space-y-4">
                       <div className="space-y-2">
@@ -244,7 +244,7 @@ export default function AuthPage() {
           </div>
         </div>
       </div>
-      
+
       <Footer />
     </div>
   );

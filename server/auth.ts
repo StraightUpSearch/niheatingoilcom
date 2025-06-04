@@ -18,7 +18,7 @@ const scryptAsync = promisify(scrypt);
 
 function validatePassword(password: string): { isValid: boolean; errors: string[] } {
   const errors: string[] = [];
-  
+
   if (password.length < 8) {
     errors.push("Password must be at least 8 characters long");
   }
@@ -34,7 +34,7 @@ function validatePassword(password: string): { isValid: boolean; errors: string[
   if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
     errors.push("Password must contain at least one special character");
   }
-  
+
   return { isValid: errors.length === 0, errors };
 }
 
@@ -107,7 +107,7 @@ export function setupAuth(app: Express) {
   app.post("/api/register", async (req, res, next) => {
     try {
       const { username, password, email, fullName, phone, savedQuote } = req.body;
-      
+
       // Enhanced validation
       if (!username || !password || !email) {
         return res.status(400).json({ 
@@ -199,8 +199,8 @@ export function setupAuth(app: Express) {
   });
 
   // Import rate limiting
-  const { authRateLimit } = await import('./rateLimit');
-  
+  const { authRateLimit } = await import('./rateLimit').then(m => m);
+
   app.post("/api/login", authRateLimit, passport.authenticate("local"), (req, res) => {
     const user = req.user as SelectUser;
     res.status(200).json({ 

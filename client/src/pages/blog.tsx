@@ -57,7 +57,13 @@ const blogArticles = [
   }
 ];
 
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
+import { usePageTitle } from "@/hooks/usePageTitle";
+
 export default function Blog() {
+  usePageTitle("Heating Oil Blog & Tips - NI Heating Oil");
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <Navigation />
@@ -72,6 +78,23 @@ export default function Blog() {
             Expert advice, industry updates, and money-saving tips for Northern Ireland homeowners
           </p>
         </div>
+
+        {/* Blog Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="bg-white rounded-lg shadow-sm p-6">
+            <h2 className="text-xl font-semibold mb-3">Coming Soon</h2>
+            <p className="text-gray-600">
+              We're working on bringing you the latest heating oil news, tips, and industry updates. 
+              Check back soon for expert advice on saving money and staying warm.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <Footer />
+    </div>
+  );
+}
 
         {/* Blog Articles Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">

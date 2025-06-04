@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function PriceComparison() {
   usePageTitle("Compare Heating Oil Prices - Northern Ireland | NI Heating Oil");
-  
+
   const [searchParams, setSearchParams] = useState<{
     postcode?: string;
     volume?: number;
@@ -17,7 +17,7 @@ export default function PriceComparison() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
-      
+
       {/* Header */}
       <section className="bg-white border-b border-gray-200 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,7 +27,7 @@ export default function PriceComparison() {
               Find the best heating oil prices in your area from verified Northern Ireland suppliers
             </p>
           </div>
-          
+
           <PriceSearchForm onSearch={setSearchParams} />
         </div>
       </section>

@@ -108,7 +108,7 @@ export default function PriceAlerts() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
-      
+
       {/* Header */}
       <section className="bg-white border-b border-gray-200 py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,7 +139,7 @@ export default function PriceAlerts() {
       <section className="py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Your Active Alerts</h2>
-          
+
           {alertsLoading ? (
             <div className="space-y-4">
               {[1, 2, 3].map((i) => (
