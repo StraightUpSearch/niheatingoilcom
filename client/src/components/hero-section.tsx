@@ -53,9 +53,7 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
           playsInline
           className="w-full h-full object-cover"
           src="/assets/niheatingoilcomad.mp4"
-          poster={heroImage} 
-          alt="Northern Ireland home with heating oil tank - price comparison interface" 
-          className="w-full h-full object-cover"
+          poster={heroImage}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/95 to-blue-700/95"></div>
       </div>
