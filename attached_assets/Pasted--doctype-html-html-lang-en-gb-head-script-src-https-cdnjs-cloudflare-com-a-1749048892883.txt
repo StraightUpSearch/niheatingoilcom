@@ -1,0 +1,1737 @@
+
+
+
+
+<!doctype html>
+<html lang="en-gb">
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!-- Google Tag Manager Data Layer -->
+		<script>
+			window.dataLayer = window.dataLayer || [];
+		</script>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NVVJTX6');</script>
+		<!-- End Google Tag Manager -->
+		<style>.loader{position: fixed;width: 100%;height: 100%;left: 0;top: 0;background: #fff;z-index:99999999999;opacity: 1;}</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="format-detection" content="telephone=no">
+		<meta charset="utf-8">
+	<meta name="description" content="National Heating Oil Delivery ✅   Get the best price for your home heating oil with an instant quote. Easy ordering | Fast &amp; friendly service | UK-wide delivery">
+	<title>HomeFuels Direct | Instant Heating Oil Prices &amp; Nationwide Delivery</title>
+	<link href="/?format=feed&amp;type=rss" rel="alternate" type="application/rss+xml" title="HomeFuels Direct | Instant Heating Oil Prices &amp; Nationwide Delivery">
+	<link href="/?format=feed&amp;type=atom" rel="alternate" type="application/atom+xml" title="HomeFuels Direct | Instant Heating Oil Prices &amp; Nationwide Delivery">
+	<link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
+<link href="/templates/2019_HFD/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/templates/2019_HFD/css/smoke.css" rel="stylesheet">
+	<link href="/templates/2019_HFD/css/jquery.fancybox.min.css" rel="stylesheet">
+	<link href="/templates/2019_HFD/css/template.css" rel="stylesheet">
+	<link href="/templates/2019_HFD/css/template-new.css" rel="stylesheet">
+<script type="application/json" class="joomla-script-options new">{"system.paths":{"root":"","rootFull":"https://homefuelsdirect.co.uk/","base":"","baseFull":"https://homefuelsdirect.co.uk/"},"csrf.token":"51c89449f1fba77037a75c80664daa1a"}</script>
+	<script src="/media/system/js/core.min.js?2cb912"></script>
+	<link rel="icon" type="image/png" sizes="36x36" href="/templates/2019_HFD/favicon/android-icon-36x36.png">
+	<link rel="icon" type="image/png" sizes="48x48" href="/templates/2019_HFD/favicon/android-icon-48x48.png">
+	<link rel="icon" type="image/png" sizes="72x72" href="/templates/2019_HFD/favicon/android-icon-72x72.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/templates/2019_HFD/favicon/android-icon-96x96.png">
+	<link rel="icon" type="image/png" sizes="144x144" href="/templates/2019_HFD/favicon/android-icon-144x144.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/templates/2019_HFD/favicon/android-icon-192x192.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="/templates/2019_HFD/favicon/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/templates/2019_HFD/favicon/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/templates/2019_HFD/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/templates/2019_HFD/favicon/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/templates/2019_HFD/favicon/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/templates/2019_HFD/favicon/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/templates/2019_HFD/favicon/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/templates/2019_HFD/favicon/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/templates/2019_HFD/favicon/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/templates/2019_HFD/favicon/favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/templates/2019_HFD/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/templates/2019_HFD/favicon/favicon-96x96.png">
+	<link rel="apple-touch-icon" sizes="70x70" href="/templates/2019_HFD/favicon/ms-icon-70x70.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/templates/2019_HFD/favicon/ms-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/templates/2019_HFD/favicon/ms-icon-150x150.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/templates/2019_HFD/favicon/ms-icon-310x310.png">
+	<link rel="manifest" href="/templates/2019_HFD/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&key=AIzaSyDzTPUKaiKu1k3ohKpiSv2CQV4-hXST18Q"></script> <!-- Google Maps -->
+		<link async href="https://fonts.googleapis.com/css?family=Asap:400,500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="https://homefuelsdirect.co.uk/templates/2019_HFD/css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="https://homefuelsdirect.co.uk/templates/2019_HFD/css/slick-theme.css"/>
+		<!-- Homepage SEO -->
+				<meta property="og:title" content="HomeFuels Direct | Instant Heating Oil Prices & Nationwide Delivery">
+		<meta property="og:site_name" content="HomeFuels Direct">
+		<meta property="og:url" content="https://homefuelsdirect.co.uk/">
+		<meta property="og:description" content="National Heating Oil Delivery ✅ Get the best price for your home heating oil with an instant quote. Easy ordering | Fast & friendly service | UK-wide delivery">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://homefuelsdirect.co.uk/images/ollie-images/thumbnail_Order_In_60_Seconds.jpeg">
+				<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@HomeFuelsDirect">
+		<meta name="twitter:title" content="HomeFuels Direct | Instant Heating Oil Prices & Nationwide Delivery">
+		<meta name="twitter:description" content="National Heating Oil Delivery ✅ Get the best price for your home heating oil with an instant quote. Easy ordering | Fast & friendly service | UK-wide delivery">
+		<meta name="twitter:image" content="https://homefuelsdirect.co.uk/images/ollie-images/thumbnail_Order_In_60_Seconds.jpeg">
+		<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/https://homefuelsdirect.co.uk/\/","name":"HomeFuels Direct","potentialAction":{"@type":"SearchAction","target":"https:\/\/https://homefuelsdirect.co.uk/\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>	
+		<!-- End Homepage SEO -->
+
+		<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/7ae77e6e623740f8511770def/4e993b8a695344f5d996ffb4e.js");</script>
+	</head>
+	
+	<body class="front home ">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXP8J2K"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		
+
+<style>
+
+
+	#popupWrap 
+	{
+		background-color:rgba(0, 0, 0, 0.5);
+		position:fixed;
+		z-index: 2001;
+		top:0;
+		left:0;
+		height:100%;
+		width:100%;
+		transition:all 0.3s ease;
+		opacity:0;
+		pointer-events:none;
+	}
+	.inTheMiddle 
+	{
+		background-color:#469945;
+		border-radius:10px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		max-width: 550px;
+    	min-width: 300px;
+		z-index: 2002;
+		padding:20px;
+		text-align:center;
+		margin:10px;
+	}
+	#oneTimePopup h3, #oneTimePopup p, .closeLink 
+	{
+		color:#fff!important;
+	}
+	#oneTimePopup h3 
+	{
+		clear:both;
+		font-size:20px;
+	}
+	#oneTimePopup p {margin-top:10px;}
+	.closeLink {float:right;}
+	#oneTimePopup img {clear:both; max-width:500px; display:block; margin:0 auto 20px; width:100%;}
+	.awesomeClose {font: normal normal normal 14px/1 FontAwesome;}
+	.showAd {opacity:1!important; pointer-events:auto!important;}
+	#popupWrap .btn-primary, #popupWrap .btn-primary:hover{
+		background-color: #ff9a00!important;
+		clear: both;
+		color: #fff;
+		border-color: #fff;
+	}
+	
+
+</style>
+
+
+<div id="popupWrap">
+
+	<div id="oneTimePopup" class="inTheMiddle">
+	
+		<a href="#" onclick="closeMe('popupWrap'); return false;" class="closeLink">Close <i class="fas fa-times"></i></a>
+		
+		<h3 class="mb-2" style="font-weight: 600; font-size: 28px;">RED HOT DEAL £10 OFF!</h3>
+		<h3 class="mb-2" style="font-weight: 500; font-size: 25px;">with Voucher Code: REDHOT</h3>
+		<!-- <p>Refer a friend and they'll receive £10 off their first order and you'll get £10 off your next order! Check your order confirmation email for details.</p> -->
+
+		<img src="https://homefuelsdirect.co.uk/images/ollie-images/HFD_green_voucher_v2.png">
+		
+		<a href="#" style="color: #fff!important;" onclick="closeMe('popupWrap'); return false;" class="btn btn-primary">Continue</a> 
+		
+		<a href="/terms" target="_BLANK" style="color: #fff; text-decoration:underline!important; clear:both;" class="d-block mt-2">Terms</a></p>
+		
+
+	</div>
+
+</div>
+
+
+
+
+<script type="text/javascript">
+
+	function closeMe(id){
+	
+		jQuery('#'+id).removeClass('showAd');
+
+	}
+	
+	function showAd(){
+	
+		jQuery('#popupWrap').addClass('showAd');
+	
+	}
+
+</script>
+
+
+
+
+
+		
+		<nav class="container-fluid p-0 m-0">
+			<div class="row">
+				<div class="col-12">
+					
+<style>
+@-webkit-keyframes truckmove {
+	0%    { transform: rotate(0deg); bottom: 0px}
+	25%   { bottom: 3px; }
+	50%   { transform: rotate(-5deg);}
+	75%   { bottom: 1px; }
+	100%  { transform: rotate(5deg); bottom: 0px;}
+}
+@-moz-keyframes truckmove {
+	0%    { transform: rotate(0deg); bottom: 0px}
+	25%   { bottom: 3px; }
+	50%   { transform: rotate(-5deg);}
+	75%   { bottom: 1px; }
+	100%  { transform: rotate(5deg); bottom: 0px;}
+}
+@-o-keyframes truckmove {
+	0%    { transform: rotate(0deg); bottom: 0px}
+	25%   { bottom: 3px; }
+	50%   { transform: rotate(-5deg);}
+	75%   { bottom: 1px; }
+	100%  { transform: rotate(5deg); bottom: 0px;}
+}
+@keyframes truckmove {
+	0%    { transform: rotate(0deg); bottom: 0px}
+	25%   { bottom: 3px; }
+	50%   { transform: rotate(-5deg);}
+	75%   { bottom: 1px; }
+	100%  { transform: rotate(5deg); bottom: 0px;}
+}
+.fa-truck-container {
+	transform: rotate(0deg);
+	position: relative;
+	bottom: 0;
+	-webkit-animation: truckmove 1s infinite; /* Safari 4+ */
+	-moz-animation:    truckmove 1s infinite; /* Fx 5+ */
+	-o-animation:      truckmove 1s infinite; /* Opera 12+ */
+	animation:         truckmove 1s infinite; /* IE 10+, Fx 29+ */
+}
+</style>
+
+<div class="nav-status">
+	<div class="container">
+		<!-- <div class="nav-status-left">
+			<i class="fad fa-info-circle"></i>
+			<span>COVID19: Contact-free deliveries running as normal</span>
+		</div> -->
+		<div class="nav-status-right w-100 justify-content-end">
+			<a href="https://homefuelsdirect.co.uk/account/homepoints-rewards">
+				<div class="d-block d-lg-none mr-2">
+					<i class="fas fa-home-heart"></i>
+				</div>
+			</a>
+			<!-- <a href="tel:<//?php echo $contact->telephone; ?>">
+				<div class="status-right-call mr-2">
+					<i class="fas fa-phone-alt"></i>
+					<div class="status-text">
+						<span class="status-top">01642 700 725</span>
+						<span class="status-bottom">Mon-Fri 9am-5pm</span>
+					</div>
+				</div>
+			</a> -->
+			<!-- <a class="btnChat">
+				<div class="status-right-chat">
+					<i class="fad fa-comments"></i>
+					<div class="status-text">
+						<span class="status-top">Live Chat</span>
+						<span class="status-bottom">Online</span>
+					</div>
+				</div>
+			</a> -->
+			<a href="https://homefuelsdirect.co.uk/view-shopping-cart">
+				<div class="status-right-basket">
+					<i class="fad fa-shopping-cart"></i>
+					<div class="status-text">
+						<span class="status-top">Basket</span>
+						<span class="status-bottom" style="color:#cccccc">Empty</span>
+					</div>
+				</div>
+			</a>
+			<button class="navbar-toggler collapsed p-2 ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<div class="burgerWrapper">
+					<span class="icon-bar top-bar"></span>
+					<span class="icon-bar middle-bar"></span>
+					<span class="icon-bar bottom-bar"></span>
+				</div>			
+			</button>
+		</div>
+	</div>
+</div>
+
+<div class="nav-banner">
+	<div class="container">
+		<a href="https://homefuelsdirect.co.uk/">
+			<!-- <picture>
+				<source media="(min-width: 576px)" srcset="https://homefuelsdirect.co.uk/images/logos/Homefuels_Direct_Logo_xs.png">
+				<img class="nav-banner-logo" src="https://homefuelsdirect.co.uk/images/logos/Homefuels_Direct_Logo.png" alt="Homefuels Direct - The easier way to order heating oil">
+			</picture> -->
+						<picture>
+				<source media="(min-width: 576px)" srcset="https://homefuelsdirect.co.uk/images/logos/Homefuels_Direct_Logo_xs.png">
+				<img class="nav-banner-logo" src="https://homefuelsdirect.co.uk/images/logos/Homefuels_Direct_Logo.png" alt="Homefuels Direct - The easier way to order heating oil">
+			</picture>
+					</a>
+		<a href="https://homefuelsdirect.co.uk/account/homepoints-rewards">
+    <img class="nav-banner-secondary" src="https://homefuelsdirect.co.uk/images/logos/Heating_Oil_Home_Points.jpg" alt="">
+</a>	</div>
+</div>
+<nav class="navbar navbar-expand-lg p-0">
+    <div class="container">
+		<!-- Main menu buttons -->
+		<div class="collapse navbar-collapse flex-column align-items-start ml-lg-2 ml-0" id="navbarCollapse">
+            <ul class="navbar-nav">
+                <li class="dropdown item-101"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-disabled="true">Home</a><ul class="dropdown-menu">
+									<div class="col-6 px-4 my-4 d-none d-lg-block float-left border-right">
+										<h5>Welcome To HomeFuels Direct</h5>
+										<p>The easier way to order heating oil! <br /><br />We pride ourselves on making it easier & cheaper for you to order your heating oil online.</p>
+									</div>
+								<div class="col-12 col-md-6 pl-4 px-md-4 my-md-4 float-left menuItem"><li class="menu-270  active"><a href="/" >Home</a><li class="menu-261 "><a href="/home/heating-oil-faqs2" >Heating Oil FAQs</a><li class="menu-328 "><a href="/home/homepoints-faqs" >HomePoints FAQs</a><li class="menu-234 "><a href="/home/heating-oil-prices" >Heating Oil Prices</a><li class="menu-117 "><a href="/home/about-us" >About Us</a><li class="menu-146 "><a href="/home/heating-oil-news" >Heating Oil News</a><li class="menu-260 "><a href="/home/contact-centre" >Contact Centre</a></div></ul></li><li class="dropdown item-140"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-disabled="true">My Account</a><ul class="dropdown-menu">
+									<div class="col-6 px-4 my-4 d-none d-lg-block float-left border-right">
+										<h5>Your HomeFuels Direct Account</h5>
+										<p>Once you've placed an order you can login to your account to track your order, view previous orders, re-order and access your rewards!</p>
+									</div>
+								<div class="col-12 col-md-6 pl-4 px-md-4 my-md-4 float-left menuItem"><li class="menu-173 "><a href="/account?layout=edit" >My Details</a><li class="menu-266 "><a href="/login">Login</a><li class="menu-186 "><a href="/account/basket" >Basket</a><li class="menu-325 "><a href="/account/homepoints-rewards?layout=2019_HFD:loyalty" >HomePoints Rewards</a></div></ul></li><li class="dropdown item-121"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-disabled="true">Shop</a><ul class="dropdown-menu">
+									<div class="col-6 px-4 my-4 d-none d-lg-block float-left border-right">
+										<h5>The HomeFuels Direct Shop</h5>
+										<p>At HomeFuels Direct we stock the best quality heating oil products. Whether you need a bottle of additive or an advanced tank monitoring system - you'll find it all in our heating oil shop.</p>
+									</div>
+								<div class="col-12 col-md-6 pl-4 px-md-4 my-md-4 float-left menuItem"><li class="menu-141 "><a href="/store" >Heating Oil Shop</a><li class="menu-136 "><a href="/store/fuel-by-the-litre" >Fuel By The Litre</a><li class="menu-142 "><a href="/store/accessories" >Accessories</a><li class="menu-286 "><a href="/store/monitors-and-security" >Monitors &amp; Security</a><li class="menu-287 "><a href="/store/coal-and-log-supplies" >Coal &amp; Log Supplies</a><li class="menu-211 "><a href="/store/heating-oil-additives" >Additives</a></div></ul></li><li class="menu-330  active"><a href="/" >Quote</a><li class="menu-331 "><a href="/home/contact-centre" >Contact Us</a>			</ul>
+			<div class="d-lg-none m-3 ml-4 mobLogin">
+									<a href="/login">Log In <i class="fad fa-truck-container"></i> Track Your Order</a></span>
+							</div>
+        </div>
+		<div class="d-none d-lg-block">
+			<!-- Log in/out buttons + order tracking -->
+							<a href="/login">Log In <i class="fad fa-truck-container"></i> Track Your Order</a></span>
+					</div>
+    </div>
+</nav>
+				</div>			
+			</div>
+		</nav>
+		
+		<header class="container-fluid  p-0 m-0" id="header">
+			
+<div class="headerWrapper">
+	<div class="staticImage d-none d-lg-block">
+		<div class="container backgroundFullText">
+			<div class="row">
+				<div id="backgroundIcon">
+					<i class="fas fa-question-circle fa-5x"></i>
+				</div>
+				<div id="backgroundText" class="col-5">
+					<h2 style="color: #fff!important">Did you know?</h2>
+					<p>We offer free a choice of tanker size.</p>
+					<p>Order too much &amp; we'll automatically refund the difference.</p>
+					<p>We have no hidden fees.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="quoteForm2 transition">
+		<div id='map-canvas'></div>
+				<form method="post" class="js-recalculate" id="basketform" action="https://homefuelsdirect.co.uk//index.php">
+			<input type="hidden" id="area" name="customProductData[1][3]" value="">
+			<input type="hidden" id="fueltype" name="customProductData[1][4]" value="">
+			<input type="hidden" id="dtype" name="customProductData[1][7]" value="">
+			<input type="hidden" id="depot" name="customProductData[1][17]" value="">
+			<input type="hidden" class="pcode" name="customProductData[1][18]" value="">
+			<input type="hidden" id="quantity" class="quantity-input js-recalculate" name="quantity[]" value="">
+			<input type="hidden" class="pname" value="Home Heating Oil - by the litre">
+			<input type="hidden" name="option" value="com_virtuemart">
+			<input type="hidden" name="view" value="cart">
+			<noscript>&lt;input type="hidden" name="task" value="add" /&gt;</noscript>
+			<input type="hidden" name="virtuemart_product_id[]" value="1" class="virtuemart_product_id">
+			<input type="hidden" name="virtuemart_manufacturer_id" value="10">
+			<input type="hidden" name="virtuemart_category_id[]" value="1">	
+			<input type="hidden" name="customer_uniqid" id="customer_uniqid" value="">
+			<input type="hidden" name="customer_county" id="customer_county" value="">			
+		</form>
+
+		
+		<form method="post" class="js-recalculate" id="basketform-new" action="https://homefuelsdirect.co.uk/index.php">
+
+			<input type="hidden" id="quantity_new" class="quantity-input js-recalculate" name="quantity[]" value="">
+			<input type="hidden" class="pname" value="Home Heating Oil - by the litre">
+			<input type="hidden" name="option" value="com_virtuemart">
+			<input type="hidden" name="view" value="cart">
+			<noscript>&lt;input type="hidden" name="task" value="add" /&gt;</noscript>
+			<input type="hidden" name="virtuemart_product_id[]" value="351" class="virtuemart_product_id">
+			<input type="hidden" name="customProductData[351][20][2619][comment]" value="" id="customFuelPrice">
+			<input type="hidden" name="customProductData[351][21]" value="" id="minDeliveryDate">
+			<input type="hidden" name="customProductData[351][22]" value="" id="maxDeliveryDate">
+			<input type="hidden" name="customProductData[351][24]" value="" id="postCodeDisplay">
+			<input type="hidden" name="customProductData[351][25]" value="" id="window">
+			<input type="hidden" id="fueltype_new" name="customProductData[351][4]" value="">
+
+		</form>
+			<div class="quoteForm transition">
+				<h2>The Truly Instant Quote!</h2>
+				<div id="currentPrices">
+					<div class="hideOnMobile">
+						<p>Our live average price:</p>
+						<p id="currentLivePrice">48<sub>.06</sub></p>  
+						<p>Pence / Litre</p>
+						<div class="d-flex mb-2 justify-content-center align-items-baseline">
+							<p class="mt-2 mr-2" style="font-weight: 500; color: #2aa150; font-style: italic; cursor: pointer;" data-toggle="modal" data-target="#trustModal">The Homefuels Price Promise</p>
+							<!-- <i class="fas fa-info" style="color: #2aa150; font-weight: 600; font-size: 11px;"></i> -->
+							<i class="fal fa-info-circle" style="color: #2aa150; font-weight: 500; font-size: 13px;"></i>
+						</div>
+					</div>
+				</div>
+				<div class="fuelTypeContainer">
+					<div class="radioContainer">
+						<input id="reg" type="radio" checked="checked" name="ftype" value="1">
+						<label for="reg">Heating Oil ( Kerosene )</label>
+					</div>
+					<div class="radioContainer">
+						<input id="prem" type="radio" name="ftype" value="2">
+						<label for="prem">Premium Heating Oil</label>
+					</div>
+					<div class="radioContainer">
+						<input id="aga" type="radio" name="ftype" value="3">
+						<label for="aga">AGA Heating Oil</label>
+					</div>
+					
+				</div>
+				<div class="p-2">
+					<div class="quoteFormInput">
+						<input id="pcode" type="text" name="name" placeholder="Postcode" autocomplete="postal-code"/>
+						<label for="pcode">Anywhere in UK</label>
+					</div>
+				</div>
+				<div class="p-2">
+					<div class="quoteFormInput">
+						<input id="qty" type="number" name="name" placeholder="Litres" step="50" autocomplete="none" />
+						<label id="qty-label" for="qty">Min 500 (units of 50)</label>
+					</div>
+				</div>
+
+				<label style="margin-top:15px;">Domestic Order
+					<input id="commercialCheckbox" type="checkbox" checked="" onchange="commercialOrdersCheck();">
+				</label>
+				
+				<span class="quote"><button class="btn btn-quote" onclick="getquote();">Instant Quote</button></span>
+				<div id="result" class="quoteResult transition"></div>
+			</div>
+	</div>
+	<div class="slider transition">
+		<div class="graphicBackground" style="background: url(https://homefuelsdirect.co.uk/images/HFD_Banner/bannerBackground_summer.svg) repeat-x">
+			<div class="wrapper">
+				<div class="graphicContainer slideAnim transitionContainer">
+					<div class="graphicHose">
+						<svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1391.1 1000" style="enable-background:new 0 0 1391.1 1000;" xml:space="preserve">
+							<path id="fuelPath" class="fuelPath" d="M254.5,612c0,0-132,67.4-188.3,138.7S12,920.4,275,905.7C538,891,633.3,872.5,724,862.2s143.4-37.8,239.9-31.3
+							c75.5,5.6,91.7-25.9,99-62.1s1.20-1,6-100"></path>
+							<g id="fuel1">
+								<ellipse cx="0" cy="0" rx="15" ry="7" stroke="#be1e2e" fill="#be1e2e" stroke-width="5"></ellipse>
+							</g>
+							<g id="fuel2">
+								<ellipse cx="0" cy="0" rx="15" ry="7" stroke="#be1e2e" fill="#be1e2e" stroke-width="5"></ellipse>
+							</g>
+							<g id="fuel3">
+								<ellipse cx="0" cy="0" rx="15" ry="7" stroke="#be1e2e" fill="#be1e2e" stroke-width="5"></ellipse>
+							</g>
+							<g id="fuel4">
+								<ellipse cx="0" cy="0" rx="15" ry="7" stroke="#be1e2e" fill="#be1e2e" stroke-width="5"></ellipse>
+							</g>
+							<g id="fuel5">
+								<ellipse cx="0" cy="0" rx="15" ry="7" stroke="#be1e2e" fill="#be1e2e" stroke-width="5"></ellipse>
+							</g>
+							<g id="fuel6">
+								<ellipse cx="0" cy="0" rx="15" ry="7" stroke="#be1e2e" fill="#be1e2e" stroke-width="5"></ellipse>
+							</g>
+							<animateMotion xlink:href="#fuel6" dur="6s" repeatCount="indefinite" rotate="auto">
+								<mpath xlink:href="#fuelPath"></mpath>
+							</animateMotion>
+							<animateMotion xlink:href="#fuel5" dur="6s" begin="1s" repeatCount="indefinite" rotate="auto">
+								<mpath xlink:href="#fuelPath"></mpath>
+							</animateMotion>
+							<animateMotion xlink:href="#fuel4" dur="6s" begin="2s" repeatCount="indefinite" rotate="auto">
+								<mpath xlink:href="#fuelPath"></mpath>
+							</animateMotion>
+							<animateMotion xlink:href="#fuel3" dur="6s" begin="3s" repeatCount="indefinite" rotate="auto">
+								<mpath xlink:href="#fuelPath"></mpath>
+							</animateMotion>
+							<animateMotion xlink:href="#fuel2" dur="6s" begin="4s" repeatCount="indefinite" rotate="auto">
+								<mpath xlink:href="#fuelPath"></mpath>
+							</animateMotion>
+							<animateMotion xlink:href="#fuel1" dur="6s" begin="5s" repeatCount="indefinite" rotate="auto">
+								<mpath xlink:href="#fuelPath"></mpath>
+							</animateMotion>
+						</svg>
+					</div>
+					<div class="graphicTruck" style="background: url(https://homefuelsdirect.co.uk/images/HFD_Banner/bannerLeft_summer.svg) center no-repeat;"></div>
+					<div class="graphicOllie" style="background: url(https://homefuelsdirect.co.uk/images/HFD_Banner/bannerOllie_summer.svg) center no-repeat;"></div>
+					<div class="graphicHouse slideAnim transitionHouse" style="background: url(https://homefuelsdirect.co.uk/images/HFD_Banner/bannerRight_summer.svg) no-repeat;"></div>
+				</div>
+			</div>
+		</div>
+		<div class="sliderContainer">
+			<div class="sliderContent">
+				<div class="moduletable  quoteRight">
+        	<div id="quoteRightcarousel" class="carousel slide" data-ride="carousel" data-wrap="true" data-interval="10000">
+		<div class="carousel-inner">
+							<div class="carousel-item">
+										<div style="background-image: url('');">
+						<div class="col-12 col-md-8 col-lg-8 text-center text-md-left pt-5 px-5">
+							<h1>Always competitive on price</h1>							<span class="faIcon"><i class="<br />
+<b>Warning</b>:  Undefined variable $fontawesomeIcon in <b>/home/homefuels/public_html/templates/2019_HFD/html/mod_articles_news/homepageslider.php</b> on line <b>28</b><br />
+"></i></span>
+							<p><p>The home of cheap heating oil, with award-winning customer service! View our heating oil price graph below to see daily updates!</p></p>		
+						</div>
+					</div> 
+				</div>
+							<div class="carousel-item">
+										<div style="background-image: url('');">
+						<div class="col-12 col-md-8 col-lg-8 text-center text-md-left pt-5 px-5">
+							<h3>Delivering Oil At A Fair Price</h3>							<span class="faIcon"><i class="<br />
+<b>Warning</b>:  Undefined variable $fontawesomeIcon in <b>/home/homefuels/public_html/templates/2019_HFD/html/mod_articles_news/homepageslider.php</b> on line <b>28</b><br />
+"></i></span>
+							<p><p>Our deliveries are made by Certas Energy, the country’s largest heating oil distributor. With the biggest buying power with the refineries, we can pass those savings on to you the homeowner.</p></p>		
+						</div>
+					</div> 
+				</div>
+							<div class="carousel-item">
+										<div style="background-image: url('');">
+						<div class="col-12 col-md-8 col-lg-8 text-center text-md-left pt-5 px-5">
+							<h3>Fast and secure ordering</h3>							<span class="faIcon"><i class="<br />
+<b>Warning</b>:  Undefined variable $fontawesomeIcon in <b>/home/homefuels/public_html/templates/2019_HFD/html/mod_articles_news/homepageslider.php</b> on line <b>28</b><br />
+"></i></span>
+							<p><p>Refilling your oil tank has never been easier with our instant quote service and encrypted secure checkout.</p></p>		
+						</div>
+					</div> 
+				</div>
+							<div class="carousel-item">
+										<div style="background-image: url('');">
+						<div class="col-12 col-md-8 col-lg-8 text-center text-md-left pt-5 px-5">
+							<h3>Our buying power means low prices!</h3>							<span class="faIcon"><i class="<br />
+<b>Warning</b>:  Undefined variable $fontawesomeIcon in <b>/home/homefuels/public_html/templates/2019_HFD/html/mod_articles_news/homepageslider.php</b> on line <b>28</b><br />
+"></i></span>
+							<p><p>We have huge buying power due to the volumes we now sell, so you really do get the best deal on your central heating oil from us!</p></p>		
+						</div>
+					</div> 
+				</div>
+					</div>
+	</div>
+
+<script type="text/javascript">
+	jQuery(document).ready(function () {
+		jQuery('.quoteRight').find('.carousel-indicators li').first().addClass('active');
+		jQuery('.quoteRight').find('.carousel-item').first().addClass('active');
+		jQuery('.quoteRight').find('.carousel-item div div div .test').first().addClass('title');
+        
+		jQuery('.quoteLeft').find('.carousel-indicators li').first().addClass('active');
+		jQuery('.quoteLeft').find('.carousel-item').first().addClass('active');
+        
+		jQuery('.quoteMobile').find('.carousel-indicators li').first().addClass('active');
+		jQuery('.quoteMobile').find('.carousel-item').first().addClass('active');
+	});
+	jQuery('#carousel').on('slide.bs.carousel', function () {       
+		$holder = jQuery( "ol li.active" );
+		$holder.next( "li" ).addClass("active");  
+		if($holder.is(':last-child')) {
+			$holder.removeClass("active");
+			jQuery("ol li:first").addClass("active");
+		}
+	$holder.removeClass("active");
+	}) 
+	jQuery(".carousel-indicators li").click(function()  {
+		jQuery('.carousel-indicators').find('li.active').removeClass('active');	
+		jQuery(this).addClass('active');
+	});	
+</script></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<input type="hidden" id="formname">
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="trustModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content justify-content-center text-center">
+      <div class="modal-header justify-content-center">
+	  	<div class="d-flex flex-column-reverse">
+		  	<img src="https://homefuelsdirect.co.uk//images/ollie-images/ollie_waving_smaller_alt.png" alt="Ollie waving" style="width: 80%;">
+			<h2 class="modal-title" id="exampleModalLabel">We're honest!</h2>
+		</div>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>We have no sneaky service charges or hidden fees added throughout our basket and checkout process!</p>
+		<p>To get an accurate price, we’d always suggest going to the end of the ordering process - some online suppliers sneak a service fee in at the very last minute. At HomeFuels Direct - the price you see is the price you pay!</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="trustModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content justify-content-center text-center">
+      <div class="modal-header justify-content-center">
+	  	<div class="d-flex flex-column-reverse">
+		  	<img src="https://homefuelsdirect.co.uk/images/ollie-images/gift.svg" alt="Ollie waving" style="width: 50%;">
+			<h2 class="modal-title" id="exampleModalLabel">Not many delivery days left...</h2>
+		</div>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4 style="color: #1b5d29 !important;">ORDER NOW to be Heating Oil Ready</h4>
+
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<style>
+	#fuel1, #fuel2, #fuel3, #fuel4, #fuel5, #fuel6 {opacity:0;}
+
+</style>
+
+<script>
+
+var ukBankHolidays = [];
+
+
+var deliveryWindows = {"Standard":10,"Window1":5,"Window2":3,"Window3":2,"Emergency":1};
+
+(function theLoop (i) {
+	var target = '#fuel'+(i+1);
+  setTimeout(function () {
+    jQuery(target).css('opacity', '1');
+    console.log('target of '+target);
+    if (--i) {          // If i > 0, keep going
+      theLoop(i);       // Call the loop again, and pass it the current value of i
+    }
+  }, 1100);
+})(6);
+
+setTimeout(function () { jQuery('#fuel1').css('opacity', '1'); }, 7700);
+
+
+jQuery(function($) {
+
+	var postcodeVal = "";
+	var fuelVal = 0;
+
+    //Changes min order text based on irish postcode
+	$(".pcode").keyup(function(){
+		postcodeVal = $(this).val();
+        var substring = postcodeVal.slice(0, 2);
+        if(substring === 'BT' || substring === 'bt') {
+            $("#qty-label").text("Min 300");
+        } else {
+            $("#qty-label").text("Min 500");
+        }
+	});
+
+
+
+	jQuery(function($) {
+		$(".btn-quote").click(function()  {
+			
+		}); 
+	});	
+	
+	jQuery(function($) {
+		$(".btn-reset").click(function()  {
+			$('.quoteForm2').css({"left": "0"});
+			// $('#map-canvas').show();
+			$('.slider').css({"left": "400px"});
+			$('.quoteResult').css({"display": "none", "opacity": "0"});
+		}); 
+	});
+	
+	jQuery('.sliderContainer ul.container').find('li').first().addClass('active');
+
+	if(jQuery(window).height() >= 700) {
+		jQuery(".graphicContainer").addClass("slideContainer");
+		jQuery(".graphicHouse").addClass("slideHouse");
+		jQuery(".sliderContainer").fadeTo( "slow", 1 );
+	} else {
+		jQuery(".graphicContainer").addClass("slideContainer");
+		jQuery(window).scroll(function() {
+			jQuery(".slideanim").each(function(){
+				var pos = jQuery(this).offset().top;
+				var winTop = jQuery(window).scrollTop();
+					jQuery(".graphicHouse").addClass("slideHouse");
+					jQuery(".sliderContainer").fadeTo( "slow", 1 );
+			});
+		});
+	}
+
+	$('#graphicCarousel').on('slide.bs.carousel', function(event) {
+		var index = $(event.relatedTarget).index();
+		$('[data-slide-to='+index+']').button('toggle');
+	});
+
+
+	// Fix Ollies pipe on ios
+	if (navigator.userAgent.toLowerCase().search("iphone") >= 0) {
+		console.log(navigator.userAgent);
+		var pipePath = document.getElementById("fuelPath");
+		var newPath = "M254.5,612c0,0-132,67.4-188.3,138.7S12,920.4,275,905.7C538,891,633.3,872.5,724,862.2s143.4-37.8,239.9-31.3 c75.5,5.6,91.7-25.9,110-62.1s1.1-1,20-50";
+		pipePath.setAttribute('d', newPath);
+	}
+
+	/* MAP STUFF
+	------------------------------------------------- */
+
+	// geocoder = new google.maps.Geocoder();
+
+	// var options = {
+	// 	gestureHandling: 'none',
+	// 	zoomControl: false,
+	// 	disableDefaultUI: true,
+	// 	zoom: 8, 
+	// 	center: new google.maps.LatLng(54.563739, -1.316372), //HFE Support Center
+	// 	mapTypeId: google.maps.MapTypeId.ROADMAP
+	// }
+
+	// var map = new google.maps.Map(document.getElementById("map-canvas"), options);
+
+	//Entirely independant of the form. Only Affecting the postcode in/out of input field.
+	$('.pcode').blur(function(){
+		const postcode = $(this).val().toUpperCase();
+		let regex = new RegExp("^(GIR ?0AA|[A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]([0-9ABEHMNPRV-Y])?)|[0-9][A-HJKPS-UW]) ?[0-9][ABD-HJLNP-UW-Z]{2})$");
+		//If it doesn't pass the regex - it will remain where it was.
+		//If it does pass the regex, and fails to return a response somehow, it defaults to their home address.
+		if(regex.test(postcode)){
+			fetch('https://api.postcodes.io/postcodes/'+postcode)
+			.then(function(response){
+				if (response.status !== 200) {
+					// map.panTo(new google.maps.LatLng(54.563739, -1.316372));
+				}
+				response.json().then(function(data) {
+					const { latitude, longitude } = data.result;
+					// map.setZoom(13);
+					// map.panTo(new google.maps.LatLng(latitude, longitude));
+				});
+			})
+		}
+	})
+});
+
+
+// Function to show the modal after 2 seconds
+// function showModalAfter2Seconds() {
+// setTimeout(function() {
+// 	jQuery('#trustModal').modal('show');
+// }, 2000); // 2000 milliseconds = 2 seconds
+// }
+
+// Call the function when the page loads
+jQuery(document).ready(function() {
+	
+	
+});
+
+
+jQuery(document).ready(function() {
+
+	
+	fetch("https://www.gov.uk/bank-holidays.json")
+		.then(response => response.json())
+		.then(data => {
+			// Use "england-and-wales" or your desired region
+			ukBankHolidays = data["england-and-wales"].events.map(e => e.date);
+			console.log("Bank holidays loaded:", ukBankHolidays);
+		})
+		.catch(err => {
+			console.error("Failed to load bank holidays:", err);
+		});
+	
+
+	var root = 'https://homefuelsdirect.co.uk/';
+	// check the url 
+	var urlParams = new URLSearchParams(window.location.search);
+
+	// get the params from the url
+	var pcode = '';
+	var qty ='';
+	var checkbox = '';
+
+	// populate the quote form with URL params if they exist
+
+	if (pcode) {
+		jQuery('#pcode').val(pcode);
+	}
+
+	if (qty) {
+		jQuery('#qty').val(qty);
+	}
+
+	if (checkbox) {
+		// Select the radio button with the corresponding ID
+		jQuery("#" + checkbox).prop('checked', true);
+	}
+
+	if (pcode && qty && checkbox) {
+		// jQuery('#clear_basket').val(1);
+        getquote();
+    }
+});
+
+
+</script>
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAm_Wt772OKN_GCnrdpg0BGLnZRQ_Xng4s"></script> -->
+		</header>
+		
+		<main class="container-fluid p-0 mx-0" id="main-content">
+			<div class="container mt-4">
+				<div class="row px-2">
+					<div class="col-12">
+											</div>
+				</div>
+			</div>
+			
+<div id="system-message-container">
+			</div>
+
+								<div id="aboveContent" class="container-fluid p-0 m-0">
+						
+<style>
+.homepoints-banner {
+width:100%;
+}
+
+.mobile-banner {
+	/* object-position: 30px 100%;
+    object-fit: cover;
+	border-radius:5px;
+	background-color:#faa401; */
+}
+
+
+/* to return to carbon offset remove backgroundimage style from container, uncomment out img and h3 */
+</style>
+<a href="https://homefuelsdirect.co.uk/">
+	<div class="container pt-md-2">
+		<div class="homepoints-banner my-4 p-4 d-none d-md-flex justify-content-center align-items-middle w-100">
+			
+			<img src="https://homefuelsdirect.co.uk/images/banners/Windows_Desktop.png" alt="" class="w-100">
+		</div>
+		<div class="homepoints-bannerd-flex d-md-none justify-content-center align-items-middle w-100 flex-column">
+			
+			<img src="https://homefuelsdirect.co.uk/images/banners/Windows_Mobile.png" alt="" class="w-100 mobile-banner">
+
+		</div>
+	</div>
+</a>
+
+
+<script>
+</script><div class="newsflash<br />
+<b>Warning</b>:  Undefined variable $moduleclass_sfx in <b>/home/homefuels/public_html/templates/2019_HFD/html/mod_articles_news/simpleright.php</b> on line <b>12</b><br />
+">
+			<section class="container mt-4">
+			<div class="row px-4">
+				<div class="col-12 text-center text-md-left">
+					<h2 class="pb-4">In Trustpilot we Trust</h2>
+				</div>
+			</div>
+			<div class="row px-4">
+				<div class="col-12 col-md-7 text-center text-md-left">
+					<p>At Homefuels Direct we really value your feedback and opinions on how we are perfoming as a business. For that reason we enlisted the help of Trustpilot. Trustpilot is an entirely independent feedback platform which helps you to tell us how we're performing and where we could improve our services using a secure and impartial third party service.</p>
+<p>Whenever you order through HomeFuelsDirect.co.uk, you'll be invited to give us feedback through Trustpilot - only if you want to of course. If you could let us know how we are doing we'd really appreciate it and all feedabck will help us to learn and understand any issue and probelms we are not aware of and help shape the business going forward.</p>				</div>
+				<div class="my-auto col-12 col-md-3 offset-md-2 slide-in text-center">
+					<img src="https://site.feefo.com/hubfs/feefo_platinum_service_2021_tag_dark.png" alt="" class="feefo-badge__image">
+				</div>
+			</div>
+		</section>
+	</div>
+
+
+<div id="pricegraph" class="container-fluid mb-4 py-4 px-0 text-center text-md-left">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-8 order-2 order-md-1">
+				<canvas id="line-chart" width="1000" height="450" aria-label="Heating Fuel Price Comparison Graph" role="Comparison Image"></canvas>
+			</div>
+			<div class="col-12 col-md-4 text-md-left text-center align-self-center order-1 order-md-2">
+				<h3>Live Heating Oil Prices</h3>
+				<p>We’re proud to offer low heating oil prices and have created this graph so you can see how we fair against different suppliers - click on the suppliers names to toggle prices on or off.</p>
+				<a href="/home/heating-oil-prices">Get Live Prices Now</a>
+				<div class="social-share-inner">
+					<a class="social-share-item" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhomefuelsdirect.co.uk%2Ffuel_price_comparison_graph.jpg', 'facebook', 'width=600px,height=600px,menubar=no,toolbar=no,resizable=yes,scrollbars=yes');" rel="nofollow">
+    					<span>
+							<svg viewBox="0 0 24 24" class="social-share-item-icon">
+								<g>
+ 									<path fill="#3e68c0" d="M5.677,12.998V8.123h3.575V6.224C9.252,2.949,11.712,0,14.736,0h3.94v4.874h-3.94c-0.432,0-0.934,0.524-0.934,1.308v1.942h4.874v4.874h-4.874V24H9.252V12.998H5.677z"></path>
+								</g>
+							</svg>
+						</span>
+					</a>
+					<a class="social-share-item" onclick="window.open('https://twitter.com/intent/tweet?url=https%3A%2F%2Fhomefuelsdirect.co.uk%2Ffuel_price_comparison_graph.jpg', 'twitter', 'width=600px,height=600px,menubar=no,toolbar=no,resizable=yes,scrollbars=yes');" rel="nofollow">
+						<span>
+							<svg viewBox="0 0 24 24" class="social-share-item-icon">
+								<g>
+ 									<path id="twitter-4-icon_1_" fill="#23abff" d="M21.535,7.063c0.311,6.923-4.852,14.642-13.99,14.642c-2.78,0-5.368-0.815-7.545-2.213c2.611,0.308,5.217-0.415,7.287-2.038c-2.154-0.039-3.972-1.462-4.599-3.418c0.771,0.148,1.53,0.105,2.223-0.084c-2.367-0.475-4.002-2.608-3.948-4.888c0.664,0.369,1.423,0.59,2.229,0.615C1.001,8.215,0.38,5.32,1.67,3.108c2.428,2.978,6.055,4.938,10.145,5.143c-0.717-3.079,1.618-6.044,4.796-6.044c1.415,0,2.694,0.598,3.592,1.554c1.121-0.221,2.174-0.631,3.126-1.195c-0.368,1.149-1.149,2.114-2.164,2.724c0.995-0.119,1.944-0.384,2.826-0.776C23.331,5.503,22.497,6.37,21.535,7.063z"></path>
+								</g>
+							</svg>
+						</span>
+					</a>
+					<a class="social-share-item" onclick="window.open('https://homefuelsdirect.co.uk/sharegraph.html', 'embed-share', 'width=600px,height=600px,menubar=no,toolbar=no,resizable=yes,scrollbars=yes');" rel="nofollow">
+    					<span style="color: #999999; font-size:16px; font-weight:bold;">&lt;/&gt;</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<h6 style="font-size: 9px;color: #000 !important;" class="text-center mt-4">* This reflects the UK wide average for HomeFuels Direct</h6>
+		<h6 style="font-size: 9px;color: #000 !important;" class="text-center mt-4">* Data for Boilerjuice is taken from the; Price Chart- 'heating oil prices (UK Chart)' section of the Boilerjuice website.</h6>
+	</div>
+</div>
+
+<style type="text/css">
+
+.social-share-inner {
+    margin-top: 15px;
+}
+.social-share-item {
+	margin: 5px;
+}
+.social-share-item-icon {
+	height: 20px;
+	width: 20px;
+}	
+    .smaller-text {
+        font-size: 0.85rem;
+    }
+</style>
+
+<script type="text/javascript" src="https://github.com/niklasvh/html2canvas/releases/download/0.5.0-alpha1/html2canvas.js"></script>
+
+<script>    
+jQuery(document).ready(function() {
+    var price = ["HomeFuelsDirect.co.uk","0.502326","0.501298","0.497967","0.494362","0.493528","0.492305","0.491700","0.491922","0.492622","0.499378","0.500129","0.497957","0.497466","0.495059","0.495600","0.493155","0.490979","0.488423","0.485768","0.485472","0.485372","0.485890","0.484666","0.482391","0.482726","0.480735","0.480074","0.480114","0.478673","0.480185"];
+	price.shift();
+	var bj = ["Boilerjuice.com","0.531600","0.530400","0.527900","0.525000","0.523200","0.522900","0.522700","0.525500","0.529800","0.529800","0.531100","0.530400","0.530300","0.530100","0.502381","0.501619","0.501619","0.496476","0.496476","0.496476","0.496476","0.493714","0.492190","0.490190","0.489810","0.489810","0.489810","0.489810","0.485429","0.486286"];
+	bj.shift();
+	var co = ["CheapestOil.co.uk","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000","0.513000"];
+	co.shift();
+	var tags = ["homefuelsdirect.co.uk live heating oil prices - daily to 04 Jun 2025","","07\/05","","09\/05","","11\/05","","13\/05","","15\/05","","17\/05","","19\/05","","21\/05","","23\/05","","25\/05","","27\/05","","29\/05","","31\/05","","02\/06","","04\/06"];
+	tags.shift();
+    
+	var chartRendered = false;
+	
+    /* Every time the window is scrolled ... */
+    window.addEventListener('scroll', function graphScroll(event) {
+        var hT = jQuery('#pricegraph').offset().top,
+            hH = jQuery('#pricegraph').outerHeight(),
+            wH = jQuery(window).height(),
+            wS = jQuery(this).scrollTop();
+        var windowBoundary = (hT+hH-wH);
+        var windowScroll = wS;
+        // console.log('scroll listener');
+        //When the graph container is in view port...
+        if (windowScroll > windowBoundary * 0.85){
+            if(!chartRendered){
+                chartRendered = true; //Prevent re-loading... 
+				animationSteps: 200
+				renderChart();
+				window.removeEventListener('scroll', graphScroll);
+            }
+        }
+    });  
+    
+    function renderChart() {
+        var chartSelector = document.getElementById("line-chart").getContext("2d");
+        var chart = new Chart(chartSelector, {
+          type: 'line',
+          data: {
+            labels: tags,
+            datasets: [{ 
+                data: price,
+                label: "HomeFuelsDirect.co.uk",
+                backgroundColor: "#00602a",
+                borderColor: "#00602a",
+                fill: false
+              }, { 
+                data: bj,
+                label: "Boilerjuice.com",
+                backgroundColor: "#ef5a27",
+                borderColor: "#ef5a27",
+                fill: false
+			  	}
+            //   }, { 
+            //     data: co,
+            //     label: "<//?php echo $co[0]; ?>",
+            //     backgroundColor: "#004b9a",
+            //     borderColor: "#004b9a",
+            //     fill: false
+            //   }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:false
+                    }
+                }]
+            },
+            legend: {
+                position: 'bottom',
+                labels: {
+                    usePointStyle: true,
+                    padding: 40,
+                },
+                onHover: function(e) {
+                    e.target.style.cursor = 'pointer';
+                }
+            },
+            title: {
+                display: true,
+                text: 'homefuelsdirect.co.uk live heating oil prices - daily to 04 Jun 2025',
+                padding: 25
+            }
+        }});
+    }
+});
+    
+window.onload=function(){
+	jQuery(document).ready(function(){
+
+		//Weight loss chart download 
+		jQuery("#saveJPG").click(function(){
+			html2canvas(document.getElementById("line-chart"), {
+				onrendered:function(canvas){
+					var a = document.createElement('a');
+					// toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+					a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+					a.download = 'chartimage.jpg';
+					a.click();
+				}
+			});
+		});
+	});
+}
+//#ff5f81 Boilerjuice
+//#01602a HFD
+//#4bc1c3 Cheapest Oil
+
+</script><style>
+ #cycler{ 
+        position:relative; 
+    }
+    #cycler img { 
+        position:absolute; 
+        z-index:1; 
+        top:0;
+    }
+    #cycler img.active { 
+        z-index:3 
+    }
+    .slide-in {
+        opacity: 0.1;
+        
+    }
+    .slide-in.active {
+        opacity: 1;
+        transition: 1s;
+	}
+	.ieNotifImg {
+		display: none;
+	}
+    
+    
+    #cyclerAward .parallax1, #cyclerAward .parallax2, #cyclerAward .parallax3, #cyclerAward .parallax4 {
+        width: 70%;
+    }
+    
+    #cyclerAward {margin-top:80px;}
+    
+    
+    
+    .parallax2 {
+        position: relative;
+        top: -180px;
+        left: 110px;
+    }
+    
+    .parallax3 {
+        position: absolute;
+        top: 50px;
+        left: 120px;
+    }
+    
+    .parallax4 {
+        position: absolute;
+        top: -65px;
+        left: -22px;
+    }
+    
+    
+	_:-ms-lang(x), .ieNotifImg { display: inline; }
+	_:-ms-lang(x), .parallax { display: none; }
+	_:-ms-lang(x), .slide-in { opacity: 1; }
+</style>
+<section class="container mt-4" style="overflow:hidden;">
+	<div class="row px-4">
+					
+
+<div class="col-12 col-md-7 text-center text-md-left">
+	<h2 class="pb-4">Up To Date, Every Step Of The Way</h2>
+	<p>With our all new text Update service, we keep you in the loop every step of the way throughout your order. Ordering with HomeFuels Direct is quick and easy, and now gives you the peace of mind of knowing where your order is and when it will be with you.</p>
+<p>&nbsp;</p>
+<p><a class="btn btn-primary" href="#top">Start Your Order Now</a></p></div>
+<div id="cyclerText" class="my-auto col-12 col-md-4 offset-md-1 slide-in text-center" style="position: relative;
+    bottom: -25px;"">
+			<div class="pull-right position-relative">
+            <img class="parallax1 parallax active position-relative " src="/images/main_pages/update3.png" style="z-index:999" />
+            <img id="ieNotifImg" class="parallax1 active position-relative " src="/images/main_pages/update3.png" style="z-index:999" />
+									        </div>
+	</div>
+<script>
+function parallax() {
+    var parallax2 = document.getElementById("parallax2");
+    var parallax3 = document.getElementById("parallax3");
+    var parallax4 = document.getElementById("parallax4");
+    var scroll = jQuery(this).scrollTop();
+    var opacity = (1 - (scroll / 500) / 1.5);
+    
+    parallax2.style.top = -(window.pageYOffset/4)+'px';
+    parallax2.style.opacity = opacity;
+    
+    parallax3.style.top = (window.pageYOffset/4)+'px';
+    parallax3.style.opacity = opacity;
+    
+    parallax4.style.top = -(window.pageYOffset/4)+'px';
+    parallax4.style.opacity = opacity;
+}
+    
+window.addEventListener("scroll", parallax, false);
+
+    
+function debounce(func, wait = 20, immediate = true) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
+            
+var sliderImages = document.querySelectorAll('.slide-in');
+    
+function checkSlide(e) {
+    for(var i = 0; i < sliderImages.length; i++) {
+        var sliderImage = sliderImages[i];
+        var yAxis = window.scrollY;
+        var windowHeight = window.innerHeight;
+        var sliderImageHeight = sliderImage.offsetHeight;
+        //Get position on screen
+        var slideInAt = (yAxis + windowHeight) - sliderImageHeight / 2;
+        var imageBottom = sliderImage.offsetTop + sliderImage.offsetHeight;
+    	var isHalfShown = slideInAt > sliderImage.offsetTop;
+        var isNotScrolledPast = window.scrollY < imageBottom;
+        if(isHalfShown && isNotScrolledPast) {
+            sliderImage.classList.add('active');
+        } else {
+            sliderImage.classList.remove('active');
+        }
+    }
+}
+var showTexts = true;
+
+/* Every time the window is scrolled ... */
+
+window.addEventListener('scroll', function textScroll(event) {
+	var hT = jQuery('#cyclerText').offset().top,
+        hH = jQuery('#cyclerText').outerHeight(),
+        wH = jQuery(window).height(),
+        wS = jQuery(window).scrollTop();
+	var windowBoundary = (hT+hH-wH);
+	var windowScroll = wS;
+	var newImageUrl = "";
+	var imageToChange = document.getElementById("cyclerText").childNodes[1].childNodes[1];
+	var originalImageSrc = "https://homefuelsdirect.co.uk/images/main_pages/update1.png";
+    
+    //When the graph container is in view port...
+    if (windowScroll > windowBoundary * 1.15){
+		newImageUrl = "https://homefuelsdirect.co.uk/images/main_pages/update3.png";
+		window.removeEventListener('scroll', textScroll);
+	} else if (windowScroll > windowBoundary){
+		newImageUrl = "https://homefuelsdirect.co.uk/images/main_pages/update2.png";
+	} else {
+		newImageUrl = originalImageSrc;
+	}
+    imageToChange.src = newImageUrl;
+
+});
+
+</script>			
+	</div>
+</section>
+					</div>
+			
+				<div id="componentWrapper" class="container-fluid p-0 m-0">
+					
+<section id="trustpoints" class="container-fluid p-4 my-4">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4 order-last order-md-first">
+                    <div class="nav nav-pills ">
+                                                                        <button class="nav-item nav-link" id="v-pills-uk-based-tab" data-toggle="pill" href="#v-pills-uk-based" role="tab" aria-controls="v-pills-uk-based" aria-selected="true">
+                            <div class="row">
+                                <div class="col-3 my-auto">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="col-9 d-none d-md-block">
+                                    <div class="row">
+                                        <div class="col-12 text-left">
+                                            <strong>UK Based</strong>
+                                        </div>
+                                        <div class="col-12 text-left">
+                                            Call Centre                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                                                    <button class="nav-item nav-link" id="v-pills-we-re-11-years-old-tab" data-toggle="pill" href="#v-pills-we-re-11-years-old" role="tab" aria-controls="v-pills-we-re-11-years-old" aria-selected="true">
+                            <div class="row">
+                                <div class="col-3 my-auto">
+                                    <i class="fas fa-medal"></i>
+                                </div>
+                                <div class="col-9 d-none d-md-block">
+                                    <div class="row">
+                                        <div class="col-12 text-left">
+                                            <strong>Established</strong>
+                                        </div>
+                                        <div class="col-12 text-left">
+                                            in 2008                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                                                    <button class="nav-item nav-link" id="v-pills-secure-site-tab" data-toggle="pill" href="#v-pills-secure-site" role="tab" aria-controls="v-pills-secure-site" aria-selected="true">
+                            <div class="row">
+                                <div class="col-3 my-auto">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div class="col-9 d-none d-md-block">
+                                    <div class="row">
+                                        <div class="col-12 text-left">
+                                            <strong>Secure Site</strong>
+                                        </div>
+                                        <div class="col-12 text-left">
+                                            SSL Certificate                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                                                    <button class="nav-item nav-link" id="v-pills-5-stars-tab" data-toggle="pill" href="#v-pills-5-stars" role="tab" aria-controls="v-pills-5-stars" aria-selected="true">
+                            <div class="row">
+                                <div class="col-3 my-auto">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="col-9 d-none d-md-block">
+                                    <div class="row">
+                                        <div class="col-12 text-left">
+                                            <strong>5 Stars</strong>
+                                        </div>
+                                        <div class="col-12 text-left">
+                                            On Feefo                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                                                    <button class="nav-item nav-link" id="v-pills-live-tracking-tab" data-toggle="pill" href="#v-pills-live-tracking" role="tab" aria-controls="v-pills-live-tracking" aria-selected="true">
+                            <div class="row">
+                                <div class="col-3 my-auto">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="col-9 d-none d-md-block">
+                                    <div class="row">
+                                        <div class="col-12 text-left">
+                                            <strong>Live Tracking</strong>
+                                        </div>
+                                        <div class="col-12 text-left">
+                                            Of Your Order                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                                                                        </div>
+                </div>
+                <div class="col-12 col-md-8 order-first order-md-last">
+                    <div class="tab-content text-center text-md-left" id="v-pills-tabContent">
+                                                                                    <div class="tab-pane fade" id="v-pills-uk-based" role="tabpanel" aria-labelledby="v-pills-uk-based-tab">
+                                    <h3>UK Based</h3>
+                                    <p><p>Our National Contact Centre is based in Warrington, and the HomeFuels Direct customer support team are trained to offer outstanding help and advice with your heating oil order, aswell as answering any questions you may have about our heating oil services and products.</p>
+
+<p>Want to get in touch?</p>
+<a href="/home/contact-centre">Contact Us <i class="fas fa-caret-right"></i></a></p>
+                                </div>
+                                                            <div class="tab-pane fade" id="v-pills-we-re-11-years-old" role="tabpanel" aria-labelledby="v-pills-we-re-11-years-old-tab">
+                                    <h3>We're 12 Years Old!</h3>
+                                    <p><p>HomeFuels Direct was established in 2008 and has grown from strength to strength ever since. The initial aim of HomeFuels Direct was to provide a service tailored around the consumer, with convenient ordering and transparent pricing.</p>
+<p>The UK heating oil market prior to 2008 was old fashioned and did not like to bare-all, so we decided to turn that upside down, strip everything right back and provide the same products and services as other providers, but at affordable prices. So if you live in England, Wales, Scotland or Northern Ireland you can benefit from the products and services we provide.</p>
+<p>Want to learn more about us?</p>
+<p><a href="/home/about-us">About Us <i class="fas fa-caret-right"></i></a></p></p>
+                                </div>
+                                                            <div class="tab-pane fade" id="v-pills-secure-site" role="tabpanel" aria-labelledby="v-pills-secure-site-tab">
+                                    <h3>Secure Site</h3>
+                                    <p><p>We take the security of your information very seriously. That's why we've taken huge measures to ensure that your data is protected. We never store credit or debit card information and we never share your information with third parties. We've also invested in an SSL Certificate for our website, which means your data is protected as it travels between your device and our servers.</p>
+</p>
+                                </div>
+                                                            <div class="tab-pane fade" id="v-pills-5-stars" role="tabpanel" aria-labelledby="v-pills-5-stars-tab">
+                                    <h3>5 Stars</h3>
+                                    <p><p>We pride ourselves on providing an excellent service to all of our customers&nbsp;which is why we are currently rated at 4.5 stars on Trustpilot. &nbsp;We really value feedback from our customers&nbsp;and we're proud to have received such a fantastic rating on Trustpilot but we still aim to improve on that score.</p>
+<p>Each week we select some customer feedback to display on our social media platforms.</p>
+<p><a href="/home/heating-oil-news">View Customer Feedback <i class="fas fa-caret-right"></i></a></p></p>
+                                </div>
+                                                            <div class="tab-pane fade" id="v-pills-live-tracking" role="tabpanel" aria-labelledby="v-pills-live-tracking-tab">
+                                    <h3>Live Tracking</h3>
+                                    <p><p>We offer live tracking&nbsp;on all orders which is quickly and easily accessible via your online account. We also provide a text messaging service for all customers, providing you with regular updates every step of the way regarding your order such as delivery dates and timings.&nbsp;</p>
+<p>Already placed an order and would like to track it's progress? </p>
+<a href="/account/my-orders">Track My Order <i class="fas fa-caret-right"></i></a></p>
+                                </div>
+                                                                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+	jQuery(document).ready(function () {
+		jQuery('#trustpoints').find('.nav-pills a').first().addClass('active');
+		jQuery('#trustpoints').find('.nav-link').first().addClass('active');
+		jQuery('#trustpoints').find('.tab-content .tab-pane').first().addClass('show');
+		jQuery('#trustpoints').find('.tab-content .tab-pane').first().addClass('active');
+	});
+</script>
+				</div>
+
+				
+					<div id="belowContent" class="container-fluid p-0 m-0">
+						<div class="container-fluid my-4 py-4" style="background-color: #fff">
+    <div class="container mt-4">
+        <div class="row pb-2">
+            <div class="col-12 col-md-6 text-center text-md-left">
+                <h3>Heating Oil News</h3>
+            </div>
+            <div class="col-12 col-md-6 text-right d-none d-md-block">
+                <a href="/home/heating-oil-news">View All Heating Oil News <i class="fas fa-caret-right"></i></a>
+            </div>
+        </div>
+        <div class="row py-1 py-md-4 flex-row">
+                            <div class="col-12 col-md-4">
+	<a href="/home/heating-oil-news/5-essential-tips-for-efficiently-using-your-heating-oil" class="newsItem">
+		<div class="row">
+			<div class="col-12 imageWrapper">
+				<img src="/images/ollie-images/ollie_showing_graph.png#joomlaImage://local-images/ollie-images/ollie_showing_graph.png?width=375&height=300"/>
+			</div>
+			<div class="p-3 textWrapper">
+				<div class="col-12 newsItem-textalign text-center text-md-left">
+					<h4>5 essential tips for efficiently using your heating oil!</h4>
+					<!-- <span class="pubDate"><p></p></span> -->
+					<span class="newsIntro">5 essential tips for efficiently using your heating oil!
+
+As temperatures drop, making the most of...</span>
+					<span class="newsReadMore"><p>Read More <i class="fas fa-chevron-right"></i></p></span>
+				</div>
+			</div>
+		</div>
+	</a>
+</div>                            <div class="col-12 col-md-4">
+	<a href="/home/heating-oil-news/automatic-refunds-for-over-ordering-heating-oil-with-homefuels-direct-a-customer-centric-approach" class="newsItem">
+		<div class="row">
+			<div class="col-12 imageWrapper">
+				<img src="/images/ollie-images/PHOTO-2024-05-17-13-35-51.jpg"/>
+			</div>
+			<div class="p-3 textWrapper">
+				<div class="col-12 newsItem-textalign text-center text-md-left">
+					<h4>Automatic Refunds for Over-Ordering Heating Oil with HomeFuels Direct: A Customer-Centric Approach</h4>
+					<!-- <span class="pubDate"><p></p></span> -->
+					<span class="newsIntro">In an era where convenience and customer satisfaction are paramount, HomeFuels Direct stands out by ...</span>
+					<span class="newsReadMore"><p>Read More <i class="fas fa-chevron-right"></i></p></span>
+				</div>
+			</div>
+		</div>
+	</a>
+</div>                            <div class="col-12 col-md-4">
+	<a href="/home/heating-oil-news/your-heating-oil-storage-tank-needs-you-fill-up-now" class="newsItem">
+		<div class="row">
+			<div class="col-12 imageWrapper">
+				<img src="/images/ollie-images/IMG_8565.JPG"/>
+			</div>
+			<div class="p-3 textWrapper">
+				<div class="col-12 newsItem-textalign text-center text-md-left">
+					<h4>Your Heating Oil Storage Tank Needs You.... Fill Up NOW!</h4>
+					<!-- <span class="pubDate"><p></p></span> -->
+					<span class="newsIntro">As the days get longer and temperatures rise, heating oil is probably the last thing on your mind. H...</span>
+					<span class="newsReadMore"><p>Read More <i class="fas fa-chevron-right"></i></p></span>
+				</div>
+			</div>
+		</div>
+	</a>
+</div>            	
+        </div>
+        <div class="row py-4 d-block d-md-none text-center">
+            <a href="/home/heating-oil-news">View All Heating Oil News <i class="fas fa-caret-right"></i></a>
+        </div>
+    </div>
+</div>    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+	<style>
+        /* body {
+            
+        } */
+        .dcc-colour {
+            color: #000072;
+        }
+        .energy-section {
+            color: #000072;
+            padding: 40px;
+            margin: 20px auto;
+            border-radius: 20px;
+            border: 2px solid #000072;
+            text-align: center;
+            width: 100%;
+			font-family: 'Poppins', sans-serif;
+        }
+        .energy-section h2 {
+            font-weight: 600;
+            font-size: x-large;
+        }
+        @media (max-width: 768px) {
+            .energy-section .row {
+                flex-direction: column;
+                text-align: center;
+            }
+            .btn-energy {
+                color: slategray!important;
+                font-size: x-small!important;
+            }
+        }
+        .btn-energy {
+            color: #000072;
+            font-weight: 600;
+            font-size: medium;
+            border: 2px solid #46d100;
+            padding: 9px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .btn-energy:hover {
+            background-color: #46d100;
+            color: #fff;
+        }
+        .btn-energy:focus,
+        .btn-energy:active {
+            outline: none;
+            box-shadow: none;
+        }
+        .footer {
+            background-color: #e1e1e1;
+            color: #000;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        img.dcc-logo {
+            width: 100%;
+    		max-width: 300px;
+        }
+    </style>
+
+	    <!-- Energy Section Above Footer -->
+		<div class="container energy-section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6 text-center">
+                    <h2>The World Needs Cleaner Energy for Everyone</h2>
+                    <img src="https://homefuelsdirect.co.uk/images/DCC.png" class="mb-4 dcc-logo">
+                </div>
+                <div class="col-md-6 text-center">
+                    <p class="dcc-colour">HomeFuels Direct is part of DCC Energy, of DCC plc.</p>
+                    <div class="btn-container">
+                        <a href="https://www.dcc.ie/about-us" target="_blank" class="btn btn-energy btn-lg">About DCC PLC</a>
+                        <a href="https://www.dcc.ie/energy" class="btn btn-energy btn-lg" target="_blank">About DCC Energy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+					</div>
+
+					</main>
+    
+    	<footer class="container-fluid">
+    		<div class="container text-center text-sm-left">
+    			<div class="row pt-4">
+					<div class="col-12">
+						
+					</div>			
+				</div>
+				<div class="row">
+
+					
+
+
+					<div class="col-12 mt-5">
+						<div class="row">
+							<div class="col-12 col-md-3 mb-3">
+									<a href="https://homefuelsdirect.co.uk/" class="footerLogo"><img src="https://homefuelsdirect.co.uk/images/logos/Homefuels_Direct_Logo_ts.png" style="max-width:250px;"/></a>
+								</div>
+								<div class="col-12 col-md-3 mb-3">
+								<h5>Contact Information</h5>
+								<!-- <//?php echo $contact->telephone; ?><br/> -->
+								enquiries@homefuelsdirect.co.uk<br/>
+								Certas Energy UK Limited trading as Homefuels Direct, <br>National Customer Support Centre
+
+, <br>70-74 Brunswick Street, <br>Stockton on Tees, <br>TS18 1DW.								</div>
+																<div class="col-12 col-md-3 mb-3">
+									<h5>Opening Times</h5>
+									<div class="row">
+										<div class="col-11 pr-0 mb-3">
+											Online orders can be placed 24/7, 365 days a year.
+										</div>
+									</div>
+								<div class="row">
+									<!--   <div class="col col-md-6">
+										Mon - Fri:
+										</div>
+										<div class="col col-md-6">
+										<//?php echo $openingMon; ?>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col col-md-6">
+										Sat:
+										</div>
+										<div class="col col-md-6">
+										<//?php echo $openingSat; ?>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col col-md-6">
+										Sun:
+										</div>
+										<div class="col col-md-6">
+										<//?php echo $openingSun; ?>
+										</div> -->
+									</div>
+								</div>
+																<div class="col-12 col-md-3">
+									<h5>Social Media</h5>
+									<ul class="nav socialmenu mod-list">
+<li class="item-257 social">		<a href="https://www.facebook.com/HomeFuelsDirect?fref=ts" target="_blank"><i class="fab fa-facebook-square"></i> Like Us On Facebook</a>
+	</li><li class="item-258 social">		<a href="https://twitter.com/HomefuelsDirect" target="_blank"><i class="fab fa-twitter-square"></i> Follow Us On Twitter</a>
+	</li><li class="item-259 social">		<a href="https://www.linkedin.com/company/homefuels-direct-ltd" target="_blank"><i class="fab fa-linkedin"></i> Follow Us On LinkedIn</a>
+	</li><li class="item-335 social">		<a href="https://www.instagram.com/homefuelsdirect/" target="_blank"><i class="fab fa-instagram"></i> Follow Us On Instagram</a>
+	</li></ul>
+
+								</div>
+							</div>
+						<div class="row pt-4">
+							<div class="col-12 col-md-3 mb-3">
+								<h5>Company Information</h5>
+								&copy; 2008-2025 Certas Energy UK Limited trading as Homefuels Direct<br/>
+								HomeFuels Direct Ltd is a subsidiary of Certas Energy UK Ltd , a member of the DCC Group.<br />
+								Registered in England &amp; Wales: 06464646<br/>
+								VAT Number: GB 934850801<br/>
+								As a supplier of partially or fully rebated fuels Certas Energy UK Limited is approved by HMRC as a registered dealer in controlled oil.<br/>
+                                <a href="/terms">Our Terms and Conditions</a><br/>
+                                <a href="/privacy">Our Privacy Policy</a>
+							</div>
+							<div class="col-12 col-md-3 mb-3">
+								<h5>Registered Address</h5>
+								Certas Energy Ltd, <br>
+								1st Floor, Allday House, <br>
+								Warrington Road,<br>
+								Birchwood, <br>
+								Cheshire, <br>
+								WA3 6GR <br>
+								Registered in England (Company No: 04168225).
+								
+								
+							</div>
+							<div class="col-12 col-md-3 mb-3">
+								
+								<h5>All Major Cards Accepted</h5>
+								<i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i>
+							</div>
+							<div class="col-12 col-md-3 mb-3">
+								<img src="https://homefuelsdirect.co.uk/images/logos/UKIFDALogo.jpeg" alt="" style="width: 60%; margin: auto; display: inline;">
+							</div>
+						</div>
+					</div>							
+				</div>
+				<div class="row py-4 border-top  ">
+					<div class="col-12 text-center mb-3">
+						Website designed by <a href="https://tr10.com" target="_blank">tr10.com</a>
+					</div>			
+				</div>
+					<div class="row pb-4">
+						<div class="col-12 text-right">
+							
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+
+<div class="stickyFooter">
+    <a href="https://homefuelsdirect.co.uk//view-shopping-cart" class="btn-foot btnCart w-50">
+        <img src="/images/BottomBanner/cart.svg" />
+        <div>
+            Basket
+        </div>
+            </a>
+        <a href="#" class="btn-foot btnQuote w-50" onclick="scrollTo('header')">
+        <img src="/images/BottomBanner/quote.svg" />
+        <div>
+            New Quote
+        </div>
+    </a>
+        <!-- <a class="btn-foot btnChat">
+        <img src="/images/BottomBanner/chat.svg" />
+        <div>Chat</div>
+    </a> -->
+</div>
+<script>
+if (jQuery("body").hasClass("home")) {
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > 75) {
+            jQuery('.stickyFooter').stop().animate({
+                bottom: '0px'
+            }, 'fast');
+        } else {
+            jQuery('.stickyFooter').stop().animate({
+                bottom: '-100px'
+            }, 'fast');
+        }
+    });
+} else {
+    jQuery('.stickyFooter').stop().animate({
+        bottom: '0px'
+    }, 'fast');
+}
+
+
+var chat = 0;
+jQuery('.minimise').click(function() {
+    jQuery('.slider').toggleClass('sliderClose');
+    jQuery('body').toggleClass('quoteFix');
+});
+
+jQuery('.btnChat').click(function() {
+    if (chat === 0) {
+        chat = 1;
+//         $zopim.livechat.window.show();
+		console.log('open');
+        smartsupp('chat:open');
+    } else if (chat === 1) {
+        chat = 0;
+//         $zopim.livechat.window.hide();
+		console.log('close');
+        smartsupp('chat:close');
+    }
+});
+</script>
+						</div>			
+					</div>
+			</div>
+		</footer>
+		
+
+
+<script src="https://kit.fontawesome.com/2e8565ec7b.js" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://homefuelsdirect.co.uk/templates/2019_HFD/js/slick.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="/templates/2019_HFD/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="/templates/2019_HFD/js/css-vars-ponyfill.min.js"></script>
+<script src="/templates/2019_HFD/js/jquery.fancybox.min.js"></script>
+<script src="/templates/2019_HFD/js/Chart.min.js"></script>
+<script src="https://homefuelsdirect.co.uk/templates/2019_HFD/js/logic.js?v=2.1.2"></script>
+<script src="https://homefuelsdirect.co.uk/templates/2019_HFD/js/smoke.js"></script>
+
+<script id="rendered-js">
+cssVars({
+    // Treat all browsers as legacy
+    //onlyLegacy: false,
+});
+
+	window.addEventListener('scroll', debounce(checkSlide, ));
+
+
+var baseURL = 'https://homefuelsdirect.co.uk/'; // For use in external scripts
+
+(function($) {
+    jQuery(document).ready(function(){
+		
+        var bootstrapLoaded = (typeof jQuery().carousel == 'function');
+        var mootoolsLoaded = (typeof MooTools != 'undefined');
+        if (bootstrapLoaded && mootoolsLoaded) {
+            Element.implement({
+                hide: function () {
+                    return this;
+                },
+                show: function (v) {
+                    return this;
+                },
+                slide: function (v) {
+                    return this;
+                }
+            });
+        }
+    });
+})(jQuery);
+		</script>
+	</body>
+</html>
