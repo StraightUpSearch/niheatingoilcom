@@ -153,21 +153,21 @@ export async function scrapeLatestConsumerCouncilData(): Promise<void> {
           volume: 300,
           price: data.prices.volume300.toString(),
           pricePerLitre: (data.prices.volume300 / 300).toString(),
-          postcode: data.location // Use location as postcode identifier
+          postcode: data.location.substring(0, 100) // Truncate to fit database field
         },
         {
           supplierId: supplierId!,
           volume: 500,
           price: data.prices.volume500.toString(),
           pricePerLitre: (data.prices.volume500 / 500).toString(),
-          postcode: data.location
+          postcode: data.location.substring(0, 100)
         },
         {
           supplierId: supplierId!,
           volume: 900,
           price: data.prices.volume900.toString(),
           pricePerLitre: (data.prices.volume900 / 900).toString(),
-          postcode: data.location
+          postcode: data.location.substring(0, 100)
         }
       ];
       
@@ -196,20 +196,15 @@ export async function initializeConsumerCouncilScraping(): Promise<void> {
     // Run initial scrape
     await scrapeLatestConsumerCouncilData();
     
-    // Set up monthly scraping (first Monday of each month at 10 AM)
+    // Set up monthly scraping (first day of each month at 3 AM)
     const scheduleMonthlyConsumerCouncilScrape = () => {
       const now = new Date();
       const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+      nextMonth.setHours(3, 0, 0, 0);
       
-      // Find first Monday of next month
-      const firstMonday = new Date(nextMonth);
-      const daysUntilMonday = (1 - firstMonday.getDay() + 7) % 7 || 7;
-      firstMonday.setDate(firstMonday.getDate() + daysUntilMonday);
-      firstMonday.setHours(10, 0, 0, 0);
+      const timeUntilScrape = Math.min(nextMonth.getTime() - now.getTime(), 2147483647); // Cap at max 32-bit integer
       
-      const timeUntilScrape = firstMonday.getTime() - now.getTime();
-      
-      console.log(`Next Consumer Council scrape scheduled for: ${firstMonday.toLocaleString()}`);
+      console.log(`Next Consumer Council scrape scheduled for: ${nextMonth.toLocaleString()}`);
       
       setTimeout(async () => {
         try {

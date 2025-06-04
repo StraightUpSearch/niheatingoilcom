@@ -2,6 +2,8 @@ import express, { type Request, Response, NextFunction } from "express";
 import compression from "compression";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
+import { initializeCuratedSupplierData } from "./curatedSupplierData";
 
 const app = express();
 
@@ -26,15 +28,15 @@ app.use((req, res, next) => {
   res.setHeader('X-Frame-Options', 'DENY');
   res.setHeader('X-XSS-Protection', '1; mode=block');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-  
+
   // Performance headers
   res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-  
+
   // Override cache for API routes
   if (req.path.startsWith('/api')) {
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   }
-  
+
   next();
 });
 
@@ -102,4 +104,8 @@ app.use((req, res, next) => {
   }, () => {
     log(`serving on port ${port}`);
   });
+
+  // Initialize monthly data refresh systems (optimized for minimal API usage)
+  await initializeCuratedSupplierData();
+  await initializeConsumerCouncilScraping();
 })();

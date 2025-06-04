@@ -228,7 +228,7 @@ export async function initializeCuratedData(): Promise<void> {
     const scheduleMonthlyUpdate = () => {
       const now = new Date();
       const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1, 3, 0, 0);
-      const timeUntilNextMonth = nextMonth.getTime() - now.getTime();
+      const timeUntilNextMonth = Math.min(nextMonth.getTime() - now.getTime(), 2147483647); // Cap at max 32-bit integer
       
       console.log(`Next curated data refresh scheduled for: ${nextMonth.toLocaleString()}`);
       

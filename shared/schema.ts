@@ -63,7 +63,7 @@ export const oilPrices = pgTable("oil_prices", {
   price: decimal("price", { precision: 10, scale: 2 }).notNull(),
   pricePerLitre: decimal("price_per_litre", { precision: 8, scale: 3 }).notNull(),
   includesVat: boolean("includes_vat").default(true),
-  postcode: varchar("postcode", { length: 50 }), // specific postcode or location name if applicable
+  postcode: varchar("postcode", { length: 100 }), // specific postcode or location name if applicable
   createdAt: timestamp("created_at").defaultNow(),
 });
 
