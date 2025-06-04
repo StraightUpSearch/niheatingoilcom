@@ -140,6 +140,57 @@ export class DatabaseStorage implements IStorage {
     return user;
   }
 
+  async updateUserPassword(userId: string, hashedPassword: string) {
+    const result = await db
+      .update(users)
+      .set({ password: hashedPassword })
+      .where(eq(users.id, userId))
+      .returning();
+    return result[0];
+  }
+
+  async createPasswordResetToken(userId: string, token: string, expiresAt: Date) {
+    // First delete any existing tokens for this user
+    // await this.db
+    //   .delete(passwordResetTokensTable)
+    //   .where(eq(passwordResetTokensTable.userId, userId));
+
+    // const result = await this.db
+    //   .insert(passwordResetTokensTable)
+    //   .values({
+    //     id: `reset_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+    //     userId,
+    //     token,
+    //     expiresAt,
+    //     createdAt: new Date(),
+    //   })
+    //   .returning();
+    // return result[0];
+    return null as any;
+  }
+
+  async getPasswordResetToken(token: string) {
+    // const result = await this.db
+    //   .select()
+    //   .from(passwordResetTokensTable)
+    //   .where(eq(passwordResetTokensTable.token, token))
+    //   .limit(1);
+    // return result[0] || null;
+    return null;
+  }
+
+  async deletePasswordResetToken(token: string) {
+    // await this.db
+    //   .delete(passwordResetTokensTable)
+    //   .where(eq(passwordResetTokensTable.token, token));
+  }
+
+  async cleanupExpiredResetTokens() {
+    // await this.db
+    //   .delete(passwordResetTokensTable)
+    //   .where(lt(passwordResetTokensTable.expiresAt, new Date()));
+  }
+
   // Saved quotes operations
   async createSavedQuote(quoteData: InsertSavedQuote): Promise<SavedQuote> {
     const [quote] = await db

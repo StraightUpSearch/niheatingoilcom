@@ -292,7 +292,7 @@ export default function HtmlSitemap() {
                   })}
                 </div>
               ) : (
-                <p className="text-gray-600">
+                <p className="text-gray-500 text-center py-8">
                   No suppliers found in directory. Supplier directory is being updated. Please check back soon.
                 </p>
               )}

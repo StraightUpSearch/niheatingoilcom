@@ -7,6 +7,7 @@ import { promisify } from "util";
 import { storage } from "./storage";
 import { User as SelectUser } from "@shared/schema";
 import connectPg from "connect-pg-simple";
+import { sendPasswordResetEmail, sendPasswordChangeConfirmation } from "./emailService";
 
 declare global {
   namespace Express {
@@ -225,6 +226,135 @@ export async function setupAuth(app: Express) {
     }
     const user = req.user as SelectUser;
     res.json({ id: user.id, username: user.username, email: user.email });
+  });
+
+  // Password reset request
+  app.post("/api/forgot-password", async (req, res) => {
+    try {
+      const { email } = req.body;
+
+      if (!email) {
+        return res.status(400).json({ message: "Email is required" });
+      }
+
+      const user = await storage.getUserByEmail(email);
+      if (!user) {
+        // Don't reveal if email exists or not for security
+        return res.json({ message: "If an account with that email exists, you'll receive a password reset link." });
+      }
+
+      // Generate secure reset token
+      const resetToken = randomBytes(32).toString("hex");
+      const resetExpiry = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+
+      // Store reset token in database
+      await storage.createPasswordResetToken(user.id, resetToken, resetExpiry);
+
+      // Send reset email
+      try {
+        await sendPasswordResetEmail(user.email, user.username, resetToken);
+        console.log(`Password reset email sent to ${user.email}`);
+      } catch (emailError) {
+        console.error("Failed to send password reset email:", emailError);
+        return res.status(500).json({ message: "Failed to send reset email" });
+      }
+
+      res.json({ message: "If an account with that email exists, you'll receive a password reset link." });
+    } catch (error) {
+      console.error("Password reset request error:", error);
+      res.status(500).json({ message: "Failed to process password reset request" });
+    }
+  });
+
+  // Password reset confirmation
+  app.post("/api/reset-password", async (req, res) => {
+    try {
+      const { token, newPassword } = req.body;
+
+      if (!token || !newPassword) {
+        return res.status(400).json({ message: "Token and new password are required" });
+      }
+
+      // Validate password strength
+      const passwordValidation = validatePassword(newPassword);
+      if (!passwordValidation.isValid) {
+        return res.status(400).json({ 
+          message: "Password does not meet security requirements",
+          errors: passwordValidation.errors 
+        });
+      }
+
+      // Verify reset token
+      const resetRequest = await storage.getPasswordResetToken(token);
+      if (!resetRequest || resetRequest.expiresAt < new Date()) {
+        return res.status(400).json({ message: "Invalid or expired reset token" });
+      }
+
+      // Update password
+      const hashedPassword = await hashPassword(newPassword);
+      await storage.updateUserPassword(resetRequest.userId, hashedPassword);
+
+      // Delete used token
+      await storage.deletePasswordResetToken(token);
+
+      // Get user for confirmation email
+      const user = await storage.getUser(resetRequest.userId);
+      if (user) {
+        try {
+          await sendPasswordChangeConfirmation(user.email, user.username);
+        } catch (emailError) {
+          console.error("Failed to send password change confirmation:", emailError);
+        }
+      }
+
+      res.json({ message: "Password reset successfully" });
+    } catch (error) {
+      console.error("Password reset error:", error);
+      res.status(500).json({ message: "Failed to reset password" });
+    }
+  });
+
+  // Change password (for logged-in users)
+  app.post("/api/change-password", isAuthenticated, async (req, res) => {
+    try {
+      const { currentPassword, newPassword } = req.body;
+      const user = req.user as SelectUser;
+
+      if (!currentPassword || !newPassword) {
+        return res.status(400).json({ message: "Current password and new password are required" });
+      }
+
+      // Verify current password
+      const storedUser = await storage.getUser(user.id);
+      if (!storedUser || !(await comparePasswords(currentPassword, storedUser.password))) {
+        return res.status(400).json({ message: "Current password is incorrect" });
+      }
+
+      // Validate new password strength
+      const passwordValidation = validatePassword(newPassword);
+      if (!passwordValidation.isValid) {
+        return res.status(400).json({ 
+          message: "New password does not meet security requirements",
+          errors: passwordValidation.errors 
+        });
+      }
+
+      // Update password
+      const hashedPassword = await hashPassword(newPassword);
+      await storage.updateUserPassword(user.id, hashedPassword);
+
+      // Send confirmation email
+      try {
+        await sendPasswordChangeConfirmation(user.email, user.username);
+      } catch (emailError) {
+        console.error("Failed to send password change confirmation:", emailError);
+      }
+
+      res.json({ message: "Password changed successfully" });
+    } catch (error) {
+      console.error("Password change error:", error);
+      res.status(500).json({ message: "Failed to change password" });
+    }
   });
 }
 

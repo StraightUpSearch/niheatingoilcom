@@ -23,6 +23,8 @@ import { useEffect } from "react";
 import { initGTM } from "@/lib/gtm";
 import { useGTMPageTracking } from "@/hooks/use-gtm";
 import Alerts from "@/pages/alerts";
+import ForgotPasswordPage from "./pages/forgot-password";
+import ResetPasswordPage from "./pages/reset-password";
 
 function Router() {
   // Track page views when routes change
@@ -45,6 +47,8 @@ function Router() {
       <Route path="/giving-back" component={GivingBack} />
       <Route path="/thank-you" component={ThankYouPage} />
       <Route path="/pages/html-sitemap" component={HtmlSitemap} />
+      <Route path="/forgot-password" component={ForgotPasswordPage} />
+      <Route path="/reset-password" component={ResetPasswordPage} />
       <Route component={NotFound} />
     </Switch>
   );
