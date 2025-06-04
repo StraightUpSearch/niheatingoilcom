@@ -150,7 +150,7 @@ export default function PriceAlerts() {
                 </div>
               ))}
             </div>
-          ) : alerts?.length === 0 ? (
+          ) : alerts && Array.isArray(alerts) && alerts.length === 0 ? (
             <Card>
               <CardContent className="py-12 text-center">
                 <Bell className="h-12 w-12 text-gray-400 mx-auto mb-4" />
@@ -160,7 +160,7 @@ export default function PriceAlerts() {
             </Card>
           ) : (
             <div className="space-y-4">
-              {alerts?.map((alert: any) => (
+              {Array.isArray(alerts) && alerts.map((alert: any) => (
                 <Card key={alert.id}>
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
