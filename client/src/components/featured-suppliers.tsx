@@ -12,7 +12,7 @@ export default function FeaturedSuppliers() {
       const response = await fetch("/api/suppliers");
       if (!response.ok) throw new Error("Failed to fetch suppliers");
       const data = await response.json();
-      return data.slice(0, 3); // Only show 3 featured suppliers
+      return Array.isArray(data) ? data.slice(0, 3) : []; // Only show 3 featured suppliers
     },
   });
 

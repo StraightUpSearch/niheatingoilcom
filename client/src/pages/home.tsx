@@ -15,6 +15,30 @@ export default function Home() {
     queryKey: ["/api/alerts"],
   });
 
+  const { data: prices } = useQuery({
+    queryKey: ["/api/prices"],
+  });
+
+  const { data: suppliers } = useQuery({
+    queryKey: ["/api/suppliers"],
+  });
+
+  // Find the best current deal from actual data
+  const bestDeal = prices?.reduce((best: any, current: any) => {
+    const currentPrice = parseFloat(current.price);
+    const bestPrice = best ? parseFloat(best.price) : Infinity;
+    return currentPrice < bestPrice ? current : best;
+  }, null);
+
+  // Calculate potential savings vs average
+  const averagePrice = prices?.length > 0 
+    ? prices.reduce((sum: number, price: any) => sum + parseFloat(price.price), 0) / prices.length
+    : 0;
+  
+  const potentialSavings = bestDeal && averagePrice 
+    ? (averagePrice - parseFloat(bestDeal.price)).toFixed(2)
+    : "0.00";
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
@@ -56,9 +80,11 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-3xl font-bold text-secondary">
-                    £237.60
+                    {bestDeal ? `£${parseFloat(bestDeal.price).toFixed(2)}` : "Loading..."}
                   </div>
-                  <p className="text-gray-600 text-sm">300L from Bangor Fuels</p>
+                  <p className="text-gray-600 text-sm">
+                    {bestDeal ? `${bestDeal.volume}L from ${suppliers?.find((s: any) => s.id === bestDeal.supplierId)?.name || 'Supplier'}` : 'Checking prices...'}
+                  </p>
                 </CardContent>
               </Card>
               
@@ -68,7 +94,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-3xl font-bold text-accent">
-                    £24.80
+                    £{potentialSavings}
                   </div>
                   <p className="text-gray-600 text-sm">vs. average price</p>
                 </CardContent>
