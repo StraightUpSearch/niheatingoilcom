@@ -151,10 +151,11 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Did you see us online and on TV?
+              Our Cheeky Parody Advert
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-              Check out our latest advert that's been running across Northern Ireland on TV and social media!
+              We made this funny parody video to show how easy it is to compare heating oil prices. 
+              (Just to be clear - we're not actually on TV, but we had a bit of craic making this!)
             </p>
           </div>
           
@@ -164,8 +165,8 @@ export default function Landing() {
                 <iframe 
                   width="100%" 
                   height="100%" 
-                  src="https://www.youtube.com/embed/x1Vz6WXyA2E?si=I6PhJdInkwiZF4j7" 
-                  title="NI Heating Oil - TV Advertisement" 
+                  src="https://www.youtube.com/embed/x1Vz6WXyA2E?si=I6PhJdInkwiZF4j7&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&controls=1" 
+                  title="NI Heating Oil - Parody Advertisement" 
                   frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   referrerPolicy="strict-origin-when-cross-origin" 
@@ -175,7 +176,10 @@ export default function Landing() {
               </div>
               <div className="text-center mt-6">
                 <p className="text-sm text-gray-500">
-                  Now live on television and social media across Northern Ireland
+                  A bit of Northern Ireland humor about heating oil price comparison
+                </p>
+                <p className="text-xs text-gray-400 mt-1">
+                  Disclaimer: This is a parody video for entertainment purposes - we're not actually on television!
                 </p>
               </div>
             </div>
