@@ -359,8 +359,10 @@ export default function SmartPostcodeInput({
             placeholder={placeholder}
             className="pl-10 pr-12 text-gray-900 bg-white border-gray-300 focus:border-blue-500 focus:ring-blue-500"
             style={{ 
-              color: '#111827', 
-              backgroundColor: '#ffffff'
+              textTransform: 'uppercase',
+              color: '#111827',
+              backgroundColor: '#ffffff',
+              fontSize: '16px' // Prevents zoom on iOS
             }}
             disabled={disabled}
             autoComplete="off"
@@ -369,12 +371,6 @@ export default function SmartPostcodeInput({
             spellCheck="false"
             data-lpignore="true"
             data-form-type="other"
-            style={{ 
-              textTransform: 'uppercase',
-              color: '#111827 !important',
-              backgroundColor: '#ffffff !important',
-              fontSize: '16px' // Prevents zoom on iOS
-            }}
           />
           
           {geoLoading && (

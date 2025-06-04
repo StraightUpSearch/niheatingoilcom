@@ -14,7 +14,7 @@ import Suppliers from "@/pages/suppliers";
 import SupplierProfile from "@/pages/supplier-profile";
 import Blog from "@/pages/blog";
 import BlogArticle from "@/pages/blog-article";
-import HtmlSitemap from "@/pages/html-sitemap";
+
 import Contact from "@/pages/contact";
 import GivingBack from "@/pages/giving-back";
 import ThankYouPage from "@/pages/thank-you-page";
@@ -46,7 +46,7 @@ function Router() {
       <Route path="/about" component={AboutUs} />
       <Route path="/giving-back" component={GivingBack} />
       <Route path="/thank-you" component={ThankYouPage} />
-      <Route path="/pages/html-sitemap" component={HtmlSitemap} />
+
       <Route path="/forgot-password" component={ForgotPasswordPage} />
       <Route path="/reset-password" component={ResetPasswordPage} />
       <Route component={NotFound} />
