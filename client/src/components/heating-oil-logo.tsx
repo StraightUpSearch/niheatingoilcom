@@ -1,4 +1,4 @@
-import newLogo from "@assets/ChatGPT Image Jun 1, 2025, 09_16_52 PM.png";
+import newLogo from "../assets/ChatGPT Image Jun 1, 2025, 09_16_52 PM.png";
 
 interface HeatingOilLogoProps {
   className?: string;

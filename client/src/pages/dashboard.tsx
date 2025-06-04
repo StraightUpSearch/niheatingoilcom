@@ -18,7 +18,7 @@ import {
   Trash2
 } from "lucide-react";
 import { useState } from "react";
-import { apiRequest, queryClient } from "@/lib/queryClient";
+import { apiRequest, queryClient } from "../lib/queryClient";
 import WhatsAppQuoteReminder from "../components/whatsapp-quote-reminder";
 import Navigation from "../components/navigation";
 import Footer from "../components/footer";

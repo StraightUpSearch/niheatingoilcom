@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { cn } from "../../lib/utils";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
+import { cn } from "../lib/utils";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
 import { Settings } from "lucide-react";
-import tank300L from "@assets/tank_300L.png";
-import tank500L from "@assets/tank_500L.png";
-import tank900L from "@assets/tank_900L.png";
+import tank300L from "../assets/tank_300L.png";
+import tank500L from "../assets/tank_500L.png";
+import tank900L from "../assets/tank_900L.png";
 
 interface TankSelectorProps {
   selectedVolume: string;

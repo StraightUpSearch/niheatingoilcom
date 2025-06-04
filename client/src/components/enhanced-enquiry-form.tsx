@@ -9,7 +9,7 @@ import { Label } from "../components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Alert, AlertDescription } from "../components/ui/alert";
 import { Loader2, CheckCircle, User, Mail, Droplet } from "lucide-react";
-import { apiRequest } from "@/lib/queryClient";
+import { apiRequest } from "../lib/queryClient";
 import SmartPostcodeInput from "../components/smart-postcode-input";
 
 import LeadCaptureModal from "./lead-capture-modal";

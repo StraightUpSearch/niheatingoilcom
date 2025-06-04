@@ -7,7 +7,7 @@ import { Textarea } from "../components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "../components/ui/dialog";
 import { useToast } from "../hooks/use-toast";
 import { Building2, Phone, Mail, MapPin, Loader2 } from "lucide-react";
-import { apiRequest } from "@/lib/queryClient";
+import { apiRequest } from "../lib/queryClient";
 
 interface SupplierClaimModalProps {
   isOpen: boolean;

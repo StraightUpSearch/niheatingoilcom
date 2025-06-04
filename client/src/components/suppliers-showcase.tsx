@@ -1,8 +1,8 @@
 import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import { Building2, MapPin, Phone, Globe, Star } from "lucide-react";
-import suppliersImage from "@assets/v2-vnxjd-6oogi.jpg";
-import deliveryTruckImage from "@assets/hero-video-placeholder.jpg";
+import suppliersImage from "../assets/v2-vnxjd-6oogi.jpg";
+import deliveryTruckImage from "../assets/hero-video-placeholder.jpg";
 import { useQuery } from "@tanstack/react-query";
 
 export default function SuppliersShowcase() {
