@@ -115,6 +115,7 @@ export default function Footer() {
                   <p className="text-xs">14a Victoria Street</p>
                   <p className="text-xs">Ballymoney, BT53 6DW</p>
                   <p className="text-xs">Northern Ireland</p>
+                  <p className="text-xs text-blue-400 mt-1">028 96005259</p>
                 </div>
               </div>
             </div>

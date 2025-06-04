@@ -53,6 +53,7 @@ export default function Landing() {
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
+        "telephone": "+44-28-96005259",
         "areaServed": "Northern Ireland",
         "availableLanguage": "English"
       }
