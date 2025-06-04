@@ -8,6 +8,8 @@ import { Star, MapPin, Phone, Globe, Clock, TrendingUp, Award, Shield } from "lu
 import { Supplier, OilPrice } from "@shared/schema";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { useState } from "react";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 // import { ClaimListingDialog } from "@/components/claim-listing-dialog";
 
 interface SupplierWithPrices extends Supplier {
@@ -65,8 +67,10 @@ export default function SupplierProfile() {
   }, {} as Record<number, string>);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+      <Navigation />
+      
+      {/* Supplier Header */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
@@ -290,6 +294,8 @@ export default function SupplierProfile() {
         open={showClaimDialog}
         onOpenChange={setShowClaimDialog}
       /> */}
+      
+      <Footer />
     </div>
   );
 }
