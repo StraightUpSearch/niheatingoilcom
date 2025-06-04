@@ -199,7 +199,7 @@ export function setupAuth(app: Express) {
   });
 
   // Import rate limiting
-  const { authRateLimit } = (await import('./rateLimit.js')).default || (await import('./rateLimit.js'));
+  const { authRateLimit } = await import('./rateLimit.js');
 
   app.post("/api/login", authRateLimit, passport.authenticate("local"), (req, res) => {
     const user = req.user as SelectUser;
