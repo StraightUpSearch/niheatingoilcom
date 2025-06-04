@@ -75,14 +75,12 @@
     }
   }
 
-  /* Force input text visibility */
+  /* Ensure input text visibility */
   input[type="text"], input[type="email"], input[type="tel"] {
-    color: #111827 !important;
-    background-color: #ffffff !important;
+    color: hsl(var(--foreground)) !important;
   }
 
   input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
-    color: #111827 !important;
-    background-color: #ffffff !important;
+    color: hsl(var(--foreground)) !important;
   }
 }
