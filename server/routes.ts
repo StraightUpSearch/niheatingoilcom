@@ -4,11 +4,8 @@ import { storage } from "./storage";
 import { setupAuth, isAuthenticated } from "./auth";
 import { z } from "zod";
 import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema, insertSupplierClaimSchema } from "@shared/schema";
-import { scrapeAllSuppliers, initializeScraping } from "./scraper";
 import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
 import { initializeWeeklyUrlDetection, consumerCouncilUrlDetector } from "./consumerCouncilUrlDetector";
-import { initializeLiveSupplierScraping } from "./liveSupplierScraper";
-import { initializeSupplierData } from "./mockSupplierData";
 import { sendAdminAlert } from "./emailService";
 import { strictRateLimit, moderateRateLimit, lenientRateLimit, botDetection, validateFormSubmission } from "./rateLimit";
 import { getCurrentImpact, getAllImpactData, isWinterSeason, calculateUserImpact } from "./charityImpact";
@@ -35,15 +32,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     });
   }, 2000);
 
-  // Initialize authentic supplier data as fallback
-  setTimeout(async () => {
-    try {
-      console.log("Ensuring authentic supplier data is available...");
-      await initializeSupplierData();
-    } catch (error) {
-      console.error("Authentic supplier data initialization failed:", error);
-    }
-  }, 1000);
+  
 
   // Initialize curated supplier data (no external API calls needed)
   setTimeout(async () => {
@@ -750,17 +739,7 @@ Crawl-delay: 1`;
     res.send(robots);
   });
 
-  // Admin routes (scraping trigger)
-  app.post('/api/admin/scrape', async (req, res) => {
-    try {
-      console.log('Manual scraping triggered');
-      await scrapeAllSuppliers();
-      res.json({ message: "Scraping completed successfully" });
-    } catch (error) {
-      console.error("Error during manual scraping:", error);
-      res.status(500).json({ message: "Failed to complete scraping" });
-    }
-  });
+  
 
   // Supplier claim submissions
   app.post('/api/supplier-claims', async (req, res) => {
