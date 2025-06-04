@@ -3,7 +3,7 @@ import compression from "compression";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
-import { initializeCuratedSupplierData } from "./curatedSupplierData";
+import { initializeCuratedData } from "./curatedSupplierData";
 
 const app = express();
 
@@ -106,6 +106,6 @@ app.use((req, res, next) => {
   });
 
   // Initialize monthly data refresh systems (optimized for minimal API usage)
-  await initializeCuratedSupplierData();
+  await initializeCuratedData();
   await initializeConsumerCouncilScraping();
 })();
