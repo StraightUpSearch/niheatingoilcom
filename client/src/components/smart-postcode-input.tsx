@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Navigation, Loader2 } from "lucide-react";
+import LocationConsentModal from "@/components/location-consent-modal";
 
 // Northern Ireland postcode areas with common towns/areas
 const NI_POSTCODE_DATA = {
@@ -112,6 +113,7 @@ export default function SmartPostcodeInput({
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [geoLocation, setGeoLocation] = useState<string | null>(null);
   const [geoLoading, setGeoLoading] = useState(false);
+  const [showConsentModal, setShowConsentModal] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
 
@@ -317,7 +319,7 @@ export default function SmartPostcodeInput({
               type="button"
               variant="outline"
               size="sm"
-              onClick={getGeolocationHint}
+              onClick={() => setShowConsentModal(true)}
               disabled={geoLoading}
               className="text-xs h-6 px-2"
             >
@@ -419,6 +421,16 @@ export default function SmartPostcodeInput({
       {error && (
         <p className="text-sm text-red-600">{error}</p>
       )}
+
+      <LocationConsentModal
+        isOpen={showConsentModal}
+        onClose={() => setShowConsentModal(false)}
+        onAllow={getGeolocationHint}
+        onDeny={() => {
+          // User declined - do nothing
+          console.log("User declined location access");
+        }}
+      />
     </div>
   );
 }
