@@ -72,7 +72,7 @@ export const priceAlerts = pgTable("price_alerts", {
   id: serial("id").primaryKey(),
   userId: varchar("user_id").references(() => users.id).notNull(),
   email: varchar("email").notNull(),
-  postcode: varchar("postcode", { length: 10 }).notNull(),
+  postcode: varchar("postcode", { length: 20 }).notNull(),
   volume: integer("volume").notNull(),
   thresholdType: varchar("threshold_type", { length: 50 }).notNull(), // 'any', '2percent', '5percent'
   emailAlerts: boolean("email_alerts").default(true),
@@ -110,7 +110,7 @@ export const leads = pgTable("leads", {
   name: varchar("name", { length: 100 }).notNull(),
   email: varchar("email", { length: 255 }).notNull(),
   phone: varchar("phone", { length: 20 }).notNull(),
-  postcode: varchar("postcode", { length: 10 }).notNull(),
+  postcode: varchar("postcode", { length: 20 }).notNull(),
   volume: integer("volume").notNull(),
   urgency: varchar("urgency", { length: 20 }),
   notes: text("notes"),
@@ -200,7 +200,7 @@ export const tickets = pgTable("tickets", {
   ticketId: varchar("ticket_id", { length: 20 }).unique().notNull(), // e.g., NIHO-0001
   name: varchar("name", { length: 255 }).notNull(),
   email: varchar("email", { length: 255 }).notNull(),
-  postcode: varchar("postcode", { length: 10 }).notNull(),
+  postcode: varchar("postcode", { length: 20 }).notNull(),
   litres: integer("litres").notNull(),
   registered: boolean("registered").default(false),
   status: varchar("status", { length: 20 }).default("New"), // New, In Progress, Quoted, Closed, Escalated
@@ -230,7 +230,7 @@ export const savedQuotes = pgTable("saved_quotes", {
   price: varchar("price", { length: 50 }).notNull(),
   volume: integer("volume").notNull(),
   location: varchar("location", { length: 255 }).notNull(),
-  postcode: varchar("postcode", { length: 10 }).notNull(),
+  postcode: varchar("postcode", { length: 20 }).notNull(),
   customerName: varchar("customer_name", { length: 255 }),
   customerEmail: varchar("customer_email", { length: 255 }),
   customerPhone: varchar("customer_phone", { length: 50 }),
