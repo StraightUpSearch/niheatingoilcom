@@ -357,7 +357,11 @@ export default function SmartPostcodeInput({
               }, 200);
             }}
             placeholder={placeholder}
-            className="pl-10 pr-12 text-gray-900 bg-white"
+            className="pl-10 pr-12 text-gray-900 bg-white border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+            style={{ 
+              color: '#111827', 
+              backgroundColor: '#ffffff'
+            }}
             disabled={disabled}
             autoComplete="off"
             autoCorrect="off"
