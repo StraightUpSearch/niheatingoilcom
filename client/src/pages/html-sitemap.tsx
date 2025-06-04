@@ -292,8 +292,8 @@ export default function HtmlSitemap() {
                   })}
                 </div>
               ) : (
-                <p className="text-gray-500 text-center py-8">
-                  Supplier directory is being updated. Please check back soon.
+                <p className="text-gray-600">
+                  No suppliers found in directory. Supplier directory is being updated. Please check back soon.
                 </p>
               )}
             </div>
@@ -332,16 +332,12 @@ export default function HtmlSitemap() {
               </ul>
             </div>
 
-            {/* About Section */}
-            <div className="bg-white rounded-lg shadow-sm p-6 md:col-span-3">
-              <div className="text-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">About NI Heating Oil</h2>
-                <p className="text-gray-600 max-w-3xl mx-auto">
-                  Northern Ireland's premier heating oil price comparison platform. We help households and businesses
-                  find the best heating oil prices across all six counties, saving you time and money on every purchase.
-                </p>
-              </div>
+          </div>
 
+          {/* Site Information */}
+          <div className="bg-white rounded-lg shadow-sm p-8 mt-8">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">About NI Heating Oil</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                 <div>
                   <h4 className="font-medium text-gray-900">Coverage</h4>
