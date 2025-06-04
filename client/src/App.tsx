@@ -30,6 +30,8 @@ function Router() {
     <Switch>
       <Route path="/" component={Landing} />
       <Route path="/auth" component={AuthPage} />
+      <Route path="/register" component={AuthPage} />
+      <Route path="/login" component={AuthPage} />
       <Route path="/compare" component={Compare} />
       <Route path="/suppliers" component={Suppliers} />
       <Route path="/suppliers/:supplierId" component={SupplierProfile} />
