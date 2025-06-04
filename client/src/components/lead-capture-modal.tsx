@@ -38,6 +38,12 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
     urgency: "",
     notes: ""
   });
+  const [formErrors, setFormErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    postcode: ""
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isBotProtectionValid, setIsBotProtectionValid] = useState(false);
   const [submissionStartTime] = useState(Date.now());
@@ -64,18 +70,18 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
   // Calculate dynamic price based on selected volume with 20% safety margin
   const calculateDynamicPrice = () => {
     if (!supplier || !formData.volume) return supplier?.price || "Contact for quote";
-    
+
     const selectedVolume = parseInt(formData.volume);
     const originalVolume = supplier.volume;
     const originalPrice = parseFloat(supplier.price.replace('£', ''));
-    
+
     if (isNaN(originalPrice) || isNaN(selectedVolume)) return supplier.price;
-    
+
     // Calculate price per litre and multiply by new volume, then add 20% safety margin
     const pricePerLitre = originalPrice / originalVolume;
     const basePrice = pricePerLitre * selectedVolume;
     const priceWithMargin = basePrice * 1.20;
-    
+
     return `£${priceWithMargin.toFixed(2)}`;
   };
 
@@ -85,6 +91,21 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Basic validation - can be expanded
+    let errors: any = {};
+    if (!formData.name) errors.name = "Full Name is required";
+    if (!formData.email) errors.email = "Email Address is required";
+    if (!formData.phone) errors.phone = "Phone Number is required";
+    if (!formData.postcode) errors.postcode = "Postcode is required";
+
+    setFormErrors(errors);
+
+    if (Object.keys(errors).length > 0) {
+      return; // Stop submission if there are errors
+    }
+
+
     setIsSubmitting(true);
 
     try {
@@ -119,7 +140,7 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
       if (!response.ok) {
         throw new Error('Failed to submit lead');
       }
-      
+
       // Store quote data in localStorage for the thank you page
       const quoteData = {
         supplierName: supplier?.name || "Heating Oil Supplier",
@@ -131,9 +152,9 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
         customerEmail: formData.email,
         customerPhone: formData.phone
       };
-      
+
       localStorage.setItem('lastQuote', JSON.stringify(quoteData));
-      
+
       // Close modal and redirect to thank you page
       onClose();
       setLocation('/thank-you');
@@ -187,6 +208,7 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
                 className="text-sm sm:text-base"
                 required
               />
+              {formErrors.name && <p className="text-xs text-red-600 mt-1">{formErrors.name}</p>}
             </div>
             <div>
               <EnhancedAddressInput
@@ -209,6 +231,7 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
               className="text-sm sm:text-base"
               required
             />
+            {formErrors.email && <p className="text-xs text-red-600 mt-1">{formErrors.email}</p>}
           </div>
 
           <div>
@@ -222,6 +245,7 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
               className="text-sm sm:text-base"
               required
             />
+            {formErrors.phone && <p className="text-xs text-red-600 mt-1">{formErrors.phone}</p>}
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">

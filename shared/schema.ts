@@ -96,7 +96,7 @@ export const priceHistory = pgTable("price_history", {
 // Search queries for analytics
 export const searchQueries = pgTable("search_queries", {
   id: serial("id").primaryKey(),
-  postcode: varchar("postcode", { length: 10 }),
+  postcode: varchar("postcode", { length: 20 }),
   volume: integer("volume"),
   resultsCount: integer("results_count"),
   userId: varchar("user_id").references(() => users.id),
