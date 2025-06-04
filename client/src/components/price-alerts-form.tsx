@@ -13,7 +13,8 @@ import { isUnauthorizedError } from "@/lib/authUtils";
 import { Bell } from "lucide-react";
 
 export default function PriceAlertsForm() {
-  const { isAuthenticated, user } = useAuth();
+  const { user } = useAuth();
+  const isAuthenticated = !!user;
   const { toast } = useToast();
   const queryClient = useQueryClient();
   
