@@ -196,7 +196,7 @@ export default function HtmlSitemap() {
               </ul>
             </div>
 
-            {/* Blog Articles */}
+            {/* Helpful Guides */}
             <div className="bg-white rounded-lg shadow-sm p-6">
               <div className="flex items-center space-x-2 mb-4">
                 <FileText className="h-5 w-5 text-orange-600" />
@@ -324,39 +324,38 @@ export default function HtmlSitemap() {
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center space-x-1"
                   >
-                    <span>NI Postcode Reference</span>
+                    <span>NI Postcode Guide</span>
                     <ExternalLink className="h-4 w-4" />
                   </a>
-                  <p className="text-sm text-gray-500">Complete BT postcode mapping</p>
+                  <p className="text-sm text-gray-500">Understanding Northern Ireland postcodes</p>
                 </li>
               </ul>
             </div>
+
           </div>
 
-          {/* Technical SEO Info */}
-          <div className="mt-12 bg-blue-50 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">About This Site</h3>
-            <p className="text-gray-600 mb-4">
-              NI Heating Oil is Northern Ireland's most comprehensive heating oil price comparison platform.
-              We aggregate real-time pricing data from over 60+ local suppliers across all six counties,
-              ensuring you always find the best deals in your area.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-              <div>
-                <h4 className="font-medium text-gray-900">Coverage</h4>
-                <p className="text-gray-600">All BT postcodes in Northern Ireland</p>
-              </div>
-              <div>
-                <h4 className="font-medium text-gray-900">Data Sources</h4>
-                <p className="text-gray-600">Consumer Council NI + Live supplier feeds</p>
-              </div>
-              <div>
-                <h4 className="font-medium text-gray-900">Updates</h4>
-                <p className="text-gray-600">Daily price refreshes, real-time comparison</p>
+          {/* Site Information */}
+          <div className="bg-white rounded-lg shadow-sm p-8 mt-8">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">About NI Heating Oil</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div>
+                  <h4 className="font-medium text-gray-900">Coverage</h4>
+                  <p className="text-gray-600">All six counties of Northern Ireland with comprehensive supplier network</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900">Data Sources</h4>
+                  <p className="text-gray-600">Official Consumer Council data and verified supplier information</p>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900">Updates</h4>
+                  <p className="text-gray-600">Daily price refreshes, real-time comparison</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
       <Footer />
     </div>
