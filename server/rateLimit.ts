@@ -62,13 +62,41 @@ export function createRateLimit(options: RateLimitOptions) {
   };
 }
 
-// Predefined rate limiters for different use cases
-export const strictRateLimit = createRateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  maxRequests: 5, // Limit each IP to 5 requests per windowMs
-  message: "Too many requests from this IP, please try again later.",
-  skipSuccessfulRequests: false,
-});
+// Progressive rate limiting - increases restrictions based on violations
+const createProgressiveRateLimit = (baseMax: number, windowMs: number) => {
+  const violations = new Map<string, number>();
+
+  return (req: Request, res: Response, next: NextFunction) => {
+    const clientIP = req.ip || req.connection.remoteAddress || 'unknown';
+
+    const violationCount = violations.get(clientIP) || 0;
+
+    // Decrease allowed requests based on previous violations
+    const adjustedMax = Math.max(1, baseMax - violationCount * 2);
+
+    const options: RateLimitOptions = {
+      windowMs,
+      maxRequests: adjustedMax,
+      message: { error: "Too many requests, please try again later" },
+      skipSuccessfulRequests: false,
+    };
+
+    const rateLimitMiddleware = createRateLimit(options);
+
+    rateLimitMiddleware(req, res, next);
+
+    if (res.statusCode === 429) {
+      violations.set(clientIP, (violations.get(clientIP) || 0) + 1);
+
+      // Clear violations after 1 hour
+      setTimeout(() => {
+        violations.delete(clientIP);
+      }, 60 * 60 * 1000);
+    }
+  };
+};
+
+export const strictRateLimit = createProgressiveRateLimit(5, 15 * 60 * 1000);
 
 export const authRateLimit = createRateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes

@@ -7,6 +7,8 @@ import { Search, Droplets, Loader2, MapPin } from "lucide-react";
 import { useLocation } from "wouter";
 import TankSelector from "./tank-selector";
 import SmartPostcodeInput from "./smart-postcode-input";
+import LivePriceDisplay from "./live-price-display";
+import PriceGuaranteeModal from "./price-guarantee-modal";
 
 interface PriceSearchFormProps {
   onSearch?: (params: { postcode?: string; volume?: number }) => void;
@@ -61,6 +63,23 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
     <div className="w-full max-w-4xl mx-auto">
       <form onSubmit={handleSubmit} className="relative">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Fuel Type Selection */}
+          <div className="lg:col-span-1 space-y-4">
+            <div className="space-y-3">
+              <Label>Fuel Type</Label>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2">
+                  <input id="kerosene" type="radio" name="fuelType" value="kerosene" defaultChecked className="text-primary" />
+                  <label htmlFor="kerosene" className="text-sm font-medium">Heating Oil (Kerosene)</label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <input id="premium" type="radio" name="fuelType" value="premium" className="text-primary" />
+                  <label htmlFor="premium" className="text-sm font-medium">Premium Heating Oil</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Postcode Input with Quick Tips */}
           <div className="lg:col-span-1 space-y-4">
             <div className="group">
@@ -75,6 +94,8 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
             </div>
 
             {/* Quick Tips */}
+            <LivePriceDisplay />
+            
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
               <h4 className="text-sm font-semibold text-blue-900 mb-2">Quick Tips</h4>
               <ul className="text-xs text-blue-800 space-y-1">
@@ -83,6 +104,9 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
                 <li>• Compare up to 25+ local suppliers</li>
                 <li>• 100% free comparison service</li>
               </ul>
+              <div className="mt-3 text-center">
+                <PriceGuaranteeModal />
+              </div>
             </div>
 
 
