@@ -22,6 +22,7 @@ import AboutUs from "@/pages/about-us";
 import { useEffect } from "react";
 import { initGTM } from "@/lib/gtm";
 import { useGTMPageTracking } from "@/hooks/use-gtm";
+import Alerts from "@/pages/alerts";
 
 function Router() {
   // Track page views when routes change
@@ -34,7 +35,7 @@ function Router() {
       <Route path="/login" component={() => <Redirect to="/auth" />} />
       <Route path="/register" component={() => <Redirect to="/auth" />} />
       <Route path="/compare" component={Compare} />
-      <Route path="/alerts" component={() => <Redirect to="/auth" />} />
+      <Route path="/alerts" component={Alerts} />
       <Route path="/suppliers" component={Suppliers} />
       <Route path="/suppliers/:supplierId" component={SupplierProfile} />
       <Route path="/blog" component={Blog} />
