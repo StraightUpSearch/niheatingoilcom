@@ -1,0 +1,39 @@
+38Unchecked runtime.lastError: The page keeping the extension port is moved into back/forward cache, so the message channel is closed.Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id LastPass https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.htmlUnderstand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id separator https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.htmlUnderstand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Add Item https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.htmlUnderstand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Add Password https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.htmlUnderstand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Add Address https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.htmlUnderstand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Add Payment Card https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.htmlUnderstand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Add other item https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.htmlUnderstand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Save all entered data https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.htmlUnderstand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id Generate Secure Password https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.htmlUnderstand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568279.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568273.Understand this error
+background-redux-new.js:2 Error: Invalid frameId for foreground frameId: 0
+    at $ (background-redux-new.js:2:3643411)
+    at m (background-redux-new.js:2:3650374)
+    at background-redux-new.js:2:3651373
+$ @ background-redux-new.js:2Understand this error
+Unchecked runtime.lastError: Cannot create item with duplicate id LastPass https://straightupsearch.com/air-landline-review/Understand this error
+6Unchecked runtime.lastError: Cannot find menu item with id LastPass <URL>Understand this error
+10Unchecked runtime.lastError: Cannot find menu item with id Add Item <URL>Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568333.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568340.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568327.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568337.Understand this error
+background-redux-new.js:1 Uncaught (in promise) Error: No tab with id: 660568352.Understand this error
+/api/auth/user:1 
+            
+            
+           Failed to load resource: the server responded with a status of 401 ()Understand this error
+/api/user:1 
+            
+            
+           Failed to load resource: the server responded with a status of 401 ()Understand this error
+
+                
+          
+          
+          
+         Chrome is moving towards a new experience that allows users to choose to browse without third-party cookies.
