@@ -19,7 +19,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.set('trust proxy', 1);
 
   // Auth middleware
-  setupAuth(app);
+  await setupAuth(app);
 
   // Initialize Consumer Council scraping and URL detection
   setTimeout(() => {

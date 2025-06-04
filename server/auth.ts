@@ -51,7 +51,7 @@ async function comparePasswords(supplied: string, stored: string) {
   return timingSafeEqual(hashedBuf, suppliedBuf);
 }
 
-export function setupAuth(app: Express) {
+export async function setupAuth(app: Express) {
   const sessionTtl = 7 * 24 * 60 * 60 * 1000; // 1 week
   const pgStore = connectPg(session);
   const sessionStore = new pgStore({
@@ -199,7 +199,8 @@ export function setupAuth(app: Express) {
   });
 
   // Import rate limiting
-  const { authRateLimit } = await import('./rateLimit.js');
+  const rateLimit = await import('./rateLimit.js');
+  const { authRateLimit } = rateLimit;
 
   app.post("/api/login", authRateLimit, passport.authenticate("local"), (req, res) => {
     const user = req.user as SelectUser;

@@ -10,7 +10,7 @@ export default function Navigation() {
   const { user } = useAuth();
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const isAuthenticated = !!user;
 
   const navigation = [
@@ -53,7 +53,7 @@ export default function Navigation() {
               <NavItems />
             </nav>
           </div>
-          
+
           <div className="flex items-center space-x-2 sm:space-x-4">
             {isAuthenticated ? (
               <div className="flex items-center space-x-2 sm:space-x-4">
@@ -71,26 +71,22 @@ export default function Navigation() {
               </div>
             ) : (
               <div className="flex items-center space-x-2">
-                <Link href="/auth">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-primary hover:text-blue-700 hidden sm:flex"
-                  >
-                    Sign In
-                  </Button>
-                </Link>
-                <Link href="/register">
-                  <Button
-                    size="sm"
-                    className="bg-primary text-white hover:bg-blue-700 hidden sm:flex"
-                  >
-                    Get Started
-                  </Button>
-                </Link>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="hidden sm:flex"
+                >
+                  <Link href="/auth">Sign In</Link>
+                </Button>
+                <Button
+                  size="sm"
+                  className="bg-primary text-white hover:bg-blue-700 hidden sm:flex"
+                >
+                  <Link href="/auth">Get Started</Link>
+                </Button>
               </div>
             )}
-            
+
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="sm" className="lg:hidden">

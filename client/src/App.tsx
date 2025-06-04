@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Redirect } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -25,13 +25,13 @@ import { useGTMPageTracking } from "@/hooks/use-gtm";
 function Router() {
   // Track page views when routes change
   useGTMPageTracking();
-  
+
   return (
     <Switch>
       <Route path="/" component={Landing} />
       <Route path="/auth" component={AuthPage} />
-      <Route path="/register" component={AuthPage} />
-      <Route path="/login" component={AuthPage} />
+      <Route path="/login" component={() => <Redirect to="/auth" />} />
+      <Route path="/register" component={() => <Redirect to="/auth" />} />
       <Route path="/compare" component={Compare} />
       <Route path="/suppliers" component={Suppliers} />
       <Route path="/suppliers/:supplierId" component={SupplierProfile} />
