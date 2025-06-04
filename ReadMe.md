@@ -1,33 +1,75 @@
 
-# Northern Ireland Heating Oil Price Comparison Platform
+# NI Heating Oil - Northern Ireland Heating Oil Price Comparison Platform
 
-## Project Purpose
-A comprehensive SaaS platform that helps Northern Ireland residents find the best heating oil prices from verified local suppliers, offering price comparison, alerts, and guaranteed savings.
+## Purpose
+NI Heating Oil is a free, real-time price comparison platform designed to help Northern Ireland residents find the best deals on home heating oil. By aggregating live pricing from 50+ verified local suppliers and refreshing data every two hours, the platform ensures users see the most up-to-date, postcode-specific rates.
 
 ## Mission Statement
-To provide Northern Ireland households with transparent, up-to-date heating oil pricing information while supporting local businesses and charitable causes through innovative technology.
+To keep Northern Ireland's homes warm, budgets intact, and communities connected by delivering a simple, reliable, and transparent tool for comparing heating oil prices—while using our platform to support those most vulnerable to fuel poverty.
 
 ## Goals
-- **Primary**: Become the leading heating oil price comparison service in Northern Ireland
-- **Secondary**: Build a sustainable subscription-based revenue model
-- **Tertiary**: Support local charities through our 5% profit pledge to Simon Community NI
+- **Transparency:** Provide a completely free service that surfaces current heating oil prices from multiple trusted suppliers
+- **Savings:** Enable homeowners and businesses to compare 300L, 500L, and 900L quotes by BT postcode, eliminating guesswork and manual price-checking calls
+- **Convenience:** Offer instant postcode-based quotes, price-drop alerts, and historical trend charts so users can make informed purchasing decisions
+- **Community Impact:** Pledge 5% of profits to Simon Community NI's emergency heating-grant program, reinforcing our commitment to helping families in fuel hardship
 
 ## Monetization Strategy
-1. **Freemium Model**: Basic price comparison free, premium features subscription-based
-2. **Lead Generation**: Commission from suppliers for qualified customer referrals
-3. **Premium Subscriptions**: Advanced alerts, historical data, bulk order discounts
-4. **Supplier Partnerships**: Featured listings and enhanced profiles
+
+### 1. Affiliate Partnerships & Referral Fees
+- Earn a small commission on each completed order forwarded to partner suppliers
+- Maintain full transparency: users always see the same "list price," with any referral fee built into supplier arrangements (no hidden markups)
+
+### 2. Premium "Pro" Features (Freemium Upgrade)
+- **Advanced Analytics & Forecasting:** AI-powered price forecasts and personalised "best-time-to-buy" notifications
+- **Ad-Free Experience:** Remove all on-page ads or sponsored listings for power users
+- **Group-Buy Coordination:** Facilitate collective buying ("Oil Club" style) with volume discounts for neighbourhood clusters
+- Subscriptions priced at a modest monthly or annual rate to justify ongoing data-science enhancements
+
+### 3. Sponsored Placement (Limited & Clearly Labeled)
+- Allow suppliers to appear as "Recommended Partners" (marked clearly) for users who prefer direct ordering through our system
+- Maintain a strict "no pay-for-position" policy in the core comparison table to protect user trust
+
+### 4. Display & Content Ads (Optional & Non-Intrusive)
+- Run Google-AdSense banners or relevant sponsored content in dedicated sections (e.g., blog posts, resource pages), rather than within the main price grid
 
 ## Key Features
-- Real-time price comparison across verified NI suppliers
-- Smart postcode-based location detection
-- Price alert system with email/SMS notifications
-- Tank size calculator (300L, 500L, 900L options)
-- Supplier ratings and reviews system
-- WhatsApp integration for quote sharing
-- Charity impact tracking (5% pledge to Simon Community NI)
-- Mobile-responsive design optimized for Core Web Vitals
-- Robust authentication and user account system
+
+### Real-Time Price Aggregation
+- Scrape and ingest pricing data from all suppliers that publish BT-postcode quotes online
+- Refresh data every two hours to ensure accuracy
+
+### Postcode-Based Search & Quotes
+- Simple input field prefilled with "BT" to restrict queries to Northern Ireland
+- Display standard 300L, 500L, and 900L prices, with pence-per-litre breakdown
+
+### Sortable Comparison Table
+- Sort by price, supplier name, delivery area, or "last updated" timestamp
+- Click-through links to supplier websites or "Get Quote" buttons for direct ordering
+
+### Price Alerts & Notifications
+- Email (and optional SMS/WhatsApp) alerts whenever a chosen postcode's price drops below a user-specified threshold
+- One-click "Subscribe" call-to-action from the comparison results page
+
+### Historical Trend Charts
+- Interactive graphs displaying weekly, monthly, and yearly average price data
+- Simple "Is now a good time to buy?" indicators based on AI-powered trend analysis
+
+### User Accounts & Dashboard
+- Users can register (name, email, password or magic link) to save preferences
+- Dashboard shows:
+  - Pending enquiries (Ticket IDs) and their status
+  - Past quotes and orders (with estimated savings)
+  - Active price alerts and tracking history
+  - "Your Impact" widget showing how many heating grants they've funded
+
+### "Your Impact" & Charity Integration
+- Public "Giving Back" page explaining the 5% pledge to Simon Community NI
+- Rolling "Grants Funded" counter (e.g., "Q2 2025: 20 grants funded, £1,000 donated")
+- Seasonal "Winter Wish List" call-outs (October–February) linking directly to Simon Community NI's campaign page
+
+### Social Sharing & Referral Tools
+- One-click "Share on WhatsApp" for users to broadcast their quote details
+- Track share events in Google Analytics (GA4) for ongoing optimization
 
 ## Technical Stack
 - **Frontend**: React with TypeScript, Tailwind CSS, Vite
@@ -36,13 +78,37 @@ To provide Northern Ireland households with transparent, up-to-date heating oil 
 - **Authentication**: Passport.js with session management
 - **Deployment**: Replit hosting platform
 - **APIs**: Consumer Council NI data integration
+- **Analytics**: Google Analytics 4 with Google Tag Manager
 
 ## Target Market
 Northern Ireland households using heating oil (approximately 68% of NI homes use oil heating)
 
 ## Competitive Advantage
 - Local expertise and focus on NI market
-- Charitable giving component
+- Charitable giving component (5% pledge to Simon Community NI)
 - Real-time pricing with guaranteed accuracy
 - User-friendly mobile-first design
 - Integration with local suppliers
+- Complete transparency in pricing and referral arrangements
+
+## Roadmap & Future Enhancements
+
+### MVP Launch (Q3 2025)
+- Core price comparison, user accounts, price alerts, and charity integration
+- Basic social sharing and GA4 event tracking
+
+### Enhanced AI Features (Q1 2026)
+- Deploy predictive "Price Forecast" widget on the comparison page
+- Offer personalised "Best Time to Buy" advice
+
+### Group-Buy Coordination Module (Q2 2026)
+- Allow users in proximate BT postcode clusters to opt into weekly group-buy
+- Automated negotiation engine to match aggregated demand with supplier quotes
+
+### Mobile App (Q4 2026)
+- Native iOS/Android applications for on-the-go price comparisons
+- Push notifications and voice-activated quote requests
+
+### Expanded Charity Partnerships (Beyond 2026)
+- Introduce additional local charities with separate pledge tracks
+- User choice in directing their 5% pledge to preferred charity
