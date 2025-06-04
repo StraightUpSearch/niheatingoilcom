@@ -125,11 +125,12 @@ export default function Footer() {
                   <span className="font-bold text-lg">028 96005259</span>
                 </a>
                 <p className="text-xs text-gray-400 mt-1">Call for heating oil quotes & advice</p>
-                </div>
               </div>
             </div>
-            
-            <h4 className="text-md font-semibold mt-4 mb-2">Legal</h4>
+          </div>
+
+          <div>
+            <h4 className="text-md font-semibold mb-3">Legal</h4>
             <ul className="space-y-1 text-gray-400">
               {legalLinks.map((link) => (
                 <li key={link.name}>
