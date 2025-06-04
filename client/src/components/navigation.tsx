@@ -42,7 +42,11 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center min-w-0 flex-1">
             <Link href="/" className="flex items-center space-x-2 min-w-0 hover:opacity-80 transition-opacity">
-              <HeatingOilLogo size="lg" />
+              <img 
+                src="/attached_assets/Untitled design (1).png" 
+                alt="NI Heating Oil Logo" 
+                className="h-10 w-10 sm:h-12 sm:w-12"
+              />
               <div className="flex flex-col min-w-0">
                 <span className="text-lg sm:text-xl font-bold text-gray-900 truncate cursor-pointer">NI Heating Oil</span>
               </div>
