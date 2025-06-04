@@ -359,5 +359,3 @@ export default function HtmlSitemap() {
 
       <Footer />
     </div>
-  );
-}
