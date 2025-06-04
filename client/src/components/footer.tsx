@@ -169,11 +169,9 @@ export default function Footer() {
                 to="/giving-back"
                 className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
               >
-                <img
-                  src={simonLogo}
-                  alt="Simon Community NI"
-                  className="h-10 w-auto"
-                />
+                <div className="h-10 w-20 bg-gray-200 rounded flex items-center justify-center text-xs font-medium text-gray-600">
+                  Simon Community NI
+                </div>
               </Link>
               <p className="text-xs text-gray-400 mt-1">
                 5% of our profits fund emergency heating grants

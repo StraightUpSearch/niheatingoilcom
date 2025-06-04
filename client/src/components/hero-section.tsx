@@ -1,7 +1,7 @@
 import PriceSearchForm from "../components/price-search-form";
 import { Check, Clock, Shield, Truck, TrendingDown, Users, MapPin } from "lucide-react";
 import HeatingOilLogo from "../components/heating-oil-logo";
-import heroImage from "../assets/v2-vnxed-nzz6i.jpg";
+// Hero image placeholder - using CSS gradient instead
 import { useState, useEffect } from "react";
 
 interface HeroSectionProps {
@@ -53,7 +53,7 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
           playsInline
           className="w-full h-full object-cover"
           src="/assets/niheatingoilcomad.mp4"
-          poster={heroImage}
+          poster=""
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/95 to-blue-700/95"></div>
       </div>
