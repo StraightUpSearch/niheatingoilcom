@@ -1,0 +1,52 @@
+Here is some content from some notes I’ve taken and shared with others that I have taught. Hopefully, something here is helpful! I use these things on every project.
+
+A. Create Foundational Documentation
+
+To ensure your Replit AI Agent understands your project context:
+
+ReadMe.md File: Outline the purpose, goals, mission, monetization strategy, and features of your project.
+
+Progress.md File: Maintain a detailed task list for AI to track progress.
+
+Prompt for setting this up after pasting the business plan and feature list into Replit:  Please use the attached business plan (in attached_assets) and the attached feature list in the same folder. Create a readme.md file with the business plan and create a progress.md file with the feature list. Don't write any code. Just create these documents. On the feature list, create a checkbox system that shows us what we have completed and what we still need to create. Please examine the app and make sure the progress.md file is up to date and add any items that might be missing from the list that we've created.
+
+B. Reference These Files in Every New Agent Chat
+
+Every time you start a new chat with the Replit Agent, use this command:
+
+"Please reference the ReadMe.md and Progress.md files and familiarize yourself with the project." This ensures continuity and prevents Replit from losing track of the project scope.
+
+2. Optimizing AI-Powered Development in Replit
+
+A. Strategic Prompting for Best Results
+
+Ask the Agent to Plan Before Coding:
+
+Example: "Please create a plan to build this feature. Don't write any code yet. Just outline the steps, and I will approve before proceeding."
+
+Limit Scope for Precision:
+
+Example: "Do not modify anything except the frontend layout in the login page."
+
+Encourage Replit to Rethink Approaches:
+
+Example: "Is there a simpler way to implement this feature? Consider efficiency and speed."
+
+
+B. Debugging & Fixing Issues Faster
+
+Detect Hidden Bugs:
+
+"Please check for duplicate or conflicting code that might be causing this issue."
+
+Force Replit to Review Its Own Work:
+
+"Take a step back and analyze what you just wrote—are there any potential issues?"
+
+Refresh browser if Replit appears to stop working:
+
+Refresh Replit if this happens. Sometimes, the purple or grey indicator of the progress disappears and it looks like Replit froze. Just refresh, and it will come back. Refreshing will not stop the Agent from working if it’s in the middle of a task.
+
+Different Languages:
+
+Sometimes Replit writes in languages that are different from what it expects. If you aren’t seeing changes repeatedly like you would expect, then ask if it’s writing in the correct language for the project.
