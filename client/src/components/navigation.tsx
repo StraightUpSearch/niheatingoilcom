@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Truck } from "lucide-react";
 import HeatingOilLogo from "@/components/heating-oil-logo";
 
 export default function Navigation() {
-  const { user, isAuthenticated } = useAuth();
+  const { user } = useAuth();
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  
+  const isAuthenticated = !!user;
 
   const navigation = [
     { name: "Compare Prices", href: "/compare" },
@@ -69,21 +71,23 @@ export default function Navigation() {
               </div>
             ) : (
               <div className="flex items-center space-x-2">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => window.location.href = "/api/login"}
-                  className="text-primary hover:text-blue-700 hidden sm:flex"
-                >
-                  Sign In
-                </Button>
-                <Button
-                  size="sm"
-                  onClick={() => window.location.href = "/api/login"}
-                  className="bg-primary text-white hover:bg-blue-700 hidden sm:flex"
-                >
-                  Get Started
-                </Button>
+                <Link href="/auth">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-primary hover:text-blue-700 hidden sm:flex"
+                  >
+                    Sign In
+                  </Button>
+                </Link>
+                <Link href="/register">
+                  <Button
+                    size="sm"
+                    className="bg-primary text-white hover:bg-blue-700 hidden sm:flex"
+                  >
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             )}
             
@@ -112,19 +116,23 @@ export default function Navigation() {
                       </>
                     ) : (
                       <>
-                        <Button
-                          variant="ghost"
-                          onClick={() => window.location.href = "/api/login"}
-                          className="justify-start"
-                        >
-                          Sign In
-                        </Button>
-                        <Button
-                          onClick={() => window.location.href = "/api/login"}
-                          className="justify-start"
-                        >
-                          Get Started
-                        </Button>
+                        <Link href="/auth">
+                          <Button
+                            variant="ghost"
+                            className="justify-start w-full"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            Sign In
+                          </Button>
+                        </Link>
+                        <Link href="/register">
+                          <Button
+                            className="justify-start w-full"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            Get Started
+                          </Button>
+                        </Link>
                       </>
                     )}
                   </div>
