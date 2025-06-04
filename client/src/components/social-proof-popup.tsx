@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Card } from "@/components/ui/card";
+import { Card } from "./ui/card";
 import { X, CheckCircle, TrendingDown, Clock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
