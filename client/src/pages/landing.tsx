@@ -146,6 +146,43 @@ export default function Landing() {
       {/* Media News Tile - Prominent BBC Coverage */}
       <MediaNewsTile />
 
+      {/* Promotional Video Section */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Did you see us online and on TV?
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+              Check out our latest advert that's been running across Northern Ireland on TV and social media!
+            </p>
+          </div>
+          
+          <div className="flex justify-center">
+            <div className="w-full max-w-4xl">
+              <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl bg-gray-900">
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube.com/embed/x1Vz6WXyA2E?si=I6PhJdInkwiZF4j7" 
+                  title="NI Heating Oil - TV Advertisement" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                  className="absolute inset-0"
+                />
+              </div>
+              <div className="text-center mt-6">
+                <p className="text-sm text-gray-500">
+                  Now live on television and social media across Northern Ireland
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SEO Content Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
