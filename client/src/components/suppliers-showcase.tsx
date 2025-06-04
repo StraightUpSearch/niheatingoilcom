@@ -1,8 +1,7 @@
 import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
-import { Building2, MapPin, Phone, Globe, Star } from "lucide-react";
-import suppliersImage from "../assets/v2-vnxjd-6oogi.jpg";
-import deliveryTruckImage from "../assets/hero-video-placeholder.jpg";
+import { Building2, MapPin, Phone, Globe, Star, Truck } from "lucide-react";
+// Using placeholder images - assets removed for build compatibility
 import { useQuery } from "@tanstack/react-query";
 
 export default function SuppliersShowcase() {
@@ -20,11 +19,12 @@ export default function SuppliersShowcase() {
 
         {/* Visual showcase of delivery trucks */}
         <div className="mb-12">
-          <img 
-            src={suppliersImage} 
-            alt="Northern Ireland heating oil delivery trucks - Hayes Fuels, NAP Fuels, Finney Bros and other local suppliers"
-            className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
-          />
+          <div className="w-full h-64 md:h-80 bg-gray-200 rounded-lg shadow-lg flex items-center justify-center">
+            <div className="text-center text-gray-500">
+              <Building2 className="w-12 h-12 mx-auto mb-2" />
+              <p className="text-sm">Northern Ireland Heating Oil Suppliers</p>
+            </div>
+          </div>
           <p className="text-center text-sm text-gray-500 mt-3">
             Local suppliers serving communities across Northern Ireland
           </p>
@@ -33,11 +33,12 @@ export default function SuppliersShowcase() {
         {/* Individual supplier showcase */}
         <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
           <div>
-            <img 
-              src={deliveryTruckImage} 
-              alt="Knockbracken Fuels delivery truck serving Northern Ireland"
-              className="w-full h-48 object-cover rounded-lg shadow-lg"
-            />
+            <div className="w-full h-48 bg-gray-200 rounded-lg shadow-lg flex items-center justify-center">
+              <div className="text-center text-gray-500">
+                <Truck className="w-8 h-8 mx-auto mb-2" />
+                <p className="text-sm">Delivery Truck</p>
+              </div>
+            </div>
           </div>
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
