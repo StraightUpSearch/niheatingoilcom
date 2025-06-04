@@ -31,3 +31,5 @@ export function Toaster() {
     </ToastProvider>
   )
 }
+
+export { Toaster as default }
