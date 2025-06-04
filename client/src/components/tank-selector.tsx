@@ -68,16 +68,15 @@ const TankGraphic = ({ volume, isSelected, size }: { volume: string; isSelected:
       "transition-all duration-300 flex items-center justify-center",
       isSelected ? "scale-110 opacity-100" : "opacity-70 hover:opacity-100 hover:scale-105"
     )}>
-      <img
-        src={getTankImage()}
-        alt={`${volume}L oil tank`}
-        width={width}
-        height={height}
+      <div 
+        style={{ width, height }}
         className={cn(
           "transition-all duration-300 filter",
           isSelected ? "brightness-100 drop-shadow-lg" : "brightness-90 hover:brightness-100"
         )}
-      />
+      >
+        {getTankSvg()}
+      </div>
     </div>
   );
 };
