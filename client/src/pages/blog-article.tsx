@@ -1,9 +1,9 @@
 import { useParams } from "wouter";
-import { usePageTitle } from "../hooks/usePageTitle";
-import Navigation from "../components/navigation";
-import Footer from "../components/footer";
+import { usePageTitle } from "@/hooks/usePageTitle";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 import { ArrowLeft, Clock, Calendar, User } from "lucide-react";
-import { Button } from "../components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
 export default function BlogArticle() {

@@ -1,4 +1,4 @@
-import { Card, CardContent } from "../components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Clock, Users, Lock } from "lucide-react";
 
 export default function TrustSection() {

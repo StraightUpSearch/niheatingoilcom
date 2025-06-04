@@ -52,13 +52,11 @@
 
 @layer base {
   * {
-    @apply border-gray-200;
+    @apply border-border;
   }
 
   body {
-    @apply font-sans antialiased;
-    background: hsl(var(--background));
-    color: hsl(var(--foreground));
+    @apply font-sans antialiased bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 }

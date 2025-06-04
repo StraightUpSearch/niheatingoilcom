@@ -6,7 +6,7 @@ import {
 } from "@tanstack/react-query";
 import { User as SelectUser, UpsertUser } from "@shared/schema";
 import { getQueryFn, apiRequest, queryClient } from "../lib/queryClient";
-import { useToast } from "./use-toast";
+import { useToast } from "@/hooks/use-toast";
 
 type AuthContextType = {
   user: SelectUser | null;

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { useAuth } from "../hooks/use-auth";
-import { Button } from "../components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
+import { useAuth } from "@/hooks/use-auth";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Truck } from "lucide-react";
-import HeatingOilLogo from "../components/heating-oil-logo";
+import HeatingOilLogo from "@/components/heating-oil-logo";
 
 export default function Navigation() {
   const { user } = useAuth();
@@ -15,6 +15,7 @@ export default function Navigation() {
 
   const navigation = [
     { name: "Compare Prices", href: "/compare" },
+    ...(isAuthenticated ? [{ name: "Price Alerts", href: "/alerts" }] : []),
     { name: "Suppliers", href: "/suppliers" },
   ];
 

@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import { cn } from "../lib/utils";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
+import { cn } from "@/lib/utils";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Settings } from "lucide-react";
-// Tank images replaced with SVG icons for build compatibility
+import tank300L from "@assets/tank_300L.png";
+import tank500L from "@assets/tank_500L.png";
+import tank900L from "@assets/tank_900L.png";
 
 interface TankSelectorProps {
   selectedVolume: string;
@@ -42,33 +44,13 @@ const tankOptions: TankOption[] = [
 
 
 const TankGraphic = ({ volume, isSelected, size }: { volume: string; isSelected: boolean; size: 'small' | 'medium' | 'large' }) => {
-  const getTankSvg = () => {
-    const sizeScale = size === 'small' ? 0.8 : size === 'medium' ? 1 : 1.2;
-    const tankColor = isSelected ? '#2563eb' : '#64748b';
-    const fillLevel = volume === '300' ? 0.4 : volume === '500' ? 0.6 : 0.8;
-    
-    return (
-      <svg viewBox="0 0 120 100" className="w-full h-full" style={{ transform: `scale(${sizeScale})` }}>
-        {/* Tank body */}
-        <rect x="20" y="25" width="80" height="50" rx="8" fill="#e2e8f0" stroke={tankColor} strokeWidth="3"/>
-        
-        {/* Oil level indicator */}
-        <rect x="25" y={25 + (50 - 50 * fillLevel)} width="70" height={50 * fillLevel} rx="5" fill={tankColor} opacity="0.7"/>
-        
-        {/* Tank cap */}
-        <rect x="45" y="15" width="30" height="15" rx="4" fill={tankColor}/>
-        
-        {/* Volume label */}
-        <text x="60" y="45" textAnchor="middle" fontSize="14" fill="white" fontWeight="bold">{volume}L</text>
-        
-        {/* Capacity indicator lines */}
-        <line x1="105" y1="30" x2="110" y2="30" stroke="#94a3b8" strokeWidth="2"/>
-        <line x1="105" y1="40" x2="110" y2="40" stroke="#94a3b8" strokeWidth="2"/>
-        <line x1="105" y1="50" x2="110" y2="50" stroke="#94a3b8" strokeWidth="2"/>
-        <line x1="105" y1="60" x2="110" y2="60" stroke="#94a3b8" strokeWidth="2"/>
-        <line x1="105" y1="70" x2="110" y2="70" stroke="#94a3b8" strokeWidth="2"/>
-      </svg>
-    );
+  const getTankImage = () => {
+    switch(volume) {
+      case '300': return tank300L;
+      case '500': return tank500L;
+      case '900': return tank900L;
+      default: return tank500L;
+    }
   };
 
   const getSize = () => {
@@ -87,15 +69,16 @@ const TankGraphic = ({ volume, isSelected, size }: { volume: string; isSelected:
       "transition-all duration-300 flex items-center justify-center",
       isSelected ? "scale-110 opacity-100" : "opacity-70 hover:opacity-100 hover:scale-105"
     )}>
-      <div 
-        style={{ width, height }}
+      <img
+        src={getTankImage()}
+        alt={`${volume}L oil tank`}
+        width={width}
+        height={height}
         className={cn(
           "transition-all duration-300 filter",
           isSelected ? "brightness-100 drop-shadow-lg" : "brightness-90 hover:brightness-100"
         )}
-      >
-        {getTankSvg()}
-      </div>
+      />
     </div>
   );
 };

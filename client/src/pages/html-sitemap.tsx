@@ -1,8 +1,8 @@
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2, ExternalLink, MapPin, Building2, Users, FileText } from "lucide-react";
-import Navigation from "../components/navigation";
-import Footer from "../components/footer";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 
 export default function HtmlSitemap() {
   const { data: suppliers, isLoading } = useQuery({

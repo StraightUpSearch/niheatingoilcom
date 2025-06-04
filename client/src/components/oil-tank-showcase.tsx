@@ -1,5 +1,8 @@
-import { Card, CardContent } from "../components/ui/card";
-import { Button } from "../components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import oilTank1 from "@assets/v2-vnxjs-vtqkl.jpg";
+import oilTank2 from "@assets/v2-vnxjs-awp7f.jpg";
+import oilTank3 from "@assets/v2-vnxjs-658vc.jpg";
 
 interface OilTankShowcaseProps {
   onVolumeSelect?: (volume: number) => void;

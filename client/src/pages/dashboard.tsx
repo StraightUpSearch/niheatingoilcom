@@ -1,12 +1,12 @@
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { useAuth } from "../hooks/use-auth";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
-import { Badge } from "../components/ui/badge";
-import { Skeleton } from "../components/ui/skeleton";
-import { Alert, AlertDescription } from "../components/ui/alert";
+import { useAuth } from "@/hooks/use-auth";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { 
   Clock, 
   CheckCircle, 
@@ -18,11 +18,11 @@ import {
   Trash2
 } from "lucide-react";
 import { useState } from "react";
-import { apiRequest, queryClient } from "../lib/queryClient";
-import WhatsAppQuoteReminder from "../components/whatsapp-quote-reminder";
-import Navigation from "../components/navigation";
-import Footer from "../components/footer";
-import { usePageTitle } from "../hooks/usePageTitle";
+import { apiRequest, queryClient } from "@/lib/queryClient";
+import WhatsAppQuoteReminder from "@/components/whatsapp-quote-reminder";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
+import { usePageTitle } from "@/hooks/usePageTitle";
 
 interface DashboardData {
   tickets: Array<{

@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
-import { Button } from "../components/ui/button";
-import { Card } from "../components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { MapPin, Navigation, Loader2 } from "lucide-react";
-import LocationConsentModal from "../components/location-consent-modal";
+import LocationConsentModal from "@/components/location-consent-modal";
 
 // Northern Ireland postcode areas with common towns/areas
 const NI_POSTCODE_DATA = {

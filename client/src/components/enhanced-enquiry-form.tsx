@@ -3,14 +3,14 @@ import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
-import { Alert, AlertDescription } from "../components/ui/alert";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Loader2, CheckCircle, User, Mail, Droplet } from "lucide-react";
-import { apiRequest } from "../lib/queryClient";
-import SmartPostcodeInput from "../components/smart-postcode-input";
+import { apiRequest } from "@/lib/queryClient";
+import SmartPostcodeInput from "@/components/smart-postcode-input";
 
 import LeadCaptureModal from "./lead-capture-modal";
 

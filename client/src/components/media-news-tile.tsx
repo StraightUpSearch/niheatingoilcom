@@ -1,4 +1,4 @@
-import { Card, CardContent } from "../components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, TrendingDown, Calendar } from "lucide-react";
 
 export function MediaNewsTile() {

@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "../components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function LivePriceDisplay() {
   const [currentPrice, setCurrentPrice] = useState<number>(48.06);

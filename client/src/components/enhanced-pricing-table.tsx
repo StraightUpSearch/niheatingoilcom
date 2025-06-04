@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Button } from "../components/ui/button";
-import { Badge } from "../components/ui/badge";
-import { Skeleton } from "../components/ui/skeleton";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowUpDown, Star, MessageSquare, MapPin, Clock, TrendingUp, Phone, Globe, Award, Fuel } from "lucide-react";
 import LeadCaptureModal from "./lead-capture-modal";
 

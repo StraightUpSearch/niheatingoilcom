@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "../components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Heart, ShoppingCart, Coins, Home, ExternalLink, Thermometer } from "lucide-react";
-import Navigation from "../components/navigation";
-import Footer from "../components/footer";
-import { usePageTitle } from "../hooks/usePageTitle";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
+import { usePageTitle } from "@/hooks/usePageTitle";
 
 interface ImpactData {
   totalGrants: number;

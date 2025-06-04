@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
-import Navigation from "../components/navigation";
-import Footer from "../components/footer";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
-import { Badge } from "../components/ui/badge";
-import { Button } from "../components/ui/button";
-import { Skeleton } from "../components/ui/skeleton";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { MapPin, Phone, Globe, Star, MessageSquare, ExternalLink, Lock, Eye, Users } from "lucide-react";
 
 export default function SuppliersPage() {

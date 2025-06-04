@@ -1,16 +1,16 @@
 import { useEffect } from "react";
-import { useAuth } from "../hooks/use-auth";
-import { useToast } from "../hooks/use-toast";
-import { usePageTitle } from "../hooks/usePageTitle";
-import Navigation from "../components/navigation";
-import Footer from "../components/footer";
-import PriceAlertsForm from "../components/price-alerts-form";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Badge } from "../components/ui/badge";
+import { useAuth } from "@/hooks/use-auth";
+import { useToast } from "@/hooks/use-toast";
+import { usePageTitle } from "@/hooks/usePageTitle";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
+import PriceAlertsForm from "@/components/price-alerts-form";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiRequest } from "../lib/queryClient";
-import { isUnauthorizedError } from "../lib/authUtils";
+import { apiRequest } from "@/lib/queryClient";
+import { isUnauthorizedError } from "@/lib/authUtils";
 import { Trash2, Bell, BellOff } from "lucide-react";
 
 export default function PriceAlerts() {

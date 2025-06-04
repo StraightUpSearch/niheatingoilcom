@@ -1,6 +1,6 @@
 
 import { useMemo } from "react";
-import { Progress } from "../components/ui/progress";
+import { Progress } from "@/components/ui/progress";
 import { Check, X } from "lucide-react";
 
 interface PasswordStrengthProps {

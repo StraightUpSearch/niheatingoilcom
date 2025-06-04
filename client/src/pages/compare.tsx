@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import Navigation from "../components/navigation";
-import Footer from "../components/footer";
-import EnhancedPricingTable from "../components/enhanced-pricing-table";
-import GamifiedSearch from "../components/gamified-search";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
+import EnhancedPricingTable from "@/components/enhanced-pricing-table";
+import GamifiedSearch from "@/components/gamified-search";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, MapPin, Clock } from "lucide-react";
 
 export default function ComparePage() {
