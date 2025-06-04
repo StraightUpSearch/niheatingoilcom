@@ -18,6 +18,7 @@ import HtmlSitemap from "@/pages/html-sitemap";
 import Contact from "@/pages/contact";
 import GivingBack from "@/pages/giving-back";
 import ThankYouPage from "@/pages/thank-you-page";
+import AboutUs from "@/pages/about-us";
 import { useEffect } from "react";
 import { initGTM } from "@/lib/gtm";
 import { useGTMPageTracking } from "@/hooks/use-gtm";
@@ -33,11 +34,13 @@ function Router() {
       <Route path="/login" component={() => <Redirect to="/auth" />} />
       <Route path="/register" component={() => <Redirect to="/auth" />} />
       <Route path="/compare" component={Compare} />
+      <Route path="/alerts" component={() => <Redirect to="/auth" />} />
       <Route path="/suppliers" component={Suppliers} />
       <Route path="/suppliers/:supplierId" component={SupplierProfile} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogArticle} />
       <Route path="/contact" component={Contact} />
+      <Route path="/about" component={AboutUs} />
       <Route path="/giving-back" component={GivingBack} />
       <Route path="/thank-you" component={ThankYouPage} />
       <Route path="/pages/html-sitemap" component={HtmlSitemap} />
