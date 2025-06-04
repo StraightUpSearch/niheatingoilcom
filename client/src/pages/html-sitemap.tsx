@@ -1,6 +1,8 @@
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2, ExternalLink, MapPin, Building2, Users, FileText } from "lucide-react";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 
 export default function HtmlSitemap() {
   const { data: suppliers, isLoading } = useQuery({
@@ -253,7 +255,7 @@ export default function HtmlSitemap() {
                   <Loader2 className="h-8 w-8 animate-spin text-gray-400 mx-auto" />
                   <p className="text-gray-500 mt-2">Loading supplier directory...</p>
                 </div>
-              ) : suppliers && suppliers.length > 0 ? (
+              ) : suppliers && Array.isArray(suppliers) && suppliers.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {suppliers.map((supplier: any) => {
                     const supplierSlug = supplier.name.toLowerCase()
@@ -355,8 +357,6 @@ export default function HtmlSitemap() {
             </div>
           </div>
         </div>
-      </div>
-      </div>
 
       <Footer />
     </div>
