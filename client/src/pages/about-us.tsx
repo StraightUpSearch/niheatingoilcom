@@ -22,9 +22,10 @@ export default function AboutUs() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             About NI Heating Oil
+            <span className="block text-2xl text-blue-600 mt-2">AI-Powered Price Intelligence</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Where we take one less chore off your list (and have a chuckle along the way).
+            Northern Ireland's first AI-powered heating oil comparison platform - built by locals, for locals.
           </p>
         </div>
 

@@ -68,7 +68,7 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
               <span className="block text-yellow-300">Powered by AI</span>
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
-              Built by locals, for locals. Our AI-powered platform shows you the craic with heating oil prices across all six counties - no messing about!
+              Built by locals, for locals. Our smart AI technology instantly analyzes heating oil prices across all six counties - giving you the best deals with zero hassle!
             </p>
           </div>
           
@@ -97,15 +97,15 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
           <div className={`flex flex-wrap items-center justify-center gap-4 lg:gap-6 max-w-4xl mx-auto transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
               <Check className="h-5 w-5 text-green-300" />
-              <span className="text-white font-medium text-sm sm:text-base">Official Consumer Council Data</span>
+              <span className="text-white font-medium text-sm sm:text-base">AI-Powered Analysis</span>
             </div>
             <div className="flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
               <Clock className="h-5 w-5 text-blue-300" />
-              <span className="text-white font-medium text-sm sm:text-base">Updated Daily</span>
+              <span className="text-white font-medium text-sm sm:text-base">Real-Time Data</span>
             </div>
             <div className="flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-colors">
               <Shield className="h-5 w-5 text-yellow-300" />
-              <span className="text-white font-medium text-sm sm:text-base">100% Free</span>
+              <span className="text-white font-medium text-sm sm:text-base">Smart & Free</span>
             </div>
           </div>
           
