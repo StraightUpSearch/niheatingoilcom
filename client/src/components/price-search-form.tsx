@@ -66,15 +66,15 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
           {/* Fuel Type Selection */}
           <div className="lg:col-span-1 space-y-4">
             <div className="space-y-3">
-              <Label>Fuel Type</Label>
+              <Label className="text-gray-900 font-semibold">Fuel Type</Label>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <input id="kerosene" type="radio" name="fuelType" value="kerosene" defaultChecked className="text-primary" />
-                  <label htmlFor="kerosene" className="text-sm font-medium">Heating Oil (Kerosene)</label>
+                  <label htmlFor="kerosene" className="text-sm font-medium text-gray-800">Heating Oil (Kerosene)</label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <input id="premium" type="radio" name="fuelType" value="premium" className="text-primary" />
-                  <label htmlFor="premium" className="text-sm font-medium">Premium Heating Oil</label>
+                  <label htmlFor="premium" className="text-sm font-medium text-gray-800">Premium Heating Oil</label>
                 </div>
               </div>
             </div>

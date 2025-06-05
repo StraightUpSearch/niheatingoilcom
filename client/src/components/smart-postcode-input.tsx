@@ -306,7 +306,7 @@ export default function SmartPostcodeInput({
   return (
     <div className="space-y-2 relative">
       <div className="flex items-center justify-between">
-        <Label htmlFor={id}>{label}</Label>
+        <Label htmlFor={id} className="text-gray-900 font-semibold">{label}</Label>
         <div className="flex items-center gap-2">
           {geoLocation && (
             <span className="text-xs text-green-600 flex items-center gap-1">

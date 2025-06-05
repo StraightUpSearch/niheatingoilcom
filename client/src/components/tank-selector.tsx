@@ -138,7 +138,7 @@ export default function TankSelector({ selectedVolume, onVolumeChange, className
   return (
     <div className={cn("w-full", className)}>
       <div className="flex items-center justify-between mb-3">
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium text-gray-900">
           Choose Your Tank Size
         </label>
         <button
