@@ -1,14 +1,17 @@
 import { useState } from "react";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MapPin, Phone, Mail, Clock, CheckCircle, MessageSquare, Building, Navigation } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, CheckCircle, MessageSquare, Building, Fuel, Car } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "wouter";
 
 interface ContactForm {
   name: string;
@@ -72,6 +75,8 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+      <Navigation />
+      
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -151,24 +156,24 @@ export default function ContactPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button variant="outline" className="w-full justify-start" asChild>
-                  <a href="/compare">
-                    <Navigation className="h-4 w-4 mr-2" />
+                <Link href="/compare">
+                  <Button variant="outline" className="w-full justify-start">
+                    <Fuel className="h-4 w-4 mr-2" />
                     Compare Prices Now
-                  </a>
-                </Button>
-                <Button variant="outline" className="w-full justify-start" asChild>
-                  <a href="/suppliers">
+                  </Button>
+                </Link>
+                <Link href="/suppliers">
+                  <Button variant="outline" className="w-full justify-start">
                     <Building className="h-4 w-4 mr-2" />
                     View All Suppliers
-                  </a>
-                </Button>
-                <Button variant="outline" className="w-full justify-start" asChild>
-                  <a href="/price-alerts">
+                  </Button>
+                </Link>
+                <Link href="/alerts">
+                  <Button variant="outline" className="w-full justify-start">
                     <CheckCircle className="h-4 w-4 mr-2" />
                     Set Price Alerts
-                  </a>
-                </Button>
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
@@ -322,7 +327,7 @@ export default function ContactPage() {
                 </div>
                 
                 <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <Navigation className="h-8 w-8 text-green-600 mx-auto mb-2" />
+                  <Car className="h-8 w-8 text-green-600 mx-auto mb-2" />
                   <h3 className="font-medium text-gray-900">Free Parking</h3>
                   <p className="text-sm text-gray-600">
                     Convenient parking available nearby
@@ -402,6 +407,8 @@ export default function ContactPage() {
           </Card>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }

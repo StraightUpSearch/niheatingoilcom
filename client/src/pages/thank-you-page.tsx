@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, useRoute } from "wouter";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -100,21 +102,31 @@ export default function ThankYouPage() {
 
   if (!quoteData) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-orange-50 p-4">
-        <div className="max-w-2xl mx-auto pt-20">
-          <Card>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-orange-50">
+        <Navigation />
+        <div className="flex-1 flex items-center justify-center p-4">
+          <Card className="max-w-2xl w-full">
             <CardContent className="p-8 text-center">
               <p className="text-gray-600">No quote data found. Redirecting to home...</p>
+              <Button 
+                onClick={() => setLocation('/')} 
+                className="mt-4"
+              >
+                Go to Home
+              </Button>
             </CardContent>
           </Card>
         </div>
+        <Footer />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-orange-50 p-4">
-      <div className="max-w-4xl mx-auto pt-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-orange-50">
+      <Navigation />
+      
+      <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
@@ -395,7 +407,7 @@ export default function ThankYouPage() {
         </Card>
 
         {/* Footer Actions */}
-        <div className="text-center mt-8 space-y-4">
+        <div className="text-center mt-8 space-y-4 pb-8">
           <p className="text-gray-600">
             Need help or have questions? Contact us at{" "}
             <a href="tel:02828766816" className="text-blue-600 hover:underline">
@@ -407,12 +419,14 @@ export default function ThankYouPage() {
             <Button variant="outline" onClick={() => setLocation('/')}>
               Back to Home
             </Button>
-            <Button onClick={() => setLocation('/prices')}>
+            <Button onClick={() => setLocation('/compare')}>
               Compare More Prices
             </Button>
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }
