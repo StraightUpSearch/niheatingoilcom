@@ -10,7 +10,7 @@ import FeaturedSuppliers from "@/components/featured-suppliers";
 import SuppliersShowcase from "@/components/suppliers-showcase";
 import OilTankShowcase from "@/components/oil-tank-showcase";
 import TrustSection from "@/components/trust-section";
-import NorthernIrelandIdentity from "@/components/northern-ireland-identity";
+
 import Footer from "@/components/footer";
 import SocialProofNotifications from "@/components/social-proof-notifications";
 import TrustBadges from "@/components/trust-badges";
@@ -250,7 +250,6 @@ export default function Landing() {
         </div>
       </section>
 
-      <NorthernIrelandIdentity />
       <TrustBadges />
       <BlogCarousel />
       <PriceTrends />
