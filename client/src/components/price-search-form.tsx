@@ -7,7 +7,7 @@ import { Search, Droplets, Loader2, MapPin } from "lucide-react";
 import { useLocation } from "wouter";
 import TankSelector from "./tank-selector";
 import SmartPostcodeInput from "./smart-postcode-input";
-import LivePriceDisplay from "./live-price-display";
+
 import PriceGuaranteeModal from "./price-guarantee-modal";
 
 interface PriceSearchFormProps {
@@ -94,8 +94,6 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
             </div>
 
             {/* Quick Tips */}
-            <LivePriceDisplay />
-            
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
               <h4 className="text-sm font-semibold text-blue-900 mb-2">Quick Tips</h4>
               <ul className="text-xs text-blue-800 space-y-1">
