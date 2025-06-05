@@ -108,7 +108,7 @@ export default function CustomerAvatars({
             </svg>
           ))}
         </div>
-        <p className="text-grey-600 font-medium">
+        <p className="text-gray-600 font-medium">
           Trusted by {displayedCustomers.length}+ homeowners
           {showSavings && (
             <span className="block text-xs text-green-600">
@@ -165,10 +165,10 @@ export function AnimatedCustomerAvatars() {
       </div>
 
       <div className="transition-all duration-500 ease-in-out">
-        <p className="text-lg font-semibold text-grey-900">
+        <p className="text-lg font-semibold text-gray-900">
           "{current.name} from {current.location} saved £{current.savings}"
         </p>
-        <p className="text-sm text-grey-600 mt-1">
+        <p className="text-sm text-gray-600 mt-1">
           Trusted by homeowners across Northern Ireland
         </p>
       </div>

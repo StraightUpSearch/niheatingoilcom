@@ -6,67 +6,82 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
  */
 export function PriceTableSkeleton({ rows = 5 }: { rows?: number }) {
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-grey-200">
-      <div className="px-6 py-4 bg-grey-50 border-b border-grey-200">
-        <Skeleton className="h-4 w-48" />
-      </div>
-      
-      <div className="overflow-x-auto">
-        <table className="min-w-full">
-          <thead className="bg-grey-50 border-b border-grey-200">
-            <tr>
-              <th className="px-6 py-3"><Skeleton className="h-4 w-20" /></th>
-              <th className="px-6 py-3"><Skeleton className="h-4 w-24" /></th>
-              <th className="px-6 py-3"><Skeleton className="h-4 w-20" /></th>
-              <th className="px-6 py-3"><Skeleton className="h-4 w-20" /></th>
-              <th className="px-6 py-3"><Skeleton className="h-4 w-20" /></th>
-              <th className="px-6 py-3"><Skeleton className="h-4 w-16" /></th>
-              <th className="px-6 py-3"><Skeleton className="h-4 w-24" /></th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-grey-200">
-            {Array.from({ length: rows }).map((_, i) => (
-              <tr key={i}>
-                <td className="px-6 py-4">
-                  <div className="space-y-2">
-                    <Skeleton className="h-4 w-32" />
-                    <Skeleton className="h-3 w-24" />
-                  </div>
-                </td>
-                <td className="px-6 py-4">
-                  <Skeleton className="h-3 w-40" />
-                </td>
-                <td className="px-6 py-4 text-center">
-                  <div className="space-y-1">
-                    <Skeleton className="h-4 w-16 mx-auto" />
-                    <Skeleton className="h-3 w-12 mx-auto" />
-                  </div>
-                </td>
-                <td className="px-6 py-4 text-center">
-                  <div className="space-y-1">
-                    <Skeleton className="h-4 w-16 mx-auto" />
-                    <Skeleton className="h-3 w-12 mx-auto" />
-                  </div>
-                </td>
-                <td className="px-6 py-4 text-center">
-                  <div className="space-y-1">
-                    <Skeleton className="h-4 w-16 mx-auto" />
-                    <Skeleton className="h-3 w-12 mx-auto" />
-                  </div>
-                </td>
-                <td className="px-6 py-4">
+    <div className="w-full">
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+        {/* Header */}
+        <div className="px-6 py-4 bg-gray-50 border-b border-gray-200">
+          <Skeleton className="h-4 w-48" />
+        </div>
+        
+        {/* Table */}
+        <div className="overflow-x-auto">
+          <table className="min-w-full">
+            <thead className="bg-gray-50 border-b border-gray-200">
+              <tr>
+                <th className="px-6 py-3 text-left">
                   <Skeleton className="h-4 w-20" />
-                </td>
-                <td className="px-6 py-4">
-                  <div className="flex gap-2 justify-center">
-                    <Skeleton className="h-8 w-20" />
-                    <Skeleton className="h-8 w-20" />
-                  </div>
-                </td>
+                </th>
+                <th className="px-6 py-3 text-left">
+                  <Skeleton className="h-4 w-24" />
+                </th>
+                <th className="px-6 py-3 text-center">
+                  <Skeleton className="h-4 w-20 mx-auto" />
+                </th>
+                <th className="px-6 py-3 text-center">
+                  <Skeleton className="h-4 w-20 mx-auto" />
+                </th>
+                <th className="px-6 py-3 text-center">
+                  <Skeleton className="h-4 w-20 mx-auto" />
+                </th>
+                <th className="px-6 py-3 text-left">
+                  <Skeleton className="h-4 w-16" />
+                </th>
+                <th className="px-6 py-3 text-center">
+                  <Skeleton className="h-4 w-16 mx-auto" />
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {Array.from({ length: rows }).map((_, index) => (
+                <tr key={index}>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="space-y-2">
+                      <Skeleton className="h-4 w-32" />
+                      <Skeleton className="h-3 w-24" />
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <Skeleton className="h-3 w-36" />
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-center">
+                    <div className="space-y-1">
+                      <Skeleton className="h-4 w-16 mx-auto" />
+                      <Skeleton className="h-3 w-20 mx-auto" />
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-center">
+                    <div className="space-y-1">
+                      <Skeleton className="h-4 w-16 mx-auto" />
+                      <Skeleton className="h-3 w-20 mx-auto" />
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-center">
+                    <div className="space-y-1">
+                      <Skeleton className="h-4 w-16 mx-auto" />
+                      <Skeleton className="h-3 w-20 mx-auto" />
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <Skeleton className="h-3 w-20" />
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-center">
+                    <Skeleton className="h-8 w-24 mx-auto" />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

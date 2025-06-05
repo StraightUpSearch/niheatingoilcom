@@ -216,23 +216,23 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
   if (!prices?.length) {
     return (
       <div className="text-centre py-8">
-        <p className="text-grey-600">No heating oil suppliers found for your area just yet. Give us a wee while to gather more prices!</p>
+        <p className="text-gray-600">No heating oil suppliers found for your area just yet. Give us a wee while to gather more prices!</p>
       </div>
     );
   }
 
   return (
     <div className="w-full">
-      <div className="bg-white rounded-lg shadow-sm border border-grey-200">
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200">
         {/* Header with count and info */}
-        <div className="px-6 py-4 bg-grey-50 border-b border-grey-200 flex justify-between items-centre">
-          <div className="text-sm text-grey-600">
+        <div className="px-6 py-4 bg-gray-50 border-b border-gray-200 flex justify-between items-centre">
+          <div className="text-sm text-gray-600">
             <span className="font-medium">Showing 1 to {prices.length} of {prices.length}</span>
             {searchParams?.postcode && (
               <span className="ml-2">• Search results for {searchParams.postcode}</span>
             )}
           </div>
-          <div className="text-xs text-grey-500">
+          <div className="text-xs text-gray-500">
             Fuel prices may vary by location
           </div>
         </div>
@@ -310,10 +310,10 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
         {/* Desktop Table */}
         <div className="hidden md:block overflow-x-auto">
           <table className="min-w-full">
-            <thead className="bg-grey-50 border-b border-grey-200">
+            <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
                 <th 
-                  className="px-6 py-3 text-left text-xs font-medium text-grey-500 uppercase tracking-wider cursor-pointer hover:bg-grey-100"
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
                   onClick={() => handleSort('supplier')}
                 >
                   <div className="flex items-centre">
@@ -321,11 +321,11 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                     <ArrowUpDown className="ml-1 h-3 w-3" />
                   </div>
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-grey-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Delivers to
                 </th>
                 <th 
-                  className="px-6 py-3 text-centre text-xs font-medium text-grey-500 uppercase tracking-wider cursor-pointer hover:bg-grey-100"
+                  className="px-6 py-3 text-centre text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
                   onClick={() => handleSort('price300')}
                 >
                   <div className="flex items-centre justify-centre">
@@ -334,7 +334,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                   </div>
                 </th>
                 <th 
-                  className="px-6 py-3 text-centre text-xs font-medium text-grey-500 uppercase tracking-wider cursor-pointer hover:bg-grey-100"
+                  className="px-6 py-3 text-centre text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
                   onClick={() => handleSort('price500')}
                 >
                   <div className="flex items-centre justify-centre">
@@ -343,7 +343,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                   </div>
                 </th>
                 <th 
-                  className="px-6 py-3 text-centre text-xs font-medium text-grey-500 uppercase tracking-wider cursor-pointer hover:bg-grey-100"
+                  className="px-6 py-3 text-centre text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
                   onClick={() => handleSort('price900')}
                 >
                   <div className="flex items-centre justify-centre">
@@ -351,67 +351,67 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                     <ArrowUpDown className="ml-1 h-3 w-3" />
                   </div>
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-grey-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Rating
                 </th>
-                <th className="px-6 py-3 text-centre text-xs font-medium text-grey-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-centre text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Action
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-grey-200">
+            <tbody className="bg-white divide-y divide-gray-200">
               {prices.map((item: any, index: number) => {
                 const price300 = calculateVolumePrice(item.price, item.volume, 300);
                 const price500 = calculateVolumePrice(item.price, item.volume, 500);
                 const price900 = calculateVolumePrice(item.price, item.volume, 900);
                 
                 return (
-                  <tr key={item.id} className="hover:bg-grey-50">
+                  <tr key={item.id} className="hover:bg-gray-50">
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div>
-                        <div className="text-sm font-medium text-grey-900">
+                        <div className="text-sm font-medium text-gray-900">
                           {item.supplier.name}
                         </div>
-                        <div className="text-xs text-grey-500 flex items-centre mt-1">
+                        <div className="text-xs text-gray-500 flex items-centre mt-1">
                           <Clock className="h-3 w-3 mr-1" />
                           {getTimeAgo(new Date(item.createdAt))}
                         </div>
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-xs text-grey-600 flex items-centre">
-                        <MapPin className="h-3 w-3 mr-1 text-grey-400" />
+                      <div className="text-xs text-gray-600 flex items-centre">
+                        <MapPin className="h-3 w-3 mr-1 text-gray-400" />
                         {getDeliveryArea(item.supplier.location)}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-centre">
-                      <div className="text-sm font-medium text-grey-900">
+                      <div className="text-sm font-medium text-gray-900">
                         {formatPrice(price300)}
                       </div>
-                      <div className="text-xs text-grey-500">
+                      <div className="text-xs text-gray-500">
                         {formatPricePerLitre(price300, 300)}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-centre">
-                      <div className="text-sm font-medium text-grey-900">
+                      <div className="text-sm font-medium text-gray-900">
                         {formatPrice(price500)}
                       </div>
-                      <div className="text-xs text-grey-500">
+                      <div className="text-xs text-gray-500">
                         {formatPricePerLitre(price500, 500)}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-centre">
-                      <div className="text-sm font-medium text-grey-900">
+                      <div className="text-sm font-medium text-gray-900">
                         {formatPrice(price900)}
                       </div>
-                      <div className="text-xs text-grey-500">
+                      <div className="text-xs text-gray-500">
                         {formatPricePerLitre(price900, 900)}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-centre">
                         {renderStars(Number(item.supplier.rating) || 4)}
-                        <span className="ml-1 text-xs text-grey-500">
+                        <span className="ml-1 text-xs text-gray-500">
                           {(Number(item.supplier.rating) || 4).toFixed(1)}
                         </span>
                       </div>
@@ -449,8 +449,8 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
         </div>
 
         {/* Footer note */}
-        <div className="px-6 py-3 bg-grey-50 border-t border-grey-200">
-          <p className="text-xs text-grey-500">
+        <div className="px-6 py-3 bg-gray-50 border-t border-gray-200">
+          <p className="text-xs text-gray-500">
             * Prices shown include VAT and standard delivery charges. Final prices may vary depending on exact delivery location and current availability.
           </p>
         </div>
