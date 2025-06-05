@@ -1,11 +1,82 @@
+# NI Heating Oil - Northern Ireland's Leading Heating Oil Price News Resource
 
-# NI Heating Oil - Northern Ireland Heating Oil Price Comparison Platform
+## 🏆 Northern Ireland's #1 Source for Real-Time Heating Oil Prices
+
+NI Heating Oil is Northern Ireland's premier **heating oil price news platform**, providing real-time market data from 50+ verified local suppliers. Like checking the weather or stock prices, we give homeowners instant access to current heating oil prices across all BT postcodes - making us the go-to resource for anyone looking to stay informed about heating oil costs.
+
+## Core Value Proposition
+
+### 📰 Your Daily Heating Oil Price News Source
+- **Real-Time Market Data**: Live prices updated every 2 hours from across Northern Ireland
+- **Consumer Council Integration**: Official data from Consumer Council NI weekly price surveys
+- **Comprehensive Coverage**: Prices from 50+ verified suppliers across all six counties
+- **Market Intelligence**: Historical trends, price predictions, and buying recommendations
+- **News-Style Updates**: Daily price movements, market analysis, and seasonal insights
+
+### 🔗 Connecting Informed Customers with Quality Suppliers
+Beyond being a news resource, we bridge the gap between price-conscious consumers and reputable heating oil suppliers:
+- Direct links to supplier contact information
+- Lead capture system for customers ready to buy
+- Price lock features to secure good deals
+- Community buying opportunities for group discounts
 
 ## Purpose
-NI Heating Oil is a free, real-time price comparison platform designed to help Northern Ireland residents find the best deals on home heating oil. By aggregating live pricing from 50+ verified local suppliers and refreshing data every two hours, the platform ensures users see the most up-to-date, postcode-specific rates.
+NI Heating Oil serves as the definitive price transparency platform for Northern Ireland's heating oil market. By aggregating and presenting live pricing data in an accessible, news-style format, we empower consumers to make informed purchasing decisions while connecting them with competitive local suppliers.
 
 ## Mission Statement
-To keep Northern Ireland's homes warm, budgets intact, and communities connected by delivering a simple, reliable, and transparent tool for comparing heating oil prices—while using our platform to support those most vulnerable to fuel poverty.
+To be Northern Ireland's most trusted source for heating oil price information - delivering transparency, savings, and market intelligence to keep homes warm and budgets intact, while supporting vulnerable communities through our charitable giving program.
+
+## Key Features as a Price News Platform
+
+### 📊 Real-Time Price Data Table
+- **Live Market Dashboard**: Current prices from all major suppliers
+- **Sortable Columns**: By price, supplier, location, or last update time
+- **Price per Litre**: Instant comparison across 300L, 500L, and 900L volumes
+- **Update Timestamps**: Know exactly when each price was last verified
+- **Regional Variations**: See price differences across counties
+
+### 📈 Market Intelligence & Analytics
+- **Price Trend Charts**: Weekly, monthly, and yearly price movements
+- **Consumer Council Data**: Official weekly average prices by region
+- **Best Time to Buy**: AI-powered recommendations based on historical patterns
+- **Price Predictions**: 7-day forecast using weather and market data
+- **Seasonal Analysis**: Understanding price patterns throughout the year
+
+### 🔔 Price Alert News Service
+- **Custom Price Alerts**: Get notified when prices drop below your target
+- **Market Updates**: Daily/weekly price movement summaries
+- **Breaking News**: Alerts for significant market changes
+- **WhatsApp Integration**: Share prices and deals with neighbors
+
+### 📱 User Experience
+- **No Registration Required**: View all prices without creating an account
+- **Mobile-First Design**: Check prices on-the-go
+- **Fast Load Times**: Instant access to price data
+- **Clean, News-Style Layout**: Easy to scan and understand
+- **BT Postcode Search**: Localized results for your area
+
+## How We Source Our Data
+
+### Primary Data Sources:
+1. **Direct Supplier Scraping**: Automated collection from supplier websites every 2 hours
+2. **Consumer Council NI**: Weekly official survey data integration
+3. **API Integrations**: Direct feeds from suppliers with digital systems
+4. **Manual Verification**: Regular spot checks for accuracy
+
+### Data Quality Assurance:
+- Automated validation checks for price anomalies
+- Historical comparison to flag unusual changes
+- Manual review of significant price movements
+- Supplier verification for new entries
+
+## Technical Implementation
+
+### Robust Data Infrastructure:
+- **ScrapingBee API**: Reliable web scraping with 99.9% uptime
+- **PostgreSQL Database**: Structured storage for millions of price points
+- **Redis Caching**: Lightning-fast price queries
+- **Automated Updates**: Scheduled jobs running every 2 hours
+- **Fallback Systems**: Multiple data sources for redundancy
 
 ## Goals
 - **Transparency:** Provide a completely free service that surfaces current heating oil prices from multiple trusted suppliers

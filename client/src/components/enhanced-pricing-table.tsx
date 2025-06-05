@@ -13,11 +13,12 @@ interface EnhancedPricingTableProps {
     postcode?: string;
     volume?: number;
   };
+  onPostcodeChange?: (postcode: string) => void;
 }
 
 type SortField = 'supplier' | 'price300' | 'price500' | 'price900' | 'rating';
 
-export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTableProps) {
+export default function EnhancedPricingTable({ searchParams, onPostcodeChange }: EnhancedPricingTableProps) {
   const [sortField, setSortField] = useState<SortField>('price500');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
   const [selectedSupplier, setSelectedSupplier] = useState<any>(null);
@@ -196,6 +197,13 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
     if (diffInMinutes < 1440) return `Updated ${Math.floor(diffInMinutes / 60)} hours ago`;
     return `Updated ${Math.floor(diffInMinutes / 1440)} days ago`;
   };
+
+  // Call onPostcodeChange when postcode changes
+  useEffect(() => {
+    if (searchParams?.postcode && onPostcodeChange) {
+      onPostcodeChange(searchParams.postcode);
+    }
+  }, [searchParams?.postcode, onPostcodeChange]);
 
   if (isLoading) {
     return (

@@ -1,6 +1,22 @@
 # Progress
 
-This file tracks the key tasks and features for the NI Heating Oil Price Comparison Tool. Completed items are marked with ✔️; pending ones have an empty checkbox.
+This file tracks the key tasks and features for the NI Heating Oil Price News Platform. Completed items are marked with ✔️; pending ones have an empty checkbox.
+
+## 0. Core Value Proposition - Price News Resource
+- [✔️] **Robust Price Data Table**: Real-time display of oil prices from 50+ suppliers
+- [✔️] **Consumer Council Integration**: Weekly official price data from Consumer Council NI
+- [✔️] **2-Hour Update Cycle**: Automated scraping ensures fresh price data
+- [✔️] **Sortable/Filterable Table**: Users can sort by price, supplier, location, update time
+- [✔️] **BT Postcode Search**: Enter postcode to see relevant local suppliers
+- [✔️] **Price per Litre Display**: Clear ppl calculations for 300L, 500L, 900L
+- [✔️] **Update Timestamps**: Shows when each price was last verified
+- [✔️] **Mobile-Responsive Design**: Full functionality on all devices
+- [✔️] **No Registration Required**: All price data accessible without signup
+- [✔️] **Lead Capture Integration**: Connect interested users with suppliers
+- [ ] **Daily Price Movement Widget**: Show today's average vs yesterday
+- [ ] **Price News Feed**: Blog-style updates on significant market changes
+- [ ] **Email Price Digest**: Weekly summary of price movements
+- [ ] **API Access**: Allow third-party integration of our price data
 
 ## 1. Data Collection & Integration
 - [✔️] Identify local heating oil suppliers (comprehensive curated database created)
