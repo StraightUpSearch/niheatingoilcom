@@ -72,14 +72,34 @@ export default function TeaserPricingTable({ searchParams }: TeaserPricingTableP
     );
   }
 
-  const suppliers = pricesData?.suppliers || [];
+  const prices = pricesData || [];
+  
+  // Group prices by supplier and get best price for each
+  const supplierPrices = new Map();
+  
+  prices.forEach((price: any) => {
+    const supplierId = price.supplier?.id;
+    if (!supplierId) return;
+    
+    const currentPrice = parseFloat(price.price);
+    const priceVolume = price.volume;
+    
+    // Calculate display price for selected volume
+    const displayPrice = calculateVolumePrice(currentPrice, priceVolume, selectedVolume);
+    
+    if (!supplierPrices.has(supplierId) || displayPrice < supplierPrices.get(supplierId).displayPrice) {
+      supplierPrices.set(supplierId, {
+        ...price.supplier,
+        displayPrice,
+        originalPrice: currentPrice,
+        originalVolume: priceVolume,
+        postcode: price.postcode
+      });
+    }
+  });
   
   // Get top 6 suppliers with best prices for teaser display
-  const teaserSuppliers = suppliers
-    .map((supplier: any) => ({
-      ...supplier,
-      displayPrice: calculateVolumePrice(supplier.basePrice || 0, supplier.baseVolume || 500, selectedVolume)
-    }))
+  const teaserSuppliers = Array.from(supplierPrices.values())
     .sort((a: any, b: any) => a.displayPrice - b.displayPrice)
     .slice(0, 6);
 
@@ -208,7 +228,7 @@ export default function TeaserPricingTable({ searchParams }: TeaserPricingTableP
       {teaserSuppliers.length > 0 && (
         <div className="text-center mt-8">
           <p className="text-gray-600 mb-4">
-            See all {suppliers.length} suppliers and compare detailed pricing
+            See all {supplierPrices.size} suppliers and compare detailed pricing
           </p>
           <Link href="/compare">
             <Button size="lg" className="bg-primary hover:bg-blue-700">
