@@ -10,6 +10,8 @@ import LeadCaptureModal from "./lead-capture-modal";
 import { calculateVolumePrice, formatPrice, formatPricePerLitre } from "@shared/pricing";
 // Import loading skeletons
 import { PriceTableSkeleton, PriceCardSkeleton } from "@/components/loading-skeletons";
+// Import price lock feature
+import PriceLockFeature from "./price-lock-feature";
 
 interface EnhancedPricingTableProps {
   searchParams?: {
