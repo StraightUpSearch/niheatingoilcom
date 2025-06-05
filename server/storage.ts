@@ -262,7 +262,7 @@ export class DatabaseStorage implements IStorage {
       .orderBy(suppliers.name);
 
     // Filter suppliers based on coverage areas
-    return allSuppliers.filter(supplier => {
+    const filteredSuppliers = allSuppliers.filter(supplier => {
       const coverage = supplier.coverageAreas;
 
       if (!coverage || coverage.trim() === '') {
@@ -310,6 +310,9 @@ export class DatabaseStorage implements IStorage {
       // Simple contains check as fallback
       return coverage.includes(btArea) || coverage.includes('ALL') || coverage.includes('Northern Ireland');
     });
+
+    console.log(`Postcode ${postcode} (BT${btNumber}) - Found ${filteredSuppliers.length} suppliers out of ${allSuppliers.length} total`);
+    return filteredSuppliers;
   }
 
   // Oil price operations

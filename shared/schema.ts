@@ -235,7 +235,7 @@ export const savedQuotes = pgTable("saved_quotes", {
   id: serial("id").primaryKey(),
   userId: varchar("user_id").references(() => users.id),
   supplierName: varchar("supplier_name", { length: 255 }).notNull(),
-  price: varchar("price", { length: 50 }).notNull(),
+  price: varchar("price", { length: 20 }).notNull(),
   volume: integer("volume").notNull(),
   location: varchar("location", { length: 255 }).notNull(),
   postcode: varchar("postcode", { length: 20 }).notNull(),
