@@ -64,11 +64,11 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
           {/* Main Heading */}
           <div className={`space-y-4 lg:space-y-6 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-              Compare Heating Oil Prices 
-              <span className="block text-yellow-300">Across Northern Ireland</span>
+              NI's Very Own Oil Comparison Site
+              <span className="block text-yellow-300">Powered by AI</span>
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
-              Built by locals, for locals. No messing about - we'll show you the craic with heating oil prices across all six counties.
+              Built by locals, for locals. Our AI-powered platform shows you the craic with heating oil prices across all six counties - no messing about!
             </p>
           </div>
           
