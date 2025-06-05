@@ -11,6 +11,7 @@ import { Link, useLocation } from "wouter";
 import BotProtection from "@/components/bot-protection";
 import EnhancedAddressInput from "@/components/enhanced-address-input";
 import { useToast } from "@/hooks/use-toast";
+import { calculateVolumePrice, formatPrice, parsePrice } from "@shared/pricing";
 
 interface LeadCaptureModalProps {
   isOpen: boolean;
@@ -69,22 +70,19 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
     }));
   };
 
-  // Calculate dynamic price based on selected volume with 20% safety margin
+  // Calculate dynamic price based on selected volume using centralized utility
   const calculateDynamicPrice = () => {
     if (!supplier || !formData.volume) return supplier?.price || "Contact for quote";
 
     const selectedVolume = parseInt(formData.volume);
     const originalVolume = supplier.volume;
-    const originalPrice = parseFloat(supplier.price.replace('£', ''));
+    const originalPrice = parsePrice(supplier.price);
 
     if (isNaN(originalPrice) || isNaN(selectedVolume)) return supplier.price;
 
-    // Calculate price per litre and multiply by new volume, then add 20% safety margin
-    const pricePerLitre = originalPrice / originalVolume;
-    const basePrice = pricePerLitre * selectedVolume;
-    const priceWithMargin = basePrice * 1.20;
-
-    return `£${priceWithMargin.toFixed(2)}`;
+    // Use centralized calculation with safety margin already included
+    const calculatedPrice = calculateVolumePrice(originalPrice, originalVolume, selectedVolume);
+    return formatPrice(calculatedPrice);
   };
 
   const getSelectedVolume = () => {

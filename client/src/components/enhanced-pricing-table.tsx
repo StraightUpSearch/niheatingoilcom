@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowUpDown, Star, MessageSquare, MapPin, Clock, TrendingUp, Phone, Globe, Award, Fuel } from "lucide-react";
 import LeadCaptureModal from "./lead-capture-modal";
+// Import centralized pricing utilities
+import { calculateVolumePrice, formatPrice, formatPricePerLitre } from "@shared/pricing";
 
 interface EnhancedPricingTableProps {
   searchParams?: {
@@ -22,14 +24,6 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
   const [selectedSupplier, setSelectedSupplier] = useState<any>(null);
   const [showLeadModal, setShowLeadModal] = useState(false);
   const { isAuthenticated } = useAuth();
-
-  // Calculate prices for different volumes based on base price with 20% safety margin
-  const calculateVolumePrice = (basePrice: number, baseVolume: number, targetVolume: number) => {
-    const pricePerLitre = basePrice / baseVolume;
-    const baseCalculatedPrice = pricePerLitre * targetVolume;
-    // Add 20% safety margin to all supplier prices for profitability buffer
-    return baseCalculatedPrice * 1.20;
-  };
 
   const { data: pricesData, isLoading, error } = useQuery({
     queryKey: ["/api/prices", { postcode: searchParams?.postcode }],
@@ -120,7 +114,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
     
     setSelectedSupplier({
       name: supplier.name,
-      price: `£${calculatedPrice.toFixed(2)}`,
+      price: formatPrice(calculatedPrice),
       volume: volume,
       location: supplier.location
     });
@@ -150,15 +144,6 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
         location: supplier.location
       })
     });
-  };
-
-  const formatPrice = (price: number) => {
-    return `£${price.toFixed(2)}`;
-  };
-
-  const formatPricePerLitre = (totalPrice: number, volume: number) => {
-    const ppl = (totalPrice / volume) * 100;
-    return `${ppl.toFixed(1)} ppl`;
   };
 
   const getDeliveryArea = (location: string) => {
