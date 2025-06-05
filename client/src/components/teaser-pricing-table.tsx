@@ -74,28 +74,18 @@ export default function TeaserPricingTable({ searchParams }: TeaserPricingTableP
 
   const prices = pricesData || [];
   
-  // Debug logging
-  console.log('Teaser Pricing - Raw prices data:', prices);
-  console.log('Teaser Pricing - Selected volume:', selectedVolume);
-  
   // Group prices by supplier and get best price for each
   const supplierPrices = new Map();
   
   prices.forEach((price: any) => {
     const supplierId = price.supplier?.id;
-    console.log('Processing price:', price, 'Supplier ID:', supplierId);
-    
-    if (!supplierId) {
-      console.log('Skipping price due to missing supplier ID');
-      return;
-    }
+    if (!supplierId) return;
     
     const currentPrice = parseFloat(price.price);
     const priceVolume = price.volume;
     
     // Calculate display price for selected volume
     const displayPrice = calculateVolumePrice(currentPrice, priceVolume, selectedVolume);
-    console.log('Calculated display price:', displayPrice, 'for volume:', selectedVolume);
     
     if (!supplierPrices.has(supplierId) || displayPrice < supplierPrices.get(supplierId).displayPrice) {
       supplierPrices.set(supplierId, {
@@ -112,9 +102,6 @@ export default function TeaserPricingTable({ searchParams }: TeaserPricingTableP
   const teaserSuppliers = Array.from(supplierPrices.values())
     .sort((a: any, b: any) => a.displayPrice - b.displayPrice)
     .slice(0, 6);
-    
-  console.log('Final teaser suppliers:', teaserSuppliers);
-  console.log('Supplier prices map size:', supplierPrices.size);
 
   return (
     <div className="w-full space-y-6">

@@ -231,45 +231,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
           </div>
         </div>
 
-        {/* Official Consumer Council Data Highlight */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center">
-              <TrendingUp className="h-5 w-5 text-blue-600 mr-2" />
-              <h3 className="font-semibold text-blue-900">Northern Ireland Regional Averages</h3>
-            </div>
-            <div className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded">
-              Updated Weekly
-            </div>
-          </div>
-          <div className="grid grid-cols-3 gap-4 text-center">
-            <div>
-              <div className="text-lg font-bold text-blue-900">£160.50</div>
-              <div className="text-sm text-blue-600">300 Litres</div>
-              <div className="text-xs text-blue-500">53.5p per litre</div>
-            </div>
-            <div>
-              <div className="text-lg font-bold text-blue-900">£251.20</div>
-              <div className="text-sm text-blue-600">500 Litres</div>
-              <div className="text-xs text-blue-500">50.2p per litre</div>
-            </div>
-            <div>
-              <div className="text-lg font-bold text-blue-900">£443.85</div>
-              <div className="text-sm text-blue-600">900 Litres</div>
-              <div className="text-xs text-blue-500">49.3p per litre</div>
-            </div>
-          </div>
-          <div className="text-xs text-blue-600 text-center mt-2">
-            <a 
-              href="https://www.consumercouncil.org.uk/home-heating/price-checker/29-may-2025" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-blue-800 underline"
-            >
-              Source: Consumer Council for Northern Ireland official weekly data (29 May 2025)
-            </a>
-          </div>
-        </div>
+
 
         {/* Mobile Cards */}
         <div className="block md:hidden space-y-4">
