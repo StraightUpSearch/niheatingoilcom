@@ -946,5 +946,10 @@ Crawl-delay: 1`;
   });
 
   const httpServer = createServer(app);
+  
+  // Import and register stats routes for UX improvements
+  const { statsRoutes } = await import('./routes/stats');
+  app.use(statsRoutes(httpServer));
+  
   return httpServer;
 }
