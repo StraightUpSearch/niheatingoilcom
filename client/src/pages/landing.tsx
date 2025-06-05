@@ -4,6 +4,8 @@ import HeroSection from "@/components/hero-section";
 import TeaserPricingTable from "@/components/teaser-pricing-table";
 import PriceTrends from "@/components/price-trends";
 import MobilePriceTrends from "@/components/mobile-price-trends";
+import EnhancedQuoteForm from "@/components/enhanced-quote-form";
+import CommunitySavings from "@/components/community-savings";
 
 import PriceAlertsForm from "@/components/price-alerts-form";
 import FeaturedSuppliers from "@/components/featured-suppliers";
@@ -91,6 +93,26 @@ export default function Landing() {
       />
       <Navigation />
       <HeroSection onSearch={handleSearch} />
+
+      {/* Enhanced Quote Form Section */}
+      <section className="py-8 bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <EnhancedQuoteForm onSearch={handleSearch} />
+            </div>
+            <div className="lg:col-span-1">
+              {searchParams?.postcode && (
+                <CommunitySavings 
+                  postcode={searchParams.postcode}
+                  volume={searchParams.volume || 500}
+                  currentPrice="275"
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Charity Banner - Simon Community NI Pledge */}
       <CharityBanner />

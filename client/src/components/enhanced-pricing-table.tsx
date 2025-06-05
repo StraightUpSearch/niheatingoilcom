@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowUpDown, Star, MessageSquare, MapPin, Clock, TrendingUp, Phone, Globe, Award, Fuel } from "lucide-react";
 import LeadCaptureModal from "./lead-capture-modal";
+import PriceLockFeature from "./price-lock-feature";
 
 interface EnhancedPricingTableProps {
   searchParams?: {
@@ -308,20 +309,29 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                     <Clock className="h-3 w-3 mr-1" />
                     {getTimeAgo(new Date(item.createdAt))}
                   </div>
-                  <Button
-                    size="sm"
-                    className="bg-primary text-white hover:bg-blue-600 text-xs px-3 py-1 mr-2"
-                    onClick={() => handleQuoteRequest(item.supplier)}
-                  >
-                    Get Quote
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    onClick={() => handleSaveQuote(item.supplier)}
-                  >
-                    Save Quote
-                  </Button>
+                  <div className="flex gap-2">
+                    <PriceLockFeature
+                      supplierId={item.supplier.id}
+                      price={formatPrice(price500).replace('£', '')}
+                      volume={500}
+                      postcode={searchParams?.postcode || ''}
+                      supplierName={item.supplier.name}
+                    />
+                    <Button
+                      size="sm"
+                      className="bg-primary text-white hover:bg-blue-600 text-xs px-3 py-1"
+                      onClick={() => handleQuoteRequest(item.supplier)}
+                    >
+                      Get Quote
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => handleSaveQuote(item.supplier)}
+                    >
+                      Save Quote
+                    </Button>
+                  </div>
                 </div>
               </div>
             );
@@ -438,29 +448,38 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-centre">
-                      <Button
-                        size="sm"
-                        className="bg-green-600 text-white hover:bg-green-700 mr-2"
-                        onClick={() => {
-                          setSelectedSupplier({
-                            name: item.supplier.name,
-                            price: formatPrice(price500),
-                            volume: 500,
-                            location: item.supplier.location
-                          });
-                          setShowLeadModal(true);
-                        }}
-                      >
-                        <MessageSquare className="h-3 w-3 mr-1" />
-                        Get Quote
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        onClick={() => handleSaveQuote(item.supplier)}
-                      >
-                        Save Quote
-                      </Button>
+                      <div className="flex items-center gap-2">
+                        <PriceLockFeature
+                          supplierId={item.supplier.id}
+                          price={formatPrice(price500).replace('£', '')}
+                          volume={500}
+                          postcode={searchParams?.postcode || ''}
+                          supplierName={item.supplier.name}
+                        />
+                        <Button
+                          size="sm"
+                          className="bg-green-600 text-white hover:bg-green-700"
+                          onClick={() => {
+                            setSelectedSupplier({
+                              name: item.supplier.name,
+                              price: formatPrice(price500),
+                              volume: 500,
+                              location: item.supplier.location
+                            });
+                            setShowLeadModal(true);
+                          }}
+                        >
+                          <MessageSquare className="h-3 w-3 mr-1" />
+                          Get Quote
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => handleSaveQuote(item.supplier)}
+                        >
+                          Save Quote
+                        </Button>
+                      </div>
                     </td>
                   </tr>
                 );
