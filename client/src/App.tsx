@@ -14,6 +14,8 @@ import Suppliers from "@/pages/suppliers";
 import SupplierProfile from "@/pages/supplier-profile";
 import Blog from "@/pages/blog";
 import BlogArticle from "@/pages/blog-article";
+import Dashboard from "@/pages/dashboard";
+import SavedQuotesPage from "@/pages/saved-quotes";
 
 import Contact from "@/pages/contact";
 import GivingBack from "@/pages/giving-back";
@@ -46,6 +48,8 @@ function Router() {
       <Route path="/about" component={AboutUs} />
       <Route path="/giving-back" component={GivingBack} />
       <Route path="/thank-you" component={ThankYouPage} />
+      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/saved-quotes" component={SavedQuotesPage} />
 
       <Route path="/forgot-password" component={ForgotPasswordPage} />
       <Route path="/reset-password" component={ResetPasswordPage} />
