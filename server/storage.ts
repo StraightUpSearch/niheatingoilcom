@@ -8,6 +8,7 @@ import {
   leads,
   supplierClaims,
   savedQuotes,
+  passwordResetTokensTable,
   type User,
   type UpsertUser,
   type Supplier,
@@ -28,7 +29,7 @@ import {
   type InsertSavedQuote,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, desc, and, or, gte, lte, sql, like, inArray, not } from "drizzle-orm";
+import { eq, desc, and, or, gte, lte, lt, sql, like, inArray, not } from "drizzle-orm";
 
 export interface IStorage {
   // User operations (mandatory for Replit Auth)
@@ -150,45 +151,43 @@ export class DatabaseStorage implements IStorage {
   }
 
   async createPasswordResetToken(userId: string, token: string, expiresAt: Date) {
-    // First delete any existing tokens for this user
-    // await this.db
-    //   .delete(passwordResetTokensTable)
-    //   .where(eq(passwordResetTokensTable.userId, userId));
+    await db
+      .delete(passwordResetTokensTable)
+      .where(eq(passwordResetTokensTable.userId, userId));
 
-    // const result = await this.db
-    //   .insert(passwordResetTokensTable)
-    //   .values({
-    //     id: `reset_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-    //     userId,
-    //     token,
-    //     expiresAt,
-    //     createdAt: new Date(),
-    //   })
-    //   .returning();
-    // return result[0];
-    return null as any;
+    const [result] = await db
+      .insert(passwordResetTokensTable)
+      .values({
+        id: `reset_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`,
+        userId,
+        token,
+        expiresAt,
+        createdAt: new Date(),
+      })
+      .returning();
+
+    return result;
   }
 
   async getPasswordResetToken(token: string) {
-    // const result = await this.db
-    //   .select()
-    //   .from(passwordResetTokensTable)
-    //   .where(eq(passwordResetTokensTable.token, token))
-    //   .limit(1);
-    // return result[0] || null;
-    return null;
+    const [result] = await db
+      .select()
+      .from(passwordResetTokensTable)
+      .where(eq(passwordResetTokensTable.token, token))
+      .limit(1);
+    return result || null;
   }
 
   async deletePasswordResetToken(token: string) {
-    // await this.db
-    //   .delete(passwordResetTokensTable)
-    //   .where(eq(passwordResetTokensTable.token, token));
+    await db
+      .delete(passwordResetTokensTable)
+      .where(eq(passwordResetTokensTable.token, token));
   }
 
   async cleanupExpiredResetTokens() {
-    // await this.db
-    //   .delete(passwordResetTokensTable)
-    //   .where(lt(passwordResetTokensTable.expiresAt, new Date()));
+    await db
+      .delete(passwordResetTokensTable)
+      .where(lt(passwordResetTokensTable.expiresAt, new Date()));
   }
 
   // Saved quotes operations

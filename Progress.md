@@ -149,4 +149,4 @@ This file tracks the key tasks and features for the NI Heating Oil Price Compari
 - Project is production-ready with comprehensive features
 - Focus areas: Testing, CI/CD, and monetization features
 - Strong foundation for scaling and adding premium features
-- All core MVP functionality is complete and operational
+- Core MVP functionality is still in progress, particularly around account management features.

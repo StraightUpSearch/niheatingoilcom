@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { setupAuth, isAuthenticated } from "./auth";
 import { z } from "zod";
-import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema, insertSupplierClaimSchema } from "@shared/schema";
+import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema, insertSupplierClaimSchema, insertSavedQuoteSchema } from "@shared/schema";
 import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
 import { initializeWeeklyUrlDetection, consumerCouncilUrlDetector } from "./consumerCouncilUrlDetector";
 import { sendAdminAlert } from "./emailService";
@@ -152,7 +152,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(500).json({ error: 'Address API not configured' });
       }
 
-      const response = await fetch(`https://api.getaddress.io/autocomplete/${encodeURIComponent(query)}?api-key=qi9aovP-DEeb1rt4NqF1uw46379&all=true`);
+      const response = await fetch(
+        `https://api.getaddress.io/autocomplete/${encodeURIComponent(query)}?api-key=${apiKey}&all=true`
+      );
       
       if (!response.ok) {
         console.error('GetAddress API error:', response.statusText);
@@ -913,6 +915,33 @@ Crawl-delay: 1`;
     } catch (error) {
       console.error("Error calculating user impact:", error);
       res.status(500).json({ message: "Failed to calculate user impact" });
+    }
+  });
+
+  // Saved quotes endpoints
+  app.get('/api/saved-quotes', isAuthenticated, async (req: any, res) => {
+    try {
+      const userId = req.user.claims.sub;
+      const quotes = await storage.getUserSavedQuotes(userId);
+      res.json(quotes);
+    } catch (error) {
+      console.error('Error fetching saved quotes:', error);
+      res.status(500).json({ message: 'Failed to fetch saved quotes' });
+    }
+  });
+
+  app.post('/api/saved-quotes', isAuthenticated, async (req: any, res) => {
+    try {
+      const userId = req.user.claims.sub;
+      const quoteData = insertSavedQuoteSchema.parse({ ...req.body, userId });
+      const quote = await storage.createSavedQuote({ ...quoteData, createdAt: new Date() });
+      res.status(201).json(quote);
+    } catch (error) {
+      console.error('Error saving quote:', error);
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ message: 'Invalid quote data', errors: error.errors });
+      }
+      res.status(500).json({ message: 'Failed to save quote' });
     }
   });
 

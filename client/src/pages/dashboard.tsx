@@ -40,6 +40,16 @@ interface DashboardData {
   total_savings: number;
 }
 
+interface SavedQuote {
+  id: number;
+  supplierName: string;
+  price: string;
+  volume: number;
+  postcode: string;
+  location: string;
+  createdAt: string;
+}
+
 export default function Dashboard() {
   const { user, isAuthenticated } = useAuth();
   const [newAlert, setNewAlert] = useState({ postcode: "", threshold: "" });
@@ -47,6 +57,15 @@ export default function Dashboard() {
   const { data: dashboardData, isLoading, error } = useQuery<DashboardData>({
     queryKey: ["/api/dashboard"],
     enabled: isAuthenticated,
+  });
+
+  const { data: savedQuotes } = useQuery<SavedQuote[]>({
+    queryKey: ["saved-quotes"],
+    enabled: isAuthenticated,
+    queryFn: async () => {
+      const res = await apiRequest("GET", "/api/saved-quotes");
+      return res.json();
+    }
   });
 
   const createAlertMutation = useMutation({
@@ -357,6 +376,32 @@ export default function Dashboard() {
               </form>
             </CardContent>
           </Card>
+
+        {/* Saved Quotes */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Saved Quotes</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {savedQuotes && savedQuotes.length > 0 ? (
+              <div className="space-y-3">
+                {savedQuotes.map((q) => (
+                  <div key={q.id} className="p-3 border rounded-lg">
+                    <div className="flex justify-between">
+                      <span>{q.supplierName}</span>
+                      <span>{q.price}</span>
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      {q.volume}L - {q.postcode}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-gray-500">No saved quotes yet.</p>
+            )}
+          </CardContent>
+        </Card>
         </div>
       </div>
       <Footer />

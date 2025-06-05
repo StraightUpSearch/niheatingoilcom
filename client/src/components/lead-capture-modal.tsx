@@ -10,6 +10,7 @@ import { Calendar, Phone, Mail, Clock, CheckCircle, UserPlus, User } from "lucid
 import { Link, useLocation } from "wouter";
 import BotProtection from "@/components/bot-protection";
 import EnhancedAddressInput from "@/components/enhanced-address-input";
+import { useToast } from "@/hooks/use-toast";
 
 interface LeadCaptureModalProps {
   isOpen: boolean;
@@ -24,6 +25,7 @@ interface LeadCaptureModalProps {
 
 export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCaptureModalProps) {
   const [, setLocation] = useLocation();
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -161,7 +163,11 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
     } catch (error) {
       console.error('Error submitting lead:', error);
       setIsSubmitting(false);
-      // TODO: Show error toast
+      toast({
+        title: 'Something went wrong',
+        description: 'We could not save your details. Please try again.',
+        variant: 'destructive'
+      });
     }
   };
 

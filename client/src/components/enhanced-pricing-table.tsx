@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -20,6 +21,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
   const [selectedSupplier, setSelectedSupplier] = useState<any>(null);
   const [showLeadModal, setShowLeadModal] = useState(false);
+  const { isAuthenticated } = useAuth();
 
   // Calculate prices for different volumes based on base price with 20% safety margin
   const calculateVolumePrice = (basePrice: number, baseVolume: number, targetVolume: number) => {
@@ -123,6 +125,31 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
       location: supplier.location
     });
     setShowLeadModal(true);
+  };
+
+  const handleSaveQuote = async (supplier: any, volume: number = 500) => {
+    if (!isAuthenticated) {
+      setSelectedSupplier({
+        name: supplier.name,
+        price: formatPrice(calculateVolumePrice(parseFloat(supplier.price500), 500, volume)),
+        volume,
+        location: supplier.location
+      });
+      setShowLeadModal(true);
+      return;
+    }
+
+    await fetch('/api/saved-quotes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        supplierName: supplier.name,
+        price: formatPrice(calculateVolumePrice(parseFloat(supplier.price500), 500, volume)),
+        volume,
+        postcode: searchParams?.postcode || '',
+        location: supplier.location
+      })
+    });
   };
 
   const formatPrice = (price: number) => {
@@ -283,10 +310,17 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                   </div>
                   <Button
                     size="sm"
-                    className="bg-primary text-white hover:bg-blue-600 text-xs px-3 py-1"
+                    className="bg-primary text-white hover:bg-blue-600 text-xs px-3 py-1 mr-2"
                     onClick={() => handleQuoteRequest(item.supplier)}
                   >
                     Get Quote
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => handleSaveQuote(item.supplier)}
+                  >
+                    Save Quote
                   </Button>
                 </div>
               </div>
@@ -406,7 +440,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                     <td className="px-6 py-4 whitespace-nowrap text-centre">
                       <Button
                         size="sm"
-                        className="bg-green-600 text-white hover:bg-green-700"
+                        className="bg-green-600 text-white hover:bg-green-700 mr-2"
                         onClick={() => {
                           setSelectedSupplier({
                             name: item.supplier.name,
@@ -419,6 +453,13 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                       >
                         <MessageSquare className="h-3 w-3 mr-1" />
                         Get Quote
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={() => handleSaveQuote(item.supplier)}
+                      >
+                        Save Quote
                       </Button>
                     </td>
                   </tr>
