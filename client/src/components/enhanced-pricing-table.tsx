@@ -8,6 +8,8 @@ import { ArrowUpDown, Star, MessageSquare, MapPin, Clock, TrendingUp, Phone, Glo
 import LeadCaptureModal from "./lead-capture-modal";
 // Import centralized pricing utilities
 import { calculateVolumePrice, formatPrice, formatPricePerLitre } from "@shared/pricing";
+// Import loading skeletons
+import { PriceTableSkeleton, PriceCardSkeleton } from "@/components/loading-skeletons";
 
 interface EnhancedPricingTableProps {
   searchParams?: {
@@ -190,23 +192,13 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
             <span className="text-lg font-medium">Getting the latest prices for ye...</span>
           </div>
         </div>
-        {[...Array(5)].map((_, i) => (
-          <div key={i} className="bg-white rounded-lg border border-gray-200 p-4 animate-pulse">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="h-10 w-10 bg-gray-200 rounded-full"></div>
-                <div>
-                  <div className="h-4 bg-gray-200 rounded w-32 mb-2"></div>
-                  <div className="h-3 bg-gray-200 rounded w-24"></div>
-                </div>
-              </div>
-              <div className="text-right">
-                <div className="h-6 bg-gray-200 rounded w-20 mb-1"></div>
-                <div className="h-3 bg-gray-200 rounded w-16"></div>
-              </div>
-            </div>
-          </div>
-        ))}
+        {/* Use proper loading skeletons */}
+        <div className="hidden md:block">
+          <PriceTableSkeleton rows={5} />
+        </div>
+        <div className="block md:hidden">
+          <PriceCardSkeleton cards={5} />
+        </div>
       </div>
     );
   }
