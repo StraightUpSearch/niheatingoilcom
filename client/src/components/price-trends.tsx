@@ -41,11 +41,12 @@ export default function PriceTrends() {
     },
   });
 
-  const { data: history } = useQuery({
-    queryKey: ["/api/prices/history", { days: 30, volume: 300 }],
+  // Get weekly Consumer Council data for 2025 only
+  const { data: weeklyHistory } = useQuery({
+    queryKey: ["/api/prices/weekly-history", { year: 2025, volume: 300 }],
     queryFn: async () => {
-      const response = await fetch("/api/prices/history?days=30&volume=300");
-      if (!response.ok) throw new Error("Failed to fetch history");
+      const response = await fetch("/api/prices/history?year=2025&weekly=true&volume=300");
+      if (!response.ok) throw new Error("Failed to fetch weekly history");
       return response.json();
     },
   });
@@ -65,11 +66,11 @@ export default function PriceTrends() {
     return uniqueNames.length;
   };
 
-  const calculateTrend = () => {
-    if (!history || history.length < 2) return null;
+  const calculateWeeklyTrend = () => {
+    if (!weeklyHistory || weeklyHistory.length < 2) return null;
     
-    const latest = history[history.length - 1];
-    const previous = history[history.length - 2];
+    const latest = weeklyHistory[weeklyHistory.length - 1];
+    const previous = weeklyHistory[weeklyHistory.length - 2];
     
     if (!latest || !previous) return null;
     
@@ -83,7 +84,7 @@ export default function PriceTrends() {
     };
   };
 
-  const trend = calculateTrend();
+  const weeklyTrend = calculateWeeklyTrend();
 
   return (
     <section className="py-16 bg-white">
@@ -101,11 +102,10 @@ export default function PriceTrends() {
             <Card>
               <CardHeader>
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-lg">Price History (Last 30 Days)</CardTitle>
+                  <CardTitle className="text-lg">Weekly Consumer Council Trends (2025)</CardTitle>
                   <div className="flex space-x-2">
-                    <Badge variant="default">30D</Badge>
-                    <Badge variant="outline">90D</Badge>
-                    <Badge variant="outline">1Y</Badge>
+                    <Badge variant="default">Weekly</Badge>
+                    <Badge variant="outline">2025 Only</Badge>
                   </div>
                 </div>
               </CardHeader>
@@ -183,21 +183,21 @@ export default function PriceTrends() {
                       <p className="text-2xl font-bold text-gray-900">
                         {formatPrice(stats?.weeklyAverage || 0)}
                       </p>
-                      {trend && (
+                      {weeklyTrend && (
                         <div className="flex items-center mt-2">
-                          {trend.isPositive ? (
+                          {weeklyTrend.isPositive ? (
                             <TrendingUp className="h-4 w-4 text-red-500 mr-1" />
                           ) : (
                             <TrendingDown className="h-4 w-4 text-green-500 mr-1" />
                           )}
-                          <span className={`text-sm ${trend.isPositive ? 'text-red-500' : 'text-green-500'}`}>
-                            {trend.isPositive ? '+' : ''}{trend.percentage.toFixed(1)}% from last week
+                          <span className={`text-sm ${weeklyTrend.isPositive ? 'text-red-500' : 'text-green-500'}`}>
+                            {weeklyTrend.isPositive ? '+' : ''}{weeklyTrend.percentage.toFixed(1)}% from previous week
                           </span>
                         </div>
                       )}
                     </div>
                     <div className="text-3xl">
-                      {trend?.isPositive ? (
+                      {weeklyTrend?.isPositive ? (
                         <TrendingUp className="h-8 w-8 text-red-500" />
                       ) : (
                         <TrendingDown className="h-8 w-8 text-green-500" />
@@ -248,9 +248,9 @@ export default function PriceTrends() {
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Price Updates:</span>
+                      <span className="text-gray-600">Weekly Updates:</span>
                       <span className="font-semibold text-gray-900">
-                        {prices ? `${prices.length} today` : '0 today'}
+                        {weeklyHistory ? `${weeklyHistory.length} this year` : '0 this year'}
                       </span>
                     </div>
                   </>
@@ -266,13 +266,13 @@ export default function PriceTrends() {
                   <h4 className="font-semibold text-gray-900">Market Insight</h4>
                 </div>
                 <p className="text-sm text-gray-600 mb-3">
-                  Based on current Northern Ireland market data and supplier analysis:
+                  Based on weekly Consumer Council data and 2025 market trends:
                 </p>
                 <div className="space-y-2">
                   <p className="text-sm font-semibold text-gray-900">
-                    {trend?.isPositive 
-                      ? "Prices showing upward trend - consider ordering soon"
-                      : "Stable pricing with competitive suppliers available"
+                    {weeklyTrend?.isPositive 
+                      ? "Weekly prices showing upward trend - consider ordering soon"
+                      : "Stable weekly pricing with competitive suppliers available"
                     }
                   </p>
                   <p className="text-xs text-gray-600">
