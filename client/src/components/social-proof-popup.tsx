@@ -29,8 +29,8 @@ const NI_LOCATIONS = [
 ];
 
 const TIME_PHRASES = [
-  "2 minutes ago", "5 minutes ago", "8 minutes ago", "12 minutes ago",
-  "just now", "3 minutes ago", "7 minutes ago", "10 minutes ago", "15 minutes ago"
+  "1 day ago", "2 days ago", "3 days ago", "1 week ago",
+  "2 weeks ago", "yesterday", "3 days ago", "5 days ago", "1 week ago"
 ];
 
 export default function SocialProofPopup() {
@@ -78,20 +78,20 @@ export default function SocialProofPopup() {
   };
 
   useEffect(() => {
-    // Show first notification after 10 seconds
+    // Show first notification after 30 seconds
     const initialTimer = setTimeout(() => {
       showNotification();
-    }, 10000);
+    }, 30000);
 
-    // Then show notifications every 25-45 seconds
+    // Then show notifications every 3-5 minutes
     const intervalTimer = setInterval(() => {
       if (!isVisible) {
-        const randomDelay = Math.random() * 20000 + 25000; // 25-45 seconds
+        const randomDelay = Math.random() * 120000 + 180000; // 3-5 minutes
         setTimeout(() => {
           showNotification();
         }, randomDelay);
       }
-    }, 30000);
+    }, 240000); // Check every 4 minutes
 
     return () => {
       clearTimeout(initialTimer);

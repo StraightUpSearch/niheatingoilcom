@@ -129,26 +129,26 @@ export default function SocialProofNotifications() {
                      sessionEngagement.interactions > 1 || 
                      sessionEngagement.scrollEvents > 3;
 
-    // Show first notification when user is engaged AND has scrolled 20%+
-    if (!hasShownInitial && isEngaged && scrollDepth > 20) {
+    // Show first notification when user is engaged AND has scrolled 30%+
+    if (!hasShownInitial && isEngaged && scrollDepth > 30) {
       const timer = setTimeout(() => {
         showNotification();
         setHasShownInitial(true);
-      }, 2000);
+      }, 45000); // Wait 45 seconds
       return () => clearTimeout(timer);
     }
 
-    // Show subsequent notifications for engaged users (much less frequent)
-    if (hasShownInitial && isEngaged && sessionEngagement.timeOnPage > 60) {
+    // Show subsequent notifications for engaged users (very infrequent)
+    if (hasShownInitial && isEngaged && sessionEngagement.timeOnPage > 180) {
       const interval = setInterval(() => {
         // Only show if user is active, has scrolled, and not currently visible
-        if (!isVisible && scrollDepth > 30) {
-          // 15% probability every 2 minutes for engaged users
-          if (Math.random() < 0.15) {
+        if (!isVisible && scrollDepth > 50) {
+          // 5% probability every 5 minutes for engaged users
+          if (Math.random() < 0.05) {
             showNotification();
           }
         }
-      }, 120000);
+      }, 300000); // Check every 5 minutes
 
       return () => clearInterval(interval);
     }
@@ -200,7 +200,7 @@ export default function SocialProofNotifications() {
                 </div>
                 
                 <div className="mt-1 text-xs text-gray-500">
-                  💡 Representative example - Join thousands saving money!
+                  💡 Recent customer example - Join thousands saving money!
                 </div>
               </div>
             </div>
