@@ -24,7 +24,7 @@ import SEOHead from "@/components/seo-head";
 
 export default function Landing() {
   usePageTitle("NI Heating Oil - Compare Heating Oil Prices in Northern Ireland");
-  
+
   const [searchParams, setSearchParams] = useState<{ postcode?: string; volume?: number } | null>(null);
 
   // Structured data for SEO
@@ -91,13 +91,13 @@ export default function Landing() {
       />
       <Navigation />
       <HeroSection onSearch={handleSearch} />
-      
+
       {/* Charity Banner - Simon Community NI Pledge */}
       <CharityBanner />
-      
+
       {/* Mobile Price Trends - Show on mobile devices */}
       <MobilePriceTrends />
-      
+
       {/* Search Results Section - Only show after search */}
       {searchParams && (
         <section id="search-results" className="py-16 bg-white">
@@ -114,7 +114,7 @@ export default function Landing() {
           </div>
         </section>
       )}
-      
+
       {/* Animated Price Trends Section */}
       <section className="py-12 bg-gradient-to-br from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -158,7 +158,7 @@ export default function Landing() {
               (Just to be clear - we're not actually on TV, but we had a bit of craic making this!)
             </p>
           </div>
-          
+
           <div className="flex justify-center">
             <div className="w-full max-w-4xl">
               <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl bg-gray-900">
@@ -262,7 +262,7 @@ export default function Landing() {
           </div>
         </div>
       </section>
-      
+
       <NorthernIrelandIdentity />
       <TrustBadges />
       <BlogCarousel />
@@ -272,7 +272,7 @@ export default function Landing() {
       <FeaturedSuppliers />
       <TrustSection />
       <Footer />
-      
+
       {/* Social Proof Notifications */}
       <SocialProofNotifications />
     </div>
