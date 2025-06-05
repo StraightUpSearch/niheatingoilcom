@@ -252,3 +252,46 @@ export const insertSavedQuoteSchema = createInsertSchema(savedQuotes).omit({
   id: true,
   createdAt: true,
 });
+
+// Price locks table for 24-hour price guarantees
+export const priceLocks = pgTable("price_locks", {
+  id: serial("id").primaryKey(),
+  supplierId: integer("supplier_id").references(() => suppliers.id).notNull(),
+  price: varchar("price", { length: 20 }).notNull(),
+  volume: integer("volume").notNull(),
+  postcode: varchar("postcode", { length: 20 }).notNull(),
+  email: varchar("email", { length: 255 }).notNull(),
+  expiresAt: timestamp("expires_at").notNull(),
+  used: boolean("used").default(false),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
+export type PriceLock = typeof priceLocks.$inferSelect;
+export type InsertPriceLock = typeof priceLocks.$inferInsert;
+
+export const insertPriceLockSchema = createInsertSchema(priceLocks).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+// Enquiries table for tracking user interactions
+export const enquiries = pgTable("enquiries", {
+  id: serial("id").primaryKey(),
+  userId: varchar("user_id").references(() => users.id),
+  postcode: varchar("postcode", { length: 20 }).notNull(),
+  volume: integer("volume").notNull(),
+  ipAddress: varchar("ip_address", { length: 45 }),
+  userAgent: text("user_agent"),
+  referrerUrl: text("referrer_url"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export type Enquiry = typeof enquiries.$inferSelect;
+export type InsertEnquiry = typeof enquiries.$inferInsert;
+
+export const insertEnquirySchema = createInsertSchema(enquiries).omit({
+  id: true,
+  createdAt: true,
+});
