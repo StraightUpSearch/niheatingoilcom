@@ -21,6 +21,7 @@ async function scrapeConsumerCouncilData(url: string): Promise<string> {
       throw new Error('ScrapingBee API key is required for Consumer Council scraping');
     }
 
+    console.log('[ScrapingBee] Making API request for Consumer Council data...');
     const response = await axios.get('https://app.scrapingbee.com/api/v1/', {
       params: {
         api_key: process.env.SCRAPINGBEE_API_KEY,
@@ -35,9 +36,10 @@ async function scrapeConsumerCouncilData(url: string): Promise<string> {
       throw new Error(`Failed to scrape: ${response.status}`);
     }
 
+    console.log('[ScrapingBee] Successfully fetched Consumer Council data');
     return response.data;
   } catch (error) {
-    console.error('ScrapingBee error:', error);
+    console.error('[ScrapingBee] Error:', error);
     throw error;
   }
 }
@@ -100,7 +102,7 @@ function parseConsumerCouncilHTML(html: string): ConsumerCouncilData[] {
 }
 
 export async function scrapeLatestConsumerCouncilData(): Promise<void> {
-  console.log('Starting Consumer Council weekly price scraping...');
+  console.log('[Consumer Council] Starting weekly price scraping...');
   
   try {
     // Get the latest price checker page - they update weekly
@@ -109,7 +111,7 @@ export async function scrapeLatestConsumerCouncilData(): Promise<void> {
     const html = await scrapeConsumerCouncilData(currentUrl);
     const locationData = parseConsumerCouncilHTML(html);
     
-    console.log(`Found ${locationData.length} locations with pricing data`);
+    console.log(`[Consumer Council] Found ${locationData.length} locations with pricing data`);
     
     // Create or update suppliers based on council areas
     const supplierMap = new Map<string, number>();
@@ -174,54 +176,64 @@ export async function scrapeLatestConsumerCouncilData(): Promise<void> {
       for (const priceEntry of priceData) {
         try {
           await storage.insertOilPrice(priceEntry);
-          console.log(`Added ${priceEntry.volume}L price for ${data.location}: £${priceEntry.price}`);
+          console.log(`[Consumer Council] Added ${priceEntry.volume}L price for ${data.location}: £${priceEntry.price}`);
         } catch (error) {
-          console.error(`Failed to insert price for ${data.location}:`, error);
+          console.error(`[Consumer Council] Failed to insert price for ${data.location}:`, error);
         }
       }
     }
     
-    console.log('Consumer Council data scraping completed successfully');
+    console.log('[Consumer Council] Data scraping completed successfully');
     
   } catch (error) {
-    console.error('Failed to scrape Consumer Council data:', error);
+    console.error('[Consumer Council] Failed to scrape data:', error);
     throw error;
   }
 }
 
 export async function initializeConsumerCouncilScraping(): Promise<void> {
   try {
-    console.log('Initializing Consumer Council weekly scraping system...');
+    console.log('[Consumer Council] Initializing weekly scraping system...');
     
     // Run initial scrape
     await scrapeLatestConsumerCouncilData();
     
-    // Set up monthly scraping (first day of each month at 3 AM)
-    const scheduleMonthlyConsumerCouncilScrape = () => {
+    // Set up weekly scraping (every Monday at 3 AM)
+    const scheduleWeeklyConsumerCouncilScrape = () => {
       const now = new Date();
-      const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1);
-      nextMonth.setHours(3, 0, 0, 0);
+      const nextMonday = new Date(now);
       
-      const timeUntilScrape = Math.min(nextMonth.getTime() - now.getTime(), 2147483647); // Cap at max 32-bit integer
+      // Calculate days until next Monday
+      const daysUntilMonday = (8 - now.getDay()) % 7 || 7; // If it's Monday, wait 7 days
+      nextMonday.setDate(now.getDate() + daysUntilMonday);
+      nextMonday.setHours(3, 0, 0, 0); // 3 AM
       
-      console.log(`Next Consumer Council scrape scheduled for: ${nextMonth.toLocaleString()}`);
+      // If the calculated time is in the past, add 7 days
+      if (nextMonday.getTime() <= now.getTime()) {
+        nextMonday.setDate(nextMonday.getDate() + 7);
+      }
+      
+      const timeUntilScrape = Math.min(nextMonday.getTime() - now.getTime(), 2147483647); // Cap at max 32-bit integer
+      
+      console.log(`[Consumer Council] Next scrape scheduled for: ${nextMonday.toLocaleString()}`);
       
       setTimeout(async () => {
         try {
-          console.log('Running monthly Consumer Council data update...');
+          console.log('[Consumer Council] Running weekly data update...');
           await scrapeLatestConsumerCouncilData();
-          scheduleMonthlyConsumerCouncilScrape(); // Schedule next month
+          scheduleWeeklyConsumerCouncilScrape(); // Schedule next week
         } catch (error) {
-          console.error('Monthly Consumer Council scraping failed:', error);
-          scheduleMonthlyConsumerCouncilScrape(); // Try again next month
+          console.error('[Consumer Council] Weekly scraping failed:', error);
+          scheduleWeeklyConsumerCouncilScrape(); // Try again next week
         }
       }, timeUntilScrape);
     };
     
-    scheduleMonthlyConsumerCouncilScrape();
-    console.log('Consumer Council scraping system initialized successfully');
+    scheduleWeeklyConsumerCouncilScrape();
+    console.log('[Consumer Council] Weekly scraping system initialized successfully');
+    console.log('[Consumer Council] NOTE: ScrapingBee API usage is conservative - only 1 request per week');
     
   } catch (error) {
-    console.error('Failed to initialize Consumer Council scraping:', error);
+    console.error('[Consumer Council] Failed to initialize scraping:', error);
   }
 }
