@@ -20,8 +20,13 @@ function QuoteShareButton({
 }: QuoteShareButtonProps) {
   console.log('WhatsApp component rendering for:', supplier);
   
+  // Safely handle possible undefined or non-number values
+  const safePricePerLitre = typeof pricePerLitre === 'number' ? pricePerLitre : 0;
+  const safeTotalCost = typeof totalCost === 'number' ? totalCost : 0;
+  const safeSaving = typeof saving === 'number' ? saving : 0;
+
   // Build the dynamic message
-  const rawMessage = `Hi! I just compared heating oil prices for ${postcode} and got a quote from ${supplier}: £${pricePerLitre.toFixed(2)}/L (${volume}L = £${totalCost.toFixed(2)} total), saving me £${saving.toFixed(2)}. Check your own quote here: https://niheatingoil.com#${postcode.replace(/\s+/g, '')}`;
+  const rawMessage = `Hi! I just compared heating oil prices for ${postcode} and got a quote from ${supplier}: £${safePricePerLitre.toFixed(2)}/L (${volume}L = £${safeTotalCost.toFixed(2)} total), saving me £${safeSaving.toFixed(2)}. Check your own quote here: https://niheatingoil.com#${postcode.replace(/\s+/g, '')}`;
   
   const encodedMessage = encodeURIComponent(rawMessage);
 

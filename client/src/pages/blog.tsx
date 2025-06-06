@@ -5,59 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { usePageTitle } from "@/hooks/usePageTitle";
-
-const blogArticles = [
-  {
-    id: "heating-oil-tank-sizes",
-    title: "Heating Oil Tank Sizes in Northern Ireland: Comparing 300L, 500L, and 900L Options",
-    description: "Choosing between a 300L, 500L, or 900L tank comes down to what your household actually needs, how much space you've got, and how often you want to deal with refills.",
-    category: "Equipment Guide",
-    date: "2025-06-03",
-    readTime: "12 min read",
-    slug: "heating-oil-tank-sizes",
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=600&fit=crop&crop=center"
-  },
-  {
-    id: "best-time-buy-heating-oil-northern-ireland",
-    title: "Best Time to Buy Heating Oil in NI: Key Tips for Saving Money",
-    description: "Most of us in Northern Ireland know the drill - heating oil prices go up and down like a yo-yo. But here's the thing: if you time it right, you can save yourself a fair whack of money.",
-    category: "Money Saving",
-    date: "2025-06-02",
-    readTime: "8 min read",
-    slug: "best-time-buy-heating-oil-northern-ireland",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=center"
-  },
-  {
-    id: "how-to-dispose-heating-oil-northern-ireland",
-    title: "How to Properly Dispose of Home Heating Oil in N.Ireland: Safe and Legal Methods",
-    description: "Got some old heating oil that needs disposing of? Here's everything you need to know about getting rid of it safely and legally in Northern Ireland.",
-    category: "Safety Guide",
-    date: "2025-06-01",
-    readTime: "10 min read",
-    slug: "how-to-dispose-heating-oil-northern-ireland",
-    image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=800&h=600&fit=crop&crop=center"
-  },
-  {
-    id: "heating-oil-tank-maintenance-guide",
-    title: "Heating Oil Tank Maintenance Guide for Northern Ireland Homes",
-    description: "Keep your heating oil tank in top condition with this comprehensive maintenance guide. Learn essential checks, cleaning tips, and when to call professionals.",
-    category: "Maintenance",
-    date: "2025-05-30",
-    readTime: "15 min read",
-    slug: "heating-oil-tank-maintenance-guide",
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop&crop=center"
-  },
-  {
-    id: "how-to-save-money-heating-oil",
-    title: "How to Save Money on Heating Oil: Expert Tips for Northern Ireland Homeowners",
-    description: "Discover proven strategies to reduce your heating oil costs. From timing your purchases to improving efficiency, learn how to keep your bills down.",
-    category: "Money Saving",
-    date: "2025-05-28",
-    readTime: "11 min read",
-    slug: "how-to-save-money-heating-oil",
-    image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=800&h=600&fit=crop&crop=center"
-  }
-];
+import { blogArticles } from "@/lib/blogArticles";
 
 export default function Blog() {
   usePageTitle("Heating Oil Blog & Tips - NI Heating Oil");

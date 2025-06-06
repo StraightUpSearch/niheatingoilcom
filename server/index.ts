@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express, { type Request, Response, NextFunction } from "express";
 import compression from "compression";
 import { registerRoutes } from "./routes";
@@ -87,25 +88,30 @@ app.use((req, res, next) => {
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
+  const isDevelopment = process.env.NODE_ENV !== "production";
+  if (isDevelopment) {
     await setupVite(app, server);
   } else {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
+  // Serve the app on port 5000
+  // this serves both the API and the client
   const port = 5000;
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
+  server.listen(port, "localhost", () => {
     log(`serving on port ${port}`);
   });
 
   // Initialize monthly data refresh systems (optimized for minimal API usage)
-  await initializeCuratedData();
-  await initializeConsumerCouncilScraping();
+  try {
+    await initializeCuratedData();
+  } catch (error) {
+    console.warn("⚠️  Failed to initialize curated data (database may not be configured):", error);
+  }
+  
+  try {
+    await initializeConsumerCouncilScraping();
+  } catch (error) {
+    console.warn("⚠️  Failed to initialize consumer council scraping (database may not be configured):", error);
+  }
 })();

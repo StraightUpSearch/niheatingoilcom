@@ -63,9 +63,14 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
           
           {/* Main Heading */}
           <div className={`space-y-4 lg:space-y-6 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-              NI's Very Own Oil Comparison Site
-              <span className="block text-yellow-300">Powered by AI</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight flex flex-col items-center gap-2">
+              <span>
+                NI's Very Own Oil Comparison Site
+                <span className="block text-yellow-300">Powered by AI</span>
+              </span>
+              <span className="inline-block bg-blue-900/80 text-yellow-200 text-xs sm:text-sm font-semibold rounded-full px-4 py-1 mt-2 shadow-lg border border-blue-700">
+                Version 3.1
+              </span>
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
               Built by locals, for locals. Our smart AI technology instantly analyzes heating oil prices across all six counties - giving you the best deals with zero hassle!
@@ -89,9 +94,9 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
           </div>
           
           {/* Search Form */}
-          <div className={`bg-white rounded-2xl p-6 lg:p-8 shadow-2xl max-w-3xl mx-auto transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-10 opacity-0 scale-95'} hover:shadow-3xl transition-shadow`}>
+          {/* <div className={`bg-white rounded-2xl p-6 lg:p-8 shadow-2xl max-w-3xl mx-auto transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-10 opacity-0 scale-95'} hover:shadow-3xl transition-shadow`}>
             <PriceSearchForm onSearch={onSearch} />
-          </div>
+          </div> */}
           
           {/* Trust Badges */}
           <div className={`flex flex-wrap items-center justify-center gap-4 lg:gap-6 max-w-4xl mx-auto transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>

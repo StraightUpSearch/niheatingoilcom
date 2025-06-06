@@ -165,7 +165,6 @@ export default function Dashboard() {
     );
   }
 
-  const { user } = useAuth();
   usePageTitle("Dashboard - NI Heating Oil");
 
   return (
