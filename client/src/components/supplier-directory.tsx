@@ -66,105 +66,105 @@ export default function SupplierDirectory({ showHeader = true }: SupplierDirecto
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Supplier List">
           {isLoading ? (
             [...Array(6)].map((_, i) => (
-              <Card key={i} className="border border-gray-200">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <Skeleton className="w-12 h-12 rounded-lg" />
-                    <div className="flex-1">
-                      <Skeleton className="h-5 w-32 mb-1" />
-                      <Skeleton className="h-4 w-24" />
+              <li key={i}>
+                <Card className="border border-gray-200">
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <Skeleton className="w-12 h-12 rounded-lg" />
+                      <div className="flex-1">
+                        <Skeleton className="h-5 w-32 mb-1" />
+                        <Skeleton className="h-4 w-24" />
+                      </div>
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Skeleton className="h-4 w-full" />
-                    <Skeleton className="h-4 w-3/4" />
-                    <Skeleton className="h-4 w-1/2" />
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-gray-100">
-                    <div className="flex items-center justify-between">
-                      <Skeleton className="h-6 w-16" />
-                      <Skeleton className="h-8 w-20" />
+                    <div className="space-y-2">
+                      <Skeleton className="h-4 w-full" />
+                      <Skeleton className="h-4 w-3/4" />
+                      <Skeleton className="h-4 w-1/2" />
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                    <div className="mt-4 pt-4 border-t border-gray-100">
+                      <div className="flex items-center justify-between">
+                        <Skeleton className="h-6 w-16" />
+                        <Skeleton className="h-8 w-20" />
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </li>
             ))
           ) : (
             suppliers?.map((supplier: any) => (
-              <Card key={supplier.id} className="border border-gray-200 hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                      <Truck className="h-6 w-6 text-white" />
+              <li key={supplier.id} role="article" className="list-none">
+                <Card className="border border-gray-200 hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                        <Truck className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 text-lg" tabIndex={0}>{supplier.name}</h3>
+                        <p className="text-sm text-gray-500">{supplier.location}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">{supplier.name}</h3>
-                      <p className="text-sm text-gray-500">{supplier.location}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center space-x-2">
-                      <MapPin className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                      <span className="text-gray-600 truncate">
-                        {getCoverageAreas(supplier.coverageAreas)}
-                      </span>
-                    </div>
-                    
-                    {supplier.phone && (
+                    <div className="space-y-2 text-sm">
                       <div className="flex items-center space-x-2">
-                        <Phone className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                        <span className="text-gray-600">{supplier.phone}</span>
+                        <MapPin className="h-4 w-4 text-gray-400 flex-shrink-0" />
+                        <span className="text-gray-600 truncate">
+                          {getCoverageAreas(supplier.coverageAreas)}
+                        </span>
                       </div>
-                    )}
-                    
-                    <div className="flex items-center space-x-2">
-                      {renderStars(supplier.rating)}
-                      {supplier.reviewCount > 0 && (
-                        <>
-                          <span className="text-gray-400">•</span>
-                          <span className="text-gray-600">{supplier.reviewCount} reviews</span>
-                        </>
+                      {supplier.phone && (
+                        <div className="flex items-center space-x-2">
+                          <Phone className="h-4 w-4 text-gray-400 flex-shrink-0" />
+                          <span className="text-gray-600">{supplier.phone}</span>
+                        </div>
                       )}
-                    </div>
-                  </div>
-                  
-                  <div className="mt-4 pt-4 border-t border-gray-100">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500">
-                        Updated {supplier.lastScraped ? 
-                          new Date(supplier.lastScraped).toLocaleDateString() : 
-                          'recently'
-                        }
-                      </span>
-                      <div className="flex space-x-2">
-                        <Button
-                          size="sm"
-                          className="bg-green-600 hover:bg-green-700 text-white"
-                          onClick={() => {
-                            setSelectedSupplier({
-                              name: supplier.name,
-                              price: "Best Price",
-                              volume: 500,
-                              location: supplier.location
-                            });
-                            setShowLeadModal(true);
-                          }}
-                        >
-                          <MessageSquare className="h-4 w-4 mr-1" />
-                          Get Quote
-                        </Button>
+                      <div className="flex items-center space-x-2">
+                        {renderStars(supplier.rating)}
+                        {supplier.reviewCount > 0 && (
+                          <>
+                            <span className="text-gray-400">•</span>
+                            <span className="text-gray-600">{supplier.reviewCount} reviews</span>
+                          </>
+                        )}
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                    <div className="mt-4 pt-4 border-t border-gray-100">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-500">
+                          Updated {supplier.lastScraped ? 
+                            new Date(supplier.lastScraped).toLocaleDateString() : 
+                            'recently'
+                          }
+                        </span>
+                        <div className="flex space-x-2">
+                          <Button
+                            size="sm"
+                            className="bg-green-600 hover:bg-green-700 text-white"
+                            onClick={() => {
+                              setSelectedSupplier({
+                                name: supplier.name,
+                                price: "Best Price",
+                                volume: 500,
+                                location: supplier.location
+                              });
+                              setShowLeadModal(true);
+                            }}
+                          >
+                            <MessageSquare className="h-4 w-4 mr-1" />
+                            Get Quote
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </li>
             ))
           )}
-        </div>
+        </ul>
 
         {suppliers?.length > 0 && (
           <div className="text-center mt-8">

@@ -94,6 +94,7 @@ export default function Landing() {
       <Navigation />
       <HeroSection onSearch={handleSearch} />
 
+<<<<<<< HEAD
       {/* Enhanced Quote Form Section */}
       <section className="py-8 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,6 +112,12 @@ export default function Landing() {
               )}
             </div>
           </div>
+=======
+      {/* Enhanced Quote Form - in normal flow, with clear separation */}
+      <section className="relative z-10 max-w-2xl mx-auto mt-[-2rem] mb-8 px-4" style={{ marginTop: '0', paddingTop: '2rem' }}>
+        <div className="bg-white rounded-2xl shadow-2xl p-6 lg:p-8">
+          <EnhancedQuoteForm onSearch={handleSearch} />
+>>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
         </div>
       </section>
 

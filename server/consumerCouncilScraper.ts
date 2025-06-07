@@ -2,6 +2,14 @@ import axios from 'axios';
 import * as cheerio from 'cheerio';
 import { storage } from './storage';
 import { InsertOilPrice, InsertSupplier } from '@shared/schema';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const CACHE_PATH = path.join(__dirname, '../data/oil_prices_cache.json');
 
 interface ConsumerCouncilData {
   location: string;
@@ -183,7 +191,88 @@ export async function scrapeLatestConsumerCouncilData(): Promise<void> {
       }
     }
     
+<<<<<<< HEAD
     console.log('[Consumer Council] Data scraping completed successfully');
+=======
+    // --- CACHE POPULATION LOGIC ---
+    if (locationData.length > 0) {
+      // Flatten all price entries for all locations into a single array
+      const cacheEntries = locationData.flatMap((data, idx) => {
+        return [
+          {
+            id: idx * 3 + 1,
+            supplierId: idx + 1,
+            volume: 300,
+            price: data.prices.volume300.toFixed(2),
+            pricePerLitre: (data.prices.volume300 / 300).toFixed(3),
+            includesVat: true,
+            postcode: data.location,
+            createdAt: new Date(),
+            supplier: {
+              id: idx + 1,
+              name: `${data.council} - Average Prices`,
+              location: `${data.location}, ${data.council}`,
+              phone: '',
+              website: 'https://www.consumercouncil.org.uk',
+              coverageAreas: data.council,
+              rating: '5.0',
+              isActive: true,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            }
+          },
+          {
+            id: idx * 3 + 2,
+            supplierId: idx + 1,
+            volume: 500,
+            price: data.prices.volume500.toFixed(2),
+            pricePerLitre: (data.prices.volume500 / 500).toFixed(3),
+            includesVat: true,
+            postcode: data.location,
+            createdAt: new Date(),
+            supplier: {
+              id: idx + 1,
+              name: `${data.council} - Average Prices`,
+              location: `${data.location}, ${data.council}`,
+              phone: '',
+              website: 'https://www.consumercouncil.org.uk',
+              coverageAreas: data.council,
+              rating: '5.0',
+              isActive: true,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            }
+          },
+          {
+            id: idx * 3 + 3,
+            supplierId: idx + 1,
+            volume: 900,
+            price: data.prices.volume900.toFixed(2),
+            pricePerLitre: (data.prices.volume900 / 900).toFixed(3),
+            includesVat: true,
+            postcode: data.location,
+            createdAt: new Date(),
+            supplier: {
+              id: idx + 1,
+              name: `${data.council} - Average Prices`,
+              location: `${data.location}, ${data.council}`,
+              phone: '',
+              website: 'https://www.consumercouncil.org.uk',
+              coverageAreas: data.council,
+              rating: '5.0',
+              isActive: true,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            }
+          }
+        ];
+      });
+      fs.writeFileSync(CACHE_PATH, JSON.stringify(cacheEntries, null, 2));
+      console.log(`Wrote ${cacheEntries.length} price entries to local cache.`);
+    }
+    
+    console.log('Consumer Council data scraping completed successfully');
+>>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
     
   } catch (error) {
     console.error('[Consumer Council] Failed to scrape data:', error);

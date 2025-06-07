@@ -3,13 +3,19 @@ import { Link, useLocation } from "wouter";
 import { useAuth } from "@/hooks/use-auth";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+<<<<<<< HEAD
 import { Menu, Truck, LayoutDashboard, BellRing, FileText } from "lucide-react";
+=======
+import { Menu, Truck, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+>>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
 import HeatingOilLogo from "@/components/heating-oil-logo";
 
 export default function Navigation() {
   const { user } = useAuth();
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const isAuthenticated = !!user;
 
@@ -72,7 +78,22 @@ export default function Navigation() {
           </div>
 
           <div className="flex items-center space-x-2 sm:space-x-4">
+<<<<<<< HEAD
             {/* Desktop Auth Buttons */}
+=======
+            {/* Dark Mode Toggle */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="p-2"
+            >
+              <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+            
+>>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
             {isAuthenticated ? (
               <div className="hidden sm:flex items-center space-x-2 sm:space-x-4">
                 {user?.firstName && (

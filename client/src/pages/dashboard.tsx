@@ -187,6 +187,11 @@ export default function Dashboard() {
     );
   }
 
+<<<<<<< HEAD
+=======
+  usePageTitle("Dashboard - NI Heating Oil");
+
+>>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />

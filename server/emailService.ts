@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import sgMail from '@sendgrid/mail';
 import type { Lead } from '@shared/schema';
 

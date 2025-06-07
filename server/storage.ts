@@ -30,6 +30,46 @@ import {
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc, and, or, gte, lte, lt, sql, like, inArray, not } from "drizzle-orm";
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const CACHE_PATH = path.join(__dirname, '../data/oil_prices_cache.json');
+const CACHE_TTL_DAYS = 7;
+
+// Realistic price ranges for each volume (in GBP)
+const realisticPriceRanges = {
+  300: { min: 160, max: 185 },
+  500: { min: 250, max: 295 },
+  900: { min: 440, max: 495 },
+};
+
+function getRandomPrice(min: number, max: number): string {
+  return (Math.random() * (max - min) + min).toFixed(2);
+}
+
+function isCacheValid() {
+  if (!fs.existsSync(CACHE_PATH)) return false;
+  const stats = fs.statSync(CACHE_PATH);
+  const ageMs = Date.now() - stats.mtimeMs;
+  return ageMs < CACHE_TTL_DAYS * 24 * 60 * 60 * 1000;
+}
+
+function readCache() {
+  if (!isCacheValid()) return null;
+  try {
+    return JSON.parse(fs.readFileSync(CACHE_PATH, 'utf-8'));
+  } catch {
+    return null;
+  }
+}
+
+function writeCache(data) {
+  fs.writeFileSync(CACHE_PATH, JSON.stringify(data, null, 2));
+}
 
 export interface IStorage {
   // User operations (mandatory for Replit Auth)
@@ -364,7 +404,7 @@ export class DatabaseStorage implements IStorage {
     if (postcode) {
       // Get suppliers that cover this postcode area
       const suppliersInArea = await this.getSuppliersInArea(postcode);
-      const supplierIdsInArea = new Set(suppliersInArea.map(s => s.id));
+      const supplierIdsInArea = new Set(suppliersInArea.map(s => s.supplierId));
 
       relevantIndividualSuppliers = individualSuppliers.filter(result => 
         supplierIdsInArea.has(result.supplierId)
@@ -621,4 +661,92 @@ export class DatabaseStorage implements IStorage {
   }
 }
 
-export const storage = new DatabaseStorage();
+// Create a mock storage for development without database
+class MockStorage implements IStorage {
+  async getUser(id: string): Promise<User | undefined> { return undefined; }
+  async upsertUser(user: UpsertUser): Promise<User> { return { ...user, createdAt: new Date(), updatedAt: new Date() } as User; }
+  async getUserByUsername(username: string): Promise<User | undefined> { return undefined; }
+  async createUser(user: any): Promise<User> { return { ...user, id: user.id || '1', createdAt: new Date(), updatedAt: new Date() } as User; }
+  async createSavedQuote(quote: InsertSavedQuote): Promise<SavedQuote> { return { ...quote, id: 1, createdAt: new Date() } as SavedQuote; }
+  async getUserSavedQuotes(userId: string): Promise<SavedQuote[]> { return []; }
+  
+  // Return sample suppliers for development
+  async getAllSuppliers(): Promise<Supplier[]> { 
+    return [
+      { id: 1, name: "Hayes Fuels", location: "Craigavon", phone: "028 3834 2222", website: "https://www.hayesfuels.com", coverageAreas: "Mid Ulster, Armagh, Down", rating: "4.8", isActive: true, createdAt: new Date(), updatedAt: new Date() },
+      { id: 2, name: "NAP Fuels", location: "Belfast", phone: "028 9066 1234", website: "https://www.napfuels.com", coverageAreas: "Belfast, Antrim, Down", rating: "4.6", isActive: true, createdAt: new Date(), updatedAt: new Date() },
+      { id: 3, name: "Finney Bros", location: "Omagh", phone: "028 8224 5678", website: "https://www.finneybros.com", coverageAreas: "Tyrone, Fermanagh", rating: "4.7", isActive: true, createdAt: new Date(), updatedAt: new Date() }
+    ];
+  }
+  
+  async getSupplierById(id: number): Promise<Supplier | undefined> { 
+    const suppliers = await this.getAllSuppliers();
+    return suppliers.find(s => s.id === id);
+  }
+  
+  async getSupplierByName(name: string): Promise<Supplier | undefined> { 
+    const suppliers = await this.getAllSuppliers();
+    return suppliers.find(s => s.name === name);
+  }
+  
+  async createSupplier(supplier: InsertSupplier): Promise<Supplier> { return { ...supplier, id: 1, isActive: true } as Supplier; }
+  async updateSupplier(id: number, supplier: Partial<InsertSupplier>): Promise<Supplier> { return { ...supplier, id, isActive: true } as Supplier; }
+  
+  async getSuppliersInArea(postcode: string): Promise<Supplier[]> { 
+    return this.getAllSuppliers(); 
+  }
+  
+  // Return sample prices for development
+  async getLatestPrices(volume?: number, postcode?: string): Promise<(OilPrice & { supplier: Supplier })[]> {
+    // Try to use cached data
+    const cached = readCache();
+    if (cached && Array.isArray(cached)) {
+      return cached.filter(p => !volume || p.volume === volume);
+    }
+    // Fallback: use Consumer Council averages
+    const councilAverages = [
+      { volume: 300, price: 160.83 },
+      { volume: 500, price: 250.99 },
+      { volume: 900, price: 443.62 }
+    ];
+    const suppliers = await this.getAllSuppliers();
+    const result = suppliers.map((supplier, idx) => {
+      const avg = councilAverages.find(a => a.volume === (volume || 500)) || councilAverages[1];
+      return {
+        id: idx + 1,
+        supplierId: supplier.id,
+        volume: avg.volume,
+        price: avg.price.toFixed(2),
+        pricePerLitre: (avg.price / avg.volume).toFixed(3),
+        includesVat: true,
+        postcode: postcode || null,
+        createdAt: new Date(),
+        supplier
+      };
+    });
+    return result;
+  }
+  async insertOilPrice(price: InsertOilPrice): Promise<OilPrice> { return { ...price, id: 1, createdAt: new Date() } as OilPrice; }
+  async getPricesBySupplier(supplierId: number, volume?: number): Promise<OilPrice[]> { return []; }
+  async getLowestPrices(volume: number, limit?: number): Promise<(OilPrice & { supplier: Supplier })[]> { return []; }
+  async getUserPriceAlerts(userId: string): Promise<PriceAlert[]> { return []; }
+  async createPriceAlert(alert: InsertPriceAlert): Promise<PriceAlert> { return { ...alert, id: 1, isActive: true } as PriceAlert; }
+  async updatePriceAlert(id: number, alert: Partial<InsertPriceAlert>): Promise<PriceAlert> { return { ...alert, id, isActive: true } as PriceAlert; }
+  async deletePriceAlert(id: number): Promise<void> { }
+  async getActivePriceAlerts(): Promise<PriceAlert[]> { return []; }
+  async getPriceHistory(days: number, volume?: number): Promise<PriceHistory[]> { return []; }
+  async insertPriceHistory(history: InsertPriceHistory): Promise<PriceHistory> { return { ...history, id: 1 } as PriceHistory; }
+  async getAveragePrices(volume: number): Promise<{ weeklyAverage: number; lowestPrice: number; highestPrice: number }> { return { weeklyAverage: 0, lowestPrice: 0, highestPrice: 0 }; }
+  async logSearchQuery(query: InsertSearchQuery): Promise<SearchQuery> { return { ...query, id: 1, createdAt: new Date() } as SearchQuery; }
+  async getPopularSearches(limit?: number): Promise<{ postcode: string; count: number }[]> { return []; }
+  async createLead(lead: InsertLead): Promise<Lead> { return { ...lead, id: 1, createdAt: new Date() } as Lead; }
+  async getLeads(status?: string): Promise<Lead[]> { return []; }
+  async updateLeadStatus(id: number, status: string): Promise<Lead> { return { id, status } as Lead; }
+  async createSupplierClaim(claim: InsertSupplierClaim): Promise<SupplierClaim> { return { ...claim, id: 1, createdAt: new Date() } as SupplierClaim; }
+  async getSupplierClaims(status?: string): Promise<SupplierClaim[]> { return []; }
+  async updateSupplierClaimStatus(id: number, status: string): Promise<SupplierClaim> { return { id, status } as SupplierClaim; }
+}
+
+// Use mock storage if database is not properly configured
+const isValidDatabase = process.env.DATABASE_URL && !process.env.DATABASE_URL.includes('dummy');
+export const storage = isValidDatabase ? new DatabaseStorage() : new MockStorage();

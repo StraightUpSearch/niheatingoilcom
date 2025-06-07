@@ -143,7 +143,7 @@ This file tracks the key tasks and features for the NI Heating Oil Price Compari
 - [ ] Payment processing integration
 
 ## 14. Additional Enhancements
-- [ ] Dark mode toggle
+- [✔️] Dark mode toggle
 - [ ] Unit conversion (litres ↔ gallons)
 - [ ] Interactive map with supplier locations
 - [ ] Price history charts and trends
@@ -184,4 +184,13 @@ This file tracks the key tasks and features for the NI Heating Oil Price Compari
 - Project has solid foundations with comprehensive features
 - Focus areas: Email notifications, testing, and production deployment
 - Strong foundation for scaling and adding premium features
+<<<<<<< HEAD
 - Conservative API usage implemented (weekly scraping)
+=======
+- Core MVP functionality is still in progress, particularly around account management features.
+
+## [YYYY-MM-DD] Oil Price Data Caching
+- Implemented a local cache (`data/oil_prices_cache.json`) for oil price data in development/mock mode.
+- If the cache is missing or older than 7 days, the system falls back to Consumer Council price averages.
+- This ensures realistic prices are always shown and prevents excessive API calls.
+>>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f

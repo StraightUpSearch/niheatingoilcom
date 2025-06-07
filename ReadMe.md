@@ -1,4 +1,3 @@
-
 # NI Heating Oil - Northern Ireland Heating Oil Price Comparison Platform
 
 ## Purpose
@@ -112,3 +111,16 @@ Northern Ireland households using heating oil (approximately 68% of NI homes use
 ### Expanded Charity Partnerships (Beyond 2026)
 - Introduce additional local charities with separate pledge tracks
 - User choice in directing their 5% pledge to preferred charity
+
+## Changelog
+
+- **Version 3.1** (latest):
+  - Mock data fallback for summary cards and supplier cards in dev mode (no more £0.00 or 0 suppliers in dev)
+  - Version badge in hero section now increments by 0.1 with each visual/UX change
+
+## Oil Price Data Caching
+
+- The system uses a local cache file (`data/oil_prices_cache.json`) to store the latest scraped oil price data for development and mock mode.
+- If the cache is missing or older than 7 days, the system falls back to Consumer Council price averages to ensure realistic data is always shown.
+- The cache is automatically read and written by the backend; no manual intervention is required unless you want to force a refresh (delete the cache file).
+- This prevents excessive API calls and ensures the UI never displays zeroes or absurd numbers.
