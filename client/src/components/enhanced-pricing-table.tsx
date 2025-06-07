@@ -6,13 +6,10 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowUpDown, Star, MessageSquare, MapPin, Clock, TrendingUp, Phone, Globe, Award, Fuel } from "lucide-react";
 import LeadCaptureModal from "./lead-capture-modal";
-<<<<<<< HEAD
 // Import centralized pricing utilities
 import { calculateVolumePrice, formatPrice, formatPricePerLitre } from "@shared/pricing";
 // Import loading skeletons
 import { PriceTableSkeleton, PriceCardSkeleton } from "@/components/loading-skeletons";
-=======
->>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
 import PriceLockFeature from "./price-lock-feature";
 
 interface EnhancedPricingTableProps {
@@ -23,56 +20,6 @@ interface EnhancedPricingTableProps {
 }
 
 type SortField = 'supplier' | 'price300' | 'price500' | 'price900' | 'rating';
-
-// --- MOCK DATA FOR DEVELOPMENT ---
-const mockSuppliers = [
-  {
-    id: 1,
-    supplier: {
-      id: 1,
-      name: "Dummy Fuels",
-      location: "Belfast",
-      rating: 4.7,
-    },
-    price: 149,
-    volume: 500,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: 2,
-    supplier: {
-      id: 2,
-      name: "Hayes Fuels",
-      location: "Craigavon, Co. Armagh",
-      rating: 4.5,
-    },
-    price: 152,
-    volume: 500,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: 3,
-    supplier: {
-      id: 3,
-      name: "NAP Fuels",
-      location: "Omagh, Co. Tyrone",
-      rating: 4.2,
-    },
-    price: 155,
-    volume: 500,
-    createdAt: new Date().toISOString(),
-  },
-];
-
-const mockConsumerCouncilAverages = {
-  300: 0.52, // £0.52 per litre
-  500: 0.50, // £0.50 per litre
-  900: 0.48, // £0.48 per litre
-  best: 0.48,
-  suppliers: 5,
-  lastUpdated: new Date().toLocaleDateString(),
-};
-// --- END MOCK DATA ---
 
 export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTableProps) {
   const [sortField, setSortField] = useState<SortField>('price500');
@@ -97,9 +44,8 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
     },
   });
 
-  // Use mock data if in development and no real data is loaded
-  const isDev = !pricesData || process.env.NODE_ENV === 'development';
-  const prices = isDev ? mockSuppliers : (pricesData ? [...pricesData].sort((a: any, b: any) => {
+  // Sort the data based on current sort field and direction
+  const prices = pricesData ? [...pricesData].sort((a: any, b: any) => {
     let aValue, bValue;
     
     switch (sortField) {
@@ -136,7 +82,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
         ? aValue - bValue
         : bValue - aValue;
     }
-  }) : []);
+  }) : [];
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -276,38 +222,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
 
   return (
     <div className="w-full">
-<<<<<<< HEAD
       <div className="bg-white rounded-lg shadow-sm border border-gray-200">
-=======
-      {/* Consumer Council Averages Top Bar */}
-      <div className="flex flex-wrap justify-center gap-4 mb-4 p-4 bg-blue-50 rounded-lg border border-blue-100">
-        <div className="flex flex-col items-center">
-          <span className="text-xs text-gray-500">300L Avg</span>
-          <span className="font-bold text-blue-700 text-lg">£{mockConsumerCouncilAverages[300].toFixed(2)}/L</span>
-        </div>
-        <div className="flex flex-col items-center">
-          <span className="text-xs text-gray-500">500L Avg</span>
-          <span className="font-bold text-blue-700 text-lg">£{mockConsumerCouncilAverages[500].toFixed(2)}/L</span>
-        </div>
-        <div className="flex flex-col items-center">
-          <span className="text-xs text-gray-500">900L Avg</span>
-          <span className="font-bold text-blue-700 text-lg">£{mockConsumerCouncilAverages[900].toFixed(2)}/L</span>
-        </div>
-        <div className="flex flex-col items-center">
-          <span className="text-xs text-gray-500">Best Price</span>
-          <span className="font-bold text-green-700 text-lg">£{mockConsumerCouncilAverages.best.toFixed(2)}/L</span>
-        </div>
-        <div className="flex flex-col items-center">
-          <span className="text-xs text-gray-500">Suppliers</span>
-          <span className="font-bold text-gray-700 text-lg">{mockConsumerCouncilAverages.suppliers}</span>
-        </div>
-        <div className="flex flex-col items-center">
-          <span className="text-xs text-gray-500">Last Updated</span>
-          <span className="text-gray-600 text-sm">{mockConsumerCouncilAverages.lastUpdated}</span>
-        </div>
-      </div>
-      <div className="bg-white rounded-lg shadow-sm border border-grey-200">
->>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
         {/* Header with count and info */}
         <div className="px-6 py-4 bg-gray-50 border-b border-gray-200 flex justify-between items-centre">
           <div className="text-sm text-gray-600">
@@ -320,6 +235,8 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
             Fuel prices may vary by location
           </div>
         </div>
+
+
 
         {/* Mobile Cards */}
         <div className="block md:hidden space-y-4">
@@ -401,11 +318,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
         {/* Desktop Table */}
         <div className="hidden md:block overflow-x-auto">
           <table className="min-w-full">
-<<<<<<< HEAD
             <thead className="bg-gray-50 border-b border-gray-200">
-=======
-            <thead className="bg-grey-50 border-b border-grey-200 sticky top-0 z-10">
->>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
               <tr>
                 <th 
                   className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
@@ -459,14 +372,9 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                 const price300 = calculateVolumePrice(item.price, item.volume, 300);
                 const price500 = calculateVolumePrice(item.price, item.volume, 500);
                 const price900 = calculateVolumePrice(item.price, item.volume, 900);
-                // Zebra striping: even rows get bg-grey-50
-                const rowClass = index % 2 === 0 ? "bg-grey-50" : "bg-white";
+                
                 return (
-<<<<<<< HEAD
                   <tr key={item.id} className="hover:bg-gray-50">
-=======
-                  <tr key={item.id} className={`${rowClass} hover:bg-blue-50 transition-colors`}>
->>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div>
                         <div className="text-sm font-medium text-gray-900">

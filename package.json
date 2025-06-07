@@ -57,6 +57,7 @@
     "compression": "^1.8.0",
     "connect-pg-simple": "^10.0.0",
     "date-fns": "^3.6.0",
+    "dayjs": "^1.11.7",
     "dotenv": "^16.5.0",
     "drizzle-orm": "^0.39.1",
     "drizzle-zod": "^0.7.0",
@@ -107,11 +108,7 @@
     "@types/ws": "^8.5.13",
     "@vitejs/plugin-react": "^4.3.2",
     "autoprefixer": "^10.4.20",
-<<<<<<< HEAD
-    "drizzle-kit": "^0.30.6",
-=======
     "drizzle-kit": "^0.31.1",
->>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
     "esbuild": "^0.25.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.17",

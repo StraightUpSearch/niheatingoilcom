@@ -4,11 +4,8 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/hooks/use-auth";
-<<<<<<< HEAD
-import { ErrorBoundary } from "@/components/error-boundary";
-=======
 import { ThemeProvider } from "next-themes";
->>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
+import { ErrorBoundary } from "@/components/error-boundary";
 import Chatbot from "@/components/chatbot";
 import SocialProofPopup from "@/components/social-proof-popup";
 import NotFound from "@/pages/not-found";
@@ -74,28 +71,20 @@ function App() {
   }, []);
 
   return (
-<<<<<<< HEAD
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
-=======
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
->>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
-        <AuthProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Router />
-            <Chatbot />
-            <SocialProofPopup />
-          </TooltipProvider>
-        </AuthProvider>
-<<<<<<< HEAD
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <AuthProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Router />
+              <Chatbot />
+              <SocialProofPopup />
+            </TooltipProvider>
+          </AuthProvider>
+        </ThemeProvider>
       </QueryClientProvider>
     </ErrorBoundary>
-=======
-      </ThemeProvider>
-    </QueryClientProvider>
->>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
   );
 }
 

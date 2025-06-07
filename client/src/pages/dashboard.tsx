@@ -23,8 +23,6 @@ import WhatsAppQuoteReminder from "@/components/whatsapp-quote-reminder";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { usePageTitle } from "@/hooks/usePageTitle";
-import { Link } from "wouter";
-import { StatCardSkeleton, ContentSkeleton } from "@/components/loading-skeletons";
 
 interface DashboardData {
   tickets: Array<{
@@ -53,19 +51,17 @@ interface SavedQuote {
 }
 
 export default function Dashboard() {
-  const { user } = useAuth();
+  const { user, isAuthenticated } = useAuth();
   const [newAlert, setNewAlert] = useState({ postcode: "", threshold: "" });
-  
-  usePageTitle("Dashboard - NI Heating Oil");
 
   const { data: dashboardData, isLoading, error } = useQuery<DashboardData>({
     queryKey: ["/api/dashboard"],
-    enabled: !!user,
+    enabled: isAuthenticated,
   });
 
   const { data: savedQuotes } = useQuery<SavedQuote[]>({
     queryKey: ["saved-quotes"],
-    enabled: !!user,
+    enabled: isAuthenticated,
     queryFn: async () => {
       const res = await apiRequest("GET", "/api/saved-quotes");
       return res.json();
@@ -116,86 +112,65 @@ export default function Dashboard() {
     }
   };
 
-  if (!user) {
+  if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <Navigation />
-        <div className="flex items-center justify-center py-16">
-          <Card className="max-w-md w-full mx-4">
-            <CardContent className="pt-6">
-              <div className="text-center">
-                <h2 className="text-xl font-semibold mb-4">Access Required</h2>
-                <p className="text-gray-600 mb-6">
-                  Please sign in to view your dashboard and track your heating oil enquiries.
-                </p>
-                <Link href="/auth">
-                  <Button className="w-full">
-                    Sign In to Continue
-                  </Button>
-                </Link>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-        <Footer />
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <Card className="max-w-md w-full">
+          <CardContent className="pt-6">
+            <div className="text-center">
+              <h2 className="text-xl font-semibold mb-4">Access Required</h2>
+              <p className="text-gray-600 mb-6">
+                Please sign in to view your dashboard and track your heating oil enquiries.
+              </p>
+              <Button 
+                onClick={() => window.location.href = "/api/login"}
+                className="w-full"
+              >
+                Sign In
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     );
   }
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <Navigation />
-        <div className="p-6">
-          <div className="max-w-6xl mx-auto space-y-6">
-            <Skeleton className="h-8 w-64" />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <StatCardSkeleton />
-              <StatCardSkeleton />
-              <StatCardSkeleton />
-            </div>
-            <Card>
-              <CardHeader>
-                <Skeleton className="h-6 w-40" />
-              </CardHeader>
-              <CardContent>
-                <ContentSkeleton lines={5} />
-              </CardContent>
-            </Card>
+      <div className="min-h-screen bg-gray-50 p-6">
+        <div className="max-w-6xl mx-auto space-y-6">
+          <Skeleton className="h-8 w-64" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Skeleton className="h-32" />
+            <Skeleton className="h-32" />
+            <Skeleton className="h-32" />
           </div>
+          <Skeleton className="h-64" />
         </div>
-        <Footer />
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <Navigation />
-        <div className="p-6">
-          <div className="max-w-6xl mx-auto">
-            <Alert className="border-red-200 bg-red-50">
-              <AlertDescription className="text-red-800">
-                Failed to load dashboard data. Please refresh the page.
-              </AlertDescription>
-            </Alert>
-          </div>
+      <div className="min-h-screen bg-gray-50 p-6">
+        <div className="max-w-6xl mx-auto">
+          <Alert className="border-red-200 bg-red-50">
+            <AlertDescription className="text-red-800">
+              Failed to load dashboard data. Please refresh the page.
+            </AlertDescription>
+          </Alert>
         </div>
-        <Footer />
       </div>
     );
   }
 
-<<<<<<< HEAD
-=======
   usePageTitle("Dashboard - NI Heating Oil");
 
->>>>>>> cursor/analyze-competitor-ux-for-improvements-6c0f
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
-      <div className="p-6">
+      <div className="min-h-screen bg-gray-50 p-6">
         <div className="max-w-6xl mx-auto space-y-6">
           {/* Header */}
           <div>
@@ -303,11 +278,9 @@ export default function Dashboard() {
               ) : (
                 <div className="text-center py-8">
                   <p className="text-gray-500 mb-4">No enquiries yet</p>
-                  <Link href="/compare">
-                    <Button>
-                      Submit Your First Enquiry
-                    </Button>
-                  </Link>
+                  <Button onClick={() => window.location.href = "/compare"}>
+                    Submit Your First Enquiry
+                  </Button>
                 </div>
               )}
             </CardContent>
@@ -403,31 +376,31 @@ export default function Dashboard() {
             </CardContent>
           </Card>
 
-          {/* Saved Quotes */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Saved Quotes</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {savedQuotes && savedQuotes.length > 0 ? (
-                <div className="space-y-3">
-                  {savedQuotes.map((q) => (
-                    <div key={q.id} className="p-3 border rounded-lg">
-                      <div className="flex justify-between">
-                        <span>{q.supplierName}</span>
-                        <span>{q.price}</span>
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        {q.volume}L - {q.postcode}
-                      </div>
+        {/* Saved Quotes */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Saved Quotes</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {savedQuotes && savedQuotes.length > 0 ? (
+              <div className="space-y-3">
+                {savedQuotes.map((q) => (
+                  <div key={q.id} className="p-3 border rounded-lg">
+                    <div className="flex justify-between">
+                      <span>{q.supplierName}</span>
+                      <span>{q.price}</span>
                     </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-gray-500">No saved quotes yet.</p>
-              )}
-            </CardContent>
-          </Card>
+                    <div className="text-sm text-gray-600">
+                      {q.volume}L - {q.postcode}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-gray-500">No saved quotes yet.</p>
+            )}
+          </CardContent>
+        </Card>
         </div>
       </div>
       <Footer />
