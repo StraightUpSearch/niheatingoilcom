@@ -5,7 +5,6 @@ import TeaserPricingTable from "@/components/teaser-pricing-table";
 import PriceTrends from "@/components/price-trends";
 import MobilePriceTrends from "@/components/mobile-price-trends";
 
-import PriceAlertsForm from "@/components/price-alerts-form";
 import FeaturedSuppliers from "@/components/featured-suppliers";
 import SuppliersShowcase from "@/components/suppliers-showcase";
 import OilTankShowcase from "@/components/oil-tank-showcase";
@@ -254,7 +253,6 @@ export default function Landing() {
       <BlogCarousel />
       <PriceTrends />
       <SuppliersShowcase />
-      <PriceAlertsForm />
       <FeaturedSuppliers />
       <TrustSection />
       <Footer />

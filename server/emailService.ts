@@ -2,7 +2,7 @@ import sgMail from '@sendgrid/mail';
 import type { Lead } from '@shared/schema';
 
 if (!process.env.SENDGRID_API_KEY) {
-  throw new Error("SENDGRID_API_KEY environment variable must be set");
+  console.warn("SENDGRID_API_KEY not set - email functionality will be disabled in development");
 }
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);

@@ -28,7 +28,9 @@ import {
   type SavedQuote,
   type InsertSavedQuote,
 } from "@shared/schema";
-import { db } from "./db";
+// Temporarily use local SQLite for testing
+// import { db } from "./db";
+import { db } from "./db-local";
 import { eq, desc, and, or, gte, lte, lt, sql, like, inArray, not } from "drizzle-orm";
 
 export interface IStorage {

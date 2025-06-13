@@ -1,0 +1,211 @@
+# NI Heating Oil - Cursor AI Development Rules
+
+## Project Context
+You are working on "NI Heating Oil" - a Northern Ireland heating oil price comparison platform that helps residents find the best deals while supporting charity. The platform aggregates real-time pricing from 50+ local suppliers and pledges 5% of profits to Simon Community NI's emergency heating-grant program.
+
+## Tech Stack & Architecture
+- **Frontend**: React 18 + TypeScript + Vite + Tailwind CSS + shadcn/ui components
+- **Backend**: Node.js + Express + TypeScript + Drizzle ORM + PostgreSQL
+- **Authentication**: Passport.js with session management
+- **Deployment**: Replit hosting platform
+- **Analytics**: Google Analytics 4 with Google Tag Manager
+- **APIs**: Consumer Council NI data integration, ScrapingBee API
+
+## Business Domain Knowledge
+- Target market: Northern Ireland households (68% use oil heating)
+- Core functionality: Real-time price comparison for 300L, 500L, 900L orders
+- BT postcode-specific pricing and geographic restrictions
+- Charity integration: 5% profit pledge to Simon Community NI
+- Monetization: Affiliate partnerships, premium features, sponsored listings
+
+## Code Quality & Standards
+
+### TypeScript Excellence
+- Use strict TypeScript configuration with proper type safety
+- Leverage Zod schemas for runtime validation and type inference
+- Export types from shared interfaces for frontend/backend consistency
+- Prefer type-first development - define types before implementation
+- Use proper generics and utility types for reusable code
+
+### React Best Practices
+- Use functional components with hooks (no class components)
+- Implement proper error boundaries for robust UX
+- Leverage React Query (@tanstack/react-query) for server state management
+- Use compound component patterns for complex UI components
+- Implement proper memo optimization only when performance issues exist
+- Follow the "lift state up" principle for shared state
+
+### shadcn/ui Integration
+- Always use existing shadcn/ui components before creating custom ones
+- Follow the established design system tokens and CSS variables
+- Extend shadcn/ui components using the `cn()` utility from class-variance-authority
+- Maintain consistency with the existing color palette and spacing system
+- Use Radix UI primitives as the foundation for custom components
+
+### Tailwind CSS Guidelines
+- Use utility-first approach with semantic class combinations
+- Leverage CSS custom properties for theming (already configured)
+- Follow mobile-first responsive design principles
+- Use Tailwind's built-in spacing scale consistently
+- Avoid arbitrary values unless absolutely necessary
+- Group related utilities logically (layout, then styling, then interactions)
+
+### Backend Architecture
+- Follow REST API conventions with proper HTTP status codes
+- Implement comprehensive error handling with meaningful messages
+- Use middleware pattern for cross-cutting concerns (auth, rate limiting, security)
+- Leverage Drizzle ORM for type-safe database operations
+- Implement proper request validation using Zod schemas
+- Follow single responsibility principle for route handlers
+
+### Database & Data Management
+- Use Drizzle ORM with proper relations and constraints
+- Implement database migrations for schema changes
+- Use transactions for multi-table operations
+- Index frequently queried columns (postcodes, prices, timestamps)
+- Implement soft deletes for audit trails
+- Use proper data validation at both application and database levels
+
+## Security & Performance
+
+### Security First
+- Always validate and sanitize user inputs
+- Implement proper CORS policies for API endpoints
+- Use secure session management with proper cookie settings
+- Apply rate limiting to prevent abuse
+- Sanitize data before database operations
+- Never expose sensitive data in API responses
+
+### Performance Optimization
+- Implement caching strategies for price data (refreshed every 2 hours)
+- Use lazy loading for non-critical components
+- Optimize database queries with proper indexing
+- Implement proper loading states and error boundaries
+- Use React.memo strategically for expensive components
+- Optimize images and assets for web delivery
+
+## SEO & Analytics
+
+### SEO Excellence
+- Implement proper meta tags and Open Graph data
+- Use semantic HTML structure with proper heading hierarchy
+- Generate XML sitemaps automatically
+- Implement Schema.org structured data for price comparisons
+- Optimize for local NI search terms and BT postcodes
+- Ensure fast page load times and Core Web Vitals compliance
+
+### Analytics Integration
+- Track user interactions with Google Analytics 4
+- Implement proper event tracking for business metrics
+- Monitor conversion funnels (quote requests, lead generation)
+- Track charity impact metrics for transparency
+- Use Google Tag Manager for flexible event management
+
+## Northern Ireland Specific Features
+
+### Geographic Awareness
+- Always validate BT postcode format (BT1-BT94)
+- Display prices in pence per litre for transparency
+- Use local terminology and cultural references
+- Implement proper geographic filtering for supplier delivery areas
+- Support for both imperial and metric measurements
+
+### Charity Integration
+- Prominently display charity impact metrics
+- Link to Simon Community NI appropriately
+- Track and display "grants funded" counters
+- Implement seasonal campaign integration (October-February)
+- Maintain transparency in profit allocation
+
+## Development Patterns
+
+### Component Structure
+```typescript
+// Preferred component pattern
+interface ComponentProps {
+  // Props definition with proper types
+}
+
+export function Component({ prop1, prop2 }: ComponentProps) {
+  // Hooks at the top
+  // Event handlers
+  // Render logic with early returns
+  // JSX with proper accessibility
+}
+```
+
+### API Route Pattern
+```typescript
+// Preferred API route pattern
+export async function routeHandler(req: Request, res: Response) {
+  try {
+    // Input validation with Zod
+    // Business logic
+    // Database operations
+    // Response formatting
+  } catch (error) {
+    // Proper error handling and logging
+  }
+}
+```
+
+### Database Schema Pattern
+```typescript
+// Preferred Drizzle schema pattern
+export const tableName = pgTable('table_name', {
+  id: serial('id').primaryKey(),
+  // Other fields with proper types and constraints
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
+```
+
+## Testing & Quality Assurance
+- Write tests for critical business logic (price calculations, data validation)
+- Implement proper error handling with user-friendly messages
+- Use TypeScript's strict mode to catch errors at compile time
+- Implement proper logging for debugging and monitoring
+- Test postcode validation thoroughly for NI-specific requirements
+
+## User Experience Priorities
+- Mobile-first design for heating oil customers
+- Fast loading times for price comparisons
+- Clear call-to-action buttons for quotes
+- Accessible design following WCAG guidelines
+- Intuitive navigation for less tech-savvy users
+- Trust signals and security badges
+
+## Content & Messaging
+- Use clear, jargon-free language for pricing information
+- Emphasize transparency and local expertise
+- Highlight charity partnership and community impact
+- Use Northern Ireland cultural references appropriately
+- Maintain professional tone while being approachable
+
+## File Organization
+- Keep components focused and single-purpose
+- Use proper barrel exports for cleaner imports
+- Organize by feature rather than file type
+- Maintain consistent naming conventions
+- Keep shared utilities in appropriate directories
+
+## Common Pitfalls to Avoid
+- Don't hardcode supplier data - use the dynamic database
+- Don't bypass BT postcode validation
+- Don't forget to implement proper error states
+- Don't ignore accessibility requirements
+- Don't expose internal API keys or sensitive data
+- Don't implement features without considering mobile users
+- Don't forget to track important business metrics
+
+## When Implementing New Features
+1. Consider the Northern Ireland market context
+2. Ensure mobile responsiveness
+3. Implement proper TypeScript types
+4. Add appropriate analytics tracking
+5. Consider SEO implications
+6. Test with real BT postcodes
+7. Verify charity impact tracking
+8. Ensure accessibility compliance
+
+Remember: The goal is to keep Northern Ireland homes warm while maintaining transparency, supporting local suppliers, and giving back to the community through charitable partnerships. 
