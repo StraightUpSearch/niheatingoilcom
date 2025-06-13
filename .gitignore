@@ -4,3 +4,12 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# Environment files (contain secrets)
+.env
+.env.local
+.env.production
+.env.staging
+
+# Local development database
+heating-oil.db
