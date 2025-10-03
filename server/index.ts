@@ -22,11 +22,37 @@ app.use(compression({
   }
 }));
 
+// CORS Configuration (for production WordPress integration)
+app.use((req, res, next) => {
+  const allowedOrigins = [
+    'https://niheatingoil.com',
+    'https://www.niheatingoil.com',
+    'http://niheatingoil.local', // Local development
+    'http://localhost:3000', // Local development
+  ];
+
+  const origin = req.headers.origin;
+  if (origin && allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-WP-Nonce');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+  // Handle preflight
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
+
 // Security and performance headers
 app.use((req, res, next) => {
   // Security headers
   res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN'); // Changed from DENY to allow WordPress embedding
   res.setHeader('X-XSS-Protection', '1; mode=block');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
 
@@ -97,12 +123,16 @@ app.use((req, res, next) => {
   // ALWAYS serve the app on port 5000
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = 5000;
-  server.listen(port, "localhost", () => {
-    log(`serving on port ${port}`);
+  const port = process.env.PORT || 5000;
+  const host = process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost';
+
+  server.listen(port, host, () => {
+    log(`serving on ${host}:${port}`);
+    log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   });
 
-  // Initialize monthly data refresh systems (optimized for minimal API usage)
-  await initializeCuratedData();
-  await initializeConsumerCouncilScraping();
+  // Initialize monthly data refresh systems (temporarily disabled for WordPress setup)
+  // await initializeCuratedData();
+  // await initializeConsumerCouncilScraping();
+  console.log("✅ Server ready! Data scraping disabled - manually add suppliers or enable in code");
 })();
