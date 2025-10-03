@@ -18,9 +18,9 @@ db.exec(`
     rating TEXT DEFAULT '4.5',
     review_count INTEGER DEFAULT 0,
     is_active BOOLEAN DEFAULT 1,
-    lastScraped DATETIME,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
+    last_scraped DATETIME,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
   );
 `);
 
@@ -28,13 +28,14 @@ db.exec(`
 db.exec(`
   CREATE TABLE IF NOT EXISTS oil_prices (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    supplierId INTEGER NOT NULL,
+    supplier_id INTEGER NOT NULL,
     volume INTEGER NOT NULL,
     price TEXT NOT NULL,
-    pricePerLitre TEXT,
-    includesVat BOOLEAN DEFAULT true,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (supplierId) REFERENCES suppliers(id)
+    price_per_litre TEXT,
+    includes_vat BOOLEAN DEFAULT 1,
+    postcode TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (supplier_id) REFERENCES suppliers(id)
   );
 `);
 
@@ -45,12 +46,13 @@ db.exec(`
     username TEXT NOT NULL UNIQUE,
     email TEXT UNIQUE,
     password TEXT NOT NULL,
-    fullName TEXT,
+    full_name TEXT,
     phone TEXT,
-    firstName TEXT,
-    lastName TEXT,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
+    first_name TEXT,
+    last_name TEXT,
+    profile_image_url TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
   );
 `);
 
@@ -65,13 +67,11 @@ db.exec(`
     volume INTEGER NOT NULL,
     urgency TEXT,
     notes TEXT,
-    supplierName TEXT,
-    supplierPrice TEXT,
+    supplier_name TEXT,
+    supplier_price TEXT,
     status TEXT DEFAULT 'new',
-    submissionTime INTEGER,
-    ticketId TEXT,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
   );
 `);
 
@@ -79,14 +79,16 @@ db.exec(`
 db.exec(`
   CREATE TABLE IF NOT EXISTS price_alerts (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    userId TEXT NOT NULL,
+    user_id TEXT NOT NULL,
+    email TEXT NOT NULL,
     postcode TEXT NOT NULL,
     volume INTEGER NOT NULL,
-    targetPrice TEXT NOT NULL,
-    isActive BOOLEAN DEFAULT true,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (userId) REFERENCES users(id)
+    threshold_type TEXT NOT NULL DEFAULT 'any',
+    email_alerts BOOLEAN DEFAULT 1,
+    sms_alerts BOOLEAN DEFAULT 0,
+    is_active BOOLEAN DEFAULT 1,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
   );
 `);
 
@@ -94,24 +96,30 @@ db.exec(`
 db.exec(`
   CREATE TABLE IF NOT EXISTS saved_quotes (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    userId TEXT NOT NULL,
-    supplierName TEXT NOT NULL,
+    user_id TEXT NOT NULL,
+    supplier_name TEXT NOT NULL,
     price TEXT NOT NULL,
     volume INTEGER NOT NULL,
     postcode TEXT NOT NULL,
-    location TEXT,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (userId) REFERENCES users(id)
+    location TEXT NOT NULL,
+    customer_name TEXT,
+    customer_email TEXT,
+    customer_phone TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
   );
 `);
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS search_queries (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    postcode TEXT NOT NULL,
+    postcode TEXT,
     volume INTEGER,
-    results INTEGER DEFAULT 0,
-    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
+    results_count INTEGER DEFAULT 0,
+    user_id TEXT,
+    ip_address TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
   );
 `);
 

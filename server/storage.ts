@@ -29,7 +29,8 @@ import {
   type InsertSavedQuote,
 } from "@shared/schema";
 // Use PostgreSQL for production, SQLite for local development
-import { db } from process.env.NODE_ENV === 'production' ? "./db" : "./db-local";
+const dbModule = process.env.NODE_ENV === 'production' ? await import("./db.js") : await import("./db-local.js");
+export const db = dbModule.db;
 import { eq, desc, and, or, gte, lte, lt, sql, like, inArray, not } from "drizzle-orm";
 
 export interface IStorage {

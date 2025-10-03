@@ -1,0 +1,35 @@
+/*
+Theme Name: NI Heating Oil
+Theme URI: https://niheatingoil.com
+Author: NI Heating Oil Team
+Author URI: https://niheatingoil.com
+Description: WordPress theme for NI Heating Oil comparison platform - A React/Vite-powered heating oil price comparison app for Northern Ireland. Features include real-time price comparison from 50+ suppliers, user accounts, price alerts, charity impact tracking, and comprehensive supplier directory.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 8.0
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Text Domain: ni-heating-oil
+Tags: heating-oil, price-comparison, react, vite, northern-ireland
+*/
+
+/*
+ * This is a React/Vite-powered WordPress theme.
+ * All styles are bundled via Vite and loaded through functions.php
+ * This file is required for WordPress theme recognition only.
+ */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}

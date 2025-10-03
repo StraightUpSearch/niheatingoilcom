@@ -19,6 +19,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   await setupAuth(app);
 
   // Initialize Consumer Council scraping and URL detection
+  // Temporarily disabled for WordPress setup - uncomment when needed
+  /*
   setTimeout(() => {
     initializeConsumerCouncilScraping().catch(error => {
       console.error("Consumer Council scraping initialization failed:", error);
@@ -32,7 +34,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     });
   }, 2000);
 
-  
+
 
   // Initialize curated supplier data (no external API calls needed)
   setTimeout(async () => {
@@ -44,6 +46,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("Curated supplier data initialization failed:", error);
     }
   }, 3000);
+  */
+
+  console.log("ℹ️  Price scraping disabled - manually add suppliers or uncomment initialization code");
 
 
 
