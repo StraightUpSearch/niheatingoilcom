@@ -72,6 +72,7 @@ export const oilPrices = pgTable("oil_prices", {
   pricePerLitre: decimal("price_per_litre", { precision: 8, scale: 3 }).notNull(),
   includesVat: boolean("includes_vat").default(true),
   postcode: varchar("postcode", { length: 255 }), // specific postcode or location name if applicable
+  isDefault: boolean("is_default").default(false), // true if this is fallback test data
   createdAt: timestamp("created_at").defaultNow(),
 });
 

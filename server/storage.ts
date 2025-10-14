@@ -327,6 +327,7 @@ export class DatabaseStorage implements IStorage {
         pricePerLitre: oilPrices.pricePerLitre,
         includesVat: oilPrices.includesVat,
         postcode: oilPrices.postcode,
+        isDefault: oilPrices.isDefault,
         createdAt: oilPrices.createdAt,
         supplier: suppliers,
       })
@@ -455,6 +456,7 @@ export class DatabaseStorage implements IStorage {
         pricePerLitre: oilPrices.pricePerLitre,
         includesVat: oilPrices.includesVat,
         postcode: oilPrices.postcode,
+        isDefault: oilPrices.isDefault,
         createdAt: oilPrices.createdAt,
         supplier: suppliers,
       })

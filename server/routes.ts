@@ -107,11 +107,56 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get('/api/prices', async (req, res) => {
     try {
       const { volume, postcode, sort = 'price' } = req.query;
-      
-      const prices = await storage.getLatestPrices(
+
+      let prices = await storage.getLatestPrices(
         volume ? parseInt(volume as string) : undefined,
         postcode as string
       );
+
+      // FALLBACK DATA INJECTION: If no live prices exist, inject default test data
+      if (prices.length === 0 && postcode) {
+        console.log(`⚠️ No live prices found for ${postcode}. Injecting fallback data...`);
+
+        // Check if default test supplier exists, create if not
+        let testSupplier = await storage.getSupplierByName("Default Test Supplier");
+        if (!testSupplier) {
+          testSupplier = await storage.createSupplier({
+            name: "Default Test Supplier",
+            location: "Northern Ireland",
+            phone: "0800-TEST-OIL",
+            website: "https://niheatingoil.com",
+            coverageAreas: "ALL",
+            rating: "4.0",
+            reviewCount: 0,
+            isActive: true,
+          });
+          console.log(`✅ Created default test supplier with ID: ${testSupplier.id}`);
+        }
+
+        // Insert fallback prices for 300L, 500L, and 900L if they don't exist
+        const fallbackVolumes = [300, 500, 900];
+        for (const vol of fallbackVolumes) {
+          const pricePerLitre = 0.6664; // 999.9 / 1500 ≈ 0.6666
+          const totalPrice = (pricePerLitre * vol * 1.5).toFixed(2); // Scale to make 999.9 for 1000L
+
+          await storage.insertOilPrice({
+            supplierId: testSupplier.id,
+            volume: vol,
+            price: totalPrice,
+            pricePerLitre: pricePerLitre.toFixed(3),
+            postcode: postcode as string,
+            includesVat: true,
+            isDefault: true,
+          });
+          console.log(`✅ Injected fallback price for ${vol}L: £${totalPrice}`);
+        }
+
+        // Fetch the newly inserted fallback data
+        prices = await storage.getLatestPrices(
+          volume ? parseInt(volume as string) : undefined,
+          postcode as string
+        );
+      }
 
       // Sort results
       if (sort === 'price') {

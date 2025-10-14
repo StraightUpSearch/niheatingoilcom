@@ -271,7 +271,14 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
               <div key={item.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
                 <div className="flex justify-between items-start mb-3">
                   <div>
-                    <h3 className="font-medium text-gray-900">{item.supplier.name}</h3>
+                    <h3 className="font-medium text-gray-900 flex items-center gap-2">
+                      {item.supplier.name}
+                      {item.isDefault && (
+                        <Badge variant="outline" className="text-xs text-orange-600 border-orange-400">
+                          Default Test Data
+                        </Badge>
+                      )}
+                    </h3>
                     <div className="text-sm text-gray-500 flex items-center mt-1">
                       <MapPin className="h-3 w-3 mr-1" />
                       {getDeliveryArea(item.supplier.location)}
@@ -390,8 +397,13 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                   <tr key={item.id} className="hover:bg-grey-50">
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div>
-                        <div className="text-sm font-medium text-grey-900">
+                        <div className="text-sm font-medium text-grey-900 flex items-center gap-2">
                           {item.supplier.name}
+                          {item.isDefault && (
+                            <Badge variant="outline" className="text-xs text-orange-600 border-orange-400">
+                              Default Test Data
+                            </Badge>
+                          )}
                         </div>
                         <div className="text-xs text-grey-500 flex items-centre mt-1">
                           <Clock className="h-3 w-3 mr-1" />
