@@ -73,11 +73,12 @@ To keep Northern Ireland's homes warm, budgets intact, and communities connected
 
 ## Technical Stack
 - **Frontend**: React with TypeScript, Tailwind CSS, Vite
-- **Backend**: Node.js, Express, TypeScript
-- **Database**: SQLite with Drizzle ORM
+- **Backend**: WordPress + Express (hybrid architecture)
+- **Database**: SQLite (development) / PostgreSQL (production when needed)
 - **Authentication**: Passport.js with session management
-- **Deployment**: Replit hosting platform
-- **APIs**: Consumer Council NI data integration
+- **Deployment**: WordPress via Local by Flywheel → Live Push
+- **Hosting**: WordPress hosting with fallback data system
+- **APIs**: Consumer Council NI data integration, GetAddress.io, OpenAI
 - **Analytics**: Google Analytics 4 with Google Tag Manager
 
 ## Target Market
@@ -91,11 +92,29 @@ Northern Ireland households using heating oil (approximately 68% of NI homes use
 - Integration with local suppliers
 - Complete transparency in pricing and referral arrangements
 
+## Deployment Architecture
+
+### Current Setup (LIVE as of Oct 2025)
+- **Development**: Local by Flywheel for local WordPress development
+- **Deployment**: Push to Live via Local by Flywheel
+- **Backend**: Hybrid WordPress + Express (optional Express for advanced features)
+- **Fallback System**: WordPress serves default pricing data when Express backend unavailable
+- **Method**: NO GitHub-based deployment - all changes pushed via Local by Flywheel
+
+### Fallback Data System
+When Express backend is not running, WordPress automatically serves:
+- 5 realistic NI heating oil suppliers
+- Prices from £499.50 to £529.50 for 500L
+- Coverage across all NI counties
+- Ensures site remains functional 24/7
+
 ## Roadmap & Future Enhancements
 
-### MVP Launch (Q3 2025)
-- Core price comparison, user accounts, price alerts, and charity integration
+### MVP Launch (Q3 2025) ✅ COMPLETE
+- Core price comparison with fallback data system
+- User accounts, price alerts, and charity integration
 - Basic social sharing and GA4 event tracking
+- WordPress theme integration with Local by Flywheel deployment
 
 ### Enhanced AI Features (Q1 2026)
 - Deploy predictive "Price Forecast" widget on the comparison page
