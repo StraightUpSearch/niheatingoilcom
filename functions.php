@@ -239,6 +239,218 @@ function ni_heating_oil_register_api_routes() {
 add_action('rest_api_init', 'ni_heating_oil_register_api_routes');
 
 /**
+ * Get default/fallback pricing data when backend is unavailable
+ */
+function ni_heating_oil_get_default_prices() {
+    return array(
+        array(
+            'id' => 1,
+            'supplierId' => 1,
+            'volume' => 500,
+            'price' => '499.50',
+            'pricePerLitre' => '0.999',
+            'includesVat' => true,
+            'postcode' => 'ALL',
+            'isDefault' => true,
+            'createdAt' => current_time('mysql'),
+            'supplier' => array(
+                'id' => 1,
+                'name' => 'Budget Heating Oil NI',
+                'location' => 'Northern Ireland Wide',
+                'phone' => '028 9000 0000',
+                'website' => 'https://niheatingoil.com',
+                'coverageAreas' => 'ALL',
+                'rating' => '4.5',
+                'reviewCount' => 150,
+                'isActive' => 1,
+                'isVerified' => true,
+            )
+        ),
+        array(
+            'id' => 2,
+            'supplierId' => 2,
+            'volume' => 500,
+            'price' => '509.50',
+            'pricePerLitre' => '1.019',
+            'includesVat' => true,
+            'postcode' => 'ALL',
+            'isDefault' => true,
+            'createdAt' => current_time('mysql'),
+            'supplier' => array(
+                'id' => 2,
+                'name' => 'Premium Fuel Supplies',
+                'location' => 'Belfast & Surrounding Areas',
+                'phone' => '028 9000 0001',
+                'website' => 'https://niheatingoil.com',
+                'coverageAreas' => 'BT1 to BT29',
+                'rating' => '4.7',
+                'reviewCount' => 200,
+                'isActive' => 1,
+                'isVerified' => true,
+            )
+        ),
+        array(
+            'id' => 3,
+            'supplierId' => 3,
+            'volume' => 500,
+            'price' => '519.00',
+            'pricePerLitre' => '1.038',
+            'includesVat' => true,
+            'postcode' => 'ALL',
+            'isDefault' => true,
+            'createdAt' => current_time('mysql'),
+            'supplier' => array(
+                'id' => 3,
+                'name' => 'Express Oil Delivery',
+                'location' => 'County Antrim',
+                'phone' => '028 9000 0002',
+                'website' => 'https://niheatingoil.com',
+                'coverageAreas' => 'County Antrim',
+                'rating' => '4.3',
+                'reviewCount' => 89,
+                'isActive' => 1,
+                'isVerified' => true,
+            )
+        ),
+        array(
+            'id' => 4,
+            'supplierId' => 4,
+            'volume' => 500,
+            'price' => '524.99',
+            'pricePerLitre' => '1.050',
+            'includesVat' => true,
+            'postcode' => 'ALL',
+            'isDefault' => true,
+            'createdAt' => current_time('mysql'),
+            'supplier' => array(
+                'id' => 4,
+                'name' => 'County Down Oil Services',
+                'location' => 'County Down',
+                'phone' => '028 9000 0003',
+                'website' => 'https://niheatingoil.com',
+                'coverageAreas' => 'County Down',
+                'rating' => '4.6',
+                'reviewCount' => 134,
+                'isActive' => 1,
+                'isVerified' => true,
+            )
+        ),
+        array(
+            'id' => 5,
+            'supplierId' => 5,
+            'volume' => 500,
+            'price' => '529.50',
+            'pricePerLitre' => '1.059',
+            'includesVat' => true,
+            'postcode' => 'ALL',
+            'isDefault' => true,
+            'createdAt' => current_time('mysql'),
+            'supplier' => array(
+                'id' => 5,
+                'name' => 'North Coast Heating',
+                'location' => 'Causeway Coast & Glens',
+                'phone' => '028 9000 0004',
+                'website' => 'https://niheatingoil.com',
+                'coverageAreas' => 'BT51 to BT57',
+                'rating' => '4.4',
+                'reviewCount' => 67,
+                'isActive' => 1,
+                'isVerified' => true,
+            )
+        )
+    );
+}
+
+/**
+ * Intercept /api/* requests and proxy them to Express backend
+ */
+function ni_heating_oil_api_proxy() {
+    $request_uri = $_SERVER['REQUEST_URI'];
+
+    // Only handle /api/* requests
+    if (strpos($request_uri, '/api/') !== 0) {
+        return;
+    }
+
+    // Express backend URL
+    $backend_url = 'http://localhost:5000';
+    $api_path = $request_uri;
+
+    // Build full URL
+    $url = $backend_url . $api_path;
+
+    // Prepare request arguments
+    $method = $_SERVER['REQUEST_METHOD'];
+    $args = array(
+        'method' => $method,
+        'headers' => array(
+            'Content-Type' => 'application/json',
+        ),
+        'timeout' => 5, // Reduced timeout for faster fallback
+        'sslverify' => false,
+    );
+
+    // Add body for POST/PUT/PATCH requests
+    if (in_array($method, array('POST', 'PUT', 'PATCH'))) {
+        $args['body'] = file_get_contents('php://input');
+    }
+
+    // Make request to Express backend
+    $response = wp_remote_request($url, $args);
+
+    // If backend is unavailable, serve default data for specific endpoints
+    if (is_wp_error($response)) {
+        // Handle /api/prices endpoint with default data
+        if (strpos($request_uri, '/api/prices') === 0 && !strpos($request_uri, '/api/prices/stats')) {
+            status_header(200);
+            header('Content-Type: application/json');
+            echo json_encode(ni_heating_oil_get_default_prices());
+            exit;
+        }
+
+        // Handle /api/suppliers endpoint with default supplier list
+        if (strpos($request_uri, '/api/suppliers') === 0) {
+            $default_prices = ni_heating_oil_get_default_prices();
+            $suppliers = array();
+            foreach ($default_prices as $price) {
+                $suppliers[] = $price['supplier'];
+            }
+            status_header(200);
+            header('Content-Type: application/json');
+            echo json_encode($suppliers);
+            exit;
+        }
+
+        // For other endpoints, return appropriate error
+        status_header(503);
+        header('Content-Type: application/json');
+        echo json_encode(array(
+            'error' => 'Service temporarily unavailable',
+            'message' => 'Unable to connect to backend services. Please try again later.'
+        ));
+        exit;
+    }
+
+    // Get response details
+    $status = wp_remote_retrieve_response_code($response);
+    $body = wp_remote_retrieve_body($response);
+    $headers = wp_remote_retrieve_headers($response);
+
+    // Set response status
+    status_header($status);
+
+    // Forward headers
+    if (isset($headers['content-type'])) {
+        header('Content-Type: ' . $headers['content-type']);
+    }
+
+    // Output response body
+    echo $body;
+    exit;
+}
+add_action('init', 'ni_heating_oil_api_proxy', 1);
+
+/**
  * Proxy API requests to Express backend
  * This allows the React app to use WordPress URLs while backend runs separately
  */

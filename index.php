@@ -64,7 +64,7 @@ if (!defined('ABSPATH')) {
           "url": "<?php echo esc_url(home_url('/')); ?>",
           "logo": {
             "@type": "ImageObject",
-            "url": "<?php echo esc_url(get_template_directory_uri() . '/client/public/favicon.svg'); ?>"
+            "url": "<?php echo esc_url(get_template_directory_uri() . '/dist/public/favicon.svg'); ?>"
           },
           "description": "NI Heating Oil provides a free online service to compare heating oil prices from numerous verified suppliers across Northern Ireland.",
           "address": {
