@@ -421,6 +421,17 @@ function ni_heating_oil_api_proxy() {
             exit;
         }
 
+        // Handle /api/user endpoint (user not logged in when backend down)
+        if (strpos($request_uri, '/api/user') === 0) {
+            status_header(200);
+            header('Content-Type: application/json');
+            echo json_encode(array(
+                'user' => null,
+                'isAuthenticated' => false
+            ));
+            exit;
+        }
+
         // For other endpoints, return appropriate error
         status_header(503);
         header('Content-Type: application/json');

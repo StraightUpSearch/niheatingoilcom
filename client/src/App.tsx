@@ -59,13 +59,12 @@ function Router() {
 }
 
 function App() {
-  // Initialize Google Tag Manager when app loads
+  // Initialize Google Tag Manager when app loads (optional)
   useEffect(() => {
-    if (!import.meta.env.VITE_GTM_ID) {
-      console.warn('Missing required Google Tag Manager ID: VITE_GTM_ID');
-    } else {
+    if (import.meta.env.VITE_GTM_ID) {
       initGTM();
     }
+    // Note: GTM is optional - site works fine without it
   }, []);
 
   return (

@@ -44,16 +44,12 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent"></div>
       </div>
 
-      {/* Background Video */}
+      {/* Background Image (video removed to reduce errors) */}
       <div className="absolute inset-0 opacity-20">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
+        <img
+          src={heroImage}
+          alt="Heating oil delivery"
           className="w-full h-full object-cover"
-          src="/assets/niheatingoilcomad.mp4"
-          poster={heroImage}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/95 to-blue-700/95"></div>
       </div>
