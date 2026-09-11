@@ -131,8 +131,11 @@ app.use((req, res, next) => {
     log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   });
 
-  // Initialize monthly data refresh systems (temporarily disabled for WordPress setup)
-  // await initializeCuratedData();
-  // await initializeConsumerCouncilScraping();
-  console.log("✅ Server ready! Data scraping disabled - manually add suppliers or enable in code");
+  // Initialize curated supplier data on startup
+  try {
+    await initializeCuratedData();
+  } catch (error) {
+    console.error("Curated data initialization failed:", error);
+  }
+  console.log("✅ Server ready!");
 })();

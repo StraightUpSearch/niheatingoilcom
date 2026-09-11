@@ -1,9 +1,9 @@
-import { drizzle } from 'drizzle-orm/better-sqlite3';
-import Database from 'better-sqlite3';
+import { drizzle } from 'drizzle-orm/libsql';
+import { createClient } from '@libsql/client';
 import * as schema from "@shared/schema";
 
-// Create local SQLite database for testing
-const sqlite = new Database('heating-oil.db');
-export const db = drizzle({ client: sqlite, schema });
+// Create local SQLite database for testing (libsql/WASM — no native build required)
+const client = createClient({ url: 'file:heating-oil.db' });
+export const db = drizzle({ client, schema });
 
-console.log("Using local SQLite database: heating-oil.db"); 
+console.log("Using local SQLite database: heating-oil.db");

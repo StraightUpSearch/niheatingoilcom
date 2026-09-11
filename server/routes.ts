@@ -48,7 +48,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   }, 3000);
   */
 
-  console.log("ℹ️  Price scraping disabled - manually add suppliers or uncomment initialization code");
+  console.log("ℹ️  Routes registered");
 
 
 

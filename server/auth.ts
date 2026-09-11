@@ -54,13 +54,22 @@ async function comparePasswords(supplied: string, stored: string) {
 
 export async function setupAuth(app: Express) {
   const sessionTtl = 7 * 24 * 60 * 60 * 1000; // 1 week
-  const pgStore = connectPg(session);
-  const sessionStore = new pgStore({
-    conString: process.env.DATABASE_URL,
-    createTableIfMissing: true,
-    ttl: sessionTtl,
-    tableName: "sessions",
-  });
+
+  let sessionStore: session.Store;
+  if (process.env.DATABASE_URL) {
+    const pgStore = connectPg(session);
+    sessionStore = new pgStore({
+      conString: process.env.DATABASE_URL,
+      createTableIfMissing: true,
+      ttl: sessionTtl,
+      tableName: "sessions",
+    });
+    console.log("Session store: PostgreSQL");
+  } else {
+    const MemoryStore = (await import('memorystore')).default(session);
+    sessionStore = new MemoryStore({ checkPeriod: sessionTtl });
+    console.log("Session store: memory (no DATABASE_URL set)");
+  }
 
   const sessionSettings: session.SessionOptions = {
     secret: process.env.SESSION_SECRET || 'heating-oil-secret-key-change-in-production',
