@@ -2,7 +2,7 @@ import 'dotenv/config';
 import express, { type Request, Response, NextFunction } from "express";
 import compression from "compression";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { serveStatic, log } from "./static";
 import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
 import { initializeCuratedData } from "./curatedSupplierData";
 
@@ -115,6 +115,9 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
+    // Dynamic path prevents esbuild from bundling dev-only vite dependencies
+    const vitePath = [".", "vite"].join("/");
+    const { setupVite } = await import(vitePath);
     await setupVite(app, server);
   } else {
     serveStatic(app);
