@@ -427,8 +427,11 @@ export class DatabaseStorage implements IStorage {
 
     let resultsToReturn;
     if (hasIndividualSuppliers) {
-      // Show suppliers filtered by postcode coverage (or all if no postcode given)
-      resultsToReturn = relevantIndividualSuppliers;
+      // Use postcode-filtered set when it has results; fall back to all suppliers
+      // (coverage areas use county names not BT codes, so no-match = serve all NI)
+      resultsToReturn = (postcode && relevantIndividualSuppliers.length > 0)
+        ? relevantIndividualSuppliers
+        : individualSuppliers;
     } else {
       // If no individual suppliers, show only ONE regional average (not multiple duplicates)
       const uniqueRegionalAverages = new Map();
