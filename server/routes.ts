@@ -324,7 +324,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const volume = parseInt(req.params.volume);
       const stats = await storage.getAveragePrices(volume);
-      res.json(stats);
+      res.json({
+        ...stats,
+        weeklyAverage: stats?.weeklyAverage
+          ? parseFloat(stats.weeklyAverage).toFixed(2)
+          : stats?.weeklyAverage,
+      });
     } catch (error) {
       console.error("Error fetching price stats:", error);
       res.status(500).json({ message: "Failed to fetch price stats" });

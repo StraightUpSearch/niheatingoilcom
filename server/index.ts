@@ -8,6 +8,9 @@ import { initializeCuratedData } from "./curatedSupplierData";
 
 const app = express();
 
+// Remove Express fingerprint header
+app.disable('x-powered-by');
+
 // Enable compression for better Core Web Vitals
 app.use(compression({
   level: 6, // Good compression level
@@ -34,11 +37,10 @@ app.use((req, res, next) => {
   const origin = req.headers.origin;
   if (origin && allowedOrigins.includes(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
   }
-
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-WP-Nonce');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
 
   // Handle preflight
   if (req.method === 'OPTIONS') {
@@ -56,6 +58,7 @@ app.use((req, res, next) => {
   res.setHeader('X-XSS-Protection', '1; mode=block');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
 
   // Cache: static assets get long TTL, HTML/API get none
   if (req.path.startsWith('/api') || req.path === '/' || req.path.endsWith('.html')) {

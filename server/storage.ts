@@ -427,8 +427,8 @@ export class DatabaseStorage implements IStorage {
 
     let resultsToReturn;
     if (hasIndividualSuppliers) {
-      // Show all individual suppliers
-      resultsToReturn = individualSuppliers;
+      // Show suppliers filtered by postcode coverage (or all if no postcode given)
+      resultsToReturn = relevantIndividualSuppliers;
     } else {
       // If no individual suppliers, show only ONE regional average (not multiple duplicates)
       const uniqueRegionalAverages = new Map();
