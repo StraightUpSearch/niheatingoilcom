@@ -83,4 +83,11 @@
   input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
     color: hsl(var(--foreground)) !important;
   }
+
+  /* Prevent iOS zoom on input focus — inputs must be >= 16px */
+  @media screen and (max-width: 767px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+  }
 }

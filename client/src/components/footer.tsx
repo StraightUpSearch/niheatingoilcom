@@ -184,7 +184,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-6 pt-4 text-center text-gray-400">
           <p>
-            &copy; 2025 OilPrice NI. All rights reserved. Independent price comparison service for Northern Ireland heating oil consumers.
+            &copy; {new Date().getFullYear()} NI Heating Oil. All rights reserved. Independent price comparison service for Northern Ireland heating oil consumers.
           </p>
         </div>
       </div>

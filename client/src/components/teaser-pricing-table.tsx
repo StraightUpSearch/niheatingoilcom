@@ -11,17 +11,15 @@ interface TeaserPricingTableProps {
     postcode?: string;
     volume?: number;
   };
+  onGetQuote?: (supplier: { name: string; price: string; volume: number; location: string }) => void;
 }
 
-export default function TeaserPricingTable({ searchParams }: TeaserPricingTableProps) {
+export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserPricingTableProps) {
   const [selectedVolume, setSelectedVolume] = useState<number>(searchParams?.volume || 500);
 
-  // Calculate prices for different volumes based on base price with 20% safety margin
   const calculateVolumePrice = (basePrice: number, baseVolume: number, targetVolume: number) => {
     const pricePerLitre = basePrice / baseVolume;
-    const baseCalculatedPrice = pricePerLitre * targetVolume;
-    // Add 20% safety margin to all supplier prices for profitability buffer
-    return baseCalculatedPrice * 1.20;
+    return pricePerLitre * targetVolume;
   };
 
   const { data: pricesData, isLoading, error } = useQuery({
@@ -112,7 +110,7 @@ export default function TeaserPricingTable({ searchParams }: TeaserPricingTableP
             <button
               key={volume}
               onClick={() => setSelectedVolume(volume)}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`px-5 py-2.5 rounded-md text-sm font-medium transition-colors min-h-[44px] ${
                 selectedVolume === volume
                   ? 'bg-white text-primary shadow-sm'
                   : 'text-gray-600 hover:text-gray-900'
@@ -199,7 +197,16 @@ export default function TeaserPricingTable({ searchParams }: TeaserPricingTableP
                   </div>
 
                   <div className="flex space-x-2">
-                    <Button size="sm" className="flex-1">
+                    <Button
+                      size="sm"
+                      className="flex-1 bg-green-600 hover:bg-green-700 text-white"
+                      onClick={() => onGetQuote?.({
+                        name: supplier.name,
+                        price: `£${(supplier.displayPrice / 100).toFixed(2)}`,
+                        volume: selectedVolume,
+                        location: supplier.location || "Northern Ireland",
+                      })}
+                    >
                       Get Quote
                     </Button>
                     {supplier.website && (

@@ -6,19 +6,19 @@ export default function TrustSection() {
     {
       icon: Shield,
       title: "Verified Data",
-      description: "All prices scraped directly from supplier websites and verified in real-time.",
+      description: "Prices sourced from supplier websites and checked regularly for accuracy.",
       color: "bg-primary",
     },
     {
       icon: Clock,
-      title: "Real-Time Updates",
-      description: "Price data updated weekly to ensure you get current and reliable information.",
+      title: "Regular Updates",
+      description: "Price data updated regularly to ensure you get current and reliable information.",
       color: "bg-secondary",
     },
     {
       icon: Users,
-      title: "50+ Suppliers",
-      description: "Comprehensive coverage of heating oil suppliers across all of Northern Ireland.",
+      title: "Local Suppliers",
+      description: "Coverage of heating oil suppliers across all six counties of Northern Ireland.",
       color: "bg-accent",
     },
     {

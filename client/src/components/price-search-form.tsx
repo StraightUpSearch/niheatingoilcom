@@ -1,14 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { Search, Droplets, Loader2, MapPin } from "lucide-react";
+import { Search, Loader2 } from "lucide-react";
 import { useLocation } from "wouter";
 import TankSelector from "./tank-selector";
 import SmartPostcodeInput from "./smart-postcode-input";
-
-import PriceGuaranteeModal from "./price-guarantee-modal";
 
 interface PriceSearchFormProps {
   onSearch?: (params: { postcode?: string; volume?: number }) => void;
@@ -93,21 +90,15 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
               />
             </div>
 
-            {/* Quick Tips */}
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-              <h4 className="text-sm font-semibold text-blue-900 mb-2">AI-Powered Features</h4>
+              <h4 className="text-sm font-semibold text-blue-900 mb-2">How it works</h4>
               <ul className="text-xs text-blue-800 space-y-1">
-                <li>• Smart postcode recognition (BT1-BT94)</li>
-                <li>• AI analyzes real-time pricing data</li>
-                <li>• Intelligent supplier matching</li>
-                <li>• 100% free AI comparison service</li>
+                <li>• Enter any NI postcode (BT1–BT94)</li>
+                <li>• See prices from local suppliers</li>
+                <li>• Compare and contact directly</li>
+                <li>• Completely free, no commission</li>
               </ul>
-              <div className="mt-3 text-center">
-                <PriceGuaranteeModal />
-              </div>
             </div>
-
-
           </div>
 
           {/* Tank Selector */}
@@ -130,7 +121,7 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
             {isLoading ? (
               <>
                 <Loader2 className="h-5 w-5 mr-2 animate-spin" />
-                Finding the best craic for ye...
+                Searching prices...
               </>
             ) : (
               <>

@@ -27,6 +27,9 @@ import {
   type InsertSupplierClaim,
   type SavedQuote,
   type InsertSavedQuote,
+  emailSubscribers,
+  type EmailSubscriber,
+  type InsertEmailSubscriber,
 } from "@shared/schema";
 // In production (bundled), always use PostgreSQL via db.ts
 // For local dev with SQLite, run with: tsx --import ./server/db-local.ts server/index.ts
@@ -89,6 +92,9 @@ export interface IStorage {
   getLeads(status?: string): Promise<Lead[]>;
   updateLeadStatus(id: number, status: string): Promise<Lead>;
 
+  // Email subscriber operations
+  createEmailSubscriber(subscriber: InsertEmailSubscriber): Promise<EmailSubscriber>;
+
   // Supplier claim operations
   createSupplierClaim(claim: InsertSupplierClaim): Promise<SupplierClaim>;
   getSupplierClaims(status?: string): Promise<SupplierClaim[]>;
@@ -109,6 +115,25 @@ export class DatabaseStorage implements IStorage {
 
   async getUserByEmail(email: string): Promise<User | undefined> {
     const [user] = await db.select().from(users).where(eq(users.email, email));
+    return user;
+  }
+
+  async getUserByGoogleId(googleId: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.googleId, googleId));
+    return user;
+  }
+
+  async getUserByFacebookId(facebookId: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.facebookId, facebookId));
+    return user;
+  }
+
+  async linkSocialAccount(userId: string, provider: 'google' | 'facebook', socialId: string, profileImageUrl?: string): Promise<User> {
+    const updateData: Record<string, any> = { updatedAt: new Date() };
+    if (provider === 'google') updateData.googleId = socialId;
+    if (provider === 'facebook') updateData.facebookId = socialId;
+    if (profileImageUrl) updateData.profileImageUrl = profileImageUrl;
+    const [user] = await db.update(users).set(updateData).where(eq(users.id, userId)).returning();
     return user;
   }
 
@@ -591,6 +616,15 @@ export class DatabaseStorage implements IStorage {
       .where(eq(leads.id, id))
       .returning();
     return updatedLead;
+  }
+
+  // Email subscriber operations
+  async createEmailSubscriber(subscriber: InsertEmailSubscriber): Promise<EmailSubscriber> {
+    const [newSubscriber] = await db
+      .insert(emailSubscribers)
+      .values({ ...subscriber, createdAt: new Date() })
+      .returning();
+    return newSubscriber;
   }
 
   // Supplier claim operations

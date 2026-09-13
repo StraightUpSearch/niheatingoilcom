@@ -2,20 +2,12 @@ import { useState } from "react";
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import TeaserPricingTable from "@/components/teaser-pricing-table";
-import PriceTrends from "@/components/price-trends";
-import MobilePriceTrends from "@/components/mobile-price-trends";
-
 import FeaturedSuppliers from "@/components/featured-suppliers";
-import SuppliersShowcase from "@/components/suppliers-showcase";
-import OilTankShowcase from "@/components/oil-tank-showcase";
 import TrustSection from "@/components/trust-section";
-
 import Footer from "@/components/footer";
-import SocialProofNotifications from "@/components/social-proof-notifications";
-import TrustBadges from "@/components/trust-badges";
-import BlogCarousel from "@/components/blog-carousel";
-import { MediaNewsTile } from "@/components/media-news-tile";
-import { CharityBanner } from "@/components/charity-banner";
+import LeadCaptureModal from "@/components/lead-capture-modal";
+import PriceAlertBar from "@/components/price-alert-bar";
+import StickySignup from "@/components/sticky-signup";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calculator, TrendingDown, Bell, MapPin } from "lucide-react";
@@ -25,6 +17,7 @@ export default function Landing() {
   usePageTitle("NI Heating Oil - Compare Heating Oil Prices in Northern Ireland");
 
   const [searchParams, setSearchParams] = useState<{ postcode?: string; volume?: number } | null>(null);
+  const [quoteSupplier, setQuoteSupplier] = useState<{ name: string; price: string; volume: number; location: string } | null>(null);
 
   // Structured data for SEO
   const structuredData = {
@@ -81,7 +74,13 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEOHead 
+      <LeadCaptureModal
+        isOpen={!!quoteSupplier}
+        onClose={() => setQuoteSupplier(null)}
+        supplier={quoteSupplier || undefined}
+      />
+      <StickySignup />
+      <SEOHead
         title="NI Heating Oil - Compare Heating Oil Prices in Northern Ireland"
         description="Compare heating oil prices across Northern Ireland. Get instant quotes from trusted local suppliers in Belfast, Derry, Antrim, Down, Armagh, Tyrone & Fermanagh. Save money on your heating oil delivery today."
         keywords="heating oil prices, Northern Ireland, oil suppliers, Belfast heating oil, Derry heating oil, fuel comparison, home heating, oil delivery, NI heating costs"
@@ -91,25 +90,25 @@ export default function Landing() {
       <Navigation />
       <HeroSection onSearch={handleSearch} />
 
-      {/* Charity Banner - Simon Community NI Pledge */}
-      <CharityBanner />
-
-      {/* Mobile Price Trends - Show on mobile devices */}
-      <MobilePriceTrends />
-
       {/* Search Results Section - Only show after search */}
       {searchParams && (
         <section id="search-results" className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                At's us nai! Heating Oil Prices for {searchParams.postcode}
+                Heating Oil Prices for {searchParams.postcode}
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Here's the craic - showing prices for {searchParams.volume}L delivery. All prices include VAT and standard delivery to your door.
+                Showing prices for {searchParams.volume}L delivery. All prices include VAT and standard delivery.
               </p>
             </div>
-            <TeaserPricingTable searchParams={searchParams} />
+            <TeaserPricingTable
+              searchParams={searchParams}
+              onGetQuote={setQuoteSupplier}
+            />
+            <div className="mt-8 max-w-xl mx-auto">
+              <PriceAlertBar postcode={searchParams.postcode} volume={searchParams.volume} />
+            </div>
           </div>
         </section>
       )}
@@ -122,56 +121,12 @@ export default function Landing() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Oil Prices Across Northern Ireland</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">Dead-on pricing data from verified suppliers across all six counties. No messing about - these prices include VAT and delivery to your door.</p>
+              <p className="text-gray-600 max-w-2xl mx-auto">Pricing data from verified suppliers across all six counties. Prices include VAT and delivery.</p>
             </div>
-            <TeaserPricingTable />
+            <TeaserPricingTable onGetQuote={setQuoteSupplier} />
           </div>
         </section>
       )}
-
-      {/* Media News Tile - Prominent BBC Coverage */}
-      <MediaNewsTile />
-
-      {/* Promotional Video Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Our Cheeky Parody Advert
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-              We made this funny parody video to show how easy it is to compare heating oil prices. 
-              (Just to be clear - we're not actually on TV, but we had a bit of craic making this!)
-            </p>
-          </div>
-
-          <div className="flex justify-center">
-            <div className="w-full max-w-4xl">
-              <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl bg-gray-900">
-                <iframe 
-                  width="100%" 
-                  height="100%" 
-                  src="https://www.youtube.com/embed/vSwsXMcW5bg?modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&controls=1" 
-                  title="NI Heating Oil - Parody Advertisement" 
-                  frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  referrerPolicy="strict-origin-when-cross-origin" 
-                  allowFullScreen
-                  className="absolute inset-0"
-                />
-              </div>
-              <div className="text-center mt-6">
-                <p className="text-sm text-gray-500">
-                  A bit of Northern Ireland humor about heating oil price comparison
-                </p>
-                <p className="text-xs text-gray-400 mt-1">
-                  Disclaimer: This is a parody video for entertainment purposes - we're not actually on television!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* SEO Content Section */}
       <section className="py-16 bg-white">
@@ -219,16 +174,7 @@ export default function Landing() {
                     <strong>County Derry:</strong> BT45-BT56
                   </p>
                   <p className="text-xs text-gray-500 mt-3">
-                    BT postcode mappings verified through{" "}
-                    <a 
-                      href="https://en.wikipedia.org/wiki/BT_postcode_area" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800 underline"
-                    >
-                      Wikipedia research
-                    </a>
-                    {" "}— because we do our homework for ye! At's us nai with proper County mapping.
+                    All BT postcodes across Northern Ireland are covered.
                   </p>
                   <p className="text-xs text-gray-500 mt-2">
                     As featured in{" "}
@@ -249,16 +195,10 @@ export default function Landing() {
         </div>
       </section>
 
-      <TrustBadges />
-      <BlogCarousel />
-      <PriceTrends />
-      <SuppliersShowcase />
       <FeaturedSuppliers />
       <TrustSection />
       <Footer />
 
-      {/* Social Proof Notifications */}
-      <SocialProofNotifications />
     </div>
   );
 }

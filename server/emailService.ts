@@ -2,10 +2,10 @@ import sgMail from '@sendgrid/mail';
 import type { Lead } from '@shared/schema';
 
 if (!process.env.SENDGRID_API_KEY) {
-  console.warn("SENDGRID_API_KEY not set - email functionality will be disabled in development");
+  console.warn("SENDGRID_API_KEY not set - email functionality will be disabled");
+} else {
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 }
-
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 interface EmailTemplates {
   adminNotification: (lead: Lead) => {
@@ -22,8 +22,8 @@ interface EmailTemplates {
   };
 }
 
-const ADMIN_EMAIL = 'jamie@straightupsearch.com';
-const FROM_EMAIL = 'jamie@straightupsearch.com';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@niheatingoil.com';
+const FROM_EMAIL = 'noreply@niheatingoil.com';
 
 const emailTemplates: EmailTemplates = {
   adminNotification: (lead: Lead) => ({
@@ -140,7 +140,7 @@ export async function sendLeadNotifications(lead: Lead): Promise<void> {
 }
 
 export async function sendAdminAlert(lead: any) {
-  if (!sgMail) {
+  if (!process.env.SENDGRID_API_KEY) {
     console.log("SendGrid not configured, would send admin alert for lead:", lead.id);
     return;
   }
@@ -176,8 +176,8 @@ export async function sendAdminAlert(lead: any) {
 }
 
 export async function sendPasswordResetEmail(email: string, username: string, resetToken: string) {
-  if (!sgMail) {
-    console.log(`SendGrid not configured, would send password reset email to ${email} with token ${resetToken}`);
+  if (!process.env.SENDGRID_API_KEY) {
+    console.log(`SendGrid not configured, would send password reset email to ${email}`);
     return;
   }
 
@@ -242,8 +242,55 @@ export async function sendPasswordResetEmail(email: string, username: string, re
   }
 }
 
+export async function sendSubscriberConfirmation(email: string, postcode: string) {
+  if (!process.env.SENDGRID_API_KEY) {
+    console.log(`SendGrid not configured, would send subscriber confirmation to ${email}`);
+    return;
+  }
+
+  const msg = {
+    to: email,
+    from: FROM_EMAIL,
+    subject: 'Price alerts set up for ' + postcode + ' — NI Heating Oil',
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); color: white; padding: 20px; border-radius: 8px 8px 0 0;">
+          <h2 style="margin: 0; font-size: 22px;">You're on the list</h2>
+          <p style="margin: 6px 0 0 0; opacity: 0.9; font-size: 14px;">NI Heating Oil price alerts for ${postcode}</p>
+        </div>
+        <div style="background: #f8fafc; padding: 24px; border: 1px solid #e2e8f0;">
+          <p style="color: #374151; margin: 0 0 16px 0;">
+            We'll email you when heating oil prices drop in your area. Prices change weekly,
+            and we'll make sure you hear about it before you run low.
+          </p>
+          <div style="background: #dbeafe; border-radius: 6px; padding: 14px; margin-bottom: 16px;">
+            <p style="margin: 0; color: #1e40af; font-size: 14px;">
+              <strong>Your postcode:</strong> ${postcode}<br/>
+              <strong>Alert type:</strong> Price drops for your area
+            </p>
+          </div>
+          <p style="color: #6b7280; font-size: 13px; margin: 0;">
+            You can unsubscribe at any time. We don't sell your data or share it with suppliers.
+          </p>
+        </div>
+        <div style="background: #1e40af; color: white; padding: 14px; text-align: center; border-radius: 0 0 8px 8px;">
+          <p style="margin: 0; font-size: 13px;">NI Heating Oil — niheatingoil.com</p>
+        </div>
+      </div>
+    `
+  };
+
+  try {
+    await sgMail.send(msg);
+    console.log(`Subscriber confirmation sent to ${email}`);
+  } catch (error) {
+    console.error('Failed to send subscriber confirmation:', error);
+    throw error;
+  }
+}
+
 export async function sendPasswordChangeConfirmation(email: string, username: string) {
-  if (!sgMail) {
+  if (!process.env.SENDGRID_API_KEY) {
     console.log(`SendGrid not configured, would send password change confirmation to ${email}`);
     return;
   }

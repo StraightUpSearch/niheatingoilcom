@@ -21,9 +21,6 @@ export async function setupVite(app: Express, server: Server) {
   const createLogger = viteModule.createLogger;
   const viteConfigModule = await import("../vite.config");
   const viteConfig = viteConfigModule.default;
-  const nanoidModule = await import("nanoid");
-  const nanoid = nanoidModule.nanoid;
-
   const viteLogger = createLogger();
 
   const serverOptions = {
@@ -60,10 +57,6 @@ export async function setupVite(app: Express, server: Server) {
 
       // always reload the index.html file from disk incase it changes
       let template = await fs.promises.readFile(clientTemplate, "utf-8");
-      template = template.replace(
-        `src="/src/main.tsx"`,
-        `src="/src/main.tsx?v=${nanoid()}"`,
-      );
       const page = await vite.transformIndexHtml(url, template);
       res.status(200).set({ "Content-Type": "text/html" }).end(page);
     } catch (e) {

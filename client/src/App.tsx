@@ -5,7 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/hooks/use-auth";
 import Chatbot from "@/components/chatbot";
-import SocialProofPopup from "@/components/social-proof-popup";
 import NotFound from "@/pages/not-found";
 import Landing from "@/pages/landing";
 import AuthPage from "@/pages/auth-page";
@@ -21,6 +20,8 @@ import Contact from "@/pages/contact";
 import GivingBack from "@/pages/giving-back";
 import ThankYouPage from "@/pages/thank-you-page";
 import AboutUs from "@/pages/about-us";
+import ErrorBoundary from "@/components/error-boundary";
+import CookieConsent from "@/components/cookie-consent";
 import { useEffect } from "react";
 import { initGTM } from "@/lib/gtm";
 import { useGTMPageTracking } from "@/hooks/use-gtm";
@@ -68,16 +69,18 @@ function App() {
   }, []);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-          <Chatbot />
-          <SocialProofPopup />
-        </TooltipProvider>
-      </AuthProvider>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+            <Chatbot />
+            <CookieConsent />
+          </TooltipProvider>
+        </AuthProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 }
 

@@ -23,12 +23,9 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
   const [showLeadModal, setShowLeadModal] = useState(false);
   const { isAuthenticated } = useAuth();
 
-  // Calculate prices for different volumes based on base price with 20% safety margin
   const calculateVolumePrice = (basePrice: number, baseVolume: number, targetVolume: number) => {
     const pricePerLitre = basePrice / baseVolume;
-    const baseCalculatedPrice = pricePerLitre * targetVolume;
-    // Add 20% safety margin to all supplier prices for profitability buffer
-    return baseCalculatedPrice * 1.20;
+    return pricePerLitre * targetVolume;
   };
 
   const { data: pricesData, isLoading, error } = useQuery({

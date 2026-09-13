@@ -70,21 +70,15 @@ export default function Navigation() {
                 </Button>
               </div>
             ) : (
-              <div className="flex items-center space-x-2">
+              <Link href="/auth">
                 <Button
                   variant="outline"
                   size="sm"
                   className="hidden sm:flex"
                 >
-                  <Link href="/auth">Sign In</Link>
+                  Sign In
                 </Button>
-                <Button
-                  size="sm"
-                  className="bg-primary text-white hover:bg-blue-700 hidden sm:flex"
-                >
-                  <Link href="/auth">Get Started</Link>
-                </Button>
-              </div>
+              </Link>
             )}
 
             <Sheet open={isOpen} onOpenChange={setIsOpen}>

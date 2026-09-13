@@ -24,17 +24,20 @@ export const sessions = pgTable(
   (table) => [index("IDX_session_expire").on(table.expire)],
 );
 
-// User storage table for traditional authentication
+// User storage table for authentication (local + social)
 export const users = pgTable("users", {
   id: varchar("id").primaryKey().notNull(),
   username: varchar("username").unique().notNull(),
   email: varchar("email").unique(),
-  password: varchar("password").notNull(),
+  password: varchar("password"),
   fullName: varchar("full_name"),
   phone: varchar("phone", { length: 50 }),
   firstName: varchar("first_name"),
   lastName: varchar("last_name"),
   profileImageUrl: varchar("profile_image_url"),
+  googleId: varchar("google_id").unique(),
+  facebookId: varchar("facebook_id").unique(),
+  authProvider: varchar("auth_provider", { length: 20 }).default("local"),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
 });
@@ -250,6 +253,24 @@ export type SavedQuote = typeof savedQuotes.$inferSelect;
 export type InsertSavedQuote = typeof savedQuotes.$inferInsert;
 
 export const insertSavedQuoteSchema = createInsertSchema(savedQuotes).omit({
+  id: true,
+  createdAt: true,
+});
+
+// Lightweight email subscriber table (no account required)
+export const emailSubscribers = pgTable("email_subscribers", {
+  id: serial("id").primaryKey(),
+  email: varchar("email", { length: 255 }).notNull(),
+  postcode: varchar("postcode", { length: 20 }).notNull(),
+  volume: integer("volume"),
+  source: varchar("source", { length: 50 }).default("website"), // 'search-bar', 'sticky-banner', 'footer'
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export type EmailSubscriber = typeof emailSubscribers.$inferSelect;
+export type InsertEmailSubscriber = typeof emailSubscribers.$inferInsert;
+
+export const insertEmailSubscriberSchema = createInsertSchema(emailSubscribers).omit({
   id: true,
   createdAt: true,
 });

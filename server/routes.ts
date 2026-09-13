@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { setupAuth, isAuthenticated } from "./auth";
 import { z } from "zod";
-import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema, insertSupplierClaimSchema, insertSavedQuoteSchema } from "@shared/schema";
+import { insertPriceAlertSchema, insertSearchQuerySchema, insertLeadSchema, insertSupplierClaimSchema, insertSavedQuoteSchema, insertEmailSubscriberSchema } from "@shared/schema";
 import { initializeConsumerCouncilScraping } from "./consumerCouncilScraper";
 import { initializeWeeklyUrlDetection, consumerCouncilUrlDetector } from "./consumerCouncilUrlDetector";
 import { sendAdminAlert } from "./emailService";
@@ -50,7 +50,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   console.log("ℹ️  Routes registered");
 
-
+  // Health check endpoint
+  app.get('/api/health', async (_req, res) => {
+    try {
+      // Test DB connection
+      const suppliers = await storage.getAllSuppliers();
+      res.json({
+        status: 'ok',
+        db: 'connected',
+        suppliers: suppliers.length,
+        uptime: Math.floor(process.uptime()),
+        timestamp: new Date().toISOString(),
+      });
+    } catch (error) {
+      res.status(503).json({
+        status: 'error',
+        db: 'disconnected',
+        error: 'Database connection failed',
+      });
+    }
+  });
 
   // Auth routes
   app.get('/api/user', async (req: any, res) => {
@@ -570,6 +589,46 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
       res.status(500).json({ message: "Failed to submit supplier claim" });
+    }
+  });
+
+  // Lightweight email subscriber capture (no account required)
+  app.post('/api/subscribe', lenientRateLimit, async (req, res) => {
+    try {
+      const { email, postcode, volume, source } = req.body;
+
+      if (!email || !postcode) {
+        return res.status(400).json({ message: "Email and postcode are required" });
+      }
+
+      const btPattern = /^BT\d{1,2}\s?\d[A-Z]{2}$/i;
+      if (!btPattern.test(postcode.trim())) {
+        return res.status(400).json({ message: "Please enter a valid NI postcode (BT format)" });
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email.trim())) {
+        return res.status(400).json({ message: "Please enter a valid email address" });
+      }
+
+      const subscriber = await storage.createEmailSubscriber({
+        email: email.trim().toLowerCase(),
+        postcode: postcode.trim().toUpperCase(),
+        volume: volume ? parseInt(volume) : null,
+        source: source || 'website',
+      });
+
+      try {
+        const { sendSubscriberConfirmation } = await import('./emailService');
+        await sendSubscriberConfirmation(subscriber.email, subscriber.postcode);
+      } catch (emailError) {
+        console.error("Failed to send subscriber confirmation:", emailError);
+      }
+
+      res.status(201).json({ message: "Subscribed successfully", id: subscriber.id });
+    } catch (error) {
+      console.error("Error creating subscriber:", error);
+      res.status(500).json({ message: "Failed to subscribe" });
     }
   });
 

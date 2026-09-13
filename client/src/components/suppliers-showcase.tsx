@@ -65,20 +65,4 @@ export default function SuppliersShowcase() {
       </div>
     </section>
   );
-
-  return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Independent Price Comparison
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            We don't take commissions from suppliers. Our comparison service is completely free and independent, 
-            ensuring you get unbiased price information to make the best decision for your heating oil needs.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
 }

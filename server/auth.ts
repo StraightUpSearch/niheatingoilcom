@@ -1,5 +1,7 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
+import { Strategy as GoogleStrategy } from "passport-google-oauth20";
+import { Strategy as FacebookStrategy } from "passport-facebook";
 import { Express } from "express";
 import session from "express-session";
 import { scrypt, randomBytes, timingSafeEqual } from "crypto";
@@ -79,7 +81,7 @@ export async function setupAuth(app: Express) {
     cookie: {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      sameSite: 'lax',
       maxAge: sessionTtl,
     },
     name: 'niho_session', // Custom session name for security
@@ -94,7 +96,7 @@ export async function setupAuth(app: Express) {
     new LocalStrategy(async (username, password, done) => {
       try {
         const user = await storage.getUserByUsername(username);
-        if (!user || !(await comparePasswords(password, user.password))) {
+        if (!user || !user.password || !(await comparePasswords(password, user.password))) {
           return done(null, false, { message: 'Invalid username or password' });
         }
         return done(null, user);
@@ -103,6 +105,99 @@ export async function setupAuth(app: Express) {
       }
     }),
   );
+
+  // Google OAuth Strategy
+  if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET) {
+    const callbackBase = process.env.NODE_ENV === 'production'
+      ? 'https://niheatingoil.com'
+      : `http://localhost:${process.env.PORT || 5000}`;
+
+    passport.use(new GoogleStrategy({
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: `${callbackBase}/api/auth/google/callback`,
+    }, async (_accessToken, _refreshToken, profile, done) => {
+      try {
+        const email = profile.emails?.[0]?.value;
+        const googleId = profile.id;
+
+        // Check if user exists by Google ID
+        let user = await (storage as any).getUserByGoogleId(googleId);
+        if (user) return done(null, user);
+
+        // Check if user exists by email — link accounts
+        if (email) {
+          user = await (storage as any).getUserByEmail(email);
+          if (user) {
+            user = await (storage as any).linkSocialAccount(user.id, 'google', googleId, profile.photos?.[0]?.value);
+            return done(null, user);
+          }
+        }
+
+        // Create new user
+        user = await storage.createUser({
+          id: `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+          username: email || `google_${googleId}`,
+          email: email || null,
+          password: '',
+          firstName: profile.name?.givenName || null,
+          lastName: profile.name?.familyName || null,
+        });
+        user = await (storage as any).linkSocialAccount(user.id, 'google', googleId, profile.photos?.[0]?.value);
+        return done(null, user);
+      } catch (error) {
+        return done(error as Error);
+      }
+    }));
+    console.log("Google OAuth strategy configured");
+  }
+
+  // Facebook OAuth Strategy
+  if (process.env.FACEBOOK_APP_ID && process.env.FACEBOOK_APP_SECRET) {
+    const callbackBase = process.env.NODE_ENV === 'production'
+      ? 'https://niheatingoil.com'
+      : `http://localhost:${process.env.PORT || 5000}`;
+
+    passport.use(new FacebookStrategy({
+      clientID: process.env.FACEBOOK_APP_ID,
+      clientSecret: process.env.FACEBOOK_APP_SECRET,
+      callbackURL: `${callbackBase}/api/auth/facebook/callback`,
+      profileFields: ['id', 'emails', 'name', 'picture.type(large)'],
+    }, async (_accessToken: string, _refreshToken: string, profile: any, done: any) => {
+      try {
+        const email = profile.emails?.[0]?.value;
+        const facebookId = profile.id;
+
+        // Check if user exists by Facebook ID
+        let user = await (storage as any).getUserByFacebookId(facebookId);
+        if (user) return done(null, user);
+
+        // Check if user exists by email — link accounts
+        if (email) {
+          user = await (storage as any).getUserByEmail(email);
+          if (user) {
+            user = await (storage as any).linkSocialAccount(user.id, 'facebook', facebookId, profile.photos?.[0]?.value);
+            return done(null, user);
+          }
+        }
+
+        // Create new user
+        user = await storage.createUser({
+          id: `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+          username: email || `facebook_${facebookId}`,
+          email: email || null,
+          password: '',
+          firstName: profile.name?.givenName || null,
+          lastName: profile.name?.familyName || null,
+        });
+        user = await (storage as any).linkSocialAccount(user.id, 'facebook', facebookId, profile.photos?.[0]?.value);
+        return done(null, user);
+      } catch (error) {
+        return done(error as Error);
+      }
+    }));
+    console.log("Facebook OAuth strategy configured");
+  }
 
   passport.serializeUser((user, done) => done(null, user.id));
   passport.deserializeUser(async (id: string, done) => {
@@ -234,7 +329,33 @@ export async function setupAuth(app: Express) {
       return res.status(401).json({ message: "Unauthorized" });
     }
     const user = req.user as SelectUser;
-    res.json({ id: user.id, username: user.username, email: user.email });
+    res.json({ id: user.id, username: user.username, email: user.email, firstName: user.firstName, profileImageUrl: user.profileImageUrl });
+  });
+
+  // Google OAuth routes
+  if (process.env.GOOGLE_CLIENT_ID) {
+    app.get("/api/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
+    app.get("/api/auth/google/callback",
+      passport.authenticate("google", { failureRedirect: "/auth?error=google_failed" }),
+      (_req, res) => res.redirect("/")
+    );
+  }
+
+  // Facebook OAuth routes
+  if (process.env.FACEBOOK_APP_ID) {
+    app.get("/api/auth/facebook", passport.authenticate("facebook", { scope: ["email"] }));
+    app.get("/api/auth/facebook/callback",
+      passport.authenticate("facebook", { failureRedirect: "/auth?error=facebook_failed" }),
+      (_req, res) => res.redirect("/")
+    );
+  }
+
+  // Endpoint to check which social providers are configured
+  app.get("/api/auth/providers", (_req, res) => {
+    res.json({
+      google: !!process.env.GOOGLE_CLIENT_ID,
+      facebook: !!process.env.FACEBOOK_APP_ID,
+    });
   });
 
   // Password reset request
