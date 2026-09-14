@@ -7,6 +7,26 @@ import { usePageTitle } from "@/hooks/usePageTitle";
 
 const blogArticles = [
   {
+    id: "cheapest-time-buy-heating-oil-northern-ireland",
+    title: "When Is the Cheapest Time to Buy Heating Oil in Northern Ireland?",
+    description: "Heating oil prices in NI follow seasonal patterns. Here's how to time your purchase to pay the lowest price possible.",
+    category: "Buying Guide",
+    date: "2026-09-14",
+    readTime: "7 min read",
+    slug: "cheapest-time-buy-heating-oil-northern-ireland",
+    image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800&h=600&fit=crop&crop=center"
+  },
+  {
+    id: "find-best-heating-oil-prices-northern-ireland",
+    title: "How to Find the Best Heating Oil Prices in Northern Ireland",
+    description: "A practical guide to comparing heating oil prices across NI suppliers and getting the cheapest deal every time you order.",
+    category: "Comparison Guide",
+    date: "2026-09-14",
+    readTime: "6 min read",
+    slug: "find-best-heating-oil-prices-northern-ireland",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center"
+  },
+  {
     id: "heating-oil-tank-sizes",
     title: "Heating Oil Tank Sizes in Northern Ireland: Comparing 300L, 500L, and 900L Options",
     description: "Choosing between a 300L, 500L, or 900L tank comes down to what your household actually needs, how much space you've got, and how often you want to deal with refills.",

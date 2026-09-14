@@ -15,6 +15,108 @@ const articles: Record<string, {
   image: string;
   content: string;
 }> = {
+  "cheapest-time-buy-heating-oil-northern-ireland": {
+    title: "When Is the Cheapest Time to Buy Heating Oil in Northern Ireland?",
+    category: "Buying Guide",
+    author: "NI Heating Oil Team",
+    publishDate: "2026-09-14",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1200&h=600&fit=crop&crop=center",
+    content: `
+      <p>If you heat your home with oil in Northern Ireland, when you buy matters almost as much as where you buy. The difference between filling your tank at the right time and the wrong time can easily be £80–£150 on a standard 500-litre order.</p>
+
+      <p>Here's a month-by-month breakdown of what to expect and when to act.</p>
+
+      <h2>May to August: The Cheapest Window</h2>
+      <p>Heating oil demand drops sharply once the weather warms up. Suppliers still have fuel to shift, so competition for orders is stronger and per-litre prices tend to sit at their lowest point of the year.</p>
+
+      <p>If you have a 500L or 900L tank, filling it between May and August is the single most effective way to cut your annual heating bill. You're buying when most people aren't thinking about oil at all — and that's exactly why it's cheaper.</p>
+
+      <p>Historically, June and July have been the cheapest months in Northern Ireland, though the exact low point varies year to year depending on global crude oil prices and currency movements.</p>
+
+      <h2>September to October: Prices Start to Climb</h2>
+      <p>As autumn approaches, homeowners start checking their tank levels and placing orders. Demand rises, and so do prices. September is still reasonable in most years — but by October, the seasonal markup is noticeable.</p>
+
+      <p>If you missed the summer window, September is your last chance to buy at relatively low prices before winter demand kicks in fully.</p>
+
+      <h2>November to February: Peak Pricing</h2>
+      <p>This is the most expensive period. Everyone needs oil, cold snaps create sudden demand spikes, and suppliers have less room to negotiate. Prices in January are typically 10–20% higher than the June low.</p>
+
+      <p>If your tank runs low in mid-winter, you have no choice but to pay the going rate. That's why the best strategy isn't just about timing — it's about having a tank large enough to avoid being forced to buy at peak prices.</p>
+
+      <h2>March to April: Prices Ease Off</h2>
+      <p>As temperatures rise and heating demand fades, prices start dropping again. March can still be expensive if winter was harsh, but by April you're usually back into reasonable territory.</p>
+
+      <h2>What Actually Drives NI Heating Oil Prices?</h2>
+      <p>Local supply and demand set the seasonal pattern, but the underlying price is driven by global factors:</p>
+      <ul>
+        <li><strong>Crude oil prices</strong> — kerosene tracks Brent crude. When crude rises, heating oil follows within days.</li>
+        <li><strong>GBP/USD exchange rate</strong> — oil is traded in dollars. A weaker pound means higher prices in the UK, even if crude hasn't moved.</li>
+        <li><strong>OPEC production decisions</strong> — output cuts tighten supply globally and push prices up.</li>
+        <li><strong>Weather</strong> — an unexpectedly cold spell in Europe increases demand for heating fuels across the board.</li>
+      </ul>
+
+      <h2>Practical Steps to Pay Less</h2>
+      <ol>
+        <li><strong>Fill your tank in summer</strong> — the single biggest saving available to you.</li>
+        <li><strong>Compare prices every time</strong> — supplier pricing varies significantly. Use our <a href="/" style="color:#2563eb;">price comparison tool</a> before every order.</li>
+        <li><strong>Don't let your tank run empty</strong> — keep at least 25% capacity so you can wait for a dip rather than buying in a panic.</li>
+        <li><strong>Set up price alerts</strong> — get notified when prices drop in your postcode area.</li>
+        <li><strong>Consider a larger tank</strong> — a 900L tank lets you buy once a year at the best price, instead of three or four orders spread across the calendar.</li>
+      </ol>
+
+      <h2>The Bottom Line</h2>
+      <p>Buy in summer if you can, avoid January if you can, and always compare suppliers. Those three habits alone will save you real money every year — no complicated strategy needed.</p>
+    `
+  },
+
+  "find-best-heating-oil-prices-northern-ireland": {
+    title: "How to Find the Best Heating Oil Prices in Northern Ireland",
+    category: "Comparison Guide",
+    author: "NI Heating Oil Team",
+    publishDate: "2026-09-14",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop&crop=center",
+    content: `
+      <p>Northern Ireland has dozens of heating oil suppliers, and on any given day the price difference between the cheapest and most expensive can be £40–£80 for a 500-litre order. Finding the best price isn't complicated, but most households don't do it — and that costs real money over time.</p>
+
+      <h2>Why Prices Vary Between Suppliers</h2>
+      <p>Heating oil suppliers set their own prices based on several factors: their wholesale purchase price, delivery costs (which depend on distance from their depot to your door), how full their delivery schedule is, and how aggressively they're competing for orders at that moment.</p>
+
+      <p>A supplier based in Ballymena may be significantly cheaper for a delivery to Antrim than a supplier based in Newry — simply because of the route. Equally, a supplier trying to fill their tanker schedule on a quiet Tuesday might drop their per-litre price to attract orders.</p>
+
+      <p>The upshot: prices change often, and the cheapest supplier last month may not be the cheapest today.</p>
+
+      <h2>How to Compare Prices Properly</h2>
+      <p>The most reliable way to compare is to check multiple suppliers for the same volume and delivery area at the same time. Here's the practical approach:</p>
+
+      <ol>
+        <li><strong>Use a comparison tool</strong> — enter your BT postcode and the volume you need on our <a href="/" style="color:#2563eb;">price comparison page</a>. You'll see live prices from suppliers that deliver to your area, ranked cheapest first.</li>
+        <li><strong>Compare total cost, not just per-litre price</strong> — some suppliers quote excluding VAT, others including. Some add a delivery charge. Always look at the total you'll actually pay.</li>
+        <li><strong>Check before every order</strong> — supplier rankings shift week to week. The five minutes it takes to compare before each purchase will save you more over a year than almost any other household economy.</li>
+      </ol>
+
+      <h2>What About Phone Quotes?</h2>
+      <p>Calling suppliers directly still works, but it's slow and you'll rarely call more than two or three before settling on one. Online comparison lets you see ten or more suppliers instantly, side by side, for your exact postcode and volume. Use the phone to confirm or negotiate after you've identified the best online price.</p>
+
+      <h2>Bulk Orders and Group Buying</h2>
+      <p>Per-litre prices drop with larger orders. The jump from 300L to 500L typically saves 2–4p per litre. If you have a 900L tank, filling it in one go gives you the best per-litre rate available.</p>
+
+      <p>Community buying groups — where neighbours pool orders to negotiate bulk rates — can push prices even lower. A group ordering 3,000–5,000 litres together has genuine bargaining power. Ask around locally or check community Facebook groups; several exist across NI.</p>
+
+      <h2>Timing Matters Too</h2>
+      <p>The cheapest prices tend to appear between May and August when demand is low. January and February are typically the most expensive months. If your tank allows it, buying in summer for winter use is the most straightforward way to save.</p>
+
+      <p>Read our <a href="/blog/cheapest-time-buy-heating-oil-northern-ireland" style="color:#2563eb;">guide to the cheapest time to buy</a> for a detailed month-by-month breakdown.</p>
+
+      <h2>Price Alerts Save Effort</h2>
+      <p>If you don't want to check prices manually every week, set up a price alert. When prices in your area drop below a level you're comfortable with, you'll get a notification and can order at the right moment without any ongoing effort.</p>
+
+      <h2>Summary</h2>
+      <p>Compare every time you order. Buy larger volumes when you can. Time your purchases for summer if possible. And never assume your usual supplier is still the cheapest — check the numbers. These habits don't take much time, and the savings add up quickly.</p>
+    `
+  },
+
   "heating-oil-tank-sizes": {
     title: "Heating Oil Tank Sizes in Northern Ireland: Comparing 300L, 500L, and 900L Options",
     category: "Equipment Guide",

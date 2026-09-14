@@ -4,40 +4,65 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import SEOHead from "@/components/seo-head";
 import { usePageTitle } from "@/hooks/usePageTitle";
-import { Search, ShieldCheck, Clock, ArrowRight } from "lucide-react";
+import { Search, ShieldCheck, Clock, ArrowRight, MapPin, X } from "lucide-react";
 import { Link } from "wouter";
 
+const townLinks = [
+  { name: "Belfast", postcode: "BT1" },
+  { name: "Bangor", postcode: "BT20" },
+  { name: "Londonderry", postcode: "BT48" },
+  { name: "Newry", postcode: "BT34" },
+  { name: "Lisburn", postcode: "BT28" },
+  { name: "Newtownabbey", postcode: "BT36" },
+  { name: "Armagh", postcode: "BT61" },
+  { name: "Ballymena", postcode: "BT43" },
+  { name: "Coleraine", postcode: "BT52" },
+  { name: "Omagh", postcode: "BT78" },
+];
+
 export default function Landing() {
-  usePageTitle("NI Heating Oil - Compare Heating Oil Prices in Northern Ireland");
+  usePageTitle("Compare Heating Oil Prices in Northern Ireland | NIHeatingoil.com");
   const [, setLocation] = useLocation();
 
   const [postcode, setPostcode] = useState("");
   const [volume, setVolume] = useState(500);
+  const [showGovBanner, setShowGovBanner] = useState(() => {
+    try { return sessionStorage.getItem("hideGovBanner") !== "1"; } catch { return true; }
+  });
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "NI Heating Oil",
-    "description": "Compare heating oil prices across Northern Ireland suppliers.",
-    "url": "https://niheatingoil.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://niheatingoil.com/results?postcode={search_term_string}",
-      "query-input": "required name=search_term_string"
-    },
-    "publisher": {
-      "@type": "Organization",
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
       "name": "NI Heating Oil",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "14a Victoria Street",
-        "addressLocality": "Ballymoney",
-        "addressRegion": "Northern Ireland",
-        "postalCode": "BT53 6DW",
-        "addressCountry": "GB"
+      "description": "Compare home heating oil prices across Northern Ireland. Find the cheapest supplier in your area.",
+      "url": "https://niheatingoil.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://niheatingoil.com/results?postcode={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NI Heating Oil",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "14a Victoria Street",
+          "addressLocality": "Ballymoney",
+          "addressRegion": "Northern Ireland",
+          "postalCode": "BT53 6DW",
+          "addressCountry": "GB"
+        }
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://niheatingoil.com" }
+      ]
     }
-  };
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,22 +74,48 @@ export default function Landing() {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="NI Heating Oil - Compare Heating Oil Prices in Northern Ireland"
-        description="Compare heating oil prices across Northern Ireland. Get instant quotes from trusted local suppliers. Free to use."
-        keywords="heating oil prices, Northern Ireland, oil suppliers, Belfast heating oil, fuel comparison, oil delivery"
+        title="Compare Heating Oil Prices in Northern Ireland | NIHeatingoil.com"
+        description="Compare home heating oil prices across Northern Ireland. Find the cheapest supplier in your area. Enter your BT postcode to get live quotes from local distributors."
+        keywords="heating oil prices, Northern Ireland, cheapest heating oil NI, oil suppliers, Belfast heating oil, fuel comparison, oil delivery, home heating oil"
         canonicalUrl="https://niheatingoil.com"
         structuredData={structuredData}
       />
       <Navigation />
 
+      {/* Government support banner */}
+      {showGovBanner && (
+        <div className="bg-amber-50 border-b border-amber-200">
+          <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+            <p className="text-sm text-amber-900">
+              <span className="font-medium">You may be eligible for heating oil support.</span>{" "}
+              <a
+                href="https://www.nidirect.gov.uk/articles/affordable-warmth-scheme"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-amber-700"
+              >
+                Check if you qualify &rarr;
+              </a>
+            </p>
+            <button
+              onClick={() => { setShowGovBanner(false); try { sessionStorage.setItem("hideGovBanner", "1"); } catch {} }}
+              className="flex-shrink-0 p-1 text-amber-600 hover:text-amber-800 transition-colors"
+              aria-label="Dismiss"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Hero */}
       <section className="pt-28 pb-20 sm:pt-36 sm:pb-28 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
-            Compare heating oil prices across Northern Ireland
+            Compare Heating Oil Prices Across Northern Ireland
           </h1>
           <p className="mt-4 text-lg text-gray-500 max-w-xl mx-auto">
-            Enter your postcode to see live prices from local suppliers, ranked cheapest first. Free to use, no sign-up required.
+            Enter your BT postcode to get live quotes from local distributors, ranked cheapest first. Free to use, no sign-up required.
           </p>
 
           {/* Search form */}
@@ -97,6 +148,22 @@ export default function Landing() {
               </button>
             </div>
           </form>
+          {/* Town quick-links */}
+          <div className="mt-8">
+            <p className="text-xs text-gray-400 mb-2">Or pick your area</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {townLinks.map((town) => (
+                <Link
+                  key={town.postcode}
+                  href={`/results?postcode=${town.postcode}&volume=500`}
+                  className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                >
+                  <MapPin className="w-3 h-3" />
+                  {town.name}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

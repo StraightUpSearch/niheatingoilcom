@@ -6,7 +6,7 @@ interface SEOHeadProps {
   keywords?: string;
   canonicalUrl?: string;
   ogImage?: string;
-  structuredData?: object;
+  structuredData?: object | object[];
 }
 
 export default function SEOHead({ 
@@ -77,16 +77,16 @@ function updateLinkTag(rel: string, href: string) {
   link.setAttribute('href', href);
 }
 
-function updateStructuredData(data: object) {
+function updateStructuredData(data: object | object[]) {
   // Remove existing structured data
-  const existing = document.querySelector('script[type="application/ld+json"]');
-  if (existing) {
-    existing.remove();
-  }
+  document.querySelectorAll('script[type="application/ld+json"]').forEach(el => el.remove());
 
-  // Add new structured data
-  const script = document.createElement('script');
-  script.type = 'application/ld+json';
-  script.textContent = JSON.stringify(data);
-  document.head.appendChild(script);
+  // Add new structured data — support arrays of schemas
+  const items = Array.isArray(data) ? data : [data];
+  for (const item of items) {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(item);
+    document.head.appendChild(script);
+  }
 }
