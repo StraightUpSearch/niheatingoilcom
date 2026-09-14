@@ -1,8 +1,7 @@
 import { Link } from "wouter";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import SEOHead from "@/components/seo-head";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { usePageTitle } from "@/hooks/usePageTitle";
 
@@ -61,97 +60,101 @@ const blogArticles = [
 
 export default function Blog() {
   usePageTitle("Heating Oil Blog & Tips - NI Heating Oil");
-  
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "NI Heating Oil Blog",
+    "description": "Expert advice and money-saving tips for Northern Ireland heating oil consumers.",
+    "url": "https://niheatingoil.com/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "NI Heating Oil"
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gray-50">
+      <SEOHead
+        title="Heating Oil Blog & Tips - NI Heating Oil"
+        description="Expert advice, industry updates, and money-saving tips for Northern Ireland heating oil consumers."
+        keywords="heating oil tips, Northern Ireland, oil tank maintenance, save money heating oil, heating oil guide"
+        canonicalUrl="https://niheatingoil.com/blog"
+        structuredData={structuredData}
+      />
       <Navigation />
-      
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+
+      <main className="max-w-4xl mx-auto px-4 pt-24 pb-16">
+        <div className="mb-10">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
             Heating Oil Blog
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Expert advice, industry updates, and money-saving tips for Northern Ireland homeowners
+          <p className="mt-2 text-gray-500 max-w-xl">
+            Expert advice and money-saving tips for Northern Ireland homeowners.
           </p>
         </div>
 
-        {/* Blog Articles Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {blogArticles.map((article) => (
-            <Card key={article.id} className="hover:shadow-lg transition-shadow duration-300 bg-white border-gray-200 overflow-hidden">
-              {/* Featured Image */}
-              <div className="aspect-video overflow-hidden">
-                <img 
-                  src={article.image} 
-                  alt={article.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              
-              <CardHeader>
-                <div className="flex items-center justify-between mb-2">
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800">
-                    {article.category}
-                  </Badge>
-                  <div className="flex items-center text-sm text-gray-500">
-                    <Clock className="w-4 h-4 mr-1" />
-                    {article.readTime}
-                  </div>
+        <div className="space-y-6">
+          {blogArticles.map((article, index) => (
+            <Link key={article.id} href={`/blog/${article.slug}`} className="block group">
+              <article className={`bg-white rounded-lg border border-gray-200 overflow-hidden transition-shadow hover:shadow-sm ${index === 0 ? "sm:flex" : ""}`}>
+                <div className={`aspect-video overflow-hidden ${index === 0 ? "sm:w-2/5 sm:aspect-auto sm:min-h-full" : ""}`}>
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
                 </div>
-                <CardTitle className="text-xl hover:text-blue-600 transition-colors">
-                  <Link href={`/blog/${article.slug}`} className="block">
+                <div className={`p-5 ${index === 0 ? "sm:w-3/5 sm:p-6" : ""}`}>
+                  <div className="flex items-center gap-3 text-xs text-gray-500 mb-2">
+                    <span className="font-medium text-gray-700 bg-gray-100 px-2 py-0.5 rounded">
+                      {article.category}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      {article.readTime}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      {new Date(article.date).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric'
+                      })}
+                    </span>
+                  </div>
+                  <h2 className={`font-semibold text-gray-900 group-hover:text-orange-600 transition-colors ${index === 0 ? "text-xl sm:text-2xl" : "text-lg"}`}>
                     {article.title}
-                  </Link>
-                </CardTitle>
-                <CardDescription className="text-gray-600">
-                  {article.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center text-sm text-gray-500">
-                    <Calendar className="w-4 h-4 mr-1" />
-                    {new Date(article.date).toLocaleDateString('en-GB', {
-                      day: 'numeric',
-                      month: 'long',
-                      year: 'numeric'
-                    })}
-                  </div>
-                  <Link 
-                    href={`/blog/${article.slug}`}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
-                  >
-                    Read More
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Link>
+                  </h2>
+                  <p className="mt-1.5 text-sm text-gray-500 line-clamp-2">
+                    {article.description}
+                  </p>
+                  <span className="mt-3 inline-flex items-center text-sm font-medium text-orange-600 group-hover:text-orange-700 transition-colors">
+                    Read article
+                    <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                  </span>
                 </div>
-              </CardContent>
-            </Card>
+              </article>
+            </Link>
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <Card className="max-w-2xl mx-auto bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-0">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold mb-4">
-                Get Free Price Alerts & Save Money
-              </h2>
-              <p className="mb-6 opacity-90">
-                Create your free account to receive personalized price alerts, save your favorite suppliers, and never miss the best heating oil deals in Northern Ireland
-              </p>
-              <Link href="/auth" className="inline-block">
-                <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                  Create Free Account
-                </button>
-              </Link>
-            </CardContent>
-          </Card>
+        <div className="mt-12 bg-white border border-gray-200 rounded-lg p-6 text-center">
+          <h2 className="text-lg font-semibold text-gray-900">
+            Find the cheapest heating oil near you
+          </h2>
+          <p className="mt-1 text-sm text-gray-500">
+            Compare prices from suppliers across Northern Ireland in seconds.
+          </p>
+          <Link href="/">
+            <button className="mt-4 px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-lg transition-colors text-sm">
+              Compare prices
+            </button>
+          </Link>
         </div>
-      </div>
-      
+      </main>
+
       <Footer />
     </div>
   );

@@ -1,34 +1,28 @@
 import { useState } from "react";
+import { useLocation } from "wouter";
 import Navigation from "@/components/navigation";
-import HeroSection from "@/components/hero-section";
-import TeaserPricingTable from "@/components/teaser-pricing-table";
-import FeaturedSuppliers from "@/components/featured-suppliers";
-import TrustSection from "@/components/trust-section";
 import Footer from "@/components/footer";
-import LeadCaptureModal from "@/components/lead-capture-modal";
-import PriceAlertBar from "@/components/price-alert-bar";
-import StickySignup from "@/components/sticky-signup";
-import { usePageTitle } from "@/hooks/usePageTitle";
-import { Card, CardContent } from "@/components/ui/card";
-import { Calculator, TrendingDown, Bell, MapPin } from "lucide-react";
 import SEOHead from "@/components/seo-head";
+import { usePageTitle } from "@/hooks/usePageTitle";
+import { Search, ShieldCheck, Clock, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Landing() {
   usePageTitle("NI Heating Oil - Compare Heating Oil Prices in Northern Ireland");
+  const [, setLocation] = useLocation();
 
-  const [searchParams, setSearchParams] = useState<{ postcode?: string; volume?: number } | null>(null);
-  const [quoteSupplier, setQuoteSupplier] = useState<{ name: string; price: string; volume: number; location: string } | null>(null);
+  const [postcode, setPostcode] = useState("");
+  const [volume, setVolume] = useState(500);
 
-  // Structured data for SEO
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "NI Heating Oil",
-    "description": "Compare heating oil prices across Northern Ireland suppliers. Real-time pricing, local delivery, trusted suppliers.",
+    "description": "Compare heating oil prices across Northern Ireland suppliers.",
     "url": "https://niheatingoil.com",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://niheatingoil.com/?postcode={search_term_string}",
+      "target": "https://niheatingoil.com/results?postcode={search_term_string}",
       "query-input": "required name=search_term_string"
     },
     "publisher": {
@@ -41,164 +35,165 @@ export default function Landing() {
         "addressRegion": "Northern Ireland",
         "postalCode": "BT53 6DW",
         "addressCountry": "GB"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "telephone": "+44-28-96005259",
-        "areaServed": "Northern Ireland",
-        "availableLanguage": "English"
-      }
-    },
-    "about": {
-      "@type": "Service",
-      "name": "Heating Oil Price Comparison",
-      "serviceType": "Price Comparison Service",
-      "areaServed": {
-        "@type": "Country",
-        "name": "Northern Ireland"
       }
     }
   };
 
-  const handleSearch = (params: { postcode?: string; volume?: number }) => {
-    setSearchParams(params);
-    // Scroll to results section
-    setTimeout(() => {
-      const resultsSection = document.getElementById('search-results');
-      if (resultsSection) {
-        resultsSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const pc = postcode.trim().toUpperCase();
+    if (!pc) return;
+    setLocation(`/results?postcode=${encodeURIComponent(pc)}&volume=${volume}`);
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <LeadCaptureModal
-        isOpen={!!quoteSupplier}
-        onClose={() => setQuoteSupplier(null)}
-        supplier={quoteSupplier || undefined}
-      />
-      <StickySignup />
       <SEOHead
         title="NI Heating Oil - Compare Heating Oil Prices in Northern Ireland"
-        description="Compare heating oil prices across Northern Ireland. Get instant quotes from trusted local suppliers in Belfast, Derry, Antrim, Down, Armagh, Tyrone & Fermanagh. Save money on your heating oil delivery today."
-        keywords="heating oil prices, Northern Ireland, oil suppliers, Belfast heating oil, Derry heating oil, fuel comparison, home heating, oil delivery, NI heating costs"
+        description="Compare heating oil prices across Northern Ireland. Get instant quotes from trusted local suppliers. Free to use."
+        keywords="heating oil prices, Northern Ireland, oil suppliers, Belfast heating oil, fuel comparison, oil delivery"
         canonicalUrl="https://niheatingoil.com"
         structuredData={structuredData}
       />
       <Navigation />
-      <HeroSection onSearch={handleSearch} />
 
-      {/* Search Results Section - Only show after search */}
-      {searchParams && (
-        <section id="search-results" className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Heating Oil Prices for {searchParams.postcode}
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Showing prices for {searchParams.volume}L delivery. All prices include VAT and standard delivery.
-              </p>
+      {/* Hero */}
+      <section className="pt-28 pb-20 sm:pt-36 sm:pb-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
+            Compare heating oil prices across Northern Ireland
+          </h1>
+          <p className="mt-4 text-lg text-gray-500 max-w-xl mx-auto">
+            Enter your postcode to see live prices from local suppliers, ranked cheapest first. Free to use, no sign-up required.
+          </p>
+
+          {/* Search form */}
+          <form onSubmit={handleSubmit} className="mt-10 max-w-lg mx-auto">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="text"
+                value={postcode}
+                onChange={(e) => setPostcode(e.target.value)}
+                placeholder="Your BT postcode"
+                className="flex-1 px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none"
+                required
+              />
+              <select
+                value={volume}
+                onChange={(e) => setVolume(parseInt(e.target.value))}
+                className="px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none bg-white"
+              >
+                <option value={300}>300L</option>
+                <option value={500}>500L</option>
+                <option value={900}>900L</option>
+                <option value={1000}>1000L</option>
+              </select>
+              <button
+                type="submit"
+                className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-colors inline-flex items-center justify-center gap-2"
+              >
+                Compare prices
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </div>
-            <TeaserPricingTable
-              searchParams={searchParams}
-              onGetQuote={setQuoteSupplier}
-            />
-            <div className="mt-8 max-w-xl mx-auto">
-              <PriceAlertBar postcode={searchParams.postcode} volume={searchParams.volume} />
-            </div>
-          </div>
-        </section>
-      )}
+          </form>
+        </div>
+      </section>
 
-      
-
-      {/* General Prices Section - Only show when no search has been performed */}
-      {!searchParams && (
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Oil Prices Across Northern Ireland</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">Pricing data from verified suppliers across all six counties. Prices include VAT and delivery.</p>
-            </div>
-            <TeaserPricingTable onGetQuote={setQuoteSupplier} />
-          </div>
-        </section>
-      )}
-
-      {/* SEO Content Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Trust signals */}
+      <section className="py-12 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Northern Ireland's Leading Heating Oil Price Comparison Platform
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Save money on heating oil with our comprehensive price comparison service covering all of Northern Ireland. 
-                We monitor prices from major suppliers including BoilerJuice, Cheaper Oil NI, Value Oils, and many more 
-                across Belfast, Derry, Armagh, Down, Antrim, Tyrone, and Fermanagh.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3">
-                  <Calculator className="h-6 w-6 text-primary" />
-                  <span className="text-gray-700">300L, 500L, 900L volumes</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <TrendingDown className="h-6 w-6 text-primary" />
-                  <span className="text-gray-700">Real-time price tracking</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Bell className="h-6 w-6 text-primary" />
-                  <span className="text-gray-700">Price drop alerts</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-6 w-6 text-primary" />
-                  <span className="text-gray-700">All BT postcodes covered</span>
-                </div>
-              </div>
+              <Search className="w-6 h-6 text-gray-400 mx-auto mb-2" />
+              <p className="text-sm font-medium text-gray-900">10+ local suppliers</p>
+              <p className="text-xs text-gray-500 mt-0.5">Covering every BT postcode</p>
             </div>
-            <div className="grid grid-cols-1 gap-6">
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Coverage Areas</h3>
-                  <p className="text-gray-600">
-                    <strong>Belfast Area:</strong> BT1-BT18<br/>
-                    <strong>County Antrim:</strong> BT19-BT44<br/>
-                    <strong>County Down:</strong> BT19-BT35<br/>
-                    <strong>County Armagh:</strong> BT60-BT67<br/>
-                    <strong>County Tyrone:</strong> BT70-BT82<br/>
-                    <strong>County Fermanagh:</strong> BT74, BT92-BT94<br/>
-                    <strong>County Derry:</strong> BT45-BT56
-                  </p>
-                  <p className="text-xs text-gray-500 mt-3">
-                    All BT postcodes across Northern Ireland are covered.
-                  </p>
-                  <p className="text-xs text-gray-500 mt-2">
-                    As featured in{" "}
-                    <a 
-                      href="https://www.bbc.co.uk/news/articles/cdxn5zn26xeo" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800 underline font-medium"
-                    >
-                      BBC News NI coverage
-                    </a>
-                    {" "}about heating oil price trends in Northern Ireland.
-                  </p>
-                </CardContent>
-              </Card>
+            <div>
+              <Clock className="w-6 h-6 text-gray-400 mx-auto mb-2" />
+              <p className="text-sm font-medium text-gray-900">Prices updated regularly</p>
+              <p className="text-xs text-gray-500 mt-0.5">Sourced from verified suppliers</p>
+            </div>
+            <div>
+              <ShieldCheck className="w-6 h-6 text-gray-400 mx-auto mb-2" />
+              <p className="text-sm font-medium text-gray-900">Free to use</p>
+              <p className="text-xs text-gray-500 mt-0.5">No sign-up, no hidden fees</p>
             </div>
           </div>
         </div>
       </section>
 
-      <FeaturedSuppliers />
-      <TrustSection />
-      <Footer />
+      {/* How it works */}
+      <section className="py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-10">
+            How it works
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold mx-auto mb-3">1</div>
+              <h3 className="font-semibold text-gray-900">Enter your postcode</h3>
+              <p className="text-sm text-gray-500 mt-1">Type any BT postcode and pick your tank size.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold mx-auto mb-3">2</div>
+              <h3 className="font-semibold text-gray-900">See live prices</h3>
+              <p className="text-sm text-gray-500 mt-1">Results ranked cheapest first with total cost and per-litre price.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-bold mx-auto mb-3">3</div>
+              <h3 className="font-semibold text-gray-900">Contact the supplier</h3>
+              <p className="text-sm text-gray-500 mt-1">Call or visit their website directly to place your order.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* Latest from the blog */}
+      <section className="py-12 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-lg font-bold text-gray-900">From the blog</h2>
+            <Link href="/blog" className="text-sm text-orange-600 hover:text-orange-700 font-medium inline-flex items-center gap-1">
+              View all <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { slug: "best-time-buy-heating-oil-northern-ireland", title: "Best Time to Buy Heating Oil in NI", category: "Money Saving" },
+              { slug: "heating-oil-tank-sizes", title: "Comparing 300L, 500L, and 900L Tank Sizes", category: "Equipment Guide" },
+              { slug: "how-to-save-money-heating-oil", title: "How to Save Money on Heating Oil", category: "Money Saving" },
+            ].map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="group block bg-white border border-gray-200 rounded-lg p-4 hover:shadow-sm transition-shadow">
+                <span className="text-xs font-medium text-gray-500">{post.category}</span>
+                <h3 className="mt-1 text-sm font-semibold text-gray-900 group-hover:text-orange-600 transition-colors leading-snug">
+                  {post.title}
+                </h3>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Coverage */}
+      <section className="py-12 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <p className="text-sm text-gray-500">
+            Covering all BT postcodes across Belfast, Derry, Antrim, Down, Armagh, Tyrone, and Fermanagh.
+            As featured in{" "}
+            <a
+              href="https://www.bbc.co.uk/news/articles/cdxn5zn26xeo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              BBC News NI
+            </a>.
+          </p>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }

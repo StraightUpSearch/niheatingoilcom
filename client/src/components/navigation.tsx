@@ -14,9 +14,10 @@ export default function Navigation() {
   const isAuthenticated = !!user;
 
   const navigation = [
-    { name: "Compare Prices", href: "/compare" },
+    { name: "Compare Prices", href: "/" },
     ...(isAuthenticated ? [{ name: "Price Alerts", href: "/alerts" }] : []),
     { name: "Suppliers", href: "/suppliers" },
+    { name: "Blog", href: "/blog" },
   ];
 
   const NavItems = () => (
@@ -63,7 +64,7 @@ export default function Navigation() {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => window.location.href = "/api/logout"}
+                  onClick={() => fetch("/api/logout", { method: "POST" }).then(() => { window.location.href = "/"; })}
                   className="hidden sm:flex"
                 >
                   Sign Out
@@ -98,7 +99,7 @@ export default function Navigation() {
                         )}
                         <Button
                           variant="outline"
-                          onClick={() => window.location.href = "/api/logout"}
+                          onClick={() => fetch("/api/logout", { method: "POST" }).then(() => { window.location.href = "/"; })}
                           className="justify-start"
                         >
                           Sign Out
@@ -115,7 +116,7 @@ export default function Navigation() {
                             Sign In
                           </Button>
                         </Link>
-                        <Link href="/register">
+                        <Link href="/auth">
                           <Button
                             className="justify-start w-full"
                             onClick={() => setIsOpen(false)}
