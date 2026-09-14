@@ -5,10 +5,9 @@ import simonLogo from "@assets/simon-community-ni-2024.png";
 
 export default function Footer() {
   const serviceLinks = [
-    { name: "Price Comparison", href: "/compare" },
+    { name: "Price Comparison", href: "/" },
     { name: "Price Alerts", href: "/alerts" },
     { name: "Supplier Directory", href: "/suppliers" },
-    { name: "Price Trends", href: "/compare" },
   ];
 
   const supportLinks = [
@@ -30,7 +29,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           <div>
             <Link href="/" className="flex items-center space-x-2 mb-3">
               <HeatingOilLogo size="sm" className="text-primary" />
@@ -150,11 +149,6 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
-              <li>
-                <Link href="/pages/html-sitemap" className="hover:text-white transition-colors text-sm">
-                  HTML Sitemap
-                </Link>
-              </li>
             </ul>
 
             {/* Simon Community NI Support */}
@@ -165,8 +159,8 @@ export default function Footer() {
                 </svg>
                 <span className="text-xs font-medium text-gray-300">Proudly supporting</span>
               </div>
-              <Link 
-                to="/giving-back"
+              <Link
+                href="/giving-back"
                 className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
               >
                 <img
