@@ -8,7 +8,6 @@ import Chatbot from "@/components/chatbot";
 import NotFound from "@/pages/not-found";
 import Landing from "@/pages/landing";
 import AuthPage from "@/pages/auth-page";
-import Compare from "@/pages/compare";
 import Results from "@/pages/results";
 import Suppliers from "@/pages/suppliers";
 import SupplierProfile from "@/pages/supplier-profile";
