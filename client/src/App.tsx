@@ -32,6 +32,7 @@ import ResetPasswordPage from "./pages/reset-password";
 import HeatingOilLocation from "@/pages/heating-oil-location";
 import HeatingOilPricesIndex from "@/pages/heating-oil-prices-index";
 import NIPriceIndex from "@/pages/ni-price-index";
+import CompareHeating from "@/pages/compare-heating";
 
 function Router() {
   // Track page views when routes change
@@ -55,6 +56,7 @@ function Router() {
       <Route path="/ni-heating-oil-price-index" component={NIPriceIndex} />
       <Route path="/heating-oil-price-index" component={NIPriceIndex} />
       <Route path="/heating-oil-price-index/" component={NIPriceIndex} />
+      <Route path="/compare-heating" component={CompareHeating} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogArticle} />
       <Route path="/contact" component={Contact} />

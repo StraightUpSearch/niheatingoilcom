@@ -100,6 +100,7 @@ export default function Navigation() {
               </div>
 
               <Link href="/suppliers" className={linkCls("/suppliers")}>Suppliers</Link>
+              <Link href="/compare-heating" className={linkCls("/compare-heating")}>Compare Fuels</Link>
               <Link href="/blog" className={linkCls("/blog")}>Blog</Link>
             </nav>
 
@@ -221,6 +222,9 @@ export default function Navigation() {
 
               <Link href="/suppliers" className="flex items-center px-3 py-2.5 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setMobileOpen(false)}>
                 Suppliers
+              </Link>
+              <Link href="/compare-heating" className="flex items-center px-3 py-2.5 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setMobileOpen(false)}>
+                Compare Fuels
               </Link>
               <Link href="/blog" className="flex items-center px-3 py-2.5 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-50 transition-colors" onClick={() => setMobileOpen(false)}>
                 Blog
