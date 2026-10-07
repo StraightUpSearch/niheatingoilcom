@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import SEOHead from "@/components/seo-head";
 import EnhancedPricingTable from "@/components/enhanced-pricing-table";
 import GamifiedSearch from "@/components/gamified-search";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -13,8 +14,9 @@ export default function ComparePage() {
     volume?: number;
   }>({});
 
+  const statsVolume = searchParams.volume || 500;
   const { data: stats } = useQuery({
-    queryKey: ['/api/prices/stats', searchParams.volume || 300],
+    queryKey: [`/api/prices/stats/${statsVolume}`],
   });
 
   const handleSearch = (params: { postcode?: string; volume?: number }) => {
@@ -23,6 +25,12 @@ export default function ComparePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+      <SEOHead
+        title="Compare Heating Oil Prices Northern Ireland — Live Supplier Quotes | NI Heating Oil"
+        description="Compare heating oil prices from NI suppliers. See current 300L, 500L and 900L prices, cheapest supplier and price per litre — updated daily by BT postcode."
+        canonicalUrl="https://niheatingoil.com/compare"
+        keywords="compare heating oil prices northern ireland, compare oil prices NI, heating oil comparison NI, cheapest heating oil NI"
+      />
       <Navigation />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -52,9 +60,9 @@ export default function ComparePage() {
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">
-                  £{(parseFloat(stats.weeklyAverage) / 100).toFixed(2)}
+                  £{parseFloat(stats.weeklyAverage).toFixed(2)}
                 </div>
-                <p className="text-xs text-muted-foreground">per litre</p>
+                <p className="text-xs text-muted-foreground">for {statsVolume}L</p>
               </CardContent>
             </Card>
 
@@ -65,9 +73,9 @@ export default function ComparePage() {
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold text-green-600">
-                  £{(parseFloat(stats.lowestPrice) / 100).toFixed(2)}
+                  £{parseFloat(stats.lowestPrice).toFixed(2)}
                 </div>
-                <p className="text-xs text-muted-foreground">per litre</p>
+                <p className="text-xs text-muted-foreground">for {statsVolume}L</p>
               </CardContent>
             </Card>
 
@@ -78,9 +86,9 @@ export default function ComparePage() {
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">
-                  £{(parseFloat(stats.highestPrice) / 100).toFixed(2)}
+                  £{parseFloat(stats.highestPrice).toFixed(2)}
                 </div>
-                <p className="text-xs text-muted-foreground">per litre</p>
+                <p className="text-xs text-muted-foreground">for {statsVolume}L</p>
               </CardContent>
             </Card>
           </div>

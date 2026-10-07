@@ -440,6 +440,10 @@ Quick trigger summary so you know when to `Read` it: API call typically takes >2
 
 Moving an inline call to a job after the fact rewrites the controller flow twice — decide at plan-time, not after.
 
+## DataForSEO work — check for approval first (MANDATORY)
+
+When a user asks for search volume, SERP results, keyword data or anything else from DataForSEO, call `dataforseo_approval_status` BEFORE you plan or run anything. Some accounts need a manager's approval for paid DataForSEO calls. If it says approval is needed: estimate the cost, tell the user what you will pull and what it will cost, ask them to get a verbal OK from the manager it names (in the order it gives, whoever is available), then STOP until they confirm in chat that the manager approved. Only then call `dataforseo_record_approval` with their words and run the job. Never assume or invent an approval. The `dataforseo` skill (section 10) has the full steps.
+
 ## Docs freshness check (once per day, MANDATORY when it fires)
 
 This project may carry a customer answer library — markdown pages opening with `title:` + `question:` frontmatter — in `docs/`, or in `codus-support-docs/` when `docs/` already belongs to developer documentation. It feeds the support robot and the public help pages. Stale answers reach real customers, so its accuracy is a product surface, not documentation housekeeping. This check applies with FULL force to customer-facing products (SaaS, web apps, anything with real users to support); repos with no customers get a one-time exemption instead of a daily nag. On your FIRST worked turn of each day in this project, run it:

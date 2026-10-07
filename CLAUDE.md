@@ -168,6 +168,10 @@ Quick trigger summary so you know when to load it: API call typically takes >2s 
 
 Moving an inline call to a job after the fact rewrites the controller flow twice — decide at plan-time. Claude Code auto-discovers via the skill's description metadata; Codex must `Read` the file directly when matching intent.
 
+## DataForSEO work — check for approval first (MANDATORY)
+
+When a user asks for search volume, SERP results, keyword data or anything else from DataForSEO, call `dataforseo_approval_status` BEFORE you plan or run anything. Some accounts need a manager's approval for paid DataForSEO calls. If it says approval is needed: estimate the cost, tell the user what you will pull and what it will cost, ask them to get a verbal OK from the manager it names (in the order it gives, whoever is available), then STOP until they confirm in chat that the manager approved. Only then call `dataforseo_record_approval` with their words and run the job. Never assume or invent an approval. The `dataforseo` skill (section 10) has the full steps.
+
 ## Building UI — load the codus-ux-build skill
 
 Before you build, create, restyle, or significantly change ANY user-facing page, component, screen, layout, or UI, load both `codus-ux-build` and `codus-ui-proof` from `~/.claude/skills/`. The first supplies the craft bar; the second routes pinned public taste specialists, requires a Design Contract before UI code, inventories Route → Module → Section → Control → State → Viewport/Context, and binds the independent finish evidence to Git. Your default uninstructed UI output is generic AI slop; these skills are how you build a coherent, brief-specific interface and prove every in-scope module rather than self-grading a hero screenshot.

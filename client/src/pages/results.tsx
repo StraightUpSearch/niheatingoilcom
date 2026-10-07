@@ -140,8 +140,9 @@ export default function Results() {
         title={pageTitle}
         description={pageDescription}
         keywords={`heating oil ${postcode}, cheapest heating oil ${postcode}, oil delivery ${postcode}, Northern Ireland heating oil`}
-        canonicalUrl={`https://niheatingoil.com/results?postcode=${encodeURIComponent(postcode)}&volume=${volume}`}
+        canonicalUrl={`https://niheatingoil.com/heating-oil-prices/${postcode.toLowerCase()}/`}
         structuredData={structuredData}
+        noindex={true}
       />
       <Navigation />
 

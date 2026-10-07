@@ -1,10 +1,10 @@
 import { useParams } from "wouter";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import { ArrowLeft, Clock, Calendar, User } from "lucide-react";
+import SEOHead from "@/components/seo-head";
+import { ArrowLeft, Clock, Calendar, User, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { useEffect } from "react";
 
 const articles: Record<string, {
   title: string;
@@ -439,14 +439,6 @@ export default function BlogArticle() {
   const slug = params.slug as string;
   const article = articles[slug];
 
-  useEffect(() => {
-    if (article) {
-      document.title = `${article.title} | NI Heating Oil`;
-    } else {
-      document.title = "Article Not Found | NI Heating Oil";
-    }
-  }, [article]);
-
   if (!article) {
     return (
       <div className="min-h-screen bg-gray-50">
@@ -465,12 +457,52 @@ export default function BlogArticle() {
     );
   }
 
+  const canonicalUrl = `https://niheatingoil.com/blog/${slug}`;
+  const seoTitle = `${article.title} | NI Heating Oil`;
+  const seoDescription = `${article.title} — expert guide for Northern Ireland homeowners. Compare live heating oil prices from local suppliers at NI Heating Oil.`;
+
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://niheatingoil.com" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://niheatingoil.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": article.title, "item": canonicalUrl }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": article.title,
+      "image": article.image,
+      "datePublished": article.publishDate,
+      "author": { "@type": "Person", "name": article.author },
+      "publisher": { "@type": "Organization", "name": "NI Heating Oil", "url": "https://niheatingoil.com" },
+      "url": canonicalUrl
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead
+        title={seoTitle}
+        description={seoDescription}
+        canonicalUrl={canonicalUrl}
+        structuredData={structuredData}
+      />
       <Navigation />
 
       <main className="max-w-4xl mx-auto px-4 py-8 pt-24">
         <div className="mb-8">
+          <nav aria-label="Breadcrumb" className="flex items-center text-sm text-gray-500 mb-4 gap-1">
+            <Link href="/" className="hover:text-gray-700">Home</Link>
+            <ChevronRight className="h-3.5 w-3.5" />
+            <Link href="/blog" className="hover:text-gray-700">Blog</Link>
+            <ChevronRight className="h-3.5 w-3.5" />
+            <span className="text-gray-700 truncate max-w-xs">{article.title}</span>
+          </nav>
+
           <Button variant="ghost" asChild className="mb-4">
             <Link href="/blog">
               <ArrowLeft className="h-4 w-4 mr-2" />

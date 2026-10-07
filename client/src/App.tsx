@@ -9,6 +9,7 @@ import NotFound from "@/pages/not-found";
 import Landing from "@/pages/landing";
 import AuthPage from "@/pages/auth-page";
 import Compare from "@/pages/compare";
+import Results from "@/pages/results";
 import Suppliers from "@/pages/suppliers";
 import SupplierProfile from "@/pages/supplier-profile";
 import Blog from "@/pages/blog";
@@ -28,6 +29,9 @@ import { useGTMPageTracking } from "@/hooks/use-gtm";
 import Alerts from "@/pages/alerts";
 import ForgotPasswordPage from "./pages/forgot-password";
 import ResetPasswordPage from "./pages/reset-password";
+import HeatingOilLocation from "@/pages/heating-oil-location";
+import HeatingOilPricesIndex from "@/pages/heating-oil-prices-index";
+import NIPriceIndex from "@/pages/ni-price-index";
 
 function Router() {
   // Track page views when routes change
@@ -39,10 +43,18 @@ function Router() {
       <Route path="/auth" component={AuthPage} />
       <Route path="/login" component={() => <Redirect to="/auth" />} />
       <Route path="/register" component={() => <Redirect to="/auth" />} />
-      <Route path="/compare" component={Compare} />
+      <Route path="/results" component={Results} />
+      <Route path="/compare" component={() => <Redirect to="/results" />} />
       <Route path="/alerts" component={Alerts} />
       <Route path="/suppliers" component={Suppliers} />
       <Route path="/suppliers/:supplierId" component={SupplierProfile} />
+      <Route path="/supplier/:supplierId" component={SupplierProfile} />
+      <Route path="/heating-oil-prices" component={HeatingOilPricesIndex} />
+      <Route path="/heating-oil-prices/" component={HeatingOilPricesIndex} />
+      <Route path="/heating-oil-prices/:location" component={HeatingOilLocation} />
+      <Route path="/ni-heating-oil-price-index" component={NIPriceIndex} />
+      <Route path="/heating-oil-price-index" component={NIPriceIndex} />
+      <Route path="/heating-oil-price-index/" component={NIPriceIndex} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogArticle} />
       <Route path="/contact" component={Contact} />

@@ -17,7 +17,7 @@ const accountSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(10, "Please enter a valid phone number"),
-  password: z.string().min(6, "Password must be at least 6 characters"),
+  password: z.string().min(8, "Password must be at least 8 characters").regex(/[A-Z]/, "Must contain uppercase").regex(/[a-z]/, "Must contain lowercase").regex(/\d/, "Must contain a number").regex(/[!@#$%^&*(),.?":{}|<>]/, "Must contain a special character"),
   confirmPassword: z.string()
 }).refine((data) => data.password === data.confirmPassword, {
   message: "Passwords don't match",
@@ -407,7 +407,7 @@ export default function ThankYouPage() {
             <Button variant="outline" onClick={() => setLocation('/')}>
               Back to Home
             </Button>
-            <Button onClick={() => setLocation('/prices')}>
+            <Button onClick={() => setLocation('/compare')}>
               Compare More Prices
             </Button>
           </div>

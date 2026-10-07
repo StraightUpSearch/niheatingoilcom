@@ -1,31 +1,38 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
+import { useQuery } from "@tanstack/react-query";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import SEOHead from "@/components/seo-head";
 import { usePageTitle } from "@/hooks/usePageTitle";
-import { Search, ShieldCheck, Clock, ArrowRight, MapPin, X } from "lucide-react";
+import { Search, ShieldCheck, Clock, ArrowRight, MapPin, X, TrendingDown } from "lucide-react";
 import { Link } from "wouter";
 
 const townLinks = [
-  { name: "Belfast", postcode: "BT1" },
-  { name: "Bangor", postcode: "BT20" },
-  { name: "Londonderry", postcode: "BT48" },
-  { name: "Newry", postcode: "BT34" },
-  { name: "Lisburn", postcode: "BT28" },
-  { name: "Newtownabbey", postcode: "BT36" },
-  { name: "Armagh", postcode: "BT61" },
-  { name: "Ballymena", postcode: "BT43" },
-  { name: "Coleraine", postcode: "BT52" },
-  { name: "Omagh", postcode: "BT78" },
+  { name: "Belfast",       slug: "belfast" },
+  { name: "Bangor",        slug: "bangor" },
+  { name: "Londonderry",   slug: "londonderry" },
+  { name: "Newry",         slug: "newry" },
+  { name: "Lisburn",       slug: "lisburn" },
+  { name: "Newtownabbey",  slug: "newtownabbey" },
+  { name: "Armagh",        slug: "armagh" },
+  { name: "Ballymena",     slug: "ballymena" },
+  { name: "Coleraine",     slug: "coleraine" },
+  { name: "Omagh",         slug: "omagh" },
 ];
 
 export default function Landing() {
-  usePageTitle("Compare Heating Oil Prices in Northern Ireland | NIHeatingoil.com");
+  usePageTitle("Heating Oil Prices NI — Compare Suppliers by BT Postcode | NI Heating Oil");
   const [, setLocation] = useLocation();
 
   const [postcode, setPostcode] = useState("");
   const [volume, setVolume] = useState(500);
+
+  const { data: niSummary } = useQuery<Record<number, { cheapest: number; average: number; count: number }>>({
+    queryKey: ["/api/prices/ni-summary"],
+    staleTime: 1000 * 60 * 30, // 30 min
+  });
+
   const [showGovBanner, setShowGovBanner] = useState(() => {
     try { return sessionStorage.getItem("hideGovBanner") !== "1"; } catch { return true; }
   });
@@ -41,18 +48,21 @@ export default function Landing() {
         "@type": "SearchAction",
         "target": "https://niheatingoil.com/results?postcode={search_term_string}",
         "query-input": "required name=search_term_string"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "NI Heating Oil",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "14a Victoria Street",
-          "addressLocality": "Ballymoney",
-          "addressRegion": "Northern Ireland",
-          "postalCode": "BT53 6DW",
-          "addressCountry": "GB"
-        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NI Heating Oil",
+      "url": "https://niheatingoil.com",
+      "telephone": "028 96005259",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "14a Victoria Street",
+        "addressLocality": "Ballymoney",
+        "addressRegion": "Northern Ireland",
+        "postalCode": "BT53 6DW",
+        "addressCountry": "GB"
       }
     },
     {
@@ -74,8 +84,8 @@ export default function Landing() {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Compare Heating Oil Prices in Northern Ireland | NIHeatingoil.com"
-        description="Compare home heating oil prices across Northern Ireland. Find the cheapest supplier in your area. Enter your BT postcode to get live quotes from local distributors."
+        title="Heating Oil Prices NI — Compare Suppliers by BT Postcode | NI Heating Oil"
+        description="Compare live heating oil prices from NI suppliers by BT postcode. 300L, 500L and 900L quotes updated daily."
         keywords="heating oil prices, Northern Ireland, cheapest heating oil NI, oil suppliers, Belfast heating oil, fuel comparison, oil delivery, home heating oil"
         canonicalUrl="https://niheatingoil.com"
         structuredData={structuredData}
@@ -109,7 +119,7 @@ export default function Landing() {
       )}
 
       {/* Hero */}
-      <section className="pt-28 pb-20 sm:pt-36 sm:pb-28 bg-white">
+      <section className="pt-20 pb-16 sm:pt-24 sm:pb-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
             Compare Heating Oil Prices Across Northern Ireland
@@ -154,8 +164,8 @@ export default function Landing() {
             <div className="flex flex-wrap justify-center gap-2">
               {townLinks.map((town) => (
                 <Link
-                  key={town.postcode}
-                  href={`/results?postcode=${town.postcode}&volume=500`}
+                  key={town.slug}
+                  href={`/heating-oil-prices/${town.slug}/`}
                   className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
                 >
                   <MapPin className="w-3 h-3" />
@@ -190,8 +200,60 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* NI market price index */}
+      {niSummary && (
+        <section className="py-12 bg-white border-t border-gray-100">
+          <div className="max-w-3xl mx-auto px-4">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h2 className="text-base font-bold text-gray-900">Today's NI Heating Oil Market</h2>
+                <p className="text-xs text-gray-500 mt-0.5">NI-wide cheapest and average — enter your postcode for a local quote</p>
+              </div>
+              <TrendingDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+            </div>
+            <div className="overflow-hidden border border-gray-200 rounded-lg">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-gray-50 border-b border-gray-200">
+                    <th className="text-left px-4 py-2.5 text-xs font-medium text-gray-500 uppercase tracking-wide">Volume</th>
+                    <th className="text-right px-4 py-2.5 text-xs font-medium text-gray-500 uppercase tracking-wide">Cheapest today</th>
+                    <th className="text-right px-4 py-2.5 text-xs font-medium text-gray-500 uppercase tracking-wide hidden sm:table-cell">NI Average</th>
+                    <th className="text-right px-4 py-2.5 text-xs font-medium text-gray-500 uppercase tracking-wide">Potential saving</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {[300, 500, 900].map((vol) => {
+                    const row = niSummary[vol];
+                    if (!row || row.count === 0) return null;
+                    const saving = row.average - row.cheapest;
+                    return (
+                      <tr key={vol} className="hover:bg-gray-50 transition-colors">
+                        <td className="px-4 py-3 font-medium text-gray-900">{vol}L</td>
+                        <td className="px-4 py-3 text-right">
+                          <span className="font-semibold text-green-700">£{row.cheapest.toFixed(2)}</span>
+                        </td>
+                        <td className="px-4 py-3 text-right text-gray-600 hidden sm:table-cell">£{row.average.toFixed(2)}</td>
+                        <td className="px-4 py-3 text-right">
+                          {saving > 0
+                            ? <span className="text-green-600 font-medium">up to £{saving.toFixed(2)}</span>
+                            : <span className="text-gray-400">—</span>
+                          }
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-gray-400 mt-2">
+              Prices include VAT. Updated from verified supplier data. Prices last updated: {new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* How it works */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-gray-900 text-center mb-10">
             How it works

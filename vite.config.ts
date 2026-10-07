@@ -4,12 +4,19 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
+  cacheDir: "node_modules/.vite-dev",
+  server: {
+    headers: {
+      "Cache-Control": "no-store",
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
       "@shared": path.resolve(import.meta.dirname, "shared"),
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
+    dedupe: ["react", "react-dom"],
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {

@@ -30,6 +30,12 @@ Disallow: /_next/
 Disallow: /dashboard/
 Disallow: /auth/
 
+# Block query-param results pages (not indexable — use /heating-oil-prices/ pages instead)
+Disallow: /results
+
+# Block /list/ spam URLs — these 404 but were indexed; force crawlers to ignore them
+Disallow: /list/
+
 # Block temporary or development files
 Disallow: /*.json$
 Disallow: /*.log$

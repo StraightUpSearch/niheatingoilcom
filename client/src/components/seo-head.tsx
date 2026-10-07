@@ -7,15 +7,17 @@ interface SEOHeadProps {
   canonicalUrl?: string;
   ogImage?: string;
   structuredData?: object | object[];
+  noindex?: boolean;
 }
 
-export default function SEOHead({ 
-  title, 
-  description, 
+export default function SEOHead({
+  title,
+  description,
   keywords,
   canonicalUrl,
   ogImage = "https://niheatingoil.com/og-image.jpg",
-  structuredData 
+  structuredData,
+  noindex = false,
 }: SEOHeadProps) {
   useEffect(() => {
     // Update document title
@@ -24,6 +26,7 @@ export default function SEOHead({
     // Update meta tags
     updateMetaTag('description', description);
     if (keywords) updateMetaTag('keywords', keywords);
+    updateMetaTag('robots', noindex ? 'noindex,follow' : 'index,follow');
 
     // Open Graph tags
     updateMetaTag('og:title', title, 'property');

@@ -23,13 +23,13 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
   };
 
   const { data: pricesData, isLoading, error } = useQuery({
-    queryKey: ["/api/prices", { postcode: searchParams?.postcode }],
+    queryKey: ["/api/prices", { postcode: searchParams?.postcode, volume: selectedVolume }],
     queryFn: async () => {
       const params = new URLSearchParams();
       if (searchParams?.postcode) {
         params.set('postcode', searchParams.postcode);
       }
-      
+      params.set('volume', String(selectedVolume));
       const response = await fetch(`/api/prices?${params.toString()}`);
       if (!response.ok) {
         throw new Error('Failed to fetch prices');
@@ -128,7 +128,7 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
           <Card>
             <CardContent className="p-4 text-center">
               <div className="text-2xl font-bold text-green-600">
-                £{(parseFloat((statsData as any).weeklyAverage || '0') / 100).toFixed(2)}
+                £{parseFloat((statsData as any).weeklyAverage || '0').toFixed(2)}
               </div>
               <p className="text-sm text-gray-600">Average Price</p>
             </CardContent>
@@ -136,7 +136,7 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
           <Card>
             <CardContent className="p-4 text-center">
               <div className="text-2xl font-bold text-blue-600">
-                £{(parseFloat((statsData as any).lowestPrice || '0') / 100).toFixed(2)}
+                £{parseFloat((statsData as any).lowestPrice || '0').toFixed(2)}
               </div>
               <p className="text-sm text-gray-600">Best Price</p>
             </CardContent>
@@ -144,7 +144,7 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
           <Card>
             <CardContent className="p-4 text-center">
               <div className="text-2xl font-bold text-gray-600">
-                {(statsData as any).supplierCount || 0}
+                {supplierPrices.size || 0}
               </div>
               <p className="text-sm text-gray-600">Suppliers</p>
             </CardContent>
@@ -177,7 +177,7 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
                 <div className="space-y-3">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-primary">
-                      £{(supplier.displayPrice / 100).toFixed(2)}
+                      £{supplier.displayPrice.toFixed(2)}
                     </div>
                     <p className="text-sm text-gray-600">for {selectedVolume}L delivery</p>
                   </div>
@@ -202,7 +202,7 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
                       className="flex-1 bg-green-600 hover:bg-green-700 text-white"
                       onClick={() => onGetQuote?.({
                         name: supplier.name,
-                        price: `£${(supplier.displayPrice / 100).toFixed(2)}`,
+                        price: `£${supplier.displayPrice.toFixed(2)}`,
                         volume: selectedVolume,
                         location: supplier.location || "Northern Ireland",
                       })}

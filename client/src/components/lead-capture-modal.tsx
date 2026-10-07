@@ -262,7 +262,6 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
                   <SelectItem value="300">300 Litres</SelectItem>
                   <SelectItem value="500">500 Litres</SelectItem>
                   <SelectItem value="900">900 Litres</SelectItem>
-                  <SelectItem value="custom">Custom Amount</SelectItem>
                 </SelectContent>
               </Select>
             </div>

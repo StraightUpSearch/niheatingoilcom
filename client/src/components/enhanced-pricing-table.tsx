@@ -282,10 +282,16 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                     </div>
                   </div>
                   <div className="flex items-center">
-                    {renderStars(Number(item.supplier.rating) || 4)}
-                    <span className="ml-1 text-sm text-gray-500">
-                      {(Number(item.supplier.rating) || 4).toFixed(1)}
-                    </span>
+                    {item.supplier.reviewCount > 0 ? (
+                      <>
+                        {renderStars(Number(item.supplier.rating) || 4)}
+                        <span className="ml-1 text-sm text-gray-500">
+                          {(Number(item.supplier.rating) || 4).toFixed(1)}
+                        </span>
+                      </>
+                    ) : (
+                      <span className="text-xs text-gray-400">No reviews yet</span>
+                    )}
                   </div>
                 </div>
                 
@@ -440,10 +446,16 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-centre">
-                        {renderStars(Number(item.supplier.rating) || 4)}
-                        <span className="ml-1 text-xs text-grey-500">
-                          {(Number(item.supplier.rating) || 4).toFixed(1)}
-                        </span>
+                        {item.supplier.reviewCount > 0 ? (
+                          <>
+                            {renderStars(Number(item.supplier.rating) || 4)}
+                            <span className="ml-1 text-xs text-grey-500">
+                              {(Number(item.supplier.rating) || 4).toFixed(1)}
+                            </span>
+                          </>
+                        ) : (
+                          <span className="text-xs text-gray-400">No reviews yet</span>
+                        )}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-centre">

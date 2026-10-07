@@ -6,7 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { MapPin, Phone, Globe, Star, ExternalLink, Users } from "lucide-react";
+import { MapPin, Phone, Globe, Star, ExternalLink, Users, ArrowRight } from "lucide-react";
+
+const toSlug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 export default function SuppliersPage() {
   const { data: suppliers, isLoading } = useQuery({
@@ -103,7 +105,7 @@ export default function SuppliersPage() {
                         <span className="text-sm">{supplier.location}</span>
                       </div>
                     </div>
-                    {supplier.rating && renderStars(supplier.rating)}
+                    {supplier.rating && supplier.reviewCount > 0 && renderStars(supplier.rating)}
                   </div>
                 </CardHeader>
 
@@ -162,6 +164,12 @@ export default function SuppliersPage() {
                           </a>
                         </Button>
                       )}
+                      <Button size="sm" variant="ghost" className="flex-1" asChild>
+                        <Link href={`/suppliers/${toSlug(supplier.name)}`}>
+                          <ArrowRight className="h-3 w-3 mr-1" />
+                          Profile
+                        </Link>
+                      </Button>
                     </div>
                   </div>
                 </CardContent>

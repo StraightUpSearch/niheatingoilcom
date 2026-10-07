@@ -9,25 +9,25 @@ const curatedNISuppliers = [
     location: "Craigavon",
     website: "https://www.hayesfuels.com",
     phone: "028 3834 2222",
-    coverageAreas: "Mid Ulster, Armagh, Down",
+    coverageAreas: "BT24 to BT35, BT60 to BT67",
     rating: "4.8",
     prices: {
-      volume300: 158.50,
-      volume500: 248.75,
-      volume900: 436.20
+      volume300: 208.50,
+      volume500: 342.75,
+      volume900: 615.20
     }
   },
   {
     name: "NAP Fuels",
     location: "Belfast",
-    website: "https://www.napfuels.com", 
+    website: "https://www.napfuels.com",
     phone: "028 9066 1234",
-    coverageAreas: "Belfast, Antrim, Down",
+    coverageAreas: "BT1 to BT17, BT36 to BT44",
     rating: "4.6",
     prices: {
-      volume300: 162.30,
-      volume500: 254.80,
-      volume900: 448.90
+      volume300: 212.30,
+      volume500: 349.80,
+      volume900: 628.90
     }
   },
   {
@@ -35,12 +35,12 @@ const curatedNISuppliers = [
     location: "Omagh",
     website: "https://www.finneybros.com",
     phone: "028 8224 5678",
-    coverageAreas: "Tyrone, Fermanagh",
+    coverageAreas: "BT70 to BT82",
     rating: "4.7",
     prices: {
-      volume300: 159.90,
-      volume500: 251.20,
-      volume900: 441.50
+      volume300: 207.90,
+      volume500: 340.20,
+      volume900: 611.50
     }
   },
   {
@@ -48,12 +48,12 @@ const curatedNISuppliers = [
     location: "Belfast",
     website: "https://www.knockbrackenfuels.com",
     phone: "028 9081 2345",
-    coverageAreas: "Belfast, Lisburn, Down",
+    coverageAreas: "BT1 to BT29",
     rating: "4.5",
     prices: {
-      volume300: 161.75,
-      volume500: 253.40,
-      volume900: 445.80
+      volume300: 215.75,
+      volume500: 354.40,
+      volume900: 636.80
     }
   },
   {
@@ -61,12 +61,12 @@ const curatedNISuppliers = [
     location: "Craigavon",
     website: "https://www.alfaoils.co.uk",
     phone: "028 3834 5678",
-    coverageAreas: "Armagh, Down, Antrim",
+    coverageAreas: "BT18 to BT44, BT60 to BT67",
     rating: "4.4",
     prices: {
-      volume300: 160.25,
-      volume500: 252.90,
-      volume900: 444.30
+      volume300: 210.25,
+      volume500: 346.90,
+      volume900: 624.30
     }
   },
   {
@@ -74,12 +74,12 @@ const curatedNISuppliers = [
     location: "Dungannon",
     website: "https://www.jenningsfuels.com",
     phone: "028 8772 3456",
-    coverageAreas: "Mid Ulster, Tyrone",
+    coverageAreas: "BT45 to BT46, BT68 to BT82",
     rating: "4.6",
     prices: {
-      volume300: 157.80,
-      volume500: 247.60,
-      volume900: 434.70
+      volume300: 206.80,
+      volume500: 338.60,
+      volume900: 608.70
     }
   },
   {
@@ -87,12 +87,12 @@ const curatedNISuppliers = [
     location: "Ballymoney",
     website: "https://www.ballymoneyoil.com",
     phone: "028 2766 4321",
-    coverageAreas: "Antrim, Derry",
+    coverageAreas: "BT36 to BT57",
     rating: "4.3",
     prices: {
-      volume300: 163.40,
-      volume500: 256.20,
-      volume900: 451.60
+      volume300: 213.40,
+      volume500: 351.20,
+      volume900: 631.60
     }
   },
   {
@@ -100,12 +100,12 @@ const curatedNISuppliers = [
     location: "Newry",
     website: "https://www.mckeownoil.com",
     phone: "028 3026 7890",
-    coverageAreas: "Down, Armagh",
+    coverageAreas: "BT30 to BT35, BT60 to BT66",
     rating: "4.7",
     prices: {
-      volume300: 159.60,
-      volume500: 250.40,
-      volume900: 439.90
+      volume300: 209.60,
+      volume500: 344.40,
+      volume900: 619.90
     }
   },
   {
@@ -113,12 +113,12 @@ const curatedNISuppliers = [
     location: "Enniskillen",
     website: "https://www.fermanaghfuels.com",
     phone: "028 6632 1234",
-    coverageAreas: "Fermanagh, Tyrone",
+    coverageAreas: "BT68 to BT82",
     rating: "4.5",
     prices: {
-      volume300: 161.20,
-      volume500: 253.80,
-      volume900: 446.70
+      volume300: 211.20,
+      volume500: 347.80,
+      volume900: 626.70
     }
   },
   {
@@ -126,12 +126,12 @@ const curatedNISuppliers = [
     location: "Derry",
     website: "https://www.derryoil.com",
     phone: "028 7134 5678",
-    coverageAreas: "Derry, Antrim",
+    coverageAreas: "BT45 to BT57",
     rating: "4.4",
     prices: {
-      volume300: 164.10,
-      volume500: 257.90,
-      volume900: 454.20
+      volume300: 214.10,
+      volume500: 352.90,
+      volume900: 634.20
     }
   }
 ];

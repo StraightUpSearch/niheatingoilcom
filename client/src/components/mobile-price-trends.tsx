@@ -20,7 +20,7 @@ export default function MobilePriceTrends() {
   const formatPrice = (price: number | string | null) => {
     if (price === null || price === undefined) return '£0.00';
     const numPrice = typeof price === 'string' ? parseFloat(price) : price;
-    return `£${(numPrice / 100).toFixed(2)}`;
+    return `£${numPrice.toFixed(2)}`;
   };
 
   const volumes = [
@@ -80,7 +80,7 @@ export default function MobilePriceTrends() {
                         {formatPrice((volume.data as any)?.weeklyAverage || 0)}
                       </div>
                       <div className="text-xs text-gray-500">
-                        {((parseFloat((volume.data as any)?.weeklyAverage || '0') / 100) / volume.size * 100).toFixed(1)}p per litre
+                        {(parseFloat((volume.data as any)?.weeklyAverage || '0') / volume.size * 100).toFixed(1)}p per litre
                       </div>
                     </div>
                     

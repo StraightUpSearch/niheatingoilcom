@@ -268,6 +268,9 @@ export default function AuthPage() {
                             disabled={registerMutation.isPending}
                           />
                         </div>
+                        <p className="text-xs text-gray-500 mt-1">
+                          Min 8 characters, include uppercase, lowercase, number &amp; special character
+                        </p>
                       </div>
 
                       <Button 

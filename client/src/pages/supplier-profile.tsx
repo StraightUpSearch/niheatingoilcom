@@ -1,15 +1,15 @@
-import { useParams } from "wouter";
-import { useQuery } from "@tanstack/react-query";
+import { useParams, Link } from "wouter";
+import { useQuery, useMutation } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Star, MapPin, Phone, Globe, Clock, TrendingUp, Award, Shield } from "lucide-react";
+import { Star, MapPin, Phone, Globe, Clock, TrendingUp, Award, Shield, CheckCircle } from "lucide-react";
 import { Supplier, OilPrice } from "@shared/schema";
-import { usePageTitle } from "@/hooks/usePageTitle";
 import { useState } from "react";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import SEOHead from "@/components/seo-head";
 // import { ClaimListingDialog } from "@/components/claim-listing-dialog";
 
 interface SupplierWithPrices extends Supplier {
@@ -19,16 +19,107 @@ interface SupplierWithPrices extends Supplier {
   lastUpdated?: string;
 }
 
+const isNumeric = (s: string) => /^\d+$/.test(s);
+
+function QuoteForm({ supplierName, supplierPhone, supplierWebsite }: { supplierName: string; supplierPhone?: string | null; supplierWebsite?: string | null }) {
+  const [form, setForm] = useState({ name: "", email: "", postcode: "", volume: "500" });
+  const [submitted, setSubmitted] = useState(false);
+
+  const mutation = useMutation({
+    mutationFn: (data: object) =>
+      fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }).then(r => { if (!r.ok) throw new Error("failed"); return r.json(); }),
+    onSuccess: () => setSubmitted(true),
+  });
+
+  if (submitted) {
+    return (
+      <Card>
+        <CardContent className="pt-6 text-center space-y-2">
+          <CheckCircle className="h-8 w-8 text-green-500 mx-auto" />
+          <p className="font-medium text-gray-900">Request sent!</p>
+          <p className="text-sm text-gray-500">We've passed your details to {supplierName}. They'll be in touch shortly.</p>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  return (
+    <Card className="border-orange-200 bg-orange-50">
+      <CardHeader className="pb-3">
+        <CardTitle className="text-base">Get a quote from {supplierName}</CardTitle>
+        <CardDescription>Free, no obligation. Takes 30 seconds.</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-3">
+        <input
+          className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm bg-white"
+          placeholder="Your name"
+          value={form.name}
+          onChange={e => setForm({ ...form, name: e.target.value })}
+        />
+        <input
+          className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm bg-white"
+          placeholder="Email address"
+          type="email"
+          value={form.email}
+          onChange={e => setForm({ ...form, email: e.target.value })}
+        />
+        <div className="flex gap-2">
+          <input
+            className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm bg-white"
+            placeholder="BT postcode"
+            value={form.postcode}
+            onChange={e => setForm({ ...form, postcode: e.target.value })}
+          />
+          <select
+            className="border border-gray-300 rounded-md px-3 py-2 text-sm bg-white"
+            value={form.volume}
+            onChange={e => setForm({ ...form, volume: e.target.value })}
+          >
+            <option value="300">300L</option>
+            <option value="500">500L</option>
+            <option value="900">900L</option>
+            <option value="1000">1000L</option>
+          </select>
+        </div>
+        <Button
+          className="w-full bg-orange-500 hover:bg-orange-600 text-white"
+          disabled={mutation.isPending || !form.name || !form.email || !form.postcode}
+          onClick={() => mutation.mutate({
+            name: form.name,
+            email: form.email,
+            phone: "",
+            postcode: form.postcode.toUpperCase(),
+            volume: parseInt(form.volume),
+            supplierName,
+            status: "new",
+          })}
+        >
+          {mutation.isPending ? "Sending..." : "Request a quote"}
+        </Button>
+        {mutation.isError && <p className="text-xs text-red-500 text-center">Something went wrong. Please try again.</p>}
+      </CardContent>
+    </Card>
+  );
+}
+
 export default function SupplierProfile() {
   const { supplierId } = useParams<{ supplierId: string }>();
   const [showClaimDialog, setShowClaimDialog] = useState(false);
-  
-  const { data: supplier, isLoading, error } = useQuery<SupplierWithPrices>({
-    queryKey: ["/api/suppliers", supplierId],
-    enabled: !!supplierId,
-  });
 
-  usePageTitle(supplier ? `${supplier.name} - Oil Supplier | NI Heating Oil` : "Supplier Profile | NI Heating Oil");
+  const apiPath = supplierId
+    ? isNumeric(supplierId)
+      ? `/api/suppliers/${supplierId}`
+      : `/api/suppliers/by-slug/${supplierId}`
+    : null;
+
+  const { data: supplier, isLoading, error } = useQuery<SupplierWithPrices>({
+    queryKey: [apiPath],
+    enabled: !!apiPath,
+  });
 
   if (isLoading) {
     return (
@@ -66,8 +157,46 @@ export default function SupplierProfile() {
     return acc;
   }, {} as Record<number, string>);
 
+  const toSlug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const supplierSlug = toSlug(supplier.name);
+  const canonicalUrl = `https://niheatingoil.com/supplier/${supplierSlug}/`;
+  const seoTitle = `${supplier.name} — Heating Oil Prices & Coverage | NI Heating Oil`;
+  const seoDescription = `Current heating oil prices from ${supplier.name}. Compare 300L, 500L and 900L quotes. Serving ${supplier.location}, Northern Ireland.`;
+
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://niheatingoil.com" },
+        { "@type": "ListItem", "position": 2, "name": "Suppliers", "item": "https://niheatingoil.com/suppliers" },
+        { "@type": "ListItem", "position": 3, "name": supplier.name, "item": canonicalUrl },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": supplier.name,
+      "url": canonicalUrl,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": supplier.location,
+        "addressRegion": "Northern Ireland",
+        "addressCountry": "GB"
+      },
+      ...(supplier.phone ? { "telephone": supplier.phone } : {}),
+      ...(supplier.website ? { "sameAs": supplier.website } : {}),
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+      <SEOHead
+        title={seoTitle}
+        description={seoDescription}
+        canonicalUrl={canonicalUrl}
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Supplier Header */}
@@ -235,26 +364,75 @@ export default function SupplierProfile() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* BT postcode coverage links */}
+            {supplier.coverageAreas && (() => {
+              let postcodes: string[] = [];
+              try {
+                const parsed = JSON.parse(supplier.coverageAreas);
+                if (Array.isArray(parsed)) postcodes = parsed;
+              } catch {
+                postcodes = supplier.coverageAreas.split(/[\s,]+/).filter(Boolean);
+              }
+              const btPostcodes = postcodes.filter(p => /^bt\d+$/i.test(p.trim()));
+              if (btPostcodes.length === 0) return null;
+              return (
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-base">Heating oil prices by postcode</CardTitle>
+                    <CardDescription>See current prices for each area {supplier.name} covers</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {btPostcodes.map(pc => {
+                        const slug = pc.toLowerCase().replace(/\s+/g, "");
+                        return (
+                          <Link
+                            key={slug}
+                            href={`/heating-oil-prices/${slug}/`}
+                            className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                          >
+                            <MapPin className="w-3 h-3" />
+                            {pc.toUpperCase()}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })()}
           </div>
 
           {/* Sidebar */}
           <div className="space-y-6">
-            
+
+            {/* Quote Request Form */}
+            <QuoteForm supplierName={supplier.name} supplierPhone={supplier.phone} supplierWebsite={supplier.website} />
+
             {/* Quick Actions */}
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Quick Actions</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button className="w-full" variant="outline">
-                  <Phone className="h-4 w-4 mr-2" />
-                  Call for Quote
-                </Button>
-                <Button className="w-full" variant="outline">
-                  <Globe className="h-4 w-4 mr-2" />
-                  Visit Website
-                </Button>
-                <Button 
+                {supplier.phone && (
+                  <Button className="w-full" variant="outline" asChild>
+                    <a href={`tel:${supplier.phone}`}>
+                      <Phone className="h-4 w-4 mr-2" />
+                      Call {supplier.phone}
+                    </a>
+                  </Button>
+                )}
+                {supplier.website && (
+                  <Button className="w-full" variant="outline" asChild>
+                    <a href={supplier.website} target="_blank" rel="noopener noreferrer">
+                      <Globe className="h-4 w-4 mr-2" />
+                      Visit Website
+                    </a>
+                  </Button>
+                )}
+                <Button
                   className="w-full bg-yellow-500 hover:bg-yellow-600 text-black"
                   onClick={() => setShowClaimDialog(true)}
                 >

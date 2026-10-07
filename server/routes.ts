@@ -95,11 +95,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Slug-based supplier lookup — must come before /:id to avoid parseInt("alfa-oils")
+  app.get('/api/suppliers/by-slug/:slug', async (req, res) => {
+    try {
+      const toSlug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      const slug = req.params.slug;
+      const all = await storage.getAllSuppliers();
+      const supplier = all.find(s => toSlug(s.name) === slug);
+      if (!supplier) {
+        return res.status(404).json({ message: "Supplier not found" });
+      }
+      const prices = await storage.getPricesBySupplier(supplier.id);
+      res.json({
+        ...supplier,
+        prices,
+        averageRating: parseFloat(supplier.rating || "0"),
+        totalReviews: supplier.reviewCount || 0,
+        lastUpdated: supplier.lastScraped ? new Date(supplier.lastScraped).toLocaleDateString() : "Recently"
+      });
+    } catch (error) {
+      console.error("Error fetching supplier by slug:", error);
+      res.status(500).json({ message: "Failed to fetch supplier" });
+    }
+  });
+
   app.get('/api/suppliers/:id', async (req, res) => {
     try {
       const id = parseInt(req.params.id);
       if (isNaN(id)) {
-        return res.status(400).json({ message: "Invalid supplier ID" });
+        return res.status(404).json({ message: "Supplier not found" });
       }
 
       const supplier = await storage.getSupplierById(id);
@@ -151,14 +175,62 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get('/api/prices/lowest/:volume', async (req, res) => {
     try {
       const volume = parseInt(req.params.volume);
+      if (isNaN(volume) || volume <= 0) {
+        return res.status(400).json({ message: "Volume must be a positive number" });
+      }
       const { limit = 10 } = req.query;
-      
+
       const prices = await storage.getLowestPrices(volume, parseInt(limit as string));
       res.json(prices);
     } catch (error) {
       console.error("Error fetching lowest prices:", error);
       res.status(500).json({ message: "Failed to fetch lowest prices" });
     }
+  });
+
+  // NI-wide price summary (cheapest + average per volume)
+  app.get('/api/prices/ni-summary', async (req, res) => {
+    try {
+      const volumes = [300, 500, 900];
+      const summary: Record<number, { cheapest: number; average: number; count: number; updatedAt: string }> = {};
+
+      for (const volume of volumes) {
+        const prices = await storage.getLatestPrices(volume, undefined);
+        if (prices.length === 0) {
+          summary[volume] = { cheapest: 0, average: 0, count: 0, updatedAt: new Date().toISOString() };
+          continue;
+        }
+        const vals = prices.map(p => parseFloat(p.price)).filter(v => v > 0);
+        const cheapest = Math.min(...vals);
+        const average = vals.reduce((a, b) => a + b, 0) / vals.length;
+        summary[volume] = {
+          cheapest: parseFloat(cheapest.toFixed(2)),
+          average: parseFloat(average.toFixed(2)),
+          count: vals.length,
+          updatedAt: new Date().toISOString(),
+        };
+      }
+
+      res.json(summary);
+    } catch (error) {
+      console.error("Error fetching NI summary:", error);
+      res.status(500).json({ message: "Failed to fetch NI price summary" });
+    }
+  });
+
+  // 410 Gone for all /list/* URLs — removes spam product URLs from Google index
+  app.use('/list', (_req, res) => {
+    res.status(410).send('Gone');
+  });
+
+  // Noindex + canonical on /results — prevents query-param URLs polluting the index
+  app.use('/results', (req, res, next) => {
+    res.setHeader('X-Robots-Tag', 'noindex, follow');
+    const postcode = (req.query.postcode as string || '').toLowerCase().replace(/\s/g, '');
+    if (postcode) {
+      res.setHeader('Link', `<https://niheatingoil.com/heating-oil-prices/${postcode}/>; rel="canonical"`);
+    }
+    next();
   });
 
   // Address search API endpoint
@@ -278,6 +350,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get('/api/prices/stats/:volume', async (req, res) => {
     try {
       const volume = parseInt(req.params.volume);
+      if (isNaN(volume) || volume <= 0) {
+        return res.status(400).json({ message: "Volume must be a positive number" });
+      }
       const stats = await storage.getAveragePrices(volume);
       res.json({
         ...stats,
@@ -331,7 +406,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Protected routes
   app.get('/api/alerts', isAuthenticated, async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = req.user.id;
       const alerts = await storage.getUserPriceAlerts(userId);
       res.json(alerts);
     } catch (error) {
@@ -342,7 +417,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.post('/api/alerts', isAuthenticated, async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = req.user.id;
       const validatedData = insertPriceAlertSchema.parse({
         ...req.body,
         userId,
@@ -362,7 +437,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.put('/api/alerts/:id', isAuthenticated, async (req: any, res) => {
     try {
       const id = parseInt(req.params.id);
-      const userId = req.user.claims.sub;
+      const userId = req.user.id;
       
       // Verify the alert belongs to the user
       const alerts = await storage.getUserPriceAlerts(userId);
@@ -383,7 +458,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.delete('/api/alerts/:id', isAuthenticated, async (req: any, res) => {
     try {
       const id = parseInt(req.params.id);
-      const userId = req.user.claims.sub;
+      const userId = req.user.id;
       
       // Verify the alert belongs to the user
       const alerts = await storage.getUserPriceAlerts(userId);
@@ -571,8 +646,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "Please enter a valid email address" });
       }
 
+      const normalizedEmail = email.trim().toLowerCase();
+      const existing = await storage.getEmailSubscriberByEmail(normalizedEmail);
+      if (existing) {
+        return res.json({ message: "Already subscribed", id: existing.id });
+      }
+
       const subscriber = await storage.createEmailSubscriber({
-        email: email.trim().toLowerCase(),
+        email: normalizedEmail,
         postcode: postcode.trim().toUpperCase(),
         volume: volume ? parseInt(volume) : null,
         source: source || 'website',
@@ -580,7 +661,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       try {
         const { sendSubscriberConfirmation } = await import('./emailService');
-        await sendSubscriberConfirmation(subscriber.email, subscriber.postcode);
+        await sendSubscriberConfirmation(normalizedEmail, subscriber.postcode);
       } catch (emailError) {
         console.error("Failed to send subscriber confirmation:", emailError);
       }
@@ -592,8 +673,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Admin endpoint to view leads (requires authentication)
+  // Admin endpoint to view leads (requires admin role)
   app.get('/api/admin/leads', isAuthenticated, async (req: any, res) => {
+    if (req.user?.role !== 'admin') {
+      return res.status(403).json({ message: "Forbidden" });
+    }
     try {
       const status = req.query.status as string;
       const leads = await storage.getLeads(status);
@@ -604,233 +688,157 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Enhanced SEO sitemap with dynamic supplier data
-  app.get('/sitemap.xml', async (req, res) => {
+  // Sitemap index — points to four sub-sitemaps
+  app.get('/sitemap.xml', (_req, res) => {
+    const today = new Date().toISOString().split('T')[0];
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://niheatingoil.com/sitemap-pages.xml</loc>
+    <lastmod>${today}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://niheatingoil.com/sitemap-postcodes.xml</loc>
+    <lastmod>${today}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://niheatingoil.com/sitemap-cities.xml</loc>
+    <lastmod>${today}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://niheatingoil.com/sitemap-suppliers.xml</loc>
+    <lastmod>${today}</lastmod>
+  </sitemap>
+</sitemapindex>`;
+    res.set('Content-Type', 'application/xml');
+    res.send(xml);
+  });
+
+  // Static pages sitemap
+  app.get('/sitemap-pages.xml', (_req, res) => {
+    const today = new Date().toISOString().split('T')[0];
+    const urls = [
+      { loc: 'https://niheatingoil.com/', priority: '1.0', changefreq: 'daily' },
+      { loc: 'https://niheatingoil.com/heating-oil-prices/', priority: '0.9', changefreq: 'daily' },
+      { loc: 'https://niheatingoil.com/compare', priority: '0.9', changefreq: 'hourly' },
+      { loc: 'https://niheatingoil.com/suppliers', priority: '0.8', changefreq: 'daily' },
+      { loc: 'https://niheatingoil.com/blog', priority: '0.7', changefreq: 'weekly' },
+      { loc: 'https://niheatingoil.com/blog/best-time-buy-heating-oil-northern-ireland', priority: '0.6', changefreq: 'monthly' },
+      { loc: 'https://niheatingoil.com/blog/heating-oil-tank-sizes', priority: '0.6', changefreq: 'monthly' },
+      { loc: 'https://niheatingoil.com/blog/how-to-save-money-heating-oil', priority: '0.6', changefreq: 'monthly' },
+      { loc: 'https://niheatingoil.com/about', priority: '0.5', changefreq: 'monthly' },
+      { loc: 'https://niheatingoil.com/contact', priority: '0.5', changefreq: 'monthly' },
+      { loc: 'https://niheatingoil.com/giving-back', priority: '0.5', changefreq: 'monthly' },
+      { loc: 'https://niheatingoil.com/ni-heating-oil-price-index', priority: '0.8', changefreq: 'daily' },
+      { loc: 'https://niheatingoil.com/blog/cheapest-time-buy-heating-oil-northern-ireland', priority: '0.6', changefreq: 'monthly' },
+      { loc: 'https://niheatingoil.com/blog/find-best-heating-oil-prices-northern-ireland', priority: '0.6', changefreq: 'monthly' },
+      { loc: 'https://niheatingoil.com/blog/how-to-dispose-heating-oil-northern-ireland', priority: '0.6', changefreq: 'monthly' },
+      { loc: 'https://niheatingoil.com/blog/heating-oil-tank-maintenance-guide', priority: '0.6', changefreq: 'monthly' },
+    ];
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(u => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
+  </url>`).join('\n')}
+</urlset>`;
+    res.set('Content-Type', 'application/xml');
+    res.send(xml);
+  });
+
+  // Postcode pages sitemap
+  app.get('/sitemap-postcodes.xml', (_req, res) => {
+    const today = new Date().toISOString().split('T')[0];
+    const postcodes = [
+      'bt1','bt2','bt3','bt4','bt5','bt6','bt7','bt8','bt9','bt10',
+      'bt11','bt12','bt13','bt14','bt15','bt16','bt17','bt18','bt19','bt20',
+      'bt21','bt22','bt23','bt24','bt25','bt26','bt27','bt28','bt29','bt30',
+      'bt31','bt32','bt33','bt34','bt35','bt36','bt37','bt38','bt39','bt40',
+      'bt41','bt42','bt43','bt44','bt45','bt46','bt47','bt48','bt49',
+      'bt51','bt52','bt53','bt54','bt55','bt56','bt57',
+      'bt60','bt61','bt62','bt63','bt64','bt65','bt66','bt67','bt68','bt69',
+      'bt70','bt71','bt74','bt75','bt76','bt77','bt78','bt79','bt80','bt81','bt82',
+    ];
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${postcodes.map(pc => `  <url>
+    <loc>https://niheatingoil.com/heating-oil-prices/${pc}/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>`).join('\n')}
+</urlset>`;
+    res.set('Content-Type', 'application/xml');
+    res.send(xml);
+  });
+
+  // City pages sitemap
+  app.get('/sitemap-cities.xml', (_req, res) => {
+    const today = new Date().toISOString().split('T')[0];
+    const cities = [
+      'belfast','londonderry','derry','lisburn','newtownabbey','bangor',
+      'ballymena','ballymoney','coleraine','armagh','omagh','antrim',
+      'magherafelt','strabane','dungannon','enniskillen','larne',
+      'carrickfergus','limavady','newry','downpatrick','portadown','lurgan',
+      'ballynahinch','cookstown',
+    ];
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${cities.map(c => `  <url>
+    <loc>https://niheatingoil.com/heating-oil-prices/${c}/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.75</priority>
+  </url>`).join('\n')}
+</urlset>`;
+    res.set('Content-Type', 'application/xml');
+    res.send(xml);
+  });
+
+  // Supplier pages sitemap — dynamically from DB
+  app.get('/sitemap-suppliers.xml', async (_req, res) => {
     try {
       const suppliers = await storage.getAllSuppliers();
       const today = new Date().toISOString().split('T')[0];
-      
-      let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- Homepage -->
-  <url>
-    <loc>https://niheatingoil.com/</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Main Features -->
-  <url>
-    <loc>https://niheatingoil.com/compare</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://niheatingoil.com/suppliers</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://niheatingoil.com/blog</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Important Pages -->
-  <url>
-    <loc>https://niheatingoil.com/pages/html-sitemap</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- County Pages -->
-  <url>
-    <loc>https://niheatingoil.com/county/antrim</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://niheatingoil.com/county/down</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://niheatingoil.com/county/armagh</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://niheatingoil.com/county/tyrone</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://niheatingoil.com/county/fermanagh</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://niheatingoil.com/county/derry</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Major City Pages -->
-  <url>
-    <loc>https://niheatingoil.com/city/belfast</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://niheatingoil.com/city/derry</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://niheatingoil.com/city/lisburn</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://niheatingoil.com/city/bangor</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Blog Articles -->
-  <url>
-    <loc>https://niheatingoil.com/blog/heating-oil-tank-sizes</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://niheatingoil.com/blog/how-to-save-money-heating-oil</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://niheatingoil.com/blog/best-time-buy-heating-oil-northern-ireland</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://niheatingoil.com/blog/heating-oil-tank-maintenance-guide</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>`;
-
-      // Add dynamic supplier pages based on actual data
-      suppliers.forEach(supplier => {
-        const supplierSlug = supplier.name.toLowerCase()
-          .replace(/[^a-z0-9\s]/g, '')
-          .replace(/\s+/g, '-');
-        
-        sitemap += `
-  <url>
-    <loc>https://niheatingoil.com/supplier/${supplierSlug}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>`;
-      });
-
-      sitemap += `
-</urlset>`;
-    
-      res.set('Content-Type', 'application/xml');
-      res.send(sitemap);
-    } catch (error) {
-      console.error("Error generating sitemap:", error);
-      // Fallback to basic sitemap
-      const basicSitemap = `<?xml version="1.0" encoding="UTF-8"?>
+      const toSlug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://niheatingoil.com/</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+${suppliers.map(s => `  <url>
+    <loc>https://niheatingoil.com/supplier/${toSlug(s.name)}/</loc>
+    <lastmod>${today}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
+    <priority>0.7</priority>
+  </url>`).join('\n')}
 </urlset>`;
       res.set('Content-Type', 'application/xml');
-      res.send(basicSitemap);
+      res.send(xml);
+    } catch {
+      res.set('Content-Type', 'application/xml');
+      res.send(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>`);
     }
   });
 
   app.get('/robots.txt', (req, res) => {
     const robots = `User-agent: *
 Allow: /
-Allow: /compare
-Allow: /suppliers
-Allow: /alerts
 Disallow: /api/
 Disallow: /admin/
+Disallow: /list/
+Disallow: /results
 
 Sitemap: https://niheatingoil.com/sitemap.xml
+Sitemap: https://niheatingoil.com/sitemap-postcodes.xml
+Sitemap: https://niheatingoil.com/sitemap-cities.xml
+Sitemap: https://niheatingoil.com/sitemap-suppliers.xml`;
 
-# Crawl-delay for respectful crawling
-Crawl-delay: 1`;
-    
     res.set('Content-Type', 'text/plain');
     res.send(robots);
   });
 
   
 
-  // Supplier claim submissions
-  app.post('/api/supplier-claims', async (req, res) => {
-    try {
-      const validatedData = insertSupplierClaimSchema.parse(req.body);
-      const claim = await storage.createSupplierClaim(validatedData);
-      
-      res.json({
-        message: "Claim submitted successfully",
-        claimId: claim.id,
-        status: "pending"
-      });
-    } catch (error) {
-      console.error("Error creating supplier claim:", error);
-      if (error instanceof z.ZodError) {
-        return res.status(400).json({ message: "Invalid claim data", errors: error.errors });
-      }
-      res.status(500).json({ message: "Failed to submit claim" });
-    }
-  });
 
   // Chatbot conversation logging endpoint
   app.post('/api/chat/log', lenientRateLimit, async (req, res) => {
@@ -963,7 +971,7 @@ Crawl-delay: 1`;
   // User impact calculation (for logged-in users)
   app.get('/api/user-impact', isAuthenticated, async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = req.user.id;
       
       // Calculate user's total contribution based on saved quotes
       const savedQuotes = await storage.getUserSavedQuotes(userId);
@@ -990,7 +998,7 @@ Crawl-delay: 1`;
   // Saved quotes endpoints
   app.get('/api/saved-quotes', isAuthenticated, async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = req.user.id;
       const quotes = await storage.getUserSavedQuotes(userId);
       res.json(quotes);
     } catch (error) {
@@ -1001,7 +1009,7 @@ Crawl-delay: 1`;
 
   app.post('/api/saved-quotes', isAuthenticated, async (req: any, res) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = req.user.id;
       const quoteData = insertSavedQuoteSchema.parse({ ...req.body, userId });
       const quote = await storage.createSavedQuote({ ...quoteData, createdAt: new Date() });
       res.status(201).json(quote);

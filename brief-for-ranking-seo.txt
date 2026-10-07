@@ -1,0 +1,955 @@
+**The call: don’t turn NI Heating Oil into another generic “heating oil price” content site. Turn it into the **best local transaction/data layer for NI heating oil**.**
+
+You already have the right core product: postcode → tank size → supplier comparison. The problem is that the current site is presenting that asset too much like a landing page and not enough like a **local search database + commercial marketplace**.
+
+And the SERP has already shown you the threat: **NI Living** and **CheapOilNI** are building postcode/location inventory around essentially the same intent. ([NI Living][1])
+
+Your supplied Local SEO manual backs the architecture I’d use here: dedicated commercial/service pages beat mass generic location pages, and programmatic pages only make sense where there is genuine search demand, data, differentiation and monetisation. 
+
+## 1. Your biggest opportunity: own the postcode searches
+
+Your homepage currently says:
+
+> “Enter your BT postcode to get live quotes…”
+
+That's good CRO.
+
+But SEO-wise, you're leaving a **huge amount of searchable inventory** on the table.
+
+Your competitor is already doing things like:
+
+* `/postcode/bt7/`
+* `/postcode/bt23/`
+* `/postcode/bt15/`
+* `/postcode/bt8/`
+
+with actual supplier prices on the page. ([CheapOilNI][2])
+
+I'd build:
+
+```text
+/heating-oil-prices/
+├── /belfast/
+├── /derry/
+├── /lisburn/
+├── /bangor/
+├── /newry/
+├── /newtownabbey/
+├── /armagh/
+├── /ballymena/
+├── /coleraine/
+├── /omagh/
+│
+└── /postcode/
+    ├── /bt1/
+    ├── /bt2/
+    ├── /bt3/
+    ├── ...
+    └── /btxx/
+```
+
+But **do not simply generate 80 pages with the same paragraph and swap BT1 → BT2**.
+
+The page needs actual data.
+
+### Every postcode page should contain
+
+**H1**
+
+> Heating Oil Prices in BT7
+
+Then:
+
+* current 300L price
+* current 500L price
+* current 900L price
+* cheapest supplier
+* average price
+* price per litre
+* number of suppliers
+* last updated timestamp
+* delivery availability
+* supplier comparison table
+* local towns covered
+* historical price chart
+* NI average comparison
+* "how much could you save?" calculation
+* CTA to run the exact postcode comparison
+
+And crucially:
+
+> **BT7 is not just a keyword. It is a data entity.**
+
+That's the difference between a useful programmatic site and 500 shit doorway pages.
+
+The current Consumer Council data gives you a perfect benchmark layer because it publishes NI and council-area pricing for 300L, 500L and 900L. ([Consumer Council][3])
+
+---
+
+# 2. Don't build 500 city pages first
+
+I'd actually prioritise:
+
+### Tier 1 — postcode
+
+This is the money.
+
+```text
+/heating-oil-prices/bt7/
+/heating-oil-prices/bt8/
+/heating-oil-prices/bt9/
+```
+
+### Tier 2 — major town/city
+
+```text
+/heating-oil-prices/belfast/
+/heating-oil-prices/bangor/
+/heating-oil-prices/lisburn/
+/heating-oil-prices/newry/
+/heating-oil-prices/derry/
+```
+
+### Tier 3 — county/council area
+
+```text
+/heating-oil-prices/antrim/
+/heating-oil-prices/down/
+/heating-oil-prices/armagh/
+/heating-oil-prices/tyrone/
+/heating-oil-prices/fermanagh/
+/heating-oil-prices/londonderry/
+```
+
+But only index pages that have enough data to be genuinely useful.
+
+Your own architecture principles explicitly favour distinct intent and useful differentiation rather than uncontrolled programmatic indexation. 
+
+---
+
+# 3. The real moat is your price dataset
+
+This is where I'd get aggressive.
+
+You've got something Consumer Council doesn't quite give the user:
+
+**postcode-level commercial comparison.**
+
+The Consumer Council is already a massive authority entity in this market and explicitly tells NI consumers to shop around and compare suppliers. ([Consumer Council][3])
+
+So don't fight it.
+
+**Become the commercial layer sitting underneath the information layer.**
+
+Build historical datasets:
+
+```text
+Date
+Postcode
+Supplier
+300L
+500L
+900L
+p/L
+Delivery area
+Last checked
+```
+
+Then create genuinely useful pages:
+
+### "Heating Oil Prices in Northern Ireland Today"
+
+### "NI Heating Oil Price History"
+
+### "Average Heating Oil Price in Northern Ireland"
+
+### "500L Heating Oil Price Today"
+
+### "900L Heating Oil Price Today"
+
+### "Cheapest Heating Oil in Belfast"
+
+### "Cheapest Heating Oil in Derry"
+
+### "Heating Oil Price Per Litre Northern Ireland"
+
+Now you're no longer just competing for:
+
+> heating oil prices NI
+
+You're creating an entire **information graph around the market**.
+
+---
+
+# 4. Your homepage needs a much stronger entity proposition
+
+At the moment it basically says:
+
+> compare heating oil prices.
+
+I'd make the proposition:
+
+> **Compare Heating Oil Prices Across Northern Ireland**
+>
+> Compare current prices from local heating oil suppliers by BT postcode and tank size. See the cheapest available option, price per litre, supplier and latest update.
+
+Then immediately:
+
+**Enter BT postcode**
+
+**300L | 500L | 900L | 1000L**
+
+Then below that:
+
+> **Today's NI Heating Oil Market**
+
+| Size | Cheapest | NI average | Potential saving |
+| ---- | -------: | ---------: | ---------------: |
+| 300L |       £X |         £X |               £X |
+| 500L |       £X |         £X |               £X |
+| 900L |       £X |         £X |               £X |
+
+The Consumer Council's current data shows why this is commercially compelling: on 6 October 2026 it had NI averages of £334.39 for 300L, £542.56 for 500L and £964.41 for 900L. ([Consumer Council][4])
+
+Your page should be able to say something like:
+
+> **500L heating oil in NI today: from £X — compare suppliers for your BT postcode.**
+
+That's an actual search result proposition.
+
+---
+
+# 5. Build supplier pages — this is your second huge opportunity
+
+You already have `/suppliers`.
+
+I'd make individual supplier pages:
+
+```text
+/suppliers/alfa-oils/
+/suppliers/portadown-oil-supplies/
+/suppliers/bangor-fuels/
+/suppliers/lisburn-fuels/
+...
+```
+
+Each one gets:
+
+* supplier name
+* areas covered
+* BT postcodes
+* current prices
+* 300/500/900/1000L
+* price history
+* average price
+* delivery information
+* contact details
+* website
+* last price update
+* areas served
+* comparison against NI average
+* customer reviews where legitimately sourced
+* "compare this supplier with X"
+
+This gives you another entire commercial query universe:
+
+> Alfa Oils prices
+> Alfa Oils heating oil
+> Alfa Oils Belfast
+> Alfa Oils BT7
+> Portadown Oil Supplies prices
+> Bangor Fuels prices
+
+And supplier pages can become **high-value internal-link hubs** into postcode pages.
+
+---
+
+# 6. Then attack the "best/cheapest" query layer
+
+This is where monetisation gets interesting.
+
+Create pages around:
+
+* cheapest heating oil Northern Ireland
+* cheapest heating oil Belfast
+* cheapest heating oil Bangor
+* cheapest heating oil Derry
+* cheapest 500 litre heating oil NI
+* cheapest 900 litre heating oil NI
+* best heating oil suppliers Northern Ireland
+* heating oil suppliers near me
+* heating oil delivery Northern Ireland
+* emergency heating oil delivery NI
+* heating oil price per litre NI
+
+But don't write 1,500-word articles for these.
+
+**Make the database the content.**
+
+For example:
+
+> ### Cheapest 500L Heating Oil in Belfast Today
+>
+> Current comparison:
+>
+> 1. Supplier A — £XXX
+> 2. Supplier B — £XXX
+> 3. Supplier C — £XXX
+>
+> Prices checked: 20:14, 6 October 2026.
+
+That's much more defensible than another AI-generated:
+
+> "Heating oil is an important part of many Northern Irish homes..."
+
+Nobody needs that shit.
+
+---
+
+# 7. Monetisation: don't rely on ads
+
+This is the part I'd change most aggressively.
+
+You have a **transactional lead-generation asset**, not a blog.
+
+I'd test four revenue models.
+
+## A. Supplier referral / lead fee — #1
+
+Supplier gets a qualified customer.
+
+You charge:
+
+* £X per qualified lead
+* or £X per completed order
+* or percentage of gross order value
+* or monthly subscription for preferred placement
+
+This is the obvious model.
+
+Example:
+
+**500L BT7 comparison**
+
+> Cheapest
+> Supplier A
+> £XXX
+> **Get quote**
+
+If Supplier A pays £5–£20 for a qualified customer, suddenly your SEO traffic has an actual economic value.
+
+Test it.
+
+Don't assume the number.
+
+---
+
+## B. Supplier subscriptions
+
+This could become much bigger.
+
+Offer suppliers:
+
+### Free
+
+* basic listing
+* phone
+* website
+* standard ranking
+
+### £49–£99/month
+
+* enhanced profile
+* additional service-area information
+* analytics
+* leads
+* priority profile
+
+### £199–£499/month
+
+* qualified leads
+* featured placement
+* pricing dashboard
+* competitor pricing intelligence
+* market reports
+
+The **data itself** becomes a B2B product.
+
+---
+
+# 8. Paid "featured supplier" placement — carefully
+
+I'd test this, but I'd **separate sponsored placement from organic price ranking**.
+
+Don't destroy the core proposition.
+
+If the user comes because you say:
+
+> "cheapest first"
+
+then suddenly the supplier paying you is #1 despite being £30 more expensive, you've killed the trust model.
+
+Instead:
+
+**Organic comparison**
+
+> Cheapest → most expensive
+
+Then:
+
+> **Featured supplier**
+
+clearly labelled separately.
+
+Your moat is **trust**.
+
+Protect it.
+
+---
+
+# 9. Price alerts are potentially your best retention product
+
+You've already got:
+
+> `/alerts`
+
+I'd push this much harder.
+
+Example:
+
+> **Alert me when 500L heating oil in BT7 falls below £500**
+
+User enters:
+
+* postcode
+* tank size
+* target price
+* email/mobile
+
+Then you've built a first-party audience.
+
+Now monetisation becomes:
+
+**Supplier lead generation + recurring traffic + email inventory + price alerts + remarketing + affiliate/referral revenue.**
+
+That's substantially better than relying on AdSense.
+
+---
+
+# 10. Build the "oil price intelligence" layer
+
+This is where I'd try to create something competitors can't easily copy.
+
+### Daily NI Heating Oil Index
+
+For example:
+
+> **NI Heating Oil Index — 6 October 2026**
+>
+> 300L: £334.39 average
+> 500L: £542.56 average
+> 900L: £964.41 average
+>
+> ↓ 0.8% vs yesterday
+
+The Consumer Council already publishes daily data, so you have a credible external benchmark. ([Consumer Council][5])
+
+Then create:
+
+* 7-day trend
+* 30-day trend
+* 90-day trend
+* cheapest region
+* most expensive region
+* average price per litre
+* historical charts
+
+**That's linkable.**
+
+Journalists can cite it.
+
+Local newspapers can cite it.
+
+Facebook groups can share it.
+
+AI systems can retrieve it.
+
+And suddenly you're building **entity authority + link acquisition + AI citation probability** simultaneously.
+
+---
+
+# 11. Your AI SEO opportunity is actually very good
+
+The supplied patent stack is particularly relevant here.
+
+Its core thesis is that generated answers can favour content that is:
+
+* structurally clear
+* directly answerable
+* semantically close to the generated statement
+* corroborated across independent sources
+* entity-consistent. 
+
+So build pages that literally answer questions.
+
+For example:
+
+### What is the heating oil price in Northern Ireland today?
+
+**Answer:**
+
+> On 6 October 2026, the average Northern Ireland heating oil price was £334.39 for 300 litres, £542.56 for 500 litres and £964.41 for 900 litres, based on Consumer Council data.
+
+Then:
+
+### What is the cheapest heating oil in Belfast?
+
+Dynamic answer.
+
+### What does 500 litres of heating oil cost in BT7?
+
+Dynamic answer.
+
+### Which heating oil suppliers deliver to BT7?
+
+Dynamic supplier list.
+
+That's **retrievable information**, not fluffy content.
+
+The patent corpus also specifically emphasises complete passages and clear heading-to-answer relationships. 
+
+---
+
+# 12. Your blog is currently too weak to be the authority layer
+
+The existing posts:
+
+* best time to buy heating oil
+* tank sizes
+* how to save money
+
+are fine.
+
+But they're generic.
+
+I'd replace the content strategy with **data-led editorial**.
+
+Examples:
+
+### Money
+
+* Heating Oil Prices Northern Ireland Today
+* Average Heating Oil Price NI
+* Cheapest Heating Oil in NI
+* Heating Oil Price Forecast — *careful with forecasting claims*
+* When Is the Cheapest Time to Buy Heating Oil?
+* 300L vs 500L vs 900L Heating Oil Cost
+
+### Local
+
+* Heating Oil Prices Belfast
+* Heating Oil Prices Derry
+* Heating Oil Prices Bangor
+* Heating Oil Prices Lisburn
+* Heating Oil Prices Newry
+
+### Commercial
+
+* Best Heating Oil Suppliers in Northern Ireland
+* Heating Oil Suppliers in Belfast
+* Heating Oil Delivery Northern Ireland
+* Cheapest 500L Heating Oil NI
+
+### Data
+
+* NI Heating Oil Price History
+* NI Heating Oil Price Per Litre
+* Weekly NI Heating Oil Index
+* Belfast vs Derry Heating Oil Prices
+* Heating Oil Prices by Northern Ireland Council Area
+
+---
+
+# 13. Links: don't buy generic local citations and call it a strategy
+
+Your link strategy should be **data PR first**.
+
+You have an unusually linkable asset:
+
+> **Northern Ireland heating oil prices**
+
+Publish monthly/weekly data.
+
+Then pitch:
+
+* BBC NI
+* Belfast Telegraph
+* Irish News
+* local newspapers
+* local radio
+* farming publications
+* property publications
+* energy publications
+* consumer sites
+* NI community sites
+* councils/community organisations where relevant
+
+The story is not:
+
+> "NI Heating Oil launches website."
+
+Nobody gives a fuck.
+
+The story is:
+
+> **Heating oil prices in Northern Ireland fall X% in September, new comparison data shows**
+
+or:
+
+> **Households in Derry are paying £X less for heating oil than Belfast**
+
+Now you've got an actual PR hook.
+
+The Local SEO manual also records observational evidence that well-structured press releases have produced local organic/pack gains and AI-summary language reuse, while specifically warning against keyword-rich anchors. Treat that as evidence worth testing, not a guaranteed mechanism. 
+
+---
+
+# 14. Local entity stack
+
+I'd also clean up the entity footprint around:
+
+**NI Heating Oil**
+
+Consistent:
+
+* Name
+* address
+* phone
+* website
+* description
+* organisation schema
+* sameAs
+* social profiles
+* supplier relationships
+* media mentions
+
+You've got:
+
+> 14a Victoria Street, Ballymoney
+> 028 96005259
+
+Use that consistently everywhere.
+
+And I'd get genuine local mentions around **Ballymoney / Causeway Coast / Northern Ireland** rather than pretending you're a national business.
+
+---
+
+# 15. One thing I'd seriously consider: GBP
+
+This needs care.
+
+You're fundamentally an **online comparison service**, not a heating oil distributor.
+
+So don't manufacture fake locations or spam city GBPs.
+
+But if the physical Ballymoney operation legitimately qualifies for a Google Business Profile, optimise the real entity properly.
+
+The Local SEO manual's key distinction is useful here: local pack, local organic and AI visibility are separate surfaces with different signal mixes. 
+
+For this business I'd actually care more about:
+
+**local organic + AI visibility + commercial organic**
+
+than trying to win Maps for "heating oil".
+
+---
+
+# 16. Your internal linking needs to become a machine
+
+Think:
+
+```text
+Homepage
+   ↓
+Northern Ireland Heating Oil Prices
+   ↓
+County / City
+   ↓
+Postcode
+   ↓
+Supplier
+   ↓
+Tank size
+   ↓
+Comparison
+```
+
+And sideways:
+
+```text
+BT7
+ ↕
+Belfast
+ ↕
+500L prices
+ ↕
+Supplier A
+ ↕
+Heating oil price history
+```
+
+The important URLs should be reachable through actual contextual links; your supplied SEO SOP explicitly treats internal links as the primary discovery architecture, with sitemaps reinforcing it. 
+
+---
+
+# 17. Schema/data
+
+I'd implement at minimum:
+
+* Organization
+* WebSite
+* BreadcrumbList
+* Article where appropriate
+* Dataset where genuinely applicable
+* FAQ only where appropriate to the current Google-supported use case
+* LocalBusiness only if legitimately applicable
+* Product/Offer only where the underlying offer actually represents a product/offer in a defensible way
+
+But **don't schema-spam the comparison table**.
+
+The data itself matters more than spraying JSON-LD everywhere.
+
+---
+
+# 18. The biggest technical thing I'd check
+
+I'd want to inspect:
+
+### Indexation
+
+* How many `/results?postcode=...` URLs exist?
+* Are they indexable?
+* Are they canonical?
+* Are there duplicate combinations?
+* Are all tank-size variants generating URLs?
+* Are parameter URLs getting indexed?
+* Are there orphan postcode pages?
+
+This matters because your current architecture uses:
+
+```text
+/results?postcode=BT1&volume=500
+```
+
+That can be excellent as a **functional application URL** but potentially horrible as the primary SEO architecture.
+
+I'd create clean SEO URLs:
+
+```text
+/heating-oil-prices/belfast/
+/heating-oil-prices/bt1/
+```
+
+and let the interactive comparison application sit behind that.
+
+Don't let Google build an index of:
+
+```text
+?postcode=BT1&volume=300
+?postcode=BT1&volume=500
+?postcode=BT1&volume=900
+?postcode=BT1&volume=1000
+...
+```
+
+for every combination.
+
+That's how you accidentally build a massive shitpile.
+
+The supplied indexation SOP is very explicit that clean, deliberate URLs should form the search inventory rather than every parameter-driven URL. 
+
+---
+
+# 19. I'd attack CheapOilNI and NI Living differently
+
+The SERP evidence gives you two useful competitors.
+
+### CheapOilNI
+
+They're already aggressively building postcode pages. ([CheapOilNI][6])
+
+**Beat them with:**
+
+* better data freshness
+* more postcode coverage
+* stronger historical data
+* better supplier profiles
+* better UX
+* stronger backlinks
+* actual price alerts
+* better local editorial
+
+### NI Living
+
+They're building a broader local utility entity and have a sophisticated heating-oil comparison page with frequently updated supplier data. ([NI Living][1])
+
+**Don't try to beat them by becoming another general NI local-information site.**
+
+Go narrower and deeper:
+
+> **NI Heating Oil = the specialist heating-oil data/comparison authority.**
+
+That positioning is much stronger.
+
+---
+
+# 20. The 90-day attack plan
+
+### Days 1–14 — Foundation
+
+**P0**
+
+* Fix indexation/canonical architecture
+* Create clean postcode URL system
+* Create city pages
+* Create supplier pages
+* Improve homepage
+* Add dynamic price data
+* Add timestamps
+* Add historical data
+* Improve internal linking
+* Create XML sitemap by URL type
+* Set up GSC URL/indexation monitoring
+
+### Days 15–30 — Commercial inventory
+
+Launch:
+
+**50–100 highest-value postcode pages**
+
+Not 1,000.
+
+Only pages where your data is good.
+
+Then:
+
+* 10 major cities
+* 10–20 supplier pages
+* 5–10 commercial comparison pages
+* price history
+* tank-size pages
+
+### Days 30–60 — Authority
+
+Launch:
+
+**NI Heating Oil Price Index**
+
+Then:
+
+* monthly data report
+* local price stories
+* PR
+* supplier partnerships
+* local citations
+* relevant editorial links
+* community distribution
+
+### Days 60–90 — Monetisation
+
+Test:
+
+1. supplier CPL
+2. supplier CPA
+3. featured supplier
+4. supplier subscription
+5. price-alert email sponsorship
+6. market-data subscription
+
+Don't wait until you're doing 100k sessions.
+
+**Monetise the first meaningful commercial traffic.**
+
+---
+
+# 21. What I'd measure
+
+Forget generic "traffic up 40%".
+
+I'd build a dashboard around:
+
+### SEO
+
+* rankings for 50 core commercial terms
+* postcode rankings
+* city rankings
+* supplier rankings
+* organic clicks
+* indexed postcode pages
+* impressions/page
+
+### Product
+
+* postcode searches
+* comparison completions
+* supplier clicks
+* supplier phone clicks
+* outbound supplier clicks
+* alert registrations
+
+### Money
+
+```text
+Organic visitor
+     ↓
+postcode entered
+     ↓
+comparison generated
+     ↓
+supplier click
+     ↓
+lead
+     ↓
+order
+     ↓
+£ revenue
+```
+
+Then calculate:
+
+**Revenue per organic visitor**
+
+That's the number I'd care about.
+
+---
+
+## The strategic position I'd take
+
+You don't need to become **the biggest heating oil website in Northern Ireland**.
+
+You need to become:
+
+> **the database people use when deciding where and when to buy heating oil in Northern Ireland.**
+
+That gives you four compounding assets:
+
+**1. Search inventory** — postcode × location × supplier × tank size
+**2. Proprietary data** — current + historical pricing
+**3. Entity authority** — NI heating oil comparison brand
+**4. Commercial network** — suppliers paying for qualified demand
+
+That's a much better business than an SEO blog with some AdSense slapped on it.
+
+And there's a particularly nice strategic gap: the Consumer Council already owns **consumer trust/information**, while the suppliers own **transactions**. Your opportunity is to own the **commercial comparison layer between the two**. The NI government itself currently tells consumers to compare suppliers and points them towards the Consumer Council's price checker. ([Department for Communities][7])
+
+**If this were my asset, I'd put the next serious chunk of development budget into the postcode/data/lead-gen layer — not another 50 blog posts.**
+
+If you give me the **GSC export + current rankings + GA4/lead data**, I can turn this into a page-by-page attack plan with **exact URLs to create, consolidate, noindex, internally link and monetise**, rather than keeping it at strategy level.
+
+[1]: https://niliving.co.uk/oil "Heating Oil Prices NI | 300L, 500L & 900L"
+[2]: https://www.cheapoilni.co.uk/postcode/bt7/?utm_source=chatgpt.com "Cheapest Heating Oil Prices in BT7 - CheapOilNI"
+[3]: https://www.consumercouncil.org.uk/home-heating/price-checker?order=delta&sort=desc&utm_source=chatgpt.com "Home Heating Oil Price Checker | Consumer Council"
+[4]: https://www.consumercouncil.org.uk/?campaignid=PPC_FX_1007&utm_source=chatgpt.com "Consumer Council for Northern Ireland"
+[5]: https://www.consumercouncil.org.uk/?page=1&utm_source=chatgpt.com "Consumer Council for Northern Ireland"
+[6]: https://www.cheapoilni.co.uk/?utm_source=chatgpt.com "Search the Cheapest Heating Oil prices – CheapOilNI"
+[7]: https://www.communities-ni.gov.uk/articles/home-heating-oil-support-scheme-faqs?utm_source=chatgpt.com "Home Heating Oil Support Scheme - FAQs | Department for Communities"

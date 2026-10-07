@@ -94,6 +94,7 @@ export interface IStorage {
 
   // Email subscriber operations
   createEmailSubscriber(subscriber: InsertEmailSubscriber): Promise<EmailSubscriber>;
+  getEmailSubscriberByEmail(email: string): Promise<EmailSubscriber | undefined>;
 
   // Supplier claim operations
   createSupplierClaim(claim: InsertSupplierClaim): Promise<SupplierClaim>;
@@ -628,6 +629,15 @@ export class DatabaseStorage implements IStorage {
       .values({ ...subscriber, createdAt: new Date() })
       .returning();
     return newSubscriber;
+  }
+
+  async getEmailSubscriberByEmail(email: string): Promise<EmailSubscriber | undefined> {
+    const [subscriber] = await db
+      .select()
+      .from(emailSubscribers)
+      .where(eq(emailSubscribers.email, email))
+      .limit(1);
+    return subscriber;
   }
 
   // Supplier claim operations
