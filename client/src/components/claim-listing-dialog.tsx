@@ -86,7 +86,7 @@ export function ClaimListingDialog({ supplier, open, onOpenChange }: ClaimListin
         <form onSubmit={handleSubmit} className="space-y-6 mt-6">
           {/* Contact Information */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2 text-lg font-semibold text-gray-900">
+            <div className="flex items-center gap-2 text-lg font-semibold text-brand-ink">
               <Building className="h-5 w-5" />
               Contact Information
             </div>
@@ -118,7 +118,7 @@ export function ClaimListingDialog({ supplier, open, onOpenChange }: ClaimListin
               <div className="space-y-2">
                 <Label htmlFor="businessEmail">Business Email *</Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-brand-muted" />
                   <Input
                     id="businessEmail"
                     type="email"
@@ -134,7 +134,7 @@ export function ClaimListingDialog({ supplier, open, onOpenChange }: ClaimListin
               <div className="space-y-2">
                 <Label htmlFor="businessPhone">Business Phone</Label>
                 <div className="relative">
-                  <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                  <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-brand-muted" />
                   <Input
                     id="businessPhone"
                     type="tel"
@@ -150,7 +150,7 @@ export function ClaimListingDialog({ supplier, open, onOpenChange }: ClaimListin
 
           {/* Business Relationship */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2 text-lg font-semibold text-gray-900">
+            <div className="flex items-center gap-2 text-lg font-semibold text-brand-ink">
               <FileText className="h-5 w-5" />
               Business Verification
             </div>
@@ -181,7 +181,7 @@ export function ClaimListingDialog({ supplier, open, onOpenChange }: ClaimListin
                 placeholder="List any documents you can provide for verification (e.g., business registration, VAT number, company website admin access, etc.)"
                 rows={3}
               />
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-brand-muted">
                 Help us verify your claim by listing available documentation
               </p>
             </div>
@@ -202,9 +202,9 @@ export function ClaimListingDialog({ supplier, open, onOpenChange }: ClaimListin
           </div>
 
           {/* Important Notice */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h4 className="font-semibold text-blue-900 mb-2">What happens next?</h4>
-            <ul className="text-sm text-blue-800 space-y-1">
+          <div className="bg-brand-mint border border-brand-line rounded-lg p-4">
+            <h4 className="font-semibold text-brand-forest mb-2">What happens next?</h4>
+            <ul className="text-sm text-brand-forest space-y-1">
               <li>• We'll review your claim within 2-3 business days</li>
               <li>• You may be contacted for additional verification</li>
               <li>• Once approved, you'll receive login credentials to manage your listing</li>
@@ -217,7 +217,7 @@ export function ClaimListingDialog({ supplier, open, onOpenChange }: ClaimListin
             <Button 
               type="submit" 
               disabled={!isValid || claimMutation.isPending}
-              className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-black font-medium"
+              className="flex-1 bg-brand-gold hover:bg-yellow-600 text-black font-medium"
             >
               {claimMutation.isPending ? (
                 <>

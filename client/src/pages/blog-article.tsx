@@ -441,12 +441,12 @@ export default function BlogArticle() {
 
   if (!article) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-brand-cream">
         <Navigation />
         <main className="max-w-4xl mx-auto px-4 py-8 pt-24">
           <div className="bg-white rounded-lg shadow-sm p-8 text-center">
-            <h1 className="text-2xl font-bold text-gray-900 mb-4">Article Not Found</h1>
-            <p className="text-gray-600 mb-6">This article doesn't exist or has been moved.</p>
+            <h1 className="text-2xl font-bold text-brand-ink mb-4">Article Not Found</h1>
+            <p className="text-brand-muted mb-6">This article doesn't exist or has been moved.</p>
             <Button asChild>
               <Link href="/blog">Back to Blog</Link>
             </Button>
@@ -484,7 +484,7 @@ export default function BlogArticle() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-cream">
       <SEOHead
         title={seoTitle}
         description={seoDescription}
@@ -495,12 +495,12 @@ export default function BlogArticle() {
 
       <main className="max-w-4xl mx-auto px-4 py-8 pt-24">
         <div className="mb-8">
-          <nav aria-label="Breadcrumb" className="flex items-center text-sm text-gray-500 mb-4 gap-1">
-            <Link href="/" className="hover:text-gray-700">Home</Link>
+          <nav aria-label="Breadcrumb" className="flex items-center text-sm text-brand-muted mb-4 gap-1">
+            <Link href="/" className="hover:text-brand-ink">Home</Link>
             <ChevronRight className="h-3.5 w-3.5" />
-            <Link href="/blog" className="hover:text-gray-700">Blog</Link>
+            <Link href="/blog" className="hover:text-brand-ink">Blog</Link>
             <ChevronRight className="h-3.5 w-3.5" />
-            <span className="text-gray-700 truncate max-w-xs">{article.title}</span>
+            <span className="text-brand-ink truncate max-w-xs">{article.title}</span>
           </nav>
 
           <Button variant="ghost" asChild className="mb-4">
@@ -521,14 +521,14 @@ export default function BlogArticle() {
 
             <div className="p-8">
               <div className="mb-6">
-                <span className="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full mb-4">
+                <span className="inline-block bg-brand-mint text-brand-forest text-sm font-medium px-3 py-1 rounded-full mb-4">
                   {article.category}
                 </span>
-                <h1 className="text-3xl font-bold text-gray-900 mb-4">
+                <h1 className="text-3xl font-bold text-brand-ink mb-4">
                   {article.title}
                 </h1>
 
-                <div className="flex flex-wrap items-center text-gray-600 text-sm gap-6">
+                <div className="flex flex-wrap items-center text-brand-muted text-sm gap-6">
                   <div className="flex items-center">
                     <User className="h-4 w-4 mr-2" />
                     {article.author}
@@ -549,19 +549,19 @@ export default function BlogArticle() {
               </div>
 
               <div
-                className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700 prose-a:text-blue-600"
+                className="prose prose-lg max-w-none prose-headings:text-brand-ink prose-p:text-brand-ink prose-li:text-brand-ink prose-a:text-brand-forest"
                 dangerouslySetInnerHTML={{ __html: article.content }}
               />
 
-              <div className="mt-10 pt-8 border-t border-gray-200">
-                <div className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <div className="mt-10 pt-8 border-t border-brand-line">
+                <div className="bg-brand-cream rounded-lg p-6">
+                  <h3 className="text-lg font-semibold text-brand-ink mb-2">
                     Find the cheapest heating oil near you
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-brand-muted mb-4">
                     Compare prices from suppliers across Northern Ireland in seconds.
                   </p>
-                  <Button asChild className="bg-orange-500 hover:bg-orange-600">
+                  <Button asChild className="bg-brand-gold hover:brightness-95">
                     <Link href="/">Compare prices</Link>
                   </Button>
                 </div>

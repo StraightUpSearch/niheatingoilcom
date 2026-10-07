@@ -27,21 +27,21 @@ export default function SavingsTracker() {
       description: "Saved your first £10",
       icon: Target,
       unlocked: true,
-      color: "bg-green-500"
+      color: "bg-brand-forest"
     },
     {
       title: "Smart Shopper",
       description: "Saved £100 total",
       icon: Award,
       unlocked: true,
-      color: "bg-blue-500"
+      color: "bg-brand-forest-soft"
     },
     {
       title: "Savings Streak",
       description: "7 days of price checking",
       icon: Flame,
       unlocked: true,
-      color: "bg-orange-500"
+      color: "bg-brand-gold"
     },
     {
       title: "Deal Hunter",
@@ -57,19 +57,19 @@ export default function SavingsTracker() {
   return (
     <div className="space-y-6">
       {/* Main Savings Display */}
-      <Card className="bg-gradient-to-br from-green-50 to-blue-50 border-green-200">
+      <Card className="bg-gradient-to-br from-green-50 to-blue-50 border-brand-line">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl text-gray-900">Your Total Savings</CardTitle>
+          <CardTitle className="text-2xl text-brand-ink">Your Total Savings</CardTitle>
         </CardHeader>
         <CardContent className="text-center">
-          <div className="text-5xl font-bold text-green-600 mb-2">
+          <div className="text-5xl font-bold text-[#0B6A30] mb-2">
             £{animatedSavings.toFixed(2)}
           </div>
-          <p className="text-gray-600 mb-4">You're saving money every time you compare!</p>
+          <p className="text-brand-muted mb-4">You're saving money every time you compare!</p>
           
           {/* Progress to Goal */}
           <div className="mb-4">
-            <div className="flex justify-between text-sm text-gray-600 mb-1">
+            <div className="flex justify-between text-sm text-brand-muted mb-1">
               <span>Progress to £{savingsGoal} goal</span>
               <span>{progressPercentage.toFixed(0)}%</span>
             </div>
@@ -78,12 +78,12 @@ export default function SavingsTracker() {
 
           <div className="grid grid-cols-2 gap-4 mt-6">
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">{currentStreak}</div>
-              <div className="text-sm text-gray-600">Day Streak</div>
+              <div className="text-2xl font-bold text-brand-forest">{currentStreak}</div>
+              <div className="text-sm text-brand-muted">Day Streak</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-purple-600">£{bestDeal}</div>
-              <div className="text-sm text-gray-600">Best Deal</div>
+              <div className="text-sm text-brand-muted">Best Deal</div>
             </div>
           </div>
         </CardContent>
@@ -104,8 +104,8 @@ export default function SavingsTracker() {
                 key={index}
                 className={`p-3 rounded-lg border ${
                   achievement.unlocked 
-                    ? 'bg-white border-gray-200' 
-                    : 'bg-gray-50 border-gray-100 opacity-60'
+                    ? 'bg-white border-brand-line' 
+                    : 'bg-brand-cream border-brand-line opacity-60'
                 }`}
               >
                 <div className="flex items-center mb-2">
@@ -117,7 +117,7 @@ export default function SavingsTracker() {
                   </Badge>
                 </div>
                 <h4 className="font-semibold text-sm">{achievement.title}</h4>
-                <p className="text-xs text-gray-600">{achievement.description}</p>
+                <p className="text-xs text-brand-muted">{achievement.description}</p>
               </div>
             ))}
           </div>
@@ -125,20 +125,20 @@ export default function SavingsTracker() {
       </Card>
 
       {/* Quick Actions */}
-      <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
+      <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-brand-line">
         <CardContent className="p-4">
-          <h3 className="font-semibold text-gray-900 mb-3">Keep Your Streak Going!</h3>
+          <h3 className="font-semibold text-brand-ink mb-3">Keep Your Streak Going!</h3>
           <div className="space-y-2">
             <div className="flex items-center justify-between p-2 bg-white rounded border">
               <div className="flex items-center">
-                <TrendingUp className="h-4 w-4 text-green-500 mr-2" />
+                <TrendingUp className="h-4 w-4 text-[#0B6A30] mr-2" />
                 <span className="text-sm">Check today's prices</span>
               </div>
               <Badge variant="outline" className="text-xs">+5 XP</Badge>
             </div>
             <div className="flex items-center justify-between p-2 bg-white rounded border">
               <div className="flex items-center">
-                <Target className="h-4 w-4 text-blue-500 mr-2" />
+                <Target className="h-4 w-4 text-brand-forest mr-2" />
                 <span className="text-sm">Set a price alert</span>
               </div>
               <Badge variant="outline" className="text-xs">+10 XP</Badge>

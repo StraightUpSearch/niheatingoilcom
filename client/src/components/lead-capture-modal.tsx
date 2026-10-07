@@ -175,20 +175,20 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
       <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center text-lg sm:text-xl">
-            <Mail className="h-5 w-5 mr-2 text-blue-600" />
+            <Mail className="h-5 w-5 mr-2 text-brand-forest" />
             Get Your Best Quote
           </DialogTitle>
           <DialogDescription className="text-sm sm:text-base">
             {supplier ? (
-              <div className="bg-green-50 border border-green-200 rounded-lg p-3 mt-2">
+              <div className="bg-brand-mint border border-brand-line rounded-lg p-3 mt-2">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="font-semibold text-green-800 text-sm sm:text-base">{supplier.name}</span>
-                    <div className="text-xs sm:text-sm text-green-600">{supplier.location}</div>
+                    <span className="font-semibold text-[#0B6A30] text-sm sm:text-base">{supplier.name}</span>
+                    <div className="text-xs sm:text-sm text-[#0B6A30]">{supplier.location}</div>
                   </div>
                   <div className="text-right">
-                    <div className="font-bold text-green-800 text-sm sm:text-base">{calculateDynamicPrice()}</div>
-                    <div className="text-xs text-green-600">{getSelectedVolume()}L</div>
+                    <div className="font-bold text-[#0B6A30] text-sm sm:text-base">{calculateDynamicPrice()}</div>
+                    <div className="text-xs text-[#0B6A30]">{getSelectedVolume()}L</div>
                   </div>
                 </div>
               </div>
@@ -294,10 +294,10 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
 
           <BotProtection onValidation={setIsBotProtectionValid} />
 
-          <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+          <div className="bg-brand-mint border border-brand-line rounded-lg p-3">
             <div className="flex items-start">
-              <CheckCircle className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-              <div className="text-sm text-green-800">
+              <CheckCircle className="h-4 w-4 text-[#0B6A30] mr-2 mt-0.5 flex-shrink-0" />
+              <div className="text-sm text-[#0B6A30]">
                 <strong>Why use our service:</strong>
                 <ul className="mt-1 space-y-1 text-xs sm:text-sm">
                   <li>• We contact multiple suppliers to get you the best price</li>
@@ -321,7 +321,7 @@ export default function LeadCaptureModal({ isOpen, onClose, supplier }: LeadCapt
             </Button>
             <Button
               type="submit"
-              className="w-full sm:flex-1 bg-green-600 hover:bg-green-700 text-sm sm:text-base py-3 sm:py-2"
+              className="w-full sm:flex-1 bg-brand-forest hover:bg-brand-forest-soft text-sm sm:text-base py-3 sm:py-2"
               disabled={isSubmitting || !formData.name || !formData.email || !formData.phone || !formData.postcode || !isBotProtectionValid}
             >
               {isSubmitting ? (

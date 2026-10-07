@@ -33,7 +33,7 @@ export default function SavedQuotesPage() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-brand-cream">
         <Card>
           <CardContent className="p-6 text-center space-y-4">
             <p>Please sign in to view your saved quotes.</p>
@@ -45,7 +45,7 @@ export default function SavedQuotesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-cream">
       <Navigation />
       <div className="max-w-4xl mx-auto p-6 space-y-6">
         <h1 className="text-2xl font-bold">Saved Quotes</h1>
@@ -67,7 +67,7 @@ export default function SavedQuotesPage() {
                   <p className="text-sm">Price: {quote.price}</p>
                   <p className="text-sm">Volume: {quote.volume}L</p>
                   <p className="text-sm">Postcode: {quote.postcode}</p>
-                  <p className="text-xs text-gray-500">Saved {new Date(quote.createdAt).toLocaleDateString()}</p>
+                  <p className="text-xs text-brand-muted">Saved {new Date(quote.createdAt).toLocaleDateString()}</p>
                 </CardContent>
               </Card>
             ))}

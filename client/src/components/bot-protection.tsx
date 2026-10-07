@@ -18,17 +18,17 @@ export default function BotProtection({ onValidation }: BotProtectionProps) {
   }, [isChecked, startTime, onValidation]);
 
   return (
-    <div className="flex items-center space-x-2 p-3 bg-gray-50 rounded-lg">
+    <div className="flex items-center space-x-2 p-3 bg-brand-cream rounded-lg">
       <Checkbox
         id="bot-protection"
         checked={isChecked}
         onCheckedChange={(checked) => setIsChecked(!!checked)}
       />
       <div className="flex items-center space-x-2">
-        <Shield className="h-4 w-4 text-gray-600" />
+        <Shield className="h-4 w-4 text-brand-muted" />
         <label
           htmlFor="bot-protection"
-          className="text-sm text-gray-700 cursor-pointer"
+          className="text-sm text-brand-ink cursor-pointer"
         >
           I confirm I am not a robot and agree to receive pricing information
         </label>

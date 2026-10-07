@@ -51,11 +51,11 @@ export default function PriceAlertBar({ postcode, volume }: PriceAlertBarProps) 
 
   if (status === "success") {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-xl p-5 flex items-center gap-3">
-        <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+      <div className="bg-brand-mint border border-brand-line rounded-xl p-5 flex items-center gap-3">
+        <CheckCircle className="h-5 w-5 text-[#0B6A30] flex-shrink-0" />
         <div>
           <p className="font-semibold text-green-900 text-sm">You're on the list</p>
-          <p className="text-green-700 text-xs mt-0.5">
+          <p className="text-[#0B6A30] text-xs mt-0.5">
             We'll email you when prices drop in {postcode}. Check your inbox for confirmation.
           </p>
         </div>
@@ -64,14 +64,14 @@ export default function PriceAlertBar({ postcode, volume }: PriceAlertBarProps) 
   }
 
   return (
-    <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
+    <div className="bg-brand-mint border border-brand-line rounded-xl p-5">
       <div className="flex items-start gap-3 mb-3">
-        <Bell className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+        <Bell className="h-5 w-5 text-brand-forest flex-shrink-0 mt-0.5" />
         <div>
-          <p className="font-semibold text-blue-900 text-sm">
+          <p className="font-semibold text-brand-forest text-sm">
             Prices for {postcode} change weekly
           </p>
-          <p className="text-blue-700 text-xs mt-0.5">
+          <p className="text-brand-forest text-xs mt-0.5">
             Get an email when they drop — no account needed.
           </p>
         </div>
@@ -82,14 +82,14 @@ export default function PriceAlertBar({ postcode, volume }: PriceAlertBarProps) 
           placeholder="your@email.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 bg-white border-blue-300 focus:border-blue-500 text-sm"
+          className="flex-1 bg-white border-brand-line focus:border-brand-forest text-sm"
           disabled={status === "loading"}
           required
         />
         <Button
           type="submit"
           disabled={status === "loading" || !email.trim()}
-          className="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 whitespace-nowrap"
+          className="bg-brand-forest hover:bg-brand-forest-soft text-white text-sm px-4 whitespace-nowrap"
         >
           {status === "loading" ? "Saving..." : "Alert me"}
         </Button>

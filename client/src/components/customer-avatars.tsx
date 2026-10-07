@@ -111,7 +111,7 @@ export default function CustomerAvatars({
         <p className="text-grey-600 font-medium">
           Trusted by {displayedCustomers.length}+ homeowners
           {showSavings && (
-            <span className="block text-xs text-green-600">
+            <span className="block text-xs text-[#0B6A30]">
               Average savings: £{Math.round(totalSavings / displayedCustomers.length)}
             </span>
           )}

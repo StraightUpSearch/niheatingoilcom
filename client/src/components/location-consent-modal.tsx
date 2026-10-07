@@ -45,7 +45,7 @@ export default function LocationConsentModal({
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <MapPin className="w-5 h-5 text-blue-600" />
+            <MapPin className="w-5 h-5 text-brand-forest" />
             Share Your Location
           </DialogTitle>
           <DialogDescription className="text-left space-y-3">
@@ -57,20 +57,20 @@ export default function LocationConsentModal({
 
         <div className="space-y-4 my-4">
           <div className="flex items-start gap-3">
-            <Target className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+            <Target className="w-5 h-5 text-[#0B6A30] mt-0.5 flex-shrink-0" />
             <div>
               <h4 className="font-medium text-sm">Accurate Local Pricing</h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-brand-muted">
                 Get heating oil prices from suppliers closest to your home
               </p>
             </div>
           </div>
 
           <div className="flex items-start gap-3">
-            <Clock className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+            <Clock className="w-5 h-5 text-brand-forest mt-0.5 flex-shrink-0" />
             <div>
               <h4 className="font-medium text-sm">Faster Search</h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-brand-muted">
                 Auto-fill your postcode area to skip manual typing
               </p>
             </div>
@@ -80,15 +80,15 @@ export default function LocationConsentModal({
             <Shield className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
             <div>
               <h4 className="font-medium text-sm">Privacy Protected</h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-brand-muted">
                 Your location is only used to suggest your postcode area and is never stored
               </p>
             </div>
           </div>
         </div>
 
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
-          <p className="text-sm text-blue-800">
+        <div className="bg-brand-mint border border-brand-line rounded-lg p-3">
+          <p className="text-sm text-brand-forest">
             <strong>How it works:</strong> We'll detect your Northern Ireland postcode area (like BT1, BT9, etc.) 
             and automatically fill it in for you. Your exact location is never saved.
           </p>
@@ -105,7 +105,7 @@ export default function LocationConsentModal({
           <Button
             onClick={handleAllow}
             disabled={isAllowing}
-            className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700"
+            className="w-full sm:w-auto bg-brand-forest hover:bg-brand-forest-soft"
           >
             {isAllowing ? "Getting Location..." : "Allow Location Access"}
           </Button>

@@ -39,8 +39,8 @@ export default function PasswordStrengthIndicator({ password, className = "" }: 
   
   const getStrengthColor = () => {
     if (strength <= 2) return "bg-red-500";
-    if (strength <= 4) return "bg-yellow-500";
-    return "bg-green-500";
+    if (strength <= 4) return "bg-brand-gold";
+    return "bg-brand-forest";
   };
 
   const getStrengthLabel = () => {
@@ -55,11 +55,11 @@ export default function PasswordStrengthIndicator({ password, className = "" }: 
     <div className={`space-y-3 ${className}`}>
       <div className="space-y-1">
         <div className="flex justify-between text-sm">
-          <span className="text-gray-600">Password strength</span>
+          <span className="text-brand-muted">Password strength</span>
           <span className={`font-medium ${
             strength <= 2 ? 'text-red-600' : 
             strength <= 4 ? 'text-yellow-600' : 
-            'text-green-600'
+            'text-[#0B6A30]'
           }`}>
             {getStrengthLabel()}
           </span>
@@ -76,11 +76,11 @@ export default function PasswordStrengthIndicator({ password, className = "" }: 
         {requirements.map((req, index) => (
           <div key={index} className="flex items-center text-xs">
             {req.met ? (
-              <Check className="h-3 w-3 text-green-500 mr-2" />
+              <Check className="h-3 w-3 text-[#0B6A30] mr-2" />
             ) : (
-              <X className="h-3 w-3 text-gray-400 mr-2" />
+              <X className="h-3 w-3 text-brand-muted mr-2" />
             )}
-            <span className={req.met ? 'text-green-600' : 'text-gray-500'}>
+            <span className={req.met ? 'text-[#0B6A30]' : 'text-brand-muted'}>
               {req.label}
             </span>
           </div>

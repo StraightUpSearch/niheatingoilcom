@@ -28,20 +28,20 @@ export default function FeaturedSuppliers() {
             <Star key={i} className="h-3 w-3 fill-current" />
           ))}
           {[...Array(5 - fullStars)].map((_, i) => (
-            <Star key={i} className="h-3 w-3 text-gray-300" />
+            <Star key={i} className="h-3 w-3 text-brand-line" />
           ))}
         </div>
-        <span className="ml-1 text-xs text-gray-600">{numRating.toFixed(1)}</span>
+        <span className="ml-1 text-xs text-brand-muted">{numRating.toFixed(1)}</span>
       </div>
     );
   };
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-12 bg-brand-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Featured Suppliers</h2>
-          <p className="text-gray-600">
+          <h2 className="text-2xl font-bold text-brand-ink mb-2">Featured Suppliers</h2>
+          <p className="text-brand-muted">
             Trusted heating oil suppliers across Northern Ireland
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function FeaturedSuppliers() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {isLoading ? (
             [...Array(3)].map((_, i) => (
-              <Card key={i} className="border border-gray-200">
+              <Card key={i} className="border border-brand-line">
                 <CardContent className="p-4">
                   <div className="flex items-center space-x-3 mb-3">
                     <Skeleton className="w-10 h-10 rounded-lg" />
@@ -62,7 +62,7 @@ export default function FeaturedSuppliers() {
                     <Skeleton className="h-3 w-full" />
                     <Skeleton className="h-3 w-3/4" />
                   </div>
-                  <div className="mt-3 pt-3 border-t border-gray-100">
+                  <div className="mt-3 pt-3 border-t border-brand-line">
                     <Skeleton className="h-6 w-16" />
                   </div>
                 </CardContent>
@@ -70,40 +70,40 @@ export default function FeaturedSuppliers() {
             ))
           ) : (
             suppliers?.map((supplier: any) => (
-              <Card key={supplier.id} className="border border-gray-200 hover:shadow-lg transition-shadow">
+              <Card key={supplier.id} className="border border-brand-line hover:shadow-lg transition-shadow">
                 <CardContent className="p-4">
                   <div className="flex items-center space-x-3 mb-3">
                     <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                       <Truck className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 text-sm">{supplier.name}</h3>
-                      <p className="text-xs text-gray-500">{supplier.location}</p>
+                      <h3 className="font-semibold text-brand-ink text-sm">{supplier.name}</h3>
+                      <p className="text-xs text-brand-muted">{supplier.location}</p>
                     </div>
                   </div>
                   
                   <div className="space-y-2 text-xs">
                     <div className="flex items-center space-x-2">
-                      <MapPin className="h-3 w-3 text-gray-400 flex-shrink-0" />
-                      <span className="text-gray-600 truncate">Northern Ireland</span>
+                      <MapPin className="h-3 w-3 text-brand-muted flex-shrink-0" />
+                      <span className="text-brand-muted truncate">Northern Ireland</span>
                     </div>
                     
                     {supplier.phone && (
                       <div className="flex items-center space-x-2">
-                        <Phone className="h-3 w-3 text-gray-400 flex-shrink-0" />
-                        <span className="text-gray-600">{supplier.phone}</span>
+                        <Phone className="h-3 w-3 text-brand-muted flex-shrink-0" />
+                        <span className="text-brand-muted">{supplier.phone}</span>
                       </div>
                     )}
                     
                     <div className="flex items-center justify-between">
                       {renderStars(supplier.rating)}
-                      <span className="text-xs text-green-600 font-medium">Active</span>
+                      <span className="text-xs text-[#0B6A30] font-medium">Active</span>
                     </div>
                   </div>
                   
-                  <div className="mt-3 pt-3 border-t border-gray-100">
+                  <div className="mt-3 pt-3 border-t border-brand-line">
                     <div className="flex justify-between items-center">
-                      <span className="text-xs text-gray-500">Updated recently</span>
+                      <span className="text-xs text-brand-muted">Updated recently</span>
                       {supplier.phone && (
                         <Button
                           size="sm"

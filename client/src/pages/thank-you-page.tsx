@@ -104,7 +104,7 @@ export default function ThankYouPage() {
         <div className="max-w-2xl mx-auto pt-20">
           <Card>
             <CardContent className="p-8 text-center">
-              <p className="text-gray-600">No quote data found. Redirecting to home...</p>
+              <p className="text-brand-muted">No quote data found. Redirecting to home...</p>
             </CardContent>
           </Card>
         </div>
@@ -117,13 +117,13 @@ export default function ThankYouPage() {
       <div className="max-w-4xl mx-auto pt-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-            <CheckCircle className="h-8 w-8 text-green-600" />
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-mint rounded-full mb-4">
+            <CheckCircle className="h-8 w-8 text-[#0B6A30]" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-3xl font-bold text-brand-ink mb-2">
             Quote Request Submitted Successfully!
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-brand-muted">
             We've sent your quote request to <strong>{quoteData.supplierName}</strong>
           </p>
         </div>
@@ -133,24 +133,24 @@ export default function ThankYouPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Fuel className="h-5 w-5 mr-2 text-blue-600" />
+                <Fuel className="h-5 w-5 mr-2 text-brand-forest" />
                 Your Quote Summary
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="bg-blue-50 p-4 rounded-lg">
+              <div className="bg-brand-mint p-4 rounded-lg">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="font-semibold text-blue-900">Total Price</span>
-                  <span className="text-2xl font-bold text-blue-600">{quoteData.price}</span>
+                  <span className="font-semibold text-brand-forest">Total Price</span>
+                  <span className="text-2xl font-bold text-brand-forest">{quoteData.price}</span>
                 </div>
-                <div className="text-sm text-blue-700">
+                <div className="text-sm text-brand-forest">
                   For {quoteData.volume}L heating oil
                 </div>
               </div>
 
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600 flex items-center">
+                  <span className="text-brand-muted flex items-center">
                     <Star className="h-4 w-4 mr-1" />
                     Supplier
                   </span>
@@ -158,7 +158,7 @@ export default function ThankYouPage() {
                 </div>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600 flex items-center">
+                  <span className="text-brand-muted flex items-center">
                     <MapPin className="h-4 w-4 mr-1" />
                     Location
                   </span>
@@ -166,7 +166,7 @@ export default function ThankYouPage() {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600 flex items-center">
+                  <span className="text-brand-muted flex items-center">
                     <Mail className="h-4 w-4 mr-1" />
                     Delivery Area
                   </span>
@@ -174,7 +174,7 @@ export default function ThankYouPage() {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600 flex items-center">
+                  <span className="text-brand-muted flex items-center">
                     <Calendar className="h-4 w-4 mr-1" />
                     Quote Date
                   </span>
@@ -194,10 +194,10 @@ export default function ThankYouPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <User className="h-5 w-5 mr-2 text-orange-600" />
+                <User className="h-5 w-5 mr-2 text-[#8A3B12]" />
                 Save Your Quote & Create Account
               </CardTitle>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-brand-muted">
                 Create an account to track your quotes, compare prices, and get personalized recommendations.
               </p>
             </CardHeader>
@@ -205,7 +205,7 @@ export default function ThankYouPage() {
               {!accountCreated ? (
                 !showAccountForm ? (
                   <div className="space-y-4">
-                    <div className="bg-orange-50 p-4 rounded-lg space-y-3">
+                    <div className="bg-brand-butter p-4 rounded-lg space-y-3">
                       <h3 className="font-semibold text-orange-900">Benefits of creating an account:</h3>
                       <ul className="text-sm text-orange-800 space-y-1">
                         <li>• Track your quote history</li>
@@ -219,7 +219,7 @@ export default function ThankYouPage() {
                     <div className="space-y-3">
                       <Button 
                         onClick={() => setShowAccountForm(true)}
-                        className="w-full bg-orange-600 hover:bg-orange-700 text-white"
+                        className="w-full bg-brand-gold hover:brightness-95 text-white"
                       >
                         <User className="h-4 w-4 mr-2" />
                         Create Account & Save Quote
@@ -317,7 +317,7 @@ export default function ThankYouPage() {
                       <Button 
                         type="submit"
                         disabled={createAccountMutation.isPending}
-                        className="w-full bg-orange-600 hover:bg-orange-700 text-white"
+                        className="w-full bg-brand-gold hover:brightness-95 text-white"
                       >
                         {createAccountMutation.isPending ? "Creating Account..." : "Create Account"}
                       </Button>
@@ -335,16 +335,16 @@ export default function ThankYouPage() {
                 )
               ) : (
                 <div className="text-center space-y-4">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full">
-                    <CheckCircle className="h-6 w-6 text-green-600" />
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-brand-mint rounded-full">
+                    <CheckCircle className="h-6 w-6 text-[#0B6A30]" />
                   </div>
                   <h3 className="font-semibold text-green-900">Account Created Successfully!</h3>
-                  <p className="text-sm text-green-700">
+                  <p className="text-sm text-[#0B6A30]">
                     Your quote has been saved to your account. You can now log in to track your quotes and access exclusive features.
                   </p>
                   <Button 
                     onClick={() => setLocation('/auth')}
-                    className="w-full bg-green-600 hover:bg-green-700 text-white"
+                    className="w-full bg-brand-forest hover:bg-brand-forest-soft text-white"
                   >
                     Sign In to Your Account
                   </Button>
@@ -362,31 +362,31 @@ export default function ThankYouPage() {
           <CardContent>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-3">
-                  <span className="text-blue-600 font-bold">1</span>
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-brand-mint rounded-full mb-3">
+                  <span className="text-brand-forest font-bold">1</span>
                 </div>
                 <h3 className="font-semibold mb-2">Supplier Contact</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-brand-muted">
                   {quoteData.supplierName} will contact you within 24 hours to confirm pricing and arrange delivery.
                 </p>
               </div>
               
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-orange-100 rounded-full mb-3">
-                  <span className="text-orange-600 font-bold">2</span>
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-brand-butter rounded-full mb-3">
+                  <span className="text-[#8A3B12] font-bold">2</span>
                 </div>
                 <h3 className="font-semibold mb-2">Delivery Arranged</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-brand-muted">
                   Schedule a convenient delivery time that works for you. Most deliveries happen within 1-3 days.
                 </p>
               </div>
               
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
-                  <span className="text-green-600 font-bold">3</span>
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-brand-mint rounded-full mb-3">
+                  <span className="text-[#0B6A30] font-bold">3</span>
                 </div>
                 <h3 className="font-semibold mb-2">Stay Warm</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-brand-muted">
                   Enjoy reliable heating with quality oil delivered right to your tank. Set up reminders for your next order.
                 </p>
               </div>
@@ -396,9 +396,9 @@ export default function ThankYouPage() {
 
         {/* Footer Actions */}
         <div className="text-center mt-8 space-y-4">
-          <p className="text-gray-600">
+          <p className="text-brand-muted">
             Need help or have questions? Contact us at{" "}
-            <a href="tel:02828766816" className="text-blue-600 hover:underline">
+            <a href="tel:02828766816" className="text-brand-forest hover:underline">
               028 2876 6816
             </a>
           </p>

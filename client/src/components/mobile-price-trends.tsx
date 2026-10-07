@@ -48,8 +48,8 @@ export default function MobilePriceTrends() {
     <section className="py-8 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Current Market Prices</h2>
-          <p className="text-gray-600 text-sm">
+          <h2 className="text-2xl font-bold text-brand-ink mb-2">Current Market Prices</h2>
+          <p className="text-brand-muted text-sm">
             Real-time pricing across Northern Ireland suppliers
           </p>
         </div>
@@ -73,31 +73,31 @@ export default function MobilePriceTrends() {
                 ) : (
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm text-gray-600 mb-1">
+                      <div className="text-sm text-brand-muted mb-1">
                         {volume.size}L Tank Delivery
                       </div>
-                      <div className="text-xl font-bold text-gray-900">
+                      <div className="text-xl font-bold text-brand-ink">
                         {formatPrice((volume.data as any)?.weeklyAverage || 0)}
                       </div>
-                      <div className="text-xs text-gray-500">
+                      <div className="text-xs text-brand-muted">
                         {(parseFloat((volume.data as any)?.weeklyAverage || '0') / volume.size * 100).toFixed(1)}p per litre
                       </div>
                     </div>
                     
                     <div className="text-right">
-                      <div className="text-sm text-gray-600 mb-1">
+                      <div className="text-sm text-brand-muted mb-1">
                         Range
                       </div>
                       <div className="text-sm">
-                        <span className="text-green-600 font-medium">
+                        <span className="text-[#0B6A30] font-medium">
                           {formatPrice((volume.data as any)?.lowestPrice || 0)}
                         </span>
-                        <span className="text-gray-400 mx-1">-</span>
+                        <span className="text-brand-muted mx-1">-</span>
                         <span className="text-red-600 font-medium">
                           {formatPrice((volume.data as any)?.highestPrice || 0)}
                         </span>
                       </div>
-                      <div className="text-xs text-gray-500 mt-1">
+                      <div className="text-xs text-brand-muted mt-1">
                         {(volume.data as any)?.supplierCount || 0} suppliers
                       </div>
                     </div>
@@ -109,7 +109,7 @@ export default function MobilePriceTrends() {
         </div>
 
         <div className="mt-6 text-center">
-          <div className="text-xs text-gray-500">
+          <div className="text-xs text-brand-muted">
             Prices updated daily • VAT included • Standard delivery
           </div>
         </div>

@@ -48,7 +48,7 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
         <CardContent className="flex items-center justify-center py-16">
           <div className="text-center">
             <Loader2 className="h-8 w-8 animate-spin text-primary mx-auto mb-4" />
-            <p className="text-gray-600">Loading current prices...</p>
+            <p className="text-brand-muted">Loading current prices...</p>
           </div>
         </CardContent>
       </Card>
@@ -105,7 +105,7 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
     <div className="w-full space-y-6">
       {/* Volume Selector */}
       <div className="flex justify-center">
-        <div className="flex space-x-2 bg-gray-100 rounded-lg p-1">
+        <div className="flex space-x-2 bg-muted rounded-lg p-1">
           {[300, 500, 900].map((volume) => (
             <button
               key={volume}
@@ -113,7 +113,7 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
               className={`px-5 py-2.5 rounded-md text-sm font-medium transition-colors min-h-[44px] ${
                 selectedVolume === volume
                   ? 'bg-white text-primary shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                  : 'text-brand-muted hover:text-brand-ink'
               }`}
             >
               {volume}L
@@ -127,26 +127,26 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-green-600">
+              <div className="text-2xl font-bold text-[#0B6A30]">
                 £{parseFloat((statsData as any).weeklyAverage || '0').toFixed(2)}
               </div>
-              <p className="text-sm text-gray-600">Average Price</p>
+              <p className="text-sm text-brand-muted">Average Price</p>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-blue-600">
+              <div className="text-2xl font-bold text-brand-forest">
                 £{parseFloat((statsData as any).lowestPrice || '0').toFixed(2)}
               </div>
-              <p className="text-sm text-gray-600">Best Price</p>
+              <p className="text-sm text-brand-muted">Best Price</p>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-gray-600">
+              <div className="text-2xl font-bold text-brand-muted">
                 {supplierPrices.size || 0}
               </div>
-              <p className="text-sm text-gray-600">Suppliers</p>
+              <p className="text-sm text-brand-muted">Suppliers</p>
             </CardContent>
           </Card>
         </div>
@@ -161,7 +161,7 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
                 <div className="flex items-start justify-between">
                   <div>
                     <CardTitle className="text-lg">{supplier.name}</CardTitle>
-                    <div className="flex items-center space-x-1 text-sm text-gray-600 mt-1">
+                    <div className="flex items-center space-x-1 text-sm text-brand-muted mt-1">
                       <MapPin className="h-3 w-3" />
                       <span>{supplier.location}</span>
                     </div>
@@ -179,18 +179,18 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
                     <div className="text-2xl font-bold text-primary">
                       £{supplier.displayPrice.toFixed(2)}
                     </div>
-                    <p className="text-sm text-gray-600">for {selectedVolume}L delivery</p>
+                    <p className="text-sm text-brand-muted">for {selectedVolume}L delivery</p>
                   </div>
                   
                   <div className="space-y-2 text-sm">
                     {supplier.phone && (
-                      <div className="flex items-center space-x-2 text-gray-600">
+                      <div className="flex items-center space-x-2 text-brand-muted">
                         <Phone className="h-3 w-3" />
                         <span>{supplier.phone}</span>
                       </div>
                     )}
                     {supplier.serviceAreas && (
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-brand-muted">
                         Serves: {supplier.serviceAreas}
                       </p>
                     )}
@@ -199,7 +199,7 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
                   <div className="flex space-x-2">
                     <Button
                       size="sm"
-                      className="flex-1 bg-green-600 hover:bg-green-700 text-white"
+                      className="flex-1 bg-brand-forest hover:bg-brand-forest-soft text-white"
                       onClick={() => onGetQuote?.({
                         name: supplier.name,
                         price: `£${supplier.displayPrice.toFixed(2)}`,
@@ -223,7 +223,7 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
           ))
         ) : (
           <div className="col-span-full text-center py-12">
-            <p className="text-gray-600 mb-4">No suppliers available for your area.</p>
+            <p className="text-brand-muted mb-4">No suppliers available for your area.</p>
             <Link href="/suppliers">
               <Button variant="outline">View All Suppliers</Button>
             </Link>
@@ -234,11 +234,11 @@ export default function TeaserPricingTable({ searchParams, onGetQuote }: TeaserP
       {/* Call to Action */}
       {teaserSuppliers.length > 0 && (
         <div className="text-center mt-8">
-          <p className="text-gray-600 mb-4">
+          <p className="text-brand-muted mb-4">
             See all {supplierPrices.size} suppliers and compare detailed pricing
           </p>
           <Link href="/compare">
-            <Button size="lg" className="bg-primary hover:bg-blue-700">
+            <Button size="lg" className="bg-primary hover:bg-brand-forest-soft">
               Compare All Prices
               <TrendingDown className="ml-2 h-4 w-4" />
             </Button>

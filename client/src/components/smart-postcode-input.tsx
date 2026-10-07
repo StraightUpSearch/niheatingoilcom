@@ -306,10 +306,10 @@ export default function SmartPostcodeInput({
   return (
     <div className="space-y-2 relative">
       <div className="flex items-center justify-between">
-        <Label htmlFor={id} className="text-gray-900 font-semibold">{label}</Label>
+        <Label htmlFor={id} className="text-brand-ink font-semibold">{label}</Label>
         <div className="flex items-center gap-2">
           {geoLocation && (
-            <span className="text-xs text-green-600 flex items-center gap-1">
+            <span className="text-xs text-[#0B6A30] flex items-center gap-1">
               <Navigation className="w-3 h-3" />
               {geoLocation}
             </span>
@@ -341,7 +341,7 @@ export default function SmartPostcodeInput({
       
       <div className="relative">
         <div className="relative">
-          <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+          <MapPin className="absolute left-3 top-3 h-4 w-4 text-brand-muted" />
           <Input
             ref={inputRef}
             id={id}
@@ -357,7 +357,7 @@ export default function SmartPostcodeInput({
               }, 200);
             }}
             placeholder={placeholder}
-            className="pl-10 pr-12 text-gray-900 bg-white border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+            className="pl-10 pr-12 text-brand-ink bg-white border-brand-line focus:border-brand-forest focus:ring-brand-forest"
             style={{ 
               textTransform: 'uppercase',
               color: '#111827',
@@ -374,7 +374,7 @@ export default function SmartPostcodeInput({
           />
           
           {geoLoading && (
-            <Loader2 className="absolute right-3 top-3 h-4 w-4 text-gray-400 animate-spin" />
+            <Loader2 className="absolute right-3 top-3 h-4 w-4 text-brand-muted animate-spin" />
           )}
           
           {!geoLoading && geoLocation && (
@@ -401,11 +401,11 @@ export default function SmartPostcodeInput({
               {suggestions.map(({ area, towns }) => (
                 <div
                   key={area}
-                  className="cursor-pointer hover:bg-gray-50 p-2 rounded border-b last:border-b-0"
+                  className="cursor-pointer hover:bg-white p-2 rounded border-b last:border-b-0"
                   onClick={() => handleSuggestionClick(area)}
                 >
                   <div className="font-medium text-sm">{area}</div>
-                  <div className="text-xs text-gray-600">
+                  <div className="text-xs text-brand-muted">
                     {towns.slice(0, 3).join(", ")}
                     {towns.length > 3 && "..."}
                   </div>

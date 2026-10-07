@@ -63,15 +63,15 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
           {/* Fuel Type Selection */}
           <div className="lg:col-span-1 space-y-4">
             <div className="space-y-3">
-              <Label className="text-gray-900 font-semibold">Fuel Type</Label>
+              <Label className="text-brand-ink font-semibold">Fuel Type</Label>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <input id="kerosene" type="radio" name="fuelType" value="kerosene" defaultChecked className="text-primary" />
-                  <label htmlFor="kerosene" className="text-sm font-medium text-gray-800">Heating Oil (Kerosene)</label>
+                  <label htmlFor="kerosene" className="text-sm font-medium text-brand-ink">Heating Oil (Kerosene)</label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <input id="premium" type="radio" name="fuelType" value="premium" className="text-primary" />
-                  <label htmlFor="premium" className="text-sm font-medium text-gray-800">Premium Heating Oil</label>
+                  <label htmlFor="premium" className="text-sm font-medium text-brand-ink">Premium Heating Oil</label>
                 </div>
               </div>
             </div>
@@ -90,9 +90,9 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
               />
             </div>
 
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-              <h4 className="text-sm font-semibold text-blue-900 mb-2">How it works</h4>
-              <ul className="text-xs text-blue-800 space-y-1">
+            <div className="bg-brand-mint p-4 rounded-lg border border-brand-line">
+              <h4 className="text-sm font-semibold text-brand-forest mb-2">How it works</h4>
+              <ul className="text-xs text-brand-forest space-y-1">
                 <li>• Enter any NI postcode (BT1–BT94)</li>
                 <li>• See prices from local suppliers</li>
                 <li>• Compare and contact directly</li>
@@ -116,7 +116,7 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
           <Button 
             type="submit" 
             disabled={isLoading || !postcode.trim()}
-            className="w-full sm:w-auto bg-accent text-white hover:bg-orange-600 h-12 px-8 text-base font-medium transform transition-all duration-300 hover:scale-105 focus:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            className="w-full sm:w-auto bg-accent text-white hover:brightness-95 h-12 px-8 text-base font-medium transform transition-all duration-300 hover:scale-105 focus:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >
             {isLoading ? (
               <>
@@ -136,10 +136,10 @@ export default function PriceSearchForm({ onSearch }: PriceSearchFormProps) {
       {/* Progress indicator */}
       {isLoading && (
         <div className="mt-4">
-          <div className="bg-gray-200 rounded-full h-2 overflow-hidden">
+          <div className="bg-brand-line rounded-full h-2 overflow-hidden">
             <div className="bg-primary h-full rounded-full animate-pulse" style={{ width: '100%' }}></div>
           </div>
-          <p className="text-sm text-gray-600 mt-2 text-center animate-pulse">
+          <p className="text-sm text-brand-muted mt-2 text-center animate-pulse">
             Finding the best heating oil prices in Northern Ireland...
           </p>
         </div>

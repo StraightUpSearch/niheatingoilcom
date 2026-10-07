@@ -55,15 +55,15 @@ export default function TrustBadges() {
   ];
 
   return (
-    <div className="py-16 bg-gray-50">
+    <div className="py-16 bg-brand-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Trust Badges Section */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-brand-ink mb-4">
             Why Northern Ireland Trusts Us
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-brand-muted max-w-2xl mx-auto">
             Official data, transparent pricing, and a commitment to helping local families save money
           </p>
         </div>
@@ -76,9 +76,9 @@ export default function TrustBadges() {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <indicator.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-1">{indicator.title}</h3>
+                <h3 className="font-semibold text-brand-ink mb-1">{indicator.title}</h3>
                 <p className="text-sm font-medium text-primary mb-2">{indicator.subtitle}</p>
-                <p className="text-xs text-gray-600">{indicator.description}</p>
+                <p className="text-xs text-brand-muted">{indicator.description}</p>
               </CardContent>
             </Card>
           ))}
@@ -86,7 +86,7 @@ export default function TrustBadges() {
 
         {/* Customer Testimonials */}
         <div className="mb-12">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+          <h3 className="text-2xl font-bold text-brand-ink text-center mb-8">
             What Our Customers Say
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -106,7 +106,7 @@ export default function TrustBadges() {
                       </Badge>
                     )}
                   </div>
-                  <p className="text-gray-700 mb-4 italic">"{testimonial.comment}"</p>
+                  <p className="text-brand-ink mb-4 italic">"{testimonial.comment}"</p>
                   <div className="flex items-center">
                     <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3">
                       <span className="text-sm font-medium text-primary">
@@ -114,8 +114,8 @@ export default function TrustBadges() {
                       </span>
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900 text-sm">{testimonial.name}</p>
-                      <p className="text-xs text-gray-600 flex items-center">
+                      <p className="font-medium text-brand-ink text-sm">{testimonial.name}</p>
+                      <p className="text-xs text-brand-muted flex items-center">
                         <MapPin className="h-3 w-3 mr-1" />
                         {testimonial.location}
                       </p>
@@ -130,10 +130,10 @@ export default function TrustBadges() {
         {/* Certifications & Partnerships */}
         <div className="bg-white rounded-lg p-8 shadow-sm">
           <div className="text-center mb-6">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            <h3 className="text-xl font-semibold text-brand-ink mb-2">
               Official Partners & Data Sources
             </h3>
-            <p className="text-gray-600">
+            <p className="text-brand-muted">
               Working with trusted Northern Ireland institutions
             </p>
           </div>
@@ -141,19 +141,19 @@ export default function TrustBadges() {
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
             <div className="flex items-center space-x-2">
               <Award className="h-5 w-5 text-primary" />
-              <span className="text-sm font-medium text-gray-700">Consumer Council NI</span>
+              <span className="text-sm font-medium text-brand-ink">Consumer Council NI</span>
             </div>
             <div className="flex items-center space-x-2">
-              <CheckCircle className="h-5 w-5 text-green-600" />
-              <span className="text-sm font-medium text-gray-700">GDPR Compliant</span>
+              <CheckCircle className="h-5 w-5 text-[#0B6A30]" />
+              <span className="text-sm font-medium text-brand-ink">GDPR Compliant</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Shield className="h-5 w-5 text-blue-600" />
-              <span className="text-sm font-medium text-gray-700">SSL Secured</span>
+              <Shield className="h-5 w-5 text-brand-forest" />
+              <span className="text-sm font-medium text-brand-ink">SSL Secured</span>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="h-5 w-5 text-primary" />
-              <span className="text-sm font-medium text-gray-700">Northern Ireland Based</span>
+              <span className="text-sm font-medium text-brand-ink">Northern Ireland Based</span>
             </div>
           </div>
         </div>

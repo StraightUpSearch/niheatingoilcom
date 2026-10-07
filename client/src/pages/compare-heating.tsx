@@ -143,17 +143,17 @@ function ProgressBar({ step, total }: { step: number; total: number }) {
                 ? "bg-emerald-600 text-white"
                 : i === step
                 ? "bg-gray-900 text-white"
-                : "bg-gray-200 text-gray-500"
+                : "bg-brand-line text-brand-muted"
             }`}
           >
             {i < step ? <CheckCircle className="w-4 h-4" /> : i + 1}
           </div>
           {i < total - 1 && (
-            <div className={`h-0.5 w-8 transition-colors ${i < step ? "bg-emerald-500" : "bg-gray-200"}`} />
+            <div className={`h-0.5 w-8 transition-colors ${i < step ? "bg-emerald-500" : "bg-brand-line"}`} />
           )}
         </div>
       ))}
-      <span className="ml-2 text-xs text-gray-500">Step {step + 1} of {total}</span>
+      <span className="ml-2 text-xs text-brand-muted">Step {step + 1} of {total}</span>
     </div>
   );
 }
@@ -163,8 +163,8 @@ function ProgressBar({ step, total }: { step: number; total: number }) {
 function StepFuel({ value, onChange }: { value: FuelType | null; onChange: (v: FuelType) => void }) {
   return (
     <div>
-      <h2 className="text-xl font-bold text-gray-900 mb-1">What fuel do you currently use — or want to compare?</h2>
-      <p className="text-sm text-gray-500 mb-6">Select your current heating fuel or the one you are considering switching to.</p>
+      <h2 className="text-xl font-bold text-brand-ink mb-1">What fuel do you currently use — or want to compare?</h2>
+      <p className="text-sm text-brand-muted mb-6">Select your current heating fuel or the one you are considering switching to.</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {FUEL_CARDS.map((f) => (
           <button
@@ -172,15 +172,15 @@ function StepFuel({ value, onChange }: { value: FuelType | null; onChange: (v: F
             onClick={() => onChange(f.id)}
             className={`flex items-start gap-4 p-4 rounded-xl border-2 text-left transition-all ${
               value === f.id
-                ? "border-emerald-600 bg-emerald-50"
-                : "border-gray-200 hover:border-gray-300 bg-white"
+                ? "border-emerald-600 bg-brand-mint"
+                : "border-brand-line hover:border-brand-line bg-white"
             }`}
           >
-            <span className={`mt-0.5 ${value === f.id ? "text-emerald-600" : "text-gray-400"}`}>{f.icon}</span>
+            <span className={`mt-0.5 ${value === f.id ? "text-[#0B6A30]" : "text-brand-muted"}`}>{f.icon}</span>
             <div>
-              <p className={`font-semibold text-sm ${value === f.id ? "text-emerald-800" : "text-gray-900"}`}>{f.label}</p>
-              <p className="text-xs text-gray-500 mt-0.5">{f.subtitle}</p>
-              <span className="inline-block mt-1.5 text-[10px] font-medium px-2 py-0.5 bg-gray-100 text-gray-600 rounded-full">{f.ni}</span>
+              <p className={`font-semibold text-sm ${value === f.id ? "text-emerald-800" : "text-brand-ink"}`}>{f.label}</p>
+              <p className="text-xs text-brand-muted mt-0.5">{f.subtitle}</p>
+              <span className="inline-block mt-1.5 text-[10px] font-medium px-2 py-0.5 bg-muted text-brand-muted rounded-full">{f.ni}</span>
             </div>
           </button>
         ))}
@@ -200,11 +200,11 @@ function StepProperty({
 }) {
   return (
     <div>
-      <h2 className="text-xl font-bold text-gray-900 mb-1">Tell us about your property</h2>
-      <p className="text-sm text-gray-500 mb-6">This lets us estimate realistic annual costs for your home size.</p>
+      <h2 className="text-xl font-bold text-brand-ink mb-1">Tell us about your property</h2>
+      <p className="text-sm text-brand-muted mb-6">This lets us estimate realistic annual costs for your home size.</p>
 
       <div className="mb-6">
-        <p className="text-sm font-semibold text-gray-700 mb-2">House type</p>
+        <p className="text-sm font-semibold text-brand-ink mb-2">House type</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
           {HOUSE_TYPES.map((h) => (
             <button
@@ -212,11 +212,11 @@ function StepProperty({
               onClick={() => onHouseType(h.id)}
               className={`flex flex-col items-center gap-1.5 p-3 rounded-lg border-2 text-xs font-medium transition-all ${
                 houseType === h.id
-                  ? "border-emerald-600 bg-emerald-50 text-emerald-800"
-                  : "border-gray-200 hover:border-gray-300 text-gray-700"
+                  ? "border-emerald-600 bg-brand-mint text-emerald-800"
+                  : "border-brand-line hover:border-brand-line text-brand-ink"
               }`}
             >
-              <span className={houseType === h.id ? "text-emerald-600" : "text-gray-400"}>{h.icon}</span>
+              <span className={houseType === h.id ? "text-[#0B6A30]" : "text-brand-muted"}>{h.icon}</span>
               {h.label}
             </button>
           ))}
@@ -224,7 +224,7 @@ function StepProperty({
       </div>
 
       <div className="mb-6">
-        <p className="text-sm font-semibold text-gray-700 mb-2">Number of bedrooms</p>
+        <p className="text-sm font-semibold text-brand-ink mb-2">Number of bedrooms</p>
         <div className="flex gap-2">
           {[1, 2, 3, 4, 5].map((n) => (
             <button
@@ -232,8 +232,8 @@ function StepProperty({
               onClick={() => onBedrooms(n)}
               className={`w-10 h-10 rounded-lg border-2 text-sm font-bold transition-all ${
                 bedrooms === n
-                  ? "border-emerald-600 bg-emerald-50 text-emerald-800"
-                  : "border-gray-200 hover:border-gray-300 text-gray-700"
+                  ? "border-emerald-600 bg-brand-mint text-emerald-800"
+                  : "border-brand-line hover:border-brand-line text-brand-ink"
               }`}
             >
               {n}
@@ -243,13 +243,13 @@ function StepProperty({
       </div>
 
       <div>
-        <p className="text-sm font-semibold text-gray-700 mb-2">BT postcode <span className="font-normal text-gray-400">(optional — for local price data)</span></p>
+        <p className="text-sm font-semibold text-brand-ink mb-2">BT postcode <span className="font-normal text-brand-muted">(optional — for local price data)</span></p>
         <input
           type="text"
           value={postcode}
           onChange={(e) => onPostcode(e.target.value.toUpperCase())}
           placeholder="e.g. BT12 6AH"
-          className="w-full sm:w-56 px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+          className="w-full sm:w-56 px-4 py-2.5 border border-brand-line rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
         />
       </div>
     </div>
@@ -261,8 +261,8 @@ function StepProperty({
 function StepInsulation({ value, onChange }: { value: Insulation | null; onChange: (v: Insulation) => void }) {
   return (
     <div>
-      <h2 className="text-xl font-bold text-gray-900 mb-1">How well-insulated is your home?</h2>
-      <p className="text-sm text-gray-500 mb-6">Insulation has the biggest impact on annual heating costs.</p>
+      <h2 className="text-xl font-bold text-brand-ink mb-1">How well-insulated is your home?</h2>
+      <p className="text-sm text-brand-muted mb-6">Insulation has the biggest impact on annual heating costs.</p>
       <div className="space-y-3">
         {INSULATION_CARDS.map((ins) => (
           <button
@@ -270,19 +270,19 @@ function StepInsulation({ value, onChange }: { value: Insulation | null; onChang
             onClick={() => onChange(ins.id)}
             className={`w-full flex items-start gap-4 p-4 rounded-xl border-2 text-left transition-all ${
               value === ins.id
-                ? "border-emerald-600 bg-emerald-50"
-                : "border-gray-200 hover:border-gray-300 bg-white"
+                ? "border-emerald-600 bg-brand-mint"
+                : "border-brand-line hover:border-brand-line bg-white"
             }`}
           >
             <div className={`mt-0.5 w-4 h-4 rounded-full border-2 flex-shrink-0 ${
-              value === ins.id ? "border-emerald-600 bg-emerald-600" : "border-gray-300"
+              value === ins.id ? "border-emerald-600 bg-emerald-600" : "border-brand-line"
             }`} />
             <div>
-              <p className={`font-semibold text-sm ${value === ins.id ? "text-emerald-800" : "text-gray-900"}`}>{ins.label}</p>
-              <p className="text-xs text-gray-600 mt-0.5">{ins.desc}</p>
+              <p className={`font-semibold text-sm ${value === ins.id ? "text-emerald-800" : "text-brand-ink"}`}>{ins.label}</p>
+              <p className="text-xs text-brand-muted mt-0.5">{ins.desc}</p>
               <div className="flex items-start gap-1 mt-1.5">
-                <Info className="w-3 h-3 text-gray-400 flex-shrink-0 mt-0.5" />
-                <p className="text-[11px] text-gray-500">{ins.tip}</p>
+                <Info className="w-3 h-3 text-brand-muted flex-shrink-0 mt-0.5" />
+                <p className="text-[11px] text-brand-muted">{ins.tip}</p>
               </div>
             </div>
           </button>
@@ -357,8 +357,8 @@ function ComparisonResults({
     <div className="flex flex-col lg:flex-row gap-6">
       {/* Sidebar */}
       <aside className="w-full lg:w-60 flex-shrink-0">
-        <div className="bg-white border border-gray-200 rounded-xl p-4 lg:sticky lg:top-24">
-          <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Sort results by</h3>
+        <div className="bg-white border border-brand-line rounded-xl p-4 lg:sticky lg:top-24">
+          <h3 className="text-xs font-semibold text-brand-muted uppercase tracking-wide mb-3">Sort results by</h3>
           {[
             { id: "annual" as const, label: "Annual running cost" },
             { id: "upfront" as const, label: "Upfront cost" },
@@ -368,16 +368,16 @@ function ComparisonResults({
               key={opt.id}
               onClick={() => setSortBy(opt.id)}
               className={`w-full text-left text-sm px-3 py-2 rounded-lg mb-0.5 transition-colors ${
-                sortBy === opt.id ? "bg-gray-900 text-white font-medium" : "text-gray-600 hover:bg-gray-50"
+                sortBy === opt.id ? "bg-gray-900 text-white font-medium" : "text-brand-muted hover:bg-white"
               }`}
             >
               {opt.label}
             </button>
           ))}
 
-          <div className="mt-5 pt-4 border-t border-gray-100">
-            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">NI grant eligibility</h3>
-            <p className="text-[11px] text-gray-400 mb-3">Toggle to see if grants reduce your costs</p>
+          <div className="mt-5 pt-4 border-t border-brand-line">
+            <h3 className="text-xs font-semibold text-brand-muted uppercase tracking-wide mb-2">NI grant eligibility</h3>
+            <p className="text-[11px] text-brand-muted mb-3">Toggle to see if grants reduce your costs</p>
             {[
               { id: "nihe" as const, label: "NIHE Affordable Warmth", desc: "Income &lt;£23k or disability" },
               { id: "nisep" as const, label: "NISEP Scheme", desc: "Income &lt;£28k" },
@@ -391,8 +391,8 @@ function ComparisonResults({
                   className="mt-0.5 accent-emerald-600"
                 />
                 <div>
-                  <p className="text-xs font-medium text-gray-700 group-hover:text-gray-900">{g.label}</p>
-                  <p className="text-[10px] text-gray-400" dangerouslySetInnerHTML={{ __html: g.desc }} />
+                  <p className="text-xs font-medium text-brand-ink group-hover:text-brand-ink">{g.label}</p>
+                  <p className="text-[10px] text-brand-muted" dangerouslySetInnerHTML={{ __html: g.desc }} />
                 </div>
               </label>
             ))}
@@ -400,7 +400,7 @@ function ComparisonResults({
 
           <button
             onClick={onReset}
-            className="mt-4 w-full text-xs text-gray-500 hover:text-gray-700 text-left px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+            className="mt-4 w-full text-xs text-brand-muted hover:text-brand-ink text-left px-3 py-2 rounded-lg hover:bg-white transition-colors"
           >
             ← Start over
           </button>
@@ -410,8 +410,8 @@ function ComparisonResults({
       {/* Cards + chart */}
       <div className="flex-1 min-w-0">
         <div className="mb-4">
-          <h2 className="text-lg font-bold text-gray-900">Your heating cost comparison</h2>
-          <p className="text-sm text-gray-500">
+          <h2 className="text-lg font-bold text-brand-ink">Your heating cost comparison</h2>
+          <p className="text-sm text-brand-muted">
             Based on a {state.bedrooms}-bed {state.houseType ?? "home"} with {state.insulation ?? "standard"} insulation.
             {niSummary?.[500] && (
               <span className="ml-1">Using live NI oil price: {(niSummary[500].cheapest / 500 * 100).toFixed(1)}p/L.</span>
@@ -421,8 +421,8 @@ function ComparisonResults({
 
         {/* Heat pump UK BUS warning */}
         {activeFuels.includes("heatpump") && (
-          <div className="flex items-start gap-3 p-3 mb-4 bg-amber-50 border border-amber-200 rounded-lg">
-            <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+          <div className="flex items-start gap-3 p-3 mb-4 bg-brand-butter border border-amber-200 rounded-lg">
+            <AlertTriangle className="w-4 h-4 text-[#8A3B12] flex-shrink-0 mt-0.5" />
             <p className="text-xs text-amber-800">
               <strong>UK Boiler Upgrade Scheme (BUS) is NOT available in Northern Ireland.</strong>{" "}
               NI homeowners should check NIHE Affordable Warmth, NISEP, and DfC schemes instead. Use the grant toggles on the left.
@@ -441,7 +441,7 @@ function ComparisonResults({
               <div
                 key={fuel}
                 className={`relative bg-white border-2 rounded-xl p-5 transition-all ${
-                  isSelected ? "border-emerald-500 shadow-md shadow-emerald-100" : "border-gray-200"
+                  isSelected ? "border-emerald-500 shadow-md shadow-emerald-100" : "border-brand-line"
                 }`}
               >
                 {isSelected && (
@@ -458,28 +458,28 @@ function ComparisonResults({
                   <span style={{ color: d.colour }}>
                     {FUEL_CARDS.find((f) => f.id === fuel)?.icon}
                   </span>
-                  <span className="font-semibold text-gray-900 text-sm">{d.label}</span>
+                  <span className="font-semibold text-brand-ink text-sm">{d.label}</span>
                 </div>
 
                 <div className="flex items-baseline gap-1 mb-1">
-                  <span className="text-3xl font-extrabold text-gray-900">£{d.annual.toLocaleString()}</span>
-                  <span className="text-sm text-gray-500">/yr</span>
+                  <span className="text-3xl font-extrabold text-brand-ink">£{d.annual.toLocaleString()}</span>
+                  <span className="text-sm text-brand-muted">/yr</span>
                 </div>
-                <p className="text-xs text-gray-500 mb-3">estimated annual running cost</p>
+                <p className="text-xs text-brand-muted mb-3">estimated annual running cost</p>
 
                 <div className="space-y-1.5 text-xs">
                   {d.upfront > 0 && (
                     <div className="flex justify-between">
-                      <span className="text-gray-500">Typical install</span>
+                      <span className="text-brand-muted">Typical install</span>
                       <span className="font-medium">~£{d.upfront.toLocaleString()}</span>
                     </div>
                   )}
                   <div className="flex justify-between">
-                    <span className="text-gray-500">10-year total cost</span>
+                    <span className="text-brand-muted">10-year total cost</span>
                     <span className="font-medium">£{d.tco10.toLocaleString()}</span>
                   </div>
                   {grantAmount > 0 && (
-                    <div className="flex justify-between text-emerald-700">
+                    <div className="flex justify-between text-[#0B6A30]">
                       <span>Potential grant</span>
                       <span className="font-semibold">-£{grantAmount.toLocaleString()}</span>
                     </div>
@@ -487,7 +487,7 @@ function ComparisonResults({
                 </div>
 
                 {fuel === "kerosene" && niSummary?.[500] && (
-                  <p className="mt-3 text-[10px] text-green-700 font-medium">
+                  <p className="mt-3 text-[10px] text-[#0B6A30] font-medium">
                     Based on live NI best price: £{niSummary[500].cheapest.toFixed(2)} for 500L
                   </p>
                 )}
@@ -503,9 +503,9 @@ function ComparisonResults({
           const annualSaving = fuelData[expensive].annual - fuelData[cheapest].annual;
           if (annualSaving <= 0) return null;
           return (
-            <div className="flex items-start gap-3 p-4 mb-8 bg-green-50 border border-green-100 rounded-lg">
-              <TrendingDown className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-green-800">
+            <div className="flex items-start gap-3 p-4 mb-8 bg-brand-mint border border-green-100 rounded-lg">
+              <TrendingDown className="w-4 h-4 text-[#0B6A30] flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-[#0B6A30]">
                 Switching from <strong>{fuelData[expensive].label}</strong> to{" "}
                 <strong>{fuelData[cheapest].label}</strong> could save you around{" "}
                 <strong>£{annualSaving.toLocaleString()}/year</strong> on running costs — £{(annualSaving * 10).toLocaleString()} over a decade.
@@ -515,9 +515,9 @@ function ComparisonResults({
         })()}
 
         {/* TCO chart */}
-        <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
-          <h3 className="text-sm font-semibold text-gray-900 mb-1">Cumulative total cost over time</h3>
-          <p className="text-xs text-gray-500 mb-4">Includes install costs and annual running costs</p>
+        <div className="bg-white border border-brand-line rounded-xl p-5 mb-6">
+          <h3 className="text-sm font-semibold text-brand-ink mb-1">Cumulative total cost over time</h3>
+          <p className="text-xs text-brand-muted mb-4">Includes install costs and annual running costs</p>
           <ResponsiveContainer width="100%" height={200}>
             <LineChart data={tcoChartData} margin={{ top: 4, right: 12, left: -8, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -557,12 +557,12 @@ function ComparisonResults({
         </div>
 
         {/* CTA */}
-        <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
-          <p className="text-sm font-semibold text-gray-900 mb-1">Ready to compare live kerosene prices in your area?</p>
-          <p className="text-xs text-gray-500 mb-4">See which suppliers cover your BT postcode, ranked cheapest first.</p>
+        <div className="bg-brand-cream border border-brand-line rounded-xl p-5 text-center">
+          <p className="text-sm font-semibold text-brand-ink mb-1">Ready to compare live kerosene prices in your area?</p>
+          <p className="text-xs text-brand-muted mb-4">See which suppliers cover your BT postcode, ranked cheapest first.</p>
           <Link
             href={state.postcode ? `/results?postcode=${encodeURIComponent(state.postcode)}&volume=500` : "/"}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-gold hover:brightness-95 text-white text-sm font-semibold rounded-lg transition-colors"
           >
             Compare oil prices near me
             <ArrowRight className="w-4 h-4" />
@@ -615,7 +615,7 @@ export default function CompareHeating() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-cream">
       <SEOHead
         title="NI Heating Fuel Cost Comparison | Compare Kerosene, Heat Pumps & More"
         description="Compare annual heating costs for kerosene, air source heat pumps, electric, and LPG in Northern Ireland. Includes NI grant eligibility (NIHE, NISEP, DfC). Live oil prices."
@@ -627,26 +627,26 @@ export default function CompareHeating() {
 
       <main className="max-w-4xl mx-auto px-4 pt-24 pb-16">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-1 text-xs text-gray-400 mb-6">
-          <Link href="/" className="hover:text-gray-600">Home</Link>
+        <nav className="flex items-center gap-1 text-xs text-brand-muted mb-6">
+          <Link href="/" className="hover:text-brand-muted">Home</Link>
           <ChevronRight className="w-3 h-3" />
-          <span className="text-gray-600">Compare Heating Fuels</span>
+          <span className="text-brand-muted">Compare Heating Fuels</span>
         </nav>
 
         {!done ? (
           <div className="max-w-2xl">
             <div className="mb-6">
-              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+              <h1 className="text-2xl sm:text-3xl font-bold text-brand-ink">
                 NI Heating Fuel Cost Comparison
               </h1>
-              <p className="mt-2 text-sm text-gray-500">
+              <p className="mt-2 text-sm text-brand-muted">
                 Answer 3 questions to get a personalised estimate using live NI market prices.
               </p>
             </div>
 
             <ProgressBar step={step} total={3} />
 
-            <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6">
+            <div className="bg-white border border-brand-line rounded-2xl p-6 mb-6">
               {step === 0 && (
                 <StepFuel value={state.fuel} onChange={(v) => setState({ ...state, fuel: v })} />
               )}
@@ -669,7 +669,7 @@ export default function CompareHeating() {
               {step > 0 ? (
                 <button
                   onClick={() => setStep((s) => s - 1)}
-                  className="flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium text-brand-muted hover:text-brand-ink rounded-lg hover:bg-white transition-colors"
                 >
                   <ChevronLeft className="w-4 h-4" /> Back
                 </button>

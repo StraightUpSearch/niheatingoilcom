@@ -183,7 +183,7 @@ export default function SupplierClaimModal({ isOpen, onClose, supplierName = "" 
               required
               className="mt-1"
             />
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-sm text-brand-muted mt-1">
               List the postcode areas and towns you deliver to
             </p>
           </div>
@@ -236,9 +236,9 @@ export default function SupplierClaimModal({ isOpen, onClose, supplierName = "" 
           </div>
         </form>
 
-        <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-          <h4 className="font-medium text-blue-900 mb-2">What happens next?</h4>
-          <ul className="text-sm text-blue-800 space-y-1">
+        <div className="mt-6 p-4 bg-brand-mint rounded-lg border border-brand-line">
+          <h4 className="font-medium text-brand-forest mb-2">What happens next?</h4>
+          <ul className="text-sm text-brand-forest space-y-1">
             <li>• We'll verify your business details within 24 hours</li>
             <li>• You'll receive login credentials to manage your listing</li>
             <li>• Update your prices anytime to stay competitive</li>

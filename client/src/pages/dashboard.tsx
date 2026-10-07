@@ -104,22 +104,22 @@ export default function Dashboard() {
 
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
-      case 'new': return 'bg-blue-100 text-blue-800';
-      case 'in progress': return 'bg-yellow-100 text-yellow-800';
-      case 'quoted': return 'bg-green-100 text-green-800';
-      case 'closed': return 'bg-gray-100 text-gray-800';
-      default: return 'bg-gray-100 text-gray-800';
+      case 'new': return 'bg-brand-mint text-brand-forest';
+      case 'in progress': return 'bg-brand-butter text-yellow-800';
+      case 'quoted': return 'bg-brand-mint text-[#0B6A30]';
+      case 'closed': return 'bg-muted text-brand-ink';
+      default: return 'bg-muted text-brand-ink';
     }
   };
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-brand-cream flex items-center justify-center">
         <Card className="max-w-md w-full">
           <CardContent className="pt-6">
             <div className="text-center">
               <h2 className="text-xl font-semibold mb-4">Access Required</h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-brand-muted mb-6">
                 Please sign in to view your dashboard and track your heating oil enquiries.
               </p>
               <Button 
@@ -137,7 +137,7 @@ export default function Dashboard() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 p-6">
+      <div className="min-h-screen bg-brand-cream p-6">
         <div className="max-w-6xl mx-auto space-y-6">
           <Skeleton className="h-8 w-64" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -153,7 +153,7 @@ export default function Dashboard() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50 p-6">
+      <div className="min-h-screen bg-brand-cream p-6">
         <div className="max-w-6xl mx-auto">
           <Alert className="border-red-200 bg-red-50">
             <AlertDescription className="text-red-800">
@@ -168,16 +168,16 @@ export default function Dashboard() {
   usePageTitle("Dashboard - NI Heating Oil");
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-cream">
       <Navigation />
-      <div className="min-h-screen bg-gray-50 p-6">
+      <div className="min-h-screen bg-brand-cream p-6">
         <div className="max-w-6xl mx-auto space-y-6">
           {/* Header */}
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-2xl font-bold text-brand-ink">
               Welcome back, {user?.firstName || 'User'}!
             </h1>
-            <p className="text-gray-600">
+            <p className="text-brand-muted">
               Track your heating oil enquiries and manage price alerts
             </p>
           </div>
@@ -230,7 +230,7 @@ export default function Dashboard() {
           <Card>
             <CardHeader>
               <CardTitle>Your Enquiries</CardTitle>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-brand-muted">
                 Track your heating oil quote requests and send reminders to your WhatsApp
               </p>
             </CardHeader>
@@ -244,17 +244,17 @@ export default function Dashboard() {
                     >
                       <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
                         <div className="flex items-center space-x-2">
-                          <CheckCircle className="h-4 w-4 text-blue-600" />
+                          <CheckCircle className="h-4 w-4 text-brand-forest" />
                           <span className="font-medium">{ticket.ticket_id}</span>
                         </div>
 
                         <div className="flex items-center space-x-4">
-                          <div className="flex items-center space-x-1 text-sm text-gray-600">
+                          <div className="flex items-center space-x-1 text-sm text-brand-muted">
                             <MapPin className="h-3 w-3" />
                             <span>{ticket.postcode}</span>
                           </div>
 
-                          <div className="flex items-center space-x-1 text-sm text-gray-600">
+                          <div className="flex items-center space-x-1 text-sm text-brand-muted">
                             <Droplet className="h-3 w-3" />
                             <span>{ticket.volume}L</span>
                           </div>
@@ -266,7 +266,7 @@ export default function Dashboard() {
                           <Badge className={getStatusColor(ticket.status)}>
                             {ticket.status}
                           </Badge>
-                          <span className="text-sm text-gray-500">
+                          <span className="text-sm text-brand-muted">
                             {new Date(ticket.created_at).toLocaleDateString()}
                           </span>
                         </div>
@@ -277,7 +277,7 @@ export default function Dashboard() {
                 </div>
               ) : (
                 <div className="text-center py-8">
-                  <p className="text-gray-500 mb-4">No enquiries yet</p>
+                  <p className="text-brand-muted mb-4">No enquiries yet</p>
                   <Button onClick={() => window.location.href = "/compare"}>
                     Submit Your First Enquiry
                   </Button>
@@ -301,9 +301,9 @@ export default function Dashboard() {
                       className="flex items-center justify-between p-3 border rounded-lg"
                     >
                       <div className="flex items-center space-x-3">
-                        <Bell className="h-4 w-4 text-blue-600" />
+                        <Bell className="h-4 w-4 text-brand-forest" />
                         <span className="font-medium">{alert.postcode}</span>
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-brand-muted">
                           Alert when ≤ £{alert.threshold?.toFixed(3) || '0.000'}/litre
                         </span>
                       </div>
@@ -322,7 +322,7 @@ export default function Dashboard() {
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-500 text-center py-4">
+                <p className="text-brand-muted text-center py-4">
                   No price alerts set up yet
                 </p>
               )}
@@ -390,14 +390,14 @@ export default function Dashboard() {
                       <span>{q.supplierName}</span>
                       <span>{q.price}</span>
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-brand-muted">
                       {q.volume}L - {q.postcode}
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-gray-500">No saved quotes yet.</p>
+              <p className="text-brand-muted">No saved quotes yet.</p>
             )}
           </CardContent>
         </Card>

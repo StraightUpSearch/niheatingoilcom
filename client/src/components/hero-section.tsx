@@ -33,7 +33,7 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
               Compare Heating Oil Prices
               <span className="block text-yellow-300">Across Northern Ireland</span>
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl lg:text-2xl text-[#CFE3D3] max-w-4xl mx-auto leading-relaxed">
               Enter your postcode to compare prices from local suppliers across all six counties. Free, independent, and updated regularly.
             </p>
           </div>

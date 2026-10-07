@@ -36,10 +36,10 @@ export default function SupplierDirectory({ showHeader = true }: SupplierDirecto
           ))}
           {hasHalfStar && <Star className="h-4 w-4 fill-current opacity-50" />}
           {[...Array(5 - fullStars - (hasHalfStar ? 1 : 0))].map((_, i) => (
-            <Star key={i} className="h-4 w-4 text-gray-300" />
+            <Star key={i} className="h-4 w-4 text-brand-line" />
           ))}
         </div>
-        <span className="ml-2 text-sm text-gray-600">{numRating.toFixed(1)}/5</span>
+        <span className="ml-2 text-sm text-brand-muted">{numRating.toFixed(1)}/5</span>
       </div>
     );
   };
@@ -59,8 +59,8 @@ export default function SupplierDirectory({ showHeader = true }: SupplierDirecto
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {showHeader && (
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Verified Supplier Directory</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-brand-ink mb-4">Verified Supplier Directory</h2>
+            <p className="text-brand-muted max-w-2xl mx-auto">
               Browse our comprehensive directory of heating oil suppliers across Northern Ireland.
             </p>
           </div>
@@ -69,7 +69,7 @@ export default function SupplierDirectory({ showHeader = true }: SupplierDirecto
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {isLoading ? (
             [...Array(6)].map((_, i) => (
-              <Card key={i} className="border border-gray-200">
+              <Card key={i} className="border border-brand-line">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4 mb-4">
                     <Skeleton className="w-12 h-12 rounded-lg" />
@@ -83,7 +83,7 @@ export default function SupplierDirectory({ showHeader = true }: SupplierDirecto
                     <Skeleton className="h-4 w-3/4" />
                     <Skeleton className="h-4 w-1/2" />
                   </div>
-                  <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="mt-4 pt-4 border-t border-brand-line">
                     <div className="flex items-center justify-between">
                       <Skeleton className="h-6 w-16" />
                       <Skeleton className="h-8 w-20" />
@@ -94,30 +94,30 @@ export default function SupplierDirectory({ showHeader = true }: SupplierDirecto
             ))
           ) : (
             suppliers?.map((supplier: any) => (
-              <Card key={supplier.id} className="border border-gray-200 hover:shadow-lg transition-shadow">
+              <Card key={supplier.id} className="border border-brand-line hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4 mb-4">
                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
                       <Truck className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">{supplier.name}</h3>
-                      <p className="text-sm text-gray-500">{supplier.location}</p>
+                      <h3 className="font-semibold text-brand-ink">{supplier.name}</h3>
+                      <p className="text-sm text-brand-muted">{supplier.location}</p>
                     </div>
                   </div>
                   
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center space-x-2">
-                      <MapPin className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                      <span className="text-gray-600 truncate">
+                      <MapPin className="h-4 w-4 text-brand-muted flex-shrink-0" />
+                      <span className="text-brand-muted truncate">
                         {getCoverageAreas(supplier.coverageAreas)}
                       </span>
                     </div>
                     
                     {supplier.phone && (
                       <div className="flex items-center space-x-2">
-                        <Phone className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                        <span className="text-gray-600">{supplier.phone}</span>
+                        <Phone className="h-4 w-4 text-brand-muted flex-shrink-0" />
+                        <span className="text-brand-muted">{supplier.phone}</span>
                       </div>
                     )}
                     
@@ -125,16 +125,16 @@ export default function SupplierDirectory({ showHeader = true }: SupplierDirecto
                       {renderStars(supplier.rating)}
                       {supplier.reviewCount > 0 && (
                         <>
-                          <span className="text-gray-400">•</span>
-                          <span className="text-gray-600">{supplier.reviewCount} reviews</span>
+                          <span className="text-brand-muted">•</span>
+                          <span className="text-brand-muted">{supplier.reviewCount} reviews</span>
                         </>
                       )}
                     </div>
                   </div>
                   
-                  <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="mt-4 pt-4 border-t border-brand-line">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-brand-muted">
                         Updated {supplier.lastScraped ? 
                           new Date(supplier.lastScraped).toLocaleDateString() : 
                           'recently'
@@ -143,7 +143,7 @@ export default function SupplierDirectory({ showHeader = true }: SupplierDirecto
                       <div className="flex space-x-2">
                         <Button
                           size="sm"
-                          className="bg-green-600 hover:bg-green-700 text-white"
+                          className="bg-brand-forest hover:bg-brand-forest-soft text-white"
                           onClick={() => {
                             setSelectedSupplier({
                               name: supplier.name,
@@ -168,7 +168,7 @@ export default function SupplierDirectory({ showHeader = true }: SupplierDirecto
 
         {suppliers?.length > 0 && (
           <div className="text-center mt-8">
-            <p className="text-gray-600">
+            <p className="text-brand-muted">
               Showing {suppliers.length} verified suppliers across Northern Ireland
             </p>
           </div>

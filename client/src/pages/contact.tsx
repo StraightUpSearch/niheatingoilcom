@@ -79,7 +79,7 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Get in Touch
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-[#CFE3D3] max-w-3xl mx-auto">
               Have questions about heating oil prices or need help with our service? 
               Our Northern Ireland team is here to help you save money on your heating costs.
             </p>
@@ -95,7 +95,7 @@ export default function ContactPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
-                  <Building className="h-5 w-5 text-blue-600" />
+                  <Building className="h-5 w-5 text-brand-forest" />
                   <span>Our Office</span>
                 </CardTitle>
                 <CardDescription>
@@ -104,39 +104,39 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <MapPin className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
+                  <MapPin className="h-5 w-5 text-brand-forest mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-medium">NI Heating Oil</p>
-                    <p className="text-gray-600">14a Victoria Street</p>
-                    <p className="text-gray-600">Ballymoney, BT53 6DW</p>
-                    <p className="text-gray-600">Northern Ireland</p>
+                    <p className="text-brand-muted">14a Victoria Street</p>
+                    <p className="text-brand-muted">Ballymoney, BT53 6DW</p>
+                    <p className="text-brand-muted">Northern Ireland</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-blue-600" />
+                  <Phone className="h-5 w-5 text-brand-forest" />
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-gray-600">028 2766 8000</p>
+                    <p className="text-brand-muted">028 2766 8000</p>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-blue-600" />
+                  <Mail className="h-5 w-5 text-brand-forest" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-gray-600">hello@niheatingoil.com</p>
+                    <p className="text-brand-muted">hello@niheatingoil.com</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-3">
-                  <Clock className="h-5 w-5 text-blue-600 mt-1" />
+                  <Clock className="h-5 w-5 text-brand-forest mt-1" />
                   <div>
                     <p className="font-medium">Service Hours</p>
-                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 5:30 PM</p>
-                    <p className="text-gray-600">Saturday: 9:00 AM - 1:00 PM</p>
-                    <p className="text-gray-600">Sunday: Closed</p>
-                    <p className="text-sm text-blue-600 mt-1">Online service available 24/7</p>
+                    <p className="text-brand-muted">Monday - Friday: 9:00 AM - 5:30 PM</p>
+                    <p className="text-brand-muted">Saturday: 9:00 AM - 1:00 PM</p>
+                    <p className="text-brand-muted">Sunday: Closed</p>
+                    <p className="text-sm text-brand-forest mt-1">Online service available 24/7</p>
                   </div>
                 </div>
               </CardContent>
@@ -178,7 +178,7 @@ export default function ContactPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
-                  <MessageSquare className="h-5 w-5 text-blue-600" />
+                  <MessageSquare className="h-5 w-5 text-brand-forest" />
                   <span>Send us a Message</span>
                 </CardTitle>
                 <CardDescription>
@@ -271,13 +271,13 @@ export default function ContactPage() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700"
+                    className="w-full bg-brand-forest hover:bg-brand-forest-soft"
                     disabled={contactMutation.isPending}
                   >
                     {contactMutation.isPending ? "Sending..." : "Send Message"}
                   </Button>
 
-                  <p className="text-sm text-gray-500 text-center">
+                  <p className="text-sm text-brand-muted text-center">
                     We respect your privacy and will never share your information with third parties.
                   </p>
                 </form>
@@ -291,7 +291,7 @@ export default function ContactPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
-                <MapPin className="h-5 w-5 text-blue-600" />
+                <MapPin className="h-5 w-5 text-brand-forest" />
                 <span>Find Our Office</span>
               </CardTitle>
               <CardDescription>
@@ -299,7 +299,7 @@ export default function ContactPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="w-full h-96 bg-gray-100 rounded-lg overflow-hidden">
+              <div className="w-full h-96 bg-muted rounded-lg overflow-hidden">
                 <iframe
                   width="100%"
                   height="100%"
@@ -313,26 +313,26 @@ export default function ContactPage() {
               </div>
               
               <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <MapPin className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                  <h3 className="font-medium text-gray-900">Central Location</h3>
-                  <p className="text-sm text-gray-600">
+                <div className="text-center p-4 bg-brand-mint rounded-lg">
+                  <MapPin className="h-8 w-8 text-brand-forest mx-auto mb-2" />
+                  <h3 className="font-medium text-brand-ink">Central Location</h3>
+                  <p className="text-sm text-brand-muted">
                     Easy access from all major NI towns
                   </p>
                 </div>
                 
-                <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <Navigation className="h-8 w-8 text-green-600 mx-auto mb-2" />
-                  <h3 className="font-medium text-gray-900">Free Parking</h3>
-                  <p className="text-sm text-gray-600">
+                <div className="text-center p-4 bg-brand-mint rounded-lg">
+                  <Navigation className="h-8 w-8 text-[#0B6A30] mx-auto mb-2" />
+                  <h3 className="font-medium text-brand-ink">Free Parking</h3>
+                  <p className="text-sm text-brand-muted">
                     Convenient parking available nearby
                   </p>
                 </div>
                 
                 <div className="text-center p-4 bg-purple-50 rounded-lg">
                   <Clock className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-                  <h3 className="font-medium text-gray-900">Flexible Hours</h3>
-                  <p className="text-sm text-gray-600">
+                  <h3 className="font-medium text-brand-ink">Flexible Hours</h3>
+                  <p className="text-sm text-brand-muted">
                     Appointments available outside office hours
                   </p>
                 </div>
@@ -354,22 +354,22 @@ export default function ContactPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-2">How often are prices updated?</h3>
-                    <p className="text-sm text-gray-600">
+                    <h3 className="font-medium text-brand-ink mb-2">How often are prices updated?</h3>
+                    <p className="text-sm text-brand-muted">
                       Our system updates prices every 2 hours from verified suppliers across Northern Ireland.
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-2">Is your service really free?</h3>
-                    <p className="text-sm text-gray-600">
+                    <h3 className="font-medium text-brand-ink mb-2">Is your service really free?</h3>
+                    <p className="text-sm text-brand-muted">
                       Yes, completely free for consumers. We're funded by supplier partnerships and advertising.
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-2">How do I claim my supplier listing?</h3>
-                    <p className="text-sm text-gray-600">
+                    <h3 className="font-medium text-brand-ink mb-2">How do I claim my supplier listing?</h3>
+                    <p className="text-sm text-brand-muted">
                       Visit any supplier page and click "Claim This Listing" or contact us directly.
                     </p>
                   </div>
@@ -377,22 +377,22 @@ export default function ContactPage() {
                 
                 <div className="space-y-4">
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-2">Do you cover all of Northern Ireland?</h3>
-                    <p className="text-sm text-gray-600">
+                    <h3 className="font-medium text-brand-ink mb-2">Do you cover all of Northern Ireland?</h3>
+                    <p className="text-sm text-brand-muted">
                       Yes, we cover all six counties with suppliers delivering to every BT postcode area.
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-2">Can I get a bulk discount quote?</h3>
-                    <p className="text-sm text-gray-600">
+                    <h3 className="font-medium text-brand-ink mb-2">Can I get a bulk discount quote?</h3>
+                    <p className="text-sm text-brand-muted">
                       Absolutely! Use our enquiry form specifying your volume requirements for competitive quotes.
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-2">What if I have a complaint?</h3>
-                    <p className="text-sm text-gray-600">
+                    <h3 className="font-medium text-brand-ink mb-2">What if I have a complaint?</h3>
+                    <p className="text-sm text-brand-muted">
                       Contact us immediately. We take all feedback seriously and respond within 24 hours.
                     </p>
                   </div>

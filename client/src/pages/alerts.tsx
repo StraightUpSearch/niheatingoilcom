@@ -151,10 +151,10 @@ export default function AlertsPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header Section */}
         <div className="text-centre mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-brand-ink mb-4">
             Price Alerts
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-brand-muted max-w-3xl mx-auto">
             Set up personalised price alerts and never miss a great heating oil deal. 
             We'll notify you when prices drop below your target.
           </p>
@@ -256,9 +256,9 @@ export default function AlertsPage() {
                 </div>
               ) : alerts?.length === 0 ? (
                 <div className="text-centre py-8">
-                  <Bell className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                  <p className="text-gray-600">No active alerts yet.</p>
-                  <p className="text-sm text-gray-500">Create your first alert to get started.</p>
+                  <Bell className="h-12 w-12 text-brand-muted mx-auto mb-4" />
+                  <p className="text-brand-muted">No active alerts yet.</p>
+                  <p className="text-sm text-brand-muted">Create your first alert to get started.</p>
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -267,13 +267,13 @@ export default function AlertsPage() {
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
                           <div className="flex items-centre gap-2 mb-1">
-                            <MapPin className="h-4 w-4 text-gray-500" />
+                            <MapPin className="h-4 w-4 text-brand-muted" />
                             <span className="font-medium">{alert.postcode}</span>
                             <Badge variant={alert.isActive ? "default" : "secondary"}>
                               {alert.isActive ? "Active" : "Paused"}
                             </Badge>
                           </div>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-brand-muted">
                             {alert.volume}L - Alert when price {alert.alertType} £
                             {(alert.targetPrice / 100).toFixed(2)} per litre
                           </p>
@@ -297,25 +297,25 @@ export default function AlertsPage() {
 
         {/* Information Section */}
         <div className="mt-12 bg-white rounded-lg shadow-sm border p-6">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-2xl font-semibold text-brand-ink mb-4">
             How Price Alerts Work
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-centre">
-              <div className="bg-blue-100 rounded-full p-3 w-12 h-12 mx-auto mb-3 flex items-centre justify-centre">
-                <Bell className="h-6 w-6 text-blue-600" />
+              <div className="bg-brand-mint rounded-full p-3 w-12 h-12 mx-auto mb-3 flex items-centre justify-centre">
+                <Bell className="h-6 w-6 text-brand-forest" />
               </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">Set Your Target</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="text-lg font-medium text-brand-ink mb-2">Set Your Target</h3>
+              <p className="text-brand-muted text-sm">
                 Choose your postcode, volume, and target price. We'll monitor the market for you.
               </p>
             </div>
             <div className="text-centre">
-              <div className="bg-green-100 rounded-full p-3 w-12 h-12 mx-auto mb-3 flex items-centre justify-centre">
-                <MapPin className="h-6 w-6 text-green-600" />
+              <div className="bg-brand-mint rounded-full p-3 w-12 h-12 mx-auto mb-3 flex items-centre justify-centre">
+                <MapPin className="h-6 w-6 text-[#0B6A30]" />
               </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">We Monitor Prices</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="text-lg font-medium text-brand-ink mb-2">We Monitor Prices</h3>
+              <p className="text-brand-muted text-sm">
                 Our system continuously tracks prices from verified suppliers in your area.
               </p>
             </div>
@@ -323,8 +323,8 @@ export default function AlertsPage() {
               <div className="bg-purple-100 rounded-full p-3 w-12 h-12 mx-auto mb-3 flex items-centre justify-centre">
                 <Plus className="h-6 w-6 text-purple-600" />
               </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">Instant Notification</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="text-lg font-medium text-brand-ink mb-2">Instant Notification</h3>
+              <p className="text-brand-muted text-sm">
                 Get email alerts the moment prices meet your criteria, so you never miss a deal.
               </p>
             </div>

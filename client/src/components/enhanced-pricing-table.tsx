@@ -177,7 +177,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
       <Star
         key={i}
         className={`h-3 w-3 ${
-          i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
+          i < rating ? 'text-yellow-400 fill-current' : 'text-brand-line'
         }`}
       />
     ));
@@ -203,18 +203,18 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
           </div>
         </div>
         {[...Array(5)].map((_, i) => (
-          <div key={i} className="bg-white rounded-lg border border-gray-200 p-4 animate-pulse">
+          <div key={i} className="bg-white rounded-lg border border-brand-line p-4 animate-pulse">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <div className="h-10 w-10 bg-gray-200 rounded-full"></div>
+                <div className="h-10 w-10 bg-brand-line rounded-full"></div>
                 <div>
-                  <div className="h-4 bg-gray-200 rounded w-32 mb-2"></div>
-                  <div className="h-3 bg-gray-200 rounded w-24"></div>
+                  <div className="h-4 bg-brand-line rounded w-32 mb-2"></div>
+                  <div className="h-3 bg-brand-line rounded w-24"></div>
                 </div>
               </div>
               <div className="text-right">
-                <div className="h-6 bg-gray-200 rounded w-20 mb-1"></div>
-                <div className="h-3 bg-gray-200 rounded w-16"></div>
+                <div className="h-6 bg-brand-line rounded w-20 mb-1"></div>
+                <div className="h-3 bg-brand-line rounded w-16"></div>
               </div>
             </div>
           </div>
@@ -265,18 +265,18 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
             const price900 = calculateVolumePrice(item.price, item.volume, 900);
             
             return (
-              <div key={item.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+              <div key={item.id} className="bg-white border border-brand-line rounded-lg p-4 shadow-sm">
                 <div className="flex justify-between items-start mb-3">
                   <div>
-                    <h3 className="font-medium text-gray-900 flex items-center gap-2">
+                    <h3 className="font-medium text-brand-ink flex items-center gap-2">
                       {item.supplier.name}
                       {item.isDefault && (
-                        <Badge variant="outline" className="text-xs text-orange-600 border-orange-400">
+                        <Badge variant="outline" className="text-xs text-[#8A3B12] border-orange-400">
                           Default Test Data
                         </Badge>
                       )}
                     </h3>
-                    <div className="text-sm text-gray-500 flex items-center mt-1">
+                    <div className="text-sm text-brand-muted flex items-center mt-1">
                       <MapPin className="h-3 w-3 mr-1" />
                       {getDeliveryArea(item.supplier.location)}
                     </div>
@@ -285,42 +285,42 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                     {item.supplier.reviewCount > 0 ? (
                       <>
                         {renderStars(Number(item.supplier.rating) || 4)}
-                        <span className="ml-1 text-sm text-gray-500">
+                        <span className="ml-1 text-sm text-brand-muted">
                           {(Number(item.supplier.rating) || 4).toFixed(1)}
                         </span>
                       </>
                     ) : (
-                      <span className="text-xs text-gray-400">No reviews yet</span>
+                      <span className="text-xs text-brand-muted">No reviews yet</span>
                     )}
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-3 gap-3 mb-3">
-                  <div className="text-center p-2 bg-gray-50 rounded">
-                    <div className="text-xs text-gray-500 mb-1">300L</div>
-                    <div className="font-medium text-gray-900 text-sm">{formatPrice(price300)}</div>
-                    <div className="text-xs text-gray-500">{formatPricePerLitre(price300, 300)}</div>
+                  <div className="text-center p-2 bg-brand-cream rounded">
+                    <div className="text-xs text-brand-muted mb-1">300L</div>
+                    <div className="font-medium text-brand-ink text-sm">{formatPrice(price300)}</div>
+                    <div className="text-xs text-brand-muted">{formatPricePerLitre(price300, 300)}</div>
                   </div>
-                  <div className="text-center p-2 bg-gray-50 rounded">
-                    <div className="text-xs text-gray-500 mb-1">500L</div>
-                    <div className="font-medium text-gray-900 text-sm">{formatPrice(price500)}</div>
-                    <div className="text-xs text-gray-500">{formatPricePerLitre(price500, 500)}</div>
+                  <div className="text-center p-2 bg-brand-cream rounded">
+                    <div className="text-xs text-brand-muted mb-1">500L</div>
+                    <div className="font-medium text-brand-ink text-sm">{formatPrice(price500)}</div>
+                    <div className="text-xs text-brand-muted">{formatPricePerLitre(price500, 500)}</div>
                   </div>
-                  <div className="text-center p-2 bg-gray-50 rounded">
-                    <div className="text-xs text-gray-500 mb-1">900L</div>
-                    <div className="font-medium text-gray-900 text-sm">{formatPrice(price900)}</div>
-                    <div className="text-xs text-gray-500">{formatPricePerLitre(price900, 900)}</div>
+                  <div className="text-center p-2 bg-brand-cream rounded">
+                    <div className="text-xs text-brand-muted mb-1">900L</div>
+                    <div className="font-medium text-brand-ink text-sm">{formatPrice(price900)}</div>
+                    <div className="text-xs text-brand-muted">{formatPricePerLitre(price900, 900)}</div>
                   </div>
                 </div>
                 
                 <div className="flex justify-between items-center">
-                  <div className="text-xs text-gray-500 flex items-center">
+                  <div className="text-xs text-brand-muted flex items-center">
                     <Clock className="h-3 w-3 mr-1" />
                     {getTimeAgo(new Date(item.createdAt))}
                   </div>
                   <Button
                     size="sm"
-                    className="bg-primary text-white hover:bg-blue-600 text-xs px-3 py-1 mr-2"
+                    className="bg-primary text-white hover:bg-brand-forest text-xs px-3 py-1 mr-2"
                     onClick={() => handleQuoteRequest(item.supplier)}
                   >
                     Get Quote
@@ -403,7 +403,7 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                         <div className="text-sm font-medium text-grey-900 flex items-center gap-2">
                           {item.supplier.name}
                           {item.isDefault && (
-                            <Badge variant="outline" className="text-xs text-orange-600 border-orange-400">
+                            <Badge variant="outline" className="text-xs text-[#8A3B12] border-orange-400">
                               Default Test Data
                             </Badge>
                           )}
@@ -454,14 +454,14 @@ export default function EnhancedPricingTable({ searchParams }: EnhancedPricingTa
                             </span>
                           </>
                         ) : (
-                          <span className="text-xs text-gray-400">No reviews yet</span>
+                          <span className="text-xs text-brand-muted">No reviews yet</span>
                         )}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-centre">
                       <Button
                         size="sm"
-                        className="bg-green-600 text-white hover:bg-green-700 mr-2"
+                        className="bg-brand-forest text-white hover:bg-brand-forest-soft mr-2"
                         onClick={() => {
                           setSelectedSupplier({
                             name: item.supplier.name,

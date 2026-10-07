@@ -39,29 +39,29 @@ function QuoteForm({ supplierName, supplierPhone, supplierWebsite }: { supplierN
     return (
       <Card>
         <CardContent className="pt-6 text-center space-y-2">
-          <CheckCircle className="h-8 w-8 text-green-500 mx-auto" />
-          <p className="font-medium text-gray-900">Request sent!</p>
-          <p className="text-sm text-gray-500">We've passed your details to {supplierName}. They'll be in touch shortly.</p>
+          <CheckCircle className="h-8 w-8 text-[#0B6A30] mx-auto" />
+          <p className="font-medium text-brand-ink">Request sent!</p>
+          <p className="text-sm text-brand-muted">We've passed your details to {supplierName}. They'll be in touch shortly.</p>
         </CardContent>
       </Card>
     );
   }
 
   return (
-    <Card className="border-orange-200 bg-orange-50">
+    <Card className="border-brand-line bg-brand-butter">
       <CardHeader className="pb-3">
         <CardTitle className="text-base">Get a quote from {supplierName}</CardTitle>
         <CardDescription>Free, no obligation. Takes 30 seconds.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-3">
         <input
-          className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm bg-white"
+          className="w-full border border-brand-line rounded-md px-3 py-2 text-sm bg-white"
           placeholder="Your name"
           value={form.name}
           onChange={e => setForm({ ...form, name: e.target.value })}
         />
         <input
-          className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm bg-white"
+          className="w-full border border-brand-line rounded-md px-3 py-2 text-sm bg-white"
           placeholder="Email address"
           type="email"
           value={form.email}
@@ -69,13 +69,13 @@ function QuoteForm({ supplierName, supplierPhone, supplierWebsite }: { supplierN
         />
         <div className="flex gap-2">
           <input
-            className="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm bg-white"
+            className="flex-1 border border-brand-line rounded-md px-3 py-2 text-sm bg-white"
             placeholder="BT postcode"
             value={form.postcode}
             onChange={e => setForm({ ...form, postcode: e.target.value })}
           />
           <select
-            className="border border-gray-300 rounded-md px-3 py-2 text-sm bg-white"
+            className="border border-brand-line rounded-md px-3 py-2 text-sm bg-white"
             value={form.volume}
             onChange={e => setForm({ ...form, volume: e.target.value })}
           >
@@ -86,7 +86,7 @@ function QuoteForm({ supplierName, supplierPhone, supplierWebsite }: { supplierN
           </select>
         </div>
         <Button
-          className="w-full bg-orange-500 hover:bg-orange-600 text-white"
+          className="w-full bg-brand-gold hover:brightness-95 text-white"
           disabled={mutation.isPending || !form.name || !form.email || !form.postcode}
           onClick={() => mutation.mutate({
             name: form.name,
@@ -123,10 +123,10 @@ export default function SupplierProfile() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-brand-cream flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading supplier information...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-forest mx-auto mb-4"></div>
+          <p className="text-brand-muted">Loading supplier information...</p>
         </div>
       </div>
     );
@@ -134,10 +134,10 @@ export default function SupplierProfile() {
 
   if (error || !supplier) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-brand-cream flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Supplier Not Found</h1>
-          <p className="text-gray-600 mb-4">The supplier you're looking for doesn't exist.</p>
+          <h1 className="text-2xl font-bold text-brand-ink mb-2">Supplier Not Found</h1>
+          <p className="text-brand-muted mb-4">The supplier you're looking for doesn't exist.</p>
           <Button onClick={() => window.history.back()}>Go Back</Button>
         </div>
       </div>
@@ -206,13 +206,13 @@ export default function SupplierProfile() {
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-2">
                 <h1 className="text-3xl lg:text-4xl font-bold">{supplier.name}</h1>
-                <Badge className="bg-blue-500 hover:bg-blue-600 text-white">
+                <Badge className="bg-brand-forest-soft hover:bg-brand-forest text-white">
                   <Shield className="h-3 w-3 mr-1" />
                   Listed
                 </Badge>
               </div>
               
-              <div className="flex flex-wrap items-center gap-4 text-blue-100">
+              <div className="flex flex-wrap items-center gap-4 text-[#CFE3D3]">
                 <div className="flex items-center gap-1">
                   <MapPin className="h-4 w-4" />
                   <span>{supplier.location}</span>
@@ -240,7 +240,7 @@ export default function SupplierProfile() {
                     {[...Array(5)].map((_, i) => (
                       <Star 
                         key={i} 
-                        className={`h-4 w-4 ${i < Math.floor(supplier.averageRating!) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} 
+                        className={`h-4 w-4 ${i < Math.floor(supplier.averageRating!) ? 'text-yellow-400 fill-yellow-400' : 'text-brand-line'}`} 
                       />
                     ))}
                   </div>
@@ -254,12 +254,12 @@ export default function SupplierProfile() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Button 
                 onClick={() => setShowClaimDialog(true)}
-                className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium"
+                className="bg-brand-gold hover:bg-yellow-600 text-black font-medium"
               >
                 <Award className="h-4 w-4 mr-2" />
                 Claim This Listing
               </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-800">
+              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-brand-forest">
                 Contact Supplier
               </Button>
             </div>
@@ -277,7 +277,7 @@ export default function SupplierProfile() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <TrendingUp className="h-5 w-5 text-green-600" />
+                  <TrendingUp className="h-5 w-5 text-[#0B6A30]" />
                   Current Heating Oil Prices
                 </CardTitle>
                 <CardDescription>
@@ -287,15 +287,15 @@ export default function SupplierProfile() {
               <CardContent>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {volumes.map((volume) => (
-                    <div key={volume} className="text-center p-4 bg-gray-50 rounded-lg">
-                      <div className="text-2xl font-bold text-blue-600">
+                    <div key={volume} className="text-center p-4 bg-brand-cream rounded-lg">
+                      <div className="text-2xl font-bold text-brand-forest">
                         {pricesByVolume[volume] === 'N/A' ? 'N/A' : `£${pricesByVolume[volume]}`}
                       </div>
-                      <div className="text-sm text-gray-600 mt-1">
+                      <div className="text-sm text-brand-muted mt-1">
                         {volume}L delivery
                       </div>
                       {pricesByVolume[volume] !== 'N/A' && (
-                        <div className="text-xs text-gray-500 mt-1">
+                        <div className="text-xs text-brand-muted mt-1">
                           {(parseFloat(pricesByVolume[volume]) / volume * 100).toFixed(1)}p per litre
                         </div>
                       )}
@@ -304,8 +304,8 @@ export default function SupplierProfile() {
                 </div>
 
                 {currentPrices.length === 0 && (
-                  <div className="text-center py-8 text-gray-500">
-                    <Clock className="h-12 w-12 mx-auto mb-3 text-gray-300" />
+                  <div className="text-center py-8 text-brand-muted">
+                    <Clock className="h-12 w-12 mx-auto mb-3 text-brand-line" />
                     <p className="text-lg font-medium mb-1">No Recent Prices Available</p>
                     <p className="text-sm">We haven't received updated pricing from this supplier recently.</p>
                   </div>
@@ -321,11 +321,11 @@ export default function SupplierProfile() {
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-2">Service Areas</h4>
-                    <p className="text-gray-600">{supplier.location} and surrounding areas</p>
+                    <h4 className="font-medium text-brand-ink mb-2">Service Areas</h4>
+                    <p className="text-brand-muted">{supplier.location} and surrounding areas</p>
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 mb-2">Delivery Volumes</h4>
+                    <h4 className="font-medium text-brand-ink mb-2">Delivery Volumes</h4>
                     <div className="flex flex-wrap gap-1">
                       {volumes.map((volume) => (
                         <Badge key={volume} variant="secondary">
@@ -339,8 +339,8 @@ export default function SupplierProfile() {
                 <Separator />
 
                 <div>
-                  <h4 className="font-medium text-gray-900 mb-2">Business Information</h4>
-                  <div className="space-y-2 text-sm text-gray-600">
+                  <h4 className="font-medium text-brand-ink mb-2">Business Information</h4>
+                  <div className="space-y-2 text-sm text-brand-muted">
                     {supplier.phone && (
                       <div className="flex items-center gap-2">
                         <Phone className="h-4 w-4" />
@@ -351,7 +351,7 @@ export default function SupplierProfile() {
                       <div className="flex items-center gap-2">
                         <Globe className="h-4 w-4" />
                         <a href={supplier.website} target="_blank" rel="noopener noreferrer" 
-                           className="text-blue-600 hover:underline">
+                           className="text-brand-forest hover:underline">
                           {supplier.website}
                         </a>
                       </div>
@@ -390,7 +390,7 @@ export default function SupplierProfile() {
                           <Link
                             key={slug}
                             href={`/heating-oil-prices/${slug}/`}
-                            className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                            className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-brand-muted bg-muted hover:bg-brand-line rounded-full transition-colors"
                           >
                             <MapPin className="w-3 h-3" />
                             {pc.toUpperCase()}
@@ -433,7 +433,7 @@ export default function SupplierProfile() {
                   </Button>
                 )}
                 <Button
-                  className="w-full bg-yellow-500 hover:bg-yellow-600 text-black"
+                  className="w-full bg-brand-gold hover:bg-yellow-600 text-black"
                   onClick={() => setShowClaimDialog(true)}
                 >
                   <Award className="h-4 w-4 mr-2" />
@@ -449,16 +449,16 @@ export default function SupplierProfile() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center gap-2 text-sm">
-                  <Shield className="h-4 w-4 text-green-600" />
-                  <span className="text-gray-600">Consumer Council Listed</span>
+                  <Shield className="h-4 w-4 text-[#0B6A30]" />
+                  <span className="text-brand-muted">Consumer Council Listed</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
-                  <Award className="h-4 w-4 text-blue-600" />
-                  <span className="text-gray-600">NI Heating Oil Network</span>
+                  <Award className="h-4 w-4 text-brand-forest" />
+                  <span className="text-brand-muted">NI Heating Oil Network</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
-                  <Shield className="h-4 w-4 text-blue-600" />
-                  <span className="text-gray-600">Listed Supplier</span>
+                  <Shield className="h-4 w-4 text-brand-forest" />
+                  <span className="text-brand-muted">Listed Supplier</span>
                 </div>
               </CardContent>
             </Card>

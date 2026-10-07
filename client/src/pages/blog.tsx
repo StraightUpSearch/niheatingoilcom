@@ -94,7 +94,7 @@ export default function Blog() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-cream">
       <SEOHead
         title="Heating Oil Blog & Tips - NI Heating Oil"
         description="Expert advice, industry updates, and money-saving tips for Northern Ireland heating oil consumers."
@@ -106,10 +106,10 @@ export default function Blog() {
 
       <main className="max-w-4xl mx-auto px-4 pt-24 pb-16">
         <div className="mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-brand-ink tracking-tight">
             Heating Oil Blog
           </h1>
-          <p className="mt-2 text-gray-500 max-w-xl">
+          <p className="mt-2 text-brand-muted max-w-xl">
             Expert advice and money-saving tips for Northern Ireland homeowners.
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function Blog() {
         <div className="space-y-6">
           {blogArticles.map((article, index) => (
             <Link key={article.id} href={`/blog/${article.slug}`} className="block group">
-              <article className={`bg-white rounded-lg border border-gray-200 overflow-hidden transition-shadow hover:shadow-sm ${index === 0 ? "sm:flex" : ""}`}>
+              <article className={`bg-white rounded-lg border border-brand-line overflow-hidden transition-shadow hover:shadow-sm ${index === 0 ? "sm:flex" : ""}`}>
                 <div className={`aspect-video overflow-hidden ${index === 0 ? "sm:w-2/5 sm:aspect-auto sm:min-h-full" : ""}`}>
                   <img
                     src={article.image}
@@ -127,8 +127,8 @@ export default function Blog() {
                   />
                 </div>
                 <div className={`p-5 ${index === 0 ? "sm:w-3/5 sm:p-6" : ""}`}>
-                  <div className="flex items-center gap-3 text-xs text-gray-500 mb-2">
-                    <span className="font-medium text-gray-700 bg-gray-100 px-2 py-0.5 rounded">
+                  <div className="flex items-center gap-3 text-xs text-brand-muted mb-2">
+                    <span className="font-medium text-brand-ink bg-muted px-2 py-0.5 rounded">
                       {article.category}
                     </span>
                     <span className="flex items-center gap-1">
@@ -144,13 +144,13 @@ export default function Blog() {
                       })}
                     </span>
                   </div>
-                  <h2 className={`font-semibold text-gray-900 group-hover:text-orange-600 transition-colors ${index === 0 ? "text-xl sm:text-2xl" : "text-lg"}`}>
+                  <h2 className={`font-semibold text-brand-ink group-hover:text-[#8A3B12] transition-colors ${index === 0 ? "text-xl sm:text-2xl" : "text-lg"}`}>
                     {article.title}
                   </h2>
-                  <p className="mt-1.5 text-sm text-gray-500 line-clamp-2">
+                  <p className="mt-1.5 text-sm text-brand-muted line-clamp-2">
                     {article.description}
                   </p>
-                  <span className="mt-3 inline-flex items-center text-sm font-medium text-orange-600 group-hover:text-orange-700 transition-colors">
+                  <span className="mt-3 inline-flex items-center text-sm font-medium text-[#8A3B12] group-hover:text-[#8A3B12] transition-colors">
                     Read article
                     <ArrowRight className="w-3.5 h-3.5 ml-1" />
                   </span>
@@ -160,15 +160,15 @@ export default function Blog() {
           ))}
         </div>
 
-        <div className="mt-12 bg-white border border-gray-200 rounded-lg p-6 text-center">
-          <h2 className="text-lg font-semibold text-gray-900">
+        <div className="mt-12 bg-white border border-brand-line rounded-lg p-6 text-center">
+          <h2 className="text-lg font-semibold text-brand-ink">
             Find the cheapest heating oil near you
           </h2>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-brand-muted">
             Compare prices from suppliers across Northern Ireland in seconds.
           </p>
           <Link href="/">
-            <button className="mt-4 px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-lg transition-colors text-sm">
+            <button className="mt-4 px-5 py-2.5 bg-brand-gold hover:brightness-95 text-white font-medium rounded-lg transition-colors text-sm">
               Compare prices
             </button>
           </Link>

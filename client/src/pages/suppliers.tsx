@@ -29,10 +29,10 @@ export default function SuppliersPage() {
             <Star key={i} className="h-3 w-3 fill-current" />
           ))}
           {[...Array(5 - fullStars)].map((_, i) => (
-            <Star key={i} className="h-3 w-3 text-gray-300" />
+            <Star key={i} className="h-3 w-3 text-brand-line" />
           ))}
         </div>
-        <span className="ml-1 text-xs text-gray-600">{numRating.toFixed(1)}</span>
+        <span className="ml-1 text-xs text-brand-muted">{numRating.toFixed(1)}</span>
       </div>
     );
   };
@@ -43,10 +43,10 @@ export default function SuppliersPage() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-brand-ink mb-4">
             Heating Oil Suppliers
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-brand-muted max-w-3xl mx-auto">
             Browse verified heating oil suppliers delivering across Northern Ireland.
             Contact them directly for quotes.
           </p>
@@ -56,24 +56,24 @@ export default function SuppliersPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
               <div className="flex items-center justify-center mb-2">
-                <Users className="h-6 w-6 text-blue-600 mr-2" />
-                <span className="text-2xl font-bold text-gray-900">{suppliersArray.length}</span>
+                <Users className="h-6 w-6 text-brand-forest mr-2" />
+                <span className="text-2xl font-bold text-brand-ink">{suppliersArray.length}</span>
               </div>
-              <p className="text-gray-600">Suppliers Listed</p>
+              <p className="text-brand-muted">Suppliers Listed</p>
             </div>
             <div>
               <div className="flex items-center justify-center mb-2">
                 <Star className="h-6 w-6 text-yellow-500 mr-2" />
-                <span className="text-2xl font-bold text-gray-900">Verified</span>
+                <span className="text-2xl font-bold text-brand-ink">Verified</span>
               </div>
-              <p className="text-gray-600">Local Businesses</p>
+              <p className="text-brand-muted">Local Businesses</p>
             </div>
             <div>
               <div className="flex items-center justify-center mb-2">
-                <MapPin className="h-6 w-6 text-green-600 mr-2" />
-                <span className="text-2xl font-bold text-gray-900">All 6</span>
+                <MapPin className="h-6 w-6 text-[#0B6A30] mr-2" />
+                <span className="text-2xl font-bold text-brand-ink">All 6</span>
               </div>
-              <p className="text-gray-600">Counties Covered</p>
+              <p className="text-brand-muted">Counties Covered</p>
             </div>
           </div>
         </div>
@@ -97,10 +97,10 @@ export default function SuppliersPage() {
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div>
-                      <CardTitle className="text-xl font-semibold text-gray-900">
+                      <CardTitle className="text-xl font-semibold text-brand-ink">
                         {supplier.name}
                       </CardTitle>
-                      <div className="flex items-center text-gray-600 mt-1">
+                      <div className="flex items-center text-brand-muted mt-1">
                         <MapPin className="h-4 w-4 mr-1" />
                         <span className="text-sm">{supplier.location}</span>
                       </div>
@@ -112,8 +112,8 @@ export default function SuppliersPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {supplier.phone && (
-                      <div className="flex items-center text-gray-700">
-                        <Phone className="h-4 w-4 mr-2 text-gray-400" />
+                      <div className="flex items-center text-brand-ink">
+                        <Phone className="h-4 w-4 mr-2 text-brand-muted" />
                         <a href={`tel:${supplier.phone}`} className="text-sm hover:text-primary">
                           {supplier.phone}
                         </a>
@@ -121,8 +121,8 @@ export default function SuppliersPage() {
                     )}
 
                     {supplier.website && (
-                      <div className="flex items-center text-gray-700">
-                        <Globe className="h-4 w-4 mr-2 text-gray-400" />
+                      <div className="flex items-center text-brand-ink">
+                        <Globe className="h-4 w-4 mr-2 text-brand-muted" />
                         <a
                           href={supplier.website}
                           target="_blank"
@@ -136,8 +136,8 @@ export default function SuppliersPage() {
 
                     {supplier.serviceAreas && (
                       <div>
-                        <h4 className="text-sm font-medium text-gray-900 mb-1">Service Areas</h4>
-                        <p className="text-xs text-gray-600">{supplier.serviceAreas}</p>
+                        <h4 className="text-sm font-medium text-brand-ink mb-1">Service Areas</h4>
+                        <p className="text-xs text-brand-muted">{supplier.serviceAreas}</p>
                       </div>
                     )}
 
@@ -180,7 +180,7 @@ export default function SuppliersPage() {
 
         <div className="text-center">
           <Link href="/compare">
-            <Button size="lg" className="bg-primary hover:bg-blue-700">
+            <Button size="lg" className="bg-primary hover:bg-brand-forest-soft">
               Compare All Prices
             </Button>
           </Link>

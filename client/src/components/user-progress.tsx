@@ -61,11 +61,11 @@ export default function UserProgress() {
       <CardContent className="space-y-4">
         {/* XP Progress Bar */}
         <div>
-          <div className="flex justify-between text-sm text-gray-600 mb-2">
+          <div className="flex justify-between text-sm text-brand-muted mb-2">
             <span>{currentXP} XP</span>
             <span>{nextLevelXP} XP to Level {userLevel + 1}</span>
           </div>
-          <Progress value={progressPercentage} className="h-3 bg-gray-200">
+          <Progress value={progressPercentage} className="h-3 bg-brand-line">
             <div 
               className="h-full bg-gradient-to-r from-purple-500 to-blue-500 rounded-full transition-all duration-500"
               style={{ width: `${progressPercentage}%` }}
@@ -76,8 +76,8 @@ export default function UserProgress() {
         {/* Milestone Progress */}
         <div>
           <div className="flex items-center justify-between mb-3">
-            <h4 className="font-semibold text-gray-900">Milestones</h4>
-            <span className="text-sm text-gray-600">
+            <h4 className="font-semibold text-brand-ink">Milestones</h4>
+            <span className="text-sm text-brand-muted">
               {completedMilestones}/{milestones.length} completed
             </span>
           </div>
@@ -90,11 +90,11 @@ export default function UserProgress() {
                   key={milestone.id}
                   className={`flex items-center p-3 rounded-lg border ${
                     milestone.completed 
-                      ? 'bg-green-50 border-green-200' 
-                      : 'bg-white border-gray-200'
+                      ? 'bg-brand-mint border-brand-line' 
+                      : 'bg-white border-brand-line'
                   }`}
                 >
-                  <div className={`mr-3 ${milestone.completed ? 'text-green-600' : 'text-gray-400'}`}>
+                  <div className={`mr-3 ${milestone.completed ? 'text-[#0B6A30]' : 'text-brand-muted'}`}>
                     {milestone.completed ? (
                       <CheckCircle className="h-5 w-5" />
                     ) : (
@@ -104,19 +104,19 @@ export default function UserProgress() {
                   
                   <div className="flex-1">
                     <div className="flex items-center">
-                      <Icon className={`h-4 w-4 mr-2 ${milestone.completed ? 'text-green-600' : 'text-gray-500'}`} />
-                      <span className={`font-medium ${milestone.completed ? 'text-green-800' : 'text-gray-700'}`}>
+                      <Icon className={`h-4 w-4 mr-2 ${milestone.completed ? 'text-[#0B6A30]' : 'text-brand-muted'}`} />
+                      <span className={`font-medium ${milestone.completed ? 'text-[#0B6A30]' : 'text-brand-ink'}`}>
                         {milestone.title}
                       </span>
                     </div>
-                    <p className={`text-sm ${milestone.completed ? 'text-green-600' : 'text-gray-500'}`}>
+                    <p className={`text-sm ${milestone.completed ? 'text-[#0B6A30]' : 'text-brand-muted'}`}>
                       {milestone.description}
                     </p>
                   </div>
                   
                   <Badge 
                     variant={milestone.completed ? "default" : "outline"}
-                    className={`ml-2 ${milestone.completed ? 'bg-green-100 text-green-800' : ''}`}
+                    className={`ml-2 ${milestone.completed ? 'bg-brand-mint text-[#0B6A30]' : ''}`}
                   >
                     +{milestone.xp} XP
                   </Badge>
@@ -128,12 +128,12 @@ export default function UserProgress() {
 
         {/* Next Goal */}
         {nextMilestone && (
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
-            <h5 className="font-medium text-blue-800 mb-1">Next Goal</h5>
-            <p className="text-sm text-blue-700">{nextMilestone.description}</p>
+          <div className="bg-brand-mint border border-brand-line rounded-lg p-3">
+            <h5 className="font-medium text-brand-forest mb-1">Next Goal</h5>
+            <p className="text-sm text-brand-forest">{nextMilestone.description}</p>
             <div className="flex items-center justify-between mt-2">
-              <span className="text-xs text-blue-600">Reward: +{nextMilestone.xp} XP</span>
-              <Badge variant="outline" className="text-xs border-blue-300 text-blue-700">
+              <span className="text-xs text-brand-forest">Reward: +{nextMilestone.xp} XP</span>
+              <Badge variant="outline" className="text-xs border-brand-line text-brand-forest">
                 In Progress
               </Badge>
             </div>

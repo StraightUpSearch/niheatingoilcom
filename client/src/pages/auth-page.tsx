@@ -65,26 +65,26 @@ export default function AuthPage() {
               <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
                 Compare Heating Oil Prices Across Northern Ireland
               </h2>
-              <p className="text-xl text-blue-100 leading-relaxed">
+              <p className="text-xl text-[#CFE3D3] leading-relaxed">
                 Compare heating oil prices from local suppliers across Northern Ireland. Free, independent, and updated regularly.
               </p>
             </div>
 
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-brand-forest rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">✓</span>
                 </div>
                 <span className="text-lg">Prices updated regularly from supplier websites</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-brand-forest rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">✓</span>
                 </div>
                 <span className="text-lg">Price alerts when oil drops in your area</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-brand-forest rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">✓</span>
                 </div>
                 <span className="text-lg">Compare 300L, 500L, and 900L options</span>
@@ -96,8 +96,8 @@ export default function AuthPage() {
           <div className="order-1 lg:order-2">
             <Card className="w-full max-w-md mx-auto shadow-2xl border-0">
               <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl font-bold text-gray-900">Welcome</CardTitle>
-                <CardDescription className="text-gray-600">
+                <CardTitle className="text-2xl font-bold text-brand-ink">Welcome</CardTitle>
+                <CardDescription className="text-brand-muted">
                   Sign in to save on heating oil or create your free account
                 </CardDescription>
               </CardHeader>
@@ -133,7 +133,7 @@ export default function AuthPage() {
                         <span className="w-full border-t" />
                       </div>
                       <div className="relative flex justify-center text-xs uppercase">
-                        <span className="bg-white px-2 text-gray-500">Or continue with email</span>
+                        <span className="bg-white px-2 text-brand-muted">Or continue with email</span>
                       </div>
                     </div>
                   </div>
@@ -148,11 +148,11 @@ export default function AuthPage() {
                   <TabsContent value="login" className="space-y-4">
                     <form onSubmit={handleLogin} className="space-y-4">
                       <div className="space-y-2">
-                        <Label htmlFor="login-username" className="text-sm font-medium text-gray-700">
+                        <Label htmlFor="login-username" className="text-sm font-medium text-brand-ink">
                           Username
                         </Label>
                         <div className="relative">
-                          <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                          <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-brand-muted" />
                           <Input
                             id="login-username"
                             type="text"
@@ -167,11 +167,11 @@ export default function AuthPage() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="login-password" className="text-sm font-medium text-gray-700">
+                        <Label htmlFor="login-password" className="text-sm font-medium text-brand-ink">
                           Password
                         </Label>
                         <div className="relative">
-                          <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                          <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-brand-muted" />
                           <Input
                             id="login-password"
                             type="password"
@@ -187,7 +187,7 @@ export default function AuthPage() {
 
                       <Button 
                         type="submit" 
-                        className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white font-medium"
+                        className="w-full h-11 bg-brand-forest hover:bg-brand-forest-soft text-white font-medium"
                         disabled={loginMutation.isPending || !loginData.username || !loginData.password}
                       >
                         {loginMutation.isPending ? (
@@ -203,7 +203,7 @@ export default function AuthPage() {
                       <div className="text-center mt-4">
                         <a 
                           href="/forgot-password" 
-                          className="text-sm text-blue-600 hover:text-blue-700 hover:underline"
+                          className="text-sm text-brand-forest hover:text-brand-forest hover:underline"
                         >
                           Forgot your password?
                         </a>
@@ -214,11 +214,11 @@ export default function AuthPage() {
                   <TabsContent value="register" className="space-y-4">
                     <form onSubmit={handleRegister} className="space-y-4">
                       <div className="space-y-2">
-                        <Label htmlFor="register-username" className="text-sm font-medium text-gray-700">
+                        <Label htmlFor="register-username" className="text-sm font-medium text-brand-ink">
                           Username
                         </Label>
                         <div className="relative">
-                          <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                          <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-brand-muted" />
                           <Input
                             id="register-username"
                             type="text"
@@ -233,11 +233,11 @@ export default function AuthPage() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="register-email" className="text-sm font-medium text-gray-700">
+                        <Label htmlFor="register-email" className="text-sm font-medium text-brand-ink">
                           Email Address
                         </Label>
                         <div className="relative">
-                          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-brand-muted" />
                           <Input
                             id="register-email"
                             type="email"
@@ -252,11 +252,11 @@ export default function AuthPage() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="register-password" className="text-sm font-medium text-gray-700">
+                        <Label htmlFor="register-password" className="text-sm font-medium text-brand-ink">
                           Password
                         </Label>
                         <div className="relative">
-                          <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                          <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-brand-muted" />
                           <Input
                             id="register-password"
                             type="password"
@@ -268,14 +268,14 @@ export default function AuthPage() {
                             disabled={registerMutation.isPending}
                           />
                         </div>
-                        <p className="text-xs text-gray-500 mt-1">
+                        <p className="text-xs text-brand-muted mt-1">
                           Min 8 characters, include uppercase, lowercase, number &amp; special character
                         </p>
                       </div>
 
                       <Button 
                         type="submit" 
-                        className="w-full h-11 bg-green-600 hover:bg-green-700 text-white font-medium"
+                        className="w-full h-11 bg-brand-forest hover:bg-brand-forest-soft text-white font-medium"
                         disabled={registerMutation.isPending || !registerData.username || !registerData.password}
                       >
                         {registerMutation.isPending ? (
@@ -292,7 +292,7 @@ export default function AuthPage() {
                 </Tabs>
 
                 <div className="mt-6 text-center">
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-brand-muted">
                     By creating an account, you agree to save money on heating oil in Northern Ireland
                   </p>
                 </div>

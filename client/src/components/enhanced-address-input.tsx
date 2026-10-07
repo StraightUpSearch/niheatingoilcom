@@ -197,7 +197,7 @@ export default function EnhancedAddressInput({
       </div>
 
       <div className="flex items-center justify-between">
-        <Label htmlFor="address-input" className="text-sm font-medium text-gray-700">
+        <Label htmlFor="address-input" className="text-sm font-medium text-brand-ink">
           {label}
         </Label>
         <Button
@@ -205,7 +205,7 @@ export default function EnhancedAddressInput({
           variant="ghost"
           size="sm"
           onClick={toggleManualMode}
-          className="text-xs text-blue-600 hover:text-blue-700"
+          className="text-xs text-brand-forest hover:text-brand-forest"
         >
           {manualMode ? "Use Address Lookup" : "Enter Manually"}
         </Button>
@@ -216,7 +216,7 @@ export default function EnhancedAddressInput({
           {/* Address Search Input */}
           <div className="relative">
             <div className="relative">
-              <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+              <MapPin className="absolute left-3 top-3 h-4 w-4 text-brand-muted" />
               <Input
                 ref={inputRef}
                 id="address-input"
@@ -248,7 +248,7 @@ export default function EnhancedAddressInput({
               />
               
               {loading && (
-                <Loader2 className="absolute right-3 top-3 h-4 w-4 text-gray-400 animate-spin" />
+                <Loader2 className="absolute right-3 top-3 h-4 w-4 text-brand-muted animate-spin" />
               )}
             </div>
 
@@ -262,11 +262,11 @@ export default function EnhancedAddressInput({
                   {addressSuggestions.map((suggestion, index) => (
                     <div
                       key={index}
-                      className="cursor-pointer hover:bg-gray-50 p-3 rounded border-b last:border-b-0"
+                      className="cursor-pointer hover:bg-white p-3 rounded border-b last:border-b-0"
                       onClick={() => handleSuggestionSelect(suggestion)}
                     >
                       <div className="font-medium text-sm">{suggestion.formatted_address}</div>
-                      <div className="text-xs text-gray-600">{suggestion.administrative_area}</div>
+                      <div className="text-xs text-brand-muted">{suggestion.administrative_area}</div>
                     </div>
                   ))}
                 </div>
@@ -277,7 +277,7 @@ export default function EnhancedAddressInput({
           {/* House Number Selection - Currently disabled for simplicity */}
           {false && selectedAddress && houseNumbers.length > 0 && (
             <div className="space-y-2">
-              <Label className="text-sm font-medium text-gray-700">
+              <Label className="text-sm font-medium text-brand-ink">
                 Select House Number for {selectedAddress.thoroughfare}
               </Label>
               <Select onValueChange={handleHouseNumberChange} defaultValue={selectedAddress.premise}>
@@ -300,7 +300,7 @@ export default function EnhancedAddressInput({
         <div className="space-y-3">
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <Label htmlFor="house-number" className="text-sm text-gray-600">House Number</Label>
+              <Label htmlFor="house-number" className="text-sm text-brand-muted">House Number</Label>
               <Input
                 id="house-number"
                 value={manualAddress.houseNumber}
@@ -310,7 +310,7 @@ export default function EnhancedAddressInput({
               />
             </div>
             <div>
-              <Label htmlFor="postcode-manual" className="text-sm text-gray-600">Postcode</Label>
+              <Label htmlFor="postcode-manual" className="text-sm text-brand-muted">Postcode</Label>
               <Input
                 id="postcode-manual"
                 value={manualAddress.postcode}
@@ -323,7 +323,7 @@ export default function EnhancedAddressInput({
           </div>
           
           <div>
-            <Label htmlFor="road-name" className="text-sm text-gray-600">Road Name</Label>
+            <Label htmlFor="road-name" className="text-sm text-brand-muted">Road Name</Label>
             <Input
               id="road-name"
               value={manualAddress.roadName}
@@ -334,7 +334,7 @@ export default function EnhancedAddressInput({
           </div>
           
           <div>
-            <Label htmlFor="town-manual" className="text-sm text-gray-600">Town/City</Label>
+            <Label htmlFor="town-manual" className="text-sm text-brand-muted">Town/City</Label>
             <Input
               id="town-manual"
               value={manualAddress.town}
@@ -346,7 +346,7 @@ export default function EnhancedAddressInput({
           
           <Button 
             onClick={handleManualSubmit}
-            className="w-full bg-blue-600 hover:bg-blue-700"
+            className="w-full bg-brand-forest hover:bg-brand-forest-soft"
             disabled={!manualAddress.houseNumber || !manualAddress.roadName || !manualAddress.town || !manualAddress.postcode}
           >
             <Home className="w-4 h-4 mr-2" />

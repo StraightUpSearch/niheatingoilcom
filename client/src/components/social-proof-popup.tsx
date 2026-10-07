@@ -104,26 +104,26 @@ export default function SocialProofPopup() {
       case 'order':
         return {
           text: `${message.name} from ${message.location} just ordered ${message.volume}L`,
-          icon: <CheckCircle className="w-4 h-4 text-green-500" />,
-          color: "border-green-200 bg-green-50"
+          icon: <CheckCircle className="w-4 h-4 text-[#0B6A30]" />,
+          color: "border-brand-line bg-brand-mint"
         };
       case 'savings':
         return {
           text: `${message.name} from ${message.location} saved £${message.savings} on heating oil`,
-          icon: <TrendingDown className="w-4 h-4 text-blue-500" />,
-          color: "border-blue-200 bg-blue-50"
+          icon: <TrendingDown className="w-4 h-4 text-brand-forest" />,
+          color: "border-brand-line bg-brand-mint"
         };
       case 'quote':
         return {
           text: `${message.name} from ${message.location} just received a quote`,
-          icon: <Clock className="w-4 h-4 text-orange-500" />,
-          color: "border-orange-200 bg-orange-50"
+          icon: <Clock className="w-4 h-4 text-[#8A3B12]" />,
+          color: "border-brand-line bg-brand-butter"
         };
       default:
         return {
           text: `${message.name} from ${message.location} is comparing prices`,
-          icon: <CheckCircle className="w-4 h-4 text-green-500" />,
-          color: "border-green-200 bg-green-50"
+          icon: <CheckCircle className="w-4 h-4 text-[#0B6A30]" />,
+          color: "border-brand-line bg-brand-mint"
         };
     }
   };
@@ -147,10 +147,10 @@ export default function SocialProofPopup() {
               <div className="flex items-start gap-2 flex-1">
                 {messageContent.icon}
                 <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-gray-900 leading-tight">
+                  <p className="text-sm font-medium text-brand-ink leading-tight">
                     {messageContent.text}
                   </p>
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="text-xs text-brand-muted mt-1">
                     {currentMessage.timeAgo}
                   </p>
                 </div>
@@ -158,7 +158,7 @@ export default function SocialProofPopup() {
               
               <button
                 onClick={() => setIsVisible(false)}
-                className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors p-1 -m-1"
+                className="flex-shrink-0 text-brand-muted hover:text-brand-muted transition-colors p-1 -m-1"
                 aria-label="Close notification"
               >
                 <X className="w-3 h-3" />

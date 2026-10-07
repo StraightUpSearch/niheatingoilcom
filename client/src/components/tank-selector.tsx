@@ -138,7 +138,7 @@ export default function TankSelector({ selectedVolume, onVolumeChange, className
   return (
     <div className={cn("w-full", className)}>
       <div className="flex items-center justify-between mb-3">
-        <label className="block text-sm font-medium text-gray-900">
+        <label className="block text-sm font-medium text-brand-ink">
           Choose Your Tank Size
         </label>
         <button
@@ -148,7 +148,7 @@ export default function TankSelector({ selectedVolume, onVolumeChange, className
             "flex items-center space-x-1 px-2 py-1 rounded text-xs font-medium transition-all",
             isCustomMode
               ? "bg-primary text-white"
-              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              : "bg-muted text-brand-muted hover:bg-brand-line"
           )}
         >
           <Settings className="h-3 w-3" />
@@ -171,12 +171,12 @@ export default function TankSelector({ selectedVolume, onVolumeChange, className
               )}
               maxLength={5}
             />
-            <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm">
+            <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-brand-muted text-sm">
               L
             </span>
           </div>
           {customValue && parseInt(customValue) < 100 && (
-            <p className="text-xs text-amber-600 flex items-center space-x-1">
+            <p className="text-xs text-[#8A3B12] flex items-center space-x-1">
               <span>⚠️</span>
               <span>Minimum order is 100L - most suppliers don't deliver smaller amounts</span>
             </p>
@@ -189,11 +189,11 @@ export default function TankSelector({ selectedVolume, onVolumeChange, className
           )}
           {(!customValue || (parseInt(customValue) >= 100 && parseInt(customValue) <= 10000)) && (
             <div className="space-y-1">
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-brand-muted">
                 Enter any amount between 100L and 10,000L for a personalized quote
               </p>
               {customValue && parseInt(customValue) >= 100 && parseInt(customValue) <= 10000 && (
-                <p className="text-xs text-green-600 flex items-center space-x-1">
+                <p className="text-xs text-[#0B6A30] flex items-center space-x-1">
                   <span>✓</span>
                   <span>Calculating prices for {customValue}L...</span>
                 </p>
@@ -212,7 +212,7 @@ export default function TankSelector({ selectedVolume, onVolumeChange, className
                 "flex flex-col items-center p-4 rounded-lg border-2 transition-all duration-300 hover:shadow-md",
                 selectedVolume === tank.volume
                   ? "border-primary bg-primary/5 shadow-lg"
-                  : "border-gray-200 hover:border-primary/50"
+                  : "border-brand-line hover:border-primary/50"
               )}
             >
               <TankGraphic 
@@ -223,11 +223,11 @@ export default function TankSelector({ selectedVolume, onVolumeChange, className
               <div className="mt-2 text-center">
                 <div className={cn(
                   "font-semibold text-sm",
-                  selectedVolume === tank.volume ? "text-primary" : "text-gray-700"
+                  selectedVolume === tank.volume ? "text-primary" : "text-brand-ink"
                 )}>
                   {tank.label}
                 </div>
-                <div className="text-xs text-gray-500">
+                <div className="text-xs text-brand-muted">
                   {tank.description}
                 </div>
               </div>
@@ -237,8 +237,8 @@ export default function TankSelector({ selectedVolume, onVolumeChange, className
       )}
 
       {!isStandardSize && !isCustomMode && (
-        <div className="mt-3 text-center p-2 bg-blue-50 rounded border border-blue-200">
-          <p className="text-xs text-blue-700">
+        <div className="mt-3 text-center p-2 bg-brand-mint rounded border border-brand-line">
+          <p className="text-xs text-brand-forest">
             <span className="font-medium">{selectedVolume}L</span> - Custom size selected
           </p>
         </div>

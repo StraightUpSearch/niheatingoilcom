@@ -172,10 +172,10 @@ export default function SocialProofNotifications() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="fixed bottom-4 left-4 z-50 max-w-sm"
         >
-          <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-4 relative">
+          <div className="bg-white border border-brand-line rounded-lg shadow-lg p-4 relative">
             <button
               onClick={handleDismiss}
-              className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 transition-colors"
+              className="absolute top-2 right-2 text-brand-muted hover:text-brand-muted transition-colors"
               aria-label="Dismiss notification"
             >
               <X className="h-4 w-4" />
@@ -183,23 +183,23 @@ export default function SocialProofNotifications() {
 
             <div className="flex items-start space-x-3 pr-6">
               <div className="flex-shrink-0 mt-1">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <TrendingDown className="h-4 w-4 text-green-600" />
+                <div className="w-8 h-8 bg-brand-mint rounded-full flex items-center justify-center">
+                  <TrendingDown className="h-4 w-4 text-[#0B6A30]" />
                 </div>
               </div>
 
               <div className="flex-1 min-w-0">
-                <div className="text-sm text-gray-900">
+                <div className="text-sm text-brand-ink">
                   <span className="font-medium">{currentNotification.name}</span>
-                  <span className="text-gray-600"> from </span>
+                  <span className="text-brand-muted"> from </span>
                   <span className="font-medium">{currentNotification.location}</span>
-                  <span className="text-gray-600"> {currentNotification.action} </span>
-                  <span className="font-semibold text-green-600">£{currentNotification.savings}</span>
-                  <span className="text-gray-600"> on heating oil – </span>
+                  <span className="text-brand-muted"> {currentNotification.action} </span>
+                  <span className="font-semibold text-[#0B6A30]">£{currentNotification.savings}</span>
+                  <span className="text-brand-muted"> on heating oil – </span>
                   <span className="text-accent font-medium">{currentNotification.phrase}</span>
                 </div>
                 
-                <div className="mt-1 text-xs text-gray-500">
+                <div className="mt-1 text-xs text-brand-muted">
                   💡 Recent customer example - Join thousands saving money!
                 </div>
               </div>

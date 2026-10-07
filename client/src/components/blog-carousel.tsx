@@ -47,12 +47,12 @@ export default function BlogCarousel() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
-            <BookOpen className="h-8 w-8 text-blue-600 mr-3" />
-            <h2 className="text-3xl font-bold text-gray-900">
+            <BookOpen className="h-8 w-8 text-brand-forest mr-3" />
+            <h2 className="text-3xl font-bold text-brand-ink">
               Latest Heating Oil Guides
             </h2>
           </div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-brand-muted max-w-2xl mx-auto">
             Expert advice and comprehensive guides to help Northern Ireland homeowners make informed heating oil decisions
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function BlogCarousel() {
         {/* Blog Articles Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {latestBlogArticles.map((article) => (
-            <Card key={article.id} className="hover:shadow-xl transition-all duration-300 bg-white border-gray-200 group hover:-translate-y-1 overflow-hidden">
+            <Card key={article.id} className="hover:shadow-xl transition-all duration-300 bg-white border-brand-line group hover:-translate-y-1 overflow-hidden">
               {/* Featured Image */}
               <div className="aspect-video w-full overflow-hidden">
                 <img 
@@ -71,26 +71,26 @@ export default function BlogCarousel() {
               </div>
               <CardHeader className="pb-4">
                 <div className="flex items-center justify-between mb-3">
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 font-medium">
+                  <Badge variant="secondary" className="bg-brand-mint text-brand-forest font-medium">
                     {article.category}
                   </Badge>
-                  <div className="flex items-center text-sm text-gray-500">
+                  <div className="flex items-center text-sm text-brand-muted">
                     <Clock className="w-4 h-4 mr-1" />
                     {article.readTime}
                   </div>
                 </div>
-                <CardTitle className="text-xl leading-tight group-hover:text-blue-600 transition-colors">
+                <CardTitle className="text-xl leading-tight group-hover:text-brand-forest transition-colors">
                   <Link href={`/blog/${article.slug}`} className="block">
                     {article.title}
                   </Link>
                 </CardTitle>
-                <CardDescription className="text-gray-600 leading-relaxed">
+                <CardDescription className="text-brand-muted leading-relaxed">
                   {article.description}
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center text-sm text-gray-500">
+                  <div className="flex items-center text-sm text-brand-muted">
                     <Calendar className="w-4 h-4 mr-1" />
                     {new Date(article.date).toLocaleDateString('en-GB', {
                       day: 'numeric',
@@ -100,7 +100,7 @@ export default function BlogCarousel() {
                   </div>
                   <Link 
                     href={`/blog/${article.slug}`}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors group"
+                    className="inline-flex items-center text-brand-forest hover:text-brand-forest font-medium transition-colors group"
                   >
                     Read Guide
                     <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -113,25 +113,25 @@ export default function BlogCarousel() {
           {/* Placeholder cards for when we have more articles */}
           {latestBlogArticles.length < 3 && (
             <>
-              <Card className="border-2 border-dashed border-gray-300 bg-gray-50 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+              <Card className="border-2 border-dashed border-brand-line bg-brand-cream hover:border-brand-line hover:bg-brand-mint transition-colors">
                 <CardHeader className="text-center py-12">
                   <div className="flex items-center justify-center mb-4">
-                    <BookOpen className="h-12 w-12 text-gray-400" />
+                    <BookOpen className="h-12 w-12 text-brand-muted" />
                   </div>
-                  <CardTitle className="text-gray-600">More Guides Coming Soon</CardTitle>
-                  <CardDescription className="text-gray-500">
+                  <CardTitle className="text-brand-muted">More Guides Coming Soon</CardTitle>
+                  <CardDescription className="text-brand-muted">
                     We're working on comprehensive guides about heating oil prices, seasonal buying tips, and tank maintenance.
                   </CardDescription>
                 </CardHeader>
               </Card>
               
-              <Card className="border-2 border-dashed border-gray-300 bg-gray-50 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+              <Card className="border-2 border-dashed border-brand-line bg-brand-cream hover:border-brand-line hover:bg-brand-mint transition-colors">
                 <CardHeader className="text-center py-12">
                   <div className="flex items-center justify-center mb-4">
-                    <BookOpen className="h-12 w-12 text-gray-400" />
+                    <BookOpen className="h-12 w-12 text-brand-muted" />
                   </div>
-                  <CardTitle className="text-gray-600">Expert Tips & Advice</CardTitle>
-                  <CardDescription className="text-gray-500">
+                  <CardTitle className="text-brand-muted">Expert Tips & Advice</CardTitle>
+                  <CardDescription className="text-brand-muted">
                     Local insights for Northern Ireland homeowners on getting the best heating oil deals and maintaining your system.
                   </CardDescription>
                 </CardHeader>
@@ -144,7 +144,7 @@ export default function BlogCarousel() {
         <div className="text-center mt-12">
           <Link 
             href="/blog"
-            className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+            className="inline-flex items-center px-8 py-3 bg-brand-forest text-white font-medium rounded-lg hover:bg-brand-forest-soft transition-colors shadow-md hover:shadow-lg"
           >
             View All Guides
             <ArrowRight className="w-5 h-5 ml-2" />

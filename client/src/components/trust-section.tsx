@@ -45,11 +45,11 @@ export default function TrustSection() {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-brand-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Trust NI Heating Oil?</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-brand-ink mb-4">Why Trust NI Heating Oil?</h2>
+          <p className="text-brand-muted max-w-2xl mx-auto">
             We're committed to providing accurate, transparent, and up-to-date heating oil price information for Northern Ireland consumers.
           </p>
         </div>
@@ -62,8 +62,8 @@ export default function TrustSection() {
                 <div className={`w-16 h-16 ${feature.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
                   <Icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-brand-ink mb-2">{feature.title}</h3>
+                <p className="text-brand-muted text-sm">{feature.description}</p>
               </div>
             );
           })}

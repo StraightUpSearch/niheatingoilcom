@@ -40,10 +40,10 @@ export default function OilTankShowcase({ onVolumeSelect }: OilTankShowcaseProps
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-brand-ink mb-4">
             Choose Your Tank Size
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-brand-muted max-w-3xl mx-auto">
             Select the heating oil volume that matches your tank capacity for accurate pricing
           </p>
         </div>
@@ -57,18 +57,18 @@ export default function OilTankShowcase({ onVolumeSelect }: OilTankShowcaseProps
                   alt={`${tank.title} - heating oil tank in beautiful ${tank.countryside}`}
                   className="w-full h-48 object-cover"
                 />
-                <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="absolute top-4 right-4 bg-brand-forest text-white px-3 py-1 rounded-full text-sm font-semibold">
                   {tank.avgPrice}
                 </div>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-brand-ink mb-2">
                   {tank.title}
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-brand-muted mb-4">
                   {tank.description}
                 </p>
-                <p className="text-sm text-gray-500 mb-4">
+                <p className="text-sm text-brand-muted mb-4">
                   Average price across Northern Ireland
                 </p>
                 <Button 
@@ -84,7 +84,7 @@ export default function OilTankShowcase({ onVolumeSelect }: OilTankShowcaseProps
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-brand-muted max-w-2xl mx-auto">
             Prices shown are regional averages from the latest Consumer Council for Northern Ireland data. 
             Individual supplier prices may vary based on location and delivery requirements.
           </p>

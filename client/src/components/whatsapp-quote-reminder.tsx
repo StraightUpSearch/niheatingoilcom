@@ -45,7 +45,7 @@ export default function WhatsAppQuoteReminder({ ticket }: WhatsAppQuoteReminderP
       variant="outline"
       size="sm"
       onClick={handleWhatsAppShare}
-      className="text-green-600 border-green-200 hover:bg-green-50"
+      className="text-[#0B6A30] border-brand-line hover:bg-brand-mint"
     >
       <MessageCircle className="h-4 w-4 mr-1" />
       Send to WhatsApp

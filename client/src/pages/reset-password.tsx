@@ -91,21 +91,21 @@ export default function ResetPasswordPage() {
         <div className="flex items-center justify-center p-4 pt-20">
           <Card className="w-full max-w-md shadow-2xl border-0">
             <CardHeader className="text-center pb-4">
-              <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <CheckCircle className="h-8 w-8 text-green-600" />
+              <div className="mx-auto w-16 h-16 bg-brand-mint rounded-full flex items-center justify-center mb-4">
+                <CheckCircle className="h-8 w-8 text-[#0B6A30]" />
               </div>
-              <CardTitle className="text-2xl font-bold text-gray-900">Password Reset Complete!</CardTitle>
-              <CardDescription className="text-gray-600">
+              <CardTitle className="text-2xl font-bold text-brand-ink">Password Reset Complete!</CardTitle>
+              <CardDescription className="text-brand-muted">
                 Your password has been successfully updated
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-brand-muted mb-4">
                 Redirecting you to sign in...
               </p>
               <Button 
                 onClick={() => setLocation('/auth')}
-                className="bg-green-600 hover:bg-green-700"
+                className="bg-brand-forest hover:bg-brand-forest-soft"
               >
                 Sign In Now
               </Button>
@@ -123,8 +123,8 @@ export default function ResetPasswordPage() {
       <div className="flex items-center justify-center p-4 pt-20">
         <Card className="w-full max-w-md shadow-2xl border-0">
           <CardHeader className="text-center pb-4">
-            <CardTitle className="text-2xl font-bold text-gray-900">Reset Your Password</CardTitle>
-            <CardDescription className="text-gray-600">
+            <CardTitle className="text-2xl font-bold text-brand-ink">Reset Your Password</CardTitle>
+            <CardDescription className="text-brand-muted">
               Enter your new password below
             </CardDescription>
           </CardHeader>
@@ -145,11 +145,11 @@ export default function ResetPasswordPage() {
               )}
 
               <div className="space-y-2">
-                <Label htmlFor="newPassword" className="text-sm font-medium text-gray-700">
+                <Label htmlFor="newPassword" className="text-sm font-medium text-brand-ink">
                   New Password
                 </Label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-brand-muted" />
                   <Input
                     id="newPassword"
                     type="password"
@@ -164,11 +164,11 @@ export default function ResetPasswordPage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="confirmPassword" className="text-sm font-medium text-gray-700">
+                <Label htmlFor="confirmPassword" className="text-sm font-medium text-brand-ink">
                   Confirm New Password
                 </Label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-brand-muted" />
                   <Input
                     id="confirmPassword"
                     type="password"
@@ -184,7 +184,7 @@ export default function ResetPasswordPage() {
 
               <Button 
                 type="submit" 
-                className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white font-medium"
+                className="w-full h-11 bg-brand-forest hover:bg-brand-forest-soft text-white font-medium"
                 disabled={isLoading || !newPassword || !confirmPassword}
               >
                 {isLoading ? "Resetting..." : "Reset Password"}

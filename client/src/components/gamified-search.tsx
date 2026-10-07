@@ -231,31 +231,31 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
   };
 
   const searchRewards = [
-    { threshold: 1, reward: "First Search", icon: Search, color: "bg-green-500" },
-    { threshold: 5, reward: "Explorer", icon: TrendingDown, color: "bg-blue-500" },
+    { threshold: 1, reward: "First Search", icon: Search, color: "bg-brand-forest" },
+    { threshold: 5, reward: "Explorer", icon: TrendingDown, color: "bg-brand-forest-soft" },
     { threshold: 10, reward: "Deal Hunter", icon: Star, color: "bg-purple-500" },
-    { threshold: 25, reward: "Savings Master", icon: Zap, color: "bg-yellow-500" }
+    { threshold: 25, reward: "Savings Master", icon: Zap, color: "bg-brand-gold" }
   ];
 
   const nextReward = searchRewards.find(reward => searchCount < reward.threshold);
   const earnedRewards = searchRewards.filter(reward => searchCount >= reward.threshold);
 
   return (
-    <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
+    <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-brand-line">
       <CardContent className="p-4 sm:p-6">
         <div className="mb-4 sm:mb-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Compare Heating Oil Prices</h2>
-          <p className="text-base sm:text-lg text-gray-700">Find the cheapest heating oil suppliers in your area</p>
+          <h2 className="text-xl sm:text-2xl font-bold text-brand-ink mb-2">Compare Heating Oil Prices</h2>
+          <p className="text-base sm:text-lg text-brand-ink">Find the cheapest heating oil suppliers in your area</p>
         </div>
 
         <div className="space-y-4 sm:space-y-6">
           <div className="space-y-4 sm:space-y-6">
             <div>
-              <label htmlFor="postcode-input" className="block text-lg sm:text-xl font-semibold text-gray-800 mb-3">
+              <label htmlFor="postcode-input" className="block text-lg sm:text-xl font-semibold text-brand-ink mb-3">
                 Enter Your Northern Ireland Postcode
               </label>
               <div className="relative">
-                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-lg sm:text-xl text-gray-600 font-semibold pointer-events-none z-10">
+                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-lg sm:text-xl text-brand-muted font-semibold pointer-events-none z-10">
                   BT
                 </div>
                 <input
@@ -266,7 +266,7 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
                   value={postcodeInput}
                   onChange={(e) => handlePostcodeChange(e.target.value.toUpperCase())}
                   onFocus={() => postcodeInput && setShowSuggestions(true)}
-                  className="w-full text-lg sm:text-xl p-4 sm:p-5 pl-12 sm:pl-14 h-14 sm:h-16 border-2 border-blue-300 focus:border-blue-500 rounded-lg touch-manipulation bg-white text-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
+                  className="w-full text-lg sm:text-xl p-4 sm:p-5 pl-12 sm:pl-14 h-14 sm:h-16 border-2 border-brand-line focus:border-brand-forest rounded-lg touch-manipulation bg-white text-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
                   style={{ 
                     fontSize: '18px', 
                     color: '#000000', 
@@ -283,21 +283,21 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
                 {showSuggestions && filteredPostcodes.length > 0 && (
                   <div 
                     ref={suggestionBoxRef}
-                    className="absolute top-full left-0 right-0 mt-1 bg-white border-2 border-blue-200 rounded-lg shadow-lg z-20 max-h-64 overflow-y-auto"
+                    className="absolute top-full left-0 right-0 mt-1 bg-white border-2 border-brand-line rounded-lg shadow-lg z-20 max-h-64 overflow-y-auto"
                   >
                     {filteredPostcodes.map((postcode, index) => (
                       <button
                         key={index}
                         onClick={() => handlePostcodeSelect(postcode.code)}
-                        className="w-full text-left px-4 py-3 hover:bg-blue-50 focus:bg-blue-50 focus:outline-none border-b border-gray-100 last:border-b-0 touch-manipulation"
+                        className="w-full text-left px-4 py-3 hover:bg-brand-mint focus:bg-brand-mint focus:outline-none border-b border-brand-line last:border-b-0 touch-manipulation"
                       >
                         <div className="flex items-center">
-                          <MapPin className="h-4 w-4 text-blue-500 mr-3 flex-shrink-0" />
+                          <MapPin className="h-4 w-4 text-brand-forest mr-3 flex-shrink-0" />
                           <div>
-                            <div className="text-lg font-semibold text-gray-900">
+                            <div className="text-lg font-semibold text-brand-ink">
                               BT{postcode.code}
                             </div>
-                            <div className="text-sm text-gray-600">
+                            <div className="text-sm text-brand-muted">
                               {postcode.area}
                             </div>
                           </div>
@@ -312,16 +312,16 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
                   {postcodeError}
                 </p>
               )}
-              <p id="postcode-help" className="text-sm sm:text-base text-gray-600 mt-2">
+              <p id="postcode-help" className="text-sm sm:text-base text-brand-muted mt-2">
                 <strong>You can type either way:</strong> "1 5GS" or the full "BT1 5GS" - both work perfectly fine!
               </p>
             </div>
             <div>
-              <label className="block text-lg sm:text-xl font-semibold text-gray-800 mb-3">
+              <label className="block text-lg sm:text-xl font-semibold text-brand-ink mb-3">
                 How Much Oil Do You Need?
               </label>
               <Select onValueChange={(value) => setVolume(parseInt(value))}>
-                <SelectTrigger className="w-full text-lg sm:text-xl p-4 sm:p-5 h-14 sm:h-16 border-2 border-blue-300 focus:border-blue-500 rounded-lg touch-manipulation">
+                <SelectTrigger className="w-full text-lg sm:text-xl p-4 sm:p-5 h-14 sm:h-16 border-2 border-brand-line focus:border-brand-forest rounded-lg touch-manipulation">
                   <SelectValue placeholder="Choose the amount of oil you need" />
                 </SelectTrigger>
                 <SelectContent className="text-base sm:text-lg">
@@ -330,7 +330,7 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
                   <SelectItem value="900" className="text-base sm:text-lg p-3 sm:p-4 min-h-[48px] touch-manipulation">900 Litres (Large tank fill)</SelectItem>
                 </SelectContent>
               </Select>
-              <p className="text-sm sm:text-base text-gray-600 mt-2">
+              <p className="text-sm sm:text-base text-brand-muted mt-2">
                 Select the amount that matches your oil tank size
               </p>
             </div>
@@ -355,12 +355,12 @@ export default function GamifiedSearch({ onSearch }: GamifiedSearchProps) {
           </Button>
 
           {/* Simple instructions */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 sm:p-4">
+          <div className="bg-brand-mint border border-brand-line rounded-lg p-3 sm:p-4">
             <div className="text-center">
-              <p className="text-base sm:text-lg text-blue-800 font-medium">
+              <p className="text-base sm:text-lg text-brand-forest font-medium">
                 Get instant price comparisons from verified Northern Ireland heating oil suppliers
               </p>
-              <p className="text-sm sm:text-base text-blue-700 mt-2">
+              <p className="text-sm sm:text-base text-brand-forest mt-2">
                 It's completely free and takes less than 30 seconds
               </p>
             </div>

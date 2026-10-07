@@ -71,7 +71,7 @@ export default function DealDiscovery() {
       {/* Deal Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {flashDeals.map((deal, index) => (
-          <Card key={index} className="border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 relative overflow-hidden">
+          <Card key={index} className="border-2 border-brand-line bg-gradient-to-br from-green-50 to-emerald-50 relative overflow-hidden">
             {deal.limited && (
               <div className="absolute top-2 right-2">
                 <Badge className="bg-red-500 text-white animate-pulse">
@@ -83,17 +83,17 @@ export default function DealDiscovery() {
             <CardContent className="p-6">
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <h3 className="font-bold text-lg text-gray-900">{deal.supplier}</h3>
-                  <div className="flex items-center text-sm text-gray-600 mt-1">
+                  <h3 className="font-bold text-lg text-brand-ink">{deal.supplier}</h3>
+                  <div className="flex items-center text-sm text-brand-muted mt-1">
                     <MapPin className="h-3 w-3 mr-1" />
                     {deal.area}
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-bold text-green-600">
+                  <div className="text-2xl font-bold text-[#0B6A30]">
                     £{deal.dealPrice.toFixed(2)}
                   </div>
-                  <div className="text-sm text-gray-500 line-through">
+                  <div className="text-sm text-brand-muted line-through">
                     £{deal.normalPrice.toFixed(2)}
                   </div>
                 </div>
@@ -101,25 +101,25 @@ export default function DealDiscovery() {
 
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center">
-                  <TrendingDown className="h-4 w-4 text-green-600 mr-1" />
-                  <span className="text-green-800 font-semibold">
+                  <TrendingDown className="h-4 w-4 text-[#0B6A30] mr-1" />
+                  <span className="text-[#0B6A30] font-semibold">
                     Save £{deal.savings.toFixed(2)}
                   </span>
                 </div>
-                <Badge variant="secondary" className="bg-green-100 text-green-800">
+                <Badge variant="secondary" className="bg-brand-mint text-[#0B6A30]">
                   {calculateSavingsPercentage(deal.normalPrice, deal.dealPrice)}% OFF
                 </Badge>
               </div>
 
               <div className="flex items-center justify-between mb-4">
-                <span className="text-sm text-gray-600">{deal.volume}L volume</span>
-                <div className="flex items-center text-sm text-orange-600">
+                <span className="text-sm text-brand-muted">{deal.volume}L volume</span>
+                <div className="flex items-center text-sm text-[#8A3B12]">
                   <Clock className="h-3 w-3 mr-1" />
                   {formatTime(deal.timeLeft)} left
                 </div>
               </div>
 
-              <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+              <Button className="w-full bg-brand-forest hover:bg-brand-forest-soft text-white">
                 View This Deal
               </Button>
             </CardContent>
@@ -128,7 +128,7 @@ export default function DealDiscovery() {
       </div>
 
       {/* Deal Alert */}
-      <Card className="border-yellow-200 bg-yellow-50">
+      <Card className="border-yellow-200 bg-brand-butter">
         <CardContent className="p-4">
           <div className="flex items-start">
             <AlertCircle className="h-5 w-5 text-yellow-600 mr-3 mt-0.5" />
@@ -149,25 +149,25 @@ export default function DealDiscovery() {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+            <div className="flex items-center justify-between p-3 bg-brand-mint rounded-lg">
               <div>
-                <div className="font-semibold text-gray-900">Cheaper Oil NI</div>
-                <div className="text-sm text-gray-600">300L - BT19 area</div>
+                <div className="font-semibold text-brand-ink">Cheaper Oil NI</div>
+                <div className="text-sm text-brand-muted">300L - BT19 area</div>
               </div>
               <div className="text-right">
-                <div className="font-semibold text-blue-600">£247.30</div>
-                <div className="text-xs text-gray-500">2 mins ago</div>
+                <div className="font-semibold text-brand-forest">£247.30</div>
+                <div className="text-xs text-brand-muted">2 mins ago</div>
               </div>
             </div>
             
-            <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+            <div className="flex items-center justify-between p-3 bg-brand-mint rounded-lg">
               <div>
-                <div className="font-semibold text-gray-900">Home Fuels Direct</div>
-                <div className="text-sm text-gray-600">900L - BT7 area</div>
+                <div className="font-semibold text-brand-ink">Home Fuels Direct</div>
+                <div className="text-sm text-brand-muted">900L - BT7 area</div>
               </div>
               <div className="text-right">
-                <div className="font-semibold text-green-600">£698.50</div>
-                <div className="text-xs text-gray-500">5 mins ago</div>
+                <div className="font-semibold text-[#0B6A30]">£698.50</div>
+                <div className="text-xs text-brand-muted">5 mins ago</div>
               </div>
             </div>
           </div>

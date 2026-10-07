@@ -111,11 +111,11 @@ export default function PriceAlertsForm() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-white">
             <h2 className="text-3xl font-bold mb-4">Never Miss a Great Deal</h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-[#CFE3D3] mb-8">
               Get instant alerts when prices drop in your area or when your preferred supplier offers a better deal.
             </p>
             
-            <div className="bg-white rounded-xl p-8 text-gray-900 max-w-2xl mx-auto">
+            <div className="bg-white rounded-xl p-8 text-brand-ink max-w-2xl mx-auto">
               <h3 className="text-xl font-semibold mb-6">Set Up Price Alerts</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -190,13 +190,13 @@ export default function PriceAlertsForm() {
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full bg-accent text-white hover:bg-orange-600"
+                  className="w-full bg-accent text-white hover:brightness-95"
                   disabled={createAlertMutation.isPending}
                 >
                   {createAlertMutation.isPending ? "Creating Alert..." : "Start Saving with Price Alerts"}
                 </Button>
               </form>
-              <p className="text-xs text-gray-500 mt-4">
+              <p className="text-xs text-brand-muted mt-4">
                 We'll never spam you. Unsubscribe anytime.
               </p>
             </div>
@@ -281,7 +281,7 @@ export default function PriceAlertsForm() {
       </div>
       <Button 
         type="submit" 
-        className="w-full bg-primary text-white hover:bg-blue-700"
+        className="w-full bg-primary text-white hover:bg-brand-forest-soft"
         disabled={createAlertMutation.isPending}
       >
         <Bell className="h-4 w-4 mr-2" />

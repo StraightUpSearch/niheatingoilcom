@@ -179,8 +179,8 @@ export default function Chatbot() {
                       className={cn(
                         "max-w-[80%] rounded-lg px-3 py-2 text-sm",
                         message.role === 'user'
-                          ? "bg-blue-600 text-white"
-                          : "bg-gray-100 text-gray-900"
+                          ? "bg-brand-forest text-white"
+                          : "bg-muted text-brand-ink"
                       )}
                     >
                       {message.content}
@@ -191,7 +191,7 @@ export default function Chatbot() {
                 {/* Loading indicator */}
                 {chatMutation.isPending && (
                   <div className="flex justify-start">
-                    <div className="bg-gray-100 rounded-lg px-3 py-2 text-sm text-gray-900">
+                    <div className="bg-muted rounded-lg px-3 py-2 text-sm text-brand-ink">
                       <Loader2 className="h-4 w-4 animate-spin" />
                     </div>
                   </div>
@@ -215,7 +215,7 @@ export default function Chatbot() {
                   onClick={handleSendMessage}
                   disabled={!inputValue.trim() || chatMutation.isPending}
                   size="sm"
-                  className="bg-blue-600 hover:bg-blue-700"
+                  className="bg-brand-forest hover:bg-brand-forest-soft"
                 >
                   <Send className="h-4 w-4" />
                 </Button>
@@ -232,7 +232,7 @@ export default function Chatbot() {
           "h-14 w-14 rounded-full shadow-lg transition-all duration-200",
           isOpen 
             ? "bg-gray-600 hover:bg-gray-700" 
-            : "bg-blue-600 hover:bg-blue-700"
+            : "bg-brand-forest hover:bg-brand-forest-soft"
         )}
       >
         {isOpen ? (

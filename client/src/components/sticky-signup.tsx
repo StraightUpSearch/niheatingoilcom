@@ -73,23 +73,23 @@ export default function StickySignup() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 p-3 sm:p-4 pointer-events-none">
       <div className="max-w-lg mx-auto pointer-events-auto">
-        <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-4 sm:p-5">
+        <div className="bg-white border border-brand-line rounded-xl shadow-lg p-4 sm:p-5">
           <div className="flex items-start justify-between mb-3">
             <div className="flex items-center gap-2">
-              <Bell className="h-4 w-4 text-blue-600 flex-shrink-0" />
+              <Bell className="h-4 w-4 text-brand-forest flex-shrink-0" />
               {status === "success" ? (
-                <p className="font-semibold text-gray-900 text-sm">
+                <p className="font-semibold text-brand-ink text-sm">
                   Done — we'll email you when prices drop
                 </p>
               ) : (
-                <p className="font-semibold text-gray-900 text-sm">
+                <p className="font-semibold text-brand-ink text-sm">
                   Heating oil prices change every week
                 </p>
               )}
             </div>
             <button
               onClick={handleDismiss}
-              className="text-gray-400 hover:text-gray-600 ml-2 flex-shrink-0"
+              className="text-brand-muted hover:text-brand-muted ml-2 flex-shrink-0"
               aria-label="Close"
             >
               <X className="h-4 w-4" />
@@ -97,13 +97,13 @@ export default function StickySignup() {
           </div>
 
           {status === "success" ? (
-            <div className="flex items-center gap-2 text-green-700">
+            <div className="flex items-center gap-2 text-[#0B6A30]">
               <CheckCircle className="h-4 w-4 flex-shrink-0" />
               <p className="text-sm">Check your inbox for a confirmation.</p>
             </div>
           ) : (
             <>
-              <p className="text-gray-500 text-xs mb-3">
+              <p className="text-brand-muted text-xs mb-3">
                 Enter your postcode and we'll let you know when they fall.
               </p>
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
@@ -128,7 +128,7 @@ export default function StickySignup() {
                 <Button
                   type="submit"
                   disabled={status === "loading" || !email.trim() || !postcode.trim()}
-                  className="bg-blue-600 hover:bg-blue-700 text-white text-sm whitespace-nowrap"
+                  className="bg-brand-forest hover:bg-brand-forest-soft text-white text-sm whitespace-nowrap"
                 >
                   {status === "loading" ? "Saving..." : "Notify me"}
                 </Button>
@@ -136,7 +136,7 @@ export default function StickySignup() {
               {status === "error" && (
                 <p className="text-red-600 text-xs mt-2">{errorMsg}</p>
               )}
-              <p className="text-gray-400 text-xs mt-2">Free. No spam. Unsubscribe any time.</p>
+              <p className="text-brand-muted text-xs mt-2">Free. No spam. Unsubscribe any time.</p>
             </>
           )}
         </div>

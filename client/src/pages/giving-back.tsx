@@ -26,7 +26,7 @@ export default function GivingBack() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-brand-cream dark:bg-gray-900">
       <Navigation />
       
       {/* Hero Section */}
@@ -46,8 +46,8 @@ export default function GivingBack() {
       <section className="py-16 bg-white dark:bg-gray-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Our Impact</h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-brand-ink dark:text-white mb-4">Our Impact</h2>
+            <p className="text-brand-muted dark:text-brand-muted max-w-2xl mx-auto">
               Real support for real people facing fuel poverty in Northern Ireland
             </p>
           </div>
@@ -55,13 +55,13 @@ export default function GivingBack() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <Card className="text-center p-8">
               <CardContent>
-                <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Thermometer className="w-8 h-8 text-green-600 dark:text-green-400" />
+                <div className="w-16 h-16 bg-brand-mint dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Thermometer className="w-8 h-8 text-[#0B6A30] dark:text-green-400" />
                 </div>
-                <h3 className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
+                <h3 className="text-3xl font-bold text-[#0B6A30] dark:text-green-400 mb-2">
                   {impactData?.totalGrants || 0}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-brand-muted dark:text-brand-muted">
                   Heating grants funded since January {impactData?.currentYear || new Date().getFullYear()}
                 </p>
               </CardContent>
@@ -69,13 +69,13 @@ export default function GivingBack() {
 
             <Card className="text-center p-8">
               <CardContent>
-                <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Coins className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                <div className="w-16 h-16 bg-brand-mint dark:bg-brand-forest rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Coins className="w-8 h-8 text-brand-forest dark:text-blue-400" />
                 </div>
-                <h3 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                <h3 className="text-3xl font-bold text-brand-forest dark:text-blue-400 mb-2">
                   £{impactData?.totalAmount || 0}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-brand-muted dark:text-brand-muted">
                   Total contributed to emergency heating support
                 </p>
               </CardContent>
@@ -85,10 +85,10 @@ export default function GivingBack() {
       </section>
 
       {/* Why It Matters */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 bg-brand-cream dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Why It Matters</h2>
-          <div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-400">
+          <h2 className="text-3xl font-bold text-brand-ink dark:text-white mb-8 text-center">Why It Matters</h2>
+          <div className="prose prose-lg max-w-none text-brand-muted dark:text-brand-muted">
             <p className="text-center text-xl leading-relaxed">
               Fuel poverty affects thousands of households across Northern Ireland. When families can't afford heating, 
               Simon Community NI steps in with emergency grants that provide immediate warmth and dignity. 
@@ -101,25 +101,25 @@ export default function GivingBack() {
       {/* How It Works */}
       <section className="py-16 bg-white dark:bg-gray-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">How It Works</h2>
+          <h2 className="text-3xl font-bold text-brand-ink dark:text-white mb-12 text-center">How It Works</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-6">
-                <ShoppingCart className="w-10 h-10 text-blue-600 dark:text-blue-400" />
+              <div className="w-20 h-20 bg-brand-mint dark:bg-brand-forest rounded-full flex items-center justify-center mx-auto mb-6">
+                <ShoppingCart className="w-10 h-10 text-brand-forest dark:text-blue-400" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">1. You Order</h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <h3 className="text-xl font-semibold text-brand-ink dark:text-white mb-4">1. You Order</h3>
+              <p className="text-brand-muted dark:text-brand-muted">
                 Every heating oil order placed through our platform
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Coins className="w-10 h-10 text-green-600 dark:text-green-400" />
+              <div className="w-20 h-20 bg-brand-mint dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Coins className="w-10 h-10 text-[#0B6A30] dark:text-green-400" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">2. We Contribute</h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <h3 className="text-xl font-semibold text-brand-ink dark:text-white mb-4">2. We Contribute</h3>
+              <p className="text-brand-muted dark:text-brand-muted">
                 5% of our profits automatically go to Simon Community NI
               </p>
             </div>
@@ -128,8 +128,8 @@ export default function GivingBack() {
               <div className="w-20 h-20 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Home className="w-10 h-10 text-red-600 dark:text-red-400" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">3. Grants Fund Warmth</h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <h3 className="text-xl font-semibold text-brand-ink dark:text-white mb-4">3. Grants Fund Warmth</h3>
+              <p className="text-brand-muted dark:text-brand-muted">
                 Emergency heating grants reach families in need
               </p>
             </div>
@@ -149,7 +149,7 @@ export default function GivingBack() {
               href="https://www.simoncommunity.org" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-brand-forest px-6 py-3 rounded-lg font-medium hover:bg-white transition-colors"
             >
               Learn More About Winter Support
               <ExternalLink className="w-4 h-4" />
@@ -159,11 +159,11 @@ export default function GivingBack() {
       )}
 
       {/* About Simon Community NI */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 bg-brand-cream dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">About Simon Community NI</h2>
+          <h2 className="text-3xl font-bold text-brand-ink dark:text-white mb-8 text-center">About Simon Community NI</h2>
           <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm">
-            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
+            <p className="text-brand-muted dark:text-brand-muted text-lg leading-relaxed mb-6">
               Simon Community NI provides vital support to people experiencing homelessness and those at risk across Northern Ireland. 
               Their emergency heating grant program ensures that vulnerable families don't have to choose between heating and eating during the coldest months.
             </p>
@@ -172,7 +172,7 @@ export default function GivingBack() {
                 href="https://www.simoncommunity.org" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 font-medium"
+                className="inline-flex items-center gap-2 text-[#0B6A30] dark:text-green-400 hover:text-[#0B6A30] dark:hover:text-green-300 font-medium"
               >
                 Visit Simon Community NI
                 <ExternalLink className="w-4 h-4" />

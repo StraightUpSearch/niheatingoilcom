@@ -7,13 +7,13 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function SuppliersShowcase() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-brand-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-brand-ink mb-4">
             Trusted Local Suppliers
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-brand-muted max-w-3xl mx-auto">
             We connect you with established Northern Ireland heating oil suppliers who deliver across all six counties
           </p>
         </div>
@@ -25,7 +25,7 @@ export default function SuppliersShowcase() {
             alt="Northern Ireland heating oil delivery trucks - Hayes Fuels, NAP Fuels, Finney Bros and other local suppliers"
             className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
           />
-          <p className="text-center text-sm text-gray-500 mt-3">
+          <p className="text-center text-sm text-brand-muted mt-3">
             Local suppliers serving communities across Northern Ireland
           </p>
         </div>
@@ -40,23 +40,23 @@ export default function SuppliersShowcase() {
             />
           </div>
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl font-bold text-brand-ink mb-4">
               Professional Local Delivery
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-brand-muted mb-4">
               Our partner suppliers provide reliable heating oil delivery services with professional drivers who know the local area and understand Northern Ireland's unique heating needs.
             </p>
             <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-gray-700">
-                <Building2 className="h-4 w-4 text-blue-600" />
+              <div className="flex items-center space-x-2 text-brand-ink">
+                <Building2 className="h-4 w-4 text-brand-forest" />
                 <span>Licensed and insured suppliers</span>
               </div>
-              <div className="flex items-center space-x-2 text-gray-700">
-                <MapPin className="h-4 w-4 text-blue-600" />
+              <div className="flex items-center space-x-2 text-brand-ink">
+                <MapPin className="h-4 w-4 text-brand-forest" />
                 <span>Coverage across all six counties</span>
               </div>
-              <div className="flex items-center space-x-2 text-gray-700">
-                <Phone className="h-4 w-4 text-blue-600" />
+              <div className="flex items-center space-x-2 text-brand-ink">
+                <Phone className="h-4 w-4 text-brand-forest" />
                 <span>Local customer service teams</span>
               </div>
             </div>

@@ -135,7 +135,7 @@ export default function Results() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-cream">
       <SEOHead
         title={pageTitle}
         description={pageDescription}
@@ -149,36 +149,36 @@ export default function Results() {
       <main className="max-w-4xl mx-auto px-4 pt-24 pb-16">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+          <h1 className="text-2xl sm:text-3xl font-bold text-brand-ink">
             Heating oil prices near {postcode.toUpperCase()}
-            <span className="text-gray-500 font-normal"> — {volume}L delivery</span>
+            <span className="text-brand-muted font-normal"> — {volume}L delivery</span>
           </h1>
           <button
             onClick={() => setEditOpen(!editOpen)}
-            className="mt-2 text-sm text-blue-600 hover:text-blue-800 inline-flex items-center gap-1"
+            className="mt-2 text-sm text-brand-forest hover:text-brand-forest inline-flex items-center gap-1"
           >
             Change search
             {editOpen ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
           </button>
 
           {editOpen && (
-            <form onSubmit={handleEditSubmit} className="mt-3 flex flex-wrap items-end gap-3 p-4 bg-white rounded-lg border border-gray-200">
+            <form onSubmit={handleEditSubmit} className="mt-3 flex flex-wrap items-end gap-3 p-4 bg-white rounded-lg border border-brand-line">
               <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Postcode</label>
+                <label className="block text-xs font-medium text-brand-muted mb-1">Postcode</label>
                 <input
                   type="text"
                   value={editPostcode}
                   onChange={(e) => setEditPostcode(e.target.value)}
-                  className="w-28 px-3 py-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                  className="w-28 px-3 py-2 text-sm border border-brand-line rounded-md focus:ring-2 focus:ring-brand-forest focus:border-brand-forest outline-none"
                   placeholder="BT1"
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Volume</label>
+                <label className="block text-xs font-medium text-brand-muted mb-1">Volume</label>
                 <select
                   value={editVolume}
                   onChange={(e) => setEditVolume(parseInt(e.target.value))}
-                  className="px-3 py-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                  className="px-3 py-2 text-sm border border-brand-line rounded-md focus:ring-2 focus:ring-brand-forest focus:border-brand-forest outline-none"
                 >
                   <option value={300}>300L</option>
                   <option value={500}>500L</option>
@@ -196,15 +196,15 @@ export default function Results() {
         {/* Sort + count bar */}
         {!loading && !error && results.length > 0 && (
           <div className="flex items-center justify-between mb-4">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-brand-muted">
               {results.length} supplier{results.length !== 1 ? "s" : ""} found
             </p>
             <div className="flex items-center gap-2">
-              <ArrowUpDown className="w-3.5 h-3.5 text-gray-400" />
+              <ArrowUpDown className="w-3.5 h-3.5 text-brand-muted" />
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
-                className="text-sm border border-gray-200 rounded-md px-2 py-1.5 bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                className="text-sm border border-brand-line rounded-md px-2 py-1.5 bg-white focus:ring-2 focus:ring-brand-forest focus:border-brand-forest outline-none"
               >
                 <option value="price">Cheapest first</option>
                 <option value="price-desc">Most expensive first</option>
@@ -218,15 +218,15 @@ export default function Results() {
         {loading && (
           <div className="space-y-3">
             {[...Array(5)].map((_, i) => (
-              <div key={i} className="bg-white rounded-lg border border-gray-200 p-5 animate-pulse">
+              <div key={i} className="bg-white rounded-lg border border-brand-line p-5 animate-pulse">
                 <div className="flex items-center justify-between">
                   <div className="space-y-2">
-                    <div className="h-5 w-40 bg-gray-200 rounded" />
-                    <div className="h-3 w-28 bg-gray-100 rounded" />
+                    <div className="h-5 w-40 bg-brand-line rounded" />
+                    <div className="h-3 w-28 bg-muted rounded" />
                   </div>
                   <div className="text-right space-y-2">
-                    <div className="h-6 w-24 bg-gray-200 rounded" />
-                    <div className="h-3 w-20 bg-gray-100 rounded" />
+                    <div className="h-6 w-24 bg-brand-line rounded" />
+                    <div className="h-3 w-20 bg-muted rounded" />
                   </div>
                 </div>
               </div>
@@ -252,10 +252,10 @@ export default function Results() {
 
         {/* Empty */}
         {!loading && !error && results.length === 0 && (
-          <div className="bg-white border border-gray-200 rounded-lg p-8 text-center">
-            <Search className="w-10 h-10 text-gray-300 mx-auto mb-3" />
-            <p className="text-gray-900 font-medium">No suppliers found for {postcode.toUpperCase()}</p>
-            <p className="text-gray-500 text-sm mt-1">Try a nearby BT area or a different volume.</p>
+          <div className="bg-white border border-brand-line rounded-lg p-8 text-center">
+            <Search className="w-10 h-10 text-brand-line mx-auto mb-3" />
+            <p className="text-brand-ink font-medium">No suppliers found for {postcode.toUpperCase()}</p>
+            <p className="text-brand-muted text-sm mt-1">Try a nearby BT area or a different volume.</p>
             <Button
               variant="outline"
               size="sm"
@@ -278,7 +278,7 @@ export default function Results() {
               return (
                 <div
                   key={item.id}
-                  className={`bg-white rounded-lg border ${isCheapest ? "border-green-300 ring-1 ring-green-100" : "border-gray-200"} p-5 transition-shadow hover:shadow-sm`}
+                  className={`bg-white rounded-lg border ${isCheapest ? "border-green-300 ring-1 ring-green-100" : "border-brand-line"} p-5 transition-shadow hover:shadow-sm`}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     {/* Supplier info */}
@@ -288,20 +288,20 @@ export default function Results() {
                       </div>
                       <div>
                         <div className="flex items-center gap-2">
-                          <h3 className="font-semibold text-gray-900">{item.supplier.name}</h3>
+                          <h3 className="font-semibold text-brand-ink">{item.supplier.name}</h3>
                           {isCheapest && (
-                            <span className="text-xs font-medium text-green-700 bg-green-50 px-2 py-0.5 rounded-full">
+                            <span className="text-xs font-medium text-[#0B6A30] bg-brand-mint px-2 py-0.5 rounded-full">
                               Cheapest
                             </span>
                           )}
                         </div>
                         {item.supplier.coverageAreas && (
-                          <p className="text-xs text-gray-500 mt-0.5 flex items-center gap-1">
+                          <p className="text-xs text-brand-muted mt-0.5 flex items-center gap-1">
                             <MapPin className="w-3 h-3" />
                             Serves {item.supplier.coverageAreas}
                           </p>
                         )}
-                        <p className="text-xs text-gray-400 mt-0.5">
+                        <p className="text-xs text-brand-muted mt-0.5">
                           Price includes VAT
                         </p>
                       </div>
@@ -310,10 +310,10 @@ export default function Results() {
                     {/* Price + actions */}
                     <div className="flex items-center gap-4 sm:gap-6">
                       <div className="text-right">
-                        <p className="text-xl font-bold text-gray-900">
+                        <p className="text-xl font-bold text-brand-ink">
                           £{totalPrice.toFixed(2)}
                         </p>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-brand-muted">
                           {ppl.toFixed(1)}p/litre for {volume}L
                         </p>
                       </div>
@@ -333,7 +333,7 @@ export default function Results() {
                             href={item.supplier.website}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                            className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-brand-ink bg-white border border-brand-line rounded-md hover:bg-white transition-colors"
                           >
                             <Globe className="w-3.5 h-3.5" />
                             <span className="hidden sm:inline">Website</span>
@@ -350,7 +350,7 @@ export default function Results() {
 
         {/* Trust footer */}
         {!loading && results.length > 0 && (
-          <p className="text-xs text-gray-400 text-center mt-6">
+          <p className="text-xs text-brand-muted text-center mt-6">
             Prices shown include VAT and standard delivery. Always confirm directly with the supplier before ordering.
           </p>
         )}

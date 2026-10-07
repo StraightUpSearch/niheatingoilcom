@@ -234,13 +234,13 @@ export default function HeatingOilLocation() {
 
   if (!isValid) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-brand-cream">
         <Navigation />
         <main className="max-w-4xl mx-auto px-4 pt-24 pb-16 text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-3">Location Not Found</h1>
-          <p className="text-gray-500 mb-6">We don't have data for "{location}". Try a BT postcode or a major NI town.</p>
+          <h1 className="text-2xl font-bold text-brand-ink mb-3">Location Not Found</h1>
+          <p className="text-brand-muted mb-6">We don't have data for "{location}". Try a BT postcode or a major NI town.</p>
           <Link href="/">
-            <button className="px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white rounded-lg text-sm font-medium transition-colors">
+            <button className="px-5 py-2.5 bg-brand-gold hover:brightness-95 text-white rounded-lg text-sm font-medium transition-colors">
               Compare prices by postcode
             </button>
           </Link>
@@ -312,7 +312,7 @@ export default function HeatingOilLocation() {
   })();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-cream">
       <SEOHead
         title={pageTitle}
         description={pageDescription}
@@ -325,30 +325,30 @@ export default function HeatingOilLocation() {
       <main className="max-w-4xl mx-auto px-4 pt-24 pb-16">
 
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-1 text-xs text-gray-400 mb-6">
-          <Link href="/" className="hover:text-gray-600">Home</Link>
+        <nav className="flex items-center gap-1 text-xs text-brand-muted mb-6">
+          <Link href="/" className="hover:text-brand-muted">Home</Link>
           <ChevronRight className="w-3 h-3" />
-          <span className="text-gray-600">Heating Oil Prices</span>
+          <span className="text-brand-muted">Heating Oil Prices</span>
           <ChevronRight className="w-3 h-3" />
-          <span className="text-gray-800 font-medium">{displayName}</span>
+          <span className="text-brand-ink font-medium">{displayName}</span>
         </nav>
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-brand-ink tracking-tight">
             Heating Oil Prices in {isPostcode ? postcode : displayName} — Updated {updatedDate}
           </h1>
           {postcodeData && (
-            <p className="mt-1 text-gray-500">
+            <p className="mt-1 text-brand-muted">
               {postcodeData.area} · {postcodeData.towns.join(", ")} · Co. {postcodeData.county}
             </p>
           )}
           {cityData && (
-            <p className="mt-1 text-gray-500">
+            <p className="mt-1 text-brand-muted">
               {cityData.description}, Northern Ireland · postcode area {cityData.postcode}
             </p>
           )}
-          <p className="mt-3 text-sm text-gray-400 flex items-center gap-1">
+          <p className="mt-3 text-sm text-brand-muted flex items-center gap-1">
             <Clock className="w-3.5 h-3.5" />
             Prices last checked: {updatedAt}
           </p>
@@ -356,25 +356,25 @@ export default function HeatingOilLocation() {
 
         {/* Price Summary Table */}
         {loading500 ? (
-          <div className="bg-white border border-gray-200 rounded-lg mb-8 animate-pulse">
+          <div className="bg-white border border-brand-line rounded-lg mb-8 animate-pulse">
             {[300, 500, 900, 1000].map(v => (
-              <div key={v} className="flex gap-4 px-4 py-3 border-b border-gray-100">
-                <div className="h-4 w-12 bg-gray-200 rounded" />
-                <div className="h-4 w-20 bg-gray-200 rounded ml-auto" />
-                <div className="h-4 w-20 bg-gray-200 rounded" />
+              <div key={v} className="flex gap-4 px-4 py-3 border-b border-brand-line">
+                <div className="h-4 w-12 bg-brand-line rounded" />
+                <div className="h-4 w-20 bg-brand-line rounded ml-auto" />
+                <div className="h-4 w-20 bg-brand-line rounded" />
               </div>
             ))}
           </div>
         ) : (
-          <div className="overflow-hidden border border-gray-200 rounded-lg mb-8">
+          <div className="overflow-hidden border border-brand-line rounded-lg mb-8">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-gray-50 border-b border-gray-200">
-                  <th className="text-left px-4 py-2.5 text-xs font-medium text-gray-500 uppercase tracking-wide">Volume</th>
-                  <th className="text-right px-4 py-2.5 text-xs font-medium text-gray-500 uppercase tracking-wide">Cheapest</th>
-                  <th className="text-right px-4 py-2.5 text-xs font-medium text-gray-500 uppercase tracking-wide hidden sm:table-cell">p/litre</th>
-                  <th className="text-right px-4 py-2.5 text-xs font-medium text-gray-500 uppercase tracking-wide hidden sm:table-cell">NI Average</th>
-                  <th className="text-right px-4 py-2.5 text-xs font-medium text-gray-500 uppercase tracking-wide hidden md:table-cell">Saving</th>
+                <tr className="bg-brand-cream border-b border-brand-line">
+                  <th className="text-left px-4 py-2.5 text-xs font-medium text-brand-muted uppercase tracking-wide">Volume</th>
+                  <th className="text-right px-4 py-2.5 text-xs font-medium text-brand-muted uppercase tracking-wide">Cheapest</th>
+                  <th className="text-right px-4 py-2.5 text-xs font-medium text-brand-muted uppercase tracking-wide hidden sm:table-cell">p/litre</th>
+                  <th className="text-right px-4 py-2.5 text-xs font-medium text-brand-muted uppercase tracking-wide hidden sm:table-cell">NI Average</th>
+                  <th className="text-right px-4 py-2.5 text-xs font-medium text-brand-muted uppercase tracking-wide hidden md:table-cell">Saving</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
@@ -389,26 +389,26 @@ export default function HeatingOilLocation() {
                   const saving = price && niAvg && niAvg > 0 ? niAvg - price : null;
                   const ppl = data ? (parseFloat(data.pricePerLitre) * 100).toFixed(1) : null;
                   return (
-                    <tr key={volume} className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-3 font-medium text-gray-900">{volume}L</td>
+                    <tr key={volume} className="hover:bg-white transition-colors">
+                      <td className="px-4 py-3 font-medium text-brand-ink">{volume}L</td>
                       <td className="px-4 py-3 text-right">
                         {price !== null
-                          ? <span className="font-semibold text-green-700">£{price.toFixed(2)}</span>
-                          : <span className="text-gray-400">—</span>
+                          ? <span className="font-semibold text-[#0B6A30]">£{price.toFixed(2)}</span>
+                          : <span className="text-brand-muted">—</span>
                         }
                       </td>
-                      <td className="px-4 py-3 text-right text-gray-500 hidden sm:table-cell">
+                      <td className="px-4 py-3 text-right text-brand-muted hidden sm:table-cell">
                         {ppl ? `${ppl}p` : "—"}
                       </td>
-                      <td className="px-4 py-3 text-right text-gray-600 hidden sm:table-cell">
+                      <td className="px-4 py-3 text-right text-brand-muted hidden sm:table-cell">
                         {niAvg && niAvg > 0 ? `£${niAvg.toFixed(2)}` : "—"}
                       </td>
                       <td className="px-4 py-3 text-right hidden md:table-cell">
                         {saving !== null && saving > 0
-                          ? <span className="text-green-600 font-medium">£{saving.toFixed(2)}</span>
+                          ? <span className="text-[#0B6A30] font-medium">£{saving.toFixed(2)}</span>
                           : saving !== null && saving <= 0
-                            ? <span className="text-gray-400">—</span>
-                            : <span className="text-gray-400">—</span>
+                            ? <span className="text-brand-muted">—</span>
+                            : <span className="text-brand-muted">—</span>
                         }
                       </td>
                     </tr>
@@ -416,14 +416,14 @@ export default function HeatingOilLocation() {
                 })}
               </tbody>
             </table>
-            <p className="text-xs text-gray-400 px-4 py-2 border-t border-gray-100">Prices include VAT. Updated from verified supplier data.</p>
+            <p className="text-xs text-brand-muted px-4 py-2 border-t border-brand-line">Prices include VAT. Updated from verified supplier data.</p>
           </div>
         )}
 
         {/* 30-day price history chart */}
         {chartData.length > 1 && (
-          <div className="bg-white border border-gray-200 rounded-lg p-5 mb-8">
-            <h2 className="text-sm font-semibold text-gray-900 mb-4">NI heating oil price trend — 500L (30 days)</h2>
+          <div className="bg-white border border-brand-line rounded-lg p-5 mb-8">
+            <h2 className="text-sm font-semibold text-brand-ink mb-4">NI heating oil price trend — 500L (30 days)</h2>
             <ResponsiveContainer width="100%" height={140}>
               <LineChart data={chartData} margin={{ top: 4, right: 8, left: -16, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -439,7 +439,7 @@ export default function HeatingOilLocation() {
         {/* Supplier Comparison Table */}
         {!loading500 && prices500 && prices500.length > 0 && (
           <div className="mb-8">
-            <h2 className="text-lg font-semibold text-gray-900 mb-3">
+            <h2 className="text-lg font-semibold text-brand-ink mb-3">
               Heating oil suppliers serving {isPostcode ? postcode : displayName}
             </h2>
             <div className="space-y-3">
@@ -449,7 +449,7 @@ export default function HeatingOilLocation() {
                 return (
                   <div
                     key={item.id}
-                    className={`bg-white rounded-lg border ${index === 0 ? "border-green-300 ring-1 ring-green-100" : "border-gray-200"} p-4`}
+                    className={`bg-white rounded-lg border ${index === 0 ? "border-green-300 ring-1 ring-green-100" : "border-brand-line"} p-4`}
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="flex items-start gap-3">
@@ -458,15 +458,15 @@ export default function HeatingOilLocation() {
                         </div>
                         <div>
                           <div className="flex items-center gap-2">
-                            <h3 className="font-semibold text-gray-900 text-sm">{item.supplier.name}</h3>
+                            <h3 className="font-semibold text-brand-ink text-sm">{item.supplier.name}</h3>
                             {index === 0 && (
-                              <span className="text-xs font-medium text-green-700 bg-green-50 px-2 py-0.5 rounded-full">
+                              <span className="text-xs font-medium text-[#0B6A30] bg-brand-mint px-2 py-0.5 rounded-full">
                                 Cheapest
                               </span>
                             )}
                           </div>
                           {item.supplier.coverageAreas && (
-                            <p className="text-xs text-gray-500 flex items-center gap-0.5 mt-0.5">
+                            <p className="text-xs text-brand-muted flex items-center gap-0.5 mt-0.5">
                               <MapPin className="w-3 h-3" />
                               {item.supplier.coverageAreas}
                             </p>
@@ -475,8 +475,8 @@ export default function HeatingOilLocation() {
                       </div>
                       <div className="flex items-center gap-4">
                         <div className="text-right">
-                          <p className="text-xl font-bold text-gray-900">£{totalPrice.toFixed(2)}</p>
-                          <p className="text-xs text-gray-500">{ppl.toFixed(1)}p/litre · 500L</p>
+                          <p className="text-xl font-bold text-brand-ink">£{totalPrice.toFixed(2)}</p>
+                          <p className="text-xs text-brand-muted">{ppl.toFixed(1)}p/litre · 500L</p>
                         </div>
                         <div className="flex gap-2">
                           {item.supplier.phone && (
@@ -493,7 +493,7 @@ export default function HeatingOilLocation() {
                               href={item.supplier.website}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                              className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-brand-ink bg-white border border-brand-line rounded-md hover:bg-white transition-colors"
                             >
                               <Globe className="w-3 h-3" />
                               <span className="hidden sm:inline">Website</span>
@@ -506,31 +506,31 @@ export default function HeatingOilLocation() {
                 );
               })}
             </div>
-            <p className="text-xs text-gray-400 text-center mt-4">
+            <p className="text-xs text-brand-muted text-center mt-4">
               Prices include VAT and standard delivery. Confirm with supplier before ordering.
             </p>
           </div>
         )}
 
         {!loading500 && prices500?.length === 0 && (
-          <div className="bg-white border border-gray-200 rounded-lg p-8 text-center mb-8">
-            <p className="text-gray-900 font-medium">No suppliers found for {isPostcode ? postcode : displayName}</p>
-            <p className="text-gray-500 text-sm mt-1">
+          <div className="bg-white border border-brand-line rounded-lg p-8 text-center mb-8">
+            <p className="text-brand-ink font-medium">No suppliers found for {isPostcode ? postcode : displayName}</p>
+            <p className="text-brand-muted text-sm mt-1">
               Try a neighbouring postcode or search by your full postcode below.
             </p>
           </div>
         )}
 
         {/* CTA */}
-        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-8">
-          <h2 className="text-base font-semibold text-gray-900 mb-1">
+        <div className="bg-white border border-brand-line rounded-lg p-6 mb-8">
+          <h2 className="text-base font-semibold text-brand-ink mb-1">
             Get your exact price for {isPostcode ? postcode : displayName}
           </h2>
-          <p className="text-sm text-gray-500 mb-4">
+          <p className="text-sm text-brand-muted mb-4">
             Enter your full postcode to see all suppliers serving your area with live pricing.
           </p>
           <Link href={`/results?postcode=${encodeURIComponent(postcode)}&volume=500`}>
-            <button className="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-lg transition-colors text-sm">
+            <button className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-gold hover:brightness-95 text-white font-medium rounded-lg transition-colors text-sm">
               Compare all suppliers
               <ArrowRight className="w-4 h-4" />
             </button>
@@ -538,18 +538,18 @@ export default function HeatingOilLocation() {
         </div>
 
         {/* Price alert CTA */}
-        <div className="bg-blue-50 border border-blue-100 rounded-lg p-6 mb-8">
+        <div className="bg-brand-mint border border-blue-100 rounded-lg p-6 mb-8">
           <div className="flex items-start gap-3">
-            <Bell className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+            <Bell className="w-5 h-5 text-brand-forest mt-0.5 flex-shrink-0" />
             <div>
-              <h2 className="text-base font-semibold text-gray-900 mb-1">
+              <h2 className="text-base font-semibold text-brand-ink mb-1">
                 Get notified when prices drop in {isPostcode ? postcode : displayName}
               </h2>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-brand-muted mb-4">
                 Set a price alert for {isPostcode ? postcode : displayName} and we'll email you when 500L drops below your target price. Free to set up — no commitment.
               </p>
               <Link href={`/alerts`}>
-                <button className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors text-sm">
+                <button className="inline-flex items-center gap-2 px-4 py-2 bg-brand-forest hover:bg-brand-forest-soft text-white font-medium rounded-lg transition-colors text-sm">
                   <Bell className="w-3.5 h-3.5" />
                   Set a price alert for {isPostcode ? postcode : displayName}
                 </button>
@@ -560,16 +560,16 @@ export default function HeatingOilLocation() {
 
         {/* Quick info */}
         <div className="prose prose-sm prose-gray max-w-none">
-          <h2 className="text-lg font-semibold text-gray-900 not-prose mb-3">
+          <h2 className="text-lg font-semibold text-brand-ink not-prose mb-3">
             About heating oil delivery in {isPostcode ? `${postcode} — ${postcodeData?.area || ""}` : displayName}
           </h2>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-brand-muted">
             {isPostcode
               ? `The ${postcode} postcode area covers ${postcodeData?.towns.join(" and ")} in County ${postcodeData?.county}, Northern Ireland. ${supplierCount > 0 ? `We currently list ${supplierCount} supplier${supplierCount !== 1 ? "s" : ""} delivering heating oil to this area.` : ""} Prices shown are for standard home heating oil (kerosene/28-second oil) including VAT.`
               : `${displayName} is a ${cityData?.description}. Heating oil is the primary home heating fuel for most households in this area. ${supplierCount > 0 ? `We list ${supplierCount} supplier${supplierCount !== 1 ? "s" : ""} currently delivering to the ${cityData?.postcode} area.` : ""} Prices are for kerosene (28-second oil) including VAT and delivery.`
             }
           </p>
-          <p className="text-sm text-gray-600 mt-2">
+          <p className="text-sm text-brand-muted mt-2">
             Prices vary by delivery volume — larger orders typically cost less per litre.
             The 500L delivery is the most common household order. Always ring ahead to confirm
             availability and any minimum order requirements before booking.
@@ -589,13 +589,13 @@ export default function HeatingOilLocation() {
           if (nearby.length === 0) return null;
           return (
             <div className="mt-8">
-              <h2 className="text-sm font-semibold text-gray-900 mb-3">Nearby postcode areas</h2>
+              <h2 className="text-sm font-semibold text-brand-ink mb-3">Nearby postcode areas</h2>
               <div className="flex flex-wrap gap-2">
                 {nearby.map(pc => (
                   <Link
                     key={pc}
                     href={`/heating-oil-prices/${pc}/`}
-                    className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                    className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-brand-muted bg-muted hover:bg-brand-line rounded-full transition-colors"
                   >
                     <MapPin className="w-3 h-3" />
                     {pc.toUpperCase()} — {BT_POSTCODES[pc].area}
@@ -613,13 +613,13 @@ export default function HeatingOilLocation() {
           if (validCluster.length === 0) return null;
           return (
             <div className="mt-8">
-              <h2 className="text-sm font-semibold text-gray-900 mb-3">Heating oil prices by postcode in {displayName}</h2>
+              <h2 className="text-sm font-semibold text-brand-ink mb-3">Heating oil prices by postcode in {displayName}</h2>
               <div className="flex flex-wrap gap-2">
                 {validCluster.map(pc => (
                   <Link
                     key={pc}
                     href={`/heating-oil-prices/${pc}/`}
-                    className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                    className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-brand-muted bg-muted hover:bg-brand-line rounded-full transition-colors"
                   >
                     <MapPin className="w-3 h-3" />
                     {pc.toUpperCase()} — {BT_POSTCODES[pc].area}
@@ -633,7 +633,7 @@ export default function HeatingOilLocation() {
         {/* Supplier pages */}
         {prices500 && prices500.length > 0 && (
           <div className="mt-8">
-            <h2 className="text-sm font-semibold text-gray-900 mb-3">Suppliers serving this area</h2>
+            <h2 className="text-sm font-semibold text-brand-ink mb-3">Suppliers serving this area</h2>
             <div className="flex flex-wrap gap-2">
               {prices500.map(item => {
                 const supplierSlug = item.supplier.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -641,7 +641,7 @@ export default function HeatingOilLocation() {
                   <Link
                     key={item.supplierId}
                     href={`/supplier/${supplierSlug}/`}
-                    className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                    className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-brand-muted bg-muted hover:bg-brand-line rounded-full transition-colors"
                   >
                     {item.supplier.name}
                   </Link>
