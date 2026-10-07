@@ -1,8 +1,7 @@
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 import SEOHead from "@/components/seo-head";
+import { PageShell } from "@/components/brand-ui";
 import { MapPin, ChevronRight, TrendingDown } from "lucide-react";
 
 interface NISummary {
@@ -63,7 +62,7 @@ export default function HeatingOilPricesIndex() {
   });
 
   return (
-    <div className="min-h-screen bg-brand-cream">
+    <PageShell>
       <SEOHead
         title="Heating Oil Prices by Area — All NI Postcodes | NI Heating Oil"
         description="Find current heating oil prices for every BT postcode in Northern Ireland. Compare suppliers by area — Belfast, Derry, Antrim, Down, Armagh, Tyrone and Fermanagh."
@@ -71,9 +70,7 @@ export default function HeatingOilPricesIndex() {
         keywords="heating oil prices Northern Ireland, BT postcode heating oil, NI oil prices by area"
         structuredData={structuredData}
       />
-      <Navigation />
-
-      <main className="max-w-4xl mx-auto px-4 pt-24 pb-16">
+      <main className="max-w-4xl mx-auto px-4 pt-8 pb-16">
 
         {/* Breadcrumb */}
         <nav className="flex items-center gap-1 text-xs text-brand-muted mb-6">
@@ -94,7 +91,7 @@ export default function HeatingOilPricesIndex() {
 
         {/* NI Summary */}
         {niSummary && (
-          <div className="bg-white border border-brand-line rounded-lg mb-8">
+          <div className="bg-brand-paper border border-brand-line rounded-lg mb-8">
             <div className="flex items-center justify-between px-4 py-3 border-b border-brand-line">
               <div>
                 <p className="text-sm font-semibold text-brand-ink">Today's NI-wide prices</p>
@@ -135,7 +132,7 @@ export default function HeatingOilPricesIndex() {
               <Link
                 key={city.slug}
                 href={`/heating-oil-prices/${city.slug}/`}
-                className="flex items-center justify-between px-3 py-2.5 bg-white border border-brand-line rounded-lg hover:border-orange-300 hover:bg-brand-butter transition-colors group"
+                className="flex items-center justify-between px-3 py-2.5 bg-brand-paper border border-brand-line rounded-lg hover:border-orange-300 hover:bg-brand-butter transition-colors group"
               >
                 <div className="flex items-center gap-2">
                   <MapPin className="w-3.5 h-3.5 text-brand-muted group-hover:text-[#8A3B12] flex-shrink-0" />
@@ -159,7 +156,7 @@ export default function HeatingOilPricesIndex() {
                     <Link
                       key={pc}
                       href={`/heating-oil-prices/${pc}/`}
-                      className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-brand-ink bg-white border border-brand-line rounded-md hover:border-orange-300 hover:bg-brand-butter hover:text-[#8A3B12] transition-colors"
+                      className="inline-flex items-center px-3 py-1.5 text-xs font-medium text-brand-ink bg-brand-paper border border-brand-line rounded-md hover:border-orange-300 hover:bg-brand-butter hover:text-[#8A3B12] transition-colors"
                     >
                       {pc.toUpperCase()}
                     </Link>
@@ -171,7 +168,6 @@ export default function HeatingOilPricesIndex() {
         </div>
 
       </main>
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

@@ -12,6 +12,7 @@ import { z } from "zod";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { PageShell } from "@/components/brand-ui";
 
 const accountSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
@@ -100,21 +101,22 @@ export default function ThankYouPage() {
 
   if (!quoteData) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-orange-50 p-4">
-        <div className="max-w-2xl mx-auto pt-20">
+      <PageShell>
+        <section className="bg-brand-paper flex-1 flex items-center justify-center p-4 py-16">
           <Card>
             <CardContent className="p-8 text-center">
               <p className="text-brand-muted">No quote data found. Redirecting to home...</p>
             </CardContent>
           </Card>
-        </div>
-      </div>
+        </section>
+      </PageShell>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-orange-50 p-4">
-      <div className="max-w-4xl mx-auto pt-8">
+    <PageShell>
+      <section className="bg-brand-paper py-12 flex-1">
+      <div className="max-w-4xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-mint rounded-full mb-4">
@@ -206,8 +208,8 @@ export default function ThankYouPage() {
                 !showAccountForm ? (
                   <div className="space-y-4">
                     <div className="bg-brand-butter p-4 rounded-lg space-y-3">
-                      <h3 className="font-semibold text-orange-900">Benefits of creating an account:</h3>
-                      <ul className="text-sm text-orange-800 space-y-1">
+                      <h3 className="font-semibold text-brand-ink">Benefits of creating an account:</h3>
+                      <ul className="text-sm text-brand-muted space-y-1">
                         <li>• Track your quote history</li>
                         <li>• Get price alerts when better deals are available</li>
                         <li>• Save your delivery preferences</li>
@@ -413,6 +415,7 @@ export default function ThankYouPage() {
           </div>
         </div>
       </div>
-    </div>
+      </section>
+    </PageShell>
   );
 }

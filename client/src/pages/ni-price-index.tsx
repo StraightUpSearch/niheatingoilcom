@@ -1,8 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 import SEOHead from "@/components/seo-head";
+import { PageShell, PageHero, OverlapSection } from "@/components/brand-ui";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { TrendingDown, MapPin, Calendar, ArrowRight, BarChart2, Info } from "lucide-react";
 
@@ -79,7 +78,7 @@ export default function NIPriceIndex() {
     : null;
 
   return (
-    <div className="min-h-screen bg-brand-cream">
+    <PageShell>
       <SEOHead
         title="Northern Ireland Heating Oil Price Index | NIHeatingoil.com"
         description={`Live NI heating oil prices — cheapest and average for 300L, 500L and 900L across all BT postcode areas. Updated ${today}. Compare prices in your area.`}
@@ -87,31 +86,17 @@ export default function NIPriceIndex() {
         canonicalUrl="https://niheatingoil.com/ni-heating-oil-price-index"
         structuredData={structuredData}
       />
-      <Navigation />
-
-      {/* Page header */}
-      <section className="pt-20 sm:pt-24 pb-12 bg-white border-b border-brand-line">
-        <div className="max-w-3xl mx-auto px-4">
-          <nav className="text-xs text-brand-muted mb-4 flex items-center gap-1.5">
-            <Link href="/" className="hover:text-brand-muted">Home</Link>
-            <span>/</span>
-            <span className="text-brand-muted">NI Price Index</span>
-          </nav>
-          <h1 className="text-3xl sm:text-4xl font-bold text-brand-ink leading-tight">
-            Northern Ireland Heating Oil Price Index
-          </h1>
-          <p className="mt-3 text-base text-brand-muted max-w-2xl">
-            Live market prices from verified NI distributors — cheapest and average delivery costs for 300L, 500L and 900L across all BT postcode areas.
-          </p>
-          <div className="flex items-center gap-4 mt-4 text-xs text-brand-muted">
-            <span className="flex items-center gap-1"><Calendar className="w-3.5 h-3.5" /> Updated {today}</span>
-            <span className="flex items-center gap-1"><BarChart2 className="w-3.5 h-3.5" /> {niSummary?.[500]?.count ?? "—"} verified suppliers</span>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        crumbs={[{ label: "Home", href: "/" }, { label: "NI Price Index" }]}
+        title="Northern Ireland Heating Oil "
+        accent="Price Index"
+        intro={`Live market prices from verified NI distributors — cheapest and average delivery costs for 300L, 500L and 900L. Updated ${today}.`}
+        overlap
+      />
+      <OverlapSection>
 
       {/* Live price table */}
-      <section className="py-10">
+      <section className="pb-10">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-lg font-bold text-brand-ink mb-1">Today's NI Market Prices</h2>
           <p className="text-sm text-brand-muted mb-4">All prices include VAT. Cheapest available from any NI supplier.</p>
@@ -167,14 +152,14 @@ export default function NIPriceIndex() {
       </section>
 
       {/* Seasonal buying guide */}
-      <section className="py-10 bg-white border-t border-brand-line">
+      <section className="py-10 bg-brand-paper border-t border-brand-line">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-lg font-bold text-brand-ink mb-1">Seasonal Buying Guide</h2>
           <p className="text-sm text-brand-muted mb-5">Heating oil prices follow a predictable seasonal pattern in Northern Ireland. Here's when to buy and when to hold off.</p>
           <div className="space-y-3">
             {SEASONAL_TIPS.map(({ month, tip, signal }) => {
               const color = signal === "Buy" ? "bg-brand-mint border-green-100 text-[#0B6A30]"
-                : signal === "Buy soon" ? "bg-brand-mint border-blue-100 text-brand-forest"
+                : signal === "Buy soon" ? "bg-brand-mint border-brand-line text-brand-forest"
                 : signal === "Caution" ? "bg-red-50 border-red-100 text-red-700"
                 : "bg-brand-cream border-brand-line text-brand-muted";
               return (
@@ -221,7 +206,7 @@ export default function NIPriceIndex() {
       </section>
 
       {/* Methodology */}
-      <section className="py-10 bg-white border-t border-brand-line">
+      <section className="py-10 bg-brand-paper border-t border-brand-line">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-lg font-bold text-brand-ink mb-3">Methodology</h2>
           <div className="flex items-start gap-3 p-4 bg-brand-cream border border-brand-line rounded-lg">
@@ -259,7 +244,7 @@ export default function NIPriceIndex() {
         </div>
       </section>
 
-      <Footer />
-    </div>
+      </OverlapSection>
+    </PageShell>
   );
 }

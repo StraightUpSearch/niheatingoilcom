@@ -1,7 +1,6 @@
 import { Link } from "wouter";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 import SEOHead from "@/components/seo-head";
+import { PageShell } from "@/components/brand-ui";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { usePageTitle } from "@/hooks/usePageTitle";
 
@@ -94,7 +93,7 @@ export default function Blog() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-cream">
+    <PageShell>
       <SEOHead
         title="Heating Oil Blog & Tips - NI Heating Oil"
         description="Expert advice, industry updates, and money-saving tips for Northern Ireland heating oil consumers."
@@ -102,9 +101,7 @@ export default function Blog() {
         canonicalUrl="https://niheatingoil.com/blog"
         structuredData={structuredData}
       />
-      <Navigation />
-
-      <main className="max-w-4xl mx-auto px-4 pt-24 pb-16">
+      <main className="max-w-4xl mx-auto px-4 pt-8 pb-16">
         <div className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold text-brand-ink tracking-tight">
             Heating Oil Blog
@@ -117,7 +114,7 @@ export default function Blog() {
         <div className="space-y-6">
           {blogArticles.map((article, index) => (
             <Link key={article.id} href={`/blog/${article.slug}`} className="block group">
-              <article className={`bg-white rounded-lg border border-brand-line overflow-hidden transition-shadow hover:shadow-sm ${index === 0 ? "sm:flex" : ""}`}>
+              <article className={`bg-brand-paper rounded-lg border border-brand-line overflow-hidden transition-shadow hover:shadow-sm ${index === 0 ? "sm:flex" : ""}`}>
                 <div className={`aspect-video overflow-hidden ${index === 0 ? "sm:w-2/5 sm:aspect-auto sm:min-h-full" : ""}`}>
                   <img
                     src={article.image}
@@ -160,7 +157,7 @@ export default function Blog() {
           ))}
         </div>
 
-        <div className="mt-12 bg-white border border-brand-line rounded-lg p-6 text-center">
+        <div className="mt-12 bg-brand-paper border border-brand-line rounded-lg p-6 text-center">
           <h2 className="text-lg font-semibold text-brand-ink">
             Find the cheapest heating oil near you
           </h2>
@@ -174,8 +171,6 @@ export default function Blog() {
           </Link>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

@@ -7,9 +7,8 @@ import { Separator } from "@/components/ui/separator";
 import { Star, MapPin, Phone, Globe, Clock, TrendingUp, Award, Shield, CheckCircle } from "lucide-react";
 import { Supplier, OilPrice } from "@shared/schema";
 import { useState } from "react";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 import SEOHead from "@/components/seo-head";
+import { PageShell } from "@/components/brand-ui";
 // import { ClaimListingDialog } from "@/components/claim-listing-dialog";
 
 interface SupplierWithPrices extends Supplier {
@@ -123,24 +122,28 @@ export default function SupplierProfile() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-brand-cream flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-forest mx-auto mb-4"></div>
-          <p className="text-brand-muted">Loading supplier information...</p>
-        </div>
-      </div>
+      <PageShell>
+        <section className="bg-brand-paper flex-1 flex items-center justify-center p-6">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-forest mx-auto mb-4"></div>
+            <p className="text-brand-muted">Loading supplier information...</p>
+          </div>
+        </section>
+      </PageShell>
     );
   }
 
   if (error || !supplier) {
     return (
-      <div className="min-h-screen bg-brand-cream flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-brand-ink mb-2">Supplier Not Found</h1>
-          <p className="text-brand-muted mb-4">The supplier you're looking for doesn't exist.</p>
-          <Button onClick={() => window.history.back()}>Go Back</Button>
-        </div>
-      </div>
+      <PageShell>
+        <section className="bg-brand-paper flex-1 flex items-center justify-center p-6">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-brand-ink mb-2">Supplier Not Found</h1>
+            <p className="text-brand-muted mb-4">The supplier you're looking for doesn't exist.</p>
+            <Button onClick={() => window.history.back()}>Go Back</Button>
+          </div>
+        </section>
+      </PageShell>
     );
   }
 
@@ -190,17 +193,16 @@ export default function SupplierProfile() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+    <PageShell>
       <SEOHead
         title={seoTitle}
         description={seoDescription}
         canonicalUrl={canonicalUrl}
         structuredData={structuredData}
       />
-      <Navigation />
-      
+
       {/* Supplier Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <div className="bg-brand-forest text-brand-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div className="flex-1">
@@ -212,7 +214,7 @@ export default function SupplierProfile() {
                 </Badge>
               </div>
               
-              <div className="flex flex-wrap items-center gap-4 text-[#CFE3D3]">
+              <div className="flex flex-wrap items-center gap-4 text-brand-cream/80">
                 <div className="flex items-center gap-1">
                   <MapPin className="h-4 w-4" />
                   <span>{supplier.location}</span>
@@ -267,7 +269,7 @@ export default function SupplierProfile() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-brand-paper">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
           {/* Main Content */}
@@ -467,13 +469,11 @@ export default function SupplierProfile() {
       </div>
 
       {/* Claim Listing Dialog - Temporarily disabled */}
-      {/* <ClaimListingDialog 
+      {/* <ClaimListingDialog
         supplier={supplier}
         open={showClaimDialog}
         onOpenChange={setShowClaimDialog}
       /> */}
-      
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

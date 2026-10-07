@@ -12,8 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Bell, Plus, Trash2, MapPin } from "lucide-react";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
+import { PageShell, PageHero, OverlapSection } from "@/components/brand-ui";
 
 export default function AlertsPage() {
   const { isAuthenticated, isLoading: authLoading } = useAuth();
@@ -145,20 +144,16 @@ export default function AlertsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
-      <Navigation />
-
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header Section */}
-        <div className="text-centre mb-8">
-          <h1 className="text-4xl font-bold text-brand-ink mb-4">
-            Price Alerts
-          </h1>
-          <p className="text-xl text-brand-muted max-w-3xl mx-auto">
-            Set up personalised price alerts and never miss a great heating oil deal. 
-            We'll notify you when prices drop below your target.
-          </p>
-        </div>
+    <PageShell>
+      <PageHero
+        crumbs={[{ label: "Home", href: "/" }, { label: "Price Alerts" }]}
+        title="Price "
+        accent="Alerts"
+        intro="Set up personalised price alerts and never miss a great heating oil deal."
+        overlap
+      />
+      <OverlapSection>
+        <div className="pb-16 max-w-7xl mx-auto">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Create New Alert */}
@@ -296,7 +291,7 @@ export default function AlertsPage() {
         </div>
 
         {/* Information Section */}
-        <div className="mt-12 bg-white rounded-lg shadow-sm border p-6">
+        <div className="mt-12 bg-brand-paper rounded-lg shadow-sm border border-brand-line p-6">
           <h2 className="text-2xl font-semibold text-brand-ink mb-4">
             How Price Alerts Work
           </h2>
@@ -320,8 +315,8 @@ export default function AlertsPage() {
               </p>
             </div>
             <div className="text-centre">
-              <div className="bg-purple-100 rounded-full p-3 w-12 h-12 mx-auto mb-3 flex items-centre justify-centre">
-                <Plus className="h-6 w-6 text-purple-600" />
+              <div className="bg-brand-mint rounded-full p-3 w-12 h-12 mx-auto mb-3 flex items-centre justify-centre">
+                <Plus className="h-6 w-6 text-brand-forest" />
               </div>
               <h3 className="text-lg font-medium text-brand-ink mb-2">Instant Notification</h3>
               <p className="text-brand-muted text-sm">
@@ -330,9 +325,8 @@ export default function AlertsPage() {
             </div>
           </div>
         </div>
-      </main>
-
-      <Footer />
-    </div>
+        </div>
+      </OverlapSection>
+    </PageShell>
   );
 }

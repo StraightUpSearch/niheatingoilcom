@@ -1,7 +1,6 @@
 import { useParams } from "wouter";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 import SEOHead from "@/components/seo-head";
+import { PageShell } from "@/components/brand-ui";
 import { ArrowLeft, Clock, Calendar, User, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -441,10 +440,9 @@ export default function BlogArticle() {
 
   if (!article) {
     return (
-      <div className="min-h-screen bg-brand-cream">
-        <Navigation />
-        <main className="max-w-4xl mx-auto px-4 py-8 pt-24">
-          <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+      <PageShell>
+        <main className="max-w-4xl mx-auto px-4 py-8">
+          <div className="bg-brand-paper rounded-lg shadow-sm p-8 text-center">
             <h1 className="text-2xl font-bold text-brand-ink mb-4">Article Not Found</h1>
             <p className="text-brand-muted mb-6">This article doesn't exist or has been moved.</p>
             <Button asChild>
@@ -452,8 +450,7 @@ export default function BlogArticle() {
             </Button>
           </div>
         </main>
-        <Footer />
-      </div>
+      </PageShell>
     );
   }
 
@@ -484,16 +481,14 @@ export default function BlogArticle() {
   ];
 
   return (
-    <div className="min-h-screen bg-brand-cream">
+    <PageShell>
       <SEOHead
         title={seoTitle}
         description={seoDescription}
         canonicalUrl={canonicalUrl}
         structuredData={structuredData}
       />
-      <Navigation />
-
-      <main className="max-w-4xl mx-auto px-4 py-8 pt-24">
+      <main className="max-w-4xl mx-auto px-4 py-8">
         <div className="mb-8">
           <nav aria-label="Breadcrumb" className="flex items-center text-sm text-brand-muted mb-4 gap-1">
             <Link href="/" className="hover:text-brand-ink">Home</Link>
@@ -510,7 +505,7 @@ export default function BlogArticle() {
             </Link>
           </Button>
 
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+          <div className="bg-brand-paper rounded-lg shadow-sm overflow-hidden">
             <div className="aspect-video overflow-hidden">
               <img
                 src={article.image}
@@ -570,8 +565,6 @@ export default function BlogArticle() {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

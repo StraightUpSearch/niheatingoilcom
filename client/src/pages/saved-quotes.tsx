@@ -1,12 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 import { useAuth } from "@/hooks/use-auth";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { apiRequest } from "@/lib/queryClient";
 import { usePageTitle } from "@/hooks/usePageTitle";
+import { PageShell, PageHero, OverlapSection, SurfaceCard } from "@/components/brand-ui";
 
 interface SavedQuote {
   id: number;
@@ -33,48 +31,51 @@ export default function SavedQuotesPage() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-brand-cream">
-        <Card>
-          <CardContent className="p-6 text-center space-y-4">
+      <PageShell>
+        <div className="flex-1 flex items-center justify-center p-6">
+          <SurfaceCard tone="paper" className="max-w-sm w-full text-center space-y-4">
             <p>Please sign in to view your saved quotes.</p>
             <Button onClick={() => (window.location.href = "/api/login")}>Sign In</Button>
-          </CardContent>
-        </Card>
-      </div>
+          </SurfaceCard>
+        </div>
+      </PageShell>
     );
   }
 
   return (
-    <div className="min-h-screen bg-brand-cream">
-      <Navigation />
-      <div className="max-w-4xl mx-auto p-6 space-y-6">
-        <h1 className="text-2xl font-bold">Saved Quotes</h1>
-        {isLoading && <p>Loading...</p>}
-        {error && (
-          <Alert>
-            <AlertDescription>Failed to load saved quotes.</AlertDescription>
-          </Alert>
-        )}
-        {data && data.length === 0 && <p>No saved quotes yet.</p>}
-        {data && data.length > 0 && (
-          <div className="space-y-4">
-            {data.map((quote) => (
-              <Card key={quote.id}>
-                <CardHeader>
-                  <CardTitle>{quote.supplierName}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-1">
-                  <p className="text-sm">Price: {quote.price}</p>
-                  <p className="text-sm">Volume: {quote.volume}L</p>
-                  <p className="text-sm">Postcode: {quote.postcode}</p>
-                  <p className="text-xs text-brand-muted">Saved {new Date(quote.createdAt).toLocaleDateString()}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        )}
-      </div>
-      <Footer />
-    </div>
+    <PageShell>
+      <PageHero
+        crumbs={[{ label: "Home", href: "/" }, { label: "Saved Quotes" }]}
+        title="Saved "
+        accent="Quotes"
+        overlap
+      />
+      <OverlapSection>
+        <div className="pb-16 max-w-4xl mx-auto space-y-4">
+          {isLoading && <p className="text-brand-muted">Loading...</p>}
+          {error && (
+            <Alert>
+              <AlertDescription>Failed to load saved quotes.</AlertDescription>
+            </Alert>
+          )}
+          {data && data.length === 0 && <p className="text-brand-muted">No saved quotes yet.</p>}
+          {data && data.length > 0 && (
+            <div className="space-y-3">
+              {data.map((quote) => (
+                <SurfaceCard key={quote.id} tone="paper" radius="row" className="p-5">
+                  <p className="font-semibold text-brand-ink">{quote.supplierName}</p>
+                  <div className="mt-1 flex flex-wrap gap-3 text-sm text-brand-muted">
+                    <span>Price: {quote.price}</span>
+                    <span>Volume: {quote.volume}L</span>
+                    <span>Postcode: {quote.postcode}</span>
+                    <span className="text-xs">Saved {new Date(quote.createdAt).toLocaleDateString()}</span>
+                  </div>
+                </SurfaceCard>
+              ))}
+            </div>
+          )}
+        </div>
+      </OverlapSection>
+    </PageShell>
   );
 }

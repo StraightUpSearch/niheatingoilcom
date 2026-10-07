@@ -1,8 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageShell, PageHero, OverlapSection } from "@/components/brand-ui";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -38,21 +37,18 @@ export default function SuppliersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
-      <Navigation />
+    <PageShell>
+      <PageHero
+        crumbs={[{ label: "Home", href: "/" }, { label: "Suppliers" }]}
+        title="Heating Oil "
+        accent="Suppliers"
+        intro="Browse verified heating oil suppliers delivering across Northern Ireland. Contact them directly for quotes."
+        overlap
+      />
+      <OverlapSection>
+      <main className="pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-brand-ink mb-4">
-            Heating Oil Suppliers
-          </h1>
-          <p className="text-xl text-brand-muted max-w-3xl mx-auto">
-            Browse verified heating oil suppliers delivering across Northern Ireland.
-            Contact them directly for quotes.
-          </p>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-sm border p-6 mb-8">
+        <div className="bg-brand-paper rounded-lg border border-brand-line p-6 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
               <div className="flex items-center justify-center mb-2">
@@ -186,8 +182,7 @@ export default function SuppliersPage() {
           </Link>
         </div>
       </main>
-
-      <Footer />
-    </div>
+      </OverlapSection>
+    </PageShell>
   );
 }

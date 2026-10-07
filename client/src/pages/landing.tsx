@@ -12,11 +12,9 @@ import {
   MapPin,
   Phone,
   ShieldCheck,
-  X,
 } from "lucide-react";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 import SEOHead from "@/components/seo-head";
+import { PageShell } from "@/components/brand-ui";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { trackPriceSearch } from "@/lib/gtm";
 
@@ -82,13 +80,6 @@ export default function Landing() {
 
   const [postcode, setPostcode] = useState("");
   const [volume, setVolume] = useState<number>(500);
-  const [showSupport, setShowSupport] = useState(() => {
-    try {
-      return sessionStorage.getItem("hideGovBanner") !== "1";
-    } catch {
-      return true;
-    }
-  });
 
   const { data: summary } = useQuery<NiSummary>({
     queryKey: ["/api/prices/ni-summary"],
@@ -108,15 +99,6 @@ export default function Landing() {
     }
     trackPriceSearch(pc, volume);
     setLocation(`/results?postcode=${encodeURIComponent(pc)}&volume=${volume}`);
-  };
-
-  const dismissSupport = () => {
-    setShowSupport(false);
-    try {
-      sessionStorage.setItem("hideGovBanner", "1");
-    } catch {
-      /* private mode: banner simply returns next visit */
-    }
   };
 
   const structuredData = [
@@ -157,7 +139,7 @@ export default function Landing() {
   ];
 
   return (
-    <div className="min-h-screen bg-brand-cream font-body text-brand-ink">
+    <PageShell>
       <SEOHead
         title={PAGE_TITLE}
         description="Compare live heating oil prices from NI suppliers by BT postcode. 300L, 500L and 900L quotes updated daily."
@@ -165,24 +147,6 @@ export default function Landing() {
         canonicalUrl="https://niheatingoil.com"
         structuredData={structuredData}
       />
-
-      {showSupport && (
-        <div className="border-b-[1.5px] border-brand-forest bg-brand-mint text-brand-forest">
-          <div className="mx-auto flex max-w-[1200px] items-center justify-end gap-3 px-4 py-2.5 text-sm font-medium sm:px-8">
-            <p>
-              You may be eligible for heating oil support.{" "}
-              <a href={SUPPORT_URL} target="_blank" rel="noopener noreferrer" className="font-bold underline underline-offset-4">
-                Check if you qualify
-              </a>
-            </p>
-            <button onClick={dismissSupport} aria-label="Dismiss" className="flex h-11 w-11 flex-none items-center justify-center rounded-md hover:bg-brand-forest/10">
-              <X className="h-4 w-4" />
-            </button>
-          </div>
-        </div>
-      )}
-
-      <Navigation />
 
       <Hero
         postcode={postcode}
@@ -200,8 +164,7 @@ export default function Landing() {
       <AlertsCta />
       <AreaLinks />
       <Guides />
-      <Footer />
-    </div>
+    </PageShell>
   );
 }
 

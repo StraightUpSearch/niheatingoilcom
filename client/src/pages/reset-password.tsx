@@ -7,8 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Lock, CheckCircle, AlertTriangle } from "lucide-react";
 import { usePageTitle } from "@/hooks/usePageTitle";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
+import { PageShell } from "@/components/brand-ui";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
@@ -86,9 +85,8 @@ export default function ResetPasswordPage() {
 
   if (isSuccess) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-600 via-green-700 to-green-800">
-        <Navigation />
-        <div className="flex items-center justify-center p-4 pt-20">
+      <PageShell>
+        <section className="bg-brand-forest flex-1 flex items-center justify-center p-4 py-16">
           <Card className="w-full max-w-md shadow-2xl border-0">
             <CardHeader className="text-center pb-4">
               <div className="mx-auto w-16 h-16 bg-brand-mint rounded-full flex items-center justify-center mb-4">
@@ -103,7 +101,7 @@ export default function ResetPasswordPage() {
               <p className="text-sm text-brand-muted mb-4">
                 Redirecting you to sign in...
               </p>
-              <Button 
+              <Button
                 onClick={() => setLocation('/auth')}
                 className="bg-brand-forest hover:bg-brand-forest-soft"
               >
@@ -111,16 +109,14 @@ export default function ResetPasswordPage() {
               </Button>
             </CardContent>
           </Card>
-        </div>
-        <Footer />
-      </div>
+        </section>
+      </PageShell>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
-      <Navigation />
-      <div className="flex items-center justify-center p-4 pt-20">
+    <PageShell>
+      <section className="bg-brand-forest flex-1 flex items-center justify-center p-4 py-16">
         <Card className="w-full max-w-md shadow-2xl border-0">
           <CardHeader className="text-center pb-4">
             <CardTitle className="text-2xl font-bold text-brand-ink">Reset Your Password</CardTitle>
@@ -192,8 +188,7 @@ export default function ResetPasswordPage() {
             </form>
           </CardContent>
         </Card>
-      </div>
-      <Footer />
-    </div>
+      </section>
+    </PageShell>
   );
 }

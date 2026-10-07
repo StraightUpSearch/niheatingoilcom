@@ -6,11 +6,10 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, ArrowLeft, CheckCircle } from "lucide-react";
 import { usePageTitle } from "@/hooks/usePageTitle";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 import { Link } from "wouter";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { PageShell } from "@/components/brand-ui";
 
 export default function ForgotPasswordPage() {
   usePageTitle("Forgot Password | NI Heating Oil");
@@ -55,9 +54,8 @@ export default function ForgotPasswordPage() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
-        <Navigation />
-        <div className="flex items-center justify-center p-4 pt-20">
+      <PageShell>
+        <section className="bg-brand-forest flex-1 flex items-center justify-center p-4 py-16">
           <Card className="w-full max-w-md shadow-2xl border-0">
             <CardHeader className="text-center pb-4">
               <div className="mx-auto w-16 h-16 bg-brand-mint rounded-full flex items-center justify-center mb-4">
@@ -84,16 +82,14 @@ export default function ForgotPasswordPage() {
               </Link>
             </CardContent>
           </Card>
-        </div>
-        <Footer />
-      </div>
+        </section>
+      </PageShell>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
-      <Navigation />
-      <div className="flex items-center justify-center p-4 pt-20">
+    <PageShell>
+      <section className="bg-brand-forest flex-1 flex items-center justify-center p-4 py-16">
         <Card className="w-full max-w-md shadow-2xl border-0">
           <CardHeader className="text-center pb-4">
             <CardTitle className="text-2xl font-bold text-brand-ink">Forgot Password?</CardTitle>
@@ -141,8 +137,7 @@ export default function ForgotPasswordPage() {
             </div>
           </CardContent>
         </Card>
-      </div>
-      <Footer />
-    </div>
+      </section>
+    </PageShell>
   );
 }

@@ -8,8 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useLocation } from "wouter";
 import { Loader2, User, Mail, Lock, Fuel } from "lucide-react";
 import { usePageTitle } from "@/hooks/usePageTitle";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
+import { PageShell } from "@/components/brand-ui";
 
 export default function AuthPage() {
   usePageTitle("Sign In | NI Heating Oil");
@@ -50,9 +49,8 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
-      <Navigation />
-      <div className="flex items-center justify-center p-4 pt-20">
+    <PageShell>
+      <section className="bg-brand-forest flex-1 flex items-center justify-center p-4 py-16">
         <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 
           {/* Hero Section */}
@@ -300,9 +298,7 @@ export default function AuthPage() {
             </Card>
           </div>
         </div>
-      </div>
-
-      <Footer />
-    </div>
+      </section>
+    </PageShell>
   );
 }

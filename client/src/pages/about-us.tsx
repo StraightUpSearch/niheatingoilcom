@@ -2,36 +2,30 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, Heart, MapPin, TrendingUp, Shield, Zap } from "lucide-react";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 import SEOHead from "@/components/seo-head";
+import { PageShell, PageHero, OverlapSection, CtaBand } from "@/components/brand-ui";
 
 export default function AboutUs() {
   return (
-    <div className="min-h-screen bg-white">
-      <SEOHead 
+    <PageShell>
+      <SEOHead
         title="About Us - NI Heating Oil"
         description="Learn about NI Heating Oil's mission to help Northern Ireland residents find the best heating oil prices while supporting local charities."
         keywords="about ni heating oil, northern ireland heating oil, company story, charity partnership"
       />
-      
-      <Navigation />
-      
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Hero Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-brand-ink mb-4">
-            About NI Heating Oil
-            <span className="block text-2xl text-brand-forest mt-2">AI-Powered Price Intelligence</span>
-          </h1>
-          <p className="text-xl text-brand-muted max-w-3xl mx-auto">
-            Northern Ireland's first AI-powered heating oil comparison platform - built by locals, for locals.
-          </p>
-        </div>
+      <PageHero
+        crumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
+        title="About NI "
+        accent="Heating Oil"
+        intro="Northern Ireland's first AI-powered heating oil comparison platform — built by locals, for locals."
+        overlap
+      />
+      <OverlapSection>
+      <main className="pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Main Story */}
         <div className="prose prose-lg max-w-none mb-12">
-          <Card className="border-2 border-blue-100 bg-brand-mint/30">
+          <Card className="border-2 border-brand-line bg-brand-mint/30">
             <CardContent className="p-8">
               <div className="flex items-start space-x-4 mb-6">
                 <div className="bg-brand-mint p-3 rounded-full">
@@ -89,10 +83,10 @@ export default function AboutUs() {
               </CardContent>
             </Card>
 
-            <Card className="border border-purple-200 hover:shadow-lg transition-shadow">
+            <Card className="border border-brand-line hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="h-8 w-8 text-purple-500" />
+                  <MapPin className="h-8 w-8 text-brand-forest" />
                   <CardTitle className="text-xl">Local Focus</CardTitle>
                 </div>
               </CardHeader>
@@ -126,7 +120,7 @@ export default function AboutUs() {
         </div>
 
         {/* Values Section */}
-        <Card className="bg-gradient-to-r from-green-50 to-blue-50 border-brand-line">
+        <Card className="bg-brand-mint/20 border-brand-line">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl text-brand-ink">Our Values</CardTitle>
           </CardHeader>
@@ -157,26 +151,15 @@ export default function AboutUs() {
           </CardContent>
         </Card>
 
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <Card className="bg-primary text-white">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold mb-4">Ready to Save on Heating Oil?</h2>
-              <p className="text-[#CFE3D3] mb-6">
-                Join thousands of Northern Ireland residents who are already saving money while supporting local charities.
-              </p>
-              <a
-                href="/compare"
-                className="inline-block bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-white transition-colors"
-              >
-                Compare Prices Now
-              </a>
-            </CardContent>
-          </Card>
-        </div>
       </main>
-
-      <Footer />
-    </div>
+      </OverlapSection>
+      <CtaBand
+        title="Ready to Save on "
+        accent="Heating Oil?"
+        text="Join thousands of Northern Ireland residents who are already saving money while supporting local charities."
+        href="/"
+        label="Compare Prices Now"
+      />
+    </PageShell>
   );
 }

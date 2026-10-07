@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 import SEOHead from "@/components/seo-head";
+import { PageShell } from "@/components/brand-ui";
 import {
   Flame, Zap, Droplets, Wind, ChevronRight, ChevronLeft,
   Home, Building2, ArrowRight, Info, CheckCircle, AlertTriangle, TrendingDown
@@ -142,7 +141,7 @@ function ProgressBar({ step, total }: { step: number; total: number }) {
               i < step
                 ? "bg-emerald-600 text-white"
                 : i === step
-                ? "bg-gray-900 text-white"
+                ? "bg-brand-ink text-white"
                 : "bg-brand-line text-brand-muted"
             }`}
           >
@@ -368,7 +367,7 @@ function ComparisonResults({
               key={opt.id}
               onClick={() => setSortBy(opt.id)}
               className={`w-full text-left text-sm px-3 py-2 rounded-lg mb-0.5 transition-colors ${
-                sortBy === opt.id ? "bg-gray-900 text-white font-medium" : "text-brand-muted hover:bg-white"
+                sortBy === opt.id ? "bg-brand-ink text-white font-medium" : "text-brand-muted hover:bg-white"
               }`}
             >
               {opt.label}
@@ -421,9 +420,9 @@ function ComparisonResults({
 
         {/* Heat pump UK BUS warning */}
         {activeFuels.includes("heatpump") && (
-          <div className="flex items-start gap-3 p-3 mb-4 bg-brand-butter border border-amber-200 rounded-lg">
+          <div className="flex items-start gap-3 p-3 mb-4 bg-brand-butter border border-brand-line rounded-lg">
             <AlertTriangle className="w-4 h-4 text-[#8A3B12] flex-shrink-0 mt-0.5" />
-            <p className="text-xs text-amber-800">
+            <p className="text-xs text-brand-ink">
               <strong>UK Boiler Upgrade Scheme (BUS) is NOT available in Northern Ireland.</strong>{" "}
               NI homeowners should check NIHE Affordable Warmth, NISEP, and DfC schemes instead. Use the grant toggles on the left.
             </p>
@@ -450,7 +449,7 @@ function ComparisonResults({
                   </span>
                 )}
                 {idx === 0 && (
-                  <span className="absolute -top-2.5 right-4 text-[10px] font-bold bg-gray-900 text-white px-2 py-0.5 rounded-full">
+                  <span className="absolute -top-2.5 right-4 text-[10px] font-bold bg-brand-ink text-white px-2 py-0.5 rounded-full">
                     Cheapest {sortBy === "annual" ? "to run" : sortBy === "upfront" ? "to install" : "over 10 years"}
                   </span>
                 )}
@@ -615,7 +614,7 @@ export default function CompareHeating() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-cream">
+    <PageShell>
       <SEOHead
         title="NI Heating Fuel Cost Comparison | Compare Kerosene, Heat Pumps & More"
         description="Compare annual heating costs for kerosene, air source heat pumps, electric, and LPG in Northern Ireland. Includes NI grant eligibility (NIHE, NISEP, DfC). Live oil prices."
@@ -623,9 +622,7 @@ export default function CompareHeating() {
         canonicalUrl="https://niheatingoil.com/compare-heating"
         structuredData={structuredData}
       />
-      <Navigation />
-
-      <main className="max-w-4xl mx-auto px-4 pt-24 pb-16">
+      <main className="max-w-4xl mx-auto px-4 pt-8 pb-16">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-1 text-xs text-brand-muted mb-6">
           <Link href="/" className="hover:text-brand-muted">Home</Link>
@@ -679,7 +676,7 @@ export default function CompareHeating() {
               <button
                 onClick={handleNext}
                 disabled={!canNext}
-                className="flex items-center gap-1.5 px-6 py-2.5 bg-gray-900 hover:bg-gray-800 disabled:bg-gray-300 disabled:cursor-not-allowed text-white text-sm font-semibold rounded-lg transition-colors"
+                className="flex items-center gap-1.5 px-6 py-2.5 bg-brand-ink hover:bg-brand-ink/90 disabled:bg-brand-line disabled:cursor-not-allowed text-white text-sm font-semibold rounded-lg transition-colors"
               >
                 {step === 2 ? "Get comparison" : "Next"}
                 <ChevronRight className="w-4 h-4" />
@@ -691,7 +688,6 @@ export default function CompareHeating() {
         )}
       </main>
 
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

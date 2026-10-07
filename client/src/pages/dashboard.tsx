@@ -20,8 +20,7 @@ import {
 import { useState } from "react";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import WhatsAppQuoteReminder from "@/components/whatsapp-quote-reminder";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
+import { PageShell, PageHero, OverlapSection } from "@/components/brand-ui";
 import { usePageTitle } from "@/hooks/usePageTitle";
 
 interface DashboardData {
@@ -114,73 +113,76 @@ export default function Dashboard() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-brand-cream flex items-center justify-center">
-        <Card className="max-w-md w-full">
-          <CardContent className="pt-6">
-            <div className="text-center">
-              <h2 className="text-xl font-semibold mb-4">Access Required</h2>
-              <p className="text-brand-muted mb-6">
-                Please sign in to view your dashboard and track your heating oil enquiries.
-              </p>
-              <Button 
-                onClick={() => window.location.href = "/api/login"}
-                className="w-full"
-              >
-                Sign In
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+      <PageShell>
+        <section className="bg-brand-paper flex-1 flex items-center justify-center p-6">
+          <Card className="max-w-md w-full">
+            <CardContent className="pt-6">
+              <div className="text-center">
+                <h2 className="text-xl font-semibold mb-4">Access Required</h2>
+                <p className="text-brand-muted mb-6">
+                  Please sign in to view your dashboard and track your heating oil enquiries.
+                </p>
+                <Button
+                  onClick={() => window.location.href = "/api/login"}
+                  className="w-full"
+                >
+                  Sign In
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+      </PageShell>
     );
   }
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-brand-cream p-6">
-        <div className="max-w-6xl mx-auto space-y-6">
-          <Skeleton className="h-8 w-64" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Skeleton className="h-32" />
-            <Skeleton className="h-32" />
-            <Skeleton className="h-32" />
+      <PageShell>
+        <section className="bg-brand-paper flex-1 p-6">
+          <div className="max-w-6xl mx-auto space-y-6">
+            <Skeleton className="h-8 w-64" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Skeleton className="h-32" />
+              <Skeleton className="h-32" />
+              <Skeleton className="h-32" />
+            </div>
+            <Skeleton className="h-64" />
           </div>
-          <Skeleton className="h-64" />
-        </div>
-      </div>
+        </section>
+      </PageShell>
     );
   }
 
   if (error) {
     return (
-      <div className="min-h-screen bg-brand-cream p-6">
-        <div className="max-w-6xl mx-auto">
-          <Alert className="border-red-200 bg-red-50">
-            <AlertDescription className="text-red-800">
-              Failed to load dashboard data. Please refresh the page.
-            </AlertDescription>
-          </Alert>
-        </div>
-      </div>
+      <PageShell>
+        <section className="bg-brand-paper flex-1 p-6">
+          <div className="max-w-6xl mx-auto">
+            <Alert className="border-red-200 bg-red-50">
+              <AlertDescription className="text-red-800">
+                Failed to load dashboard data. Please refresh the page.
+              </AlertDescription>
+            </Alert>
+          </div>
+        </section>
+      </PageShell>
     );
   }
 
   usePageTitle("Dashboard - NI Heating Oil");
 
   return (
-    <div className="min-h-screen bg-brand-cream">
-      <Navigation />
-      <div className="min-h-screen bg-brand-cream p-6">
-        <div className="max-w-6xl mx-auto space-y-6">
-          {/* Header */}
-          <div>
-            <h1 className="text-2xl font-bold text-brand-ink">
-              Welcome back, {user?.firstName || 'User'}!
-            </h1>
-            <p className="text-brand-muted">
-              Track your heating oil enquiries and manage price alerts
-            </p>
-          </div>
+    <PageShell>
+      <PageHero
+        crumbs={[{ label: "Home", href: "/" }, { label: "Dashboard" }]}
+        title="Your "
+        accent="Dashboard"
+        intro={`Welcome back, ${user?.firstName || 'User'}. Track your enquiries and manage price alerts.`}
+        overlap
+      />
+      <OverlapSection>
+        <div className="pb-16 max-w-6xl mx-auto space-y-6">
 
           {/* Summary Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -402,8 +404,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
         </div>
-      </div>
-      <Footer />
-    </div>
+      </OverlapSection>
+    </PageShell>
   );
 }
