@@ -45,17 +45,17 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
+    <footer className="bg-brand-forest text-brand-cream">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-12 lg:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-10">
 
           {/* Brand column */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2.5 mb-4 hover:opacity-80 transition-opacity">
               <HeatingOilLogo size="sm" />
-              <span className="text-base font-bold">NI Heating Oil</span>
+              <span className="font-display font-extrabold text-[18px] tracking-[-0.025em]">NI Heating Oil</span>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-5 max-w-xs">
+            <p className="text-sm leading-relaxed mb-5 max-w-xs" style={{ color: "#CFE3D3" }}>
               Northern Ireland's independent heating oil price comparison service. Compare suppliers across all six counties — free to use.
             </p>
             <div className="flex items-center gap-3">
@@ -65,7 +65,8 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+                  className="w-8 h-8 rounded-lg flex items-center justify-center transition-colors hover:bg-brand-forest-line"
+                  style={{ backgroundColor: "#1A4A2E", color: "#A9C7B1" }}
                   aria-label={name}
                 >
                   {icon}
@@ -76,17 +77,17 @@ export default function Footer() {
 
           {/* Prices column */}
           <div>
-            <h3 className="text-xs font-semibold text-gray-300 uppercase tracking-widest mb-4">Prices</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#A9C7B1" }}>Prices</h3>
             <ul className="space-y-2.5">
               {[
-                { name: "Compare Prices",    href: "/" },
-                { name: "NI Price Index",    href: "/ni-heating-oil-price-index" },
-                { name: "Heating Oil Prices",href: "/heating-oil-prices" },
-                { name: "Price Alerts",      href: "/alerts" },
-                { name: "Supplier Directory",href: "/suppliers" },
+                { name: "Compare Prices",     href: "/" },
+                { name: "NI Price Index",     href: "/ni-heating-oil-price-index" },
+                { name: "Heating Oil Prices", href: "/heating-oil-prices" },
+                { name: "Price Alerts",       href: "/alerts" },
+                { name: "Supplier Directory", href: "/suppliers" },
               ].map(({ name, href }) => (
                 <li key={name}>
-                  <Link href={href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  <Link href={href} className="text-sm transition-colors hover:text-brand-cream" style={{ color: "#CFE3D3" }}>
                     {name}
                   </Link>
                 </li>
@@ -96,20 +97,21 @@ export default function Footer() {
 
           {/* Locations column */}
           <div>
-            <h3 className="text-xs font-semibold text-gray-300 uppercase tracking-widest mb-4">Locations</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#A9C7B1" }}>Locations</h3>
             <ul className="space-y-2.5">
               {[
-                { name: "Belfast",    slug: "belfast" },
-                { name: "Derry",      slug: "derry" },
-                { name: "Bangor",     slug: "bangor" },
-                { name: "Newry",      slug: "newry" },
-                { name: "Ballymena",  slug: "ballymena" },
-                { name: "Coleraine",  slug: "coleraine" },
+                { name: "Belfast",   slug: "belfast" },
+                { name: "Derry",     slug: "derry" },
+                { name: "Bangor",    slug: "bangor" },
+                { name: "Newry",     slug: "newry" },
+                { name: "Ballymena", slug: "ballymena" },
+                { name: "Coleraine", slug: "coleraine" },
               ].map(({ name, slug }) => (
                 <li key={slug}>
                   <Link
                     href={`/heating-oil-prices/${slug}/`}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
+                    className="text-sm transition-colors hover:text-brand-cream"
+                    style={{ color: "#CFE3D3" }}
                   >
                     {name}
                   </Link>
@@ -120,7 +122,7 @@ export default function Footer() {
 
           {/* Company column */}
           <div>
-            <h3 className="text-xs font-semibold text-gray-300 uppercase tracking-widest mb-4">Company</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#A9C7B1" }}>Company</h3>
             <ul className="space-y-2.5">
               {[
                 { name: "About Us",    href: "/about" },
@@ -129,7 +131,7 @@ export default function Footer() {
                 { name: "Giving Back", href: "/giving-back" },
               ].map(({ name, href }) => (
                 <li key={name}>
-                  <Link href={href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  <Link href={href} className="text-sm transition-colors hover:text-brand-cream" style={{ color: "#CFE3D3" }}>
                     {name}
                   </Link>
                 </li>
@@ -139,34 +141,34 @@ export default function Footer() {
 
           {/* Contact + charity column */}
           <div className="col-span-2 md:col-span-1">
-            <h3 className="text-xs font-semibold text-gray-300 uppercase tracking-widest mb-4">Contact</h3>
-            <address className="not-italic text-sm text-gray-400 space-y-0.5 mb-4">
-              <p className="text-gray-300 font-medium">NI Heating Oil</p>
+            <h3 className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#A9C7B1" }}>Contact</h3>
+            <address className="not-italic text-sm space-y-0.5 mb-4" style={{ color: "#CFE3D3" }}>
+              <p className="font-medium text-brand-cream">NI Heating Oil</p>
               <p>14a Victoria Street</p>
               <p>Ballymoney, BT53 6DW</p>
             </address>
             <a
               href="tel:02896005259"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-orange-400 transition-colors mb-5"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-cream hover:opacity-75 transition-opacity mb-5"
             >
-              <svg className="h-4 w-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-4 w-4" style={{ color: "#FFC83D" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               028 96005259
             </a>
 
             {/* Charity badge */}
-            <div className="p-3 bg-gray-800/60 rounded-lg border border-gray-700/60">
+            <div className="p-3 rounded-xl border" style={{ backgroundColor: "#1A4A2E", borderColor: "#2F6A45" }}>
               <div className="flex items-center gap-1.5 mb-2">
-                <svg className="h-3.5 w-3.5 text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="h-3.5 w-3.5" fill="#FFC83D" viewBox="0 0 24 24">
                   <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                 </svg>
-                <span className="text-[11px] font-medium text-gray-300">Proudly supporting</span>
+                <span className="text-[11px] font-medium" style={{ color: "#CFE3D3" }}>Proudly supporting</span>
               </div>
               <Link href="/giving-back" className="inline-block hover:opacity-80 transition-opacity">
                 <img src={simonLogo} alt="Simon Community NI" className="h-8 w-auto" />
               </Link>
-              <p className="text-[11px] text-gray-500 mt-1.5">5% of profits fund emergency heating grants</p>
+              <p className="text-[11px] mt-1.5" style={{ color: "#A9C7B1" }}>5% of profits fund emergency heating grants</p>
             </div>
           </div>
 
@@ -174,9 +176,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-gray-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-gray-500 text-center sm:text-left">
+      <div className="border-t" style={{ borderColor: "#2F6A45" }}>
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-center sm:text-left" style={{ color: "#A9C7B1" }}>
             &copy; {year} NI Heating Oil. Independent price comparison for Northern Ireland.
           </p>
           <div className="flex items-center gap-4">
@@ -185,7 +187,7 @@ export default function Footer() {
               { name: "Terms of Use",   href: "/contact" },
               { name: "Disclaimer",     href: "/contact" },
             ].map(({ name, href }) => (
-              <Link key={name} href={href} className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
+              <Link key={name} href={href} className="text-xs transition-colors hover:text-brand-cream" style={{ color: "#A9C7B1" }}>
                 {name}
               </Link>
             ))}

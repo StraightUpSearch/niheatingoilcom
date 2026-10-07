@@ -1,3 +1,17 @@
+/**
+ * REFERENCE IMPLEMENTATION: redesigned homepage for niheatingoil.com
+ *
+ * Status: not wired in. This file is not imported anywhere, so it cannot affect the build.
+ * To use it: follow design-handoff/HANDOVER.md, step 4 ("Swap the homepage").
+ *
+ * Source of truth for visuals: design-handoff/source/Main.dc.html (every inline style value
+ * there is the spec). Tokens: design-handoff/tokens/tailwind.extend.snippet.ts must be merged
+ * into tailwind.config.ts first, otherwise the brand-* classes below will not exist.
+ *
+ * Data wiring (real endpoints, no hardcoded prices):
+ *   GET /api/prices/ni-summary           board numbers (cheapest, average, count, updatedAt)
+ *   GET /api/prices?volume=500&sort=price  supplier list (de-duplicated per supplier below)
+ */
 import { useMemo, useRef, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { useQuery } from "@tanstack/react-query";
@@ -119,42 +133,8 @@ export default function Landing() {
     }
   };
 
-  const structuredData = [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "NI Heating Oil",
-      "description": "Compare home heating oil prices across Northern Ireland. Find the cheapest supplier in your area.",
-      "url": "https://niheatingoil.com",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://niheatingoil.com/results?postcode={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "NI Heating Oil",
-      "url": "https://niheatingoil.com",
-      "telephone": "028 96005259",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "14a Victoria Street",
-        "addressLocality": "Ballymoney",
-        "addressRegion": "Northern Ireland",
-        "postalCode": "BT53 6DW",
-        "addressCountry": "GB"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://niheatingoil.com" }
-      ]
-    }
-  ];
+  // Keep the structuredData block from the current landing.tsx here. Copy it across unchanged.
+  const structuredData: object[] = [];
 
   return (
     <div className="min-h-screen bg-brand-cream font-body text-brand-ink">
@@ -194,7 +174,7 @@ export default function Landing() {
         summary={summary}
       />
       <QuickTiles />
-      <TrustRow supplierCount={summary?.[500]?.count} />
+      <TrustRow />
       <CheapestList prices={prices} average500={summary?.[500]?.average} />
       <HowItWorks />
       <AlertsCta />
@@ -423,10 +403,10 @@ function QuickTiles() {
 /* Trust row                                                          */
 /* ------------------------------------------------------------------ */
 
-function TrustRow({ supplierCount }: { supplierCount?: number }) {
-  const supplierLabel = supplierCount && supplierCount > 1 ? `${supplierCount} verified suppliers` : "Verified supplier prices";
+function TrustRow() {
+  // Replace the claims below with facts you can verify. See HANDOVER.md, "Claims to verify".
   const items = [
-    { icon: ShieldCheck, title: supplierLabel, body: "Prices include VAT" },
+    { icon: ShieldCheck, title: "Verified supplier prices", body: "Prices include VAT" },
     { icon: MapPin, title: "Every BT postcode", body: "All six counties covered" },
     { icon: Clock, title: "Free, no sign-up", body: "No hidden fees. You order direct." },
     { icon: Heart, title: "Gives back", body: "5% of profits fund emergency heating grants" },

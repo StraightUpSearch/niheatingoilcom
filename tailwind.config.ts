@@ -44,6 +44,21 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        brand: {
+          forest: '#11381F',
+          'forest-soft': '#1A4A2E',
+          'forest-line': '#2F6A45',
+          lime: '#C8F169',
+          butter: '#FFF0A6',
+          gold: '#FFC83D',
+          mint: '#ECF2C4',
+          cream: '#FBF3E6',
+          card: '#FFF9EE',
+          paper: '#FFFDF9',
+          ink: '#12201C',
+          muted: '#55605A',
+          line: '#CFC6B3',
+        },
         chart: {
           "1": "hsl(var(--chart-1))",
           "2": "hsl(var(--chart-2))",
@@ -83,6 +98,11 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontFamily: {
+        display: ["'Bricolage Grotesque Variable'", 'system-ui', 'sans-serif'],
+        body: ["'Instrument Sans'", 'system-ui', 'sans-serif'],
+        price: ["'IBM Plex Mono'", 'ui-monospace', 'monospace'],
       },
     },
   },

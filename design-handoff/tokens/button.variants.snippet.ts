@@ -1,10 +1,19 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
+/**
+ * Rollout step R1. Edit client/src/components/ui/button.tsx.
+ *
+ * 1. Replace buttonVariants with the version below. Changes from the shadcn default:
+ *    - sizes are taller (44px minimum touch target, the design uses 46 to 62px)
+ *    - radius is rounded-xl
+ *    - new "cta" variant: gold, the single primary action on a page
+ *    - "default" stays forest, so every existing <Button> turns forest with no page edits
+ *    - "outline" gets the 2px forest border used on Website and Profile buttons
+ *
+ * 2. Search the codebase for size="sm" and size="icon" before merging. Anything below 44px
+ *    high on mobile should move to the new "md" size.
+ */
+import { cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
-
-const buttonVariants = cva(
+export const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-[15px] font-semibold transition-[filter,transform] " +
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 " +
     "hover:brightness-95 active:translate-y-px disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
@@ -21,35 +30,13 @@ const buttonVariants = cva(
       },
       size: {
         default: "h-12 px-5",
-        sm: "h-11 px-4",
+        sm: "h-11 px-4", // 44px, was 36px
         md: "h-12 px-5",
         lg: "h-14 px-7 text-[17px]",
-        xl: "h-[60px] px-8 text-lg",
+        xl: "h-[60px] px-8 text-lg", // main CTA
         icon: "h-11 w-11",
       },
     },
     defaultVariants: { variant: "default", size: "default" },
   }
-)
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean
-}
-
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    )
-  }
-)
-Button.displayName = "Button"
-
-export { Button, buttonVariants }
+);

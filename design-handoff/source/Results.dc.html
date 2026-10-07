@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>NI Heating Oil results page</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FBF3E6;color:#12201C;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #12201C;outline-offset:3px}
+.dk button:focus-visible,.dk a:focus-visible,.dk input:focus-visible,.chip-dk:focus-visible{outline-color:#C8F169}
+.btn{transition:filter .15s ease,transform .15s ease}
+.btn:hover{filter:brightness(.94)}
+.btn:active{transform:translateY(1px)}
+.lift{transition:background .15s ease,border-color .15s ease}
+.lift:hover{background:#FFFFFF;border-color:#12201C}
+.chip-dk{transition:background .15s ease}
+.chip-dk:hover{background:#1D4F31}
+.tile{transition:transform .18s ease}
+.tile:hover{transform:translateY(-3px)}
+.nav-menu{display:none}
+.live-dot{animation:ni-pulse 2s ease-in-out infinite}
+@keyframes ni-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.live-dot{animation:none}.btn,.lift,.chip-dk,.tile{transition:none}}
+@media (max-width:820px){.nav-links{display:none !important}.nav-signin{display:none !important}.nav-menu{display:inline-flex !important}}
+</style>
+</helmet>
+
+<div id="top" style="min-height:100px;background:#FBF3E6">
+
+<!-- Support strip -->
+<div style="background:#ECF2C4;border-bottom:1.5px solid #11381F;color:#11381F">
+<div style="max-width:1200px;margin:0 auto;padding:10px clamp(16px,4vw,32px);display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:flex-end;font-size:14px;line-height:1.4;font-weight:500">
+<span>You may be eligible for heating oil support.</span>
+<a href="#top" style="font-weight:700;text-decoration:underline;text-underline-offset:3px">Check if you qualify</a>
+</div>
+</div>
+
+<!-- Nav -->
+<header style="background:#FBF3E6">
+<div style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px);height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+<a href="#top" aria-label="NI Heating Oil home" style="display:flex;align-items:center;gap:10px">
+<svg width="40" height="40" viewBox="0 0 38 38" aria-hidden="true"><rect width="38" height="38" rx="11" fill="#11381F"></rect><path d="M19 7.5C19 7.5 11.2 16 11.2 21.6a7.8 7.8 0 0 0 15.6 0C26.8 16 19 7.5 19 7.5Z" fill="#FFC83D"></path><path d="M15.6 22.4a3.5 3.5 0 0 0 3.4 3.4" fill="none" stroke="#11381F" stroke-width="1.8" stroke-linecap="round"></path></svg>
+<span style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:23px;letter-spacing:-0.025em;color:#11381F">NI Heating Oil</span>
+</a>
+<nav class="nav-links" aria-label="Main" style="display:flex;align-items:center;gap:4px;font-size:16px;font-weight:600;color:#11381F">
+<a href="#top" aria-current="page" style="padding:12px 16px;border-radius:10px;background:#ECF2C4">Prices</a>
+<a href="#areas" style="padding:12px 16px;border-radius:10px">Suppliers</a>
+<a href="#top" style="padding:12px 16px;border-radius:10px">Compare fuels</a>
+<a href="#guides" style="padding:12px 16px;border-radius:10px">Guides</a>
+</nav>
+<div style="display:flex;align-items:center;gap:8px">
+<a class="nav-signin" href="#top" style="padding:12px 14px;font-size:16px;font-weight:600;color:#11381F">Sign in</a>
+<a class="btn" href="#top" style="display:inline-flex;align-items:center;height:46px;padding:0 20px;border-radius:12px;background:#11381F;color:#FBF3E6;font-weight:700;font-size:15px">Compare prices</a>
+<button class="nav-menu" aria-label="Open menu" style="width:46px;height:46px;border-radius:12px;border:1.5px solid #11381F;background:transparent;color:#11381F;align-items:center;justify-content:center;padding:0">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+</button>
+</div>
+</div>
+</header>
+
+<!-- Compact hero -->
+<section class="dk" style="background:#11381F;color:#FBF3E6">
+<div style="max-width:1200px;margin:0 auto;padding:clamp(24px,4vw,40px) clamp(16px,4vw,32px) clamp(88px,9vw,104px)">
+<nav aria-label="Breadcrumb" style="display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:14px;color:#A9C7B1">
+<a href="#top" style="padding:10px 0;text-decoration:underline;text-underline-offset:3px">Home</a><span aria-hidden="true">/</span>
+<a href="#top" style="padding:10px 0;text-decoration:underline;text-underline-offset:3px">Prices</a><span aria-hidden="true">/</span>
+<span aria-current="page" style="color:#FBF3E6;font-weight:600">BT60</span>
+</nav>
+<h1 style="margin:12px 0 0;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(38px,5.4vw,64px);line-height:1;letter-spacing:-0.04em;text-wrap:balance">Heating oil prices near <span style="color:#C8F169">{{postcode}}</span></h1>
+<p style="margin:16px 0 0;font-size:clamp(16px,1.5vw,19px);line-height:1.5;color:#CFE3D3;max-width:560px">{{count}} suppliers deliver {{volume}}L to your area. Prices include VAT, cheapest first.</p>
+
+<form onSubmit="{{noop}}" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px;margin-top:28px;padding:clamp(16px,2.5vw,22px);border-radius:24px;background:#FFF9EE;color:#12201C;max-width:960px">
+<div style="display:flex;flex-direction:column;gap:6px;flex:1 1 200px;min-width:0">
+<label for="pc" style="font-size:14px;font-weight:600">Your BT postcode</label>
+<input id="pc" type="text" autocomplete="postal-code" value="{{postcode}}" onChange="{{setPostcode}}" style="box-sizing:border-box;width:100%;height:56px;padding:0 18px;border-radius:14px;border:1.5px solid #CFC6B3;background:#FFFFFF;color:#12201C;font-family:'Instrument Sans',system-ui,sans-serif;font-size:18px;font-weight:500">
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;flex:1 1 300px">
+<span id="tank-label" style="font-size:14px;font-weight:600">Tank size</span>
+<div role="group" aria-labelledby="tank-label" style="display:grid;grid-template-columns:repeat(4, minmax(0, 1fr));gap:8px">
+<sc-for list="{{vols}}" as="v" hint-placeholder-count="4">
+<button type="button" class="btn" aria-pressed="{{v.pressed}}" onClick="{{v.pick}}" style="height:56px;border-radius:14px;border:1.5px solid {{v.bd}};background:{{v.bg}};color:{{v.fg}};font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:15px;font-weight:600;padding:0">{{v.label}}</button>
+</sc-for>
+</div>
+</div>
+<button class="btn" type="submit" style="flex:0 0 auto;height:56px;padding:0 28px;border-radius:14px;border:0;background:#FFC83D;color:#12201C;font-size:17px;font-weight:700">Update prices</button>
+</form>
+</div>
+</section>
+
+<!-- Results + aside -->
+<section style="position:relative;max-width:1200px;margin:calc(-1 * clamp(56px,6vw,64px)) auto 0;padding:0 clamp(16px,4vw,32px)">
+<div style="display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start">
+
+<div style="flex:2 1 560px;min-width:0">
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;padding:16px 20px;border-radius:20px;border:2px solid #11381F;background:#FFF0A6">
+<div style="display:flex;align-items:center;gap:10px;font-size:15px;color:#2C3A1F">
+<span class="live-dot" aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:#0E8A3E;display:inline-block"></span>
+<span><strong style="color:#11381F">{{count}} suppliers</strong> · {{volume}}L · Updated 7 Oct 2026</span>
+</div>
+<div role="group" aria-label="Sort suppliers" style="display:flex;gap:4px;padding:4px;border-radius:14px;background:#FFFDF9;border:1.5px solid #11381F">
+<sc-for list="{{sorts}}" as="o" hint-placeholder-count="2">
+<button aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="height:44px;padding:0 16px;border-radius:10px;border:0;background:{{o.bg}};color:{{o.fg}};font-size:15px;font-weight:600">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+<sc-for list="{{rows}}" as="s" hint-placeholder-count="3">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;padding:20px 24px;border-radius:24px;border:2px solid {{s.bd}};background:{{s.bg}}">
+<div style="display:flex;align-items:center;gap:16px;flex:1 1 240px;min-width:0">
+<div aria-hidden="true" style="flex:none;width:48px;height:48px;border-radius:50%;background:#11381F;color:#C8F169;display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:20px">{{s.init}}</div>
+<div style="min-width:0">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px">
+<span style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:21px;letter-spacing:-0.015em">{{s.name}}</span>
+<sc-if value="{{s.cheapest}}" hint-placeholder-val="{{ false }}"><span style="padding:4px 10px;border-radius:999px;background:#11381F;color:#C8F169;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase">Cheapest</span></sc-if>
+</div>
+<div style="margin-top:6px;display:flex;align-items:center;gap:6px;font-size:14px;color:#44502A">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+<span>Serves {{s.serves}}</span>
+</div>
+</div>
+</div>
+<div style="flex:0 1 190px;text-align:right">
+<div style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;font-size:30px;letter-spacing:-0.02em;color:#11381F">{{s.priceText}}</div>
+<div style="margin-top:4px;font-size:13px;color:#44502A">{{s.ppl}} per litre</div>
+<div style="margin-top:2px;font-size:13px;font-weight:600;color:{{s.deltaColor}}">{{s.deltaText}}</div>
+</div>
+<div style="display:flex;gap:8px;flex:0 0 auto">
+<a class="btn" href="#top" style="display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 20px;border-radius:12px;background:#11381F;color:#FBF3E6;font-size:15px;font-weight:600">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"></path></svg>Call</a>
+<a class="lift" href="#top" style="display:inline-flex;align-items:center;height:48px;padding:0 20px;border-radius:12px;border:2px solid #11381F;background:transparent;color:#11381F;font-size:15px;font-weight:600">Website</a>
+</div>
+</div>
+</sc-for>
+</div>
+<p style="margin:20px 0 0;font-size:14px;line-height:1.5;color:#55605A">Prices include VAT and standard delivery. Always confirm with the supplier before ordering. Sample data shown.</p>
+</div>
+
+<aside style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<div style="padding:24px;border-radius:28px;border:2px solid #11381F;background:#FFF0A6">
+<span aria-hidden="true" style="width:52px;height:52px;border-radius:50%;border:3px solid #11381F;background:#C8F169;display:flex;align-items:center;justify-content:center">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#11381F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 16V11a6 6 0 0 0-12 0v5l-2 2h16l-2-2Z"></path><path d="M10 21h4"></path></svg>
+</span>
+<h2 style="margin:16px 0 0;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:25px;line-height:1.1;letter-spacing:-0.02em;color:#11381F">Watch {{postcode}} prices</h2>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.5;color:#2C3A1F">Get an email when prices near you fall. Free to set up.</p>
+<a class="btn" href="#top" style="display:flex;align-items:center;justify-content:center;height:52px;margin-top:18px;border-radius:14px;background:#11381F;color:#FBF3E6;font-size:16px;font-weight:700">Set a price alert</a>
+</div>
+<div style="padding:24px;border-radius:28px;border:2px solid #11381F;background:#ECF2C4;color:#11381F">
+<h2 style="margin:0;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:22px;line-height:1.15;letter-spacing:-0.02em">Help with heating costs</h2>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.5">You may be eligible for heating oil support.</p>
+<a href="#top" style="display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-weight:700;font-size:15px;text-decoration:underline;text-underline-offset:3px">Check if you qualify</a>
+</div>
+<div style="padding:24px;border-radius:28px;border:1.5px solid #CFC6B3;background:#FFFDF9">
+<h2 style="margin:0;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:22px;line-height:1.15;letter-spacing:-0.02em;color:#11381F">Not sure what size to order?</h2>
+<a class="lift" href="#top" style="display:inline-flex;align-items:center;min-height:44px;margin-top:8px;font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:3px">Read the tank size guide</a>
+</div>
+</aside>
+
+</div>
+</section>
+<div style="height:clamp(56px,8vw,96px)"></div>
+
+
+<!-- Footer -->
+<footer class="dk" style="background:#11381F;color:#FBF3E6">
+<div style="max-width:1200px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(16px,4vw,32px) 32px">
+<div style="display:flex;flex-wrap:wrap;gap:40px 64px">
+<div style="flex:1.4 1 280px;min-width:0">
+<div style="display:flex;align-items:center;gap:10px">
+<svg width="40" height="40" viewBox="0 0 38 38" aria-hidden="true"><rect width="38" height="38" rx="11" fill="#1A4A2E"></rect><path d="M19 7.5C19 7.5 11.2 16 11.2 21.6a7.8 7.8 0 0 0 15.6 0C26.8 16 19 7.5 19 7.5Z" fill="#FFC83D"></path><path d="M15.6 22.4a3.5 3.5 0 0 0 3.4 3.4" fill="none" stroke="#1A4A2E" stroke-width="1.8" stroke-linecap="round"></path></svg>
+<span style="font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:23px;letter-spacing:-0.025em">NI Heating Oil</span>
+</div>
+<p style="margin:16px 0 0;font-size:15px;line-height:1.55;color:#CFE3D3;max-width:340px">Northern Ireland's independent heating oil price comparison service. Compare suppliers across all six counties, free to use.</p>
+<p style="margin:20px 0 0;font-size:14px;line-height:1.55;color:#A9C7B1">5% of profits fund emergency heating grants.</p>
+</div>
+<div style="flex:1 1 140px">
+<div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#A9C7B1">Prices</div>
+<div style="display:flex;flex-direction:column;margin-top:12px;font-size:15px">
+<a href="#top" style="padding:8px 0">Compare prices</a>
+<a href="#top" style="padding:8px 0">NI price index</a>
+<a href="#top" style="padding:8px 0">Heating oil prices</a>
+<a href="#top" style="padding:8px 0">Price alerts</a>
+<a href="#top" style="padding:8px 0">Supplier directory</a>
+</div>
+</div>
+<div style="flex:1 1 140px">
+<div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#A9C7B1">Locations</div>
+<div style="display:flex;flex-direction:column;margin-top:12px;font-size:15px">
+<a href="#top" style="padding:8px 0">Belfast</a>
+<a href="#top" style="padding:8px 0">Derry</a>
+<a href="#top" style="padding:8px 0">Bangor</a>
+<a href="#top" style="padding:8px 0">Newry</a>
+<a href="#top" style="padding:8px 0">Ballymena</a>
+<a href="#top" style="padding:8px 0">Coleraine</a>
+</div>
+</div>
+<div style="flex:1 1 140px">
+<div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#A9C7B1">Company</div>
+<div style="display:flex;flex-direction:column;margin-top:12px;font-size:15px">
+<a href="#top" style="padding:8px 0">About us</a>
+<a href="#top" style="padding:8px 0">Guides</a>
+<a href="#top" style="padding:8px 0">Contact</a>
+<a href="#top" style="padding:8px 0">Giving back</a>
+</div>
+</div>
+<div style="flex:1 1 200px">
+<div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#A9C7B1">Contact</div>
+<div style="margin-top:12px;font-size:15px;line-height:1.6;color:#CFE3D3">
+<div>14a Victoria Street</div>
+<div>Ballymoney, BT53 6DW</div>
+<a href="#top" style="display:inline-block;margin-top:8px;padding:6px 0;color:#FBF3E6;font-weight:600">028 96005259</a>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;margin-top:48px;padding-top:24px;border-top:1px solid #2F6A45;font-size:13px;color:#A9C7B1">
+<span>© 2026 NI Heating Oil. Independent price comparison for Northern Ireland.</span>
+<div style="display:flex;flex-wrap:wrap;gap:4px 20px">
+<a href="#top" style="padding:6px 0">Privacy policy</a>
+<a href="#top" style="padding:6px 0">Terms of use</a>
+<a href="#top" style="padding:6px 0">Disclaimer</a>
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { volume: 500, postcode: 'BT60', sort: 'cheap' };
+  }
+  renderVals() {
+    const s = this.state;
+    const money = (n) => '£' + n.toFixed(2);
+    const AVG500 = 346.90;
+    // price per 500L in pounds. Other volumes scale linearly (sample data only).
+    const sup = [
+      { name: 'Hayes Fuels', serves: 'Armagh, Down', p500: 342.75 },
+      { name: 'McKeown Oil', serves: 'Down, Armagh', p500: 344.40 },
+      { name: 'Alfa Oils', serves: 'Armagh, Down, Antrim', p500: 346.90 }
+    ].map((r) => ({ ...r, price: r.p500 / 500 * s.volume, avg: AVG500 / 500 * s.volume }));
+    const sorted = sup.slice().sort((x, y) => s.sort === 'az' ? x.name.localeCompare(y.name) : x.price - y.price);
+    const lowest = Math.min(...sup.map((r) => r.price));
+    const rows = sorted.map((r) => {
+      const diff = r.avg - r.price;
+      const below = diff > 0.005;
+      const first = r.price === lowest;
+      return {
+        name: r.name,
+        init: r.name.charAt(0),
+        serves: r.serves,
+        priceText: money(r.price),
+        ppl: (r.price / s.volume * 100).toFixed(1) + 'p',
+        cheapest: first,
+        bg: first ? '#FFF0A6' : '#FFFDF9',
+        bd: first ? '#11381F' : '#CFC6B3',
+        deltaText: below ? money(diff) + ' under average' : 'At the NI average',
+        deltaColor: below ? '#0B6A30' : '#55605A'
+      };
+    });
+    const vols = [300, 500, 900, 1000].map((v) => {
+      const on = s.volume === v;
+      return {
+        label: v + 'L',
+        pressed: on ? 'true' : 'false',
+        pick: () => this.setState({ volume: v }),
+        bg: on ? '#11381F' : '#FFFFFF',
+        fg: on ? '#FBF3E6' : '#12201C',
+        bd: on ? '#11381F' : '#CFC6B3'
+      };
+    });
+    const sorts = [
+      { key: 'cheap', label: 'Cheapest first' },
+      { key: 'az', label: 'A to Z' }
+    ].map((o) => ({
+      label: o.label,
+      pressed: s.sort === o.key ? 'true' : 'false',
+      bg: s.sort === o.key ? '#11381F' : 'transparent',
+      fg: s.sort === o.key ? '#FBF3E6' : '#12201C',
+      pick: () => this.setState({ sort: o.key })
+    }));
+    return {
+      postcode: s.postcode,
+      setPostcode: (e) => this.setState({ postcode: e.target.value.toUpperCase() }),
+      noop: (e) => e.preventDefault(),
+      volume: s.volume,
+      count: rows.length,
+      vols,
+      sorts,
+      rows
+    };
+  }
+}
+</script>
+</body>
+</html>

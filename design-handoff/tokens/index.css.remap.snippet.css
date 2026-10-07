@@ -1,0 +1,50 @@
+/*
+  Rollout step R1. Replace the :root block in client/src/index.css with this.
+  Every shadcn component (Button, Card, Input, Dialog, Select, Tabs and so on) reads these
+  variables, so remapping them restyles all inner pages at once, before any page is touched.
+
+  Values are HSL triplets without the hsl() wrapper, the format shadcn expects.
+  If your index.css also has a .dark block, leave it alone: the site has no dark mode toggle.
+  Check first: grep -n "dark" client/src/index.css
+*/
+:root {
+  --background: 37 72% 94%;            /* brand-cream  #FBF3E6 */
+  --foreground: 163 28% 10%;           /* brand-ink    #12201C */
+
+  --card: 40 100% 99%;                 /* brand-paper  #FFFDF9 */
+  --card-foreground: 163 28% 10%;
+  --popover: 40 100% 99%;
+  --popover-foreground: 163 28% 10%;
+
+  --primary: 142 53% 14%;              /* brand-forest #11381F */
+  --primary-foreground: 37 72% 94%;    /* cream on forest, 11.8:1 */
+
+  --secondary: 50 100% 83%;            /* brand-butter #FFF0A6 */
+  --secondary-foreground: 142 53% 14%;
+
+  --muted: 41 47% 88%;                 /* #EFE6D3, the sort toggle track */
+  --muted-foreground: 147 6% 35%;      /* brand-muted  #55605A */
+
+  --accent: 68 64% 86%;                /* brand-mint   #ECF2C4 */
+  --accent-foreground: 142 53% 14%;
+
+  --destructive: 4 76% 40%;            /* #B42318 */
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 41 23% 76%;                /* brand-line   #CFC6B3 */
+  --input: 41 23% 76%;
+  --ring: 142 53% 14%;
+
+  --radius: 0.875rem;                  /* 14px. Buttons and inputs. Cards set their own larger radius. */
+}
+
+/*
+  Body font. Add to the existing base layer:
+
+  @layer base {
+    body { @apply bg-background text-foreground font-body; }
+    h1, h2, h3 { @apply font-display; }
+  }
+
+  If the file already sets font-family on body, replace it rather than adding a second rule.
+*/

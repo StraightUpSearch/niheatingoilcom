@@ -203,11 +203,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const vals = prices.map(p => parseFloat(p.price)).filter(v => v > 0);
         const cheapest = Math.min(...vals);
         const average = vals.reduce((a, b) => a + b, 0) / vals.length;
+        const newest = Math.max(...prices.map((p) => new Date(p.createdAt as any).getTime()));
         summary[volume] = {
           cheapest: parseFloat(cheapest.toFixed(2)),
           average: parseFloat(average.toFixed(2)),
           count: vals.length,
-          updatedAt: new Date().toISOString(),
+          updatedAt: new Date(newest).toISOString(),
         };
       }
 

@@ -1,0 +1,57 @@
+/* NI Heating Oil redesign tokens. Plain CSS variables for anything outside Tailwind (emails, PDFs, OG images). */
+
+:root {
+  /* Colour */
+  --ni-forest: #11381f;
+  --ni-forest-soft: #1a4a2e;
+  --ni-forest-line: #2f6a45;
+  --ni-lime: #c8f169;
+  --ni-butter: #fff0a6;
+  --ni-gold: #ffc83d;
+  --ni-mint: #ecf2c4;
+  --ni-cream: #fbf3e6;
+  --ni-card: #fff9ee;
+  --ni-paper: #fffdf9;
+  --ni-ink: #12201c;
+  --ni-muted: #55605a;
+  --ni-line: #cfc6b3;
+
+  /* Text on forest */
+  --ni-on-forest: #fbf3e6;
+  --ni-on-forest-soft: #cfe3d3;
+  --ni-on-forest-muted: #a9c7b1;
+
+  /* Text on butter */
+  --ni-on-butter: #2c3a1f;
+  --ni-on-butter-muted: #44502a;
+  --ni-saving: #0b6a30;
+
+  /* Radius */
+  --ni-r-input: 14px;
+  --ni-r-chip: 999px;
+  --ni-r-row: 24px;
+  --ni-r-card: 28px;
+  --ni-r-panel: 36px;
+
+  /* Layout */
+  --ni-container: 1200px;
+  --ni-gutter: clamp(16px, 4vw, 32px);
+
+  /* Type */
+  --ni-font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --ni-font-body: "Instrument Sans", system-ui, sans-serif;
+  --ni-font-price: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+/*
+  Fonts. Choose ONE:
+
+  A) Google Fonts link in client/index.html (fastest to ship):
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  B) Self-host with Fontsource (recommended: no third party request, simpler UK GDPR position):
+     npm i @fontsource-variable/bricolage-grotesque @fontsource/instrument-sans @fontsource/ibm-plex-mono
+     then import the weights you use in client/src/main.tsx.
+*/
