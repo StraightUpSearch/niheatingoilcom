@@ -11,6 +11,13 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- HTML Sitemap -->
+  <url>
+    <loc>https://niheatingoil.com/sitemap</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
   <!-- NI Price Index (data PR / editorial hub) -->
   <url>
     <loc>https://niheatingoil.com/ni-heating-oil-price-index</loc>

@@ -186,6 +186,7 @@ export default function Footer() {
               { name: "Privacy Policy", href: "/contact" },
               { name: "Terms of Use",   href: "/contact" },
               { name: "Disclaimer",     href: "/contact" },
+              { name: "Site Map",       href: "/sitemap" },
             ].map(({ name, href }) => (
               <Link key={name} href={href} className="text-xs transition-colors hover:text-brand-cream" style={{ color: "#A9C7B1" }}>
                 {name}
