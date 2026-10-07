@@ -1,10 +1,17 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, FormEvent } from "react";
 import { useSearch, useLocation } from "wouter";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 import SEOHead from "@/components/seo-head";
-import { Phone, Globe, ChevronDown, ChevronUp, MapPin, Search, ArrowUpDown } from "lucide-react";
+import { Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  PageShell,
+  PageHero,
+  OverlapSection,
+  SurfaceCard,
+  PriceRow,
+  PriceRowData,
+  PostcodeSearchBar,
+} from "@/components/brand-ui";
 
 interface Supplier {
   id: number;
@@ -27,32 +34,30 @@ interface PriceResult {
   supplier: Supplier;
 }
 
-type SortOption = "price" | "price-desc" | "supplier";
+type SortOption = "price" | "name";
 
 export default function Results() {
   const search = useSearch();
-  const [, setLocation] = useLocation();
+  const [, navigate] = useLocation();
   const params = new URLSearchParams(search);
-  const postcode = params.get("postcode") || "";
-  const volume = parseInt(params.get("volume") || "500");
+  const initialPostcode = params.get("postcode") || "";
+  const initialVolume = parseInt(params.get("volume") || "500");
 
   const [results, setResults] = useState<PriceResult[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [editOpen, setEditOpen] = useState(false);
-  const [editPostcode, setEditPostcode] = useState(postcode);
-  const [editVolume, setEditVolume] = useState(volume);
+  const [postcode, setPostcode] = useState(initialPostcode);
+  const [volume, setVolume] = useState(initialVolume);
   const [sortBy, setSortBy] = useState<SortOption>("price");
 
-  const pageTitle = `Heating Oil Prices Near ${postcode.toUpperCase()} | NIHeatingoil.com`;
-  const pageDescription = `Compare heating oil prices near ${postcode.toUpperCase()} for ${volume}L delivery. Find the cheapest supplier in your area.`;
+  const pageTitle = `Heating Oil Prices Near ${initialPostcode.toUpperCase()} | NIHeatingoil.com`;
+  const pageDescription = `Compare heating oil prices near ${initialPostcode.toUpperCase()} for ${initialVolume}L delivery. Find the cheapest supplier in your area.`;
 
   useEffect(() => {
-    if (!postcode) return;
+    if (!initialPostcode) return;
     setLoading(true);
     setError(null);
-
-    fetch(`/api/prices?postcode=${encodeURIComponent(postcode)}&volume=${volume}&sort=price`)
+    fetch(`/api/prices?postcode=${encodeURIComponent(initialPostcode)}&volume=${initialVolume}&sort=price`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch prices");
         return res.json();
@@ -65,21 +70,12 @@ export default function Results() {
         setError(err.message);
         setLoading(false);
       });
-  }, [postcode, volume]);
+  }, [initialPostcode, initialVolume]);
 
   const sortedResults = useMemo(() => {
     const sorted = [...results];
-    switch (sortBy) {
-      case "price":
-        sorted.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-        break;
-      case "price-desc":
-        sorted.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
-        break;
-      case "supplier":
-        sorted.sort((a, b) => a.supplier.name.localeCompare(b.supplier.name));
-        break;
-    }
+    if (sortBy === "name") sorted.sort((a, b) => a.supplier.name.localeCompare(b.supplier.name));
+    else sorted.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
     return sorted;
   }, [results, sortBy]);
 
@@ -89,16 +85,16 @@ export default function Results() {
       {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": `Heating oil prices near ${postcode.toUpperCase()}`,
+        "name": `Heating oil prices near ${initialPostcode.toUpperCase()}`,
         "numberOfItems": results.length,
-        "itemListElement": results
+        "itemListElement": [...results]
           .sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
           .map((item, i) => ({
             "@type": "ListItem",
             "position": i + 1,
             "item": {
               "@type": "Offer",
-              "name": `${item.supplier.name} — ${volume}L heating oil`,
+              "name": `${item.supplier.name} \u2014 ${initialVolume}L heating oil`,
               "price": item.price,
               "priceCurrency": "GBP",
               "seller": {
@@ -115,248 +111,241 @@ export default function Results() {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://niheatingoil.com" },
-          { "@type": "ListItem", "position": 2, "name": `Prices near ${postcode.toUpperCase()}` },
+          { "@type": "ListItem", "position": 2, "name": `Prices near ${initialPostcode.toUpperCase()}` },
         ],
       },
     ];
-  }, [results, postcode, volume]);
+  }, [results, initialPostcode, initialVolume]);
 
-  const handleEditSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const pc = editPostcode.trim().toUpperCase();
+    const pc = postcode.trim().toUpperCase();
     if (!pc) return;
-    setEditOpen(false);
-    setLocation(`/results?postcode=${encodeURIComponent(pc)}&volume=${editVolume}`);
+    navigate(`/results?postcode=${encodeURIComponent(pc)}&volume=${volume}`);
   };
 
-  if (!postcode) {
-    setLocation("/");
+  if (!initialPostcode) {
+    navigate("/");
     return null;
   }
 
+  const average = results.length
+    ? results.reduce((s, r) => s + parseFloat(r.price), 0) / results.length
+    : 0;
+
+  const toRow = (item: PriceResult): PriceRowData => ({
+    id: item.id,
+    name: item.supplier.name,
+    serves: item.supplier.coverageAreas,
+    price: parseFloat(item.price),
+    pricePerLitre: parseFloat(item.pricePerLitre),
+    phone: item.supplier.phone,
+    website: item.supplier.website,
+    profileHref: `/suppliers/${item.supplierId}`,
+  });
+
   return (
-    <div className="min-h-screen bg-brand-cream">
+    <>
       <SEOHead
         title={pageTitle}
         description={pageDescription}
-        keywords={`heating oil ${postcode}, cheapest heating oil ${postcode}, oil delivery ${postcode}, Northern Ireland heating oil`}
-        canonicalUrl={`https://niheatingoil.com/heating-oil-prices/${postcode.toLowerCase()}/`}
+        keywords={`heating oil ${initialPostcode}, cheapest heating oil ${initialPostcode}, oil delivery ${initialPostcode}, Northern Ireland heating oil`}
+        canonicalUrl={`https://niheatingoil.com/heating-oil-prices/${initialPostcode.toLowerCase()}/`}
         structuredData={structuredData}
         noindex={true}
       />
-      <Navigation />
+      <PageShell>
+        <PageHero
+          crumbs={[
+            { label: "Home", href: "/" },
+            { label: "Prices", href: "/heating-oil-prices" },
+            { label: initialPostcode.toUpperCase() },
+          ]}
+          title="Heating oil prices near "
+          accent={initialPostcode.toUpperCase()}
+          intro={
+            !loading && results.length > 0
+              ? `${results.length} supplier${results.length !== 1 ? "s" : ""} deliver${results.length === 1 ? "s" : ""} ${initialVolume}L to your area. Prices include VAT, cheapest first.`
+              : undefined
+          }
+          overlap
+        >
+          <PostcodeSearchBar
+            postcode={postcode}
+            setPostcode={setPostcode}
+            volume={volume}
+            setVolume={setVolume}
+            onSubmit={handleSubmit}
+          />
+        </PageHero>
 
-      <main className="max-w-4xl mx-auto px-4 pt-24 pb-16">
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-brand-ink">
-            Heating oil prices near {postcode.toUpperCase()}
-            <span className="text-brand-muted font-normal"> — {volume}L delivery</span>
-          </h1>
-          <button
-            onClick={() => setEditOpen(!editOpen)}
-            className="mt-2 text-sm text-brand-forest hover:text-brand-forest inline-flex items-center gap-1"
-          >
-            Change search
-            {editOpen ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-          </button>
+        <OverlapSection>
+          <div className="flex flex-wrap gap-7 items-start pb-16">
+            {/* Main results column */}
+            <div className="flex-[2_1_560px] min-w-0">
 
-          {editOpen && (
-            <form onSubmit={handleEditSubmit} className="mt-3 flex flex-wrap items-end gap-3 p-4 bg-white rounded-lg border border-brand-line">
-              <div>
-                <label className="block text-xs font-medium text-brand-muted mb-1">Postcode</label>
-                <input
-                  type="text"
-                  value={editPostcode}
-                  onChange={(e) => setEditPostcode(e.target.value)}
-                  className="w-28 px-3 py-2 text-sm border border-brand-line rounded-md focus:ring-2 focus:ring-brand-forest focus:border-brand-forest outline-none"
-                  placeholder="BT1"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-brand-muted mb-1">Volume</label>
-                <select
-                  value={editVolume}
-                  onChange={(e) => setEditVolume(parseInt(e.target.value))}
-                  className="px-3 py-2 text-sm border border-brand-line rounded-md focus:ring-2 focus:ring-brand-forest focus:border-brand-forest outline-none"
-                >
-                  <option value={300}>300L</option>
-                  <option value={500}>500L</option>
-                  <option value={900}>900L</option>
-                  <option value={1000}>1000L</option>
-                </select>
-              </div>
-              <Button type="submit" size="sm">
-                Update
-              </Button>
-            </form>
-          )}
-        </div>
-
-        {/* Sort + count bar */}
-        {!loading && !error && results.length > 0 && (
-          <div className="flex items-center justify-between mb-4">
-            <p className="text-sm text-brand-muted">
-              {results.length} supplier{results.length !== 1 ? "s" : ""} found
-            </p>
-            <div className="flex items-center gap-2">
-              <ArrowUpDown className="w-3.5 h-3.5 text-brand-muted" />
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as SortOption)}
-                className="text-sm border border-brand-line rounded-md px-2 py-1.5 bg-white focus:ring-2 focus:ring-brand-forest focus:border-brand-forest outline-none"
-              >
-                <option value="price">Cheapest first</option>
-                <option value="price-desc">Most expensive first</option>
-                <option value="supplier">Supplier name A–Z</option>
-              </select>
-            </div>
-          </div>
-        )}
-
-        {/* Loading */}
-        {loading && (
-          <div className="space-y-3">
-            {[...Array(5)].map((_, i) => (
-              <div key={i} className="bg-white rounded-lg border border-brand-line p-5 animate-pulse">
-                <div className="flex items-center justify-between">
-                  <div className="space-y-2">
-                    <div className="h-5 w-40 bg-brand-line rounded" />
-                    <div className="h-3 w-28 bg-muted rounded" />
+              {/* Sort/count bar */}
+              {!loading && !error && results.length > 0 && (
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-4 rounded-[20px] border-2 border-brand-forest bg-brand-butter px-5 py-4">
+                  <div className="flex items-center gap-2.5 text-[15px] text-[#2C3A1F]">
+                    <span
+                      className="inline-block w-[9px] h-[9px] rounded-full bg-[#0E8A3E] animate-pulse motion-reduce:animate-none"
+                      aria-hidden="true"
+                    />
+                    <span>
+                      <strong className="text-brand-forest">
+                        {results.length} supplier{results.length !== 1 ? "s" : ""}
+                      </strong>
+                      {" \u00b7 "}{initialVolume}L
+                    </span>
                   </div>
-                  <div className="text-right space-y-2">
-                    <div className="h-6 w-24 bg-brand-line rounded" />
-                    <div className="h-3 w-20 bg-muted rounded" />
+                  <div
+                    role="group"
+                    aria-label="Sort suppliers"
+                    className="flex gap-1 p-1 rounded-[14px] bg-brand-paper border-[1.5px] border-brand-forest"
+                  >
+                    {(["price", "name"] as SortOption[]).map((opt) => (
+                      <button
+                        key={opt}
+                        aria-pressed={sortBy === opt}
+                        onClick={() => setSortBy(opt)}
+                        className={`h-11 px-4 rounded-[10px] text-[15px] font-semibold border-0 transition-colors ${
+                          sortBy === opt
+                            ? "bg-brand-forest text-brand-cream"
+                            : "bg-transparent text-brand-forest hover:bg-brand-mint"
+                        }`}
+                      >
+                        {opt === "price" ? "Cheapest first" : "A\u2013Z"}
+                      </button>
+                    ))}
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        )}
+              )}
 
-        {/* Error */}
-        {error && !loading && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-            <p className="text-red-800 font-medium">Something went wrong</p>
-            <p className="text-red-600 text-sm mt-1">{error}</p>
-            <Button
-              variant="outline"
-              size="sm"
-              className="mt-4"
-              onClick={() => window.location.reload()}
-            >
-              Try again
-            </Button>
-          </div>
-        )}
-
-        {/* Empty */}
-        {!loading && !error && results.length === 0 && (
-          <div className="bg-white border border-brand-line rounded-lg p-8 text-center">
-            <Search className="w-10 h-10 text-brand-line mx-auto mb-3" />
-            <p className="text-brand-ink font-medium">No suppliers found for {postcode.toUpperCase()}</p>
-            <p className="text-brand-muted text-sm mt-1">Try a nearby BT area or a different volume.</p>
-            <Button
-              variant="outline"
-              size="sm"
-              className="mt-4"
-              onClick={() => setEditOpen(true)}
-            >
-              Change search
-            </Button>
-          </div>
-        )}
-
-        {/* Results */}
-        {!loading && !error && sortedResults.length > 0 && (
-          <div className="space-y-3">
-            {sortedResults.map((item, index) => {
-              const totalPrice = parseFloat(item.price);
-              const ppl = parseFloat(item.pricePerLitre) * 100;
-              const isCheapest = sortBy === "price" && index === 0;
-
-              return (
-                <div
-                  key={item.id}
-                  className={`bg-white rounded-lg border ${isCheapest ? "border-green-300 ring-1 ring-green-100" : "border-brand-line"} p-5 transition-shadow hover:shadow-sm`}
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    {/* Supplier info */}
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-semibold flex-shrink-0">
-                        {item.supplier.name.charAt(0)}
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <h3 className="font-semibold text-brand-ink">{item.supplier.name}</h3>
-                          {isCheapest && (
-                            <span className="text-xs font-medium text-[#0B6A30] bg-brand-mint px-2 py-0.5 rounded-full">
-                              Cheapest
-                            </span>
-                          )}
+              {/* Loading skeletons */}
+              {loading && (
+                <div className="space-y-3">
+                  {[...Array(5)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="rounded-2xl border border-brand-line bg-brand-paper p-6 animate-pulse"
+                    >
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="space-y-2.5">
+                          <div className="h-5 w-40 bg-brand-line rounded-full" />
+                          <div className="h-3.5 w-28 bg-brand-line/60 rounded-full" />
                         </div>
-                        {item.supplier.coverageAreas && (
-                          <p className="text-xs text-brand-muted mt-0.5 flex items-center gap-1">
-                            <MapPin className="w-3 h-3" />
-                            Serves {item.supplier.coverageAreas}
-                          </p>
-                        )}
-                        <p className="text-xs text-brand-muted mt-0.5">
-                          Price includes VAT
-                        </p>
+                        <div className="text-right space-y-2.5">
+                          <div className="h-7 w-24 bg-brand-line rounded-full" />
+                          <div className="h-3.5 w-20 bg-brand-line/60 rounded-full" />
+                        </div>
                       </div>
                     </div>
-
-                    {/* Price + actions */}
-                    <div className="flex items-center gap-4 sm:gap-6">
-                      <div className="text-right">
-                        <p className="text-xl font-bold text-brand-ink">
-                          £{totalPrice.toFixed(2)}
-                        </p>
-                        <p className="text-xs text-brand-muted">
-                          {ppl.toFixed(1)}p/litre for {volume}L
-                        </p>
-                      </div>
-
-                      <div className="flex gap-2">
-                        {item.supplier.phone && (
-                          <a
-                            href={`tel:${item.supplier.phone}`}
-                            className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md hover:bg-gray-800 transition-colors"
-                          >
-                            <Phone className="w-3.5 h-3.5" />
-                            <span className="hidden sm:inline">Call</span>
-                          </a>
-                        )}
-                        {item.supplier.website && (
-                          <a
-                            href={item.supplier.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-brand-ink bg-white border border-brand-line rounded-md hover:bg-white transition-colors"
-                          >
-                            <Globe className="w-3.5 h-3.5" />
-                            <span className="hidden sm:inline">Website</span>
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
-              );
-            })}
+              )}
+
+              {/* Error */}
+              {error && !loading && (
+                <SurfaceCard tone="paper" className="p-8 text-center">
+                  <p className="font-semibold text-brand-ink">Something went wrong</p>
+                  <p className="text-brand-muted text-sm mt-1">{error}</p>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="mt-4"
+                    onClick={() => window.location.reload()}
+                  >
+                    Try again
+                  </Button>
+                </SurfaceCard>
+              )}
+
+              {/* Empty */}
+              {!loading && !error && results.length === 0 && (
+                <SurfaceCard tone="paper" className="p-10 text-center">
+                  <p className="font-semibold text-brand-ink text-lg">
+                    No suppliers found for {initialPostcode.toUpperCase()}
+                  </p>
+                  <p className="text-brand-muted text-sm mt-1.5">
+                    Try a nearby BT area or a different volume.
+                  </p>
+                </SurfaceCard>
+              )}
+
+              {/* Price rows */}
+              {!loading && !error && sortedResults.length > 0 && (
+                <ul className="flex flex-col gap-3">
+                  {sortedResults.map((item, index) => (
+                    <PriceRow
+                      key={item.id}
+                      row={toRow(item)}
+                      isCheapest={sortBy === "price" && index === 0}
+                      average={average}
+                    />
+                  ))}
+                </ul>
+              )}
+
+              {!loading && results.length > 0 && (
+                <p className="mt-5 text-sm leading-relaxed text-brand-muted">
+                  Prices include VAT and standard delivery. Always confirm with the supplier before ordering.
+                </p>
+              )}
+            </div>
+
+            {/* Aside */}
+            <aside className="flex-[1_1_300px] min-w-0 flex flex-col gap-4">
+              <SurfaceCard tone="butter" className="p-6">
+                <span
+                  aria-hidden="true"
+                  className="flex h-[52px] w-[52px] items-center justify-center rounded-full border-[3px] border-brand-forest bg-brand-lime"
+                >
+                  <Bell className="h-6 w-6 text-brand-forest" strokeWidth={2} />
+                </span>
+                <h2 className="mt-4 font-display font-extrabold text-[25px] leading-tight tracking-[-0.02em] text-brand-forest">
+                  Watch {initialPostcode.toUpperCase()} prices
+                </h2>
+                <p className="mt-2.5 text-[15px] leading-relaxed text-[#2C3A1F]">
+                  Get an email when prices near you fall. Free to set up.
+                </p>
+                <Button asChild className="mt-5 w-full h-[52px] text-base">
+                  <a href="/alerts">Set a price alert</a>
+                </Button>
+              </SurfaceCard>
+
+              <SurfaceCard tone="mint" className="p-6">
+                <h2 className="font-display font-extrabold text-[22px] leading-snug tracking-[-0.02em] text-brand-forest">
+                  Help with heating costs
+                </h2>
+                <p className="mt-2.5 text-[15px] leading-relaxed text-brand-forest">
+                  You may be eligible for heating oil support.
+                </p>
+                <a
+                  href="https://www.nidirect.gov.uk/articles/affordable-warmth-scheme"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1.5 inline-flex items-center min-h-[44px] font-bold text-[15px] text-brand-forest underline underline-offset-[3px]"
+                >
+                  Check if you qualify
+                </a>
+              </SurfaceCard>
+
+              <SurfaceCard tone="paper" className="p-6">
+                <h2 className="font-display font-extrabold text-[22px] leading-snug tracking-[-0.02em] text-brand-forest">
+                  Not sure what size to order?
+                </h2>
+                <a
+                  href="/blog/heating-oil-tank-sizes"
+                  className="mt-2 inline-flex items-center min-h-[44px] font-semibold text-[15px] text-brand-forest underline underline-offset-[3px]"
+                >
+                  Read the tank size guide
+                </a>
+              </SurfaceCard>
+            </aside>
           </div>
-        )}
-
-        {/* Trust footer */}
-        {!loading && results.length > 0 && (
-          <p className="text-xs text-brand-muted text-center mt-6">
-            Prices shown include VAT and standard delivery. Always confirm directly with the supplier before ordering.
-          </p>
-        )}
-      </main>
-
-      <Footer />
-    </div>
+        </OverlapSection>
+      </PageShell>
+    </>
   );
 }
