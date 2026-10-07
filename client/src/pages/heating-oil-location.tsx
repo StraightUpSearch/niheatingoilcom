@@ -1,8 +1,7 @@
 import { useParams, Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 import SEOHead from "@/components/seo-head";
+import { PageShell, PageHero, OverlapSection, SurfaceCard, PriceRow, PriceRowData } from "@/components/brand-ui";
 import { Phone, Globe, MapPin, ArrowRight, Clock, ChevronRight, Bell } from "lucide-react";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 
@@ -234,19 +233,17 @@ export default function HeatingOilLocation() {
 
   if (!isValid) {
     return (
-      <div className="min-h-screen bg-brand-cream">
-        <Navigation />
-        <main className="max-w-4xl mx-auto px-4 pt-24 pb-16 text-center">
-          <h1 className="text-2xl font-bold text-brand-ink mb-3">Location Not Found</h1>
+      <PageShell>
+        <div className="mx-auto max-w-[1200px] px-4 py-24 text-center sm:px-8">
+          <h1 className="font-display font-extrabold text-[32px] text-brand-ink mb-3">Location Not Found</h1>
           <p className="text-brand-muted mb-6">We don't have data for "{location}". Try a BT postcode or a major NI town.</p>
           <Link href="/">
-            <button className="px-5 py-2.5 bg-brand-gold hover:brightness-95 text-white rounded-lg text-sm font-medium transition-colors">
+            <button className="px-5 py-2.5 bg-brand-gold hover:brightness-95 text-brand-ink rounded-xl text-sm font-bold transition-[filter]">
               Compare prices by postcode
             </button>
           </Link>
-        </main>
-        <Footer />
-      </div>
+        </div>
+      </PageShell>
     );
   }
 
@@ -312,7 +309,7 @@ export default function HeatingOilLocation() {
   })();
 
   return (
-    <div className="min-h-screen bg-brand-cream">
+    <>
       <SEOHead
         title={pageTitle}
         description={pageDescription}
@@ -320,43 +317,30 @@ export default function HeatingOilLocation() {
         canonicalUrl={canonicalUrl}
         structuredData={structuredData}
       />
-      <Navigation />
-
-      <main className="max-w-4xl mx-auto px-4 pt-24 pb-16">
-
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-1 text-xs text-brand-muted mb-6">
-          <Link href="/" className="hover:text-brand-muted">Home</Link>
-          <ChevronRight className="w-3 h-3" />
-          <span className="text-brand-muted">Heating Oil Prices</span>
-          <ChevronRight className="w-3 h-3" />
-          <span className="text-brand-ink font-medium">{displayName}</span>
-        </nav>
-
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-brand-ink tracking-tight">
-            Heating Oil Prices in {isPostcode ? postcode : displayName} — Updated {updatedDate}
-          </h1>
-          {postcodeData && (
-            <p className="mt-1 text-brand-muted">
-              {postcodeData.area} · {postcodeData.towns.join(", ")} · Co. {postcodeData.county}
-            </p>
-          )}
-          {cityData && (
-            <p className="mt-1 text-brand-muted">
-              {cityData.description}, Northern Ireland · postcode area {cityData.postcode}
-            </p>
-          )}
-          <p className="mt-3 text-sm text-brand-muted flex items-center gap-1">
-            <Clock className="w-3.5 h-3.5" />
-            Prices last checked: {updatedAt}
-          </p>
-        </div>
+      <PageShell>
+        <PageHero
+          crumbs={[
+            { label: "Home", href: "/" },
+            { label: "Heating Oil Prices", href: "/heating-oil-prices" },
+            { label: isPostcode ? postcode : displayName },
+          ]}
+          title="Heating oil prices in "
+          accent={isPostcode ? postcode : displayName}
+          intro={
+            postcodeData
+              ? `${postcodeData.area}, County ${postcodeData.county}${supplierCount > 0 ? ` · ${supplierCount} supplier${supplierCount !== 1 ? "s" : ""}` : ""}`
+              : cityData
+                ? `${supplierCount > 0 ? `${supplierCount} supplier${supplierCount !== 1 ? "s" : ""} delivering to ${displayName}` : displayName + ", Northern Ireland"}`
+                : undefined
+          }
+          overlap
+        />
+        <OverlapSection>
+          <div className="pb-16">
 
         {/* Price Summary Table */}
         {loading500 ? (
-          <div className="bg-white border border-brand-line rounded-lg mb-8 animate-pulse">
+          <SurfaceCard tone="paper" className="mb-8 animate-pulse">
             {[300, 500, 900, 1000].map(v => (
               <div key={v} className="flex gap-4 px-4 py-3 border-b border-brand-line">
                 <div className="h-4 w-12 bg-brand-line rounded" />
@@ -364,9 +348,9 @@ export default function HeatingOilLocation() {
                 <div className="h-4 w-20 bg-brand-line rounded" />
               </div>
             ))}
-          </div>
+          </SurfaceCard>
         ) : (
-          <div className="overflow-hidden border border-brand-line rounded-lg mb-8">
+          <SurfaceCard tone="butter" className="overflow-hidden mb-8">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-brand-cream border-b border-brand-line">
@@ -417,23 +401,23 @@ export default function HeatingOilLocation() {
               </tbody>
             </table>
             <p className="text-xs text-brand-muted px-4 py-2 border-t border-brand-line">Prices include VAT. Updated from verified supplier data.</p>
-          </div>
+          </SurfaceCard>
         )}
 
         {/* 30-day price history chart */}
         {chartData.length > 1 && (
-          <div className="bg-white border border-brand-line rounded-lg p-5 mb-8">
+          <SurfaceCard tone="paper" className="p-5 mb-8">
             <h2 className="text-sm font-semibold text-brand-ink mb-4">NI heating oil price trend — 500L (30 days)</h2>
             <ResponsiveContainer width="100%" height={140}>
               <LineChart data={chartData} margin={{ top: 4, right: 8, left: -16, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#CFC6B3" />
                 <XAxis dataKey="date" tick={{ fontSize: 10, fill: "#9ca3af" }} tickLine={false} axisLine={false} interval="preserveStartEnd" />
                 <YAxis tick={{ fontSize: 10, fill: "#9ca3af" }} tickLine={false} axisLine={false} tickFormatter={v => `£${v.toFixed(0)}`} domain={["auto", "auto"]} />
                 <Tooltip formatter={(v: number) => [`£${v.toFixed(2)}`, "Cheapest 500L"]} labelStyle={{ fontSize: 11 }} contentStyle={{ fontSize: 11 }} />
-                <Line type="monotone" dataKey="price" stroke="#f97316" strokeWidth={2} dot={false} />
+                <Line type="monotone" dataKey="price" stroke="#11381F" strokeWidth={2} dot={false} />
               </LineChart>
             </ResponsiveContainer>
-          </div>
+          </SurfaceCard>
         )}
 
         {/* Supplier Comparison Table */}
@@ -442,70 +426,25 @@ export default function HeatingOilLocation() {
             <h2 className="text-lg font-semibold text-brand-ink mb-3">
               Heating oil suppliers serving {isPostcode ? postcode : displayName}
             </h2>
-            <div className="space-y-3">
-              {prices500.map((item, index) => {
-                const totalPrice = parseFloat(item.price);
-                const ppl = parseFloat(item.pricePerLitre) * 100;
-                return (
-                  <div
-                    key={item.id}
-                    className={`bg-white rounded-lg border ${index === 0 ? "border-green-300 ring-1 ring-green-100" : "border-brand-line"} p-4`}
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                      <div className="flex items-start gap-3">
-                        <div className="w-9 h-9 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-semibold flex-shrink-0">
-                          {item.supplier.name.charAt(0)}
-                        </div>
-                        <div>
-                          <div className="flex items-center gap-2">
-                            <h3 className="font-semibold text-brand-ink text-sm">{item.supplier.name}</h3>
-                            {index === 0 && (
-                              <span className="text-xs font-medium text-[#0B6A30] bg-brand-mint px-2 py-0.5 rounded-full">
-                                Cheapest
-                              </span>
-                            )}
-                          </div>
-                          {item.supplier.coverageAreas && (
-                            <p className="text-xs text-brand-muted flex items-center gap-0.5 mt-0.5">
-                              <MapPin className="w-3 h-3" />
-                              {item.supplier.coverageAreas}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <div className="text-right">
-                          <p className="text-xl font-bold text-brand-ink">£{totalPrice.toFixed(2)}</p>
-                          <p className="text-xs text-brand-muted">{ppl.toFixed(1)}p/litre · 500L</p>
-                        </div>
-                        <div className="flex gap-2">
-                          {item.supplier.phone && (
-                            <a
-                              href={`tel:${item.supplier.phone}`}
-                              className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white bg-gray-900 rounded-md hover:bg-gray-800 transition-colors"
-                            >
-                              <Phone className="w-3 h-3" />
-                              <span className="hidden sm:inline">Call</span>
-                            </a>
-                          )}
-                          {item.supplier.website && (
-                            <a
-                              href={item.supplier.website}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-brand-ink bg-white border border-brand-line rounded-md hover:bg-white transition-colors"
-                            >
-                              <Globe className="w-3 h-3" />
-                              <span className="hidden sm:inline">Website</span>
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+            <ul className="flex flex-col gap-3">
+              {prices500.map((item, index) => (
+                <PriceRow
+                  key={item.id}
+                  row={{
+                    id: item.id,
+                    name: item.supplier.name,
+                    serves: item.supplier.coverageAreas,
+                    price: parseFloat(item.price),
+                    pricePerLitre: parseFloat(item.pricePerLitre),
+                    phone: item.supplier.phone,
+                    website: item.supplier.website,
+                    profileHref: `/suppliers/${item.supplierId}`,
+                  }}
+                  isCheapest={index === 0}
+                  average={niSummary?.[500]?.average}
+                />
+              ))}
+            </ul>
             <p className="text-xs text-brand-muted text-center mt-4">
               Prices include VAT and standard delivery. Confirm with supplier before ordering.
             </p>
@@ -513,16 +452,16 @@ export default function HeatingOilLocation() {
         )}
 
         {!loading500 && prices500?.length === 0 && (
-          <div className="bg-white border border-brand-line rounded-lg p-8 text-center mb-8">
+          <SurfaceCard tone="paper" className="p-8 text-center mb-8">
             <p className="text-brand-ink font-medium">No suppliers found for {isPostcode ? postcode : displayName}</p>
             <p className="text-brand-muted text-sm mt-1">
               Try a neighbouring postcode or search by your full postcode below.
             </p>
-          </div>
+          </SurfaceCard>
         )}
 
         {/* CTA */}
-        <div className="bg-white border border-brand-line rounded-lg p-6 mb-8">
+        <SurfaceCard tone="paper" className="p-6 mb-8">
           <h2 className="text-base font-semibold text-brand-ink mb-1">
             Get your exact price for {isPostcode ? postcode : displayName}
           </h2>
@@ -535,10 +474,10 @@ export default function HeatingOilLocation() {
               <ArrowRight className="w-4 h-4" />
             </button>
           </Link>
-        </div>
+        </SurfaceCard>
 
         {/* Price alert CTA */}
-        <div className="bg-brand-mint border border-blue-100 rounded-lg p-6 mb-8">
+        <SurfaceCard tone="mint" className="p-6 mb-8">
           <div className="flex items-start gap-3">
             <Bell className="w-5 h-5 text-brand-forest mt-0.5 flex-shrink-0" />
             <div>
@@ -556,7 +495,7 @@ export default function HeatingOilLocation() {
               </Link>
             </div>
           </div>
-        </div>
+        </SurfaceCard>
 
         {/* Quick info */}
         <div className="prose prose-sm prose-gray max-w-none">
@@ -651,8 +590,9 @@ export default function HeatingOilLocation() {
           </div>
         )}
 
-      </main>
-      <Footer />
-    </div>
+          </div>
+        </OverlapSection>
+      </PageShell>
+    </>
   );
 }
